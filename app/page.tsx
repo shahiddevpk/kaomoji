@@ -1,8 +1,11 @@
 import { getForPage } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
+import { FaqSection } from "@/components/kaomoji/faq-section";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
+import { LearnSection } from "@/components/kaomoji/learn-section";
 import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
-import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/layout/json-ld";
+import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
 
 const page = getPage("/");
@@ -11,9 +14,11 @@ export const metadata = pageMetadata(page);
 
 export default function HomePage() {
   const faces = getForPage(page);
+  const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-8">
+      {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <h1 className="type-h1 tracking-tight sm:text-4xl">
         {page.heading}
       </h1>
@@ -69,6 +74,13 @@ export default function HomePage() {
           </li>
         </ol>
       </section>
+
+      <LearnSection
+        heading="What is kaomoji?"
+        definition={page.definition}
+        learnMore={page.learnMore}
+      />
+      <FaqSection faqs={page.faqs} />
     </div>
   );
 }

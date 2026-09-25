@@ -93,8 +93,8 @@ export function KaomojiGenerator() {
 
   return (
     <div className="mt-6 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)] sm:p-6">
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-border bg-background px-4 py-8">
-        <p className="kaomoji-face text-center text-2xl sm:text-3xl" lang="ja">
+      <div className="flex flex-col items-center gap-4 rounded-2xl border-2 border-primary/35 bg-active px-4 py-10 shadow-[var(--shadow-sm)] sm:px-6 sm:py-12">
+        <p className="kaomoji-face text-center text-3xl sm:text-4xl" lang="ja">
           {face}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">

@@ -143,3 +143,34 @@ export function itemListJsonLd(
     })),
   };
 }
+
+/** Strip light markdown so FAQ answers stay plain text in JSON-LD. */
+function plainTextAnswer(answer: string): string {
+  return answer
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`~]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * FAQPage JSON-LD. Emit only when faqs.length > 0.
+ * Answers are forced to plain text (no markdown).
+ */
+export function faqJsonLd(
+  faqs: { question: string; answer: string }[],
+): Record<string, unknown> | null {
+  if (!faqs.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: plainTextAnswer(item.answer),
+      },
+    })),
+  };
+}

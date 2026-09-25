@@ -24,6 +24,15 @@ function sitemapPriority(page: SitePage): number {
     case "/sad-kaomoji":
     case "/crying-kaomoji":
     case "/angry-kaomoji":
+    case "/heart-kaomoji":
+    case "/shy-kaomoji":
+    case "/bunny-kaomoji":
+    case "/dog-kaomoji":
+    case "/shocked-kaomoji":
+    case "/smug-kaomoji":
+    case "/sleepy-kaomoji":
+    case "/confused-kaomoji":
+    case "/bear-kaomoji":
       return 0.75;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":

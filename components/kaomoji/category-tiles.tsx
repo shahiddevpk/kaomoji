@@ -9,6 +9,8 @@ const BROWSE_ORDER = [
   "/sad-kaomoji",
   "/crying-kaomoji",
   "/angry-kaomoji",
+  "/heart-kaomoji",
+  "/shy-kaomoji",
   "/kaomoji-copy-paste",
   "/japanese-emoticons",
   "/text-faces",

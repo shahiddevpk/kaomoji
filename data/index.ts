@@ -108,6 +108,27 @@ function normalizeTag(tag: string): string {
   return tag.toLowerCase().trim();
 }
 
+
+const MULTILINE_TAGS = new Set(["multi-line", "multiline"]);
+
+/** True when face has a real newline (post-normalize) or a multi-line / multiline tag. */
+export function isMultilineFace(
+  item: Pick<Kaomoji, "face" | "tags">,
+): boolean {
+  if (item.face.includes("\n")) return true;
+  return item.tags.some((tag) => MULTILINE_TAGS.has(normalizeTag(tag)));
+}
+
+/** Count multiline faces in an already-loaded list. */
+export function countMultilineIn(items: readonly Kaomoji[]): number {
+  let count = 0;
+  for (const item of items) {
+    if (isMultilineFace(item)) count += 1;
+  }
+  return count;
+}
+
+
 export function getByCategory(
   id: string,
   options?: { primaryOnly?: boolean },
@@ -195,6 +216,18 @@ export function getSearchPoolForPage(input: {
   }
   return [];
 }
+
+
+/** Multiline count for a category/tag page pool (full set, not page slice). */
+export function countMultilineForPage(input: {
+  path: string;
+  category?: string;
+  tags?: string[];
+  includeNewlineFaces?: boolean;
+}): number {
+  return countMultilineIn(getSearchPoolForPage(input));
+}
+
 
 export function catalogSize(): number {
   return catalog.length;

@@ -3,20 +3,25 @@ import {
   catalogSize,
   countByCategory,
   countByTags,
+  countMultilineForPage,
   crawlablePageCountForCategory,
   crawlablePageCountForTags,
   getForPage,
   getRelatedKaomoji,
+  isMultilineFace,
   PAGE_GRID_LIMIT,
 } from "@/data/index";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { SubcategoryNav } from "@/components/kaomoji/subcategory-nav";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
+import { CategoryFacesToolbar } from "@/components/kaomoji/category-faces-toolbar";
 import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
+import { LearnSection } from "@/components/kaomoji/learn-section";
+import { FaqSection } from "@/components/kaomoji/faq-section";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 
 function PaginationNav({
   basePath,
@@ -91,6 +96,25 @@ function PaginationNav({
   );
 }
 
+function learnHeadingFor(pagePath: string, label: string): string {
+  switch (pagePath) {
+    case "/japanese-emoticons":
+      return "What are Japanese emoticons?";
+    case "/kaomoji-copy-paste":
+      return "What is kaomoji copy and paste?";
+    case "/angry-kaomoji":
+      return "About angry kaomoji";
+    case "/cute-kaomoji":
+      return "About cute kaomoji";
+    case "/multiline-kaomoji":
+      return "About multiline kaomoji";
+    case "/kaomoji-generator":
+      return "About the kaomoji generator";
+    default:
+      return `About ${label.toLowerCase()} faces`;
+  }
+}
+
 export function CategoryView({
   page,
   pageNumber = 1,
@@ -132,20 +156,37 @@ export function CategoryView({
       ? categoryPageHref(page.path, safePage + 1)
       : null;
 
-  const showingLabel =
-    safePage > 1 && faces.length > 0
-      ? `Showing ${rangeStart}-${rangeEnd} of ${total}`
-      : `Showing ${faces.length}${total > faces.length ? ` of ${total}` : ""} faces`;
+  const multilineTotal = countMultilineForPage({
+    path: page.path,
+    category: page.category,
+    tags: page.tags,
+    includeNewlineFaces: page.includeNewlineFaces,
+  });
+  const isMultilineHub = page.path === "/multiline-kaomoji";
+  const toolbarItems = faces.map((item) => ({
+    id: item.id,
+    face: item.face,
+    name: item.name,
+    multiline: isMultilineFace(item),
+  }));
 
-  const paging = showPaging ? (
-    <PaginationNav
-      basePath={page.path}
-      prevHref={prevHref}
-      nextHref={nextHref}
-      safePage={safePage}
-      crawlablePages={crawlablePages}
-    />
-  ) : null;
+  const showEducation = safePage === 1;
+  const faqSchema =
+    showEducation && page.faqs && page.faqs.length > 0
+      ? faqJsonLd(page.faqs)
+      : null;
+
+  const renderPagination = showPaging
+    ? () => (
+        <PaginationNav
+          basePath={page.path}
+          prevHref={prevHref}
+          nextHref={nextHref}
+          safePage={safePage}
+          crawlablePages={crawlablePages}
+        />
+      )
+    : undefined;
 
   return (
     <article className="mx-auto w-full max-w-6xl px-4 py-8">
@@ -172,23 +213,31 @@ export function CategoryView({
         </section>
       ) : null}
 
+      {showEducation ? (
+        <LearnSection
+          heading={learnHeadingFor(page.path, page.label)}
+          definition={page.definition}
+          learnMore={page.learnMore}
+        />
+      ) : null}
+
       <RecentlyCopied />
 
       <section className="mt-8" id="faces" aria-labelledby="faces-heading">
         <h2 id="faces-heading" className="type-h2">
           Faces
         </h2>
-        <p className="mt-2 type-meta">
-          {showingLabel}
-          {total > faces.length || safePage > 1
-            ? " - use search in the header for the full set"
-            : " in this set"}
-        </p>
-        {paging}
-        <div className="mt-4">
-          <KaomojiGrid items={faces} />
-        </div>
-        {paging}
+        <CategoryFacesToolbar
+          items={toolbarItems}
+          multilineTotal={multilineTotal}
+          total={total}
+          safePage={safePage}
+          rangeStart={rangeStart}
+          rangeEnd={rangeEnd}
+          hideFilter={isMultilineHub}
+          defaultMode={isMultilineHub ? "multiline" : "all"}
+          renderPagination={renderPagination}
+        />
       </section>
 
       {relatedFaces.length > 0 ? (
@@ -215,6 +264,8 @@ export function CategoryView({
           <li>Paste it into chat, a caption, or a bio.</li>
         </ol>
       </section>
+
+      {showEducation ? <FaqSection faqs={page.faqs} /> : null}
 
       {related.length > 0 ? (
         <section className="mt-10" aria-labelledby="related-heading">

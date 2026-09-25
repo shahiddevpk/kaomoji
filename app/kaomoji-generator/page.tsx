@@ -1,7 +1,9 @@
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
+import { FaqSection } from "@/components/kaomoji/faq-section";
+import { LearnSection } from "@/components/kaomoji/learn-section";
 import { KaomojiGenerator } from "@/components/kaomoji/kaomoji-generator";
 import { JsonLd } from "@/components/layout/json-ld";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage, relatedPages } from "@/lib/site";
 import Link from "next/link";
 
@@ -11,10 +13,12 @@ export const metadata = pageMetadata(page);
 
 export default function KaomojiGeneratorPage() {
   const related = relatedPages(page);
+  const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
 
   return (
     <article className="mx-auto w-full max-w-6xl px-4 py-8">
       <JsonLd data={breadcrumbJsonLd(page)} />
+      {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <Breadcrumbs page={page} />
       <h1 className="mt-4 type-h1 tracking-tight">{page.heading}</h1>
       <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted">
@@ -34,6 +38,13 @@ export default function KaomojiGeneratorPage() {
       ) : null}
 
       <KaomojiGenerator />
+
+      <LearnSection
+        heading="About the kaomoji generator"
+        definition={page.definition}
+        learnMore={page.learnMore}
+      />
+      <FaqSection faqs={page.faqs} />
 
       {related.length > 0 ? (
         <section className="mt-10" aria-labelledby="related-heading">

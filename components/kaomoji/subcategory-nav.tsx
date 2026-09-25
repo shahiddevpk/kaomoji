@@ -26,9 +26,14 @@ export function SubcategoryNav({ page }: { page: SitePage }) {
     ...children.map((child) => ({ path: child.path, label: child.label })),
   ];
 
+  const focus =
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
+  const pill =
+    "inline-flex min-h-11 items-center rounded-full px-4 type-button transition-colors";
+
   return (
-    <nav aria-label="Subcategories" className="mt-4">
-      <ul className="flex flex-wrap gap-2">
+    <nav aria-label="Subcategories" className="mt-5">
+      <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
         {items.map((item) => {
           const active = pathname === item.path;
           return (
@@ -37,8 +42,8 @@ export function SubcategoryNav({ page }: { page: SitePage }) {
                 href={item.path}
                 className={
                   active
-                    ? "inline-flex min-h-11 items-center rounded-full border border-primary bg-primary px-4 type-button font-semibold text-accent-foreground"
-                    : "inline-flex min-h-11 items-center rounded-full border border-border bg-card px-4 type-button text-foreground transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    ? `${pill} border border-primary bg-primary font-semibold text-accent-foreground ${focus}`
+                    : `${pill} border border-border bg-card text-foreground hover:border-primary hover:bg-hover ${focus}`
                 }
                 aria-current={active ? "page" : undefined}
               >
