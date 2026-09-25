@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
 import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
+import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/layout/json-ld";
 import { websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
-          <Header />
+          <SiteHeader />
           <main id="content" className="relative z-0 flex-1" role="main">
             {children}
           </main>

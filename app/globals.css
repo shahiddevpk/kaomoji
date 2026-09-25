@@ -82,6 +82,8 @@
   --shadow-sm: 0 1px 2px rgb(26 26 26 / 0.06);
 
   --control-h: 2.75rem;
+  /* Updated live by SiteHeader ResizeObserver; fallback until hydration */
+  --site-header-offset: 7.25rem;
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -143,13 +145,12 @@
 
 html {
   color-scheme: light;
-  /* Anchor jumps (#faces) clear sticky header */
-  scroll-padding-top: 6.5rem;
+  scroll-padding-top: var(--site-header-offset);
 }
 
 @media (min-width: 640px) {
-  html {
-    scroll-padding-top: 9rem;
+  :root {
+    --site-header-offset: 9.25rem;
   }
 }
 
@@ -600,15 +601,23 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   height: 1rem;
 }
 
-/* Sticky chrome — opaque so grid Copy buttons never bleed through on scroll */
+/* Fixed chrome — stays on screen; content sits below via .site-header-spacer */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 40;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
   isolation: isolate;
   border-bottom: 1px solid var(--border);
   background: var(--card);
   box-shadow: var(--shadow-sm);
+}
+
+.site-header-spacer {
+  min-height: var(--site-header-offset);
+  flex-shrink: 0;
 }
 
 /* FAQ disclosure — open state picks up brand tint */
