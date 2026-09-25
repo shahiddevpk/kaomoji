@@ -33,8 +33,6 @@ function sitemapPriority(page: SitePage): number {
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
     case "/pout-kaomoji":
-    case "/multiline-kaomoji":
-      return 0.7;
     default:
       return 0.65;
   }

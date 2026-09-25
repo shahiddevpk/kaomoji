@@ -3,20 +3,17 @@ import {
   countByCategory,
   countByTags,
   countPopular,
-  countMultilineForPage,
-  getSearchPoolForPage,
-  crawlablePageCountForCategory,
-  crawlablePageCountForTags,
   getForPage,
-  getRelatedKaomoji,
-  isMultilineFace,
-  PAGE_GRID_LIMIT,
+  getRelatedKaomojiFromScopes,
+  pageCountForCategory,
+  pageCountForTags,
   ITEM_LIST_LIMIT,
+  PAGE_GRID_LIMIT,
 } from "@/data/index";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { SubcategoryNav } from "@/components/kaomoji/subcategory-nav";
-import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { CategoryFacesToolbar } from "@/components/kaomoji/category-faces-toolbar";
+import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { FaqSection } from "@/components/kaomoji/faq-section";
@@ -65,7 +62,6 @@ function PaginationNav({
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
   const touch =
     "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full type-button";
-  // Dominant DigiSkills-near CTA: solid primary (#C2410C) + white (AA)
   const dominantClass = `${touch} border border-primary bg-primary px-5 font-semibold text-accent-foreground transition-colors hover:border-primary-hover hover:bg-primary-hover ${focus}`;
   const disabledClass = `${touch} cursor-not-allowed border border-border bg-secondary px-5 font-medium text-foreground`;
   const pageQuietClass = `${touch} border border-border bg-card px-3 text-muted transition-colors hover:border-primary hover:bg-hover hover:text-foreground ${focus}`;
@@ -121,10 +117,8 @@ function PaginationNav({
           Previous
         </span>
       )}
-
-      {renderPageList(pagesMobile, "sm:hidden")}
+      {renderPageList(pagesMobile, "flex sm:hidden")}
       {renderPageList(pagesDesktop, "hidden sm:flex")}
-
       {nextHref ? (
         <Link href={nextHref} className={dominantClass} rel="next">
           Next
@@ -148,8 +142,6 @@ function facesSectionHeading(page: SitePage): string {
       return "Japanese emoticons to copy";
     case "/text-faces":
       return "Text faces to copy";
-    case "/multiline-kaomoji":
-      return "Multiline kaomoji to copy";
     case "/kaomoji-generator":
       return "Build your face";
     default:
@@ -169,8 +161,6 @@ function learnHeadingFor(pagePath: string, label: string): string {
       return "About angry kaomoji";
     case "/cute-kaomoji":
       return "About cute kaomoji";
-    case "/multiline-kaomoji":
-      return "About multiline kaomoji";
     case "/kaomoji-generator":
       return "About the kaomoji generator";
     default:
@@ -188,24 +178,25 @@ export function CategoryView({
   const safePage = Math.max(1, Math.floor(pageNumber));
   const faces = getForPage({ ...page, page: safePage });
   const related = relatedPages(page);
-  const relatedCategoryIds = related
-    .map((item) => item.category)
-    .filter((category): category is string => Boolean(category));
-  const relatedFaces = getRelatedKaomoji(relatedCategoryIds);
-  const tagOpts = { includeNewlines: page.includeNewlineFaces };
+  const relatedFaces = getRelatedKaomojiFromScopes(
+    related.map((item) => ({
+      category: item.category,
+      tags: item.tags,
+    })),
+  );
   const total =
     page.tags && page.tags.length > 0
-      ? countByTags(page.tags, tagOpts)
+      ? countByTags(page.tags)
       : page.category != null
         ? countByCategory(page.category)
         : page.path === "/kaomoji-copy-paste"
           ? countPopular()
           : faces.length;
-  const crawlablePages =
+  const browsePages =
     page.tags && page.tags.length > 0
-      ? crawlablePageCountForTags(page.tags, tagOpts)
+      ? pageCountForTags(page.tags)
       : page.category != null
-        ? crawlablePageCountForCategory(page.category)
+        ? pageCountForCategory(page.category)
         : 1;
   const rangeStart =
     faces.length === 0 ? 0 : (safePage - 1) * PAGE_GRID_LIMIT + 1;
@@ -213,37 +204,19 @@ export function CategoryView({
     faces.length === 0 ? 0 : Math.min(safePage * PAGE_GRID_LIMIT, total);
   const showPaging =
     ((page.tags && page.tags.length > 0) || page.category != null) &&
-    crawlablePages > 1;
+    browsePages > 1;
   const prevHref =
     safePage > 1 ? categoryPageHref(page.path, safePage - 1) : null;
   const nextHref =
-    safePage < crawlablePages
+    safePage < browsePages
       ? categoryPageHref(page.path, safePage + 1)
       : null;
 
-  const poolScope = {
-    path: page.path,
-    category: page.category,
-    tags: page.tags,
-    includeNewlineFaces: page.includeNewlineFaces,
-  };
-  const multilineTotal = countMultilineForPage(poolScope);
-  const isMultilineHub = page.path === "/multiline-kaomoji";
   const toolbarItems = faces.map((item) => ({
     id: item.id,
     face: item.face,
     name: item.name,
-    multiline: isMultilineFace(item),
   }));
-  /** Full multiline set for this page scope — filter must not depend on SSR page slice. */
-  const multilineItems = getSearchPoolForPage(poolScope)
-    .filter((item) => isMultilineFace(item))
-    .map((item) => ({
-      id: item.id,
-      face: item.face,
-      name: item.name,
-      multiline: true as const,
-    }));
 
   const showEducation = safePage === 1;
   const faqSchema =
@@ -251,7 +224,6 @@ export function CategoryView({
       ? faqJsonLd(page.faqs)
       : null;
 
-  // ItemList only on indexable page 1 (matches visible grid; avoids schema on noindex pages).
   const itemListSchema =
     safePage === 1
       ? itemListJsonLd(page, faces.slice(0, ITEM_LIST_LIMIT))
@@ -263,7 +235,7 @@ export function CategoryView({
         prevHref,
         nextHref,
         safePage,
-        crawlablePages,
+        crawlablePages: browsePages,
       }
     : null;
 
@@ -310,14 +282,10 @@ export function CategoryView({
         </h2>
         <CategoryFacesToolbar
           items={toolbarItems}
-          multilineItems={multilineItems}
-          multilineTotal={multilineTotal}
           total={total}
           safePage={safePage}
           rangeStart={rangeStart}
           rangeEnd={rangeEnd}
-          hideFilter={isMultilineHub}
-          defaultMode={isMultilineHub ? "multiline" : "all"}
           pagination={
             paginationProps ? <PaginationNav {...paginationProps} /> : null
           }

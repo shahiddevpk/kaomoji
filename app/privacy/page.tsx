@@ -9,12 +9,13 @@ export const metadata = pageMetadata(page);
 export default function PrivacyPage() {
   return (
     <TrustView page={page}>
-      <h2 className="text-base font-semibold">What this release stores</h2>
+      <p className="type-meta text-muted">Effective September 25, 2026.</p>
+      <h2 className="text-base font-semibold">What this site stores</h2>
       <p>
         Paste Kaomoji does not ask you to create an account. Most browsing content is
-        rendered without accounts or trackers. Search requests are processed on the server.
-        This release does not embed analytics, advertising, or a cookie banner, and the site
-        itself does not set tracking cookies.
+        rendered without accounts. Search requests are processed on the server. The site does
+        not embed analytics or advertising, does not use a cookie banner for tracking, and does
+        not set marketing cookies.
       </p>
       <h2 className="text-base font-semibold">Copying a face</h2>
       <p>
@@ -28,9 +29,9 @@ export default function PrivacyPage() {
       </p>
       <h2 className="text-base font-semibold">Hosting</h2>
       <p>
-        The domain is on Cloudflare. A later deploy may use Cloudflare Pages or Workers, which
-        can log ordinary request data such as IP address and user agent for security and
-        operations. This release does not add extra trackers on top of that.
+        The domain is on Cloudflare, which may log ordinary request data such as IP address and
+        user agent for security and operations. We do not add extra trackers on top of that
+        hosting layer.
       </p>
     </TrustView>
   );

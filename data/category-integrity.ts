@@ -94,6 +94,13 @@ function passesSleepyTagPage(item: Kaomoji): boolean {
   return true;
 }
 
+function faceLooksHappy(item: Kaomoji): boolean {
+  const face = item.face;
+  if (/‿|◕‿◕|✿◠‿|ʘ‿ʘ|ᕕ\( *ᐛ *\)|¯\\_\(ツ\)_\/¯/.test(face)) return true;
+  if (/(｡◕‿‿◕｡)|\(◕‿◕✿\)|\(✿◠‿◠\)/.test(face)) return true;
+  return false;
+}
+
 function passesSadCategory(item: Kaomoji): boolean {
   const blockTags = [
     "happy",
@@ -121,12 +128,15 @@ function passesSadCategory(item: Kaomoji): boolean {
     "toss",
     "weapon",
     "gun",
+    "shrug",
+    "lenny",
   ];
   if (hasAnyTag(item, blockTags)) return false;
   if (primaryIs(item, "happy", "crying", "angry", "cat", "bear", "dog", "bunny")) {
     return false;
   }
   if (faceLooksCrying(item.face)) return false;
+  if (faceLooksHappy(item)) return false;
   if (/╬|益ಠ|ﾉ┻━┻|┻━┻|ʘ言ʘ|♥‿♥|ᓚᘏᗢ/.test(item.face)) return false;
   return true;
 }
@@ -166,10 +176,16 @@ function passesCuteCategory(item: Kaomoji): boolean {
     "rage",
     "weapon",
     "gun",
+    "sleepy",
+    "tired",
+    "rolling",
+    "catch",
+    "receive",
   ];
   if (hasAnyTag(item, blockTags)) return false;
   if (hasTableFlipGlyph(item.face)) return false;
   if (/FIGHT|ᜊ\( *ಠ_ಠ *\)|╯ᜊ/.test(item.face)) return false;
+  if (/ｺﾞﾛﾝ|('､3_ヽ)|\(:3｣∠\)/.test(item.face)) return false;
   return true;
 }
 
@@ -178,8 +194,65 @@ function passesTextFacesCategory(item: Kaomoji): boolean {
   if (hasAnyTag(item, ["dog", "puppy", "bunny", "rabbit", "cat", "neko", "bear"])) {
     return false;
   }
+  if (hasAnyTag(item, ["fish", "ascii art", "multi-line", "multiline"])) {
+    return false;
+  }
+  if (item.face.includes("\n") || item.face.includes("\r")) return false;
   if (faceHasJapaneseScript(item.face)) return false;
   if (/U・|∪◕|▽・|ᐡ|U｡|・ᴥ・|・ﻌ・/.test(item.face)) return false;
+  if (/^[>~∼\\.]{4,}/m.test(item.face)) return false;
+  return true;
+}
+
+function passesDogTagPage(item: Kaomoji): boolean {
+  if (primaryIs(item, "cat", "bunny", "bear", "pig", "happy")) return false;
+  if (
+    hasAnyTag(item, [
+      "cat",
+      "neko",
+      "nyanko",
+      "catmoji",
+      "bunny",
+      "rabbit",
+      "bear",
+      "pig",
+    ])
+  ) {
+    return false;
+  }
+  if (faceLooksCatShaped(item.face)) return false;
+  if (item.face.includes("(00)") || item.face.includes("´(00)")) return false;
+  const teddy =
+    /^[ʕʔ]/.test(item.face.trim()) ||
+    (/ʕ|ʔ/.test(item.face) && item.face.includes("ᴥ"));
+  if (teddy && !hasAnyTag(item, ["dog", "puppy"])) return false;
+  if (!hasAnyTag(item, ["dog", "puppy"])) return false;
+  return true;
+}
+
+function passesHeartTagPage(item: Kaomoji): boolean {
+  const blockTags = [
+    "catch",
+    "receive",
+    "throw",
+    "toss",
+    "flip",
+    "tableflip",
+    "table flip",
+    "fight",
+    "punch",
+    "hit",
+    "oraora",
+  ];
+  if (hasAnyTag(item, blockTags)) return false;
+  const face = item.face;
+  if (/ｷｬｯﾁ|キャッチ|ﾉ ｷ|ヨﾕｳ/.test(face)) return false;
+  const hasHeartGlyph = /[♡♥❤💕💗💞]/.test(face);
+  const affectionTag = hasAnyTag(item, ["heart", "love", "kiss"]);
+  if (hasAnyTag(item, ["hug"]) && !hasHeartGlyph && !affectionTag) return false;
+  if (!hasHeartGlyph && !affectionTag && !hasAnyTag(item, ["hug", "kiss"])) {
+    return false;
+  }
   return true;
 }
 
@@ -257,6 +330,16 @@ export function passesTagIntegrity(item: Kaomoji, tags: string[]): boolean {
     normalized.every((t) => t === "tableflip" || t === "table flip")
   ) {
     return passesTableFlipTagPage(item);
+  }
+  if (normalized.some((t) => t === "dog" || t === "puppy")) {
+    return passesDogTagPage(item);
+  }
+  if (
+    normalized.some(
+      (t) => t === "heart" || t === "love" || t === "kiss" || t === "hug",
+    )
+  ) {
+    return passesHeartTagPage(item);
   }
   return true;
 }

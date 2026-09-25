@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Suspense } from "react";
 import { getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
@@ -96,8 +97,14 @@ export default function HomePage() {
           Browse by intent
         </h2>
         <p className="mt-2 max-w-2xl type-meta leading-6">
-          Moods and themes first, then copy-paste utility, classic Japanese
-          emoticons, and text faces (shrug, Lenny, and more).
+          Moods and themes first, then{" "}
+          <Link
+            href="/kaomoji-copy-paste/"
+            className="text-accent underline-offset-2 hover:underline"
+          >
+            kaomoji copy and paste
+          </Link>
+          , classic Japanese emoticons, and text faces (shrug, Lenny, and more).
         </p>
         <div className="mt-4">
           <CategoryTiles />

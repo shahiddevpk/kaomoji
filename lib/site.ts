@@ -32,8 +32,6 @@ export type SitePage = {
    * A page uses either category or tags, not both.
    */
   tags?: string[];
-  /** When true, also include faces whose decoded face contains a real newline. */
-  includeNewlineFaces?: boolean;
   /** Parent browse path for nested subcategory IA (breadcrumbs + chips). */
   parentPath?: string;
   /** Optional robots override; omit for index,follow. Pagination n>=2 uses noindex in pageMetadata. */
@@ -64,11 +62,19 @@ export const pages: SitePage[] = [
     definition:
       "Kaomoji are Japanese-style text faces made from punctuation, symbols, and letters so feeling shows up in plain text. They travel as normal characters, so they work in chats and comments where picture stickers sometimes fail or look inconsistent.\n\nPaste Kaomoji groups them by mood and format so you can find a face fast, copy it in one tap, and drop it into Discord, WhatsApp, Slack, SMS, or a comment. Because they are editable text, you can type around them or tweak a character when you want a custom twist.",
     learnMore:
-      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone.\n\nCategories on this site exist so you can browse by intent instead of scrolling one giant dump. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.",
+      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone.\n\nCategories on this site exist so you can browse kaomoji faces by intent instead of scrolling one giant unsorted dump. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.",
     faqs: [
       {
         question: "What is a kaomoji?",
         answer: "A kaomoji is a text face built from keyboard characters, often read sideways or upright, that shows an emotion or reaction. Classic examples include happy (^_^), sad (T_T), and surprised (⊙_⊙).",
+      },
+      {
+        question: "Is it kaomoji or kaomojis?",
+        answer: "Both spellings are common in English. Kaomoji is the usual singular; kaomojis often means the category or a bunch of faces. They refer to the same text-face family on this site—one library, not separate pages for the plural.",
+      },
+      {
+        question: "I searched kamoji or kao moji—is that the same thing?",
+        answer: "Usually yes. Misspellings such as kamoji, koamoji, or kaomoji with a space point to the same Japanese-style text faces. Start from this hub or Kaomoji Copy and Paste instead of hunting typo-only URLs.",
       },
       {
         question: "What is the difference between kaomoji and emoji?",
@@ -124,8 +130,12 @@ export const pages: SitePage[] = [
         question: "Do cute kaomoji work in usernames or bios?",
         answer: "Often yes, if the platform allows special characters. Test paste once. Some sites strip unusual symbols from display names.",
       },
+      {
+        question: "Is this the page for cute kaomoji copy and paste?",
+        answer: "Yes. This URL owns the cute mood grid—soft kawaii faces with one-tap copy. Use Kaomoji Copy and Paste only when you want a general popular list without the cute filter.",
+      },
     ],
-    related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji"],
+    related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste"],
   },
   {
     path: "/happy-kaomoji",
@@ -180,8 +190,12 @@ export const pages: SitePage[] = [
         question: "Where should I go for non-cat cute faces?",
         answer: "Open cute kaomoji for blush and soft smiles without whiskers, or happy kaomoji for cheers and waves.",
       },
+      {
+        question: "Is this where cat kaomoji copy and paste lives?",
+        answer: "Yes. Neko and catmoji faces copy here with one tap. The general Kaomoji Copy and Paste page is for mixed popular faces when you do not need whiskers only.",
+      },
     ],
-    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji"],
+    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
   },
   {
     path: "/sad-kaomoji",
@@ -247,7 +261,7 @@ export const pages: SitePage[] = [
     description:
       "Angry kaomoji (╬ಠ益ಠ) copy and paste: scowls, growls, and mad faces. Browse angry, or open table flip, fight, and pout. Rage and glare stay as tags here.",
     intro:
-      "Scowls, growls, and mad faces when chat needs heat - tap Copy once and paste anywhere. This page owns the head term angry kaomoji: the full angry-tagged set ranked with popular faces first so the grid matches angry searches.\n\nTable flip, fight, and pout each keep their own flat pages when the face pools stay distinct. Rage and glare faces stay discoverable here via tags and search rather than thin duplicate URLs. Use the chips below for the shipped sub-moods, or stay on this hub for the broad angry shelf.",
+      "Scowls, growls, and mad faces when chat needs heat - tap Copy once and paste anywhere. Browse the full angry-tagged grid with popular faces ranked first.\n\nTable flip, fight, and pout each have a focused page when you want a narrower mood. Rage and glare faces stay easy to find here via tags and search. Use the chips below for sub-moods, or stay on this hub for the broad angry shelf.",
     group: "browse",
     inHeader: true,
     tags: ["angry"],
@@ -293,7 +307,7 @@ export const pages: SitePage[] = [
     description:
       "Table flip kaomoji (╯°□°)╯︵ ┻━┻ copy and paste: classic flip-the-table faces. Nested under angry, owned by the table-flip keyword.",
     intro:
-      "Flip-the-table faces for classic desk-flip reactions - one tap to copy. This page owns table flip kaomoji (including tableflip spelling in tags), nested in the angry mood family for discovery but indexed on its own flat URL so it does not compete with the angry parent.\n\nGrab a flip when words are not enough. For punches open fight kaomoji; for soft sulks open pout. Rage and glare faces stay on the angry hub via tags. The parent angry page keeps the broader scowls and growls.",
+      "Flip-the-table faces for classic desk-flip reactions - one tap to copy. This page is the home for table flip kaomoji (including tableflip spelling in tags), grouped under the angry mood family for easy discovery.\n\nGrab a flip when words are not enough. For punches open fight kaomoji; for soft sulks open pout. Rage and glare faces stay on the angry hub via tags. The parent angry page keeps the broader scowls and growls.",
     group: "browse",
     inHeader: false,
     tags: ["tableflip", "table flip"],
@@ -363,7 +377,7 @@ export const pages: SitePage[] = [
     description:
       "Pout kaomoji (￣ヘ￣) copy and paste: hmph, sulk, and mildly annoyed faces. Soft pushback when full rage would be too much.",
     intro:
-      "Hmph, sulk, and mildly annoyed faces for soft pushback - tap to copy. Pout kaomoji owns pout, hmph, and annoyed tags. Annoyed is a supporting synonym on this page, not its own URL, so we avoid doorway thin pages.\n\nChoose pout when attitude should stay light. Hard scowls and hotter rage or glare faces stay on the angry parent via tags. Related chips keep the shipped angry family easy to scan like a labeled mood shelf.",
+      "Hmph, sulk, and mildly annoyed faces for soft pushback - tap to copy. This page covers pout, hmph, and annoyed tags together so you do not need a separate annoyed page.\n\nChoose pout when attitude should stay light. Hard scowls and hotter rage or glare faces stay on the angry parent via tags. Related chips keep the angry family easy to scan like a labeled mood shelf.",
     group: "browse",
     inHeader: false,
     tags: ["pout", "hmph", "annoyed"],
@@ -380,7 +394,7 @@ export const pages: SitePage[] = [
       },
       {
         question: "How is pout different from rage on this site?",
-        answer: "Pout keeps its own page for sulky soft pushback. Rage and glare stay on the angry hub via tags rather than thin duplicate URLs, so hard scowls stay with the parent angry set.",
+        answer: "Pout keeps its own page for sulky soft pushback. Rage and glare stay on the angry hub via tags, so hard scowls stay with the parent angry set.",
       },
     ],
     related: [
@@ -394,11 +408,11 @@ export const pages: SitePage[] = [
     path: "/kaomoji-copy-paste",
     label: "Copy and paste",
     heading: "Kaomoji Copy and Paste",
-    titleSegment: "Kaomoji Copy and Paste — One Tap (◕‿◕)",
+    titleSegment: "Kaomoji Copy and Paste (◕‿◕)",
     description:
-      "Kaomoji copy and paste in one tap: popular faces first, instant clipboard, no account. This URL owns the copy-paste task; browse the home library when you want moods and categories.",
+      "Kaomoji copy and paste: popular faces first, one tap to your clipboard, no account. Copy and paste kaomoji on phone or desktop—browse moods on the home hub when you want categories.",
     intro:
-      "Explicit copy-and-paste utility for grabbing a face fast. Popular faces first, one tap to clipboard. For browsing the full library by mood, start on the home hub instead.",
+      "Kaomoji copy and paste when you want a face fast: popular picks first, one tap to clipboard. For mood shelves (cute, happy, cat, and more), start on the home hub instead.",
     group: "browse",
     inHeader: true,
     definition:
@@ -422,6 +436,18 @@ export const pages: SitePage[] = [
         question: "Can I copy kaomoji on both phone and desktop?",
         answer: "Yes. On desktop, tap Copy then Ctrl+V or Cmd+V. On phones, tap Copy, switch apps, then long-press and choose Paste. Keep the face in your clipboard until you paste.",
       },
+      {
+        question: "Does word order matter—kaomoji copy and paste vs copy and paste kaomoji?",
+        answer: "No. Both phrases mean the same job: get a face on your clipboard fast. This page serves that intent whether you searched either wording.",
+      },
+      {
+        question: "What about kaomojis copy and paste?",
+        answer: "Same utility. Plural searches usually mean a list to grab from, not a different product. Use this grid for a fast mix, or open a mood page when you want only cute, happy, cat, or another theme.",
+      },
+      {
+        question: "Where is cute kaomoji copy and paste?",
+        answer: "Open the Cute Kaomoji page for kawaii and blush faces with the same one-tap copy. This page stays the general grab list when you do not need a specific mood filter.",
+      },
     ],
     related: ["/cute-kaomoji", "/happy-kaomoji", "/japanese-emoticons", "/text-faces"],
   },
@@ -440,7 +466,7 @@ export const pages: SitePage[] = [
     definition:
       "Japanese emoticons (kaomoji) are usually read upright, with eyes doing most of the emotional work. This page focuses on that classic construction rather than Western sideways smiles or single emoji pictographs.",
     learnMore:
-      "Punctuation, kana, and symbols combine into faces that stay editable text. If a rare glyph shows as a box, your device font is missing that code point. Try a simpler face from the same grid, or open the multiline page when you want stacked art instead of one-line Japanese faces.",
+      "Punctuation, kana, and symbols combine into faces that stay editable text. If a rare glyph shows as a box, your device font is missing that code point. Try a simpler face from the same grid; stacked multi-line art also appears on mood pages such as cute when it fits the category.",
     faqs: [
       {
         question: "What are Japanese emoticons?",
@@ -459,7 +485,7 @@ export const pages: SitePage[] = [
         answer: "No. This page owns classic Japanese-style construction. Shrug, Lenny, and other Western-leaning ASCII catalogs live on the text faces page so the two intents stay clear.",
       },
     ],
-    related: ["/text-faces", "/cute-kaomoji", "/kaomoji-copy-paste", "/multiline-kaomoji"],
+    related: ["/text-faces", "/cute-kaomoji", "/kaomoji-copy-paste"],
   },
   {
     path: "/text-faces",
@@ -489,61 +515,15 @@ export const pages: SitePage[] = [
         answer: "Open Japanese emoticons when you want kana-and-punctuation kaomoji read upright. Stay here for shrug, Lenny, disapproval, and similar ASCII-leaning faces.",
       },
     ],
-    related: ["/japanese-emoticons", "/cute-kaomoji", "/kaomoji-copy-paste", "/multiline-kaomoji"],
+    related: ["/japanese-emoticons", "/cute-kaomoji", "/kaomoji-copy-paste"],
   },
-  {
-    path: "/multiline-kaomoji",
-    label: "Multiline",
-    heading: "Multiline Kaomoji / ASCII Art Faces",
-    titleSegment: "Multiline Kaomoji / ASCII Art",
-    description:
-      "Multiline kaomoji and ASCII art faces copy and paste: stacked multi-line faces that keep line breaks with pre-wrap. Discover them in one place.",
-    intro:
-      "Stacked multi-line kaomoji and ASCII art faces that keep every line break when you copy. Cards use whitespace pre-wrap so the preview matches what lands on your clipboard - made for bios, notes, and chats that allow wraps.\n\nThis browse page gathers multi-line and newline faces in one place, apart from one-line cute or Japanese sets. If you only need a single-line emoticon, use those mood pages or the generator to build a custom face.",
-    group: "browse",
-    inHeader: false,
-    tags: ["multi-line"],
-    includeNewlineFaces: true,
-    howTo: [
-      "Multiline faces stack across lines - the card keeps breaks with pre-wrap.",
-      "Copy once to keep every line, then paste into a bio, note, or chat that allows wraps.",
-      "If you only need a single-line cute or Japanese face, use those mood pages instead.",
-    ],
-    definition:
-      "Tall layouts are the point here: stacked lines that form a tiny scene. Confirm line breaks survived paste before you hit send in a picky app.",
-    faqs: [
-      {
-        question: "What is a multiline kaomoji?",
-        answer: "A face or mini scene that uses more than one line of text stacked vertically. It pastes as a small block of art, not a single-row emoticon.",
-      },
-      {
-        question: "Will multiline faces break in my chat app?",
-        answer: "Some apps wrap or indent oddly. Paste into a note first if you need to check spacing, then send. One-line chats may squash the layout.",
-      },
-      {
-        question: "Why is multiline its own page instead of a mood?",
-        answer: "Multiline is a format. You can find stacked art here without filtering by angry, cute, or love first.",
-      },
-      {
-        question: "Any tip for copying tall faces?",
-        answer: "Select or tap Copy so every line is included. If only the top line pastes, copy again from a desktop browser or a notes app that keeps line breaks.",
-      },
-    ],
-    related: [
-      "/japanese-emoticons",
-      "/text-faces",
-      "/cute-kaomoji",
-      "/kaomoji-generator",
-    ],
-  },
-  
   {
     path: "/kaomoji-generator",
     label: "Generator",
     heading: "Kaomoji Generator",
     titleSegment: "Kaomoji Generator — Make a Face (´∀｀)",
     description:
-      "Free kaomoji generator: pick eyes, mouth, and arms, preview live, then copy. Owns make/build intent—browse category lists when you want ready-made grids.",
+      "Free kaomoji generator to make and type custom faces: pick eyes, mouth, and arms, preview live, then copy. Browse mood categories when you want ready-made lists instead.",
     intro:
       "Make or remix a custom kaomoji in your browser: pick arms, eyes, mouth, and optional extras, preview live, then copy. This page is for building and remixing faces, not browsing a ready-made grid. When you want curated lists instead of a builder, use the category links in the header.",
     group: "browse",
@@ -572,22 +552,25 @@ export const pages: SitePage[] = [
         question: "Will every generated combination look good?",
         answer: "Not always. Odd eye and mouth pairs can look broken. Tweak one part at a time, then copy when the face reads clearly at a glance.",
       },
+      {
+        question: "How do I make a kaomoji?",
+        answer: "Pick eyes and a mouth that read clearly together, then add arms, blush, or sweat if you want motion. Use the builder above to preview live and copy, or browse mood categories when a ready-made face is enough.",
+      },
+      {
+        question: "How do I type a kaomoji on my keyboard?",
+        answer: "Type punctuation and symbols in order—parentheses, carets, and unicode marks are common. Copying from a grid is faster when a face uses rare characters your layout hides. On mobile, copy here then paste into chat.",
+      },
     ],
-    related: [
-      "/angry-kaomoji",
-      "/cute-kaomoji",
-      "/text-faces",
-      "/multiline-kaomoji",
-    ],
+    related: ["/angry-kaomoji", "/cute-kaomoji", "/text-faces"],
   },
 
   {
     path: "/heart-kaomoji",
     label: "Heart",
     heading: "Heart Kaomoji",
-    titleSegment: "Heart Kaomoji (♡‿♡)",
+    titleSegment: "Heart & Love Kaomoji (♡‿♡)",
     description:
-      "Heart kaomoji to copy for affection, crush energy, and warm thanks. Browse love-ready text faces, tap once, and paste into any chat.",
+      "Heart and love kaomoji to copy for affection, crush energy, and warm thanks. Browse love-ready text faces, tap once, and paste into any chat.",
     intro:
       "This hub is for affection, not only soft-cute smiles. Grab heart-woven faces when you mean love, crush, or warm thanks, and use the love chip when you want that angle inside the same grid. Cute pages stay for gentle adorable vibes without a romantic read; shy pages cover bashful blush instead of full heart energy.",
     group: "browse",
@@ -605,6 +588,11 @@ export const pages: SitePage[] = [
         question: "What are heart kaomoji for?",
         answer:
           "They add affection, crush energy, or warm thanks without sending a sticker pack. Use them for love notes, friend appreciation, or soft reactions.",
+      },
+      {
+        question: "What are love kaomoji?",
+        answer:
+          "Love kaomoji are affection-first text faces—often with hearts in the eyes, cheeks, or pose. This page groups them with heart kaomoji so you can copy romantic or warm faces without mixing them into a general happy grid.",
       },
       {
         question: "Heart kaomoji vs the ❤️ emoji?",
@@ -705,7 +693,7 @@ export const pages: SitePage[] = [
       {
         question: "Is rabbit different from bunny on this site?",
         answer:
-          "No separate rabbit page. Rabbit is a chip on this bunny hub so one grid covers both wordings without thin duplicate URLs.",
+          "No separate rabbit page. Rabbit is a chip on this bunny hub so one grid covers both wordings.",
       },
       {
         question: "How is bunny different from cute kaomoji?",
@@ -1064,7 +1052,7 @@ export const pages: SitePage[] = [
     description:
       "Privacy notes for Paste Kaomoji. This release sets no accounts, ads, or analytics cookies.",
     intro:
-      "This page explains what pastekaomoji.com handles today. It is a starter policy written in plain language.",
+      "Privacy policy for pastekaomoji.com, effective September 25, 2026. Plain-language summary of what the site stores and how copy works.",
     group: "trust",
     inHeader: false,
     related: ["/terms", "/contact"],
@@ -1077,7 +1065,7 @@ export const pages: SitePage[] = [
     description:
       "Terms of use for Paste Kaomoji. Faces are unicode text; the site is a free copy-paste library.",
     intro:
-      "Short terms for using pastekaomoji.com. This is starter text, not a substitute for advice from a lawyer.",
+      "Terms of use for pastekaomoji.com, effective September 25, 2026. How you may use the library and what we provide.",
     group: "trust",
     inHeader: false,
     related: ["/privacy", "/about"],
@@ -1157,7 +1145,6 @@ export function resolveSearchScope(pathname: string): SearchScope {
     return {
       path: page.path,
       tags: page.tags,
-      includeNewlines: page.includeNewlineFaces,
     };
   }
 

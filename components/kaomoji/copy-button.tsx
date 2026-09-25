@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useCopy } from "@/components/kaomoji/copy-provider";
+import { copyAriaLabel } from "@/lib/utils";
 
 export function CopyButton({
   id,
@@ -25,7 +26,7 @@ export function CopyButton({
           ? flashing.state === "copied"
             ? "Copied"
             : "Copy failed"
-          : `Copy ${name}`
+          : copyAriaLabel(face, name)
       }
       aria-live={flashing ? "polite" : undefined}
       className={className}

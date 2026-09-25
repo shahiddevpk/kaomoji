@@ -34,8 +34,15 @@ function normalizeFace(face: string): string {
     .replaceAll("&amp;", "&");
 }
 
+/** Drop faces damaged at import (Unicode replacement character U+FFFD). */
+export function faceHasReplacementChar(face: string): boolean {
+  return face.includes("\uFFFD");
+}
+
 /** Catalog with multiline faces decoded for render + copy. */
-export const kaomoji = (raw as Kaomoji[]).map((item) => ({
-  ...item,
-  face: normalizeFace(item.face),
-}));
+export const kaomoji = (raw as Kaomoji[])
+  .map((item) => ({
+    ...item,
+    face: normalizeFace(item.face),
+  }))
+  .filter((item) => !faceHasReplacementChar(item.face));

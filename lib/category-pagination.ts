@@ -43,11 +43,6 @@ export const PAGINATED_SLUGS: Record<string, PaginatedPageMeta> = {
     path: "/pout-kaomoji",
     tags: ["pout", "hmph", "annoyed"],
   },
-  "multiline-kaomoji": {
-    path: "/multiline-kaomoji",
-    tags: ["multi-line"],
-    includeNewlines: true,
-  },
   "heart-kaomoji": {
     path: "/heart-kaomoji",
     tags: ["heart", "love", "kiss", "hug"],
@@ -96,6 +91,19 @@ export function crawlablePageCountForMeta(meta: PaginatedPageMeta): number {
   }
   if (meta.categoryId) {
     return crawlablePageCountForCategory(meta.categoryId);
+  }
+  return 1;
+}
+
+/** Full browse depth (uncapped); SEO crawl cap stays on crawlablePageCountForMeta. */
+export function browsePageCountForMeta(meta: PaginatedPageMeta): number {
+  if (meta.tags && meta.tags.length > 0) {
+    return pageCountForTags(meta.tags, {
+      includeNewlines: meta.includeNewlines,
+    });
+  }
+  if (meta.categoryId) {
+    return pageCountForCategory(meta.categoryId);
   }
   return 1;
 }

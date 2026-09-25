@@ -9,6 +9,7 @@ export const metadata = pageMetadata(page);
 export default function TermsPage() {
   return (
     <TrustView page={page}>
+      <p className="type-meta text-muted">Effective September 25, 2026.</p>
       <h2 className="text-base font-semibold">Using the site</h2>
       <p>
         Paste Kaomoji is a free library for copying kaomoji and text faces into your own
@@ -28,8 +29,8 @@ export default function TermsPage() {
       </p>
       <h2 className="text-base font-semibold">No warranty</h2>
       <p>
-        The site is provided as is. Faces may render differently from one font or app to
-        another. Availability can change while the library is still being built.
+        The site is provided as is, without warranties. Faces may render differently from one
+        font or app to another. We may update or remove faces and pages as the library evolves.
       </p>
       <p>Questions about these terms: hello@pastekaomoji.com.</p>
     </TrustView>

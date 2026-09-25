@@ -29,3 +29,10 @@ export function faceLangAttr(face: string): string | undefined {
   if (/[\u3040-\u30ff\u4e00-\u9fff\u3400-\u4dbf]/.test(face)) return "ja";
   return undefined;
 }
+
+/** Accessible copy control label: name plus a short face preview. */
+export function copyAriaLabel(face: string, name: string): string {
+  const preview = face.replace(/\s+/g, " ").trim().slice(0, 48);
+  if (!preview) return `Copy ${name}`;
+  return `Copy ${name}: ${preview}`;
+}

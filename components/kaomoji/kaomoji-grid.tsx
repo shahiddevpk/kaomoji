@@ -2,7 +2,7 @@
 
 import type { Kaomoji } from "@/data/types";
 import { useCopy } from "@/components/kaomoji/copy-provider";
-import { faceLangAttr } from "@/lib/utils";
+import { copyAriaLabel, faceLangAttr } from "@/lib/utils";
 
 type GridItem = Pick<Kaomoji, "id" | "face" | "name"> &
   Partial<Kaomoji> & { multiline?: boolean };
@@ -57,7 +57,7 @@ export function KaomojiGrid({
                     ? flashing.state === "copied"
                       ? "Copied"
                       : "Copy failed"
-                    : `Copy ${item.name}`
+                    : copyAriaLabel(item.face, item.name)
                 }
                 aria-live={flashing ? "polite" : undefined}
                 data-copy-id={item.id}

@@ -16,6 +16,7 @@ export default function AboutPage() {
       </p>
       <p>
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.
+        Mood shelves beat one endless combo dump when you already know the vibe you need.
         You can also build a custom face with the{" "}
         <a href="/kaomoji-generator/" className="text-accent underline-offset-2 hover:underline">
           Kaomoji Generator

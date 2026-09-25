@@ -279,6 +279,43 @@ export function countPopular(): number {
  * but leading order differs via a stable rotate so the two URLs are not identical grids.
  * Same pool, same count, no cloaking — ItemList/HTML order match getForPage.
  */
+function popularFingerprint(face: string): string {
+  return face
+    .replace(/ｱﾊﾊ+|アハハ+|ﾊﾊ+/gi, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 28);
+}
+
+/** Cap near-duplicate laughter variants on the hub popular shelf. */
+function diversifyPopularGrid(items: Kaomoji[], limit: number): Kaomoji[] {
+  const out: Kaomoji[] = [];
+  const groupCounts = new Map<string, number>();
+  const maxPerGroup = 2;
+  let laughterSuffixCount = 0;
+  const maxLaughterSuffix = 10;
+  for (const item of items) {
+    if (/ｱﾊﾊ|アハハ|ﾊﾊ/i.test(item.face)) {
+      if (laughterSuffixCount >= maxLaughterSuffix) continue;
+      laughterSuffixCount += 1;
+    }
+    const key = popularFingerprint(item.face) || item.id;
+    const used = groupCounts.get(key) ?? 0;
+    if (used >= maxPerGroup) continue;
+    groupCounts.set(key, used + 1);
+    out.push(item);
+    if (out.length >= limit) return out;
+  }
+  if (out.length >= limit) return out;
+  const picked = new Set(out.map((item) => item.id));
+  for (const item of items) {
+    if (picked.has(item.id)) continue;
+    out.push(item);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
 function popularGridForPath(path: string): Kaomoji[] {
   const popular = getPopular();
   // Hub, utility, and happy must not share an identical first-screen stack.
@@ -288,7 +325,7 @@ function popularGridForPath(path: string): Kaomoji[] {
       offset === 0
         ? popular
         : [...popular.slice(offset), ...popular.slice(0, offset)];
-    return rotated.slice(0, PAGE_GRID_LIMIT);
+    return diversifyPopularGrid(rotated, PAGE_GRID_LIMIT);
   }
   if (path === "/happy-kaomoji") {
     const offset = Math.min(20, Math.max(0, popular.length - 1));
@@ -296,9 +333,9 @@ function popularGridForPath(path: string): Kaomoji[] {
       offset === 0
         ? popular
         : [...popular.slice(offset), ...popular.slice(0, offset)];
-    return rotated.slice(0, PAGE_GRID_LIMIT);
+    return diversifyPopularGrid(rotated, PAGE_GRID_LIMIT);
   }
-  return popular.slice(0, PAGE_GRID_LIMIT);
+  return diversifyPopularGrid(popular, PAGE_GRID_LIMIT);
 }
 
 export function getRelatedKaomoji(
@@ -317,6 +354,38 @@ export function getRelatedKaomoji(
     (item) => !exclude.has(item.id) && wanted.has(item.categories[0]),
   );
   return rankForGrid(pool).slice(0, limit);
+}
+
+export type RelatedScope = {
+  category?: string;
+  tags?: string[];
+};
+
+/** Sample on-intent faces from related browse scopes (not generic happy laughter dumps). */
+export function getRelatedKaomojiFromScopes(
+  scopes: RelatedScope[],
+  limit = 8,
+): Kaomoji[] {
+  const picks: Kaomoji[] = [];
+  const seen = new Set<string>();
+  for (const scope of scopes) {
+    const pool =
+      scope.tags && scope.tags.length > 0
+        ? rankForGrid(getByTags(scope.tags), rankOptionsForTags(scope.tags))
+        : scope.category
+          ? rankForGrid(
+              getByCategory(scope.category, { primaryOnly: true }),
+              rankOptionsForCategory(scope.category),
+            )
+          : [];
+    for (const item of pool) {
+      if (seen.has(item.id)) continue;
+      seen.add(item.id);
+      picks.push(item);
+      if (picks.length >= limit) return picks;
+    }
+  }
+  return picks;
 }
 
 /** Faces shown in the page grid (capped). Optional 1-indexed page. */

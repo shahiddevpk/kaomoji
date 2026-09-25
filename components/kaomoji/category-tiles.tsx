@@ -20,7 +20,6 @@ const BROWSE_ORDER = [
   "/kaomoji-copy-paste",
   "/japanese-emoticons",
   "/text-faces",
-  "/multiline-kaomoji",
   "/kaomoji-generator",
 ] as const;
 

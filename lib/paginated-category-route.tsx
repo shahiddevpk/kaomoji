@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CategoryView } from "@/components/kaomoji/category-view";
 import {
   buildPageStaticParamsFromMeta,
-  crawlablePageCountForMeta,
+  browsePageCountForMeta,
   parsePageParam,
   type PaginatedSlug,
   PAGINATED_SLUGS,
@@ -40,7 +40,7 @@ export function createPaginatedCategoryRoute(slug: PaginatedSlug) {
     const num = parsePageParam(n);
     if (num == null) notFound();
     if (num === 1) redirect(`${meta.path}/`);
-    const totalPages = crawlablePageCountForMeta(meta);
+    const totalPages = browsePageCountForMeta(meta);
     if (num > totalPages) notFound();
     return <CategoryView page={page} pageNumber={num} />;
   }
