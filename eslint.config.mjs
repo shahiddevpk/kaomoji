@@ -14,6 +14,15 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Local audit / QA scratch (not app source):
     "_audit_export/**",
+    "_audit_*.js",
+    "_audit_*.mjs",
+    "_audit_*.cjs",
+    "_audit_*.ts",
+    "_seo-*/**",
+    "_seo-*.js",
+    "_seo-*.mjs",
+    "_seo-*.cjs",
+    "_seo-*.ts",
     ".qa-*.cjs",
     ".qa-*.js",
     // One-shot Node stubs (CommonJS require; not app source):

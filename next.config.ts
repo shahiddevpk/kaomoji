@@ -34,6 +34,22 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
+          },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -295,6 +311,8 @@ const nextConfig: NextConfig = {
       { source: "/copy-paste-kaomoji/", destination: "/kaomoji-copy-paste/", permanent: true },
       { source: "/lenny-face", destination: "/text-faces/", permanent: true },
       { source: "/lenny-face/", destination: "/text-faces/", permanent: true },
+      { source: "/lenny", destination: "/text-faces/", permanent: true },
+      { source: "/lenny/", destination: "/text-faces/", permanent: true },
       { source: "/shrug", destination: "/text-faces/", permanent: true },
       { source: "/shrug/", destination: "/text-faces/", permanent: true },
       { source: "/ascii-art", destination: "/multiline-kaomoji/", permanent: true },

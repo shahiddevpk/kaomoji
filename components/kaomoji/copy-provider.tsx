@@ -8,8 +8,15 @@ export type CopiedFace = {
   name: string;
 };
 
+export type CopyFlash = {
+  id: string;
+  state: "copied" | "error";
+  label: string;
+};
+
 type CopyState = {
   recent: CopiedFace[];
+  flash: CopyFlash | null;
   copy: (item: CopiedFace) => void;
 };
 
@@ -19,9 +26,11 @@ const EMPTY: CopiedFace[] = [];
 const FLASH_MS = 2000;
 
 let recentCache: CopiedFace[] = EMPTY;
+let flashCache: CopyFlash | null = null;
 let loaded = false;
+let flashTimer: number | null = null;
+let clickBound = false;
 const listeners = new Set<() => void>();
-const flashTimers = new WeakMap<Element, number>();
 
 function emit() {
   for (const listener of listeners) listener();
@@ -65,60 +74,64 @@ function getRecent() {
   return recentCache;
 }
 
-/**
- * Brief per-control Copied / error feedback (replaces green toast).
- * Plain-text Copy buttons swap label; rich children (e.g. recent chips) keep DOM and use data-copied style only.
- */
-function flashControl(
-  control: Element,
-  label: string,
-  state: "copied" | "error",
-) {
-  if (!(control instanceof HTMLElement)) return;
+function getFlash() {
+  return flashCache;
+}
 
-  const prior = flashTimers.get(control);
-  if (prior) window.clearTimeout(prior);
-
-  const rich = control.children.length > 0;
-
-  if (!rich && !control.hasAttribute("data-copy-label-original")) {
-    control.setAttribute(
-      "data-copy-label-original",
-      (control.textContent ?? "Copy").trim() || "Copy",
-    );
-  }
-  if (!control.hasAttribute("data-copy-aria-original")) {
-    const aria = control.getAttribute("aria-label");
-    if (aria) control.setAttribute("data-copy-aria-original", aria);
-  }
-
-  if (!rich) {
-    control.textContent = label;
-  }
-  control.setAttribute("data-copied", state);
-  control.setAttribute("aria-live", "polite");
-  if (state === "copied") {
-    control.setAttribute("aria-label", "Copied");
-  } else {
-    control.setAttribute("aria-label", "Copy failed");
-  }
-
-  const timer = window.setTimeout(() => {
-    flashTimers.delete(control);
-    if (!rich) {
-      const original =
-        control.getAttribute("data-copy-label-original") ?? "Copy";
-      control.textContent = original;
-    }
-    control.removeAttribute("data-copied");
-    const ariaOriginal = control.getAttribute("data-copy-aria-original");
-    if (ariaOriginal) {
-      control.setAttribute("aria-label", ariaOriginal);
-    } else {
-      control.removeAttribute("aria-label");
-    }
+function startFlash(id: string, state: "copied" | "error", label: string) {
+  flashCache = { id, state, label };
+  if (flashTimer) window.clearTimeout(flashTimer);
+  flashTimer = window.setTimeout(() => {
+    flashCache = null;
+    flashTimer = null;
+    emit();
   }, FLASH_MS);
-  flashTimers.set(control, timer);
+}
+
+function mirrorFlashToDom(flash: CopyFlash | null) {
+  if (typeof document === "undefined") return;
+
+  document.querySelectorAll("[data-copy-id][data-copied]").forEach((node) => {
+    if (!(node instanceof HTMLElement)) return;
+    const id = node.getAttribute("data-copy-id");
+    if (flash && id === flash.id) return;
+    if (node.children.length === 0) {
+      const original =
+        node.getAttribute("data-copy-label-original") ?? "Copy";
+      node.textContent = original;
+    }
+    node.removeAttribute("data-copied");
+    const aria = node.getAttribute("data-copy-aria-original");
+    if (aria) node.setAttribute("aria-label", aria);
+  });
+
+  if (!flash) return;
+
+  document
+    .querySelectorAll(`[data-copy-id="${CSS.escape(flash.id)}"]`)
+    .forEach((node) => {
+      if (!(node instanceof HTMLElement)) return;
+      if (!node.hasAttribute("data-copy-label-original")) {
+        node.setAttribute(
+          "data-copy-label-original",
+          (node.textContent ?? "Copy").trim() || "Copy",
+        );
+      }
+      if (!node.hasAttribute("data-copy-aria-original")) {
+        const aria = node.getAttribute("aria-label");
+        if (aria) node.setAttribute("data-copy-aria-original", aria);
+      }
+      // Plain Copy / generator buttons: swap label. Rich chips keep children.
+      if (node.children.length === 0) {
+        node.textContent = flash.label;
+      }
+      node.setAttribute("data-copied", flash.state);
+      node.setAttribute("aria-live", "polite");
+      node.setAttribute(
+        "aria-label",
+        flash.state === "copied" ? "Copied" : "Copy failed",
+      );
+    });
 }
 
 async function writeClipboard(text: string): Promise<void> {
@@ -138,7 +151,7 @@ async function writeClipboard(text: string): Promise<void> {
   if (!ok) throw new Error("copy failed");
 }
 
-function copyFace(item: CopiedFace, control?: Element | null) {
+function copyFace(item: CopiedFace, _control?: Element | null) {
   void writeClipboard(item.face).then(
     () => {
       ensureLoaded();
@@ -146,19 +159,31 @@ function copyFace(item: CopiedFace, control?: Element | null) {
         item,
         ...recentCache.filter((entry) => entry.id !== item.id),
       ].slice(0, MAX_RECENT);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(recentCache));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(recentCache));
+      } catch {
+        /* ignore */
+      }
+      // Store flash first so React grids paint Copied; then notify + DOM mirror.
+      startFlash(item.id, "copied", "Copied");
       emit();
-      if (control) flashControl(control, "Copied", "copied");
+      mirrorFlashToDom(flashCache);
+      // Re-apply after React commit (survives RecentlyCopied remount/reconcile).
+      queueMicrotask(() => mirrorFlashToDom(flashCache));
+      requestAnimationFrame(() => mirrorFlashToDom(flashCache));
+      window.setTimeout(() => mirrorFlashToDom(flashCache), 0);
     },
     () => {
-      if (control) {
-        flashControl(control, "Failed", "error");
-      }
+      startFlash(item.id, "error", "Failed");
+      emit();
+      mirrorFlashToDom(flashCache);
+      queueMicrotask(() => mirrorFlashToDom(flashCache));
+      requestAnimationFrame(() => mirrorFlashToDom(flashCache));
+      window.setTimeout(() => mirrorFlashToDom(flashCache), 0);
     },
   );
 }
 
-/** Resolve face payload: prefer data-copy-face, else card .kaomoji-face text. */
 function faceFromElement(el: Element): CopiedFace | null {
   const id = el.getAttribute("data-copy-id");
   const name = el.getAttribute("data-copy-name");
@@ -175,32 +200,46 @@ function faceFromElement(el: Element): CopiedFace | null {
   return { id, face, name };
 }
 
-/**
- * Thin client root: one document-level click listener copies any
- * [data-copy-id] control. Face grids stay server HTML (no per-button islands).
- * Feedback is per clicked button (label + data-copied), not a page toast.
- */
-export function CopyProvider({ children }: { children: ReactNode }) {
-  useEffect(() => {
-    function onClick(event: MouseEvent) {
-      const target = event.target;
-      if (!(target instanceof Element)) return;
-      const control = target.closest("[data-copy-id]");
-      if (!control) return;
-      const item = faceFromElement(control);
-      if (!item) return;
-      event.preventDefault();
-      copyFace(item, control);
-    }
+function onDocumentClick(event: MouseEvent) {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const control = target.closest("[data-copy-id]");
+  if (!control) return;
+  const item = faceFromElement(control);
+  if (!item) return;
+  event.preventDefault();
+  copyFace(item, control);
+}
 
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+/** Bind once on the client even if a useEffect is delayed/missed. */
+function bindCopyListener() {
+  if (typeof document === "undefined" || clickBound) return;
+  clickBound = true;
+  document.addEventListener("click", onDocumentClick);
+}
+
+// Bind when this client chunk evaluates (before/without waiting on hydration).
+bindCopyListener();
+
+export function CopyProvider({ children }: { children: ReactNode }) {
+  const flash = useSyncExternalStore(subscribe, getFlash, () => null);
+
+  // Bind as early as possible on the client.
+  bindCopyListener();
+
+  useEffect(() => {
+    bindCopyListener();
   }, []);
+
+  useEffect(() => {
+    mirrorFlashToDom(flash);
+  }, [flash]);
 
   return children;
 }
 
 export function useCopy(): CopyState {
   const recent = useSyncExternalStore(subscribe, getRecent, () => EMPTY);
-  return { recent, copy: copyFace };
+  const flash = useSyncExternalStore(subscribe, getFlash, () => null);
+  return { recent, flash, copy: copyFace };
 }

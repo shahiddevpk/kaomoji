@@ -107,3 +107,20 @@ _tmp_*.cjs
 _tmp_*.ts
 patch-*.js
 verify-*.js
+
+# root audit / SEO throwaways (local only)
+_audit_*.js
+_audit_*.mjs
+_audit_*.cjs
+_audit_*.ts
+_seo-*.js
+_seo-*.mjs
+_seo-*.cjs
+_seo-*.ts
+_seo-*.html
+_seo-*.json
+agent-tools/
+
+# QA flash/debug scratch
+_qa_*
+_qa_*/

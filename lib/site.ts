@@ -465,7 +465,7 @@ export const pages: SitePage[] = [
     path: "/text-faces",
     label: "Text faces",
     heading: "Text Faces",
-    titleSegment: "Text Faces ¯\_(ツ)_/¯",
+    titleSegment: "Text Faces ¯\\_(ツ)_/¯",
     description:
       "Text faces ¯\\_(ツ)_/¯ copy and paste: shrug, Lenny, disapproval, and more. ASCII and unicode catalog, not Japanese kana construction.",
     intro:

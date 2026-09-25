@@ -1,7 +1,6 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useState, type ReactNode } from "react";
-import Link from "next/link";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 
 export type FaceLineMode = "all" | "multiline" | "single";
@@ -10,7 +9,7 @@ export type ToolbarFace = {
   id: string;
   face: string;
   name: string;
-  /** Server-computed: real newline and/or multi-line tag. */
+  /** Server-computed: real newline in the face string. */
   multiline: boolean;
 };
 
@@ -19,14 +18,9 @@ const chipBase =
 const chipActive = `${chipBase} border border-primary bg-primary font-semibold text-accent-foreground`;
 const chipIdle = `${chipBase} border border-border bg-card text-foreground hover:border-primary hover:bg-hover`;
 
-function filterFaces(items: ToolbarFace[], mode: FaceLineMode): ToolbarFace[] {
-  if (mode === "all") return items;
-  if (mode === "multiline") return items.filter((item) => item.multiline);
-  return items.filter((item) => !item.multiline);
-}
-
 export function CategoryFacesToolbar({
   items,
+  multilineItems,
   multilineTotal,
   total,
   safePage,
@@ -34,10 +28,15 @@ export function CategoryFacesToolbar({
   rangeEnd,
   hideFilter = false,
   defaultMode = "all",
-  paginationTop = null,
-  paginationBottom = null,
+  pagination = null,
 }: {
+  /** Current SSR page slice (used for All / Single line). */
   items: ToolbarFace[];
+  /**
+   * Full multiline pool for this category/tag set (not just this page).
+   * Multiline filter always renders from this list so page 2+ never goes empty.
+   */
+  multilineItems: ToolbarFace[];
   /** Multiline count across the full category/tag pool (not just this page). */
   multilineTotal: number;
   total: number;
@@ -47,19 +46,25 @@ export function CategoryFacesToolbar({
   /** Hide chips (e.g. on /multiline-kaomoji hub). */
   hideFilter?: boolean;
   defaultMode?: FaceLineMode;
-  /** Separate nodes for top + bottom (same element cannot mount twice). */
-  paginationTop?: ReactNode;
-  paginationBottom?: ReactNode;
+  /** Shown once, below the face grid — only while mode is All. */
+  pagination?: ReactNode;
 }) {
   const [mode, setMode] = useState<FaceLineMode>(defaultMode);
-  const showFilter = !hideFilter && multilineTotal > 0;
+  const singleTotal = Math.max(0, total - multilineTotal);
+  /** Only when the set has both multiline and single-line faces. */
+  const showFilter =
+    !hideFilter && multilineTotal > 0 && singleTotal > 0;
 
-  const filtered = useMemo(() => filterFaces(items, mode), [items, mode]);
-
-  const pageMultiline = useMemo(
-    () => items.filter((item) => item.multiline).length,
-    [items],
-  );
+  const filtered = useMemo(() => {
+    if (mode === "all") return items;
+    if (mode === "multiline") {
+      // Multiline hub already SSR-paginates the multiline pool — keep the page slice.
+      if (hideFilter) return items;
+      return multilineItems;
+    }
+    // Single line: filter the current page slice (almost all faces are single).
+    return items.filter((item) => !item.multiline);
+  }, [items, multilineItems, mode, hideFilter]);
 
   const showingLabel = useMemo(() => {
     if (mode === "all") {
@@ -69,9 +74,8 @@ export function CategoryFacesToolbar({
       return `Showing ${items.length}${total > items.length ? ` of ${total}` : ""} faces`;
     }
     if (mode === "multiline") {
-      return `Showing ${filtered.length} multiline on this page (${multilineTotal} in this set)`;
+      return `Showing ${filtered.length} multiline face${filtered.length === 1 ? "" : "s"}`;
     }
-    const singleTotal = Math.max(0, total - multilineTotal);
     return `Showing ${filtered.length} single-line on this page (${singleTotal} in this set)`;
   }, [
     mode,
@@ -81,7 +85,7 @@ export function CategoryFacesToolbar({
     rangeEnd,
     total,
     filtered.length,
-    multilineTotal,
+    singleTotal,
   ]);
 
   const hint =
@@ -89,10 +93,9 @@ export function CategoryFacesToolbar({
       ? " - use search in the header for the full set"
       : mode === "all"
         ? " in this set"
-        : "";
-
-  const emptyMultilinePage =
-    mode === "multiline" && filtered.length === 0 && multilineTotal > 0;
+        : mode === "single"
+          ? " - switch pages for more single-line faces"
+          : "";
 
   return (
     <>
@@ -132,41 +135,21 @@ export function CategoryFacesToolbar({
           </div>
         ) : null}
       </div>
-
-      {paginationTop}
-
       <div className="mt-4">
-        {emptyMultilinePage ? (
-          <div className="rounded-2xl border border-dashed border-border bg-secondary/60 px-4 py-8 text-center">
-            <p className="type-meta m-0 text-foreground">
-              No multiline faces on this page ({pageMultiline} of {items.length}{" "}
-              here), but {multilineTotal} multiline{" "}
-              {multilineTotal === 1 ? "face" : "faces"} exist in this set.
-            </p>
-            <p className="mt-2 type-meta m-0">
-              More multiline faces on other pages, or see the{" "}
-              <Link
-                href="/multiline-kaomoji"
-                className="font-medium text-link underline-offset-2 hover:text-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-              >
-                multiline hub
-              </Link>
-              .
-            </p>
-          </div>
-        ) : (
-          <KaomojiGrid
-            items={filtered}
-            empty={
-              mode === "single"
+        <KaomojiGrid
+          items={filtered}
+          empty={
+            mode === "multiline"
+              ? "No multiline faces in this set."
+              : mode === "single"
                 ? "No single-line faces on this page."
                 : "No faces for this page yet."
-            }
-          />
-        )}
+          }
+        />
       </div>
 
-      {paginationBottom}
+      {/* Server pagination only applies to the unfiltered All grid. */}
+      {mode === "all" || hideFilter ? pagination : null}
     </>
   );
 }

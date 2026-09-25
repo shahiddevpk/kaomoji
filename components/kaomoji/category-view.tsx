@@ -4,6 +4,7 @@ import {
   countByCategory,
   countByTags,
   countMultilineForPage,
+  getSearchPoolForPage,
   crawlablePageCountForCategory,
   crawlablePageCountForTags,
   getForPage,
@@ -197,12 +198,13 @@ export function CategoryView({
       ? categoryPageHref(page.path, safePage + 1)
       : null;
 
-  const multilineTotal = countMultilineForPage({
+  const poolScope = {
     path: page.path,
     category: page.category,
     tags: page.tags,
     includeNewlineFaces: page.includeNewlineFaces,
-  });
+  };
+  const multilineTotal = countMultilineForPage(poolScope);
   const isMultilineHub = page.path === "/multiline-kaomoji";
   const toolbarItems = faces.map((item) => ({
     id: item.id,
@@ -210,6 +212,15 @@ export function CategoryView({
     name: item.name,
     multiline: isMultilineFace(item),
   }));
+  /** Full multiline set for this page scope — filter must not depend on SSR page slice. */
+  const multilineItems = getSearchPoolForPage(poolScope)
+    .filter((item) => isMultilineFace(item))
+    .map((item) => ({
+      id: item.id,
+      face: item.face,
+      name: item.name,
+      multiline: true as const,
+    }));
 
   const showEducation = safePage === 1;
   const faqSchema =
@@ -276,6 +287,7 @@ export function CategoryView({
         </h2>
         <CategoryFacesToolbar
           items={toolbarItems}
+          multilineItems={multilineItems}
           multilineTotal={multilineTotal}
           total={total}
           safePage={safePage}
@@ -283,10 +295,7 @@ export function CategoryView({
           rangeEnd={rangeEnd}
           hideFilter={isMultilineHub}
           defaultMode={isMultilineHub ? "multiline" : "all"}
-          paginationTop={
-            paginationProps ? <PaginationNav {...paginationProps} /> : null
-          }
-          paginationBottom={
+          pagination={
             paginationProps ? <PaginationNav {...paginationProps} /> : null
           }
         />
@@ -312,7 +321,7 @@ export function CategoryView({
         </h2>
         <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
           <li>Tap Copy on a face. It goes to your clipboard.</li>
-          <li>A Copied! note confirms it, and the face joins Recently copied.</li>
+          <li>The chip flashes Copied, and the face joins Recently copied so you can tap it again.</li>
           <li>Paste it into chat, a caption, or a bio.</li>
         </ol>
       </section>

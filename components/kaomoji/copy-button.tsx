@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
+"use client";
 
-/**
- * Server-friendly copy control. CopyProvider reads the face from the card DOM
- * (avoids duplicating face strings in data attributes + one island per card).
- */
+import { Button } from "@/components/ui/button";
+import { useCopy } from "@/components/kaomoji/copy-provider";
+
 export function CopyButton({
   id,
   face,
@@ -15,16 +14,32 @@ export function CopyButton({
   name: string;
   className?: string;
 }) {
+  const { flash, copy } = useCopy();
+  const flashing = flash?.id === id ? flash : null;
+
   return (
     <Button
       type="button"
-      aria-label={`Copy ${name}`}
+      aria-label={
+        flashing
+          ? flashing.state === "copied"
+            ? "Copied"
+            : "Copy failed"
+          : `Copy ${name}`
+      }
+      aria-live={flashing ? "polite" : undefined}
       className={className}
       data-copy-id={id}
       data-copy-name={name}
       data-copy-face={face}
+      data-copied={flashing ? flashing.state : undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        copy({ id, face, name });
+      }}
     >
-      Copy
+      {flashing ? flashing.label : "Copy"}
     </Button>
   );
 }

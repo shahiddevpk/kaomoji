@@ -160,14 +160,16 @@ function rotatePopularFirst(items: Kaomoji[], offset: number): Kaomoji[] {
 }
 
 
-const MULTILINE_TAGS = new Set(["multi-line", "multiline"]);
 
-/** True when face has a real newline (post-normalize) or a multi-line / multiline tag. */
+/**
+ * True only when the face has a real line break (after normalizeFace).
+ * Do not trust multi-line / multiline tags alone — the catalog tags some
+ * single-line faces as both multi-line and single-line, which mixed filters.
+ */
 export function isMultilineFace(
   item: Pick<Kaomoji, "face" | "tags">,
 ): boolean {
-  if (item.face.includes("\n")) return true;
-  return item.tags.some((tag) => MULTILINE_TAGS.has(normalizeTag(tag)));
+  return item.face.includes("\n") || item.face.includes("\r");
 }
 
 /** Count multiline faces in an already-loaded list. */
@@ -192,15 +194,55 @@ export function getByCategory(
   );
 }
 
+
+/**
+ * Hard mood walls for tag pages: never show happy-primary faces on angry-family
+ * grids (angry / table-flip / fight / pout). Shared tags alone used to leak them
+ * (e.g. cheer "fight"/ganbare faces on /fight-kaomoji, mis-tagged happy on angry).
+ */
+function excludeCategoriesForTags(tags: string[]): string[] | undefined {
+  const normalized = tags.map(normalizeTag);
+  const angryFamily = normalized.some(
+    (t) =>
+      t === "angry" ||
+      t === "tableflip" ||
+      t === "table flip" ||
+      t === "fight" ||
+      t === "punch" ||
+      t === "hit" ||
+      t === "pout" ||
+      t === "hmph" ||
+      t === "annoyed" ||
+      t === "rage" ||
+      t === "glare",
+  );
+  if (angryFamily) return ["happy"];
+  return undefined;
+}
+
+function categoryExcluded(
+  item: Kaomoji,
+  excludeCategories?: string[],
+): boolean {
+  if (!excludeCategories || excludeCategories.length === 0) return false;
+  const excl = new Set(excludeCategories.map(normalizeTag));
+  return item.categories.some((c) => excl.has(normalizeTag(c)));
+}
+
 /** ANY-tag match. Optionally also include faces with a real newline. */
 export function getByTags(
   tags: string[],
-  options?: { includeNewlines?: boolean },
+  options?: { includeNewlines?: boolean; excludeCategories?: string[] },
 ): Kaomoji[] {
   const wanted = new Set(tags.map(normalizeTag));
+  const excludeCategories = [
+    ...(options?.excludeCategories ?? []),
+    ...(excludeCategoriesForTags(tags) ?? []),
+  ];
   return catalog.filter((item) => {
+    if (categoryExcluded(item, excludeCategories)) return false;
     if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) return true;
-    if (options?.includeNewlines && item.face.includes("\n")) return true;
+    if (options?.includeNewlines && (item.face.includes("\n") || item.face.includes("\r"))) return true;
     return false;
   });
 }
@@ -330,16 +372,21 @@ export function countByCategory(
 
 export function countByTags(
   tags: string[],
-  options?: { includeNewlines?: boolean },
+  options?: { includeNewlines?: boolean; excludeCategories?: string[] },
 ): number {
   const wanted = new Set(tags.map(normalizeTag));
+  const excludeCategories = [
+    ...(options?.excludeCategories ?? []),
+    ...(excludeCategoriesForTags(tags) ?? []),
+  ];
   let count = 0;
   for (const item of catalog) {
+    if (categoryExcluded(item, excludeCategories)) continue;
     if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) {
       count += 1;
       continue;
     }
-    if (options?.includeNewlines && item.face.includes("\n")) {
+    if (options?.includeNewlines && (item.face.includes("\n") || item.face.includes("\r"))) {
       count += 1;
     }
   }

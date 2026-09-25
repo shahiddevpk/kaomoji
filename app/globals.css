@@ -15,8 +15,8 @@
   --color-foreground / --foreground    near-black text (#1A1A1A)
   --color-muted / --muted              secondary text (#666666)
   --color-border / --border            cool light gray border (#E5E5E5)
-  --color-link / --link                rose link (#D4536F, AA on white)
-  --color-link-hover                   deeper rose on hover (#C23D5C)
+  --color-link / --link                amber-brown link (#B45309, AA on white)
+  --color-link-hover                   deeper amber on hover (#9A3412)
   --color-hover                        warm hover wash
   --color-active / --active            light orange tint (#FFEDD5)
   --color-focus-ring                   focus outline (primary)
@@ -431,8 +431,8 @@ button[data-copy-id][data-copied="copied"]:not(.kaomoji-copy):not(:has(.kaomoji-
 }
 
 /*
- * Recent chips: soft card pill → solid primary (#C2410C) + white face on Copied.
- * Face <span> stays in DOM. Transform/shadow only — no layout shift.
+ * Recent chips: light orange idle (--active) → strong primary on Copied.
+ * Same color theory as nav chips / intent tiles.
  */
 .kaomoji-recent-chip {
   display: inline-flex;
@@ -441,8 +441,8 @@ button[data-copy-id][data-copied="copied"]:not(.kaomoji-copy):not(:has(.kaomoji-
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  border: 1px solid var(--border);
-  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--active);
   padding: 0.5rem 0.875rem;
   box-shadow: var(--shadow-sm);
   transition:
@@ -453,7 +453,7 @@ button[data-copy-id][data-copied="copied"]:not(.kaomoji-copy):not(:has(.kaomoji-
     color 0.18s ease;
 }
 .kaomoji-recent-chip:hover {
-  border-color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
   background: var(--hover);
 }
 .kaomoji-recent-chip:focus-visible {
@@ -462,13 +462,13 @@ button[data-copy-id][data-copied="copied"]:not(.kaomoji-copy):not(:has(.kaomoji-
 }
 button[data-copy-id][data-copied="copied"]:has(.kaomoji-face),
 .kaomoji-recent-chip[data-copied="copied"] {
-  border-color: var(--primary-hover);
-  background: var(--primary-hover);
-  color: #ffffff;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--accent-foreground);
   box-shadow:
     0 0 0 2px #ffffff,
-    0 0 0 4px var(--primary-hover),
-    0 6px 14px color-mix(in srgb, var(--primary-hover) 40%, transparent);
+    0 0 0 4px var(--primary),
+    0 6px 14px color-mix(in srgb, var(--primary) 40%, transparent);
   transform: scale(0.97);
 }
 button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
@@ -501,9 +501,9 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   list-style: none;
   overflow-x: auto;
   scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 .kaomoji-recent-face {
-  max-width: 12rem;
   min-height: 0;
   flex: none;
   padding: 0;
@@ -513,8 +513,9 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   font-weight: 500;
   line-height: 1.2;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Show the full face — no ellipsis (re-copy needs the real string visible) */
+  overflow: visible;
+  max-width: none;
 }
 @media (prefers-reduced-motion: reduce) {
   *,

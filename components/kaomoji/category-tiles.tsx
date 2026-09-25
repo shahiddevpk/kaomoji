@@ -58,7 +58,7 @@ export function CategoryTiles() {
         <li key={page.path}>
           <Link
             href={page.path}
-            className={cn("flex min-h-20 flex-col justify-center rounded-2xl border px-3 py-3 shadow-[var(--shadow-sm)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4", moodTileClass(page.path))}
+            className={cn("flex min-h-20 flex-col justify-center rounded-2xl border px-3 py-3 shadow-[var(--shadow-sm)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4", moodTileClass())}
           >
             <span className="type-label sm:text-base">{page.heading}</span>
             <span className="mt-1 line-clamp-2 type-meta">

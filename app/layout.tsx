@@ -60,6 +60,13 @@ export const metadata: Metadata = {
       "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces â€” one tap to paste.",
     images: ["/og.png"],
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   robots: {
     index: true,
     follow: true,

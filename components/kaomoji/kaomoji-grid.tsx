@@ -1,4 +1,7 @@
+"use client";
+
 import type { Kaomoji } from "@/data/types";
+import { useCopy } from "@/components/kaomoji/copy-provider";
 
 type GridItem = Pick<Kaomoji, "id" | "face" | "name"> &
   Partial<Kaomoji> & { multiline?: boolean };
@@ -15,6 +18,8 @@ export function KaomojiGrid({
   items: Array<GridItem>;
   empty?: string;
 }) {
+  const { flash, copy } = useCopy();
+
   if (items.length === 0) {
     return (
       <p className="rounded-2xl border border-dashed border-border bg-secondary/60 px-4 py-8 text-center type-meta">
@@ -27,6 +32,7 @@ export function KaomojiGrid({
     <ul className="kaomoji-grid">
       {items.map((item) => {
         const tall = isTall(item);
+        const flashing = flash?.id === item.id ? flash : null;
         return (
           <li key={item.id}>
             <article
@@ -45,11 +51,24 @@ export function KaomojiGrid({
               <button
                 type="button"
                 className="kaomoji-copy"
-                aria-label={`Copy ${item.name}`}
+                aria-label={
+                  flashing
+                    ? flashing.state === "copied"
+                      ? "Copied"
+                      : "Copy failed"
+                    : `Copy ${item.name}`
+                }
+                aria-live={flashing ? "polite" : undefined}
                 data-copy-id={item.id}
                 data-copy-name={item.name}
+                data-copied={flashing ? flashing.state : undefined}
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  copy({ id: item.id, face: item.face, name: item.name });
+                }}
               >
-                Copy
+                {flashing ? flashing.label : "Copy"}
               </button>
             </article>
           </li>

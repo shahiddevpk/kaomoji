@@ -44,7 +44,7 @@ export function HeaderNav({
       el.removeEventListener("scroll", onScroll);
       ro.disconnect();
     };
-  }, [links, updateOverflow]);
+  }, [links, pathname, updateOverflow]);
 
   function scrollByDir(dir: -1 | 1) {
     const el = scrollerRef.current;
@@ -101,7 +101,7 @@ export function HeaderNav({
               className={cn(
                 "inline-flex min-h-11 shrink-0 items-center rounded-full border px-3 type-button transition-colors",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-                moodChipClass(page.path, active),
+                moodChipClass(active),
                 active && "font-medium text-accent-foreground",
               )}
             >
