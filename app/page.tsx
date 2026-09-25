@@ -87,10 +87,7 @@ export default function HomePage() {
         </h2>
         <p className="mt-2 max-w-2xl type-meta leading-6">
           Moods and themes first, then{" "}
-          <Link
-            href="/kaomoji-copy-paste/"
-            className="text-accent underline-offset-2 hover:underline"
-          >
+          <Link href="/kaomoji-copy-paste/" className="link-in-prose">
             kaomoji copy and paste
           </Link>
           , classic Japanese emoticons, and text faces (shrug, Lenny, and more).

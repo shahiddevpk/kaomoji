@@ -21,7 +21,7 @@ export default function AboutPage() {
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.
         Mood shelves beat one endless combo dump when you already know the vibe you need.
         You can also build a custom face with the{" "}
-        <a href="/kaomoji-generator/" className="text-accent underline-offset-2 hover:underline">
+        <a href="/kaomoji-generator/" className="link-in-prose">
           Kaomoji Generator
         </a>
         . This release does not run ads.
@@ -34,7 +34,7 @@ export default function AboutPage() {
         Much of the expanded face catalog comes from the open{" "}
         <a
           href="https://github.com/kaomojiya-collection/kaomoji-collection"
-          className="text-accent underline-offset-2 hover:underline"
+          className="link-in-prose"
           rel="noopener noreferrer"
           target="_blank"
         >

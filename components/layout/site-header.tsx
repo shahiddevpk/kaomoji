@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useId, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
@@ -30,16 +30,14 @@ export function SiteHeader() {
   const menuId = useId();
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
-  const [offsetPx, setOffsetPx] = useState(0);
   const links = headerNav().filter((page) => page.path !== "/");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = headerRef.current;
     if (!el) return;
 
     const sync = () => {
       const h = Math.ceil(el.getBoundingClientRect().height);
-      setOffsetPx(h);
       document.documentElement.style.setProperty("--site-header-offset", `${h}px`);
     };
 
@@ -78,6 +76,7 @@ export function SiteHeader() {
               className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-border bg-card px-3 type-button text-foreground transition-colors hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:hidden"
               aria-expanded={menuOpen}
               aria-controls={menuId}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
             >
               Menu
@@ -101,11 +100,7 @@ export function SiteHeader() {
           />
         </div>
       </header>
-      <div
-        className="site-header-spacer"
-        style={{ height: offsetPx > 0 ? offsetPx : undefined }}
-        aria-hidden
-      />
+      <div className="site-header-spacer" aria-hidden="true" />
     </>
   );
 }

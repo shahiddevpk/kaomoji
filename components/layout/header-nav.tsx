@@ -83,7 +83,7 @@ export function HeaderNav({
       <div
         ref={scrollerRef}
         className={cn(
-          "-mx-4 flex justify-start gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0",
+          "-mx-4 flex flex-nowrap justify-start gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:gap-2 sm:px-0",
           "scroll-smooth [scrollbar-width:thin]",
         )}
       >

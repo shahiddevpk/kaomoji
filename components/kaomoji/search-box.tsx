@@ -132,7 +132,7 @@ export function SearchBox({
       {scopedSearch && trimmed.length >= 2 ? (
         <p className={cn("type-meta", isHeader ? "mt-1 px-1" : "mt-1")}>
           Results are limited to this page.{" "}
-          <Link href="/" className="text-accent underline-offset-2 hover:underline">
+          <Link href="/" className="link-in-prose">
             Search all faces
           </Link>
         </p>
