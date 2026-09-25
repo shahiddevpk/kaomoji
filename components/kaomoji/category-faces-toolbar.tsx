@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -34,7 +34,8 @@ export function CategoryFacesToolbar({
   rangeEnd,
   hideFilter = false,
   defaultMode = "all",
-  renderPagination,
+  paginationTop = null,
+  paginationBottom = null,
 }: {
   items: ToolbarFace[];
   /** Multiline count across the full category/tag pool (not just this page). */
@@ -46,8 +47,9 @@ export function CategoryFacesToolbar({
   /** Hide chips (e.g. on /multiline-kaomoji hub). */
   hideFilter?: boolean;
   defaultMode?: FaceLineMode;
-  /** Fresh pagination node for top + bottom (avoid reusing one element twice). */
-  renderPagination?: () => ReactNode;
+  /** Separate nodes for top + bottom (same element cannot mount twice). */
+  paginationTop?: ReactNode;
+  paginationBottom?: ReactNode;
 }) {
   const [mode, setMode] = useState<FaceLineMode>(defaultMode);
   const showFilter = !hideFilter && multilineTotal > 0;
@@ -92,9 +94,6 @@ export function CategoryFacesToolbar({
   const emptyMultilinePage =
     mode === "multiline" && filtered.length === 0 && multilineTotal > 0;
 
-  const topPaging = renderPagination?.() ?? null;
-  const bottomPaging = renderPagination?.() ?? null;
-
   return (
     <>
       <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
@@ -134,7 +133,7 @@ export function CategoryFacesToolbar({
         ) : null}
       </div>
 
-      {topPaging}
+      {paginationTop}
 
       <div className="mt-4">
         {emptyMultilinePage ? (
@@ -167,7 +166,7 @@ export function CategoryFacesToolbar({
         )}
       </div>
 
-      {bottomPaging}
+      {paginationBottom}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   catalogSize,
   countByCategory,
@@ -176,17 +176,15 @@ export function CategoryView({
       ? faqJsonLd(page.faqs)
       : null;
 
-  const renderPagination = showPaging
-    ? () => (
-        <PaginationNav
-          basePath={page.path}
-          prevHref={prevHref}
-          nextHref={nextHref}
-          safePage={safePage}
-          crawlablePages={crawlablePages}
-        />
-      )
-    : undefined;
+  const paginationProps = showPaging
+    ? {
+        basePath: page.path,
+        prevHref,
+        nextHref,
+        safePage,
+        crawlablePages,
+      }
+    : null;
 
   return (
     <article className="mx-auto w-full max-w-6xl px-4 py-8">
@@ -236,7 +234,12 @@ export function CategoryView({
           rangeEnd={rangeEnd}
           hideFilter={isMultilineHub}
           defaultMode={isMultilineHub ? "multiline" : "all"}
-          renderPagination={renderPagination}
+          paginationTop={
+            paginationProps ? <PaginationNav {...paginationProps} /> : null
+          }
+          paginationBottom={
+            paginationProps ? <PaginationNav {...paginationProps} /> : null
+          }
         />
       </section>
 
