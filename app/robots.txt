@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+
+Disallow: /search
+Disallow: /*?*q=
+Disallow: /*?*tag=
+Disallow: /*?*filter=
+Disallow: /*?*mood=
+Disallow: /api/
+
+Sitemap: https://pastekaomoji.com/sitemap.xml

@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+/*
+  PasteKaomoji - DigiSkills-near warm orange (single light theme, no dark mode)
+
+  Color:
+  --color-primary / --primary          DigiSkills-near orange (#F5911C)
+  --color-secondary / --secondary      DigiSkills form gray (#F9F9F9)
+  --color-accent / --accent            primary action (maps to primary)
+  --color-accent-foreground            on-accent text (white)
+  --color-background / --background / --bg  white page (#FFFFFF)
+  --color-surface / --card             white cards (#FFFFFF)
+  --color-foreground / --foreground    near-black text (#1A1A1A)
+  --color-muted / --muted              secondary text (#666666)
+  --color-border / --border            cool light gray border (#E5E5E5)
+  --color-link / --link                accent orange link
+  --color-link-hover                   deeper orange on hover
+  --color-hover                        warm hover wash
+  --color-active / --active            light orange tint (#FFF5E6)
+  --color-focus-ring                   focus outline (primary)
+  --color-success (+ foreground)       toast success
+  --color-warning (+ foreground)
+  --color-error (+ foreground)
+  --color-disabled (+ muted border)
+  --primary-hover / --accent hover     #D97706
+
+  Spacing / chrome:
+  --space-xs .. --space-xl
+  --radius-sm / --radius-md / --radius-lg / --radius-full
+  --shadow-sm (minimal)
+  --control-h (min 44px touch target)
+
+  Typography roles (classes): .type-h1 .type-h2 .type-h3 .type-body
+  .type-button .type-label .type-meta .type-tag .kaomoji-face
+*/
+
+:root {
+  --primary: #F5911C;
+  --primary-hover: #D97706;
+  --secondary: #F9F9F9;
+  --accent: #F5911C;
+  --accent-foreground: #FFFFFF;
+  --background: #FFFFFF;
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --foreground: #1A1A1A;
+  --muted: #666666;
+  --border: #E5E5E5;
+  --link: #D97706;
+  --link-hover: #B45309;
+  --hover: #fff5e6;
+  --active: #FFF5E6;
+  --focus-ring: #F5911C;
+  --success: #166534;
+  --success-foreground: #F0FDF4;
+  --warning: #A16207;
+  --warning-foreground: #FFFBEB;
+  --error: #B91C1C;
+  --error-foreground: #FEF2F2;
+  --disabled: #A8A29A;
+  --disabled-border: #E5D9CC;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgb(26 26 26 / 0.06);
+
+  --control-h: 2.75rem;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-focus-ring: var(--focus-ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-disabled: var(--disabled);
+  --color-disabled-border: var(--disabled-border);
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-focus-ring: var(--focus-ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-disabled: var(--disabled);
+  --color-disabled-border: var(--disabled-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography roles */
+.type-h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.type-h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.type-h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.type-button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.type-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.type-meta {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.type-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .type-h1 {
+    font-size: 1.875rem;
+  }
+
+  .type-h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Shared focus / card utilities */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.surface-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.kaomoji-face {
+  font-family: var(--font-geist-mono), ui-monospace, "Segoe UI Symbol",
+    "Noto Sans JP", "Hiragino Sans", "Apple Color Emoji", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .kaomoji-face {
+    font-size: 1.375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
