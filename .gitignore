@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (commit .env.example only)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -80,6 +81,10 @@ Desktop.ini
 .qa-*
 .qa-*/
 
+# duplicate / experimental modules at repo root (real code is under components/)
+/_head_*.tsx
+_head_*.tsx
+
 # one-off Python dump/patch helpers under lh-out (also covered by /lh-out/)
 kaomoji-dump.py
 kaomoji-fix-header.py
@@ -120,6 +125,10 @@ _seo-*.ts
 _seo-*.html
 _seo-*.json
 agent-tools/
+**/agent-tools/
+
+# Cursor IDE machine-local state (rules under .cursor/rules may still be committed)
+.cursor/projects/
 
 # QA flash/debug scratch
 _qa_*

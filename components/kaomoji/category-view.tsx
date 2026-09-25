@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
-  catalogSize,
   countByCategory,
   countByTags,
+  countPopular,
   countMultilineForPage,
   getSearchPoolForPage,
   crawlablePageCountForCategory,
@@ -138,10 +138,31 @@ function PaginationNav({
   );
 }
 
+function facesSectionHeading(page: SitePage): string {
+  switch (page.path) {
+    case "/":
+      return "Popular kaomoji to copy";
+    case "/kaomoji-copy-paste":
+      return "Kaomoji copy and paste list";
+    case "/japanese-emoticons":
+      return "Japanese emoticons to copy";
+    case "/text-faces":
+      return "Text faces to copy";
+    case "/multiline-kaomoji":
+      return "Multiline kaomoji to copy";
+    case "/kaomoji-generator":
+      return "Build your face";
+    default:
+      return `${page.heading} to copy`;
+  }
+}
+
 function learnHeadingFor(pagePath: string, label: string): string {
   switch (pagePath) {
     case "/japanese-emoticons":
       return "What are Japanese emoticons?";
+    case "/text-faces":
+      return "What are text faces?";
     case "/kaomoji-copy-paste":
       return "What is kaomoji copy and paste?";
     case "/angry-kaomoji":
@@ -177,7 +198,9 @@ export function CategoryView({
       ? countByTags(page.tags, tagOpts)
       : page.category != null
         ? countByCategory(page.category)
-        : catalogSize();
+        : page.path === "/kaomoji-copy-paste"
+          ? countPopular()
+          : faces.length;
   const crawlablePages =
     page.tags && page.tags.length > 0
       ? crawlablePageCountForTags(page.tags, tagOpts)
@@ -283,7 +306,7 @@ export function CategoryView({
 
       <section className="mt-8" id="faces" aria-labelledby="faces-heading">
         <h2 id="faces-heading" className="type-h2">
-          Faces
+          {facesSectionHeading(page)}
         </h2>
         <CategoryFacesToolbar
           items={toolbarItems}

@@ -17,8 +17,9 @@ export default function TermsPage() {
       <h2 className="text-base font-semibold">The faces</h2>
       <p>
         Kaomoji are arrangements of unicode characters. The site does not claim an exclusive
-        right in those characters. The page text, layout, and selection of the library are
-        the site&apos;s own presentation.
+        right in those characters. The page text, layout, curation, tags, and category rules
+        are the site&apos;s own presentation. Much of the expanded catalog is derived from the
+        open kaomoji-collection project (MIT License); see the About page for attribution.
       </p>
       <h2 className="text-base font-semibold">Acceptable use</h2>
       <p>

@@ -5,7 +5,7 @@ export const siteConfig = {
   siteName: "Paste Kaomoji",
   url: "https://pastekaomoji.com",
   description:
-    "Kaomoji library by mood: cute, cat, happy, crying, angry, Japanese emoticons, and text faces. Browse the discovery hub, then one-tap copy.",
+    "Browse a kaomoji library by mood—cute, happy, cat, sad, crying, angry, and more. Discover faces on category pages, then one-tap copy into chat.",
   locale: "en_US",
 } as const;
 
@@ -54,9 +54,9 @@ export const pages: SitePage[] = [
     path: "/",
     label: "Home",
     heading: "Browse Kaomoji by Mood",
-    titleSegment: "Kaomoji Library by Mood | Text Faces | Paste Kaomoji",
+    titleSegment: "Kaomoji Library — Browse by Mood | Paste Kaomoji",
     description:
-      "Browse kaomoji and text faces by mood: cute, happy, cat, crying, angry, Japanese emoticons, and more. Discover the library, then one-tap copy.",
+      "Kaomoji library to browse by mood: cute, happy, cat, sad, crying, angry, and animal hubs. Start here for discovery; use Kaomoji Copy and Paste when you only need a fast grab.",
     intro:
       "Explore the kaomoji library by mood and theme, then copy in one tap. Start from category tiles when you are discovering; open Kaomoji Copy and Paste when you only need a fast grab.",
     group: "hub",
@@ -97,9 +97,9 @@ export const pages: SitePage[] = [
     path: "/cute-kaomoji",
     label: "Cute",
     heading: "Cute Kaomoji",
-    titleSegment: "Cute Kaomoji (◕‿◕)",
+    titleSegment: "Cute Kaomoji & Kawaii (◕‿◕)",
     description:
-      "Cute kaomoji (◕‿◕) copy and paste: soft kawaii blush, tiny hugs, and gentle charm. Soft aesthetic mood with one-tap copy, separate from happy cheers.",
+      "Cute kaomoji and kawaii faces (◕‿◕): soft blush, tiny hugs, gentle charm. Owns the kawaii mood—cheers and big grins stay on happy kaomoji.",
     intro:
       "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste. Cute owns the soft aesthetic mood; cheers, waves, and big grins live on happy kaomoji so the two stay distinct.",
     group: "browse",
@@ -394,9 +394,9 @@ export const pages: SitePage[] = [
     path: "/kaomoji-copy-paste",
     label: "Copy and paste",
     heading: "Kaomoji Copy and Paste",
-    titleSegment: "Kaomoji Copy and Paste (◕‿◕)",
+    titleSegment: "Kaomoji Copy and Paste — One Tap (◕‿◕)",
     description:
-      "Kaomoji copy and paste (◕‿◕) utility: popular faces first, one-tap clipboard, then moods. Explicit copy task, not the discovery hub.",
+      "Kaomoji copy and paste in one tap: popular faces first, instant clipboard, no account. This URL owns the copy-paste task; browse the home library when you want moods and categories.",
     intro:
       "Explicit copy-and-paste utility for grabbing a face fast. Popular faces first, one tap to clipboard. For browsing the full library by mood, start on the home hub instead.",
     group: "browse",
@@ -429,9 +429,9 @@ export const pages: SitePage[] = [
     path: "/japanese-emoticons",
     label: "Japanese",
     heading: "Japanese Emoticons",
-    titleSegment: "Japanese Emoticons (^_^)",
+    titleSegment: "Japanese Emoticons & Kaomoji (^_^)",
     description:
-      "Japanese emoticons (^_^) copy and paste (kaomoji): classic faces from punctuation and kana. Language-first set, not ASCII shrug lists.",
+      "Japanese emoticons and japanese kaomoji (^_^): upright faces from punctuation and kana. This page owns JP construction—not Lenny, shrug, or ASCII text faces.",
     intro:
       "Classic Japanese emoticon construction from punctuation, kana, and symbols - ready to copy. This page owns the language and kaomoji concept; ASCII shrugs and Lenny faces live on text faces.",
     group: "browse",
@@ -465,14 +465,16 @@ export const pages: SitePage[] = [
     path: "/text-faces",
     label: "Text faces",
     heading: "Text Faces",
-    titleSegment: "Text Faces ¯\\_(ツ)_/¯",
+    titleSegment: "Text Faces — Shrug & Lenny ¯\\_(ツ)_/¯",
     description:
-      "Text faces ¯\\_(ツ)_/¯ copy and paste: shrug, Lenny, disapproval, and more. ASCII and unicode catalog, not Japanese kana construction.",
+      "Text faces copy and paste: shrug ¯\\_(ツ)_/¯, Lenny face, disapproval, and Western ASCII. Not japanese kaomoji—those live on Japanese emoticons.",
     intro:
       "ASCII and unicode faces such as shrug, Lenny, and disapproval - one-tap copy. Their own page keeps Japanese emoticon construction separate from Western-style text faces.",
     group: "browse",
     inHeader: true,
     category: "text-faces",
+    definition:
+      "Text faces here mean Western-leaning ASCII and unicode expressions—shrug, Lenny, disapproval, and similar sideways or compact smiles—not classic upright japanese kaomoji built from kana.",
     faqs: [
       {
         question: "What counts as a text face here?",
@@ -539,9 +541,9 @@ export const pages: SitePage[] = [
     path: "/kaomoji-generator",
     label: "Generator",
     heading: "Kaomoji Generator",
-    titleSegment: "Kaomoji Generator to Make Faces (´∀｀)",
+    titleSegment: "Kaomoji Generator — Make a Face (´∀｀)",
     description:
-      "Make kaomoji online with a simple generator. Build or remix text faces, then copy and paste them into any chat without hunting a giant list.",
+      "Free kaomoji generator: pick eyes, mouth, and arms, preview live, then copy. Owns make/build intent—browse category lists when you want ready-made grids.",
     intro:
       "Make or remix a custom kaomoji in your browser: pick arms, eyes, mouth, and optional extras, preview live, then copy. This page is for building and remixing faces, not browsing a ready-made grid. When you want curated lists instead of a builder, use the category links in the header.",
     group: "browse",
@@ -1017,7 +1019,7 @@ export const pages: SitePage[] = [
     heading: "About",
     titleSegment: "About",
     description:
-      "About Paste Kaomoji - a kaomoji and text-face library at pastekaomoji.com.",
+      "About Paste Kaomoji: curated kaomoji and text-face library with mood pages, integrity filters, and MIT-licensed source attribution.",
     intro:
       "Paste Kaomoji is a focused library for copying kaomoji and text faces. The point is find, copy, paste - without a giant emoji catalog or a wall of ads.",
     group: "trust",
@@ -1033,7 +1035,7 @@ export const pages: SitePage[] = [
       },
       {
         question: "Where do the faces come from?",
-        answer: "Much of the expanded catalog comes from the open kaomoji-collection project (MIT License), curated by Kaomojiya. We dedupe faces and add English names, tags, and aliases for search. Paste Kaomoji is not affiliated with that project.",
+        answer: "Much of the expanded catalog comes from the open kaomoji-collection project (MIT License), curated by Kaomojiya. Paste Kaomoji is not affiliated with that project. We dedupe faces, add English names and tags, and apply mood integrity rules so each category matches its intent—not a bare republish of the source dump.",
       },
       {
         question: "Does this site sell faces or require signup?",

@@ -128,8 +128,10 @@ export function websiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.siteName,
+    alternateName: ["Paste Kaomoji library", "pastekaomoji.com"],
     url: absoluteUrl("/"),
     description: siteConfig.description,
+    inLanguage: siteConfig.locale.replace("_", "-"),
   };
 }
 

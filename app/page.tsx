@@ -37,7 +37,7 @@ function HomeFacesAndSeo() {
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <section className="mt-10" id="faces" aria-labelledby="popular-heading">
         <h2 id="popular-heading" className="type-h2">
-          Popular faces
+          Popular kaomoji to copy
         </h2>
         <div className="mt-4">
           <KaomojiGrid items={faces} />

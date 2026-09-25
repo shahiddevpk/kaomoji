@@ -61,7 +61,15 @@ const CATEGORY_SEARCH: Record<string, string[]> = {
     "kaomoji japanese",
     "japan kaomoji",
   ],
-  "text-faces": ["text faces", "kaomoji faces", "kaomoji face", "shrug kaomoji"],
+  "text-faces": [
+    "text faces",
+    "lenny face",
+    "lenny",
+    "shrug",
+    "shrug face",
+    "disapproval face",
+    "kaomoji faces",
+  ],
 };
 
 /** Tag-page search phrase boosts (any matching tag pulls these phrases into the doc). */
@@ -256,6 +264,14 @@ export function getByTags(
 
 export function getPopular(): Kaomoji[] {
   return catalog.filter((item) => item.popular);
+}
+
+export function countPopular(): number {
+  let count = 0;
+  for (const item of catalog) {
+    if (item.popular) count += 1;
+  }
+  return count;
 }
 
 /**

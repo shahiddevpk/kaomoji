@@ -32,9 +32,7 @@ function sitemapPriority(page: SitePage): number {
       return 0.75;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
-    case "/rage-kaomoji":
     case "/pout-kaomoji":
-    case "/glare-kaomoji":
     case "/multiline-kaomoji":
       return 0.7;
     default:

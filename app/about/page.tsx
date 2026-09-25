@@ -36,9 +36,11 @@ export default function AboutPage() {
         >
           kaomoji-collection
         </a>{" "}
-        project (MIT License), curated by Kaomojiya (kaomojiya.org). We dedupe faces and add
-        English names, tags, and aliases for search. Paste Kaomoji is not affiliated with
-        that project.
+        project (MIT License), curated by Kaomojiya (kaomojiya.org). Paste Kaomoji is not
+        affiliated with that project. We add value on top of the raw list: deduplicated
+        faces, English names, mood and tag organization, category integrity rules so grids
+        match their intent, and one-tap copy in the browser—not a bare republish of the
+        source dump.
       </p>
     </TrustView>
   );

@@ -114,6 +114,7 @@ Remember: **Spam policies are rules.** Avoid scaled thin pages, scraped librarie
 
 ## Related docs
 
+- `docs/GOOGLE-SPAM-POLICY-ALIGNMENT.md` — spam policy ↔ repo controls (doorway, scaled content, scraping, cloaking)  
 - `docs/ADSENSE-READINESS-AUDIT.md` — monetization readiness (ads currently absent)  
 - `docs/PERF-SEO-AUDIT.md` — performance / crawlability engineering audit  
 - `app/sitemap.ts`, `app/robots.txt`, `lib/site.ts`, `next.config.ts`
@@ -126,7 +127,7 @@ Remember: **Spam policies are rules.** Avoid scaled thin pages, scraped librarie
 
 ### Pre-deploy reality
 - Site **not deployed** to pastekaomoji.com yet → **no live GSC data** now. Use this checklist after launch only.
-- Expected sitemap size to verify: **88** indexable URLs (13 base + 75 pagination page 2+) per `docs/CONTENT-UNIQUENESS-AUDIT.md` / `INTENT-PAGE-MAP.md`.
+- Expected sitemap size to verify: **~28** page-1 URLs from `pages` in `app/sitemap.ts` (pagination page 2+ is **not** in the sitemap; those URLs use `noindex,follow`).
 
 ### Rules vs diagnostics
 - **Search Essentials + Spam Policies = the rules** (doorway abuse, scaled content abuse, soft-404 risk on empty/thin 200s). Cite box RO `/workspace/kaomoji-mega/GOOGLE-SEO-GUIDANCE.md`.
