@@ -8,13 +8,16 @@ const BROWSE_ORDER = [
   "/cat-kaomoji",
   "/sad-kaomoji",
   "/crying-kaomoji",
+  "/angry-kaomoji",
   "/kaomoji-copy-paste",
   "/japanese-emoticons",
   "/text-faces",
+  "/multiline-kaomoji",
+  "/kaomoji-generator",
 ] as const;
 
 function orderedBrowse(): SitePage[] {
-  const browse = pagesByGroup("browse");
+  const browse = pagesByGroup("browse").filter((page) => !page.parentPath);
   const byPath = new Map(browse.map((page) => [page.path, page]));
   const ordered: SitePage[] = [];
   for (const path of BROWSE_ORDER) {

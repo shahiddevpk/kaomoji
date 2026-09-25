@@ -2,7 +2,7 @@ import Link from "next/link";
 import { pagesByGroup, siteConfig } from "@/lib/site";
 
 export function Footer() {
-  const browse = pagesByGroup("browse");
+  const browse = pagesByGroup("browse").filter((page) => !page.parentPath);
   const trust = pagesByGroup("trust");
   const year = new Date().getFullYear();
 

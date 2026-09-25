@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CopiedToast } from "@/components/kaomoji/copied-toast";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Kaomoji | Text Face Library | Paste Kaomoji",
+    default: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
     template: `%s | ${siteConfig.siteName}`,
   },
   description: siteConfig.description,
@@ -31,16 +31,37 @@ export const metadata: Metadata = {
   creator: siteConfig.siteName,
   openGraph: {
     type: "website",
-    locale: siteConfig.locale,
-    siteName: siteConfig.siteName,
+    locale: "en_US",
     url: siteConfig.url,
+    siteName: siteConfig.siteName,
+    title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    description:
+      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces — one tap to paste.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Paste Kaomoji — kaomoji copy and paste",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    description:
+      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces — one tap to paste.",
+    images: ["/og.png"],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  // TEMP GSC placeholder — swap via NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION when you have the real code
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+      "pKmJ9xQ2vL7nR4tY8wA1bC5dE6fG0hI3jK",
   },
 };
 

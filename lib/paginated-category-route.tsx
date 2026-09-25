@@ -2,8 +2,8 @@ import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { CategoryView } from "@/components/kaomoji/category-view";
 import {
-  buildPageStaticParams,
-  crawlablePageCountForCategory,
+  buildPageStaticParamsFromMeta,
+  crawlablePageCountForMeta,
   parsePageParam,
   type PaginatedSlug,
   PAGINATED_SLUGS,
@@ -13,10 +13,13 @@ import { getPage } from "@/lib/site";
 
 export function createPaginatedCategoryRoute(slug: PaginatedSlug) {
   const meta = PAGINATED_SLUGS[slug];
+  if (!meta) {
+    throw new Error(`Unknown paginated slug: ${String(slug)}`);
+  }
   const page = getPage(meta.path);
 
   function generateStaticParams() {
-    return buildPageStaticParams(meta.categoryId);
+    return buildPageStaticParamsFromMeta(meta);
   }
 
   async function generateMetadata({
@@ -37,7 +40,7 @@ export function createPaginatedCategoryRoute(slug: PaginatedSlug) {
     const num = parsePageParam(n);
     if (num == null) notFound();
     if (num === 1) redirect(`${meta.path}/`);
-    const totalPages = crawlablePageCountForCategory(meta.categoryId);
+    const totalPages = crawlablePageCountForMeta(meta);
     if (num > totalPages) notFound();
     return <CategoryView page={page} pageNumber={num} />;
   }

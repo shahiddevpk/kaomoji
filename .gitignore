@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+﻿# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
@@ -40,8 +40,29 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# research packs � never commit
+# research packs — never commit
 uploads/
 kaomoji-research/
 research/
 *.zip
+
+# local agent / one-off scratch - never commit
+scripts/_*
+scripts/_*/
+*.local.ts
+*.local.js
+*.local.cjs
+*.local.mjs
+
+# editor / OS junk
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# optional local tooling caches
+.turbo/
+.idea/
+.vscode/
+!.vscode/extensions.json
+

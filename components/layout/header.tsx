@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
@@ -19,7 +19,7 @@ function ctaHref(pathname: string): string {
   return "/#faces";
 }
 
-/** Desktop CTA only — omit from DOM under sm so SR/mobile never see a duplicate. */
+/** Desktop CTA only â€” omit from DOM under sm so SR/mobile never see a duplicate. */
 function useDesktopCta() {
   const [show, setShow] = useState(false);
 
@@ -39,10 +39,8 @@ export function Header() {
   const menuId = useId();
   const pathname = usePathname();
   const showCopyCta = useDesktopCta();
-  // Category chips only — Home is the logo; Copy lives in the desktop CTA.
-  const links = headerNav().filter(
-    (page) => page.path !== "/" && page.path !== "/kaomoji-copy-paste",
-  );
+  // Category chips only — Home is the logo; Copy-and-paste stays in the chip row.
+  const links = headerNav().filter((page) => page.path !== "/");
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card">

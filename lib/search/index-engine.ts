@@ -88,7 +88,7 @@ function candidateIndices(index: SearchIndex, token: string): Set<number> {
  */
 export function searchIndexed(
   query: string,
-  options?: { category?: string; limit?: number },
+  options?: { category?: string; tags?: string[]; includeNewlines?: boolean; limit?: number },
 ): SearchDoc[] {
   const limit = options?.limit ?? 48;
   const tokens = tokenize(query);
@@ -112,11 +112,19 @@ export function searchIndexed(
   }
 
   const category = options?.category;
+  const tags = options?.tags?.map((t) => t.toLowerCase());
+  const includeNewlines = options?.includeNewlines;
   const scored: Array<{ doc: SearchDoc; score: number }> = [];
 
   for (const i of candidates!) {
     const doc = index.docs[i];
     if (category && doc.category !== category) continue;
+    if (tags && tags.length > 0) {
+      const docTags = doc.tags ?? [];
+      const tagHit = tags.some((t) => docTags.includes(t));
+      const nlHit = includeNewlines && doc.face.includes("\n");
+      if (!tagHit && !nlHit) continue;
+    }
 
     const words = doc.text.split(" ");
     let score = 0;

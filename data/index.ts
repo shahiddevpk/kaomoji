@@ -10,8 +10,10 @@ export type SearchDoc = {
   name: string;
   text: string;
   popular: boolean;
-  /** Primary category id â€” used for scoped search without rebuilding docs. */
+  /** Primary category id - used for scoped search without rebuilding docs. */
   category: string;
+  /** Lowercased tags for tag-scoped search. */
+  tags: string[];
 };
 
 /** Max faces rendered in a category grid (full set stays searchable). */
@@ -58,6 +60,31 @@ const CATEGORY_SEARCH: Record<string, string[]> = {
   "text-faces": ["text faces", "kaomoji faces", "kaomoji face", "shrug kaomoji"],
 };
 
+/** Tag-page search phrase boosts (any matching tag pulls these phrases into the doc). */
+const TAG_SEARCH: Record<string, string[]> = {
+  angry: ["angry kaomoji", "kaomoji angry", "mad kaomoji", "angry face"],
+  tableflip: ["table flip kaomoji", "tableflip", "flip table", "table flip"],
+  "table flip": ["table flip kaomoji", "tableflip", "flip table"],
+  fight: ["fight kaomoji", "punch kaomoji", "fighting kaomoji"],
+  punch: ["punch kaomoji", "fight kaomoji"],
+  hit: ["hit kaomoji", "punch kaomoji"],
+  rage: ["rage kaomoji", "mad kaomoji", "furious kaomoji"],
+  mad: ["mad kaomoji", "rage kaomoji"],
+  pout: ["pout kaomoji", "hmph kaomoji", "annoyed kaomoji"],
+  hmph: ["hmph kaomoji", "pout kaomoji"],
+  annoyed: ["annoyed kaomoji", "pout kaomoji"],
+  glare: ["glare kaomoji", "grr kaomoji", "gununu"],
+  grr: ["grr kaomoji", "glare kaomoji"],
+  gununu: ["gununu", "glare kaomoji"],
+  "multi-line": [
+    "multiline kaomoji",
+    "multi-line kaomoji",
+    "ascii art kaomoji",
+    "ascii art faces",
+  ],
+  multiline: ["multiline kaomoji", "multi-line kaomoji", "ascii art"],
+};
+
 const LIBRARY_SEARCH = [
   "kaomoji",
   "kaomojis",
@@ -77,6 +104,10 @@ function rankForGrid(items: Kaomoji[]): Kaomoji[] {
   return [...popular, ...rest];
 }
 
+function normalizeTag(tag: string): string {
+  return tag.toLowerCase().trim();
+}
+
 export function getByCategory(
   id: string,
   options?: { primaryOnly?: boolean },
@@ -87,6 +118,19 @@ export function getByCategory(
       ? item.categories[0] === id
       : item.categories.includes(id),
   );
+}
+
+/** ANY-tag match. Optionally also include faces with a real newline. */
+export function getByTags(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): Kaomoji[] {
+  const wanted = new Set(tags.map(normalizeTag));
+  return catalog.filter((item) => {
+    if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) return true;
+    if (options?.includeNewlines && item.face.includes("\n")) return true;
+    return false;
+  });
 }
 
 export function getPopular(): Kaomoji[] {
@@ -111,12 +155,19 @@ export function getRelatedKaomoji(
   return rankForGrid(pool).slice(0, limit);
 }
 
-/** Faces shown in the page grid (capped for category pages). Optional 1-indexed page. */
+/** Faces shown in the page grid (capped). Optional 1-indexed page. */
 export function getForPage(input: {
   path: string;
   category?: string;
+  tags?: string[];
+  includeNewlineFaces?: boolean;
   page?: number;
 }): Kaomoji[] {
+  if (input.tags && input.tags.length > 0) {
+    return getForTagPage(input.tags, input.page ?? 1, {
+      includeNewlines: input.includeNewlineFaces,
+    });
+  }
   if (input.category) {
     return getForCategoryPage(input.category, input.page ?? 1);
   }
@@ -130,7 +181,12 @@ export function getForPage(input: {
 export function getSearchPoolForPage(input: {
   path: string;
   category?: string;
+  tags?: string[];
+  includeNewlineFaces?: boolean;
 }): Kaomoji[] {
+  if (input.tags && input.tags.length > 0) {
+    return getByTags(input.tags, { includeNewlines: input.includeNewlineFaces });
+  }
   if (input.category) {
     return getByCategory(input.category, { primaryOnly: true });
   }
@@ -144,7 +200,7 @@ export function catalogSize(): number {
   return catalog.length;
 }
 
-/** Cheap primary-category (default) or any-category count â€” no array allocation. */
+/** Cheap primary-category (default) or any-category count - no array allocation. */
 export function countByCategory(
   id: string,
   options?: { primaryOnly?: boolean },
@@ -161,11 +217,35 @@ export function countByCategory(
   return count;
 }
 
+export function countByTags(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): number {
+  const wanted = new Set(tags.map(normalizeTag));
+  let count = 0;
+  for (const item of catalog) {
+    if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) {
+      count += 1;
+      continue;
+    }
+    if (options?.includeNewlines && item.face.includes("\n")) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
 export function buildSearchDocs(items: Kaomoji[] = catalog): SearchDoc[] {
   return items.map((item) => {
     const primary = item.categories[0] ?? "";
-    // LIBRARY_SEARCH only on popular faces to keep client payloads lean at 7k+.
     const library = item.popular ? LIBRARY_SEARCH : ["kaomoji"];
+    const tagBoosts = new Set<string>();
+    for (const tag of item.tags) {
+      const phrases = TAG_SEARCH[normalizeTag(tag)];
+      if (phrases) {
+        for (const phrase of phrases) tagBoosts.add(phrase);
+      }
+    }
     const text = [
       item.name,
       item.id.replace(/-/g, " "),
@@ -173,6 +253,7 @@ export function buildSearchDocs(items: Kaomoji[] = catalog): SearchDoc[] {
       ...item.tags,
       ...item.aliases,
       ...(CATEGORY_SEARCH[primary] ?? []),
+      ...tagBoosts,
       ...library,
     ]
       .join(" ")
@@ -187,6 +268,7 @@ export function buildSearchDocs(items: Kaomoji[] = catalog): SearchDoc[] {
       text,
       popular: Boolean(item.popular),
       category: primary,
+      tags: item.tags.map(normalizeTag),
     };
   });
 }
@@ -196,9 +278,24 @@ export function pageCountForCategory(id: string): number {
   return Math.max(1, Math.ceil(total / PAGE_GRID_LIMIT));
 }
 
+export function pageCountForTags(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): number {
+  const total = countByTags(tags, options);
+  return Math.max(1, Math.ceil(total / PAGE_GRID_LIMIT));
+}
+
 /** Crawlable page count capped for SEO depth (not full ceil). */
 export function crawlablePageCountForCategory(id: string): number {
   return Math.min(MAX_PAGINATION_PAGES, pageCountForCategory(id));
+}
+
+export function crawlablePageCountForTags(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): number {
+  return Math.min(MAX_PAGINATION_PAGES, pageCountForTags(tags, options));
 }
 
 /** 1-indexed page slice for a primary category. */
@@ -206,6 +303,20 @@ export function getForCategoryPage(categoryId: string, page: number): Kaomoji[] 
   const safe = Math.max(1, Math.floor(page));
   const start = (safe - 1) * PAGE_GRID_LIMIT;
   return rankForGrid(getByCategory(categoryId, { primaryOnly: true })).slice(
+    start,
+    start + PAGE_GRID_LIMIT,
+  );
+}
+
+/** 1-indexed page slice for a tag filter. */
+export function getForTagPage(
+  tags: string[],
+  page: number,
+  options?: { includeNewlines?: boolean },
+): Kaomoji[] {
+  const safe = Math.max(1, Math.floor(page));
+  const start = (safe - 1) * PAGE_GRID_LIMIT;
+  return rankForGrid(getByTags(tags, options)).slice(
     start,
     start + PAGE_GRID_LIMIT,
   );

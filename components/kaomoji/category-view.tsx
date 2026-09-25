@@ -2,19 +2,21 @@ import Link from "next/link";
 import {
   catalogSize,
   countByCategory,
+  countByTags,
   crawlablePageCountForCategory,
+  crawlablePageCountForTags,
   getForPage,
   getRelatedKaomoji,
-  ITEM_LIST_LIMIT,
   PAGE_GRID_LIMIT,
 } from "@/data/index";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
+import { SubcategoryNav } from "@/components/kaomoji/subcategory-nav";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
-import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 function PaginationNav({
   basePath,
@@ -103,16 +105,26 @@ export function CategoryView({
     .map((item) => item.category)
     .filter((category): category is string => Boolean(category));
   const relatedFaces = getRelatedKaomoji(relatedCategoryIds);
-  const listFaces = faces.slice(0, ITEM_LIST_LIMIT);
+  const tagOpts = { includeNewlines: page.includeNewlineFaces };
   const total =
-    page.category != null ? countByCategory(page.category) : catalogSize();
+    page.tags && page.tags.length > 0
+      ? countByTags(page.tags, tagOpts)
+      : page.category != null
+        ? countByCategory(page.category)
+        : catalogSize();
   const crawlablePages =
-    page.category != null ? crawlablePageCountForCategory(page.category) : 1;
+    page.tags && page.tags.length > 0
+      ? crawlablePageCountForTags(page.tags, tagOpts)
+      : page.category != null
+        ? crawlablePageCountForCategory(page.category)
+        : 1;
   const rangeStart =
     faces.length === 0 ? 0 : (safePage - 1) * PAGE_GRID_LIMIT + 1;
   const rangeEnd =
     faces.length === 0 ? 0 : Math.min(safePage * PAGE_GRID_LIMIT, total);
-  const showPaging = page.category != null && crawlablePages > 1;
+  const showPaging =
+    ((page.tags && page.tags.length > 0) || page.category != null) &&
+    crawlablePages > 1;
   const prevHref =
     safePage > 1 ? categoryPageHref(page.path, safePage - 1) : null;
   const nextHref =
@@ -138,7 +150,6 @@ export function CategoryView({
   return (
     <article className="mx-auto w-full max-w-6xl px-4 py-8">
       <JsonLd data={breadcrumbJsonLd(page, { pageNumber: safePage })} />
-      <JsonLd data={itemListJsonLd(page, listFaces, total)} />
       <Breadcrumbs page={page} pageNumber={safePage} />
       <h1 className="mt-4 type-h1 tracking-tight">
         {page.heading}
@@ -146,7 +157,20 @@ export function CategoryView({
           <span className="text-muted"> - page {safePage}</span>
         ) : null}
       </h1>
-      <p className="mt-3 max-w-2xl type-body text-muted">{page.intro}</p>
+      <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted">{page.intro}</p>
+      <SubcategoryNav page={page} />
+      {page.howTo && page.howTo.length > 0 ? (
+        <section className="mt-6 max-w-2xl" aria-labelledby="how-these-work">
+          <h2 id="how-these-work" className="type-h2">
+            How these faces work
+          </h2>
+          <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
+            {page.howTo.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
 
       <RecentlyCopied />
 

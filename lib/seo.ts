@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Kaomoji } from "@/data/types";
-import { siteConfig, type SitePage } from "@/lib/site";
+import { getPage, siteConfig, type SitePage } from "@/lib/site";
 import { absoluteUrl, canonicalPath } from "@/lib/utils";
 
 /**
@@ -25,9 +25,22 @@ export function pageMetadata(
     pageNumber > 1 ? `${page.path}/page/${pageNumber}` : page.path;
   const canonical = canonicalPath(pathForCanonical);
 
+  // Pagination page 2+ is noindex,follow to protect head-term SERPs.
+  // Valuable unique intent pages stay indexable unless page.robots overrides.
+  const robots =
+    pageNumber > 1
+      ? { index: false, follow: true }
+      : page.robots
+        ? {
+            index: page.robots.index ?? true,
+            follow: page.robots.follow ?? true,
+          }
+        : undefined;
+
   return {
     title: page.path === "/" ? { absolute: segment } : segment,
     description: page.description,
+    ...(robots ? { robots } : {}),
     alternates: {
       canonical,
     },
@@ -64,17 +77,29 @@ export function breadcrumbJsonLd(
       name: "Home",
       item: absoluteUrl("/"),
     },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: page.heading,
-      item: absoluteUrl(page.path),
-    },
   ];
+  let position = 2;
+  if (page.parentPath) {
+    const parent = getPage(page.parentPath);
+    elements.push({
+      "@type": "ListItem",
+      position,
+      name: parent.heading,
+      item: absoluteUrl(parent.path),
+    });
+    position += 1;
+  }
+  elements.push({
+    "@type": "ListItem",
+    position,
+    name: page.heading,
+    item: absoluteUrl(page.path),
+  });
+  position += 1;
   if (pageNumber > 1) {
     elements.push({
       "@type": "ListItem",
-      position: 3,
+      position,
       name: `Page ${pageNumber}`,
       item: absoluteUrl(`${page.path}/page/${pageNumber}`),
     });

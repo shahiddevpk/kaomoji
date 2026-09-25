@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { SitePage } from "@/lib/site";
+import { getPage, type SitePage } from "@/lib/site";
 import { categoryPageHref } from "@/lib/category-pagination";
 
 export function Breadcrumbs({
@@ -9,9 +9,9 @@ export function Breadcrumbs({
   page: SitePage;
   pageNumber?: number;
 }) {
-  if (page.path === "/") {
-    return null;
-  }
+  if (page.path === "/") return null;
+
+  const parent = page.parentPath ? getPage(page.parentPath) : null;
 
   return (
     <nav aria-label="Breadcrumb" className="type-meta">
@@ -25,6 +25,19 @@ export function Breadcrumbs({
           </Link>
         </li>
         <li aria-hidden="true">/</li>
+        {parent ? (
+          <>
+            <li>
+              <Link
+                href={parent.path}
+                className="inline-flex min-h-11 items-center text-link underline-offset-2 transition-colors hover:text-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+              >
+                {parent.heading}
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+          </>
+        ) : null}
         {pageNumber > 1 ? (
           <>
             <li>

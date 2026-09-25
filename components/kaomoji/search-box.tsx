@@ -46,6 +46,8 @@ export function SearchBox({
   const [pending, startTransition] = useTransition();
   const path = scope.path;
   const category = scope.category;
+  const tags = scope.tags;
+  const includeNewlines = scope.includeNewlines;
   const trimmed = query.trim();
   const searching = trimmed.length >= 2;
 
@@ -57,7 +59,7 @@ export function SearchBox({
     let cancelled = false;
     const handle = window.setTimeout(() => {
       startTransition(() => {
-        void searchFaces(trimmed, { path, category }).then(
+        void searchFaces(trimmed, { path, category, tags, includeNewlines }).then(
           (hits) => {
             if (!cancelled) setResults(hits);
           },
@@ -72,7 +74,7 @@ export function SearchBox({
       cancelled = true;
       window.clearTimeout(handle);
     };
-  }, [trimmed, path, category]);
+  }, [trimmed, path, category, tags, includeNewlines]);
 
   useEffect(() => {
     if (!isHeader || !searching) return;
