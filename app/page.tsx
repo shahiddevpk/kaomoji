@@ -1,11 +1,11 @@
-import { getForPage } from "@/data/index";
+import { getForPage, getPopular, ITEM_LIST_LIMIT } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
 import { JsonLd } from "@/components/layout/json-ld";
-import { faqJsonLd, pageMetadata } from "@/lib/seo";
+import { faqJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
 
 const page = getPage("/");
@@ -15,9 +15,15 @@ export const metadata = pageMetadata(page);
 export default function HomePage() {
   const faces = getForPage(page);
   const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
+  const itemListSchema = itemListJsonLd(
+    page,
+    faces.slice(0, ITEM_LIST_LIMIT),
+    getPopular().length,
+  );
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-8">
+      {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <h1 className="type-h1 tracking-tight sm:text-4xl">
         {page.heading}

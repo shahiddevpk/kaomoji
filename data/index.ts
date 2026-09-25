@@ -22,8 +22,8 @@ export const PAGE_GRID_LIMIT = 96;
 /** SEO depth cap: crawlable /page/n stops here; remainder is search-only. */
 export const MAX_PAGINATION_PAGES = 15;
 
-/** Max faces listed in ItemList JSON-LD. */
-export const ITEM_LIST_LIMIT = 48;
+/** Max faces listed in ItemList JSON-LD (matches PAGE_GRID_LIMIT / visible page-1 grid). */
+export const ITEM_LIST_LIMIT = 96;
 
 /** Research-backed phrases attached per primary category (not routes). */
 const CATEGORY_SEARCH: Record<string, string[]> = {
@@ -331,11 +331,47 @@ export function crawlablePageCountForTags(
   return Math.min(MAX_PAGINATION_PAGES, pageCountForTags(tags, options));
 }
 
+/** Module-level memo: fully ranked category pools (rank once, slice per page). */
+const rankedCategoryPool = new Map<string, Kaomoji[]>();
+
+/** Module-level memo: fully ranked tag pools (rank once, slice per page). */
+const rankedTagPool = new Map<string, Kaomoji[]>();
+
+function rankedPoolForCategory(categoryId: string): Kaomoji[] {
+  let pool = rankedCategoryPool.get(categoryId);
+  if (!pool) {
+    pool = rankForGrid(getByCategory(categoryId, { primaryOnly: true }));
+    rankedCategoryPool.set(categoryId, pool);
+  }
+  return pool;
+}
+
+function tagPoolKey(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): string {
+  const normalized = tags.map(normalizeTag).sort().join("\0");
+  return `${normalized}|${options?.includeNewlines ? "1" : "0"}`;
+}
+
+function rankedPoolForTags(
+  tags: string[],
+  options?: { includeNewlines?: boolean },
+): Kaomoji[] {
+  const key = tagPoolKey(tags, options);
+  let pool = rankedTagPool.get(key);
+  if (!pool) {
+    pool = rankForGrid(getByTags(tags, options));
+    rankedTagPool.set(key, pool);
+  }
+  return pool;
+}
+
 /** 1-indexed page slice for a primary category. */
 export function getForCategoryPage(categoryId: string, page: number): Kaomoji[] {
   const safe = Math.max(1, Math.floor(page));
   const start = (safe - 1) * PAGE_GRID_LIMIT;
-  return rankForGrid(getByCategory(categoryId, { primaryOnly: true })).slice(
+  return rankedPoolForCategory(categoryId).slice(
     start,
     start + PAGE_GRID_LIMIT,
   );
@@ -349,7 +385,7 @@ export function getForTagPage(
 ): Kaomoji[] {
   const safe = Math.max(1, Math.floor(page));
   const start = (safe - 1) * PAGE_GRID_LIMIT;
-  return rankForGrid(getByTags(tags, options)).slice(
+  return rankedPoolForTags(tags, options).slice(
     start,
     start + PAGE_GRID_LIMIT,
   );

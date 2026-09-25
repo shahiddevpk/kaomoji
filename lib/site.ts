@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { SearchScope } from "@/lib/search/actions";
 
 export const siteConfig = {
@@ -1080,13 +1081,13 @@ export const pages: SitePage[] = [
   },
 ];
 
-export function getPage(path: string): SitePage {
+export const getPage = cache(function getPage(path: string): SitePage {
   const page = pages.find((item) => item.path === path);
   if (!page) {
     throw new Error(`Unknown page: ${path}`);
   }
   return page;
-}
+});
 
 export function headerNav(): SitePage[] {
   return pages.filter((page) => page.inHeader);

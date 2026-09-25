@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CopiedToast } from "@/components/kaomoji/copied-toast";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
@@ -8,6 +8,8 @@ import { JsonLd } from "@/components/layout/json-ld";
 import { websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+
+export const revalidate = 86400;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -33,8 +33,8 @@ export function KaomojiGrid({
             <article
               className={
                 tall
-                  ? "flex h-full min-h-[10.5rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[12rem] sm:gap-3 sm:p-4"
-                  : "flex h-full min-h-[8.75rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[9.5rem] sm:gap-3 sm:p-4"
+                  ? "kaomoji-card flex h-full min-h-[10.5rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[12rem] sm:gap-3 sm:p-4"
+                  : "kaomoji-card flex h-full min-h-[8.75rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[9.5rem] sm:gap-3 sm:p-4"
               }
             >
               <p

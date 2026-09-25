@@ -4,7 +4,9 @@
   PasteKaomoji - DigiSkills-near warm orange (single light theme, no dark mode)
 
   Color:
-  --color-primary / --primary          DigiSkills-near orange (#F5911C)
+  --color-primary / --primary          DigiSkills-near deepened (#C2410C, orange-700)
+                                       deepened for AA contrast on white CTA labels
+                                       (was #F5911C ~2.3:1; #C2410C keeps DigiSkills warmth)
   --color-secondary / --secondary      DigiSkills form gray (#F9F9F9)
   --color-accent / --accent            primary action (maps to primary)
   --color-accent-foreground            on-accent text (white)
@@ -13,8 +15,8 @@
   --color-foreground / --foreground    near-black text (#1A1A1A)
   --color-muted / --muted              secondary text (#666666)
   --color-border / --border            cool light gray border (#E5E5E5)
-  --color-link / --link                accent orange link
-  --color-link-hover                   deeper orange on hover
+  --color-link / --link                accent orange link (#D97706)
+  --color-link-hover                   deeper orange on hover (#B45309)
   --color-hover                        warm hover wash
   --color-active / --active            light orange tint (#FFF5E6)
   --color-focus-ring                   focus outline (primary)
@@ -22,7 +24,7 @@
   --color-warning (+ foreground)
   --color-error (+ foreground)
   --color-disabled (+ muted border)
-  --primary-hover / --accent hover     #D97706
+  --primary-hover                      #9A3412 (deeper orange-800 family)
 
   Spacing / chrome:
   --space-xs .. --space-xl
@@ -35,10 +37,10 @@
 */
 
 :root {
-  --primary: #F5911C;
-  --primary-hover: #D97706;
+  --primary: #C2410C;
+  --primary-hover: #9A3412;
   --secondary: #F9F9F9;
-  --accent: #F5911C;
+  --accent: #C2410C;
   --accent-foreground: #FFFFFF;
   --background: #FFFFFF;
   --bg: #FFFFFF;
@@ -51,7 +53,7 @@
   --link-hover: #B45309;
   --hover: #fff5e6;
   --active: #FFF5E6;
-  --focus-ring: #F5911C;
+  --focus-ring: #C2410C;
   --success: #166534;
   --success-foreground: #F0FDF4;
   --warning: #A16207;
@@ -217,6 +219,12 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
+
+/* Off-screen face cards skip paint/layout work; strings stay in HTML for SEO/Google. */
+.kaomoji-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 9.5rem;
+}
 .kaomoji-face {
   font-family: var(--font-geist-mono), ui-monospace, "Segoe UI Symbol",
     "Noto Sans JP", "Hiragino Sans", "Apple Color Emoji", sans-serif;

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import {
   catalogSize,
   countByCategory,
@@ -10,6 +10,7 @@ import {
   getRelatedKaomoji,
   isMultilineFace,
   PAGE_GRID_LIMIT,
+  ITEM_LIST_LIMIT,
 } from "@/data/index";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { SubcategoryNav } from "@/components/kaomoji/subcategory-nav";
@@ -21,7 +22,30 @@ import { FaqSection } from "@/components/kaomoji/faq-section";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
-import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd } from "@/lib/seo";
+
+function buildPageWindow(
+  current: number,
+  total: number,
+  radius: number,
+): Array<number | "ellipsis"> {
+  if (total <= 0) return [];
+  if (total === 1) return [1];
+  const marks = new Set<number>();
+  marks.add(1);
+  marks.add(total);
+  for (let n = current - radius; n <= current + radius; n += 1) {
+    if (n >= 1 && n <= total) marks.add(n);
+  }
+  const sorted = [...marks].sort((a, b) => a - b);
+  const items: Array<number | "ellipsis"> = [];
+  for (let i = 0; i < sorted.length; i += 1) {
+    const n = sorted[i]!;
+    if (i > 0 && n - sorted[i - 1]! > 1) items.push("ellipsis");
+    items.push(n);
+  }
+  return items;
+}
 
 function PaginationNav({
   basePath,
@@ -40,18 +64,52 @@ function PaginationNav({
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
   const touch =
     "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full type-button";
-  // Dominant DigiSkills-near CTA: solid primary (#F5911C) + white
+  // Dominant DigiSkills-near CTA: solid primary (#C2410C) + white (AA)
   const dominantClass = `${touch} border border-primary bg-primary px-5 font-semibold text-accent-foreground transition-colors hover:border-primary-hover hover:bg-primary-hover ${focus}`;
   const disabledClass = `${touch} cursor-not-allowed border border-disabled-border bg-disabled px-5 text-accent-foreground opacity-70`;
   const pageQuietClass = `${touch} border border-border bg-card px-3 text-muted transition-colors hover:border-primary hover:bg-hover hover:text-foreground ${focus}`;
   const pageCurrentClass = `${touch} border border-primary bg-primary px-3 font-semibold text-accent-foreground`;
+  const listClass =
+    "m-0 flex list-none flex-wrap items-center justify-center gap-2 p-0";
 
-  const pages = Array.from({ length: crawlablePages }, (_, i) => i + 1);
+  const pagesMobile = buildPageWindow(safePage, crawlablePages, 1);
+  const pagesDesktop = buildPageWindow(safePage, crawlablePages, 2);
+
+  const renderPageList = (
+    items: Array<number | "ellipsis">,
+    visibilityClass: string,
+  ) => (
+    <ul className={`${listClass} ${visibilityClass}`}>
+      {items.map((item, index) =>
+        item === "ellipsis" ? (
+          <li key={`gap-${visibilityClass}-${index}`} aria-hidden="true">
+            <span className={`${touch} px-1 text-muted`}>...</span>
+          </li>
+        ) : (
+          <li key={`${visibilityClass}-${item}`}>
+            {item === safePage ? (
+              <span className={pageCurrentClass} aria-current="page">
+                {item}
+              </span>
+            ) : (
+              <Link
+                href={categoryPageHref(basePath, item)}
+                className={pageQuietClass}
+                aria-label={`Page ${item}`}
+              >
+                {item}
+              </Link>
+            )}
+          </li>
+        ),
+      )}
+    </ul>
+  );
 
   return (
     <nav
       aria-label="Pagination"
-      className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:justify-between"
+      className="mt-6 flex flex-wrap items-center justify-center gap-2"
     >
       {prevHref ? (
         <Link href={prevHref} className={dominantClass} rel="prev">
@@ -63,25 +121,8 @@ function PaginationNav({
         </span>
       )}
 
-      <ul className="m-0 flex list-none flex-wrap items-center justify-center gap-2 p-0">
-        {pages.map((n) => (
-          <li key={n}>
-            {n === safePage ? (
-              <span className={pageCurrentClass} aria-current="page">
-                {n}
-              </span>
-            ) : (
-              <Link
-                href={categoryPageHref(basePath, n)}
-                className={pageQuietClass}
-                aria-label={`Page ${n}`}
-              >
-                {n}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
+      {renderPageList(pagesMobile, "sm:hidden")}
+      {renderPageList(pagesDesktop, "hidden sm:flex")}
 
       {nextHref ? (
         <Link href={nextHref} className={dominantClass} rel="next">
@@ -176,6 +217,12 @@ export function CategoryView({
       ? faqJsonLd(page.faqs)
       : null;
 
+  // ItemList only on indexable page 1 (matches visible grid; avoids schema on noindex pages).
+  const itemListSchema =
+    safePage === 1
+      ? itemListJsonLd(page, faces.slice(0, ITEM_LIST_LIMIT), total)
+      : null;
+
   const paginationProps = showPaging
     ? {
         basePath: page.path,
@@ -189,6 +236,8 @@ export function CategoryView({
   return (
     <article className="mx-auto w-full max-w-6xl px-4 py-8">
       <JsonLd data={breadcrumbJsonLd(page, { pageNumber: safePage })} />
+      {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
+      {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <Breadcrumbs page={page} pageNumber={safePage} />
       <h1 className="mt-4 type-h1 tracking-tight">
         {page.heading}

@@ -25,7 +25,9 @@ export function pageMetadata(
     pageNumber > 1 ? `${page.path}/page/${pageNumber}` : page.path;
   const canonical = canonicalPath(pathForCanonical);
 
-  // Pagination page 2+ is noindex,follow to protect head-term SERPs.
+  // Pagination page 2+ stays noindex,follow (anti-cannibalization for GSC):
+  // page 1 owns the head intent; deeper pages stay crawlable via follow +
+  // prev/next/sitemap but must not compete as indexable duplicates.
   // Valuable unique intent pages stay indexable unless page.robots overrides.
   const robots =
     pageNumber > 1
@@ -123,7 +125,7 @@ export function websiteJsonLd() {
 
 /** ItemList for category/utility grids. No Product/Offer.
  * `totalCount` sets numberOfItems to the true catalog total while
- * itemListElement stays capped at the faces passed in (â‰¤48).
+ * itemListElement stays capped at the faces passed in (ITEM_LIST_LIMIT / page-1 grid).
  */
 export function itemListJsonLd(
   page: SitePage,
