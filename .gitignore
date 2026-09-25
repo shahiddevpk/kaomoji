@@ -1,4 +1,4 @@
-﻿# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
@@ -90,3 +90,12 @@ kaomoji-verify.py
 start-*.log
 start-*.err
 *.local.log
+# SEO audit / agent scratch dumps (local only)
+_seo-audit-tmp/
+
+# SEO re-review / residual audit scratch (local only)
+_seo_rereview/
+_seo_*/
+# agent residual inspect / curl helpers (local only)
+inspect-*.js
+curl-leads.js

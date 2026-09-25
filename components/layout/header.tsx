@@ -59,7 +59,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-card">
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-3 sm:gap-3">
+      <div className={`relative mx-auto flex w-full max-w-6xl flex-col px-4 sm:gap-3 ${menuOpen ? "gap-1.5 py-2" : "gap-2 py-3"}`}>
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/"
@@ -109,3 +109,4 @@ export function Header() {
     </header>
   );
 }
+

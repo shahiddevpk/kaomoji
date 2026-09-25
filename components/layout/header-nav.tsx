@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
+/**
+ * Category strip starts at the beginning (Cute/Happy visible).
+ * Scroll arrows + edge fades improve discoverability; all links stay in the HTML.
+ */
 export function HeaderNav({
   links,
   onNavigate,
@@ -12,13 +17,71 @@ export function HeaderNav({
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  const updateOverflow = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setCanLeft(el.scrollLeft > 2);
+    setCanRight(max - el.scrollLeft > 2);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    // Always start at the beginning so Cute/Happy are visible.
+    el.scrollLeft = 0;
+    updateOverflow();
+    const onScroll = () => updateOverflow();
+    el.addEventListener("scroll", onScroll, { passive: true });
+    const ro = new ResizeObserver(() => updateOverflow());
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      ro.disconnect();
+    };
+  }, [links, updateOverflow]);
+
+  function scrollByDir(dir: -1 | 1) {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.max(160, el.clientWidth * 0.55), behavior: "smooth" });
+  }
+
+  const arrowClass =
+    "absolute top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/95 text-foreground shadow-sm transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
 
   return (
-    <nav
-      aria-label="Categories"
-      className="-mx-4 flex justify-center overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0"
-    >
-      <div className="inline-flex gap-2">
+    <nav aria-label="Categories" className="relative">
+      <button
+        type="button"
+        aria-label="Scroll categories left"
+        className={cn(arrowClass, "left-0", canLeft ? "opacity-100" : "pointer-events-none opacity-0")}
+        onClick={() => scrollByDir(-1)}
+        tabIndex={canLeft ? 0 : -1}
+      >
+        ‹
+      </button>
+      <button
+        type="button"
+        aria-label="Scroll categories right"
+        className={cn(arrowClass, "right-0", canRight ? "opacity-100" : "pointer-events-none opacity-0")}
+        onClick={() => scrollByDir(1)}
+        tabIndex={canRight ? 0 : -1}
+      >
+        ›
+      </button>
+
+      <div
+        ref={scrollerRef}
+        className={cn(
+          "-mx-4 flex justify-start gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0",
+          "scroll-smooth [scrollbar-width:thin]",
+        )}
+      >
         {links.map((page) => {
           const active =
             pathname === page.path ||

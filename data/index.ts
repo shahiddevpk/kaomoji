@@ -98,14 +98,65 @@ const LIBRARY_SEARCH = [
   "copy paste",
 ];
 
-function rankForGrid(items: Kaomoji[]): Kaomoji[] {
-  const popular = items.filter((item) => item.popular);
-  const rest = items.filter((item) => !item.popular);
-  return [...popular, ...rest];
-}
-
 function normalizeTag(tag: string): string {
   return tag.toLowerCase().trim();
+}
+
+/** Lead-order buckets: lower sorts earlier. Popular still wins within bias. */
+type RankOptions = {
+  demoteTags?: string[];
+  preferTags?: string[];
+  /** Substrings in face text that force demotion (glyph-level specialty leak). */
+  demoteFaceIncludes?: string[];
+  /** Substrings in face text that boost lead order (e.g. teddy ears on bear). */
+  preferFaceIncludes?: string[];
+};
+
+function leadBucket(item: Kaomoji, options?: RankOptions): number {
+  const tags = item.tags.map(normalizeTag);
+  const demote = new Set((options?.demoteTags ?? []).map(normalizeTag));
+  const prefer = new Set((options?.preferTags ?? []).map(normalizeTag));
+  const faceDemoted =
+    (options?.demoteFaceIncludes ?? []).some((needle) =>
+      item.face.includes(needle),
+    );
+  const demoted =
+    faceDemoted ||
+    (demote.size > 0 && tags.some((t) => demote.has(t)));
+  const facePreferred =
+    (options?.preferFaceIncludes ?? []).some((needle) =>
+      item.face.includes(needle),
+    );
+  const preferred =
+    facePreferred ||
+    (prefer.size > 0 && tags.some((t) => prefer.has(t)));
+  // Intent-first: keep demoted cross-mood faces behind ALL on-intent faces
+  // (popular and not), so angry page-1 is not oraora-dominated when few
+  // pure-angry faces are flagged popular. Faces stay on the page (no thinning).
+  if (preferred && item.popular && !demoted) return 0;
+  if (item.popular && !demoted) return 1;
+  if (preferred && !demoted) return 2;
+  if (!demoted) return 3;
+  if (preferred && item.popular) return 4;
+  if (item.popular) return 5;
+  if (preferred) return 6;
+  return 7;
+}
+
+function rankForGrid(items: Kaomoji[], options?: RankOptions): Kaomoji[] {
+  return [...items].sort(
+    (a, b) => leadBucket(a, options) - leadBucket(b, options),
+  );
+}
+
+/** Stable rotate so category first screens differ from hub popular stack. */
+function rotatePopularFirst(items: Kaomoji[], offset: number): Kaomoji[] {
+  if (offset <= 0 || items.length < 2) return items;
+  const popular = items.filter((item) => item.popular);
+  const rest = items.filter((item) => !item.popular);
+  if (popular.length < 2) return items;
+  const o = offset % popular.length;
+  return [...popular.slice(o), ...popular.slice(0, o), ...rest];
 }
 
 
@@ -158,6 +209,33 @@ export function getPopular(): Kaomoji[] {
   return catalog.filter((item) => item.popular);
 }
 
+/**
+ * Hub vs /kaomoji-copy-paste/ both show PAGE_GRID_LIMIT popular faces in SSR HTML,
+ * but leading order differs via a stable rotate so the two URLs are not identical grids.
+ * Same pool, same count, no cloaking — ItemList/HTML order match getForPage.
+ */
+function popularGridForPath(path: string): Kaomoji[] {
+  const popular = getPopular();
+  // Hub, utility, and happy must not share an identical first-screen stack.
+  if (path === "/kaomoji-copy-paste") {
+    const offset = Math.min(PAGE_GRID_LIMIT, Math.max(0, popular.length - 1));
+    const rotated =
+      offset === 0
+        ? popular
+        : [...popular.slice(offset), ...popular.slice(0, offset)];
+    return rotated.slice(0, PAGE_GRID_LIMIT);
+  }
+  if (path === "/happy-kaomoji") {
+    const offset = Math.min(20, Math.max(0, popular.length - 1));
+    const rotated =
+      offset === 0
+        ? popular
+        : [...popular.slice(offset), ...popular.slice(0, offset)];
+    return rotated.slice(0, PAGE_GRID_LIMIT);
+  }
+  return popular.slice(0, PAGE_GRID_LIMIT);
+}
+
 export function getRelatedKaomoji(
   input: string[] | Kaomoji,
   limit = 8,
@@ -193,7 +271,7 @@ export function getForPage(input: {
     return getForCategoryPage(input.category, input.page ?? 1);
   }
   if (input.path === "/" || input.path === "/kaomoji-copy-paste") {
-    return getPopular().slice(0, PAGE_GRID_LIMIT);
+    return popularGridForPath(input.path);
   }
   return [];
 }
@@ -337,10 +415,67 @@ const rankedCategoryPool = new Map<string, Kaomoji[]>();
 /** Module-level memo: fully ranked tag pools (rank once, slice per page). */
 const rankedTagPool = new Map<string, Kaomoji[]>();
 
+const TEXT_FACES_DEMOTE = [
+  "throw",
+  "toss",
+  "flip",
+  "tableflip",
+  "table flip",
+  "fight",
+  "punch",
+  "hit",
+  "oraora",
+  "aggressive",
+  "angry",
+];
+
+/** Classic flip/fight signatures often tagged only "classic" — catch by glyph. */
+const TEXT_FACES_DEMOTE_FACE = ["┻━┻", "┬─┬", "彡┻"];
+
+const CUTE_DEMOTE_HEART = ["heart", "love", "kiss", "hug"];
+
+const HEART_PREFER = ["heart", "love"];
+
+const TEXT_FACES_PREFER = ["shrug", "lenny", "disapproval", "wave"];
+
+const ANGRY_DEMOTE_FIGHT = [
+  "fight",
+  "punch",
+  "hit",
+  "oraora",
+  "aggressive",
+];
+
+const FIGHT_PREFER = ["fight", "punch", "hit", "oraora"];
+
+function rankOptionsForCategory(
+  categoryId: string,
+): RankOptions | undefined {
+  if (categoryId === "text-faces") {
+    return {
+      demoteTags: TEXT_FACES_DEMOTE,
+      demoteFaceIncludes: TEXT_FACES_DEMOTE_FACE,
+      preferTags: TEXT_FACES_PREFER,
+    };
+  }
+  // Cute page-1: non-heart kawaii first; heart/love/kiss/hug defer to /heart-kaomoji/.
+  if (categoryId === "cute") {
+    return { demoteTags: CUTE_DEMOTE_HEART };
+  }
+  return undefined;
+}
+
 function rankedPoolForCategory(categoryId: string): Kaomoji[] {
   let pool = rankedCategoryPool.get(categoryId);
   if (!pool) {
-    pool = rankForGrid(getByCategory(categoryId, { primaryOnly: true }));
+    pool = rankForGrid(
+      getByCategory(categoryId, { primaryOnly: true }),
+      rankOptionsForCategory(categoryId),
+    );
+    // Happy first-screen should not mirror the hub popular stack.
+    if (categoryId === "happy") {
+      pool = rotatePopularFirst(pool, 20);
+    }
     rankedCategoryPool.set(categoryId, pool);
   }
   return pool;
@@ -354,6 +489,31 @@ function tagPoolKey(
   return `${normalized}|${options?.includeNewlines ? "1" : "0"}`;
 }
 
+function rankOptionsForTags(tags: string[]): RankOptions | undefined {
+  const normalized = tags.map(normalizeTag);
+  // Angry hub: demote fight/oraora leads so scowls own page 1.
+  if (normalized.length === 1 && normalized[0] === "angry") {
+    return { demoteTags: ANGRY_DEMOTE_FIGHT };
+  }
+  if (normalized.some((t) => t === "fight" || t === "punch" || t === "hit")) {
+    return { preferTags: FIGHT_PREFER };
+  }
+  // Heart page-1: ♡/♥/love-first (prefer heart+love over kiss/hug-only leads).
+  if (normalized.some((t) => t === "heart" || t === "love")) {
+    return { preferTags: HEART_PREFER };
+  }
+  // Bear page-1: teddy snout / bear-ears family first; demote (=^...^=) neko openers.
+  // Keep all bear-tagged faces in the pool (no thinning / catalog cut).
+  if (normalized.length === 1 && normalized[0] === "bear") {
+    return {
+      // Glyph-only: many neko rows are mis-tagged kuma/bear in the catalog.
+      preferFaceIncludes: ["ʕ", "ᴥ"],
+      demoteFaceIncludes: ["=^", "^="],
+    };
+  }
+  return undefined;
+}
+
 function rankedPoolForTags(
   tags: string[],
   options?: { includeNewlines?: boolean },
@@ -361,7 +521,7 @@ function rankedPoolForTags(
   const key = tagPoolKey(tags, options);
   let pool = rankedTagPool.get(key);
   if (!pool) {
-    pool = rankForGrid(getByTags(tags, options));
+    pool = rankForGrid(getByTags(tags, options), rankOptionsForTags(tags));
     rankedTagPool.set(key, pool);
   }
   return pool;

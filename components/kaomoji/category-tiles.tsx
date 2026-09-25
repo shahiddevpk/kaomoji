@@ -9,6 +9,10 @@ const BROWSE_ORDER = [
   "/sad-kaomoji",
   "/crying-kaomoji",
   "/angry-kaomoji",
+  // Angry-family specialties (have parentPath; still discoverable from hub)
+  "/table-flip-kaomoji",
+  "/fight-kaomoji",
+  "/pout-kaomoji",
   "/heart-kaomoji",
   "/shy-kaomoji",
   "/kaomoji-copy-paste",
@@ -18,8 +22,17 @@ const BROWSE_ORDER = [
   "/kaomoji-generator",
 ] as const;
 
+/** Specialty children normally filtered by parentPath — keep hub-discoverable. */
+const HUB_SPECIALTY_PATHS = new Set([
+  "/table-flip-kaomoji",
+  "/fight-kaomoji",
+  "/pout-kaomoji",
+]);
+
 function orderedBrowse(): SitePage[] {
-  const browse = pagesByGroup("browse").filter((page) => !page.parentPath);
+  const browse = pagesByGroup("browse").filter(
+    (page) => !page.parentPath || HUB_SPECIALTY_PATHS.has(page.path),
+  );
   const byPath = new Map(browse.map((page) => [page.path, page]));
   const ordered: SitePage[] = [];
   for (const path of BROWSE_ORDER) {

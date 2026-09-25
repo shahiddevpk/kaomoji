@@ -53,11 +53,21 @@ export function pageMetadata(
       siteName: siteConfig.siteName,
       type: "website",
       locale: siteConfig.locale,
+      // Keep layout default OG; omitting images here would wipe root openGraph.images.
+      images: [
+        {
+          url: absoluteUrl("/og.png"),
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.siteName} — kaomoji library by mood`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description: page.description,
+      images: [absoluteUrl("/og.png")],
     },
   };
 }
@@ -124,19 +134,18 @@ export function websiteJsonLd() {
 }
 
 /** ItemList for category/utility grids. No Product/Offer.
- * `totalCount` sets numberOfItems to the true catalog total while
- * itemListElement stays capped at the faces passed in (ITEM_LIST_LIMIT / page-1 grid).
+ * numberOfItems must equal itemListElement length (the faces passed in —
+ * typically the page-1 slice capped at ITEM_LIST_LIMIT), not the full catalog total.
  */
 export function itemListJsonLd(
   page: SitePage,
   faces: Kaomoji[],
-  totalCount?: number,
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: page.heading,
-    numberOfItems: totalCount ?? faces.length,
+    numberOfItems: faces.length,
     itemListElement: faces.map((face, index) => ({
       "@type": "ListItem",
       position: index + 1,

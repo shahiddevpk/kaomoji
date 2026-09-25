@@ -5,7 +5,7 @@ export const siteConfig = {
   siteName: "Paste Kaomoji",
   url: "https://pastekaomoji.com",
   description:
-    "Kaomoji copy and paste library by mood: cute, cat, happy, crying, angry, Japanese emoticons, and text faces. Browse grids, then one-tap copy.",
+    "Kaomoji library by mood: cute, cat, happy, crying, angry, Japanese emoticons, and text faces. Browse the discovery hub, then one-tap copy.",
   locale: "en_US",
 } as const;
 
@@ -53,11 +53,12 @@ export const pages: SitePage[] = [
   {
     path: "/",
     label: "Home",
-    heading: "Kaomoji Copy and Paste Library",
-    titleSegment: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
-    description: siteConfig.description,
+    heading: "Browse Kaomoji by Mood",
+    titleSegment: "Kaomoji Library by Mood | Text Faces | Paste Kaomoji",
+    description:
+      "Browse kaomoji and text faces by mood: cute, happy, cat, crying, angry, Japanese emoticons, and more. Discover the library, then one-tap copy.",
     intro:
-      "Browse kaomoji and text faces by mood, then one-tap copy. Start from category tiles when you are exploring; open Kaomoji Copy and Paste when you only need a fast grab.",
+      "Explore the kaomoji library by mood and theme, then copy in one tap. Start from category tiles when you are discovering; open Kaomoji Copy and Paste when you only need a fast grab.",
     group: "hub",
     inHeader: true,
     definition:
@@ -95,7 +96,7 @@ export const pages: SitePage[] = [
   {
     path: "/cute-kaomoji",
     label: "Cute",
-    heading: "Cute Kaomoji Copy and Paste",
+    heading: "Cute Kaomoji",
     titleSegment: "Cute Kaomoji (◕‿◕)",
     description:
       "Cute kaomoji (◕‿◕) copy and paste: soft kawaii blush, tiny hugs, and gentle charm. Soft aesthetic mood with one-tap copy, separate from happy cheers.",
@@ -129,7 +130,7 @@ export const pages: SitePage[] = [
   {
     path: "/happy-kaomoji",
     label: "Happy",
-    heading: "Happy Kaomoji Copy and Paste",
+    heading: "Happy Kaomoji",
     titleSegment: "Happy Kaomoji (＾▽＾)",
     description:
       "Happy kaomoji (＾▽＾) copy and paste for cheers, waves, and big grins. Upbeat faces with one-tap copy, not soft kawaii blush.",
@@ -157,7 +158,7 @@ export const pages: SitePage[] = [
   {
     path: "/cat-kaomoji",
     label: "Cat",
-    heading: "Cat Kaomoji Copy and Paste",
+    heading: "Cat Kaomoji",
     titleSegment: "Cat Kaomoji (=^･ω･^=)",
     description:
       "Cat kaomoji (=^･ω･^=) copy and paste (neko / catmoji): calm cats to excited ones. Large tap targets and instant clipboard toast.",
@@ -185,7 +186,7 @@ export const pages: SitePage[] = [
   {
     path: "/sad-kaomoji",
     label: "Sad",
-    heading: "Sad Kaomoji Copy and Paste",
+    heading: "Sad Kaomoji",
     titleSegment: "Sad Kaomoji (╥﹏╥)",
     description:
       "Sad kaomoji (╥﹏╥) copy and paste: quiet downcast eyes and soft frowns. Low-mood faces without tears; sobbing lives on the crying page.",
@@ -213,7 +214,7 @@ export const pages: SitePage[] = [
   {
     path: "/crying-kaomoji",
     label: "Crying",
-    heading: "Crying Kaomoji Copy and Paste",
+    heading: "Crying Kaomoji",
     titleSegment: "Crying Kaomoji (ಥ﹏ಥ)",
     description:
       "Crying kaomoji (ಥ﹏ಥ) copy and paste: cry, tears, and sobbing faces. Cry searches land here; quiet downcast faces stay on sad.",
@@ -241,7 +242,7 @@ export const pages: SitePage[] = [
   {
     path: "/angry-kaomoji",
     label: "Angry",
-    heading: "Angry Kaomoji Copy and Paste",
+    heading: "Angry Kaomoji",
     titleSegment: "Angry Kaomoji (╬ಠ益ಠ)",
     description:
       "Angry kaomoji (╬ಠ益ಠ) copy and paste: scowls, growls, and mad faces. Browse angry, or open table flip, fight, and pout. Rage and glare stay as tags here.",
@@ -287,7 +288,7 @@ export const pages: SitePage[] = [
   {
     path: "/table-flip-kaomoji",
     label: "Table flip",
-    heading: "Table Flip Kaomoji Copy and Paste",
+    heading: "Table Flip Kaomoji",
     titleSegment: "Table Flip Kaomoji (╯°□°)╯︵ ┻━┻",
     description:
       "Table flip kaomoji (╯°□°)╯︵ ┻━┻ copy and paste: classic flip-the-table faces. Nested under angry, owned by the table-flip keyword.",
@@ -322,7 +323,7 @@ export const pages: SitePage[] = [
   {
     path: "/fight-kaomoji",
     label: "Fight",
-    heading: "Fight Kaomoji Copy and Paste",
+    heading: "Fight Kaomoji",
     titleSegment: "Fight Kaomoji (ง •̀_•́)ง",
     description:
       "Fight kaomoji (ง •̀_•́)ง copy and paste: punching, hitting, and sparring faces. Action heat that stays distinct from the general angry grid.",
@@ -357,7 +358,7 @@ export const pages: SitePage[] = [
   {
     path: "/pout-kaomoji",
     label: "Pout",
-    heading: "Pout Kaomoji Copy and Paste",
+    heading: "Pout Kaomoji",
     titleSegment: "Pout Kaomoji (￣ヘ￣)",
     description:
       "Pout kaomoji (￣ヘ￣) copy and paste: hmph, sulk, and mildly annoyed faces. Soft pushback when full rage would be too much.",
@@ -393,7 +394,7 @@ export const pages: SitePage[] = [
     path: "/kaomoji-copy-paste",
     label: "Copy and paste",
     heading: "Kaomoji Copy and Paste",
-    titleSegment: "Kaomoji Copy Paste (◕‿◕)",
+    titleSegment: "Kaomoji Copy and Paste (◕‿◕)",
     description:
       "Kaomoji copy and paste (◕‿◕) utility: popular faces first, one-tap clipboard, then moods. Explicit copy task, not the discovery hub.",
     intro:
@@ -427,7 +428,7 @@ export const pages: SitePage[] = [
   {
     path: "/japanese-emoticons",
     label: "Japanese",
-    heading: "Japanese Emoticons Copy and Paste",
+    heading: "Japanese Emoticons",
     titleSegment: "Japanese Emoticons (^_^)",
     description:
       "Japanese emoticons (^_^) copy and paste (kaomoji): classic faces from punctuation and kana. Language-first set, not ASCII shrug lists.",
@@ -463,7 +464,7 @@ export const pages: SitePage[] = [
   {
     path: "/text-faces",
     label: "Text faces",
-    heading: "Text Faces Copy and Paste",
+    heading: "Text Faces",
     titleSegment: "Text Faces ¯\_(ツ)_/¯",
     description:
       "Text faces ¯\\_(ツ)_/¯ copy and paste: shrug, Lenny, disapproval, and more. ASCII and unicode catalog, not Japanese kana construction.",
@@ -582,7 +583,7 @@ export const pages: SitePage[] = [
     path: "/heart-kaomoji",
     label: "Heart",
     heading: "Heart Kaomoji",
-    titleSegment: "Heart Kaomoji Copy & Paste (♡‿♡)",
+    titleSegment: "Heart Kaomoji (♡‿♡)",
     description:
       "Heart kaomoji to copy for affection, crush energy, and warm thanks. Browse love-ready text faces, tap once, and paste into any chat.",
     intro:
@@ -630,7 +631,7 @@ export const pages: SitePage[] = [
     path: "/shy-kaomoji",
     label: "Shy",
     heading: "Shy Kaomoji",
-    titleSegment: "Shy Kaomoji Copy & Paste (⁄ ⁄•⁄ω⁄•⁄ ⁄)",
+    titleSegment: "Shy Kaomoji (⁄ ⁄•⁄ω⁄•⁄ ⁄)",
     description:
       "Shy kaomoji for bashful, awkward, and blushy moments. Copy soft nervous faces and paste them when a big smile feels too bold.",
     intro:
@@ -678,7 +679,7 @@ export const pages: SitePage[] = [
     path: "/bunny-kaomoji",
     label: "Bunny",
     heading: "Bunny Kaomoji",
-    titleSegment: "Bunny Kaomoji Copy & Paste (•ㅅ•)",
+    titleSegment: "Bunny Kaomoji (•ㅅ•)",
     description:
       "Bunny kaomoji with rabbit ears and soft animal faces to copy. Tap once and paste cute rabbit text faces into any chat.",
     intro:
@@ -726,7 +727,7 @@ export const pages: SitePage[] = [
     path: "/dog-kaomoji",
     label: "Dog",
     heading: "Dog Kaomoji",
-    titleSegment: "Dog Kaomoji Copy & Paste (U・x・U)",
+    titleSegment: "Dog Kaomoji (U・x・U)",
     description:
       "Dog kaomoji and puppy-style text faces ready to copy. Browse loyal, playful pup looks and paste them into any chat.",
     intro:
@@ -774,7 +775,7 @@ export const pages: SitePage[] = [
     path: "/shocked-kaomoji",
     label: "Shocked",
     heading: "Shocked Kaomoji",
-    titleSegment: "Shocked Kaomoji Copy & Paste (°□°)",
+    titleSegment: "Shocked Kaomoji (°□°)",
     description:
       "Shocked kaomoji for wide-eyed surprise and sudden reactions. Copy stunned text faces and paste them when words feel too slow.",
     intro:
@@ -822,7 +823,7 @@ export const pages: SitePage[] = [
     path: "/smug-kaomoji",
     label: "Smug",
     heading: "Smug Kaomoji",
-    titleSegment: "Smug Kaomoji Copy & Paste (￣ω￣)",
+    titleSegment: "Smug Kaomoji (￣ω￣)",
     description:
       "Smug kaomoji for knowing smiles and playful swagger. Copy confident text faces when you want a teasing \"told you so\" vibe.",
     intro:
@@ -870,7 +871,7 @@ export const pages: SitePage[] = [
     path: "/sleepy-kaomoji",
     label: "Sleepy",
     heading: "Sleepy Kaomoji",
-    titleSegment: "Sleepy Kaomoji Copy & Paste (￣ρ￣)",
+    titleSegment: "Sleepy Kaomoji (￣ρ￣)",
     description:
       "Sleepy kaomoji for tired eyes, yawns, and dozy chats. Copy drowsy text faces and paste them when you are running on empty.",
     intro:
@@ -918,7 +919,7 @@ export const pages: SitePage[] = [
     path: "/confused-kaomoji",
     label: "Confused",
     heading: "Confused Kaomoji",
-    titleSegment: "Confused Kaomoji Copy & Paste (・・？)",
+    titleSegment: "Confused Kaomoji (・・？)",
     description:
       "Confused kaomoji for puzzled looks and \"huh?\" moments. Copy tilted text faces when you need a soft question without a long reply.",
     intro:
@@ -966,7 +967,7 @@ export const pages: SitePage[] = [
     path: "/bear-kaomoji",
     label: "Bear",
     heading: "Bear Kaomoji",
-    titleSegment: "Bear Kaomoji Copy & Paste ʕ•ᴥ•ʔ",
+    titleSegment: "Bear Kaomoji ʕ•ᴥ•ʔ",
     description:
       "Bear kaomoji with soft animal faces ready to copy and paste. Browse teddy-style text bears for cozy, playful chats.",
     intro:

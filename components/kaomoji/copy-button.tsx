@@ -22,6 +22,7 @@ export function CopyButton({
       className={className}
       data-copy-id={id}
       data-copy-name={name}
+      data-copy-face={face}
     >
       Copy
     </Button>

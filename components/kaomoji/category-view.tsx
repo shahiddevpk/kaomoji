@@ -66,7 +66,7 @@ function PaginationNav({
     "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full type-button";
   // Dominant DigiSkills-near CTA: solid primary (#C2410C) + white (AA)
   const dominantClass = `${touch} border border-primary bg-primary px-5 font-semibold text-accent-foreground transition-colors hover:border-primary-hover hover:bg-primary-hover ${focus}`;
-  const disabledClass = `${touch} cursor-not-allowed border border-disabled-border bg-disabled px-5 text-accent-foreground opacity-70`;
+  const disabledClass = `${touch} cursor-not-allowed border border-border bg-secondary px-5 font-medium text-foreground`;
   const pageQuietClass = `${touch} border border-border bg-card px-3 text-muted transition-colors hover:border-primary hover:bg-hover hover:text-foreground ${focus}`;
   const pageCurrentClass = `${touch} border border-primary bg-primary px-3 font-semibold text-accent-foreground`;
   const listClass =
@@ -220,7 +220,7 @@ export function CategoryView({
   // ItemList only on indexable page 1 (matches visible grid; avoids schema on noindex pages).
   const itemListSchema =
     safePage === 1
-      ? itemListJsonLd(page, faces.slice(0, ITEM_LIST_LIMIT), total)
+      ? itemListJsonLd(page, faces.slice(0, ITEM_LIST_LIMIT))
       : null;
 
   const paginationProps = showPaging

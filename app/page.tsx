@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getForPage, getPopular, ITEM_LIST_LIMIT } from "@/data/index";
+import { getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
@@ -28,7 +28,6 @@ function HomeFacesAndSeo() {
   const itemListSchema = itemListJsonLd(
     page,
     faces.slice(0, ITEM_LIST_LIMIT),
-    getPopular().length,
   );
   const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
 

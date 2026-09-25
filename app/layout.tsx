@@ -29,7 +29,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    default: "Kaomoji Library by Mood | Text Faces | Paste Kaomoji",
     template: `%s | ${siteConfig.siteName}`,
   },
   description: siteConfig.description,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.siteName,
-    title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    title: "Kaomoji Library by Mood | Text Faces | Paste Kaomoji",
     description:
       "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces â€” one tap to paste.",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Paste Kaomoji â€” kaomoji copy and paste",
+        alt: "Paste Kaomoji — kaomoji library by mood",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    title: "Kaomoji Library by Mood | Text Faces | Paste Kaomoji",
     description:
       "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces â€” one tap to paste.",
     images: ["/og.png"],

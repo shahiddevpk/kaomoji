@@ -1,8 +1,4 @@
 import type { MetadataRoute } from "next";
-import {
-  crawlablePageCountForMeta,
-  PAGINATED_SLUGS,
-} from "@/lib/category-pagination";
 import { pages, type SitePage } from "@/lib/site";
 import { absoluteUrl } from "@/lib/utils";
 
@@ -46,11 +42,14 @@ function sitemapPriority(page: SitePage): number {
   }
 }
 
-/** Page 2+ browse depth - listed but noindex via pageMetadata. */
-const PAGINATION_SITEMAP_PRIORITY = 0.4;
-
+/**
+ * Indexable URLs only (page 1 / bare paths from `pages`).
+ * Pagination page≥2 stays crawlable via on-page links + noindex,follow metadata,
+ * but is intentionally omitted here so sitemap generation never pulls the
+ * ~6MB catalog via category-pagination / crawlablePageCountForMeta.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseEntries: MetadataRoute.Sitemap = pages.map((page) => ({
+  return pages.map((page) => ({
     url: absoluteUrl(page.path),
     lastModified: "2026-09-25",
     changeFrequency:
@@ -61,19 +60,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : "monthly",
     priority: sitemapPriority(page),
   }));
-
-  const paginationEntries: MetadataRoute.Sitemap = [];
-  for (const meta of Object.values(PAGINATED_SLUGS)) {
-    const totalPages = crawlablePageCountForMeta(meta);
-    for (let n = 2; n <= totalPages; n++) {
-      paginationEntries.push({
-        url: absoluteUrl(`${meta.path}/page/${n}`),
-        lastModified: "2026-09-25",
-        changeFrequency: "monthly",
-        priority: PAGINATION_SITEMAP_PRIORITY,
-      });
-    }
-  }
-
-  return [...baseEntries, ...paginationEntries];
 }
