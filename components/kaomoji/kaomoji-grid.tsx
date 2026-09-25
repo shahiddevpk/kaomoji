@@ -64,7 +64,6 @@ export function KaomojiGrid({
                 data-copied={flashing ? flashing.state : undefined}
                 onClick={(event) => {
                   event.preventDefault();
-                  event.stopPropagation();
                   copy({ id: item.id, face: item.face, name: item.name });
                 }}
               >

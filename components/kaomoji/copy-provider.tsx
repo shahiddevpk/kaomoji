@@ -80,7 +80,7 @@ function getFlash() {
 
 function startFlash(id: string, state: "copied" | "error", label: string) {
   flashCache = { id, state, label };
-  if (flashTimer) window.clearTimeout(flashTimer);
+  if (flashTimer !== null) window.clearTimeout(flashTimer);
   flashTimer = window.setTimeout(() => {
     flashCache = null;
     flashTimer = null;
@@ -96,8 +96,7 @@ function mirrorFlashToDom(flash: CopyFlash | null) {
     const id = node.getAttribute("data-copy-id");
     if (flash && id === flash.id) return;
     if (node.children.length === 0) {
-      const original =
-        node.getAttribute("data-copy-label-original") ?? "Copy";
+      const original = node.getAttribute("data-copy-label-original") ?? "Copy";
       node.textContent = original;
     }
     node.removeAttribute("data-copied");
@@ -121,7 +120,6 @@ function mirrorFlashToDom(flash: CopyFlash | null) {
         const aria = node.getAttribute("aria-label");
         if (aria) node.setAttribute("data-copy-aria-original", aria);
       }
-      // Plain Copy / generator buttons: swap label. Rich chips keep children.
       if (node.children.length === 0) {
         node.textContent = flash.label;
       }
@@ -151,36 +149,33 @@ async function writeClipboard(text: string): Promise<void> {
   if (!ok) throw new Error("copy failed");
 }
 
+function finishCopy(item: CopiedFace, ok: boolean) {
+  if (ok) {
+    ensureLoaded();
+    recentCache = [
+      item,
+      ...recentCache.filter((entry) => entry.id !== item.id),
+    ].slice(0, MAX_RECENT);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(recentCache));
+    } catch {
+      /* ignore quota */
+    }
+    startFlash(item.id, "copied", "Copied");
+  } else {
+    startFlash(item.id, "error", "Failed");
+  }
+  emit();
+  mirrorFlashToDom(flashCache);
+  queueMicrotask(() => mirrorFlashToDom(flashCache));
+  requestAnimationFrame(() => mirrorFlashToDom(flashCache));
+  window.setTimeout(() => mirrorFlashToDom(flashCache), 0);
+}
+
 function copyFace(item: CopiedFace, _control?: Element | null) {
   void writeClipboard(item.face).then(
-    () => {
-      ensureLoaded();
-      recentCache = [
-        item,
-        ...recentCache.filter((entry) => entry.id !== item.id),
-      ].slice(0, MAX_RECENT);
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(recentCache));
-      } catch {
-        /* ignore */
-      }
-      // Store flash first so React grids paint Copied; then notify + DOM mirror.
-      startFlash(item.id, "copied", "Copied");
-      emit();
-      mirrorFlashToDom(flashCache);
-      // Re-apply after React commit (survives RecentlyCopied remount/reconcile).
-      queueMicrotask(() => mirrorFlashToDom(flashCache));
-      requestAnimationFrame(() => mirrorFlashToDom(flashCache));
-      window.setTimeout(() => mirrorFlashToDom(flashCache), 0);
-    },
-    () => {
-      startFlash(item.id, "error", "Failed");
-      emit();
-      mirrorFlashToDom(flashCache);
-      queueMicrotask(() => mirrorFlashToDom(flashCache));
-      requestAnimationFrame(() => mirrorFlashToDom(flashCache));
-      window.setTimeout(() => mirrorFlashToDom(flashCache), 0);
-    },
+    () => finishCopy(item, true),
+    () => finishCopy(item, false),
   );
 }
 
@@ -205,35 +200,35 @@ function onDocumentClick(event: MouseEvent) {
   if (!(target instanceof Element)) return;
   const control = target.closest("[data-copy-id]");
   if (!control) return;
+  // React buttons handle their own onClick; skip if defaultPrevented by React.
+  if (event.defaultPrevented) return;
   const item = faceFromElement(control);
   if (!item) return;
   event.preventDefault();
   copyFace(item, control);
 }
 
-/** Bind once on the client even if a useEffect is delayed/missed. */
 function bindCopyListener() {
   if (typeof document === "undefined" || clickBound) return;
   clickBound = true;
   document.addEventListener("click", onDocumentClick);
 }
 
-// Bind when this client chunk evaluates (before/without waiting on hydration).
-bindCopyListener();
-
-export function CopyProvider({ children }: { children: ReactNode }) {
-  const flash = useSyncExternalStore(subscribe, getFlash, () => null);
-
-  // Bind as early as possible on the client.
+if (typeof document !== "undefined") {
   bindCopyListener();
+}
 
+/** Provider only mounts the delegated listener — does not subscribe (avoids remounting the tree). */
+export function CopyProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
+    // Allow re-bind after HMR resets the DOM listener but keeps the module flag.
+    clickBound = false;
     bindCopyListener();
+    return () => {
+      document.removeEventListener("click", onDocumentClick);
+      clickBound = false;
+    };
   }, []);
-
-  useEffect(() => {
-    mirrorFlashToDom(flash);
-  }, [flash]);
 
   return children;
 }

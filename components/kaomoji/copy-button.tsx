@@ -35,7 +35,6 @@ export function CopyButton({
       data-copied={flashing ? flashing.state : undefined}
       onClick={(event) => {
         event.preventDefault();
-        event.stopPropagation();
         copy({ id, face, name });
       }}
     >
