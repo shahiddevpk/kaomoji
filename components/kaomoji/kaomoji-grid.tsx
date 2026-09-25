@@ -2,6 +2,7 @@
 
 import type { Kaomoji } from "@/data/types";
 import { useCopy } from "@/components/kaomoji/copy-provider";
+import { faceLangAttr } from "@/lib/utils";
 
 type GridItem = Pick<Kaomoji, "id" | "face" | "name"> &
   Partial<Kaomoji> & { multiline?: boolean };
@@ -44,7 +45,7 @@ export function KaomojiGrid({
                 className={
                   tall ? "kaomoji-face kaomoji-face--tall" : "kaomoji-face"
                 }
-                lang="ja"
+                lang={faceLangAttr(item.face)}
               >
                 {item.face}
               </p>

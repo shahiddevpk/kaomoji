@@ -23,3 +23,9 @@ export function canonicalPath(path: string): string {
   if (path === "/") return "/";
   return path.endsWith("/") ? path : `${path}/`;
 }
+
+/** lang for kaomoji display — only when the face includes Japanese script. */
+export function faceLangAttr(face: string): string | undefined {
+  if (/[\u3040-\u30ff\u4e00-\u9fff\u3400-\u4dbf]/.test(face)) return "ja";
+  return undefined;
+}

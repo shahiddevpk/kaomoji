@@ -2,15 +2,35 @@
 
 import { useMemo, useState } from "react";
 import { CopyButton } from "@/components/kaomoji/copy-button";
+import { faceLangAttr } from "@/lib/utils";
 
 const LEFT_ARMS = ["", "╰", "٩", "ᕙ", "ᕦ", "ヽ", "ᘳ", "＼", "づ", "╭"];
-const EYES = ["◕", "•", "≧", "¬", "ಠ", "๑", "≧", "＾", "◉", "✖", "T", "μ", "★"];
+const EYES = ["◕", "•", "≧", "¬", "ಠ", "๑", "＾", "◉", "✖", "T", "μ", "★"];
 const MOUTHS = ["‿", "ω", "□", "Д", "益", "▿", "ᴗ", "ㅁ", "︵", "︿", "∀", "з"];
 const RIGHT_ARMS = ["", "╯", "۶", "ᕗ", "ᕤ", "ﾉ", "ᘰ", "／", "づ", "╮"];
-const PRESETS: Array<{ name: string; left: string; eyeL: string; mouth: string; eyeR: string; right: string; extra: string }> = [
+const PRESETS: Array<{
+  name: string;
+  left: string;
+  eyeL: string;
+  mouth: string;
+  eyeR: string;
+  right: string;
+  extra: string;
+  /** Preset arms already include parentheses — skip wrapping core. */
+  rawCore?: boolean;
+}> = [
   { name: "Happy", left: "", eyeL: "◕", mouth: "‿", eyeR: "◕", right: "", extra: "" },
   { name: "Angry", left: "", eyeL: "ಠ", mouth: "益", eyeR: "ಠ", right: "", extra: "" },
-  { name: "Table flip", left: "(╯", eyeL: "°", mouth: "□", eyeR: "°", right: ")╯", extra: "︵ ┻━┻" },
+  {
+    name: "Table flip",
+    left: "(╯",
+    eyeL: "°",
+    mouth: "□",
+    eyeR: "°",
+    right: ")╯",
+    extra: "︵ ┻━┻",
+    rawCore: true,
+  },
   { name: "Shrug", left: "¯\\_", eyeL: "ツ", mouth: "", eyeR: "", right: "_/¯", extra: "" },
   { name: "Pout", left: "", eyeL: "￣", mouth: "ヘ", eyeR: "￣", right: "", extra: "" },
 ];
@@ -46,7 +66,7 @@ function ChipRow({
               onClick={() => onChange(opt)}
               className={
                 active
-                  ? "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-primary bg-primary px-3 type-button font-semibold text-accent-foreground"
+                  ? "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-primary bg-primary px-3 type-button font-semibold text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                   : "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-card px-3 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
               }
               aria-pressed={active}
@@ -67,11 +87,15 @@ export function KaomojiGenerator() {
   const [eyeR, setEyeR] = useState("◕");
   const [right, setRight] = useState("╯");
   const [extra, setExtra] = useState("");
+  const [rawCore, setRawCore] = useState(false);
 
   const face = useMemo(() => {
+    if (rawCore) {
+      return `${left}${eyeL}${mouth}${eyeR}${right}${extra}`;
+    }
     const core = `(${eyeL}${mouth}${eyeR})`;
     return `${left}${core}${right}${extra}`;
-  }, [left, eyeL, mouth, eyeR, right, extra]);
+  }, [left, eyeL, mouth, eyeR, right, extra, rawCore]);
 
   function randomize() {
     setLeft(pick(LEFT_ARMS));
@@ -89,12 +113,16 @@ export function KaomojiGenerator() {
     setEyeR("◕");
     setRight("╯");
     setExtra("");
+    setRawCore(false);
   }
 
   return (
     <div className="mt-6 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)] sm:p-6">
       <div className="flex flex-col items-center gap-4 rounded-2xl border-2 border-primary/35 bg-active px-4 py-10 shadow-[var(--shadow-sm)] sm:px-6 sm:py-12">
-        <p className="kaomoji-face text-center text-3xl sm:text-4xl" lang="ja">
+        <p
+          className="kaomoji-face text-center text-3xl sm:text-4xl"
+          lang={faceLangAttr(face)}
+        >
           {face}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -130,6 +158,7 @@ export function KaomojiGenerator() {
                 setEyeR(preset.eyeR);
                 setRight(preset.right);
                 setExtra(preset.extra);
+                setRawCore(Boolean(preset.rawCore));
               }}
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
             >

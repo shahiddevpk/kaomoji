@@ -1125,6 +1125,16 @@ function normalizePathname(pathname: string): string {
   return pathname.replace(/\/+$/, "") || "/";
 }
 
+/** Placeholder copy for header search when scoped to a category or tag page. */
+export function searchPlaceholderForScope(scope: SearchScope): string {
+  if (!scope.category && !scope.tags) {
+    return "Search faces, like cute, cry, or shrug";
+  }
+  const page = pages.find((item) => item.path === scope.path);
+  if (page) return `Search within ${page.label}`;
+  return "Search faces on this page";
+}
+
 /** Header search scope from the current pathname (longest path match). */
 export function resolveSearchScope(pathname: string): SearchScope {
   const normalized = normalizePathname(pathname);

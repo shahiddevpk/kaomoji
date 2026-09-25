@@ -1,6 +1,7 @@
 "use client";
 
 import { useCopy } from "@/components/kaomoji/copy-provider";
+import { faceLangAttr } from "@/lib/utils";
 
 export function RecentlyCopied() {
   const { recent } = useCopy();
@@ -24,7 +25,10 @@ export function RecentlyCopied() {
               data-copy-name={item.name}
               className="kaomoji-recent-chip"
             >
-              <span className="kaomoji-face kaomoji-recent-face" lang="ja">
+              <span
+                className="kaomoji-face kaomoji-recent-face"
+                lang={faceLangAttr(item.face)}
+              >
                 {item.face}
               </span>
             </button>

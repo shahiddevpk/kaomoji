@@ -11,9 +11,10 @@ export default function PrivacyPage() {
     <TrustView page={page}>
       <h2 className="text-base font-semibold">What this release stores</h2>
       <p>
-        Paste Kaomoji does not ask you to create an account. Pages are static. This release
-        does not embed analytics, advertising, or a cookie banner, and the site itself does
-        not set tracking cookies.
+        Paste Kaomoji does not ask you to create an account. Most browsing content is
+        rendered without accounts or trackers. Search requests are processed on the server.
+        This release does not embed analytics, advertising, or a cookie banner, and the site
+        itself does not set tracking cookies.
       </p>
       <h2 className="text-base font-semibold">Copying a face</h2>
       <p>

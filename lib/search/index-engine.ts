@@ -1,5 +1,9 @@
+import { passesSearchScope } from "@/data/category-integrity";
+import { kaomoji } from "@/data/items";
 import { buildSearchDocs, type SearchDoc } from "@/data/index";
 import { tokenize } from "@/lib/search";
+
+const catalogById = new Map(kaomoji.map((item) => [item.id, item]));
 
 type SearchIndex = {
   docs: SearchDoc[];
@@ -118,12 +122,19 @@ export function searchIndexed(
 
   for (const i of candidates!) {
     const doc = index.docs[i];
+    const catalogItem = catalogById.get(doc.id);
     if (category && doc.category !== category) continue;
     if (tags && tags.length > 0) {
       const docTags = doc.tags ?? [];
       const tagHit = tags.some((t) => docTags.includes(t));
       const nlHit = includeNewlines && doc.face.includes("\n");
       if (!tagHit && !nlHit) continue;
+    }
+    if (
+      catalogItem &&
+      !passesSearchScope(catalogItem, { category, tags })
+    ) {
+      continue;
     }
 
     const words = doc.text.split(" ");

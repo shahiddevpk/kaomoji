@@ -13,6 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import {
@@ -20,7 +21,7 @@ import {
   type SearchHit,
   type SearchScope,
 } from "@/lib/search/actions";
-import { resolveSearchScope } from "@/lib/site";
+import { resolveSearchScope, searchPlaceholderForScope } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function subscribeNoop() {
@@ -29,7 +30,7 @@ function subscribeNoop() {
 
 export function SearchBox({
   scope: scopeProp,
-  placeholder = "Search faces, like cute, cry, or shrug",
+  placeholder: placeholderProp,
   variant = "page",
 }: {
   scope?: SearchScope;
@@ -43,8 +44,15 @@ export function SearchBox({
   const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
   const scope =
     scopeProp ?? (isHeader ? resolveSearchScope(pathname) : { path: "/" });
+  const placeholder =
+    placeholderProp ??
+    (isHeader
+      ? searchPlaceholderForScope(scope)
+      : "Search faces, like cute, cry, or shrug");
+  const scopedSearch = Boolean(scope.category || scope.tags);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchHit[]>([]);
+  const [debouncing, setDebouncing] = useState(false);
   const [pending, startTransition] = useTransition();
   const path = scope.path;
   const category = scope.category;
@@ -55,18 +63,26 @@ export function SearchBox({
 
   useEffect(() => {
     if (trimmed.length < 2) {
+      setDebouncing(false);
       return;
     }
 
+    setDebouncing(true);
     let cancelled = false;
     const handle = window.setTimeout(() => {
       startTransition(() => {
         void searchFaces(trimmed, { path, category, tags, includeNewlines }).then(
           (hits) => {
-            if (!cancelled) setResults(hits);
+            if (!cancelled) {
+              setResults(hits);
+              setDebouncing(false);
+            }
           },
           () => {
-            if (!cancelled) setResults([]);
+            if (!cancelled) {
+              setResults([]);
+              setDebouncing(false);
+            }
           },
         );
       });
@@ -95,20 +111,32 @@ export function SearchBox({
   }, [isHeader, searching]);
 
   const statusText =
-    pending || results.length === 0
-      ? pending
+    trimmed.length < 2
+      ? ""
+      : pending || debouncing
         ? "Searching..."
-        : "0 matches"
-      : `${results.length} ${results.length === 1 ? "match" : "matches"}`;
+        : results.length === 0
+          ? "0 matches"
+          : `${results.length} ${results.length === 1 ? "match" : "matches"}`;
 
   const resultsBody = (
     <>
-      <p
-        className={cn("type-meta", isHeader ? "px-1" : "mt-2")}
-        aria-live="polite"
-      >
-        {statusText}
-      </p>
+      {statusText ? (
+        <p
+          className={cn("type-meta", isHeader ? "px-1" : "mt-2")}
+          aria-live="polite"
+        >
+          {statusText}
+        </p>
+      ) : null}
+      {scopedSearch && trimmed.length >= 2 ? (
+        <p className={cn("type-meta", isHeader ? "mt-1 px-1" : "mt-1")}>
+          Results are limited to this page.{" "}
+          <Link href="/" className="text-accent underline-offset-2 hover:underline">
+            Search all faces
+          </Link>
+        </p>
+      ) : null}
       <div className={cn("min-w-0", isHeader ? "mt-3" : "mt-4")}>
         <KaomojiGrid
           items={results}
@@ -155,6 +183,11 @@ export function SearchBox({
             onChange={(event) => {
               setQuery(event.target.value);
               setResults([]);
+              if (event.target.value.trim().length >= 2) {
+                setDebouncing(true);
+              } else {
+                setDebouncing(false);
+              }
             }}
             placeholder={placeholder}
             autoCapitalize="none"

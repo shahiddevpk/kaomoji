@@ -1,3 +1,7 @@
+import {
+  passesCategoryIntegrity,
+  passesTagIntegrity,
+} from "@/data/category-integrity";
 import { kaomoji as catalog } from "@/data/items";
 import type { Kaomoji } from "@/data/types";
 
@@ -187,11 +191,13 @@ export function getByCategory(
   options?: { primaryOnly?: boolean },
 ): Kaomoji[] {
   const primaryOnly = options?.primaryOnly ?? true;
-  return catalog.filter((item) =>
-    primaryOnly
+  return catalog.filter((item) => {
+    const inCategory = primaryOnly
       ? item.categories[0] === id
-      : item.categories.includes(id),
-  );
+      : item.categories.includes(id);
+    if (!inCategory) return false;
+    return passesCategoryIntegrity(item, id);
+  });
 }
 
 
@@ -241,6 +247,7 @@ export function getByTags(
   ];
   return catalog.filter((item) => {
     if (categoryExcluded(item, excludeCategories)) return false;
+    if (!passesTagIntegrity(item, tags)) return false;
     if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) return true;
     if (options?.includeNewlines && (item.face.includes("\n") || item.face.includes("\r"))) return true;
     return false;
@@ -361,11 +368,12 @@ export function countByCategory(
   const primaryOnly = options?.primaryOnly ?? true;
   let count = 0;
   for (const item of catalog) {
-    if (primaryOnly) {
-      if (item.categories[0] === id) count += 1;
-    } else if (item.categories.includes(id)) {
-      count += 1;
-    }
+    const inCategory = primaryOnly
+      ? item.categories[0] === id
+      : item.categories.includes(id);
+    if (!inCategory) continue;
+    if (!passesCategoryIntegrity(item, id)) continue;
+    count += 1;
   }
   return count;
 }
@@ -382,6 +390,7 @@ export function countByTags(
   let count = 0;
   for (const item of catalog) {
     if (categoryExcluded(item, excludeCategories)) continue;
+    if (!passesTagIntegrity(item, tags)) continue;
     if (item.tags.some((tag) => wanted.has(normalizeTag(tag)))) {
       count += 1;
       continue;
@@ -549,13 +558,9 @@ function rankOptionsForTags(tags: string[]): RankOptions | undefined {
   if (normalized.some((t) => t === "heart" || t === "love")) {
     return { preferTags: HEART_PREFER };
   }
-  // Bear page-1: teddy snout / bear-ears family first; demote (=^...^=) neko openers.
-  // Keep all bear-tagged faces in the pool (no thinning / catalog cut).
   if (normalized.length === 1 && normalized[0] === "bear") {
     return {
-      // Glyph-only: many neko rows are mis-tagged kuma/bear in the catalog.
       preferFaceIncludes: ["ʕ", "ᴥ"],
-      demoteFaceIncludes: ["=^", "^="],
     };
   }
   return undefined;

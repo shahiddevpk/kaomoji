@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -35,26 +35,10 @@ function ctaHref(pathname: string): string {
   return "/#faces";
 }
 
-/** Desktop CTA only - omit from DOM under sm so SR/mobile never see a duplicate. */
-function useDesktopCta() {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 640px)");
-    const apply = () => setShow(mq.matches);
-    apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
-  }, []);
-
-  return show;
-}
-
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuId = useId();
   const pathname = usePathname();
-  const showCopyCta = useDesktopCta();
   // Category chips only - Home is the logo; Copy-and-paste stays in the chip row.
   const links = headerNav().filter((page) => page.path !== "/");
 
@@ -68,14 +52,12 @@ export function Header() {
             <SearchBox key={pathname} variant="header" />
           </div>
 
-          {showCopyCta ? (
-            <Link
-              href={ctaHref(pathname)}
-              className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-primary px-4 type-button text-accent-foreground transition-colors hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-            >
-              Copy a face
-            </Link>
-          ) : null}
+          <Link
+            href={ctaHref(pathname)}
+            className="hidden min-h-11 shrink-0 items-center justify-center rounded-full bg-primary px-4 type-button text-accent-foreground transition-colors hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:inline-flex"
+          >
+            Copy a face
+          </Link>
 
           <button
             type="button"

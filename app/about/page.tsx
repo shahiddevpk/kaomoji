@@ -16,7 +16,11 @@ export default function AboutPage() {
       </p>
       <p>
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.
-        A face maker is later still, and this release does not run ads.
+        You can also build a custom face with the{" "}
+        <a href="/kaomoji-generator/" className="text-accent underline-offset-2 hover:underline">
+          Kaomoji Generator
+        </a>
+        . This release does not run ads.
       </p>
       <p>
         Faces on the site are unicode text, the same kind of characters you can already type.
