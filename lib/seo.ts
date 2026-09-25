@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import type { Kaomoji } from "@/data/types";
+import {
+  categoryPageHref,
+  crawlablePageCountForMeta,
+  PAGINATED_SLUGS,
+} from "@/lib/category-pagination";
 import { getPage, siteConfig, type SitePage } from "@/lib/site";
 import { absoluteUrl, canonicalPath } from "@/lib/utils";
 
@@ -39,10 +44,32 @@ export function pageMetadata(
           }
         : undefined;
 
+  const paginatedMeta = Object.values(PAGINATED_SLUGS).find(
+    (entry) => entry.path === page.path,
+  );
+  const totalPages = paginatedMeta
+    ? crawlablePageCountForMeta(paginatedMeta)
+    : undefined;
+  let pagination: Metadata["pagination"];
+  if (totalPages && totalPages > 1) {
+    if (pageNumber > 1) {
+      pagination = {
+        previous: absoluteUrl(categoryPageHref(page.path, pageNumber - 1)),
+      };
+    }
+    if (pageNumber < totalPages) {
+      pagination = {
+        ...pagination,
+        next: absoluteUrl(categoryPageHref(page.path, pageNumber + 1)),
+      };
+    }
+  }
+
   return {
     title: page.path === "/" ? { absolute: segment } : segment,
     description: page.description,
     ...(robots ? { robots } : {}),
+    ...(pagination ? { pagination } : {}),
     alternates: {
       canonical,
     },
