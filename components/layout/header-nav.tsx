@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { moodChipClass } from "@/lib/mood-colors";
 
 /**
  * Category strip starts at the beginning (Cute/Happy visible).
@@ -52,7 +53,7 @@ export function HeaderNav({
   }
 
   const arrowClass =
-    "absolute top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/95 text-foreground shadow-sm transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
+    "nav-scroll-arrow absolute top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border shadow-sm transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
 
   return (
     <nav aria-label="Categories" className="relative">
@@ -63,7 +64,9 @@ export function HeaderNav({
         onClick={() => scrollByDir(-1)}
         tabIndex={canLeft ? 0 : -1}
       >
-        ‹
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M12.5 4.5L7 10l5.5 5.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </button>
       <button
         type="button"
@@ -72,7 +75,9 @@ export function HeaderNav({
         onClick={() => scrollByDir(1)}
         tabIndex={canRight ? 0 : -1}
       >
-        ›
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M7.5 4.5L13 10l-5.5 5.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </button>
 
       <div
@@ -96,9 +101,8 @@ export function HeaderNav({
               className={cn(
                 "inline-flex min-h-11 shrink-0 items-center rounded-full border px-3 type-button transition-colors",
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-                active
-                  ? "border-primary bg-primary font-medium text-accent-foreground"
-                  : "border-border bg-secondary text-foreground hover:bg-hover",
+                moodChipClass(page.path, active),
+                active && "font-medium text-accent-foreground",
               )}
             >
               {page.label}

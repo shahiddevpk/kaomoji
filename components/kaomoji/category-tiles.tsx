@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { pagesByGroup, type SitePage } from "@/lib/site";
+import { moodTileClass } from "@/lib/mood-colors";
+import { cn } from "@/lib/utils";
 
 /** Hub browse order by intent: moods -> utility -> alt heads. */
 const BROWSE_ORDER = [
@@ -56,7 +58,7 @@ export function CategoryTiles() {
         <li key={page.path}>
           <Link
             href={page.path}
-            className="flex min-h-20 flex-col justify-center rounded-2xl border border-border bg-card px-3 py-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4"
+            className={cn("flex min-h-20 flex-col justify-center rounded-2xl border px-3 py-3 shadow-[var(--shadow-sm)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4", moodTileClass(page.path))}
           >
             <span className="type-label sm:text-base">{page.heading}</span>
             <span className="mt-1 line-clamp-2 type-meta">

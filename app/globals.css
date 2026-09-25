@@ -4,9 +4,9 @@
   PasteKaomoji - DigiSkills-near warm orange (single light theme, no dark mode)
 
   Color:
-  --color-primary / --primary          DigiSkills-near deepened (#C2410C, orange-700)
+  --color-primary / --primary          near-orange primary (#C2410C, matches buttons)
                                        deepened for AA contrast on white CTA labels
-                                       (was #F5911C ~2.3:1; #C2410C keeps DigiSkills warmth)
+                                       (near-orange; AA on white)
   --color-secondary / --secondary      DigiSkills form gray (#F9F9F9)
   --color-accent / --accent            primary action (maps to primary)
   --color-accent-foreground            on-accent text (white)
@@ -15,16 +15,16 @@
   --color-foreground / --foreground    near-black text (#1A1A1A)
   --color-muted / --muted              secondary text (#666666)
   --color-border / --border            cool light gray border (#E5E5E5)
-  --color-link / --link                accent orange link (#B45309, AA on white)
-  --color-link-hover                   deeper orange on hover (#B45309)
+  --color-link / --link                rose link (#D4536F, AA on white)
+  --color-link-hover                   deeper rose on hover (#C23D5C)
   --color-hover                        warm hover wash
-  --color-active / --active            light orange tint (#FFF5E6)
+  --color-active / --active            light orange tint (#FFEDD5)
   --color-focus-ring                   focus outline (primary)
   --color-success (+ foreground)       toast success
   --color-warning (+ foreground)
   --color-error (+ foreground)
   --color-disabled (+ muted border)
-  --primary-hover                      #9A3412 (deeper orange-800 family)
+  --primary-hover                      #9A3412 (deeper orange)
 
   Spacing / chrome:
   --space-xs .. --space-xl
@@ -51,8 +51,8 @@
   --border: #E5E5E5;
   --link: #B45309;
   --link-hover: #9A3412;
-  --hover: #fff5e6;
-  --active: #FFF5E6;
+  --hover: #FFF7ED;
+  --active: #FFEDD5;
   --focus-ring: #C2410C;
   --success: #166534;
   --success-foreground: #F0FDF4;
@@ -525,4 +525,50 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Chip / tile / arrow — same orange theory as buttons
+   idle = light orange (--active / --hover), selected = strong (--primary) */
+.mood-chip--idle {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--active);
+  color: var(--foreground);
+}
+.mood-chip--idle:hover {
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+  background: var(--hover);
+}
+.mood-chip--active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--accent-foreground);
+}
+
+.mood-tile {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--active);
+  color: var(--foreground);
+}
+.mood-tile:hover {
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+  background: var(--hover);
+}
+.mood-tile:focus-visible {
+  border-color: var(--primary);
+}
+
+.nav-scroll-arrow {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+  background: var(--active);
+  color: var(--primary);
+}
+.nav-scroll-arrow:hover {
+  border-color: var(--primary);
+  background: var(--hover);
+  color: var(--primary-hover);
+}
+.nav-scroll-arrow svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
 }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
 import { HeaderNav } from "@/components/layout/header-nav";
+import { SiteLogoLink } from "@/components/layout/logo";
 import { headerNav, pages } from "@/lib/site";
 
 const SearchBox = dynamic(
@@ -61,14 +62,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-card">
       <div className={`relative mx-auto flex w-full max-w-6xl flex-col px-4 sm:gap-3 ${menuOpen ? "gap-1.5 py-2" : "gap-2 py-3"}`}>
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/"
-            aria-label="Paste Kaomoji home"
-            className="inline-flex min-h-11 shrink-0 items-center text-lg font-semibold tracking-tight text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-          >
-            <span className="sm:hidden">PK</span>
-            <span className="hidden sm:inline">Paste Kaomoji</span>
-          </Link>
+          <SiteLogoLink />
 
           <div className="min-w-0 flex-1">
             <SearchBox key={pathname} variant="header" />
