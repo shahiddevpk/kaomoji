@@ -293,7 +293,7 @@ function diversifyPopularGrid(items: Kaomoji[], limit: number): Kaomoji[] {
   const groupCounts = new Map<string, number>();
   const maxPerGroup = 2;
   let laughterSuffixCount = 0;
-  const maxLaughterSuffix = 10;
+  const maxLaughterSuffix = 6;
   for (const item of items) {
     if (/ｱﾊﾊ|アハハ|ﾊﾊ/i.test(item.face)) {
       if (laughterSuffixCount >= maxLaughterSuffix) continue;
@@ -361,29 +361,47 @@ export type RelatedScope = {
   tags?: string[];
 };
 
+function poolForRelatedScope(scope: RelatedScope): Kaomoji[] {
+  if (scope.tags && scope.tags.length > 0) {
+    return rankForGrid(
+      getByTags(scope.tags),
+      rankOptionsForTags(scope.tags),
+    );
+  }
+  if (scope.category) {
+    return rankForGrid(
+      getByCategory(scope.category, { primaryOnly: true }),
+      rankOptionsForCategory(scope.category),
+    );
+  }
+  return [];
+}
+
 /** Sample on-intent faces from related browse scopes (not generic happy laughter dumps). */
 export function getRelatedKaomojiFromScopes(
   scopes: RelatedScope[],
   limit = 8,
 ): Kaomoji[] {
+  const pools = scopes.map((scope) => poolForRelatedScope(scope));
   const picks: Kaomoji[] = [];
   const seen = new Set<string>();
-  for (const scope of scopes) {
-    const pool =
-      scope.tags && scope.tags.length > 0
-        ? rankForGrid(getByTags(scope.tags), rankOptionsForTags(scope.tags))
-        : scope.category
-          ? rankForGrid(
-              getByCategory(scope.category, { primaryOnly: true }),
-              rankOptionsForCategory(scope.category),
-            )
-          : [];
-    for (const item of pool) {
-      if (seen.has(item.id)) continue;
-      seen.add(item.id);
-      picks.push(item);
+  const cursor = pools.map(() => 0);
+
+  while (picks.length < limit) {
+    let advanced = false;
+    for (let i = 0; i < pools.length; i++) {
+      const pool = pools[i];
+      while (cursor[i] < pool.length) {
+        const item = pool[cursor[i]++];
+        if (seen.has(item.id)) continue;
+        seen.add(item.id);
+        picks.push(item);
+        advanced = true;
+        break;
+      }
       if (picks.length >= limit) return picks;
     }
+    if (!advanced) break;
   }
   return picks;
 }

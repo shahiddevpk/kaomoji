@@ -268,7 +268,7 @@ export const pages: SitePage[] = [
     howTo: [
       "Scan the angry grid for scowls and growls that match your chat tone.",
       "Tap Copy once - the face goes to your clipboard with any spacing intact.",
-      "Need a narrower mood? Use the chips for table flip, fight, rage, pout, or glare.",
+      "Need a narrower mood? Use the chips for table flip, fight, or pout — rage and glare faces stay on this grid via tags and search.",
     ],
     definition:
       "These faces lean into mad energy, from mild irritation to full meltdown jokes. Pick the intensity that matches the chat, not the loudest option by default.",

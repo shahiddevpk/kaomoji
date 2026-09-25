@@ -22,6 +22,39 @@ import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd } from "@/lib/seo";
 
+function isAngryFamilyPage(page: SitePage): boolean {
+  if (page.path === "/angry-kaomoji" || page.parentPath === "/angry-kaomoji") {
+    return true;
+  }
+  const angryTags = new Set([
+    "angry",
+    "tableflip",
+    "table flip",
+    "fight",
+    "punch",
+    "hit",
+    "pout",
+    "hmph",
+    "annoyed",
+    "rage",
+    "glare",
+  ]);
+  return (page.tags ?? []).some((t) => angryTags.has(t.toLowerCase()));
+}
+
+function relatedFaceScopes(
+  page: SitePage,
+  related: SitePage[],
+): { category?: string; tags?: string[] }[] {
+  const angry = isAngryFamilyPage(page);
+  return related
+    .filter((item) => !(angry && item.category === "happy"))
+    .map((item) => ({
+      category: item.category,
+      tags: item.tags,
+    }));
+}
+
 function buildPageWindow(
   current: number,
   total: number,
@@ -179,10 +212,7 @@ export function CategoryView({
   const faces = getForPage({ ...page, page: safePage });
   const related = relatedPages(page);
   const relatedFaces = getRelatedKaomojiFromScopes(
-    related.map((item) => ({
-      category: item.category,
-      tags: item.tags,
-    })),
+    relatedFaceScopes(page, related),
   );
   const total =
     page.tags && page.tags.length > 0

@@ -264,6 +264,42 @@ function passesTableFlipTagPage(item: Kaomoji): boolean {
   return true;
 }
 
+function faceLooksAngryMad(face: string): boolean {
+  return /╬|ꐦ|💢|凸|益|ﾉ︵|┻━┻|怒|ｳｻﾞ|ぷい|ﾌﾟｲ|ʘ言ʘ|°Д°|ヽ\(.*Д|ง.*ง|ᕦ|ᕤ|ﾌﾟｲ|ﾌﾟｨ/.test(
+    face,
+  );
+}
+
+/** Angry hub + rage/glare tags: keep mad glyphs, drop crying/sob leaks. */
+function passesAngryFamilyTagPage(item: Kaomoji, tags: string[]): boolean {
+  const normalized = tags.map(normTag);
+  const angryHub =
+    normalized.length === 1 && normalized[0] === "angry";
+  const rageGlareOnly =
+    normalized.length === 1 &&
+    (normalized[0] === "rage" || normalized[0] === "glare");
+  if (!angryHub && !rageGlareOnly) return true;
+
+  if (primaryIs(item, "happy", "crying")) return false;
+  if (faceLooksCrying(item.face)) return false;
+  if (
+    hasAnyTag(item, [
+      "sob",
+      "sobbing",
+      "buwaa",
+      "cry",
+      "crying",
+      "oshii",
+      "kuyashii",
+      "regret",
+    ])
+  ) {
+    return false;
+  }
+  if (primaryIs(item, "sad") && !faceLooksAngryMad(item.face)) return false;
+  return true;
+}
+
 /** Hard exclusions for primary-category browse grids and scoped search pools. */
 export function passesCategoryIntegrity(
   item: Kaomoji,
@@ -340,6 +376,9 @@ export function passesTagIntegrity(item: Kaomoji, tags: string[]): boolean {
     )
   ) {
     return passesHeartTagPage(item);
+  }
+  if (angryFamilyTags(tags)) {
+    return passesAngryFamilyTagPage(item, tags);
   }
   return true;
 }
