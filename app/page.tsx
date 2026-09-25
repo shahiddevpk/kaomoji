@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { FaqSection } from "@/components/kaomoji/faq-section";
@@ -14,16 +13,6 @@ const page = getPage("/");
 
 export const metadata = pageMetadata(page);
 
-function FacesFallback() {
-  return (
-    <div
-      className="mt-4 min-h-[28rem] rounded-2xl border border-dashed border-border bg-secondary/40"
-      aria-hidden
-    />
-  );
-}
-
-/** Below-hero block (Suspense-friendly). Sync data so build still emits full face HTML. */
 function HomeFacesAndSeo() {
   const faces = getForPage(page);
   const itemListSchema = itemListJsonLd(
@@ -111,9 +100,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Suspense fallback={<FacesFallback />}>
-        <HomeFacesAndSeo />
-      </Suspense>
+      <HomeFacesAndSeo />
     </div>
   );
 }

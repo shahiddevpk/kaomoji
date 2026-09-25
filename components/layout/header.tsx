@@ -1,27 +1,13 @@
 "use client";
 
 import { useId, useState } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
+import { SearchBox } from "@/components/kaomoji/search-box";
 import { HeaderNav } from "@/components/layout/header-nav";
 import { SiteLogoLink } from "@/components/layout/logo";
 import { headerNav, pages } from "@/lib/site";
-
-const SearchBox = dynamic(
-  () =>
-    import("@/components/kaomoji/search-box").then((m) => m.SearchBox),
-  {
-    ssr: true,
-    loading: () => (
-      <div
-        className="min-h-11 w-full rounded-full border border-border bg-card"
-        aria-hidden
-      />
-    ),
-  },
-);
 
 function ctaHref(pathname: string): string {
   const page = pages.find(
@@ -43,7 +29,7 @@ export function Header() {
   const links = headerNav().filter((page) => page.path !== "/");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-card">
+    <header className="site-header sticky top-0 z-40">
       <div className={`relative mx-auto flex w-full max-w-6xl flex-col px-4 sm:gap-3 ${menuOpen ? "gap-1.5 py-2" : "gap-2 py-3"}`}>
         <div className="flex items-center gap-2 sm:gap-3">
           <SiteLogoLink />
@@ -80,7 +66,11 @@ export function Header() {
           />
         </div>
 
-        <div id={HEADER_SEARCH_RESULTS_ID} />
+        <div
+          id={HEADER_SEARCH_RESULTS_ID}
+          className="empty:hidden"
+          aria-live="polite"
+        />
       </div>
     </header>
   );

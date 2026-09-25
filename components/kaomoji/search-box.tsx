@@ -15,7 +15,8 @@ import {
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
+import { SearchKaomojiGrid } from "@/components/kaomoji/search-kaomoji-grid";
+import type { GridItem } from "@/components/kaomoji/kaomoji-grid-core";
 import {
   searchFaces,
   type SearchHit,
@@ -62,6 +63,7 @@ export function SearchBox({
 
   useEffect(() => {
     if (trimmed.length < 2) {
+      setResults([]);
       setDebouncing(false);
       return;
     }
@@ -70,20 +72,19 @@ export function SearchBox({
     let cancelled = false;
     const handle = window.setTimeout(() => {
       startTransition(() => {
-        void searchFaces(trimmed, { path, category, tags }).then(
-          (hits) => {
+        void searchFaces(trimmed, { path, category, tags })
+          .then((hits) => {
             if (!cancelled) {
               setResults(hits);
               setDebouncing(false);
             }
-          },
-          () => {
+          })
+          .catch(() => {
             if (!cancelled) {
               setResults([]);
               setDebouncing(false);
             }
-          },
-        );
+          });
       });
     }, 180);
 
@@ -137,8 +138,8 @@ export function SearchBox({
         </p>
       ) : null}
       <div className={cn("min-w-0", isHeader ? "mt-3" : "mt-4")}>
-        <KaomojiGrid
-          items={results}
+        <SearchKaomojiGrid
+          items={results as GridItem[]}
           empty={pending ? "Searching..." : "No faces match that search."}
         />
       </div>

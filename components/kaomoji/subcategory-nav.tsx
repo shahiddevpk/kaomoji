@@ -7,6 +7,8 @@ import {
   getPage,
   type SitePage,
 } from "@/lib/site";
+import { moodChipClass } from "@/lib/mood-colors";
+import { cn } from "@/lib/utils";
 
 /**
  * Mood chips under angry (and similar parents): All + siblings.
@@ -40,11 +42,13 @@ export function SubcategoryNav({ page }: { page: SitePage }) {
             <li key={item.path}>
               <Link
                 href={item.path}
-                className={
-                  active
-                    ? `${pill} border border-primary bg-primary font-semibold text-accent-foreground ${focus}`
-                    : `${pill} border border-border bg-card text-foreground hover:border-primary hover:bg-hover ${focus}`
-                }
+                className={cn(
+                  pill,
+                  "border",
+                  moodChipClass(active),
+                  active && "font-semibold",
+                  focus,
+                )}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}

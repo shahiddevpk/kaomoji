@@ -4,8 +4,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   trailingSlash: true,
   async headers() {
-    // Static assets only. Broad HTML Cache-Control on /:path* skipped —
-    // risky with trailingSlash redirects on Next 16.3.6.
+    // HTML: ISR revalidate=86400 — CDN may cache (s-maxage); browsers revalidate (max-age=0).
+    const htmlCache =
+      "public, max-age=0, must-revalidate, s-maxage=86400, stale-while-revalidate=604800";
     return [
       {
         source: "/_next/static/:path*",
@@ -37,6 +38,7 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
+          { key: "Cache-Control", value: htmlCache },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
