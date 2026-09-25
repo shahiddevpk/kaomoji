@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { CopiedToast } from "@/components/kaomoji/copied-toast";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -14,11 +13,17 @@ export const revalidate = 86400;
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  // optional: if late, keep fallback forever so LCP text is not font-blocked.
+  display: "optional",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  // Faces use mono but are not LCP text; keep preload off critical path.
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -38,13 +43,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.siteName,
     title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
     description:
-      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces — one tap to paste.",
+      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces â€” one tap to paste.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Paste Kaomoji — kaomoji copy and paste",
+        alt: "Paste Kaomoji â€” kaomoji copy and paste",
       },
     ],
   },
@@ -52,14 +57,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
     description:
-      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces — one tap to paste.",
+      "Copy cute Japanese kaomoji and text faces instantly. Browse happy, sad, cute, and cat faces â€” one tap to paste.",
     images: ["/og.png"],
   },
   robots: {
     index: true,
     follow: true,
   },
-  // TEMP GSC placeholder — swap via NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION when you have the real code
+  // TEMP GSC placeholder â€” swap via NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION when you have the real code
   verification: {
     google:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
@@ -87,7 +92,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <Footer />
-          <CopiedToast />
         </CopyProvider>
       </body>
     </html>

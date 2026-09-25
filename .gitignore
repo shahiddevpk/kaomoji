@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# research packs — never commit
+# research packs - never commit
 uploads/
 kaomoji-research/
 research/
@@ -66,3 +66,27 @@ Desktop.ini
 .vscode/
 !.vscode/extensions.json
 
+# Lighthouse / lab perf artifacts (local only)
+/lh-out/
+*.report.html
+*.report.json
+
+# local Chrome / Lighthouse TMP spills inside the repo
+/tmp-lh/
+/.lighthouseci/
+**/node-compile-cache/
+
+# throwaway QA / agent smoke scratch at repo root
+.qa-*
+.qa-*/
+
+# one-off Python dump/patch helpers under lh-out (also covered by /lh-out/)
+kaomoji-dump.py
+kaomoji-fix-header.py
+kaomoji-patch*.py
+kaomoji-verify.py
+
+# local start / agent logs
+start-*.log
+start-*.err
+*.local.log

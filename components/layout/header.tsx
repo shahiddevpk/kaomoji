@@ -1,11 +1,26 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useId, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SearchBox, HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-box";
+import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
 import { HeaderNav } from "@/components/layout/header-nav";
 import { headerNav, pages } from "@/lib/site";
+
+const SearchBox = dynamic(
+  () =>
+    import("@/components/kaomoji/search-box").then((m) => m.SearchBox),
+  {
+    ssr: true,
+    loading: () => (
+      <div
+        className="min-h-11 w-full rounded-full border border-border bg-card"
+        aria-hidden
+      />
+    ),
+  },
+);
 
 function ctaHref(pathname: string): string {
   const page = pages.find(
@@ -19,7 +34,7 @@ function ctaHref(pathname: string): string {
   return "/#faces";
 }
 
-/** Desktop CTA only â€” omit from DOM under sm so SR/mobile never see a duplicate. */
+/** Desktop CTA only - omit from DOM under sm so SR/mobile never see a duplicate. */
 function useDesktopCta() {
   const [show, setShow] = useState(false);
 
@@ -39,7 +54,7 @@ export function Header() {
   const menuId = useId();
   const pathname = usePathname();
   const showCopyCta = useDesktopCta();
-  // Category chips only — Home is the logo; Copy-and-paste stays in the chip row.
+  // Category chips only - Home is the logo; Copy-and-paste stays in the chip row.
   const links = headerNav().filter((page) => page.path !== "/");
 
   return (

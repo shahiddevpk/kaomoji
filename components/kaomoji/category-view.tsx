@@ -16,7 +16,7 @@ import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { SubcategoryNav } from "@/components/kaomoji/subcategory-nav";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { CategoryFacesToolbar } from "@/components/kaomoji/category-faces-toolbar";
-import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
+import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { JsonLd } from "@/components/layout/json-ld";
@@ -239,13 +239,13 @@ export function CategoryView({
       {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
       <Breadcrumbs page={page} pageNumber={safePage} />
-      <h1 className="mt-4 type-h1 tracking-tight">
+      <h1 className="mt-4 type-h1 lcp-hero tracking-tight">
         {page.heading}
         {safePage > 1 ? (
           <span className="text-muted"> - page {safePage}</span>
         ) : null}
       </h1>
-      <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted">{page.intro}</p>
+      <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted lcp-hero">{page.intro}</p>
       <SubcategoryNav page={page} />
       {page.howTo && page.howTo.length > 0 ? (
         <section className="mt-6 max-w-2xl" aria-labelledby="how-these-work">
@@ -268,7 +268,7 @@ export function CategoryView({
         />
       ) : null}
 
-      <RecentlyCopied />
+      <LazyRecentlyCopied />
 
       <section className="mt-8" id="faces" aria-labelledby="faces-heading">
         <h2 id="faces-heading" className="type-h2">

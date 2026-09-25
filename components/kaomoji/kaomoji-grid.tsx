@@ -1,5 +1,4 @@
 import type { Kaomoji } from "@/data/types";
-import { CopyButton } from "@/components/kaomoji/copy-button";
 
 type GridItem = Pick<Kaomoji, "id" | "face" | "name"> &
   Partial<Kaomoji> & { multiline?: boolean };
@@ -18,43 +17,40 @@ export function KaomojiGrid({
 }) {
   if (items.length === 0) {
     return (
-      <p className="rounded-2xl border border-dashed border-border px-4 py-8 type-meta">
+      <p className="rounded-2xl border border-dashed border-border bg-secondary/60 px-4 py-8 text-center type-meta">
         {empty}
       </p>
     );
   }
 
   return (
-    <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+    <ul className="kaomoji-grid">
       {items.map((item) => {
         const tall = isTall(item);
         return (
           <li key={item.id}>
             <article
               className={
-                tall
-                  ? "kaomoji-card flex h-full min-h-[10.5rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[12rem] sm:gap-3 sm:p-4"
-                  : "kaomoji-card flex h-full min-h-[8.75rem] flex-col gap-2 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-sm)] transition-colors hover:border-primary/50 hover:bg-hover/50 focus-within:border-primary focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-focus-ring sm:min-h-[9.5rem] sm:gap-3 sm:p-4"
+                tall ? "kaomoji-card kaomoji-card--tall" : "kaomoji-card"
               }
             >
               <p
                 className={
-                  tall
-                    ? "kaomoji-face flex min-h-14 flex-1 items-start justify-center select-all py-1 text-center"
-                    : "kaomoji-face flex min-h-11 flex-1 items-center justify-center select-all text-center"
+                  tall ? "kaomoji-face kaomoji-face--tall" : "kaomoji-face"
                 }
                 lang="ja"
               >
                 {item.face}
               </p>
-              <div className="mt-auto flex justify-center">
-                <CopyButton
-                  id={item.id}
-                  face={item.face}
-                  name={item.name}
-                  className="w-full min-w-11"
-                />
-              </div>
+              <button
+                type="button"
+                className="kaomoji-copy"
+                aria-label={`Copy ${item.name}`}
+                data-copy-id={item.id}
+                data-copy-name={item.name}
+              >
+                Copy
+              </button>
             </article>
           </li>
         );

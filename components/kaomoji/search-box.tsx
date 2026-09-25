@@ -1,5 +1,9 @@
 "use client";
 
+import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
+
+export { HEADER_SEARCH_RESULTS_ID };
+
 import {
   useEffect,
   useId,
@@ -18,8 +22,6 @@ import {
 } from "@/lib/search/actions";
 import { resolveSearchScope } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-export const HEADER_SEARCH_RESULTS_ID = "header-search-results";
 
 function subscribeNoop() {
   return () => {};

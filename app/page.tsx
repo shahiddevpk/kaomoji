@@ -1,9 +1,10 @@
+import { Suspense } from "react";
 import { getForPage, getPopular, ITEM_LIST_LIMIT } from "@/data/index";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { LearnSection } from "@/components/kaomoji/learn-section";
-import { RecentlyCopied } from "@/components/kaomoji/recently-copied";
+import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { JsonLd } from "@/components/layout/json-ld";
 import { faqJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
@@ -12,39 +13,29 @@ const page = getPage("/");
 
 export const metadata = pageMetadata(page);
 
-export default function HomePage() {
+function FacesFallback() {
+  return (
+    <div
+      className="mt-4 min-h-[28rem] rounded-2xl border border-dashed border-border bg-secondary/40"
+      aria-hidden
+    />
+  );
+}
+
+/** Below-hero block (Suspense-friendly). Sync data so build still emits full face HTML. */
+function HomeFacesAndSeo() {
   const faces = getForPage(page);
-  const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
   const itemListSchema = itemListJsonLd(
     page,
     faces.slice(0, ITEM_LIST_LIMIT),
     getPopular().length,
   );
+  const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-8">
+    <>
       {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
-      <h1 className="type-h1 tracking-tight sm:text-4xl">
-        {page.heading}
-      </h1>
-      <p className="mt-3 max-w-2xl type-body text-muted">{page.intro}</p>
-
-      <RecentlyCopied />
-
-      <section className="mt-10" aria-labelledby="browse-heading">
-        <h2 id="browse-heading" className="type-h2">
-          Browse by intent
-        </h2>
-        <p className="mt-2 max-w-2xl type-meta leading-6">
-          Moods and themes first, then copy-paste utility, classic Japanese
-          emoticons, and text faces (shrug, Lenny, and more).
-        </p>
-        <div className="mt-4">
-          <CategoryTiles />
-        </div>
-      </section>
-
       <section className="mt-10" id="faces" aria-labelledby="popular-heading">
         <h2 id="popular-heading" className="type-h2">
           Popular faces
@@ -69,7 +60,7 @@ export default function HomePage() {
           <li className="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
             <p className="type-label">2. Copy</p>
             <p className="mt-2 type-meta leading-6">
-              Tap Copy once. A Copied! note confirms it.
+              Tap Copy once — the button shows Copied when it works.
             </p>
           </li>
           <li className="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
@@ -87,6 +78,36 @@ export default function HomePage() {
         learnMore={page.learnMore}
       />
       <FaqSection faqs={page.faqs} />
+    </>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <div className="mx-auto w-full max-w-6xl px-4 py-8">
+      <h1 className="type-h1 lcp-hero tracking-tight sm:text-4xl">
+        {page.heading}
+      </h1>
+      <p className="mt-3 max-w-2xl type-body text-muted lcp-hero">{page.intro}</p>
+
+      <LazyRecentlyCopied />
+
+      <section className="mt-10" aria-labelledby="browse-heading">
+        <h2 id="browse-heading" className="type-h2">
+          Browse by intent
+        </h2>
+        <p className="mt-2 max-w-2xl type-meta leading-6">
+          Moods and themes first, then copy-paste utility, classic Japanese
+          emoticons, and text faces (shrug, Lenny, and more).
+        </p>
+        <div className="mt-4">
+          <CategoryTiles />
+        </div>
+      </section>
+
+      <Suspense fallback={<FacesFallback />}>
+        <HomeFacesAndSeo />
+      </Suspense>
     </div>
   );
 }
