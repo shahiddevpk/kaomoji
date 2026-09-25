@@ -99,3 +99,11 @@ _seo_*/
 # agent residual inspect / curl helpers (local only)
 inspect-*.js
 curl-leads.js
+
+# agent one-off patch/count helpers at repo root (local only)
+_tmp_*.js
+_tmp_*.mjs
+_tmp_*.cjs
+_tmp_*.ts
+patch-*.js
+verify-*.js

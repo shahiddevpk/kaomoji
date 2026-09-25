@@ -97,6 +97,10 @@ const nextConfig: NextConfig = {
       { source: "/kaamoji/", destination: "/", permanent: true },
       { source: "/kaimoji", destination: "/", permanent: true },
       { source: "/kaimoji/", destination: "/", permanent: true },
+      // Short synonym -> sad primary (recheck R3)
+      { source: "/sad", destination: "/sad-kaomoji/", permanent: true },
+      { source: "/sad/", destination: "/sad-kaomoji/", permanent: true },
+
       // Misspell gap
       { source: "/sad-kamoji", destination: "/sad-kaomoji/", permanent: true },
       { source: "/sad-kamoji/", destination: "/sad-kaomoji/", permanent: true },

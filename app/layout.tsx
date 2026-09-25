@@ -64,11 +64,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  // TEMP GSC placeholder â€” swap via NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION when you have the real code
+  // GSC: meta verification.google + public/google991fcccf4c181387.html
   verification: {
     google:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
-      "pKmJ9xQ2vL7nR4tY8wA1bC5dE6fG0hI3jK",
+      "google991fcccf4c181387",
   },
 };
 
