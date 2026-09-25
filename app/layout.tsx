@@ -93,7 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             Skip to content
           </a>
           <Header />
-          <main id="content" className="flex-1">
+          <main id="content" className="relative z-0 flex-1" role="main">
             {children}
           </main>
           <Footer />

@@ -10,9 +10,12 @@ export default function AboutPage() {
   return (
     <TrustView page={page}>
       <p>
-        The library is organized by intent: cute, happy, cat, sad, and crying kaomoji, plus
-        Japanese emoticons, text faces, and a copy-and-paste page. Each of those is one URL.
-        Synonyms stay on the same page instead of spawning lookalike routes.
+        The library is organized by intent: core moods (cute, happy, cat, sad, crying,
+        angry, and more), animal and reaction hubs (heart, shy, bunny, dog, bear, smug,
+        sleepy, confused, shocked), angry-family specialties (table flip, fight, pout),
+        plus Japanese emoticons, text faces, a kaomoji generator, and a copy-and-paste
+        utility. Each browse URL is one strong page; synonyms and legacy paths redirect
+        instead of spawning lookalike routes.
       </p>
       <p>
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.

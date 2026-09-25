@@ -143,6 +143,14 @@
 
 html {
   color-scheme: light;
+  /* Anchor jumps (#faces) clear sticky header */
+  scroll-padding-top: 6.5rem;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 9rem;
+  }
 }
 
 body {
@@ -282,8 +290,7 @@ textarea::placeholder {
 }
 
 .kaomoji-card {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 10.25rem;
+  /* Avoid content-visibility here — it paints through sticky header on scroll (Chrome). */
   display: flex;
   height: 100%;
   min-height: 9.5rem;
@@ -301,7 +308,6 @@ textarea::placeholder {
 }
 .kaomoji-card--tall {
   min-height: 11.25rem;
-  contain-intrinsic-size: auto 12rem;
 }
 .kaomoji-card:hover {
   border-color: color-mix(in srgb, var(--primary) 55%, var(--border));
@@ -594,13 +600,15 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   height: 1rem;
 }
 
-/* Sticky chrome — white bar over warm canvas */
+/* Sticky chrome — opaque so grid Copy buttons never bleed through on scroll */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  isolation: isolate;
   border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--card) 92%, transparent);
+  background: var(--card);
   box-shadow: var(--shadow-sm);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 }
 
 /* FAQ disclosure — open state picks up brand tint */

@@ -13,7 +13,8 @@ export default function ContactPage() {
         Email{" "}
         <a
           href="mailto:hello@pastekaomoji.com"
-          className="font-medium text-accent underline-offset-2 hover:underline"
+          className="font-medium text-link underline-offset-2 hover:text-link-hover hover:underline"
+          aria-label="Email hello at pastekaomoji.com"
         >
           hello@pastekaomoji.com
         </a>

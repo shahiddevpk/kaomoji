@@ -29,6 +29,7 @@ export function KaomojiGridCore({
     <ul className="kaomoji-grid">
       {items.map((item) => {
         const tall = isTall(item);
+        const faceId = `face-${item.id}`;
         return (
           <li key={item.id}>
             <article
@@ -37,6 +38,7 @@ export function KaomojiGridCore({
               }
             >
               <p
+                id={faceId}
                 className={
                   tall ? "kaomoji-face kaomoji-face--tall" : "kaomoji-face"
                 }
@@ -48,6 +50,7 @@ export function KaomojiGridCore({
                 type="button"
                 className="kaomoji-copy"
                 aria-label={copyAriaLabel(item.face, item.name)}
+                aria-describedby={faceId}
                 data-copy-id={item.id}
                 data-copy-name={item.name}
                 data-copy-face={item.face}

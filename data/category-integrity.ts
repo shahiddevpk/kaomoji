@@ -159,6 +159,8 @@ function passesHappyCategory(item: Kaomoji): boolean {
   if (primaryIs(item, "sad", "crying", "angry", "smug")) return false;
   if (faceLooksCrying(item.face)) return false;
   if (/(\(¬_¬\)|\(￣ー￣\)|ಠﭛಠ)/.test(item.face)) return false;
+  if (/¯\\_\(ツ\)_\/¯|サメ|shark/i.test(item.face)) return false;
+  if (hasAnyTag(item, ["shrug", "disapproval", "nichaa"])) return false;
   return true;
 }
 

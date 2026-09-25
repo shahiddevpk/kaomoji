@@ -40,20 +40,20 @@ function HomeFacesAndSeo() {
         </h2>
         <ol className="mt-4 grid gap-3 sm:grid-cols-3">
           <li className="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
-            <p className="type-label">1. Find</p>
+            <p className="type-label">Find</p>
             <p className="mt-2 type-meta leading-6">
               Start from a mood, cats, Japanese emoticons, or text faces - or
               search the library.
             </p>
           </li>
           <li className="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
-            <p className="type-label">2. Copy</p>
+            <p className="type-label">Copy</p>
             <p className="mt-2 type-meta leading-6">
               Tap Copy once — the button shows Copied when it works.
             </p>
           </li>
           <li className="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-sm)]">
-            <p className="type-label">3. Paste</p>
+            <p className="type-label">Paste</p>
             <p className="mt-2 type-meta leading-6">
               Drop it into a message, a caption, or a status.
             </p>

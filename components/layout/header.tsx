@@ -29,7 +29,7 @@ export function Header() {
   const links = headerNav().filter((page) => page.path !== "/");
 
   return (
-    <header className="site-header sticky top-0 z-40">
+    <header className="site-header" role="banner">
       <div className={`relative mx-auto flex w-full max-w-6xl flex-col px-4 sm:gap-3 ${menuOpen ? "gap-1.5 py-2" : "gap-2 py-3"}`}>
         <div className="flex items-center gap-2 sm:gap-3">
           <SiteLogoLink />
@@ -68,7 +68,7 @@ export function Header() {
 
         <div
           id={HEADER_SEARCH_RESULTS_ID}
-          className="empty:hidden"
+          className="relative z-0 bg-card empty:hidden"
           aria-live="polite"
         />
       </div>

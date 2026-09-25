@@ -15,7 +15,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-border bg-card">
+    <footer className="mt-auto border-t border-border bg-card" role="contentinfo">
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 sm:grid-cols-3">
         <div>
           <p className="type-label text-foreground">{siteConfig.siteName}</p>
