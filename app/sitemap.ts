@@ -30,6 +30,17 @@ function sitemapPriority(page: SitePage): number {
     case "/confused-kaomoji":
     case "/bear-kaomoji":
       return 0.75;
+    case "/star-kaomoji":
+    case "/giggling-kaomoji":
+    case "/sparkle-kaomoji":
+    case "/love-kaomoji":
+    case "/flower-kaomoji":
+    case "/kiss-kaomoji":
+    case "/smile-kaomoji":
+    case "/excited-kaomoji":
+    case "/nervous-kaomoji":
+    case "/wink-kaomoji":
+      return 0.75;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
     case "/pout-kaomoji":

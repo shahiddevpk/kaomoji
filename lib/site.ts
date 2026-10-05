@@ -1002,6 +1002,396 @@ export const pages: SitePage[] = [
     ],
   },
   {
+    path: "/star-kaomoji",
+    label: "Star",
+    heading: "Star Kaomoji",
+    titleSegment: "Star Kaomoji ★(^_^)★",
+    description:
+      "Star kaomoji copy and paste: shining, sparkling, and star-filled text faces. Tap once to copy a star kaomoji and drop it into any chat or bio.",
+    intro:
+      "Shining star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
+    group: "browse",
+    inHeader: false,
+    tags: ["star"],
+    howTo: [
+      "Pick a star face with the glow intensity you want — from a single ★ accent to a full starfield.",
+      "Tap Copy so every character, including spacing, lands on your clipboard.",
+      "Paste into chat, a bio, or a username for instant celestial flair.",
+    ],
+    definition:
+      "Star kaomoji weave ★ and ✦ glyphs into expressive faces, poses, and decorative borders. Use them for wishes, nighttime vibes, or dazzling reactions.",
+    faqs: [
+      {
+        question: "What are star kaomoji used for?",
+        answer: "They add starry sparkle to messages: birthday wishes, good luck, nighttime chats, or any moment that deserves a little celestial flair. Star faces work great in bios and usernames too.",
+      },
+      {
+        question: "Are star kaomoji the same as sparkle kaomoji?",
+        answer: "Similar but distinct. Star kaomoji lean on classic ★ and ✦ shapes; sparkle kaomoji use ✨ glitter-style glyphs. This page is the star hub; open sparkle kaomoji for glitter and shine.",
+      },
+      {
+        question: "Will star symbols paste correctly on all phones?",
+        answer: "Most ★ and ✦ characters paste fine on modern iOS and Android. If a rare glyph shows a box, pick a face built from the more common ★ symbol.",
+      },
+      {
+        question: "Can I use star kaomoji in usernames?",
+        answer: "Usually yes, if the platform allows special characters. Test paste into a profile field once before saving.",
+      },
+    ],
+    related: ["/sparkle-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+  },
+  {
+    path: "/giggling-kaomoji",
+    label: "Giggling",
+    heading: "Giggling Kaomoji",
+    titleSegment: "Giggling Kaomoji (≧▽≦)",
+    description:
+      "Giggling kaomoji copy and paste: laughter, giggles, and burst-laugh text faces. Tap once for the perfect giggle reaction in chat.",
+    intro:
+      "Giggles, chuckles, and burst laughs ready to copy in one tap. Giggling and laughing faces share this page so you get the full spectrum from shy titter to uncontrollable cackle.",
+    group: "browse",
+    inHeader: false,
+    tags: ["giggle", "laugh"],
+    howTo: [
+      "Scan for the laugh intensity you want — quiet giggle, chuckle, or full burst.",
+      "Tap Copy to grab the face with its spacing intact.",
+      "Paste into chat as a standalone reaction or after a funny line.",
+    ],
+    definition:
+      "These faces lean into laughter: squinted happy eyes, open mouths, and the energetic poses that signal you found something genuinely funny.",
+    faqs: [
+      {
+        question: "When should I use a giggling kaomoji?",
+        answer: "Use one when laughing feels more expressive than typing 'lol'. Giggle faces work for light amusement; burst-laugh faces hit harder for genuinely hilarious moments.",
+      },
+      {
+        question: "What is the difference between giggle and laugh kaomoji?",
+        answer: "Giggling is softer — a small, contained laugh. Laughing can be louder or more uncontrolled. This page covers both so you can match the intensity.",
+      },
+      {
+        question: "Are these the same as happy kaomoji?",
+        answer: "Close but distinct. Happy faces include cheers and smiles. Giggling faces lean specifically into laughter and amusement energy.",
+      },
+      {
+        question: "Will these paste correctly in Discord?",
+        answer: "Yes. Discord renders Unicode characters well, so most laugh and giggle faces paste intact. Avoid very long multiline faces in tight channel threads.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/smile-kaomoji", "/excited-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/sparkle-kaomoji",
+    label: "Sparkle",
+    heading: "Sparkle Kaomoji",
+    titleSegment: "Sparkle Kaomoji ✨(◕‿◕)✨",
+    description:
+      "Sparkle kaomoji copy and paste: glittery, glowing, and twinkling text faces. One-tap copy for that ✨ magic effect in any chat.",
+    intro:
+      "Glitter, twinkle, and dazzle — sparkle kaomoji for moments that need that extra shine. Copy in one tap and paste into messages, bios, or captions for instant magic.",
+    group: "browse",
+    inHeader: false,
+    tags: ["sparkle"],
+    howTo: [
+      "Choose a sparkle face that matches your sparkle level — subtle shimmer to full glitter bomb.",
+      "Tap Copy to capture all glitter glyphs intact.",
+      "Paste into your message or bio for that ✨ effect.",
+    ],
+    definition:
+      "Sparkle kaomoji wrap faces in glitter and shine glyphs like ✨, ★, and ✦. Use them for celebratory vibes, magical moments, or aesthetic text decoration.",
+    faqs: [
+      {
+        question: "What are sparkle kaomoji?",
+        answer: "Text faces decorated with shine glyphs like ✨ and ✦ that add a glittery or magical feel to messages. Great for celebrations, aesthetic posts, and anything that needs a little extra magic.",
+      },
+      {
+        question: "How is sparkle different from star kaomoji?",
+        answer: "Sparkle leans into ✨ glitter-style glyphs and shine effects. Star kaomoji focus on classic ★ star shapes. They overlap but carry different vibes.",
+      },
+      {
+        question: "Can I use sparkle kaomoji for birthdays?",
+        answer: "Absolutely. Sparkle and star faces are popular for birthday wishes and celebration messages where a little extra glow fits the moment.",
+      },
+      {
+        question: "Will ✨ paste everywhere?",
+        answer: "On most modern apps, yes. If a sparkle face shows a box on an older device, pick a simpler face using more basic glyph sets.",
+      },
+    ],
+    related: ["/star-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+  },
+  {
+    path: "/love-kaomoji",
+    label: "Love",
+    heading: "Love Kaomoji",
+    titleSegment: "Love Kaomoji (♡ω♡)",
+    description:
+      "Love kaomoji copy and paste: lovestruck, affection, and romantic text faces. Tap once for the perfect love reaction beyond a plain heart emoji.",
+    intro:
+      "Lovestruck faces and deep affection poses — more expressive than a single ♡ emoji. Love kaomoji go beyond heart symbols into full \"I adore you\" energy, perfect for crush confessions and warm appreciation.",
+    group: "browse",
+    inHeader: false,
+    tags: ["love"],
+    howTo: [
+      "Pick a face that matches your love intensity — soft warmth, crush energy, or full lovestruck swoon.",
+      "Tap Copy once so every heart glyph stays intact.",
+      "Paste into a message, a bio, or wherever affection fits.",
+    ],
+    definition:
+      "Love kaomoji go beyond a simple heart symbol into full expressive poses — heart-eyes, lovestruck sighs, and affection-filled stances.",
+    faqs: [
+      {
+        question: "What are love kaomoji for?",
+        answer: "For expressing deep affection, romantic feelings, or warm appreciation in chat. They go beyond a plain ❤️ by wrapping the feeling into a whole character pose.",
+      },
+      {
+        question: "How is love kaomoji different from heart kaomoji?",
+        answer: "Heart kaomoji broadly covers affection including hearts, kisses, and hugs. Love kaomoji focus specifically on lovestruck, romantic, and deep-affection poses.",
+      },
+      {
+        question: "Are these too romantic for friends?",
+        answer: "Some love faces read purely romantic; others work as warm appreciation. Choose softer affection poses for friend appreciation and stronger lovestruck faces for romantic chats.",
+      },
+      {
+        question: "Can I use love kaomoji on Valentine's Day?",
+        answer: "Yes — they are perfect for Valentine's messages, love notes, and any moment where full romantic energy is the intent.",
+      },
+    ],
+    related: ["/heart-kaomoji", "/kiss-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/flower-kaomoji",
+    label: "Flower",
+    heading: "Flower Kaomoji",
+    titleSegment: "Flower Kaomoji (✿◠‿◠)",
+    description:
+      "Flower kaomoji copy and paste: blossom, petal, and floral text faces. Tap once to add a (✿) flower accent to any message.",
+    intro:
+      "Soft flower faces and blossom accents for gentle, pretty messages. Flower kaomoji use ✿, ❀, and ꕤ glyphs to bring nature and warmth to plain text.",
+    group: "browse",
+    inHeader: false,
+    tags: ["flower"],
+    howTo: [
+      "Pick a flower face that matches the softness you want — subtle petal accent or full blossom pose.",
+      "Tap Copy so every floral glyph stays intact.",
+      "Paste into chat, a caption, or a username for a soft natural touch.",
+    ],
+    definition:
+      "Flower kaomoji use blossom glyphs like ✿, ❀, and ꕤ woven into text faces and decorative borders. They bring a soft, natural aesthetic to messages.",
+    faqs: [
+      {
+        question: "What are flower kaomoji used for?",
+        answer: "Soft, nature-themed messages: spring greetings, gentle good mornings, floral aesthetic posts, or any message that should feel warm and fresh.",
+      },
+      {
+        question: "What glyphs appear in flower kaomoji?",
+        answer: "Common ones include ✿, ❀, ❁, ꕤ, and various petal-shaped Unicode characters. They paste as plain text just like other kaomoji.",
+      },
+      {
+        question: "How is flower different from sparkle?",
+        answer: "Flower uses petal and blossom glyphs for a natural, soft aesthetic. Sparkle uses shine and glitter glyphs for a dazzling or magical vibe.",
+      },
+      {
+        question: "Will flower glyphs show on all phones?",
+        answer: "Most common flower characters paste well. If a rare petal glyph boxes out, pick a simpler flower face using ✿ or ❀.",
+      },
+    ],
+    related: ["/sparkle-kaomoji", "/star-kaomoji", "/cute-kaomoji", "/shy-kaomoji"],
+  },
+  {
+    path: "/kiss-kaomoji",
+    label: "Kiss",
+    heading: "Kiss Kaomoji",
+    titleSegment: "Kiss Kaomoji (ˊᗜˋ*)♡",
+    description:
+      "Kiss kaomoji copy and paste: blowing kisses, smooch faces, and affectionate peck text faces. Tap once for a sweet kiss reaction in any chat.",
+    intro:
+      "Blowing kisses, smooch poses, and sweet peck faces — tap to copy. Kiss kaomoji focus on the act of kissing, not just a floating heart symbol. Great for goodnight messages, love notes, and affectionate friend chats.",
+    group: "browse",
+    inHeader: false,
+    tags: ["kiss"],
+    howTo: [
+      "Pick a kiss face that matches the vibe — playful blown kiss, sweet peck, or romantic smooch.",
+      "Tap Copy to capture every character.",
+      "Paste into your message as a standalone affectionate gesture.",
+    ],
+    definition:
+      "Kiss kaomoji feature puckered mouths, blown kiss poses, and smooch expressions built from Unicode characters — more expressive than a plain 😘 emoji.",
+    faqs: [
+      {
+        question: "When should I use a kiss kaomoji?",
+        answer: "For goodnight messages, affectionate hellos, or playful blown-kiss reactions. They work in romantic chats and friendly affection equally well.",
+      },
+      {
+        question: "Is kiss different from heart kaomoji?",
+        answer: "Yes. Heart kaomoji broadly covers affection. Kiss kaomoji focus specifically on the kissing expression — puckered mouths and blown-kiss poses.",
+      },
+      {
+        question: "Are kiss faces appropriate in casual chats?",
+        answer: "Blown-kiss faces read as friendly and playful with close friends. Save stronger romantic smooch faces for clear romantic contexts.",
+      },
+      {
+        question: "Will kiss kaomoji work in SMS?",
+        answer: "Most kiss faces use standard Unicode characters that paste fine in SMS. Very rare symbols may show as boxes on older devices — pick a simpler face if that happens.",
+      },
+    ],
+    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/smile-kaomoji",
+    label: "Smile",
+    heading: "Smile Kaomoji",
+    titleSegment: "Smile Kaomoji (﹡ᵕ꒳ᵕ﹡)",
+    description:
+      "Smile kaomoji copy and paste: soft smiles, gentle grins, and warm text faces. Tap once for a friendly smile reaction in any message.",
+    intro:
+      "Warm smiles and gentle grins for everyday friendly messages — one tap to copy. Smile kaomoji cover the broad soft-smile mood, from tiny resting smiles to warm welcoming grins.",
+    group: "browse",
+    inHeader: false,
+    tags: ["smile"],
+    howTo: [
+      "Pick a smile that matches the warmth level — barely-there grin or wide open smile.",
+      "Tap Copy so every character comes along.",
+      "Paste as a soft positive reaction or a friendly standalone message.",
+    ],
+    definition:
+      "Smile kaomoji feature curved mouths and gentle expressions that read as friendly, warm, and approachable. They are softer than happy cheers and less intense than excited faces.",
+    faqs: [
+      {
+        question: "Are smile kaomoji different from happy kaomoji?",
+        answer: "Happy kaomoji include cheers, waves, and upbeat celebrations. Smile kaomoji are quieter — a warm grin without the loud cheer energy.",
+      },
+      {
+        question: "When should I use a smile kaomoji?",
+        answer: "For friendly acknowledgments, soft positive reactions, or warming up a neutral message. A smile face adds warmth without escalating the mood.",
+      },
+      {
+        question: "Can I use smile kaomoji in work messages?",
+        answer: "Gentle soft smiles are usually acceptable in casual work chats. Stick to simple, clean faces without unusual glyphs in more formal threads.",
+      },
+      {
+        question: "Is there a difference between smiley face and smile kaomoji?",
+        answer: "Smiley faces usually means the broad category of happy text faces. On this site, smile kaomoji focuses on the quiet grin and warm expression, not the full happy cheer category.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji"],
+  },
+  {
+    path: "/excited-kaomoji",
+    label: "Excited",
+    heading: "Excited Kaomoji",
+    titleSegment: "Excited Kaomoji ヽ(✿゚▽゚)ノ",
+    description:
+      "Excited kaomoji copy and paste: hype, enthusiasm, and high-energy text faces. Tap once for the perfect excited reaction in Discord, WhatsApp, or any chat.",
+    intro:
+      "Arms-up, wide-eyed, and bursting-with-energy faces for genuine excitement — tap to copy. Excited kaomoji bring the hype when a simple smile is not enough.",
+    group: "browse",
+    inHeader: false,
+    tags: ["excited"],
+    howTo: [
+      "Pick the excitement level you need — contained giddiness or full arms-flailing hype.",
+      "Tap Copy to grab the face with arms and all.",
+      "Paste as your reaction to good news, an announcement, or a hype moment.",
+    ],
+    definition:
+      "Excited kaomoji are high-energy expressions: raised arms, sparkling eyes, and dynamic poses built from Unicode characters. They signal enthusiasm and genuine joy.",
+    faqs: [
+      {
+        question: "When should I use an excited kaomoji?",
+        answer: "When something genuinely makes you want to jump and cheer: good news, an event you've been waiting for, or any moment where energy should come through in text.",
+      },
+      {
+        question: "Are excited faces the same as happy?",
+        answer: "Happy is the broad positive category. Excited is specifically high-energy enthusiasm — more dynamic and intense than a calm smile or a warm cheer.",
+      },
+      {
+        question: "Do excited kaomoji have arms?",
+        answer: "Many do. Raised arms and dynamic poses are a hallmark of the excited expression, and those characters paste as plain text on all modern devices.",
+      },
+      {
+        question: "Can I use excited kaomoji in Discord?",
+        answer: "Yes. Discord supports Unicode kaomoji well. These faces paste cleanly in messages, servers, and DMs.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/nervous-kaomoji",
+    label: "Nervous",
+    heading: "Nervous Kaomoji",
+    titleSegment: "Nervous Kaomoji (;´・ω・)",
+    description:
+      "Nervous kaomoji copy and paste: anxious, worried, and uneasy text faces. Tap once for an authentic nervous reaction — sweat drops and tense eyes included.",
+    intro:
+      "Anxious sweat drops, tense eyes, and uneasy expressions for those \"uh oh\" moments — one tap to copy. Nervous kaomoji cover the full range from mild worry to full anxiety spiral.",
+    group: "browse",
+    inHeader: false,
+    tags: ["nervous"],
+    howTo: [
+      "Pick a face that matches your nerves — mild uneasy look or full sweat-drop panic.",
+      "Tap Copy to grab the face.",
+      "Paste as your honest reaction to a stressful or uncertain moment.",
+    ],
+    definition:
+      "Nervous kaomoji feature sweat drops, tense mouths, and anxious eyes. They signal unease, worry, or mild dread in a way that pure text descriptions often miss.",
+    faqs: [
+      {
+        question: "When should I use a nervous kaomoji?",
+        answer: "For waiting on news, admitting a mistake, social awkwardness, or any message where you want to show genuine nervousness without a long explanation.",
+      },
+      {
+        question: "Is nervous different from shy on this site?",
+        answer: "Shy is bashful and blushy — social nerves tied to self-consciousness. Nervous is broader anxiety and unease, without the blush-and-cute framing.",
+      },
+      {
+        question: "Can nervous faces come across as too dramatic?",
+        answer: "They can in light chat. Use milder anxious faces for small worries; stronger panic faces only when the drama is intentional or playful.",
+      },
+      {
+        question: "Do sweat-drop characters paste everywhere?",
+        answer: "Most sweat marks use standard Unicode and paste fine. If a drop shows a box, pick a nervous face built from more common characters.",
+      },
+    ],
+    related: ["/shy-kaomoji", "/confused-kaomoji", "/sad-kaomoji", "/crying-kaomoji"],
+  },
+  {
+    path: "/wink-kaomoji",
+    label: "Wink",
+    heading: "Wink Kaomoji",
+    titleSegment: "Wink Kaomoji (｡•̀ᴗ-)✧",
+    description:
+      "Wink kaomoji copy and paste: playful winks, cheeky one-eyed text faces. Tap once and paste a wink reaction into any chat or message.",
+    intro:
+      "Playful one-eyed winks and cheeky expressions for teasing messages — tap to copy. A wink kaomoji says more than words when you want to keep something light.",
+    group: "browse",
+    inHeader: false,
+    tags: ["wink"],
+    howTo: [
+      "Choose a wink face that feels playful without being too flirty for the context.",
+      "Tap Copy to grab the face.",
+      "Paste after a teasing line or as a standalone cheeky reply.",
+    ],
+    definition:
+      "Wink kaomoji feature one closed eye and one open eye, suggesting a playful, knowing expression. They signal teasing, flirting, or a shared secret without saying a word.",
+    faqs: [
+      {
+        question: "When should I send a wink kaomoji?",
+        answer: "After a joke, a light tease, or a playful hint. A wink signals \"I'm messing with you\" or \"you know what I mean\" without being heavy about it.",
+      },
+      {
+        question: "Are wink faces flirty?",
+        answer: "They can be, but wink kaomoji also work as playful teasing between friends. Match the energy of the conversation — a wink in a friendly chat is rarely misread.",
+      },
+      {
+        question: "How is wink different from smug?",
+        answer: "Smug is self-satisfied and knowing. Wink is lighter and more playfully friendly, without the superior undertone.",
+      },
+      {
+        question: "Do wink kaomoji paste correctly on mobile?",
+        answer: "Yes. The one-eye-closed effect uses standard Unicode characters that paste on iOS, Android, and desktop without issues.",
+      },
+    ],
+    related: ["/smug-kaomoji", "/smile-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+  },
+  {
     path: "/about",
     label: "About",
     heading: "About",
