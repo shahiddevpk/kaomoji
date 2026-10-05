@@ -4,6 +4,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 function lastModified(page: SitePage): string {
   switch (page.path) {
+    case "/":
     case "/thumbs-up-kaomoji":
     case "/bowing-kaomoji":
     case "/running-kaomoji":
@@ -73,7 +74,7 @@ function sitemapPriority(page: SitePage): number {
     case "/thumbs-up-kaomoji":
     case "/bowing-kaomoji":
     case "/running-kaomoji":
-      return 0.7;
+      return 0.75;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
     case "/pout-kaomoji":

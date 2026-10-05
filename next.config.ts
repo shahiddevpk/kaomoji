@@ -334,6 +334,33 @@ const nextConfig: NextConfig = {
       { source: "/create-kaomoji", destination: "/kaomoji-generator/", permanent: true },
       { source: "/create-kaomoji/", destination: "/kaomoji-generator/", permanent: true },
 
+      // Thumbs up / ok aliases
+      { source: "/thumbs-up", destination: "/thumbs-up-kaomoji/", permanent: true },
+      { source: "/thumbs-up/", destination: "/thumbs-up-kaomoji/", permanent: true },
+      { source: "/ok-kaomoji", destination: "/thumbs-up-kaomoji/", permanent: true },
+      { source: "/ok-kaomoji/", destination: "/thumbs-up-kaomoji/", permanent: true },
+      { source: "/thumbs-up-kaomoji/page/1", destination: "/thumbs-up-kaomoji/", permanent: true },
+      { source: "/thumbs-up-kaomoji/page/1/", destination: "/thumbs-up-kaomoji/", permanent: true },
+      // Bowing / bow / dogeza aliases
+      { source: "/bowing", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/bowing/", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/bow-kaomoji", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/bow-kaomoji/", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/dogeza", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/dogeza/", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/dogeza-kaomoji", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/dogeza-kaomoji/", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/bowing-kaomoji/page/1", destination: "/bowing-kaomoji/", permanent: true },
+      { source: "/bowing-kaomoji/page/1/", destination: "/bowing-kaomoji/", permanent: true },
+      // Running / dash / sprint aliases
+      { source: "/running", destination: "/running-kaomoji/", permanent: true },
+      { source: "/running/", destination: "/running-kaomoji/", permanent: true },
+      { source: "/run-kaomoji", destination: "/running-kaomoji/", permanent: true },
+      { source: "/run-kaomoji/", destination: "/running-kaomoji/", permanent: true },
+      { source: "/dash-kaomoji", destination: "/running-kaomoji/", permanent: true },
+      { source: "/dash-kaomoji/", destination: "/running-kaomoji/", permanent: true },
+      { source: "/running-kaomoji/page/1", destination: "/running-kaomoji/", permanent: true },
+      { source: "/running-kaomoji/page/1/", destination: "/running-kaomoji/", permanent: true },
     ];
   },
 };

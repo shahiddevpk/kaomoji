@@ -31,6 +31,9 @@ const BROWSE_ORDER = [
   // Nature / animals
   "/flower-kaomoji",
   "/fish-kaomoji",
+  "/bear-kaomoji",
+  "/bunny-kaomoji",
+  "/dog-kaomoji",
   // Happy / playful actions
   "/giggling-kaomoji",
   "/smile-kaomoji",
@@ -45,6 +48,10 @@ const BROWSE_ORDER = [
   // Thoughtful / mild
   "/nervous-kaomoji",
   "/thinking-kaomoji",
+  "/confused-kaomoji",
+  "/sleepy-kaomoji",
+  "/shocked-kaomoji",
+  "/smug-kaomoji",
   // Utility pages
   "/kaomoji-copy-paste",
   "/japanese-emoticons",

@@ -1083,7 +1083,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Most hug kaomoji use standard Unicode characters that paste fine in WhatsApp, Telegram, and other major chat apps.",
       },
     ],
-    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/bowing-kaomoji"],
   },
   {
     path: "/waving-kaomoji",
@@ -1122,7 +1122,7 @@ export const pages: SitePage[] = [
         answer: "Most wave poses use standard characters that paste fine. If arms drop a character, pick a simpler waving face from the grid.",
       },
     ],
-    related: ["/happy-kaomoji", "/excited-kaomoji", "/smile-kaomoji", "/cute-kaomoji"],
+    related: ["/happy-kaomoji", "/excited-kaomoji", "/smile-kaomoji", "/thumbs-up-kaomoji"],
   },
   {
     path: "/thinking-kaomoji",
@@ -1200,7 +1200,7 @@ export const pages: SitePage[] = [
         answer: "Most dance poses use common Unicode characters that paste fine on all modern devices.",
       },
     ],
-    related: ["/excited-kaomoji", "/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji"],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/running-kaomoji", "/giggling-kaomoji"],
   },
   {
     path: "/fish-kaomoji",
