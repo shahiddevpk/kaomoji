@@ -1059,14 +1059,14 @@ export const pages: SitePage[] = [
       "Friendly waves for hellos, goodbyes, and casual check-ins — tap to copy. Waving kaomoji are the text-face equivalent of a cheerful wave across the room.",
     group: "browse",
     inHeader: false,
-    tags: ["waving"],
+    tags: ["waving", "wave"],
     howTo: [
-      "Pick a wave face that fits the moment — casual hello or cheerful goodbye.",
-      "Tap Copy to grab the face.",
-      "Paste into your opening or closing message for a friendly touch.",
+      "Pick a wave face that fits the moment — casual hello, cheerful goodbye, or enthusiastic cheer.",
+      "Tap Copy to grab the face with its arm characters intact.",
+      "Paste into your opening or closing message for a friendly, visible wave.",
     ],
     definition:
-      "Waving kaomoji feature arm-raising and waving poses that signal hello, goodbye, or friendly acknowledgment in text form.",
+      "Waving kaomoji feature arm-raising and wave poses that signal hello, goodbye, or friendly acknowledgment in plain text. They cover everything from a gentle greeting to an enthusiastic farewell cheer.",
     faqs: [
       {
         question: "When should I use a waving kaomoji?",
@@ -1074,11 +1074,11 @@ export const pages: SitePage[] = [
       },
       {
         question: "Is waving the same as happy kaomoji?",
-        answer: "Happy covers cheers and positive energy broadly. Waving is specific to the greeting pose — arms up, friendly motion.",
+        answer: "Happy covers cheers and positive energy broadly. Waving is specific to the greeting or farewell pose — arms up, friendly motion toward someone.",
       },
       {
         question: "Can waving kaomoji work as a goodbye?",
-        answer: "Yes. Both hello and goodbye waves share this page since the arm pose reads the same way in either direction.",
+        answer: "Yes. Hello and goodbye waves share this page since the arm pose reads the same way in either direction.",
       },
       {
         question: "Do wave arms copy correctly?",
@@ -1485,25 +1485,25 @@ export const pages: SitePage[] = [
     description:
       "Flower kaomoji copy and paste: blossom, petal, and floral text faces. Tap once to add a (✿) flower accent to any message.",
     intro:
-      "Soft flower faces and blossom accents for gentle, pretty messages. Flower kaomoji use ✿, ❀, and ꕤ glyphs to bring nature and warmth to plain text.",
+      "Soft flower faces, cherry blossom poses, and floral accents for gentle, pretty messages. Flower and sakura kaomoji use ✿, ❀, and ꕤ glyphs to bring nature and warmth to plain text.",
     group: "browse",
     inHeader: false,
-    tags: ["flower"],
+    tags: ["flower", "sakura"],
     howTo: [
-      "Pick a flower face that matches the softness you want — subtle petal accent or full blossom pose.",
+      "Pick a flower or blossom face that matches the softness you want — subtle petal accent or full sakura pose.",
       "Tap Copy so every floral glyph stays intact.",
       "Paste into chat, a caption, or a username for a soft natural touch.",
     ],
     definition:
-      "Flower kaomoji use blossom glyphs like ✿, ❀, and ꕤ woven into text faces and decorative borders. They bring a soft, natural aesthetic to messages.",
+      "Flower kaomoji use blossom glyphs like ✿, ❀, and ꕤ woven into text faces and decorative borders. Sakura kaomoji add cherry blossom energy — ideal for spring messages and Japanese-inspired aesthetics.",
     faqs: [
       {
         question: "What are flower kaomoji used for?",
-        answer: "Soft, nature-themed messages: spring greetings, gentle good mornings, floral aesthetic posts, or any message that should feel warm and fresh.",
+        answer: "Soft, nature-themed messages: spring greetings, sakura season posts, gentle good mornings, floral aesthetic captions, or any message that should feel warm and fresh.",
       },
       {
         question: "What glyphs appear in flower kaomoji?",
-        answer: "Common ones include ✿, ❀, ❁, ꕤ, and various petal-shaped Unicode characters. They paste as plain text just like other kaomoji.",
+        answer: "Common ones include ✿, ❀, ❁, ꕤ, and various petal-shaped Unicode characters. Sakura kaomoji often layer these for a cherry blossom effect. They all paste as plain text.",
       },
       {
         question: "How is flower different from sparkle?",
@@ -1512,6 +1512,10 @@ export const pages: SitePage[] = [
       {
         question: "Will flower glyphs show on all phones?",
         answer: "Most common flower characters paste well. If a rare petal glyph boxes out, pick a simpler flower face using ✿ or ❀.",
+      },
+      {
+        question: "What is a sakura kaomoji?",
+        answer: "Sakura kaomoji are cherry blossom themed text faces, popular during spring in Japan. They share the same soft floral aesthetic as flower kaomoji and are included on this page.",
       },
     ],
     related: ["/sparkle-kaomoji", "/star-kaomoji", "/cute-kaomoji", "/shy-kaomoji"],
