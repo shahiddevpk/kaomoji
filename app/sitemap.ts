@@ -2,6 +2,27 @@ import type { MetadataRoute } from "next";
 import { pages, type SitePage } from "@/lib/site";
 import { absoluteUrl } from "@/lib/utils";
 
+function lastModified(page: SitePage): string {
+  switch (page.path) {
+    case "/thumbs-up-kaomoji":
+    case "/bowing-kaomoji":
+    case "/running-kaomoji":
+    case "/star-kaomoji":
+    case "/bear-kaomoji":
+    case "/waving-kaomoji":
+    case "/flower-kaomoji":
+    case "/thinking-kaomoji":
+    case "/cute-kaomoji":
+    case "/happy-kaomoji":
+    case "/cat-kaomoji":
+    case "/sad-kaomoji":
+    case "/crying-kaomoji":
+      return "2026-10-05";
+    default:
+      return "2026-09-25";
+  }
+}
+
 /** Modest sitemap priorities - one intent owner per URL. */
 function sitemapPriority(page: SitePage): number {
   if (page.group === "hub") return 1;
@@ -70,7 +91,7 @@ function sitemapPriority(page: SitePage): number {
 export default function sitemap(): MetadataRoute.Sitemap {
   return pages.map((page) => ({
     url: absoluteUrl(page.path),
-    lastModified: "2026-09-25",
+    lastModified: lastModified(page),
     changeFrequency:
       page.group === "hub"
         ? "weekly"

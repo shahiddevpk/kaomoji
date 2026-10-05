@@ -119,6 +119,11 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "cute",
+    howTo: [
+      "Scan for the softness level you want — blushing smile, tiny wave, or gentle kawaii pose.",
+      "Tap Copy; the face pastes as editable plain text, no special app needed.",
+      "Paste after a compliment, a sweet greeting, or any message that should feel warm.",
+    ],
     definition:
       "This set favors soft eyes, blush, and gentle smiles meant to feel warm on sight. Use them when you want sweetness without a long written compliment.",
     faqs: [
@@ -157,6 +162,15 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "happy",
+    howTo: [
+      "Scan for the energy level — calm grin, cheerful wave, or arms-up celebration cheer.",
+      "Tap Copy once; the full character string goes to your clipboard.",
+      "Paste into a congratulation, hello, or any message where positive energy should show.",
+    ],
+    definition:
+      "Happy kaomoji lean cheerful and upbeat — big grins, cheers, and waves that signal genuine positive energy. They are louder than a quiet smile and warmer than a neutral face.",
+    learnMore:
+      "Eyes crinkled or wide open, mouths raised or open in laughter, arms sometimes extended — these faces carry the energy of good news or a warm hello. They sit between the soft gentleness of cute and the intensity of excited.",
     faqs: [
       {
         question: "How is happy different from cute on this site?",
@@ -179,12 +193,17 @@ export const pages: SitePage[] = [
     heading: "Cat Kaomoji",
     titleSegment: "Cat Kaomoji (=^･ω･^=)",
     description:
-      "Cat kaomoji (=^･ω･^=) copy and paste (neko / catmoji): calm cats to excited ones. Large tap targets and instant clipboard toast.",
+      "Cat kaomoji (=^･ω･^=) copy and paste — neko and catmoji faces from calm to excited. Browse 100+ cat text faces and tap once to copy into any chat.",
     intro:
       "Neko faces from calm cats to excited ones - one tap to copy. Cat kaomoji stay on their own page so they are not mixed into the general cute grid.",
     group: "browse",
     inHeader: true,
     category: "cat",
+    howTo: [
+      "Look for the ear style and expression that fits — calm whiskers, startled eyes, or playful poses.",
+      "Tap Copy to grab the neko face, including any ear or paw characters.",
+      "Paste into your message; cat faces work as standalone reactions or alongside pet-related jokes.",
+    ],
     faqs: [
       {
         question: "What are cat kaomoji (neko / catmoji)?",
@@ -217,6 +236,15 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "sad",
+    howTo: [
+      "Choose the depth of the mood — a mild downcast look or a heavier frown.",
+      "Tap Copy before switching apps; the full character string, including eye marks, goes to your clipboard.",
+      "Paste as a standalone signal or before a short sentence about how you feel.",
+    ],
+    definition:
+      "Sad kaomoji carry downcast eyes and soft frowns that show low mood without tears. Use them for quiet disappointment or a gentle 'I'm not okay' signal in chat.",
+    learnMore:
+      "The downward gaze and slumped mouth are the signature. Tears belong on the crying page — sad stays drier and more introspective. They work when you want the other person to notice without dramatizing.",
     faqs: [
       {
         question: "When should I use sad instead of crying kaomoji?",
@@ -245,6 +273,15 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "crying",
+    howTo: [
+      "Pick the cry intensity — a quiet single-tear face or a full sobbing spiral.",
+      "Tap Copy to grab the whole character string including tear marks.",
+      "Paste into chat; add a word or two if the face needs context to land right.",
+    ],
+    definition:
+      "Crying kaomoji feature visible tear marks and sobbing expressions — the full-emotion end of the sad scale. They cover everything from a single quiet tear to an uncontrolled meltdown face.",
+    learnMore:
+      "Tear glyphs like ;_; and T_T are the classic shorthand. Most paste fine on all devices; a few rare tear marks may show as boxes on older systems. If that happens, pick a simpler crying face from the same grid.",
     faqs: [
       {
         question: "What belongs on crying kaomoji?",
@@ -1091,7 +1128,7 @@ export const pages: SitePage[] = [
     path: "/thinking-kaomoji",
     label: "Thinking",
     heading: "Thinking Kaomoji",
-    titleSegment: "Thinking Kaomoji (・・？)",
+    titleSegment: "Thinking Kaomoji (◔_◔)",
     description:
       "Thinking kaomoji copy and paste: pondering, wondering, and deep-thought text faces. Tap once for the perfect thinking reaction.",
     intro:
