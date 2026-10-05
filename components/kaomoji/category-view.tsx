@@ -283,26 +283,6 @@ export function CategoryView({
       </h1>
       <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted lcp-hero">{page.intro}</p>
       <SubcategoryNav page={page} />
-      {page.howTo && page.howTo.length > 0 ? (
-        <section className="mt-6 max-w-2xl" aria-labelledby="how-these-work">
-          <h2 id="how-these-work" className="type-h2">
-            How these faces work
-          </h2>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
-            {page.howTo.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
-          </ol>
-        </section>
-      ) : null}
-
-      {showEducation ? (
-        <LearnSection
-          heading={learnHeadingFor(page.path, page.label)}
-          definition={page.definition}
-          learnMore={page.learnMore}
-        />
-      ) : null}
 
       <LazyRecentlyCopied />
 
@@ -321,6 +301,27 @@ export function CategoryView({
           }
         />
       </section>
+
+      {showEducation && page.howTo && page.howTo.length > 0 ? (
+        <section className="mt-10 max-w-2xl" aria-labelledby="how-these-work">
+          <h2 id="how-these-work" className="type-h2">
+            How these faces work
+          </h2>
+          <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
+            {page.howTo.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
+      {showEducation ? (
+        <LearnSection
+          heading={learnHeadingFor(page.path, page.label)}
+          definition={page.definition}
+          learnMore={page.learnMore}
+        />
+      ) : null}
 
       {relatedFaces.length > 0 ? (
         <section className="mt-10" aria-labelledby="related-faces-heading">

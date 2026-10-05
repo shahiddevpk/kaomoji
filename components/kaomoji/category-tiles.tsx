@@ -52,6 +52,20 @@ const BROWSE_ORDER = [
   "/kaomoji-generator",
 ] as const;
 
+/** Extract decorative face from titleSegment by stripping the heading prefix. */
+function extractFace(page: SitePage): string | null {
+  const prefix = page.heading + ' ';
+  if (!page.titleSegment.startsWith(prefix)) return null;
+  const candidate = page.titleSegment.slice(prefix.length).trim();
+  if (!candidate) return null;
+  // Candidate is descriptive words — extract the kaomoji at the end
+  if (/^[a-zA-Z&—]/.test(candidate)) {
+    const m = candidate.match(/(\([^)]+\)[\S]*|[^\x00-\x7F][\S]*)\s*$/);
+    return m ? m[1] : null;
+  }
+  return candidate;
+}
+
 /** Specialty children normally filtered by parentPath — keep hub-discoverable. */
 const HUB_SPECIALTY_PATHS = new Set([
   "/table-flip-kaomoji",
@@ -82,19 +96,20 @@ export function CategoryTiles() {
 
   return (
     <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 lg:grid-cols-4">
-      {browse.map((page) => (
-        <li key={page.path}>
-          <Link
-            href={page.path}
-            className={cn("flex min-h-20 flex-col justify-center rounded-2xl border px-3 py-3 shadow-[var(--shadow-sm)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4", moodTileClass(page.path))}
-          >
-            <span className="type-label sm:text-base">{page.heading}</span>
-            <span className="mt-1 line-clamp-2 type-meta">
-              {page.label}
-            </span>
-          </Link>
-        </li>
-      ))}
+      {browse.map((page) => {
+        const face = extractFace(page);
+        return (
+          <li key={page.path}>
+            <Link
+              href={page.path}
+              className={cn("flex min-h-20 flex-col items-center justify-center gap-1 rounded-2xl border px-3 py-3 shadow-[var(--shadow-sm)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:min-h-24 sm:px-4 sm:py-4", moodTileClass(page.path))}
+            >
+              {face ? <span className="text-lg leading-none">{face}</span> : null}
+              <span className="text-center type-label sm:text-base">{page.heading}</span>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }
