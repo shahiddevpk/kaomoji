@@ -967,39 +967,39 @@ export const pages: SitePage[] = [
     heading: "Bear Kaomoji",
     titleSegment: "Bear Kaomoji ʕ•ᴥ•ʔ",
     description:
-      "Bear kaomoji with soft animal faces ready to copy and paste. Browse teddy-style text bears for cozy, playful chats.",
+      "Bear kaomoji ʕ•ᴥ•ʔ copy and paste: teddy-style text bears with round bracket ears and ᴥ snout. Tap once for the classic bear face in any chat.",
     intro:
-      "Bear faces are animal-first: round ears, snout marks, and teddy warmth. This is not the bunny ear set, not dog/puppy, and not a generic cute human smile page. Use bear when you want cozy animal energy; keep other animals on their own hubs.",
+      "The ʕ•ᴥ•ʔ shape is one of the most recognizable kaomoji on the internet — the rounded bracket ears and centered ᴥ snout are unmistakably bear. This page collects bear-shaped faces specifically: angry bears, sleepy droops, and the classic neutral pose. Cat and dog have their own pages; soft human smiles belong on cute.",
     group: "browse",
     inHeader: true,
     tags: ["bear"],
     howTo: [
-      "Select a bear with the roundness or snout style you like.",
-      "Tap Copy so ears and eyes stay intact.",
-      "Paste into chat; add a word or two if you want the bear to \"say\" something.",
+      "Choose your bear: the classic neutral ʕ•ᴥ•ʔ, a scowl for mock-grumpy moments, or a sleepy ʕ-ᴥ-ʔ droop.",
+      "Tap Copy — the bracket ears and ᴥ snout are multi-character, so copy them as a unit.",
+      "Paste into chat; add a word after a space if you want the bear to \"say\" something.",
     ],
     definition:
-      "Round ears and soft snouts give these their teddy read. Pick them for cozy animal charm, not as a duplicate of cute or heart hubs.",
+      "Bear kaomoji are built around the ʕ  ʔ bracket ears and the ᴥ snout character — a combination specific to bear faces. Sleepy variants droop the eyes to ʕ-ᴥ-ʔ; angry ones sharpen the features. All read as bear, not a generic cute human smile.",
     faqs: [
       {
-        question: "What defines a bear kaomoji?",
+        question: "What is the most famous bear kaomoji?",
         answer:
-          "Round bear-like ears, a centered snout or mouth, and a soft animal silhouette built from characters (classic examples look like ʕ•ᴥ•ʔ).",
+          "ʕ•ᴥ•ʔ is the classic — the rounded bracket ears and centered ᴥ snout are the universal shorthand for bear in text culture. It has been in use since the early 2000s on Japanese internet forums.",
       },
       {
-        question: "Bear vs bunny vs dog pages?",
+        question: "What does ʕ•ᴥ•ʔ mean?",
         answer:
-          "Each animal gets its own hub so grids stay intent-matched. Bear is teddy/cozy; bunny is rabbit ears; dog is pup energy.",
+          "The outer ʕ ʔ brackets form the rounded bear ears. The centered ᴥ character is a snout mark used specifically for dogs and bears in kaomoji. The dot eyes • on each side give the face its soft, neutral expression.",
       },
       {
-        question: "Are bear faces only \"cute\"?",
+        question: "How is bear different from bunny or dog?",
         answer:
-          "Many read cute, but the primary intent is the animal shape. Human cute smiles still belong on the cute page.",
+          "Bunny faces use pointed above-head ear marks. Dog faces use floppy lines. Bear faces use ʕ ʔ side brackets and the ᴥ snout. The silhouette is different enough that they are never confused.",
       },
       {
-        question: "Can bear kaomoji look broken on old phones?",
+        question: "Can bear kaomoji paste on all devices?",
         answer:
-          "Rare symbols sometimes fail. If that happens, choose a simpler bear from the same list.",
+          "Yes. The ʕ ʔ brackets and ᴥ snout are standard Unicode supported on iOS, Android, and most chat apps. If a variant with rare characters shows a box, pick one of the simpler bears in the grid.",
       },
     ],
     related: [
@@ -1329,17 +1329,17 @@ export const pages: SitePage[] = [
     description:
       "Star kaomoji copy and paste: shining, sparkling, and star-filled text faces. Tap once to copy a star kaomoji and drop it into any chat or bio.",
     intro:
-      "Shining star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
+      "Shining and twinkling star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. This collection covers classic ★ faces and soft twinkling poses. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
     group: "browse",
     inHeader: false,
-    tags: ["star"],
+    tags: ["star", "twinkle"],
     howTo: [
-      "Pick a star face with the glow intensity you want — from a single ★ accent to a full starfield.",
+      "Pick a star face with the glow intensity you want — from a single ★ accent to a twinkling full-starfield pose.",
       "Tap Copy so every character, including spacing, lands on your clipboard.",
       "Paste into chat, a bio, or a username for instant celestial flair.",
     ],
     definition:
-      "Star kaomoji weave ★ and ✦ glyphs into expressive faces, poses, and decorative borders. Use them for wishes, nighttime vibes, or dazzling reactions.",
+      "Star kaomoji weave ★ and ✦ glyphs into expressive faces, twinkling poses, and decorative borders. Use them for wishes, achievements, nighttime vibes, or any moment that deserves a little sparkle.",
     faqs: [
       {
         question: "What are star kaomoji used for?",
@@ -1714,6 +1714,135 @@ export const pages: SitePage[] = [
       },
     ],
     related: ["/smug-kaomoji", "/smile-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/thumbs-up-kaomoji",
+    label: "Thumbs Up",
+    heading: "Thumbs Up Kaomoji",
+    titleSegment: "Thumbs Up Kaomoji (b ^_^ )b",
+    description:
+      "Thumbs up kaomoji and OK text faces copy and paste. Tap once for an approval, agreement, or good-job reaction in any chat.",
+    intro:
+      "Approval and OK reactions for when a plain \"yes\" feels flat — tap to copy. This page covers thumbs-up poses and OK-gesture kaomoji that signal agreement, confirmation, and encouragement.",
+    group: "browse",
+    inHeader: false,
+    tags: ["thumbs up", "ok"],
+    howTo: [
+      "Pick a face that matches your level of approval — a subtle OK circle or an enthusiastic thumbs-up pose.",
+      "Tap Copy to grab the full character string.",
+      "Paste after a message you agree with, or as a standalone reaction to good news.",
+    ],
+    definition:
+      "Thumbs-up and OK kaomoji use raised-arm poses and approval gestures to signal yes, good, or well done. They are the text-face equivalent of a 👍 — direct, positive, and easy to read.",
+    faqs: [
+      {
+        question: "When should I use a thumbs-up kaomoji?",
+        answer:
+          "For agreement, approval, or a quick \"good job\" without typing a full reply. They land well after announcements, finished tasks, or anything you want to endorse.",
+      },
+      {
+        question: "What is an OK kaomoji?",
+        answer:
+          "An OK kaomoji uses gestures that signal approval or confirmation — circles, raised arms, or an affirming pose. This page combines thumbs-up and OK poses so both search terms land in one place.",
+      },
+      {
+        question: "How is thumbs up different from excited kaomoji?",
+        answer:
+          "Thumbs-up is calm approval. Excited is high-energy hype with arms waving. Use thumbs-up for a cool nod; use excited when you want the enthusiasm to show.",
+      },
+      {
+        question: "Do these paste on mobile?",
+        answer:
+          "Yes. All characters are standard Unicode that copy cleanly on iOS and Android. Paste into chat, a reply, or a caption.",
+      },
+    ],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/waving-kaomoji", "/birthday-kaomoji"],
+  },
+  {
+    path: "/bowing-kaomoji",
+    label: "Bowing",
+    heading: "Bowing Kaomoji",
+    titleSegment: "Bowing Kaomoji m(_ _)m",
+    description:
+      "Bowing kaomoji copy and paste: respect, thank you, and deep-bow text faces m(_ _)m. Tap once for a sincere greeting or gratitude reaction.",
+    intro:
+      "Respectful bows, thank-you gestures, and deep dogeza poses for formal and sincere moments — tap to copy. Bowing kaomoji carry real cultural weight in Japanese internet culture, where a bow communicates gratitude, apology, or deep respect in a way a plain \"thanks\" cannot.",
+    group: "browse",
+    inHeader: false,
+    tags: ["bow", "bowing", "dogeza"],
+    howTo: [
+      "Choose a bow depth: a light nod, the classic m(_ _)m, or a full dogeza (forehead to floor).",
+      "Tap Copy to get the full character string on your clipboard.",
+      "Paste at the end of a thank-you message or apology for extra sincerity.",
+    ],
+    definition:
+      "Bowing kaomoji use spread arms and a lowered head position to show the bow shape in text. Dogeza — the deepest formal bow in Japanese culture — appears as a figure flat on the floor. Use these when tone matters and a word alone feels insufficient.",
+    faqs: [
+      {
+        question: "What does m(_ _)m mean?",
+        answer:
+          "The lowercase m arms are bent at the elbow in a bow, and the _ _ marks in the middle represent a face turned downward in respect. Together they form the classic text bow of gratitude or apology.",
+      },
+      {
+        question: "When should I use a bowing kaomoji?",
+        answer:
+          "After a sincere thank-you, an apology, or at the end of a formal request. In Japanese internet culture a bow signals genuine feeling rather than a casual nod.",
+      },
+      {
+        question: "What is a dogeza kaomoji?",
+        answer:
+          "Dogeza is the deepest bow in Japanese etiquette — forehead to the floor. Dogeza kaomoji show a figure fully prostrate, used for very serious apologies or over-the-top humorous gratitude.",
+      },
+      {
+        question: "Can I use bowing kaomoji in non-Japanese chats?",
+        answer:
+          "Yes. Most readers recognize the bow gesture even without the cultural context. Pair it with a word or two if needed, but the shape reads clearly as respect or thanks.",
+      },
+    ],
+    related: ["/waving-kaomoji", "/shy-kaomoji", "/heart-kaomoji", "/hug-kaomoji"],
+  },
+  {
+    path: "/running-kaomoji",
+    label: "Running",
+    heading: "Running Kaomoji",
+    titleSegment: "Running Kaomoji ε=ε=┌( >_<)┘",
+    description:
+      "Running kaomoji copy and paste: dashing, sprinting, and action text faces ε=ε=┌( >_<)┘. Tap once for a run, dash, or zoom-off reaction.",
+    intro:
+      "Dashing, sprinting, and zoom-off action faces for when you are out the door — tap to copy. Running kaomoji use ε= motion marks and a leaning pose to show speed and urgency in a single line of text.",
+    group: "browse",
+    inHeader: false,
+    tags: ["run", "running", "dash"],
+    howTo: [
+      "Pick a running pose: a calm jog, a panicked ε=ε= dash, or a triumphant sprint.",
+      "Tap Copy to grab the full multi-character string.",
+      "Paste as a standalone reaction or after a message about leaving, rushing, or escaping.",
+    ],
+    definition:
+      "Running kaomoji use ε= speed marks and a forward-leaning body pose to show motion. The direction and body tilt signal whether the feeling is energetic or frantic. They cover everything from a casual jog to a full-speed panic-dash.",
+    faqs: [
+      {
+        question: "What does ε=ε=┌( >_<)┘ mean?",
+        answer:
+          "The ε= marks are Japanese text shorthand for motion or speed, like exhaust puffs. ┌( >_<)┘ is a figure mid-run, leaning forward with an urgent expression. Together they read as someone dashing away fast.",
+      },
+      {
+        question: "When should I use a running kaomoji?",
+        answer:
+          "When leaving a conversation, late for something, or reacting to a close call with humor. They also work as a shorthand for \"I am out of here\" or excited rushing-toward something good.",
+      },
+      {
+        question: "Are running and dash kaomoji the same here?",
+        answer:
+          "On this page, yes. Run, dash, and sprint-style faces share the same user intent — a text face showing fast movement — so they are grouped together.",
+      },
+      {
+        question: "Do running kaomoji paste on all devices?",
+        answer:
+          "Yes. The ε= motion marks and bracket characters are standard Unicode that paste cleanly on iOS, Android, and most chat apps.",
+      },
+    ],
+    related: ["/excited-kaomoji", "/dance-kaomoji", "/waving-kaomoji", "/table-flip-kaomoji"],
   },
   {
     path: "/about",

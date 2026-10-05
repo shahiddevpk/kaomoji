@@ -10,13 +10,15 @@ export function moodChipClass(active: boolean): string {
 
 /** Per-mood pastel palette: warm/cool/love/nature/mystery */
 const MOOD_TILE_VARIANTS: Record<string, string> = {
-  // Happiness / energy
+  // Happiness / energy / action
   "/happy-kaomoji": "mood-tile--warm",
   "/excited-kaomoji": "mood-tile--warm",
   "/giggling-kaomoji": "mood-tile--warm",
   "/smile-kaomoji": "mood-tile--warm",
   "/waving-kaomoji": "mood-tile--warm",
   "/dance-kaomoji": "mood-tile--warm",
+  "/running-kaomoji": "mood-tile--warm",
+  "/thumbs-up-kaomoji": "mood-tile--warm",
   // Cute / soft
   "/cute-kaomoji": "mood-tile--rose",
   "/shy-kaomoji": "mood-tile--rose",
@@ -53,9 +55,10 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/confused-kaomoji": "mood-tile--purple",
   "/smug-kaomoji": "mood-tile--purple",
   "/halloween-kaomoji": "mood-tile--purple",
-  // Aquatic / tools
+  // Aquatic / tools / respectful
   "/fish-kaomoji": "mood-tile--teal",
   "/kaomoji-generator": "mood-tile--teal",
+  "/bowing-kaomoji": "mood-tile--teal",
 };
 
 export function moodTileClass(path?: string): string {

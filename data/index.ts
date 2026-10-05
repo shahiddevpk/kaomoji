@@ -245,7 +245,9 @@ const TAG_SEARCH: Record<string, string[]> = {
   puppy: ["puppy kaomoji", "dog kaomoji", "kaomoji puppy"],
   bear: [
     "bear kaomoji",
+    "kaomoji bear",
     "teddy kaomoji",
+    "bear face kaomoji",
     "cute bear kaomoji",
     "animal kaomoji",
   ],
@@ -308,6 +310,15 @@ const TAG_SEARCH: Record<string, string[]> = {
   symbols: ["kaomoji symbols", "symbols kaomoji"],
   sweat: ["sweating kaomoji", "kaomoji sweat", "sweat kaomoji"],
   sweating: ["sweating kaomoji", "kaomoji sweat"],
+  "thumbs up": ["thumbs up kaomoji", "thumbs up emoticon", "kaomoji thumbs up", "approval kaomoji", "good job kaomoji"],
+  ok: ["ok kaomoji", "okay kaomoji", "thumbs up kaomoji", "approval kaomoji", "kaomoji ok"],
+  bow: ["bowing kaomoji", "bow kaomoji", "kaomoji bow", "respect kaomoji", "thank you kaomoji"],
+  bowing: ["bowing kaomoji", "bow kaomoji", "kaomoji bowing", "respect kaomoji"],
+  dogeza: ["dogeza kaomoji", "deep bow kaomoji", "bowing kaomoji", "kaomoji dogeza"],
+  run: ["running kaomoji", "kaomoji running", "dash kaomoji", "kaomoji run", "running emoticon"],
+  running: ["running kaomoji", "kaomoji running", "dash kaomoji", "sprint kaomoji"],
+  dash: ["dash kaomoji", "running kaomoji", "kaomoji dash", "sprint kaomoji"],
+  twinkle: ["star kaomoji", "twinkling kaomoji", "sparkle kaomoji", "kaomoji star"],
 };
 
 /** Builder / maker intent (hub + generator page; not a separate category bucket). */

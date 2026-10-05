@@ -38,6 +38,10 @@ const BROWSE_ORDER = [
   "/excited-kaomoji",
   "/dance-kaomoji",
   "/waving-kaomoji",
+  "/running-kaomoji",
+  "/thumbs-up-kaomoji",
+  // Respectful / cultural
+  "/bowing-kaomoji",
   // Thoughtful / mild
   "/nervous-kaomoji",
   "/thinking-kaomoji",

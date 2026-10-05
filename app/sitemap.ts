@@ -49,6 +49,10 @@ function sitemapPriority(page: SitePage): number {
     case "/christmas-kaomoji":
     case "/halloween-kaomoji":
       return 0.7;
+    case "/thumbs-up-kaomoji":
+    case "/bowing-kaomoji":
+    case "/running-kaomoji":
+      return 0.7;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
     case "/pout-kaomoji":
