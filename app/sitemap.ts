@@ -18,6 +18,9 @@ function lastModified(page: SitePage): string {
     case "/cat-kaomoji":
     case "/sad-kaomoji":
     case "/crying-kaomoji":
+    case "/table-flip-kaomoji":
+    case "/fight-kaomoji":
+    case "/pout-kaomoji":
       return "2026-10-05";
     default:
       return "2026-09-25";

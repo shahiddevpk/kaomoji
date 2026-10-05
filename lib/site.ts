@@ -204,6 +204,10 @@ export const pages: SitePage[] = [
       "Tap Copy to grab the neko face, including any ear or paw characters.",
       "Paste into your message; cat faces work as standalone reactions or alongside pet-related jokes.",
     ],
+    definition:
+      "Cat kaomoji (neko faces) use ear marks, whisker lines, and feline eye shapes to read as a cat at a glance. The classic =^･ω･^= keeps its ears in the = marks; variants shift the mood from calm to startled to sleepy without losing the whisker detail.",
+    learnMore:
+      "Neko is the Japanese word for cat, and neko kaomoji have been a fixture of Japanese internet culture since the early 2000s. They appear in usernames, reaction posts, and playful messages where a face with ears says more than a plain smile. Most ear and whisker characters are standard Unicode that paste cleanly on all modern devices.",
     faqs: [
       {
         question: "What are cat kaomoji (neko / catmoji)?",
@@ -362,6 +366,8 @@ export const pages: SitePage[] = [
       "Copy the flip that matches your intensity, then paste into chat or a caption.",
       "For punches or silent stares, jump to fight or glare instead.",
     ],
+    definition:
+      "Table flip kaomoji capture the desk-flip gag in text: a figure raising arms and sending a table airborne. The pose is comic, not threatening — it signals \"I am done\" or \"this is unbelievable\" in a way that defuses tension with humor.",
     faqs: [
       {
         question: "What is a table flip kaomoji?",
@@ -370,6 +376,14 @@ export const pages: SitePage[] = [
       {
         question: "Should I use table flip or the angry hub?",
         answer: "Open table flip when you want the flip gag specifically. Stay on angry kaomoji for the broader scowls and growls, or jump to fight kaomoji for punches.",
+      },
+      {
+        question: "What does (╯°□°)╯︵ ┻━┻ mean?",
+        answer: "The ╯ arm raises in frustration, the ︵ arc shows the table flying through the air, and ┻━┻ is the upturned table itself. Together they mime someone flipping their desk mid-rant.",
+      },
+      {
+        question: "Can table flip kaomoji be used as a joke?",
+        answer: "Yes — that is the main use. The desk flip reads as comic exaggeration rather than real anger, so it works in friendly chats, gaming servers, and group threads where mild frustration is relatable.",
       },
     ],
     related: [
@@ -397,6 +411,8 @@ export const pages: SitePage[] = [
       "Copy one action face when you want motion, not just a mad look.",
       "Keep full fury on rage and desk flips on table flip so each set stays clear.",
     ],
+    definition:
+      "Fight kaomoji put a figure in motion: fists raised, a punch landing, or a sparring stance that signals action rather than just a scowl. The energy is kinetic — these read as \"bring it\" or \"I'm ready,\" not quiet seething.",
     faqs: [
       {
         question: "What makes fight kaomoji different from angry?",
@@ -405,6 +421,14 @@ export const pages: SitePage[] = [
       {
         question: "When should I skip fight and open table flip instead?",
         answer: "Choose table flip for the desk-flip gag. Choose fight when you want motion and impact rather than a flipped table.",
+      },
+      {
+        question: "Are fight kaomoji okay in casual chat?",
+        answer: "In friendly or gaming contexts, yes — punching and sparring faces land as playful challenge energy. In unfamiliar or formal threads, a softer angry face is less likely to be misread.",
+      },
+      {
+        question: "What do fight kaomoji typically look like?",
+        answer: "Common patterns include raised fists, forward-leaning stances, and sharp eyes. Arms built from characters like ง and ᕦ give the impression of muscle flexing or swinging for impact.",
       },
     ],
     related: [
@@ -432,6 +456,8 @@ export const pages: SitePage[] = [
       "Copy a pout when you want attitude without full rage.",
       "Hard scowls stay on angry; silent stares stay on glare.",
     ],
+    definition:
+      "Pout kaomoji lean into the sulky, hmph register: crossed arms, tight mouths, or a side-eye that says \"I'm unimpressed\" without going loud. The mood is petulant rather than explosive — attitude with the volume turned low.",
     faqs: [
       {
         question: "What is a pout kaomoji for?",
@@ -440,6 +466,14 @@ export const pages: SitePage[] = [
       {
         question: "How is pout different from rage on this site?",
         answer: "Pout keeps its own page for sulky soft pushback. Rage and glare stay on the angry hub via tags, so hard scowls stay with the parent angry set.",
+      },
+      {
+        question: "When does a pout fit better than a scowl?",
+        answer: "When you want attitude without heat. A pout signals mild displeasure or playful sulking; a scowl suggests real frustration. Pout lands lighter in friend chats and casual threads.",
+      },
+      {
+        question: "Are pout kaomoji good for teasing or mock-annoyance?",
+        answer: "Yes. The sulky face is a natural fit for playful arguments, pretend offense, or the classic \"I can't believe you\" reaction between friends who both know it's a joke.",
       },
     ],
     related: [
