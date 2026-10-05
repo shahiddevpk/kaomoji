@@ -601,6 +601,26 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   border-color: var(--primary);
 }
 
+/* Per-mood tile color variants — light pastels, AA contrast on all bg */
+.mood-tile--warm { background: #FFFDE7; border-color: #FDE68A; }
+.mood-tile--warm:hover { background: #FEF9C3; border-color: #F59E0B; }
+.mood-tile--rose { background: #FFF1F2; border-color: #FECDD3; }
+.mood-tile--rose:hover { background: #FFE4E6; border-color: #FB7185; }
+.mood-tile--love { background: #FFF0F3; border-color: #FFA8C0; }
+.mood-tile--love:hover { background: #FFE4EE; border-color: #F43F5E; }
+.mood-tile--blue { background: #F0F9FF; border-color: #BAE6FD; }
+.mood-tile--blue:hover { background: #E0F2FE; border-color: #38BDF8; }
+.mood-tile--red { background: #FEF2F2; border-color: #FECACA; }
+.mood-tile--red:hover { background: #FEE2E2; border-color: #F87171; }
+.mood-tile--green { background: #F0FDF4; border-color: #A7F3D0; }
+.mood-tile--green:hover { background: #DCFCE7; border-color: #34D399; }
+.mood-tile--amber { background: #FFFBEB; border-color: #FCD34D; }
+.mood-tile--amber:hover { background: #FEF3C7; border-color: #F59E0B; }
+.mood-tile--purple { background: #FAF5FF; border-color: #C4B5FD; }
+.mood-tile--purple:hover { background: #EDE9FE; border-color: #8B5CF6; }
+.mood-tile--teal { background: #F0FDFA; border-color: #99F6E4; }
+.mood-tile--teal:hover { background: #CCFBF1; border-color: #2DD4BF; }
+
 .nav-scroll-arrow {
   border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
   background: var(--active);

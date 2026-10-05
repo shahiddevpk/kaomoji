@@ -1010,6 +1010,318 @@ export const pages: SitePage[] = [
     ],
   },
   {
+    path: "/hug-kaomoji",
+    label: "Hug",
+    heading: "Hug Kaomoji",
+    titleSegment: "Hug Kaomoji (づ｡◕‿‿◕｡)づ",
+    description:
+      "Hug kaomoji copy and paste: warm embrace and hugging text faces (づ｡◕‿‿◕｡)づ. Tap once for the perfect hug reaction in any chat.",
+    intro:
+      "Warm embrace poses and open-arm hugs for when words are not enough — tap to copy. Hug kaomoji are the outstretched-arms reaction for comfort, celebration, and big welcomes.",
+    group: "browse",
+    inHeader: false,
+    tags: ["hug"],
+    howTo: [
+      "Pick a hug face that matches the intensity — gentle pat or full bear hug.",
+      "Tap Copy so the arms and all stay intact on your clipboard.",
+      "Paste into your message as a warm standalone gesture.",
+    ],
+    definition:
+      "Hug kaomoji use outstretched arms and embrace poses built from Unicode characters. They convey warmth, comfort, and affection more expressively than a plain heart.",
+    faqs: [
+      {
+        question: "When should I send a hug kaomoji?",
+        answer: "For comfort after bad news, celebration hugs, hello after a long time, or any moment where a written hug would make someone smile.",
+      },
+      {
+        question: "Is hug different from heart kaomoji?",
+        answer: "Heart kaomoji broadly covers affection. Hug kaomoji specifically feature the embrace pose — arms reaching out — as the central expression.",
+      },
+      {
+        question: "Are hugging kaomoji good for friend chats?",
+        answer: "Yes. Hug faces read warmly and platonically in most contexts, making them great for close friends and family chats.",
+      },
+      {
+        question: "Will hug faces paste in WhatsApp?",
+        answer: "Yes. Most hug kaomoji use standard Unicode characters that paste fine in WhatsApp, Telegram, and other major chat apps.",
+      },
+    ],
+    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/waving-kaomoji",
+    label: "Waving",
+    heading: "Waving Kaomoji",
+    titleSegment: "Waving Kaomoji ﾟ(｡◕‿◕｡)ﾟ",
+    description:
+      "Waving kaomoji copy and paste: hello, goodbye, and waving text faces. One-tap copy for a friendly wave in any chat.",
+    intro:
+      "Friendly waves for hellos, goodbyes, and casual check-ins — tap to copy. Waving kaomoji are the text-face equivalent of a cheerful wave across the room.",
+    group: "browse",
+    inHeader: false,
+    tags: ["waving"],
+    howTo: [
+      "Pick a wave face that fits the moment — casual hello or cheerful goodbye.",
+      "Tap Copy to grab the face.",
+      "Paste into your opening or closing message for a friendly touch.",
+    ],
+    definition:
+      "Waving kaomoji feature arm-raising and waving poses that signal hello, goodbye, or friendly acknowledgment in text form.",
+    faqs: [
+      {
+        question: "When should I use a waving kaomoji?",
+        answer: "For greetings, farewells, or casual check-ins when a written hello feels flat. A wave face makes the warmth visible.",
+      },
+      {
+        question: "Is waving the same as happy kaomoji?",
+        answer: "Happy covers cheers and positive energy broadly. Waving is specific to the greeting pose — arms up, friendly motion.",
+      },
+      {
+        question: "Can waving kaomoji work as a goodbye?",
+        answer: "Yes. Both hello and goodbye waves share this page since the arm pose reads the same way in either direction.",
+      },
+      {
+        question: "Do wave arms copy correctly?",
+        answer: "Most wave poses use standard characters that paste fine. If arms drop a character, pick a simpler waving face from the grid.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/excited-kaomoji", "/smile-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/thinking-kaomoji",
+    label: "Thinking",
+    heading: "Thinking Kaomoji",
+    titleSegment: "Thinking Kaomoji (・・？)",
+    description:
+      "Thinking kaomoji copy and paste: pondering, wondering, and deep-thought text faces. Tap once for the perfect thinking reaction.",
+    intro:
+      "Pondering faces and deep-thought expressions for when you need to show the gears turning — tap to copy. Thinking kaomoji cover curiosity, contemplation, and the universal \"hmm\".",
+    group: "browse",
+    inHeader: false,
+    tags: ["thinking"],
+    howTo: [
+      "Pick a face that reads pensive or curious, not blank or confused.",
+      "Tap Copy to grab the thinking pose.",
+      "Paste as your reaction to a complex question or before your considered reply.",
+    ],
+    definition:
+      "Thinking kaomoji feature hand-to-chin poses, upward glances, and contemplative expressions that signal deep thought or genuine curiosity.",
+    faqs: [
+      {
+        question: "When should I use a thinking kaomoji?",
+        answer: "When you are genuinely processing something, stalling playfully, or signaling \"let me think about this\" in chat. It softens a pause in conversation.",
+      },
+      {
+        question: "How is thinking different from confused kaomoji?",
+        answer: "Thinking signals active deliberation — the gears are turning. Confused signals \"I don't understand\" — the gears are stuck.",
+      },
+      {
+        question: "Are thinking faces good for work chats?",
+        answer: "Yes. A mild thinking face is a neutral, professional way to signal you are considering a response rather than ignoring a message.",
+      },
+      {
+        question: "Will thinking kaomoji paste on all devices?",
+        answer: "Most thinking poses use common Unicode characters. Pick simpler faces if a rare glyph shows as a box.",
+      },
+    ],
+    related: ["/confused-kaomoji", "/nervous-kaomoji", "/smug-kaomoji", "/shy-kaomoji"],
+  },
+  {
+    path: "/dance-kaomoji",
+    label: "Dance",
+    heading: "Dance Kaomoji",
+    titleSegment: "Dance Kaomoji ♪(┌・。・)┌",
+    description:
+      "Dance kaomoji copy and paste: dancing, grooving, and celebration text faces. Tap once for an animated dance reaction in any chat.",
+    intro:
+      "Grooving, spinning, and full dance-mode poses for when the vibe calls for a celebration — tap to copy. Dance kaomoji bring movement and joy to plain text.",
+    group: "browse",
+    inHeader: false,
+    tags: ["dance"],
+    howTo: [
+      "Pick a dance face that matches the music energy — subtle groove or full party mode.",
+      "Tap Copy to grab the pose.",
+      "Paste as your reaction to good news, a party invite, or a song you love.",
+    ],
+    definition:
+      "Dance kaomoji feature spinning poses, arm movements, and celebratory stances that suggest motion and rhythm in plain text.",
+    faqs: [
+      {
+        question: "When should I use a dance kaomoji?",
+        answer: "For celebration, party invites, when a favorite song hits, or any moment where the mood calls for a little movement.",
+      },
+      {
+        question: "Are dance and excited kaomoji different?",
+        answer: "Similar energy, but dance focuses on the movement pose — spinning and grooving. Excited is broader high-energy enthusiasm without the dance-specific motion.",
+      },
+      {
+        question: "Can I use dance faces in group chats?",
+        answer: "Yes. Dance and party reactions are universally understood and usually land well in celebration threads.",
+      },
+      {
+        question: "Will dancing arms paste correctly?",
+        answer: "Most dance poses use common Unicode characters that paste fine on all modern devices.",
+      },
+    ],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji"],
+  },
+  {
+    path: "/fish-kaomoji",
+    label: "Fish",
+    heading: "Fish Kaomoji",
+    titleSegment: "Fish Kaomoji ><(((°>",
+    description:
+      "Fish kaomoji copy and paste: fishy, aquatic, and underwater text faces ><(((°>. Tap once for a fun fish reaction in any chat.",
+    intro:
+      "Fishy faces and aquatic text art for fishing jokes, aquarium fans, and anyone who loves a good ><(((°> — tap to copy. Fish kaomoji are a niche favourite in kaomoji culture.",
+    group: "browse",
+    inHeader: false,
+    tags: ["fish"],
+    howTo: [
+      "Pick a fish face that shows the size or mood you want.",
+      "Tap Copy to grab the fishy characters intact.",
+      "Paste into chat for an unexpected aquatic reaction.",
+    ],
+    definition:
+      "Fish kaomoji use bracket and arrow characters to create the classic ><(((°> fish shape, along with aquatic-themed face variants. They are a beloved novelty in the kaomoji tradition.",
+    faqs: [
+      {
+        question: "What are fish kaomoji?",
+        answer: "Text faces shaped like fish, built from arrow and bracket characters. The classic ><(((°> is the most recognized, but there are many creative variants.",
+      },
+      {
+        question: "When do people use fish kaomoji?",
+        answer: "For fishing jokes, ocean or aquarium references, playful random reactions, or simply because they enjoy the novelty of a text fish.",
+      },
+      {
+        question: "Are fish kaomoji hard to paste?",
+        answer: "No. They use common keyboard characters that paste fine on all devices. Some extended fish art uses rare glyphs that may show as boxes on older systems.",
+      },
+      {
+        question: "How is fish kaomoji different from other animal pages?",
+        answer: "Fish kaomoji focus on the aquatic shape — arrows and brackets forming a fish body. Animal pages like cat, dog, and bunny use facial expression cues instead.",
+      },
+    ],
+    related: ["/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji"],
+  },
+  {
+    path: "/birthday-kaomoji",
+    label: "Birthday",
+    heading: "Birthday Kaomoji",
+    titleSegment: "Birthday Kaomoji ☆彡(ﾉ^^)ﾉ",
+    description:
+      "Birthday kaomoji copy and paste: celebration, cake, and party text faces. Tap once to send the perfect birthday reaction in any chat.",
+    intro:
+      "Party faces, cake poses, and celebratory cheers for birthdays — one tap to copy. Birthday kaomoji are the text-face way to celebrate someone without hunting for the right emoji combo.",
+    group: "browse",
+    inHeader: false,
+    tags: ["birthday"],
+    howTo: [
+      "Pick a face with the celebration intensity you want — heartfelt cheer or full party mode.",
+      "Tap Copy to capture every party character.",
+      "Paste into your birthday message for an instant text-face celebration.",
+    ],
+    definition:
+      "Birthday kaomoji combine party, celebration, and festive poses to create text faces perfect for birthday wishes, congratulations, and milestone moments.",
+    faqs: [
+      {
+        question: "What makes a kaomoji a birthday kaomoji?",
+        answer: "Birthday faces lean into celebration energy: party poses, festive glyphs, and cheering stances that signal a special occasion.",
+      },
+      {
+        question: "Can I use birthday kaomoji with text?",
+        answer: "Yes — they work best with a short birthday message. Paste the face before or after your wishes to add expressive flair.",
+      },
+      {
+        question: "Will birthday kaomoji paste in Instagram captions?",
+        answer: "Usually yes. Instagram supports most Unicode characters, so birthday kaomoji paste fine in captions and comments.",
+      },
+      {
+        question: "Is there a Christmas or Halloween kaomoji page too?",
+        answer: "Yes — Christmas Kaomoji and Halloween Kaomoji each have their own pages with seasonal text faces.",
+      },
+    ],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/sparkle-kaomoji", "/star-kaomoji"],
+  },
+  {
+    path: "/christmas-kaomoji",
+    label: "Christmas",
+    heading: "Christmas Kaomoji",
+    titleSegment: "Christmas Kaomoji ☆*:.｡.o(≧▽≦)o.｡.:*☆",
+    description:
+      "Christmas kaomoji copy and paste: festive, holiday, and seasonal text faces. Tap once for the perfect Christmas greeting in any chat.",
+    intro:
+      "Festive snowflakes, Santa poses, and holiday cheer for Christmas greetings — tap to copy. Christmas kaomoji are the text-face way to spread seasonal warmth.",
+    group: "browse",
+    inHeader: false,
+    tags: ["christmas"],
+    howTo: [
+      "Pick a face with the holiday spirit you want — cozy snowflake or full party Santa.",
+      "Tap Copy to grab every festive character.",
+      "Paste into your Christmas message or holiday greeting.",
+    ],
+    definition:
+      "Christmas kaomoji combine winter, festive, and holiday elements — snowflakes, stars, and celebration poses — for seasonal text-face greetings.",
+    faqs: [
+      {
+        question: "When should I use Christmas kaomoji?",
+        answer: "In holiday greetings, Christmas messages, festive posts, or any December conversation where seasonal cheer fits.",
+      },
+      {
+        question: "Do Christmas kaomoji work for other winter holidays?",
+        answer: "Many do. Winter and snowflake faces work for any cold-weather season celebration, not just Christmas specifically.",
+      },
+      {
+        question: "Will festive glyphs paste correctly?",
+        answer: "Most common festive characters paste fine. If a snowflake shows as a box, pick a simpler Christmas face from the grid.",
+      },
+      {
+        question: "Is there a Halloween kaomoji page too?",
+        answer: "Yes — Halloween Kaomoji has its own page with spooky and autumn text faces.",
+      },
+    ],
+    related: ["/halloween-kaomoji", "/birthday-kaomoji", "/sparkle-kaomoji", "/star-kaomoji"],
+  },
+  {
+    path: "/halloween-kaomoji",
+    label: "Halloween",
+    heading: "Halloween Kaomoji",
+    titleSegment: "Halloween Kaomoji ヾ(⌐■_■)ノ♪",
+    description:
+      "Halloween kaomoji copy and paste: spooky, creepy, and ghostly text faces. Tap once for a perfect Halloween reaction in any chat.",
+    intro:
+      "Spooky ghosts, creepy grins, and Halloween energy for October messages — tap to copy. Halloween kaomoji are your text-face weapon for all things eerie and fun.",
+    group: "browse",
+    inHeader: false,
+    tags: ["halloween"],
+    howTo: [
+      "Pick a face with the spook level you want — mild creepy or full horror mode.",
+      "Tap Copy to grab the spooky characters.",
+      "Paste into your Halloween message or use it as a seasonal reaction.",
+    ],
+    definition:
+      "Halloween kaomoji use ghostly, creepy, and dark-themed Unicode characters to create text faces suited for October, horror humor, and spooky vibes.",
+    faqs: [
+      {
+        question: "When should I use Halloween kaomoji?",
+        answer: "For Halloween messages, October greetings, horror humor, or any moment where a spooky or creepy tone fits the chat.",
+      },
+      {
+        question: "Are Halloween kaomoji only for October?",
+        answer: "Mostly, but creepy and gothic faces work year-round for horror fans, dark humor, or edgy vibes in any season.",
+      },
+      {
+        question: "Will spooky glyphs paste correctly?",
+        answer: "Most Halloween faces use common Unicode characters. If a rare glyph boxes out, pick a simpler spooky face.",
+      },
+      {
+        question: "Is there a Christmas kaomoji page?",
+        answer: "Yes — Christmas Kaomoji has festive and holiday text faces for the winter season.",
+      },
+    ],
+    related: ["/christmas-kaomoji", "/birthday-kaomoji", "/nervous-kaomoji", "/confused-kaomoji"],
+  },
+  {
     path: "/star-kaomoji",
     label: "Star",
     heading: "Star Kaomoji",

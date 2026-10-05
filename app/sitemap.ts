@@ -40,7 +40,15 @@ function sitemapPriority(page: SitePage): number {
     case "/excited-kaomoji":
     case "/nervous-kaomoji":
     case "/wink-kaomoji":
-      return 0.75;
+    case "/hug-kaomoji":
+    case "/waving-kaomoji":
+    case "/thinking-kaomoji":
+    case "/dance-kaomoji":
+    case "/fish-kaomoji":
+    case "/birthday-kaomoji":
+    case "/christmas-kaomoji":
+    case "/halloween-kaomoji":
+      return 0.7;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":
     case "/pout-kaomoji":
