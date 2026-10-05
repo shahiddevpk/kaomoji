@@ -20,7 +20,7 @@ import { FaqSection } from "@/components/kaomoji/faq-section";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
-import { breadcrumbJsonLd, faqJsonLd, itemListJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
 
 function isAngryFamilyPage(page: SitePage): boolean {
   if (page.path === "/angry-kaomoji" || page.parentPath === "/angry-kaomoji") {
@@ -254,6 +254,11 @@ export function CategoryView({
       ? faqJsonLd(page.faqs)
       : null;
 
+  const howToSchema =
+    showEducation && page.howTo && page.howTo.length > 0
+      ? howToJsonLd(page)
+      : null;
+
   const itemListSchema =
     safePage === 1
       ? itemListJsonLd(page, faces.slice(0, ITEM_LIST_LIMIT))
@@ -274,6 +279,7 @@ export function CategoryView({
       <JsonLd data={breadcrumbJsonLd(page, { pageNumber: safePage })} />
       {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
+      {howToSchema ? <JsonLd data={howToSchema} /> : null}
       <Breadcrumbs page={page} pageNumber={safePage} />
       <h1 className="mt-4 type-h1 lcp-hero tracking-tight">
         {page.heading}

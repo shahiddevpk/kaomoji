@@ -5,6 +5,9 @@ import { absoluteUrl } from "@/lib/utils";
 function lastModified(page: SitePage): string {
   switch (page.path) {
     case "/":
+    case "/kaomoji-copy-paste":
+    case "/japanese-emoticons":
+    case "/text-faces":
     case "/thumbs-up-kaomoji":
     case "/bowing-kaomoji":
     case "/running-kaomoji":

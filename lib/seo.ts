@@ -184,6 +184,28 @@ export function itemListJsonLd(
   };
 }
 
+/**
+ * HowTo JSON-LD for pages with step-by-step howTo copy instructions.
+ * Emit only on page 1.
+ */
+export function howToJsonLd(page: SitePage): Record<string, unknown> | null {
+  if (!page.howTo || page.howTo.length === 0) return null;
+  const name =
+    page.path === "/"
+      ? "How to copy and paste kaomoji"
+      : `How to copy ${page.label.toLowerCase()} kaomoji`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: page.howTo.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text,
+    })),
+  };
+}
+
 /** Strip light markdown so FAQ answers stay plain text in JSON-LD. */
 function plainTextAnswer(answer: string): string {
   return answer

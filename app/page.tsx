@@ -6,7 +6,7 @@ import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { JsonLd } from "@/components/layout/json-ld";
-import { faqJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
+import { faqJsonLd, howToJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
 
 const page = getPage("/");
@@ -20,11 +20,13 @@ function HomeFacesAndSeo() {
     faces.slice(0, ITEM_LIST_LIMIT),
   );
   const faqSchema = page.faqs?.length ? faqJsonLd(page.faqs) : null;
+  const howToSchema = page.howTo?.length ? howToJsonLd(page) : null;
 
   return (
     <>
       {itemListSchema ? <JsonLd data={itemListSchema} /> : null}
       {faqSchema ? <JsonLd data={faqSchema} /> : null}
+      {howToSchema ? <JsonLd data={howToSchema} /> : null}
       <section className="mt-10" id="faces" aria-labelledby="popular-heading">
         <h2 id="popular-heading" className="type-h2">
           Popular kaomoji to copy

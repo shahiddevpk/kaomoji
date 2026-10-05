@@ -51,18 +51,23 @@ export const pages: SitePage[] = [
   {
     path: "/",
     label: "Home",
-    heading: "Kaomoji — Browse by Mood",
-    titleSegment: "Kaomoji — Copy & Paste Japanese Text Faces | Paste Kaomoji",
+    heading: "Kaomoji",
+    titleSegment: "Kaomoji Copy and Paste — Japanese Text Faces | Paste Kaomoji",
     description:
       "Browse 2,000+ kaomoji by mood: cute (◕‿◕), happy (＾▽＾), cat, sad, star, heart, and more. One-tap copy into Discord, WhatsApp, or any chat. Free kaomoji library.",
     intro:
       "Browse over 2,000 kaomoji by mood and theme — tap once to copy any face into chat. Choose a category below to discover, or open Kaomoji Copy and Paste for a quick grab.",
     group: "hub",
     inHeader: true,
+    howTo: [
+      "Browse the mood tiles — cute, happy, cat, sad, and more — or search by name to find the right faces.",
+      "Tap Copy on any kaomoji. The full character string lands on your clipboard instantly.",
+      "Switch to Discord, WhatsApp, Instagram, SMS, or any chat and paste with Ctrl+V, Cmd+V, or long-press Paste.",
+    ],
     definition:
       "Kaomoji are Japanese-style text faces made from punctuation, symbols, and letters so feeling shows up in plain text. They travel as normal characters, so they work in chats and comments where picture stickers sometimes fail or look inconsistent.\n\nPaste Kaomoji groups them by mood and format so you can find a face fast, copy it in one tap, and drop it into Discord, WhatsApp, Slack, SMS, or a comment. Because they are editable text, you can type around them or tweak a character when you want a custom twist.",
     learnMore:
-      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone.\n\nCategories on this site exist so you can browse kaomoji faces by intent instead of scrolling one giant unsorted dump. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.",
+      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone. The result is a face that travels as editable text — you can type around it, tweak a character, or drop it into any field that accepts typing.\n\nCategories on this site exist so you can browse kaomoji faces by intent instead of scrolling one giant unsorted dump. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.\n\nHow to read a kaomoji: look at the eyes first. Wide circles (°o°) signal shock; happy crescents (＾▽＾) signal joy; downcast lines (╥﹏╥) signal sadness. Arms formed by characters like \\, /, ง, and ε= show whether a figure is waving, fighting, or running. Cheek marks and sweat drops add blush, nerves, or embarrassment. The pattern is consistent enough that a new face reads at a glance once you know the grammar.\n\nKaomoji vs emoji: emoji are single picture glyphs rendered by a font — they can look completely different on iPhone vs Android vs Windows. Kaomoji are assembled from ordinary punctuation and Unicode letters, so they look the same everywhere text appears. They are also editable: copy one and change a character to shift the mood, something you cannot do with a picture glyph.\n\nWhere kaomoji paste cleanly: Discord, WhatsApp, Instagram captions and bios, Twitter/X, TikTok bios, Slack, Telegram, SMS, and most email clients all handle single-line faces without issues. Multiline stacked art needs a field that preserves line breaks — notes apps and long bio fields usually work; tight single-line inputs collapse the stack into one messy row.\n\nKaomoji outside Japan: the format spread beyond Japan through early forum culture and later through Discord and Tumblr, where the expressive range — from a blush to a full table-flip gag — gave them staying power that emoji could not replace. A hand-assembled text face feels intentional in a way a single-tap sticker does not.\n\nCommon spellings: kaomoji (顔文字) is the standard romanization. Frequent alternate spellings include kaomojis, kamoji, kaomiji, kaimoji, koamoji, kaoemoji, and kaemoji — all point to the same family of Japanese-style text faces.",
     faqs: [
       {
         question: "What is a kaomoji?",
@@ -73,8 +78,8 @@ export const pages: SitePage[] = [
         answer: "Both spellings are common in English. Kaomoji is the usual singular; kaomojis often means the category or a bunch of faces. They refer to the same text-face family on this site—one library, not separate pages for the plural.",
       },
       {
-        question: "I searched kamoji or kao moji—is that the same thing?",
-        answer: "Usually yes. Misspellings such as kamoji, koamoji, or kaomoji with a space point to the same Japanese-style text faces. Start from this hub or Kaomoji Copy and Paste instead of hunting typo-only URLs.",
+        question: "I searched kamoji, kaomojis, or another spelling—is that the same thing?",
+        answer: "Yes. All of these are common alternate spellings: kamoji, kaomojis, kaomiji, kaimoji, koamoji, kaoemoji, kaemoji, and kao emoji. They all refer to the same Japanese-style text faces. Start from this hub or Kaomoji Copy and Paste instead of hunting typo-only URLs.",
       },
       {
         question: "What is the difference between kaomoji and emoji?",
@@ -494,6 +499,11 @@ export const pages: SitePage[] = [
       "Kaomoji copy and paste when you want a face fast: popular picks first, one tap to clipboard. For mood shelves — cute, happy, cat, star, and more — start on the home hub instead.",
     group: "browse",
     inHeader: true,
+    howTo: [
+      "Scan the list — popular faces appear first, ranked by how often they are copied.",
+      "Tap Copy once; the face string, including any spacing, goes to your clipboard.",
+      "Paste into Discord, WhatsApp, Instagram, or any message field — no app or account needed.",
+    ],
     definition:
       "This page is a copy-first utility: popular faces up front so you can grab one and paste without browsing every mood shelf first.",
     learnMore:
@@ -542,6 +552,11 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "japanese",
+    howTo: [
+      "Look for the eye style that fits your mood — round, crescent, kana-accented, or bracket-framed.",
+      "Tap Copy to grab the full character string including any kana, brackets, or arm characters.",
+      "Paste into your message; if a rare glyph shows as a box, pick a simpler face from the same grid.",
+    ],
     definition:
       "Japanese emoticons (kaomoji) are usually read upright, with eyes doing most of the emotional work. This page focuses on that classic construction rather than Western sideways smiles or single emoji pictographs.",
     learnMore:
@@ -578,6 +593,11 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "text-faces",
+    howTo: [
+      "Scan for the Western-style expression you want — shrug, Lenny, disapproval, or a compact ASCII face.",
+      "Tap Copy once to get the exact character string on your clipboard.",
+      "Paste into chat or a bio; these faces use common characters that paste cleanly on all devices.",
+    ],
     definition:
       "Text faces here mean Western-leaning ASCII and unicode expressions—shrug, Lenny, disapproval, and similar sideways or compact smiles—not classic upright japanese kaomoji built from kana.",
     faqs: [
