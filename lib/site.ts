@@ -51,12 +51,12 @@ export const pages: SitePage[] = [
   {
     path: "/",
     label: "Home",
-    heading: "Browse Kaomoji by Mood",
-    titleSegment: "Kaomoji Library — Browse by Mood | Paste Kaomoji",
+    heading: "Kaomoji — Browse by Mood",
+    titleSegment: "Kaomoji — Copy & Paste Japanese Text Faces | Paste Kaomoji",
     description:
-      "Kaomoji library to browse by mood: cute, happy, cat, sad, crying, angry, and animal hubs. Start here for discovery; use Kaomoji Copy and Paste when you only need a fast grab.",
+      "Browse 2,000+ kaomoji by mood: cute (◕‿◕), happy (＾▽＾), cat, sad, star, heart, and more. One-tap copy into Discord, WhatsApp, or any chat. Free kaomoji library.",
     intro:
-      "Explore the kaomoji library by mood and theme, then copy in one tap. Start from category tiles when you are discovering; open Kaomoji Copy and Paste when you only need a fast grab.",
+      "Browse over 2,000 kaomoji by mood and theme — tap once to copy any face into chat. Choose a category below to discover, or open Kaomoji Copy and Paste for a quick grab.",
     group: "hub",
     inHeader: true,
     definition:
@@ -96,6 +96,14 @@ export const pages: SitePage[] = [
         question: "Any tips for pasting kaomoji on mobile?",
         answer: "Copy from the site, switch to your chat app, then long-press the message field and choose Paste. If a multiline face breaks, paste into a note first to confirm every line copied, then send. Avoid apps that strip special Unicode if a face looks empty.",
       },
+      {
+        question: "Where can I find star kaomoji?",
+        answer: "Open the Star Kaomoji page for ★ and ✦ text faces. For glitter and shine effects, try Sparkle Kaomoji instead. Both pages have one-tap copy.",
+      },
+      {
+        question: "What kaomoji should I use for laughing or giggling?",
+        answer: "Open Giggling Kaomoji for the full spectrum of laugh faces, from quiet giggles (≧▽≦) to burst laughs. Happy Kaomoji has cheers and smiles if you need something less specific.",
+      },
     ],
     related: [],
   },
@@ -105,9 +113,9 @@ export const pages: SitePage[] = [
     heading: "Cute Kaomoji",
     titleSegment: "Cute Kaomoji & Kawaii (◕‿◕)",
     description:
-      "Cute kaomoji and kawaii faces (◕‿◕): soft blush, tiny hugs, gentle charm. Owns the kawaii mood—cheers and big grins stay on happy kaomoji.",
+      "Cute kaomoji and kawaii faces (◕‿◕) to copy and paste — soft blush, tiny hugs, gentle charm. 100+ adorable Japanese text faces for Discord, WhatsApp, and any chat.",
     intro:
-      "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste. Cute owns the soft aesthetic mood; cheers, waves, and big grins live on happy kaomoji so the two stay distinct.",
+      "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste in one tap. Cute owns the gentle aesthetic mood — cheers, waves, and big grins live on happy kaomoji so the two stay distinct.",
     group: "browse",
     inHeader: true,
     category: "cute",
@@ -410,9 +418,9 @@ export const pages: SitePage[] = [
     heading: "Kaomoji Copy and Paste",
     titleSegment: "Kaomoji Copy and Paste (◕‿◕)",
     description:
-      "Kaomoji copy and paste: popular faces first, one tap to your clipboard, no account. Copy and paste kaomoji on phone or desktop—browse moods on the home hub when you want categories.",
+      "Kaomoji copy and paste — 2,000+ faces, popular picks first, one tap to clipboard, no account needed. Works on phone and desktop. Browse by mood on the home hub when you want categories.",
     intro:
-      "Kaomoji copy and paste when you want a face fast: popular picks first, one tap to clipboard. For mood shelves (cute, happy, cat, and more), start on the home hub instead.",
+      "Kaomoji copy and paste when you want a face fast: popular picks first, one tap to clipboard. For mood shelves — cute, happy, cat, star, and more — start on the home hub instead.",
     group: "browse",
     inHeader: true,
     definition:
