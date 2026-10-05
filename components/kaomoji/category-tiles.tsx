@@ -5,28 +5,43 @@ import { cn } from "@/lib/utils";
 
 /** Hub browse order by intent: moods -> utility -> alt heads. */
 const BROWSE_ORDER = [
+  // Core emotions
   "/cute-kaomoji",
   "/happy-kaomoji",
   "/cat-kaomoji",
   "/sad-kaomoji",
   "/crying-kaomoji",
   "/angry-kaomoji",
-  // Angry-family specialties (have parentPath; still discoverable from hub)
+  // Angry-family specialties (have parentPath; still hub-discoverable)
   "/table-flip-kaomoji",
   "/fight-kaomoji",
   "/pout-kaomoji",
+  // Love / affection cluster
   "/heart-kaomoji",
-  "/shy-kaomoji",
-  "/star-kaomoji",
-  "/giggling-kaomoji",
-  "/sparkle-kaomoji",
   "/love-kaomoji",
-  "/flower-kaomoji",
   "/kiss-kaomoji",
+  "/hug-kaomoji",
+  "/shy-kaomoji",
+  // Celebration / seasonal cluster
+  "/star-kaomoji",
+  "/sparkle-kaomoji",
+  "/birthday-kaomoji",
+  "/christmas-kaomoji",
+  "/halloween-kaomoji",
+  // Nature / animals
+  "/flower-kaomoji",
+  "/fish-kaomoji",
+  // Happy / playful actions
+  "/giggling-kaomoji",
   "/smile-kaomoji",
-  "/excited-kaomoji",
-  "/nervous-kaomoji",
   "/wink-kaomoji",
+  "/excited-kaomoji",
+  "/dance-kaomoji",
+  "/waving-kaomoji",
+  // Thoughtful / mild
+  "/nervous-kaomoji",
+  "/thinking-kaomoji",
+  // Utility pages
   "/kaomoji-copy-paste",
   "/japanese-emoticons",
   "/text-faces",

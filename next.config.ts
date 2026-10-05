@@ -227,15 +227,9 @@ const nextConfig: NextConfig = {
       { source: "/glare-kaomoji", destination: "/angry-kaomoji/", permanent: true },
       { source: "/glare-kaomoji/", destination: "/angry-kaomoji/", permanent: true },
 
-      // Heart / shy aliases (love + blush are chips/tags, not doorway pages)
-      { source: "/love", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/love/", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/love-kaomoji", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/love-kaomoji/", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/kiss-kaomoji", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/kiss-kaomoji/", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/hug-kaomoji", destination: "/heart-kaomoji/", permanent: true },
-      { source: "/hug-kaomoji/", destination: "/heart-kaomoji/", permanent: true },
+      // Heart / shy aliases
+      { source: "/love", destination: "/love-kaomoji/", permanent: true },
+      { source: "/love/", destination: "/love-kaomoji/", permanent: true },
       { source: "/heart", destination: "/heart-kaomoji/", permanent: true },
       { source: "/heart/", destination: "/heart-kaomoji/", permanent: true },
       { source: "/blush", destination: "/shy-kaomoji/", permanent: true },
