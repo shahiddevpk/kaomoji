@@ -53,7 +53,12 @@ function hasTableFlipGlyph(face: string): boolean {
 }
 
 function passesBearTagPage(item: Kaomoji): boolean {
-  if (primaryIs(item, "cat", "dog", "bunny", "pig", "crying", "happy")) {
+  // Teddy-shaped faces ʕ…ʔ are bears whatever their primary mood.
+  const teddyShape = /ʕ[^ʔ]*ʔ/.test(item.face);
+  if (
+    !teddyShape &&
+    primaryIs(item, "cat", "dog", "bunny", "pig", "crying", "happy")
+  ) {
     return false;
   }
   if (faceLooksCatShaped(item.face)) return false;
@@ -258,11 +263,23 @@ function passesHeartTagPage(item: Kaomoji): boolean {
   return true;
 }
 
+function passesHugTagPage(item: Kaomoji): boolean {
+  if (
+    hasAnyTag(item, ["catch", "receive", "throw", "toss", "flip", "tableflip", "fight", "punch", "hit", "oraora"])
+  ) {
+    return false;
+  }
+  // Hug arms: づ/っ/つ reaching forward, ⊂ ⊃ embrace, ლ grabby hands.
+  return /づ|っ|つ|⊂|⊃|ლ|ヾ|\(\s*\)/.test(item.face) || hasAnyTag(item, ["embrace", "cuddle"]);
+}
+
 function passesTableFlipTagPage(item: Kaomoji): boolean {
   if (!hasAnyTag(item, ["tableflip", "table flip"]) && !hasTableFlipGlyph(item.face)) {
     return false;
   }
   if (!hasTableFlipGlyph(item.face)) return false;
+  // Rifle art (▄︻┻═━一) shares the ┻ glyph but is not a table.
+  if (/︻|═━一/.test(item.face)) return false;
   return true;
 }
 
@@ -371,6 +388,10 @@ export function passesTagIntegrity(item: Kaomoji, tags: string[]): boolean {
   }
   if (normalized.some((t) => t === "dog" || t === "puppy")) {
     return passesDogTagPage(item);
+  }
+  // Hug-only page: arms reaching out, not the heart page's glyph rule.
+  if (normalized.length === 1 && normalized[0] === "hug") {
+    return passesHugTagPage(item);
   }
   if (
     normalized.some(

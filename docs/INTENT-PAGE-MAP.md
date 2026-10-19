@@ -120,3 +120,22 @@ After launch, check:
 | Valid pagination URLs | Yes | Review | Yes |
 | Search/filter paths and query variants | No (`noindex,follow`) | Not suitable | No |
 | Redirect aliases and `/page/1` | No; 301 target only | Not suitable | No |
+
+## 2026-10-19 expansion (keyword research: Semrush US export + competitor review)
+
+Competitors reviewed (US SERPs): gyanmirai.com/tools/kaomoji (34k faces, 53 moods, anatomy section), kaomojis.jp (56k claimed, 300+ thin categories), thelennyface.com (separate Emoticon Faces + Text Symbols), coddy.tech/tools/kaomoji (meaning tables, multilingual), psd-dude.com. SERPs for lenny face, shrug, uwu, cute symbols and emoji combos are dominated by Chrome extensions and spam pages — a quality page can win.
+
+| URL | Primary (US vol / KD) | Secondary (tags-only) | Owner rule |
+|---|---|---|---|
+| `/lenny-face/` | lenny face (22.2k / 46) | lenny face copy and paste, lennyface, lenny faces, ( ͡° ͜ʖ ͡°) | Only page titled "Lenny". `/text-faces/` no longer claims Lenny. |
+| `/shrug-kaomoji/` | shrug emoticon / ¯\_(ツ)_/¯ | shrug emoji, shrug kaomoji, shrug face | Only page titled "Shrug". |
+| `/uwu-kaomoji/` | uwu face (2.9k / 32) | owo, uwu kaomoji | Only page titled "UwU". |
+| `/food-kaomoji/` | food kaomoji | eating / drinking / hungry kaomoji | Tag `food` (glyph-detected: ﹃ ڡ 旦 + food emoji). |
+| `/emoticons/` | emoticons (60.5k / 87), text emoticons, keyboard faces (1.9k / 28) | smiley face copy and paste, ascii emoticons, emoticon list, emoticon meanings | Western keyboard emoticons with meanings. `/japanese-emoticons/` keeps the Japanese modifier. |
+| `/cute-symbols/` | cute symbols copy and paste (12.1k / 67), cute copy paste symbols (8.1k / 15) | cute text symbols, aesthetic symbols, kawaii symbols | Unicode symbols only, no faces. |
+| `/emoji-combos/` | cute emoji combos (5.4k / 22), aesthetic emoji combos (3.6k / 14) | emoji combinations, aesthetic emojis | Emoji sequences only. |
+| `/shy-kaomoji/` (retitled) | shy kaomoji + blush kaomoji (1.3k / 24) | blushing kaomoji | Absorbs blush intent; `/blush-kaomoji` 301s here. |
+
+Data: `scripts/tag-face-families.mjs` adds `lenny`, `shrug`, `uwu`, `food` tags by glyph pattern and appends curated faces (idempotent). Curated non-face collections live in `data/collections.ts`.
+
+Open item: the home title contains "Kaomoji Copy and Paste", the primary of `/kaomoji-copy-paste/`. Review in GSC (queries for both URLs) before changing the home title.

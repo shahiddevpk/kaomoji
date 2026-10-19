@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Paste Kaomoji – Copy Japanese Text Faces",
+  "short_name": "Paste Kaomoji",
+  "version": "1.0.0",
+  "description": "Copy kaomoji, Lenny face, shrug and cute text faces in one click. 24,000+ more at pastekaomoji.com.",
+  "homepage_url": "https://pastekaomoji.com/",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Paste Kaomoji",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": []
+}

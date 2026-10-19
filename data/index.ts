@@ -903,6 +903,37 @@ function tagPoolKey(
   return `${normalized}|${options?.includeNewlines ? "1" : "0"}`;
 }
 
+/**
+ * Seasonal / themed tag pages: faces showing these glyphs lead page 1;
+ * tagged-but-generic faces (plain shock, tears) sink below on-theme ones.
+ */
+const TAG_GLYPH_RANK: Record<string, { prefer: string[]; demote: string[] }> = {
+  halloween: {
+    prefer: ["🎃", "👻", "🦇", "💀", "☠", "🕷", "🕸", "🧛", "🧟", "🧙", "⚰", "🔮", "🍬", "Ψ", "ψ", "ཀ", "†", "ↀ", "ꏿ"],
+    demote: ["ﾟдﾟ", "ﾟДﾟ", "༎ຶ", "ಠ_ಠ"],
+  },
+  christmas: {
+    prefer: ["🎄", "🎅", "🤶", "⛄", "☃", "❄", "🎁", "🦌", "🔔", "🌟", "Merry", "ﾒﾘｰ", "メリー", "サンタ", "ｻﾝﾀ", "由"],
+    demote: [],
+  },
+  thanksgiving: {
+    prefer: ["🦃", "🥧", "🌽", "🍂", "🍁", "🍗", "Thank", "thank"],
+    demote: [],
+  },
+  fear: {
+    prefer: ["((((", "ﾌﾞﾙﾌﾞﾙ", "ガクブル", "ｶﾞｸｶﾞｸ", "怖", "°Д°", "゜Д゜", "ﾟДﾟ", "/ω＼", "ε="],
+    demote: ["急", "ゴロ"],
+  },
+  illness: {
+    prefer: ["😷", "🤒", "🤧", "💊", "🌡", "ｺﾞﾎ", "ｹﾞﾎ"],
+    demote: [],
+  },
+  devil: {
+    prefer: ["Ψ(｀", "ψ(｀", ")Ψ", ")ψ", "😈", "👿"],
+    demote: [],
+  },
+};
+
 function rankOptionsForTags(tags: string[]): RankOptions | undefined {
   const normalized = tags.map(normalizeTag);
   // Angry hub: demote fight/oraora leads so scowls own page 1.
@@ -915,6 +946,14 @@ function rankOptionsForTags(tags: string[]): RankOptions | undefined {
   // Heart page-1: ♡/♥/love-first (prefer heart+love over kiss/hug-only leads).
   if (normalized.some((t) => t === "heart" || t === "love")) {
     return { preferTags: HEART_PREFER };
+  }
+  // Themed pages (Halloween, Christmas, Thanksgiving): on-theme glyphs lead.
+  if (normalized.length === 1 && TAG_GLYPH_RANK[normalized[0]!]) {
+    const rank = TAG_GLYPH_RANK[normalized[0]!]!;
+    return {
+      preferFaceIncludes: rank.prefer,
+      demoteFaceIncludes: rank.demote,
+    };
   }
   if (normalized.length === 1 && normalized[0] === "bear") {
     return {
@@ -959,4 +998,35 @@ export function getForTagPage(
     start,
     start + PAGE_GRID_LIMIT,
   );
+}
+
+/** Page-1 "browse by type" groups for a tag page; each face is used once. */
+export function getFaceGroupsForPage(
+  scope: { tags?: string[]; category?: string },
+  groups: { id: string; heading: string; glyphs: string[] }[],
+  perGroup = 8,
+): { id: string; heading: string; items: Kaomoji[] }[] {
+  const pool =
+    scope.tags && scope.tags.length > 0
+      ? rankedPoolForTags(scope.tags)
+      : scope.category
+        ? rankedPoolForCategory(scope.category)
+        : [];
+  const used = new Set<string>();
+  return groups
+    .map((group) => {
+      const items: Kaomoji[] = [];
+      for (const item of pool) {
+        if (items.length >= perGroup) break;
+        if (used.has(item.id)) continue;
+        if (group.glyphs.some((g) => item.face.includes(g))) {
+          items.push(item);
+          used.add(item.id);
+        }
+      }
+      return { id: group.id, heading: group.heading, items };
+    })
+    // Full rows only (groups render at 2 or 4 columns): trim to a multiple of 4.
+    .map((group) => ({ ...group, items: group.items.slice(0, group.items.length - (group.items.length % 4)) }))
+    .filter((group) => group.items.length >= 4);
 }

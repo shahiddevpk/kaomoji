@@ -27,6 +27,8 @@ const eslintConfig = defineConfig([
     ".qa-*.js",
     // One-shot Node stubs (CommonJS require; not app source):
     "scripts/**",
+    // Chrome extension: plain browser JS, published separately.
+    "extension/**",
   ]),
 ]);
 

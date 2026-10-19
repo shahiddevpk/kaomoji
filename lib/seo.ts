@@ -168,7 +168,7 @@ export function websiteJsonLd() {
  */
 export function itemListJsonLd(
   page: SitePage,
-  faces: Kaomoji[],
+  faces: Pick<Kaomoji, "face" | "name">[],
 ) {
   return {
     "@context": "https://schema.org",
@@ -191,9 +191,10 @@ export function itemListJsonLd(
 export function howToJsonLd(page: SitePage): Record<string, unknown> | null {
   if (!page.howTo || page.howTo.length === 0) return null;
   const name =
-    page.path === "/"
+    page.howToName ??
+    (page.path === "/"
       ? "How to copy and paste kaomoji"
-      : `How to copy ${page.label.toLowerCase()} kaomoji`;
+      : `How to copy ${page.label.toLowerCase()} kaomoji`);
   return {
     "@context": "https://schema.org",
     "@type": "HowTo",

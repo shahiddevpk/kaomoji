@@ -3,6 +3,7 @@ import {
   countByCategory,
   countByTags,
   countPopular,
+  getFaceGroupsForPage,
   getForPage,
   getRelatedKaomojiFromScopes,
   pageCountForCategory,
@@ -17,6 +18,8 @@ import { KaomojiGrid } from "@/components/kaomoji/kaomoji-grid";
 import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { FaqSection } from "@/components/kaomoji/faq-section";
+import { MeaningCards } from "@/components/kaomoji/meaning-cards";
+import { PAGE_MEANINGS } from "@/data/page-meanings";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
 import { relatedPages, type SitePage } from "@/lib/site";
@@ -249,6 +252,10 @@ export function CategoryView({
   }));
 
   const showEducation = safePage === 1;
+  const faceGroups =
+    safePage === 1 && page.faceGroups
+      ? getFaceGroupsForPage(page, page.faceGroups)
+      : [];
   const faqSchema =
     showEducation && page.faqs && page.faqs.length > 0
       ? faqJsonLd(page.faqs)
@@ -292,6 +299,50 @@ export function CategoryView({
 
       <LazyRecentlyCopied />
 
+      {faceGroups.length > 0 ? (
+        <section className="mt-8" aria-labelledby="by-type-heading">
+          <h2 id="by-type-heading" className="type-h2">
+            {page.heading} by type
+          </h2>
+          <nav aria-label="Jump to type" className="mt-3">
+            <ul className="chip-row">
+              {faceGroups.map((group) => (
+                <li key={group.id}>
+                  <a href={`#type-${group.id}`} className="mood-chip mood-chip--idle">
+                    {group.heading}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="#faces" className="mood-chip mood-chip--idle">
+                  All {page.label} faces
+                </a>
+              </li>
+            </ul>
+          </nav>
+          {faceGroups.map((group) => (
+            <section
+              key={group.id}
+              id={`type-${group.id}`}
+              className="mt-6 scroll-mt-28"
+              aria-labelledby={`type-${group.id}-heading`}
+            >
+              <h3 id={`type-${group.id}-heading`} className="type-h3">
+                {group.heading}
+              </h3>
+              <div className="mt-3 type-group-grid">
+                <KaomojiGrid
+                  items={group.items.map((item) => ({
+                    ...item,
+                    id: `${group.id}-${item.id}`,
+                  }))}
+                />
+              </div>
+            </section>
+          ))}
+        </section>
+      ) : null}
+
       <section className="mt-8" id="faces" aria-labelledby="faces-heading">
         <h2 id="faces-heading" className="type-h2">
           {facesSectionHeading(page)}
@@ -307,6 +358,24 @@ export function CategoryView({
           }
         />
       </section>
+
+      {showEducation && PAGE_MEANINGS[page.path] ? (
+        <section className="mt-10" aria-labelledby="meanings-heading">
+          <h2 id="meanings-heading" className="type-h2">
+            Popular {page.label.toLowerCase()} kaomoji and what they mean
+          </h2>
+          <p className="mt-2 max-w-2xl type-meta leading-6">
+            Every face is built from characters that each play a part. Here is
+            how the most-used {page.label.toLowerCase()} faces work.
+          </p>
+          <MeaningCards
+            items={PAGE_MEANINGS[page.path]!.map((item, i) => ({
+              ...item,
+              id: `meaning-${page.path.slice(1)}-${i}`,
+            }))}
+          />
+        </section>
+      ) : null}
 
       {showEducation && page.howTo && page.howTo.length > 0 ? (
         <section className="mt-10 max-w-2xl" aria-labelledby="how-these-work">

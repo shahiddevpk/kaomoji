@@ -79,6 +79,19 @@ export const PAGINATED_SLUGS: Record<string, PaginatedPageMeta> = {
     path: "/bear-kaomoji",
     tags: ["bear"],
   },
+  "lenny-face": { path: "/lenny-face", tags: ["lenny"] },
+  "shrug-kaomoji": { path: "/shrug-kaomoji", tags: ["shrug"] },
+  "uwu-kaomoji": { path: "/uwu-kaomoji", tags: ["uwu"] },
+  "food-kaomoji": { path: "/food-kaomoji", tags: ["food"] },
+  "christmas-kaomoji": { path: "/christmas-kaomoji", tags: ["christmas"] },
+  "thanksgiving-kaomoji": { path: "/thanksgiving-kaomoji", tags: ["thanksgiving"] },
+  "sorry-kaomoji": { path: "/sorry-kaomoji", tags: ["sorry"] },
+  "thank-you-kaomoji": { path: "/thank-you-kaomoji", tags: ["thanks"] },
+  "cool-kaomoji": { path: "/cool-kaomoji", tags: ["cool"] },
+  "sick-kaomoji": { path: "/sick-kaomoji", tags: ["illness"] },
+  "scared-kaomoji": { path: "/scared-kaomoji", tags: ["fear"] },
+  "devil-kaomoji": { path: "/devil-kaomoji", tags: ["devil"] },
+  "halloween-kaomoji": { path: "/halloween-kaomoji", tags: ["halloween"] },
 };
 
 export type PaginatedSlug = string;

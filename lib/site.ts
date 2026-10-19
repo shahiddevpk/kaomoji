@@ -38,6 +38,13 @@ export type SitePage = {
   robots?: { index?: boolean; follow?: boolean };
   /** Short how-to / explainer bullets under the grid intro (unique per page). */
   howTo?: string[];
+  /**
+   * In-page "browse by type" sections (page 1 only). Each face lands in the
+   * first group whose glyph it contains; the full grid stays below.
+   */
+  faceGroups?: { id: string; heading: string; glyphs: string[] }[];
+  /** HowTo JSON-LD name override (non-kaomoji collection pages). */
+  howToName?: string;
   /** Optional FAQ pairs for FAQPage JSON-LD + on-page FAQ section (page 1 only). */
   faqs?: { question: string; answer: string }[];
   /** Short unique "what is…" block when set. */
@@ -54,9 +61,9 @@ export const pages: SitePage[] = [
     heading: "Kaomoji",
     titleSegment: "Kaomoji Copy and Paste — Japanese Text Faces | Paste Kaomoji",
     description:
-      "Browse 2,000+ kaomoji by mood: cute (◕‿◕), happy (＾▽＾), cat, sad, star, heart, and more. One-tap copy into Discord, WhatsApp, or any chat. Free kaomoji library.",
+      "Browse 24,000+ kaomoji by mood: cute (◕‿◕), happy (＾▽＾), cat, sad, Lenny face, shrug ¯\_(ツ)_/¯, and more. One-tap copy into Discord, WhatsApp, or any chat. Free kaomoji library.",
     intro:
-      "Browse over 2,000 kaomoji by mood and theme — tap once to copy any face into chat. Choose a category below to discover, or open Kaomoji Copy and Paste for a quick grab.",
+      "Over 24,000 Japanese text faces sorted into 50+ moods and themes — from cute (◕‿◕✿) and crying (╥﹏╥) to the Lenny face and shrug. Tap any face to copy it, then paste it into chat, a caption, or your bio.",
     group: "hub",
     inHeader: true,
     howTo: [
@@ -124,6 +131,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "cute",
+    faceGroups: [
+      { id: "blush", heading: "Blushing cute kaomoji", glyphs: ["⁄", "///", "〃", "˶", "*´", "♡"] },
+      { id: "flower", heading: "Flower & aesthetic cute kaomoji", glyphs: ["✿", "❀", "ꕤ", "🌸", "𐙚"] },
+      { id: "animal", heading: "Cute animal kaomoji", glyphs: ["ʕ", "ฅ", "ᴥ", "ᐢ", "૮", "ω"] },
+      { id: "sparkle", heading: "Sparkly cute kaomoji", glyphs: ["✧", "☆", "⋆", "✩", "˚"] },
+    ],
     howTo: [
       "Scan for the softness level you want — blushing smile, tiny wave, or gentle kawaii pose.",
       "Tap Copy; the face pastes as editable plain text, no special app needed.",
@@ -155,7 +168,7 @@ export const pages: SitePage[] = [
         answer: "Yes. This URL owns the cute mood grid—soft kawaii faces with one-tap copy. Use Kaomoji Copy and Paste only when you want a general popular list without the cute filter.",
       },
     ],
-    related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste"],
+    related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji"],
   },
   {
     path: "/happy-kaomoji",
@@ -169,6 +182,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "happy",
+    faceGroups: [
+      { id: "cheer", heading: "Cheering kaomoji", glyphs: ["ヽ(", "\\(", "ﾉ)", "ノ)", "o(", "٩("] },
+      { id: "laugh", heading: "Laughing kaomoji", glyphs: ["≧▽≦", "≧∇≦", "^o^", "^O^", "∀", "ﾜﾗ", "笑"] },
+      { id: "sparkle", heading: "Happy kaomoji with sparkles", glyphs: ["✧", "☆", "★", "✨", "*:･ﾟ"] },
+      { id: "smile", heading: "Smiling kaomoji", glyphs: ["◕‿◕", "^_^", "＾＾", "◠‿◠", "ᵔᴗᵔ", "^‿^"] },
+    ],
     howTo: [
       "Scan for the energy level — calm grin, cheerful wave, or arms-up celebration cheer.",
       "Tap Copy once; the full character string goes to your clipboard.",
@@ -196,7 +215,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Happy faces use standard Unicode that pastes cleanly on Discord, WhatsApp, Instagram, and most chat apps. Tap Copy and paste — no special settings needed.",
       },
     ],
-    related: ["/cute-kaomoji", "/cat-kaomoji", "/sad-kaomoji", "/angry-kaomoji"],
+    related: ["/cute-kaomoji", "/cat-kaomoji", "/sad-kaomoji", "/angry-kaomoji", "/thumbs-up-kaomoji", "/dance-kaomoji"],
   },
   {
     path: "/cat-kaomoji",
@@ -210,6 +229,14 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "cat",
+    faceGroups: [
+      { id: "sleepy", heading: "Sleeping cat kaomoji", glyphs: ["zzZ", "zZ", "-ω-", "－ω－", "ᴗ", "˘ω˘", "(¦3", "ぐー"] },
+      { id: "love", heading: "Cat kaomoji with hearts", glyphs: ["♡", "♥", "❤"] },
+      { id: "grumpy", heading: "Grumpy & angry cat kaomoji", glyphs: ["｀ω´", "益", "╬", "`ω´", "ↀ", "💢"] },
+      { id: "sad", heading: "Sad & crying cat kaomoji", glyphs: [";ω;", "；ω；", "╥", "T ω T", "TωT", "ಥ", ";", "；"] },
+      { id: "happy", heading: "Happy cat kaomoji", glyphs: ["^ω^", "＾ω＾", "≧ω≦", "◕ω◕", "•ω•"] },
+      { id: "paws", heading: "Cat paw kaomoji ฅ", glyphs: ["ฅ", "🐾"] },
+    ],
     howTo: [
       "Look for the ear style and expression that fits — calm whiskers, startled eyes, or playful poses.",
       "Tap Copy to grab the neko face, including any ear or paw characters.",
@@ -237,7 +264,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Neko and catmoji faces copy here with one tap. The general Kaomoji Copy and Paste page is for mixed popular faces when you do not need whiskers only.",
       },
     ],
-    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
+    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste", "/fish-kaomoji", "/uwu-kaomoji"],
   },
   {
     path: "/sad-kaomoji",
@@ -251,6 +278,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "sad",
+    faceGroups: [
+      { id: "downcast", heading: "Downcast & disappointed", glyphs: ["´_ゝ", "´-ω-", "_ _", "︿", "´･_･"] },
+      { id: "lonely", heading: "Lonely & gloomy kaomoji", glyphs: ["...", "…", "・_・", "´・ω・`"] },
+      { id: "teary", heading: "Teary sad kaomoji", glyphs: ["╥", ";_;", "；＿；", "╯︵╰", "T"] },
+      { id: "hurt", heading: "Hurt & pouty sad kaomoji", glyphs: ["︿", "•́ ︿ •̀", "´•̥", "ᗒ"] },
+    ],
     howTo: [
       "Choose the depth of the mood — a mild downcast look or a heavier frown.",
       "Tap Copy before switching apps; the full character string, including eye marks, goes to your clipboard.",
@@ -278,7 +311,7 @@ export const pages: SitePage[] = [
         answer: "Common ones include (╥﹏╥), (；ω；), and (´；ω；`). The downward eyes and soft mouth carry the low-mood signal without tear marks — those belong on the crying page.",
       },
     ],
-    related: ["/crying-kaomoji", "/happy-kaomoji", "/cute-kaomoji", "/angry-kaomoji"],
+    related: ["/crying-kaomoji", "/sick-kaomoji", "/happy-kaomoji", "/cute-kaomoji", "/angry-kaomoji"],
   },
   {
     path: "/crying-kaomoji",
@@ -292,6 +325,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     category: "crying",
+    faceGroups: [
+      { id: "sobbing", heading: "Sobbing kaomoji", glyphs: ["Д", "｡ﾟ", "ﾟ｡", "ᗣ", "〒"] },
+      { id: "tears", heading: "Streaming tears", glyphs: ["╥", "T_T", "T▽T", "TωT", "ToT"] },
+      { id: "teary", heading: "Teary-eyed kaomoji", glyphs: ["˘̩", "̥", ";ω;", "；ω；", "ᵕ̣̣"] },
+      { id: "happy-tears", heading: "Happy tears & crying laughing", glyphs: ["ಥ‿ಥ", "ಥ ‿ ಥ", "ｳﾚｼｲ", "嬉", "感動"] },
+    ],
     howTo: [
       "Pick the cry intensity — a quiet single-tear face or a full sobbing spiral.",
       "Tap Copy to grab the whole character string including tear marks.",
@@ -333,6 +372,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     tags: ["angry"],
+    faceGroups: [
+      { id: "rage", heading: "Rage kaomoji", glyphs: ["╬", "益", "💢", "怒", "ꐦ"] },
+      { id: "glare", heading: "Glaring kaomoji", glyphs: ["ಠ", "￣ヘ￣", "¬_¬", "◣_◢", "눈"] },
+      { id: "fight", heading: "Ready to fight", glyphs: ["ง", "ᕦ", "ᕤ", "凸"] },
+      { id: "shout", heading: "Shouting kaomoji", glyphs: ["Д", "ﾟДﾟ", "ﾛ", "ロ"] },
+    ],
     howTo: [
       "Scan the angry grid for scowls and growls that match your chat tone.",
       "Tap Copy once - the face goes to your clipboard with any spacing intact.",
@@ -516,7 +561,7 @@ export const pages: SitePage[] = [
     heading: "Kaomoji Copy and Paste",
     titleSegment: "Kaomoji Copy and Paste (◕‿◕)",
     description:
-      "Kaomoji copy and paste — 2,000+ faces, popular picks first, one tap to clipboard, no account needed. Works on phone and desktop. Browse by mood on the home hub when you want categories.",
+      "Kaomoji copy and paste: the most-used faces like ¯\_(ツ)_/¯, (◕‿◕✿), and (╯°□°)╯︵ ┻━┻ on one fast page. One tap to clipboard, no account, works on phone and desktop.",
     intro:
       "Kaomoji copy and paste when you want a face fast: popular picks first, one tap to clipboard. For mood shelves — cute, happy, cat, star, and more — start on the home hub instead.",
     group: "browse",
@@ -568,7 +613,7 @@ export const pages: SitePage[] = [
     heading: "Japanese Emoticons",
     titleSegment: "Japanese Emoticons & Kaomoji (^_^)",
     description:
-      "Japanese emoticons and japanese kaomoji (^_^): upright faces from punctuation and kana. This page owns JP construction—not Lenny, shrug, or ASCII text faces.",
+      "Japanese emoticons (Japanese emoji text faces) to copy and paste: thousands of upright kaomoji like (^_^), (＾▽＾), and (´・ω・`) built from punctuation and kana.",
     intro:
       "Classic Japanese emoticon construction from punctuation, kana, and symbols - ready to copy. This page owns the language and kaomoji concept; ASCII shrugs and Lenny faces live on text faces.",
     group: "browse",
@@ -607,11 +652,11 @@ export const pages: SitePage[] = [
     path: "/text-faces",
     label: "Text faces",
     heading: "Text Faces",
-    titleSegment: "Text Faces — Shrug & Lenny ¯\\_(ツ)_/¯",
+    titleSegment: "Text Faces Copy and Paste ಠ_ಠ — Unicode Faces",
     description:
-      "Text faces copy and paste: shrug ¯\\_(ツ)_/¯, Lenny face, disapproval, and Western ASCII. Not japanese kaomoji—those live on Japanese emoticons.",
+      "Text faces to copy and paste: disapproval ಠ_ಠ, unicode and ASCII character faces beyond classic Japanese kaomoji. Shrug and Lenny have their own full pages.",
     intro:
-      "ASCII and unicode faces such as shrug, Lenny, and disapproval - one-tap copy. Their own page keeps Japanese emoticon construction separate from Western-style text faces.",
+      "Unicode and ASCII faces such as disapproval ಠ_ಠ and compact character faces — one-tap copy. Looking for one famous face? The shrug ¯\\_(ツ)_/¯ and the Lenny face ( ͡° ͜ʖ ͡°) each have a dedicated page with every variation.",
     group: "browse",
     inHeader: true,
     category: "text-faces",
@@ -630,8 +675,8 @@ export const pages: SitePage[] = [
         answer: "ASCII and unicode expressions such as shrug, Lenny, and disapproval. They are character faces, but this page leans Western-style catalogs rather than classic Japanese kaomoji construction.",
       },
       {
-        question: "Is Lenny or shrug a Japanese kaomoji?",
-        answer: "People often mix the labels. On this site, Lenny and shrug live with text faces so Japanese emoticon pages can stay focused on upright, eyes-first kaomoji style.",
+        question: "Where are the Lenny face and the shrug?",
+        answer: "Both have dedicated pages with every variation: Lenny Face for ( ͡° ͜ʖ ͡°) and Shrug Kaomoji for ¯\\_(ツ)_/¯. A few also appear in this grid because they are text faces.",
       },
       {
         question: "When should I open Japanese emoticons instead?",
@@ -642,7 +687,7 @@ export const pages: SitePage[] = [
         answer: "Tap Copy next to any shrug face on this page. The backslash in ¯\\_(ツ)_/¯ can break when typed manually — grabbing it from this grid keeps every character intact.",
       },
     ],
-    related: ["/japanese-emoticons", "/cute-kaomoji", "/kaomoji-copy-paste"],
+    related: ["/lenny-face", "/shrug-kaomoji", "/emoticons", "/japanese-emoticons", "/kaomoji-copy-paste"],
   },
   {
     path: "/kaomoji-generator",
@@ -705,6 +750,12 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     tags: ["heart", "love", "kiss", "hug"],
+    faceGroups: [
+      { id: "eyes", heading: "Heart-eyes kaomoji", glyphs: ["♡ω♡", "♥ω♥", "♡∀♡", "♡▽♡", "♥‿♥", "♡ᴗ♡", "♥_♥"] },
+      { id: "sending", heading: "Sending a heart", glyphs: ["っ♡", "っ♥", "♡⃛", "♡ﾟ", "⌒♡", "～♡", "~♡"] },
+      { id: "hands", heading: "Heart hands & holding hearts", glyphs: ["♡づ", "(♡", "♡)", "ʚ♡ɞ", "🫶"] },
+      { id: "big", heading: "Big heart kaomoji ♥", glyphs: ["♥", "❤", "💕", "💗", "💞"] },
+    ],
     howTo: [
       "Open a heart face that matches the warmth you want (light thanks vs full swoon).",
       "Tap Copy so the full string lands on your clipboard.",
@@ -741,12 +792,7 @@ export const pages: SitePage[] = [
           "A dedicated grid groups affection poses together so you are not mixing romantic faces with random happy ones from a giant dump.",
       },
     ],
-    related: [
-      "/shy-kaomoji",
-      "/cute-kaomoji",
-      "/happy-kaomoji",
-      "/kaomoji-generator",
-    ],
+    related: ["/shy-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/kaomoji-generator", "/hug-kaomoji", "/kiss-kaomoji"],
   },
   {
     path: "/shy-kaomoji",
@@ -754,7 +800,7 @@ export const pages: SitePage[] = [
     heading: "Shy Kaomoji",
     titleSegment: "Shy Kaomoji (⁄ ⁄•⁄ω⁄•⁄ ⁄)",
     description:
-      "Shy kaomoji for bashful, awkward, and blushy moments. Copy soft nervous faces and paste them when a big smile feels too bold.",
+      "Shy and blushing kaomoji (⁄ ⁄•⁄ω⁄•⁄ ⁄) to copy and paste — blush, bashful, and flustered faces for when a big smile feels too bold.",
     intro:
       "Shy faces are for hesitation and blush, not loud cute energy. Use this grid after compliments, nervous hellos, or gentle \"I'm flustered\" beats, and open the blush chip when you want that cue inside the set. Cute stays warmly adorable; heart stays affection-first. This page owns the quiet, bashful read.",
     group: "browse",
@@ -791,12 +837,7 @@ export const pages: SitePage[] = [
           "Cute aims for adorable warmth. Shy aims for hesitation and blush. Overlap exists, but the primary intent on shy pages is bashful, not just soft-pretty.",
       },
     ],
-    related: [
-      "/heart-kaomoji",
-      "/cute-kaomoji",
-      "/happy-kaomoji",
-      "/sad-kaomoji",
-    ],
+    related: ["/heart-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/sad-kaomoji", "/bowing-kaomoji", "/nervous-kaomoji"],
   },
   {
     path: "/bunny-kaomoji",
@@ -941,12 +982,7 @@ export const pages: SitePage[] = [
           "Usually not. If spacing looks odd, pick a shorter one-line shocked face from the grid.",
       },
     ],
-    related: [
-      "/confused-kaomoji",
-      "/smug-kaomoji",
-      "/sad-kaomoji",
-      "/crying-kaomoji",
-    ],
+    related: ["/confused-kaomoji", "/scared-kaomoji", "/smug-kaomoji", "/sad-kaomoji", "/crying-kaomoji"],
   },
   {
     path: "/smug-kaomoji",
@@ -991,12 +1027,7 @@ export const pages: SitePage[] = [
           "Yes. Short smug faces work well as one-tap reactions under a winning take or lucky outcome.",
       },
     ],
-    related: [
-      "/confused-kaomoji",
-      "/happy-kaomoji",
-      "/sleepy-kaomoji",
-      "/shy-kaomoji",
-    ],
+    related: ["/confused-kaomoji", "/happy-kaomoji", "/sleepy-kaomoji", "/shy-kaomoji", "/wink-kaomoji", "/lenny-face"],
   },
   {
     path: "/sleepy-kaomoji",
@@ -1091,12 +1122,7 @@ export const pages: SitePage[] = [
           "Confused admits you do not know. Smug signals you do, with a tease.",
       },
     ],
-    related: [
-      "/shocked-kaomoji",
-      "/smug-kaomoji",
-      "/sleepy-kaomoji",
-      "/sad-kaomoji",
-    ],
+    related: ["/shocked-kaomoji", "/smug-kaomoji", "/sleepy-kaomoji", "/sad-kaomoji", "/thinking-kaomoji"],
   },
   {
     path: "/bear-kaomoji",
@@ -1110,6 +1136,13 @@ export const pages: SitePage[] = [
     group: "browse",
     inHeader: true,
     tags: ["bear"],
+    faceGroups: [
+      { id: "hug", heading: "Hugging bear kaomoji", glyphs: ["っ", "づ", "⊂", "つ"] },
+      { id: "love", heading: "Bear kaomoji with hearts", glyphs: ["♡", "♥", "❤"] },
+      { id: "wave", heading: "Waving bear kaomoji", glyphs: ["ﾉ", "ノ", "/", "ﾞ"] },
+      { id: "sad", heading: "Sad bear kaomoji", glyphs: [";", "╥", "ᐡ•̥", "´_", "T"] },
+      { id: "classic", heading: "Classic teddy bear ʕ•ᴥ•ʔ", glyphs: ["ʕ•ᴥ•ʔ", "ʕ •ᴥ•ʔ", "ʕ·ᴥ·ʔ", "ᵔᴥᵔ"] },
+    ],
     howTo: [
       "Choose your bear: the classic neutral ʕ•ᴥ•ʔ, a scowl for mock-grumpy moments, or a sleepy ʕ-ᴥ-ʔ droop.",
       "Tap Copy — the bracket ears and ᴥ snout are multi-character, so copy them as a unit.",
@@ -1228,7 +1261,7 @@ export const pages: SitePage[] = [
         answer: "Most wave poses use standard characters that paste fine. If arms drop a character, pick a simpler waving face from the grid.",
       },
     ],
-    related: ["/happy-kaomoji", "/excited-kaomoji", "/smile-kaomoji", "/thumbs-up-kaomoji"],
+    related: ["/happy-kaomoji", "/excited-kaomoji", "/smile-kaomoji", "/thumbs-up-kaomoji", "/giggling-kaomoji"],
   },
   {
     path: "/thinking-kaomoji",
@@ -1392,7 +1425,7 @@ export const pages: SitePage[] = [
         answer: "Yes — Christmas Kaomoji and Halloween Kaomoji each have their own pages with seasonal text faces.",
       },
     ],
-    related: ["/excited-kaomoji", "/happy-kaomoji", "/sparkle-kaomoji", "/star-kaomoji"],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/dance-kaomoji", "/halloween-kaomoji", "/christmas-kaomoji"],
   },
   {
     path: "/christmas-kaomoji",
@@ -1400,40 +1433,99 @@ export const pages: SitePage[] = [
     heading: "Christmas Kaomoji",
     titleSegment: "Christmas Kaomoji ☆*:.｡.o(≧▽≦)o.｡.:*☆",
     description:
-      "Christmas kaomoji copy and paste: festive, holiday, and seasonal text faces. Tap once for the perfect Christmas greeting in any chat.",
+      "Christmas kaomoji copy and paste 🎄 — 190+ festive faces: Santa 🎅(＾▽＾)🎁, snowmen ⛄(◕‿◕)⛄, reindeer Ψ(・ᴥ・)Ψ, gifts, and Merry Christmas greetings. One tap to copy.",
     intro:
-      "Festive snowflakes, Santa poses, and holiday cheer for Christmas greetings — tap to copy. Christmas kaomoji are the text-face way to spread seasonal warmth.",
+      "Santa, snowmen, reindeer, gifts, and Merry Christmas greetings — 190+ festive text faces for holiday cards, group chats, and December captions. Tap Copy and paste anywhere.",
     group: "browse",
     inHeader: false,
     tags: ["christmas"],
+    faceGroups: [
+      { id: "santa", heading: "Santa kaomoji 🎅", glyphs: ["🎅", "🤶", "サンタ", "ｻﾝﾀ"] },
+      { id: "tree", heading: "Christmas tree kaomoji 🎄", glyphs: ["🎄", "🌲"] },
+      { id: "snow", heading: "Snowman & snow kaomoji ⛄", glyphs: ["⛄", "☃", "❄", "❅", "❆"] },
+      { id: "gift", heading: "Gift kaomoji 🎁", glyphs: ["🎁", "由", "プレゼント", "ﾌﾟﾚｾﾞﾝﾄ"] },
+      { id: "reindeer", heading: "Reindeer kaomoji 🦌", glyphs: ["🦌", "🛷", "Ψ", "Ѱ"] },
+      { id: "greeting", heading: "Merry Christmas kaomoji ✨", glyphs: ["Merry", "メリー", "ﾒﾘｰ", "Happy Holidays", "X'mas"] },
+    ],
     howTo: [
-      "Pick a face with the holiday spirit you want — cozy snowflake or full party Santa.",
-      "Tap Copy to grab every festive character.",
-      "Paste into your Christmas message or holiday greeting.",
+      "Jump to a type — Santa, tree, snowman, gifts, reindeer, or Merry Christmas greetings — or scroll the full list.",
+      "Tap Copy. Emoji like 🎄 and 🎅 copy together with the text face.",
+      "Paste into a holiday card, family group chat, Secret Santa thread, or December post.",
     ],
     definition:
-      "Christmas kaomoji combine winter, festive, and holiday elements — snowflakes, stars, and celebration poses — for seasonal text-face greetings.",
+      "Christmas kaomoji are Japanese-style text faces dressed for the holidays — Santa hats, snowmen, reindeer antlers, gifts, and festive greetings built from Unicode characters and seasonal emoji.",
     learnMore:
-      "Christmas kaomoji pull from the seasonal decoration tradition in Japanese internet culture, where holidays are often marked with festive text art. Snowflake characters, star glyphs, and circular shapes that suggest ornaments combine naturally with the standard kaomoji face frame to create expressions that feel seasonal even without explicit Santa or holly symbols.",
+      "Christmas in Japan is a cheerful, romantic holiday rather than a religious one, and its kaomoji show that spirit: Santa poses, gift-carrying faces, and sparkly メリークリスマス (Merry Christmas) banners. The Japanese words you will see often are サンタ (Santa), プレゼント (present), and メリークリスマス (Merry Christmas), sometimes in half-width katakana like ﾒﾘｰｸﾘｽﾏｽ.\n\nHow festive faces are built: Ψ or Ѱ above a face become reindeer antlers, as in Ψ(・ᴥ・)Ψ. 由 looks like a wrapped present with a ribbon, so ｡∠(*^∇ﾟ)ﾉ⌒由 is someone tossing a gift. ∠ before a face is a Santa hat tilted to one side, and ☆ or ✧ add twinkling lights.\n\nPair faces with holiday emoji for instant context: 🎄 tree, 🎅 Santa, 🤶 Mrs. Claus, ⛄ snowman, ❄️ snowflake, 🎁 gift, 🦌 reindeer, 🔔 bells, 🍪 cookies, and 🧦 stockings. For emoji-only sets, see our holiday emoji combos.\n\nWhere to use them: holiday cards and e-cards, Secret Santa chats, family group texts, Instagram captions, and work holiday messages. Snowmen and gift faces are safe for any audience; romantic faces suit partners.",
     faqs: [
       {
-        question: "When should I use Christmas kaomoji?",
-        answer: "In holiday greetings, Christmas messages, festive posts, or any December conversation where seasonal cheer fits.",
+        question: "How do I copy and paste Christmas kaomoji?",
+        answer: "Tap Copy under any face, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Emoji inside the face copy with it.",
+      },
+      {
+        question: "What is the reindeer kaomoji?",
+        answer: "Ψ(・ᴥ・)Ψ is a popular reindeer: the Ψ characters are antlers and ᴥ is the snout. Add 🛷 for a sleigh.",
+      },
+      {
+        question: "How do you write Merry Christmas in kaomoji?",
+        answer: "Try (*^▽^)/★*☆♪ Merry Christmas or ☆･ﾟ:*【ﾒﾘｰｸﾘｽﾏｽ】*:ﾟ･☆, which spells Merry Christmas in Japanese katakana.",
       },
       {
         question: "Do Christmas kaomoji work for other winter holidays?",
-        answer: "Many do. Winter and snowflake faces work for any cold-weather season celebration, not just Christmas specifically.",
+        answer: "Snowman, snowflake, and gift faces work for any winter celebration. Use Happy Holidays greetings for mixed audiences.",
       },
       {
         question: "Will festive glyphs paste correctly?",
-        answer: "Most common festive characters paste fine. If a snowflake shows as a box, pick a simpler Christmas face from the grid.",
-      },
-      {
-        question: "Is there a Halloween kaomoji page too?",
-        answer: "Yes — Halloween Kaomoji has its own page with spooky and autumn text faces.",
+        answer: "Yes on modern phones and computers. If a rare symbol shows as a box, choose a simpler face from the same group.",
       },
     ],
-    related: ["/halloween-kaomoji", "/birthday-kaomoji", "/sparkle-kaomoji", "/star-kaomoji"],
+    related: ["/thanksgiving-kaomoji", "/halloween-kaomoji", "/birthday-kaomoji", "/emoji-combos", "/sparkle-kaomoji", "/star-kaomoji"],
+  },
+  {
+    path: "/thanksgiving-kaomoji",
+    label: "Thanksgiving",
+    heading: "Thanksgiving Kaomoji",
+    titleSegment: "Thanksgiving Kaomoji 🦃 Turkey & Fall Text Faces to Copy",
+    description:
+      "Thanksgiving kaomoji copy and paste 🦃 — turkey 🦃(◕ᴗ◕)🦃, pumpkin pie 🥧(๑´ڡ`๑), fall leaves, thankful, and food-coma faces for Thanksgiving texts and captions.",
+    intro:
+      "Turkeys, pumpkin pie, fall leaves, and thankful faces for Thanksgiving Day texts, family group chats, and November captions. Tap Copy and paste anywhere.",
+    group: "browse",
+    inHeader: false,
+    tags: ["thanksgiving"],
+    faceGroups: [
+      { id: "turkey", heading: "Turkey kaomoji 🦃", glyphs: ["🦃", "🍗"] },
+      { id: "pie", heading: "Pie & dinner kaomoji 🥧", glyphs: ["🥧", "🌽", "🍠", "🥖", "🍽", "🍷"] },
+      { id: "fall", heading: "Fall leaf kaomoji 🍂", glyphs: ["🍂", "🍁"] },
+      { id: "thankful", heading: "Thankful kaomoji 🙏", glyphs: ["thank", "Thank", "grateful", "🙏"] },
+    ],
+    howTo: [
+      "Pick a type — turkey, pie and dinner, fall leaves, or thankful faces.",
+      "Tap Copy to grab the face with its emoji.",
+      "Paste into a Thanksgiving greeting, family chat, or a gratitude post.",
+    ],
+    definition:
+      "Thanksgiving kaomoji are text faces themed around the US and Canadian harvest holiday — turkeys, pumpkin pie, corn, fall leaves, family dinners, and grateful faces.",
+    learnMore:
+      "Thanksgiving falls on the fourth Thursday of November in the United States and the second Monday of October in Canada. Its kaomoji mix classic Japanese text faces with harvest emoji: 🦃 turkey, 🥧 pie, 🌽 corn, 🍂 and 🍁 leaves, and 🍗 drumsticks.\n\nThe food faces borrow from Japanese eating kaomoji. ڡ is a tongue licking the lips (yummy), ﹃ is drool (craving), and ﾓｸﾞﾓｸﾞ (mogu mogu) is the sound of chewing. A sleepy (｡-_-｡)zzZ next to a turkey is the universal post-dinner food coma.\n\nThankful faces such as (人´∀`) use 人, which looks like two hands pressed together, to show gratitude. They work beyond the holiday too — for thank-you notes and appreciation posts.",
+    faqs: [
+      {
+        question: "What is a turkey kaomoji?",
+        answer: "There is no single classic one, so most people pair a face with the turkey emoji, like 🦃(◕ᴗ◕)🦃 or 🦃 gobble gobble (≧▽≦).",
+      },
+      {
+        question: "How do I show I'm thankful with a kaomoji?",
+        answer: "Use a face with 人 (pressed hands), such as (人´∀`)🙏 thankful, or a soft smile with a heart like (◍•ᴗ•◍)❤ thank you.",
+      },
+      {
+        question: "When is Thanksgiving?",
+        answer: "In the United States it is the fourth Thursday of November. In Canada it is the second Monday of October.",
+      },
+      {
+        question: "Can I use these for fall in general?",
+        answer: "Yes. Leaf, pie, and cozy faces fit any autumn post, from apple picking to sweater weather.",
+      },
+    ],
+    related: ["/christmas-kaomoji", "/halloween-kaomoji", "/food-kaomoji", "/bowing-kaomoji", "/emoji-combos"],
   },
   {
     path: "/halloween-kaomoji",
@@ -1441,40 +1533,58 @@ export const pages: SitePage[] = [
     heading: "Halloween Kaomoji",
     titleSegment: "Halloween Kaomoji ヾ(⌐■_■)ノ♪",
     description:
-      "Halloween kaomoji copy and paste: spooky, creepy, and ghostly text faces. Tap once for a perfect Halloween reaction in any chat.",
+      "Halloween kaomoji copy and paste 🎃 — 350+ spooky faces: ghosts 👻(◕ᴗ◕), pumpkins, bats ⎛⎝(•ⱅ•)⎠⎞, zombies [¬º-°]¬, vampires, witches, and devil Ψ(｀▽´)Ψ. One tap to copy.",
     intro:
-      "Spooky ghosts, creepy grins, and Halloween energy for October messages — tap to copy. Halloween kaomoji are your text-face weapon for all things eerie and fun.",
+      "Ghosts, pumpkins, bats, skulls, zombies, vampires, and witches — 350+ spooky and cute Halloween text faces. Tap Copy and paste them into texts, Discord, Instagram captions, or trick-or-treat plans.",
     group: "browse",
     inHeader: false,
     tags: ["halloween"],
+    faceGroups: [
+      { id: "ghost", heading: "Ghost kaomoji 👻", glyphs: ["👻", "ｵﾊﾞｹ", "ᯅ", "お化け"] },
+      { id: "pumpkin", heading: "Pumpkin kaomoji 🎃", glyphs: ["🎃"] },
+      { id: "bat", heading: "Bat kaomoji 🦇", glyphs: ["🦇", "⎛⎝"] },
+      { id: "zombie", heading: "Zombie kaomoji 🧟", glyphs: ["🧟", "[¬º", "{¬º", "ཀ"] },
+      { id: "devil", heading: "Devil kaomoji Ψ", glyphs: ["Ψ", "ψ", "😈"] },
+      { id: "skull", heading: "Skull & dead kaomoji 💀", glyphs: ["💀", "☠", "✖", "×_×", "⚰"] },
+      { id: "vampire-witch", heading: "Vampire & witch kaomoji 🧛", glyphs: ["🧛", "🩸", "🧙", "🔮", "━☆"] },
+      { id: "spider-candy", heading: "Spider, cat & candy kaomoji 🕷️", glyphs: ["🕷", "🕸", "🍬", "🍭", "ᐟ\\", "ↀ"] },
+    ],
     howTo: [
-      "Pick a face with the spook level you want — mild creepy or full horror mode.",
-      "Tap Copy to grab the spooky characters.",
-      "Paste into your Halloween message or use it as a seasonal reaction.",
+      "Pick your spook level: cute ghosts and pumpkins up top, then creepier zombies, devils, and dead-eyed faces further down.",
+      "Tap Copy — emoji such as 🎃 and 👻 copy together with the text face.",
+      "Paste into a Halloween greeting, party invite, costume post, or group chat.",
     ],
     definition:
-      "Halloween kaomoji use ghostly, creepy, and dark-themed Unicode characters to create text faces suited for October, horror humor, and spooky vibes.",
+      "Halloween kaomoji are Japanese-style text faces with a spooky twist — ghosts, pumpkins, bats, skulls, zombies, vampires, and little devils built from Unicode characters and seasonal emoji. They range from cute (👻(◕ᴗ◕)👻) to creepy ({¬ºཀ°}¬).",
     learnMore:
-      "Halloween kaomoji use the same creepy-cute aesthetic that Japanese horror culture perfected: something unsettling delivered with a soft kaomoji frame that keeps it playful rather than genuinely frightening. The balance between spooky and cute is intentional — it is what separates a Halloween reaction face from an expression that would make the recipient uncomfortable.",
+      "Halloween kaomoji use the same creepy-cute balance that Japanese pop culture perfected: something eerie delivered inside a soft kaomoji frame, so it stays playful instead of truly frightening. That is why a smiling ghost or a pumpkin-holding bear works in a family group chat while still feeling seasonal.\n\nHow spooky faces are built: Ψ and ψ (the Greek letter psi) become a devil's pitchfork, so Ψ(｀▽´)Ψ reads as a grinning little devil. ཀ, a Tibetan letter, looks like a gaping, drooling mouth — perfect for zombies such as {¬ºཀ°}¬. Mismatched eyes like º and ° plus a forward-reaching ¬ arm make the classic zombie shuffle [¬º-°]¬. ⎛⎝ ⎠⎞ draw bat wings around a tiny face, and ✖ or × eyes mean knocked out or dead.\n\nPair faces with emoji for instant Halloween context: 🎃 pumpkin, 👻 ghost, 🦇 bat, 💀 skull, 🕷️ spider, 🕸️ web, 🧛 vampire, 🧟 zombie, 🧙 witch, 🍬 candy, and 🌕 full moon. For emoji-only sets, see our Halloween emoji combos.\n\nWhere to use them: party invites, costume photos, trick-or-treat plans, horror-movie nights, and October bios. Creepier faces suit friends and fandom chats; cute ghosts and pumpkins are safe for family and work channels.",
     faqs: [
       {
-        question: "When should I use Halloween kaomoji?",
-        answer: "For Halloween messages, October greetings, horror humor, or any moment where a spooky or creepy tone fits the chat.",
+        question: "How do I copy and paste Halloween kaomoji?",
+        answer: "Tap Copy under any face on this page, then paste it with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Emoji in the face copy along with the text.",
+      },
+      {
+        question: "What are some cute Halloween kaomoji?",
+        answer: "Try 👻(◕ᴗ◕)👻 for friendly ghosts, ʕ•ᴥ•ʔ🎃 for a pumpkin bear, 🍬(〃＾▽＾〃)🍭 for trick-or-treat, or /ᐠ｡ꞈ｡ᐟ\\🎃 for a black cat.",
+      },
+      {
+        question: "What is the zombie kaomoji?",
+        answer: "[¬º-°]¬ is the classic zombie walk: mismatched eyes and one arm reaching forward. {¬ºཀ°}¬ adds a groaning mouth.",
+      },
+      {
+        question: "What does Ψ mean in a kaomoji?",
+        answer: "Ψ is the Greek letter psi. In kaomoji it looks like a pitchfork or horns, so faces like Ψ(｀▽´)Ψ read as a mischievous little devil.",
+      },
+      {
+        question: "Can I use Halloween kaomoji on Instagram and TikTok?",
+        answer: "Yes. They are plain text plus standard emoji, so they work in captions, comments, and bios. Preview once, since a few rare glyphs may look different on older phones.",
       },
       {
         question: "Are Halloween kaomoji only for October?",
-        answer: "Mostly, but creepy and gothic faces work year-round for horror fans, dark humor, or edgy vibes in any season.",
-      },
-      {
-        question: "Will spooky glyphs paste correctly?",
-        answer: "Most Halloween faces use common Unicode characters. If a rare glyph boxes out, pick a simpler spooky face.",
-      },
-      {
-        question: "Is there a Christmas kaomoji page?",
-        answer: "Yes — Christmas Kaomoji has festive and holiday text faces for the winter season.",
+        answer: "Mostly, but skulls, devils, and zombies also work year-round for horror fans, gaming chats, and dark humor.",
       },
     ],
-    related: ["/christmas-kaomoji", "/birthday-kaomoji", "/nervous-kaomoji", "/confused-kaomoji"],
+    related: ["/emoji-combos", "/devil-kaomoji", "/christmas-kaomoji", "/shocked-kaomoji", "/cute-symbols", "/birthday-kaomoji"],
   },
   {
     path: "/star-kaomoji",
@@ -1638,7 +1748,7 @@ export const pages: SitePage[] = [
         answer: "Yes — they are perfect for Valentine's messages, love notes, and any moment where full romantic energy is the intent.",
       },
     ],
-    related: ["/heart-kaomoji", "/kiss-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+    related: ["/heart-kaomoji", "/kiss-kaomoji", "/shy-kaomoji", "/cute-kaomoji", "/hug-kaomoji"],
   },
   {
     path: "/flower-kaomoji",
@@ -1646,7 +1756,7 @@ export const pages: SitePage[] = [
     heading: "Flower Kaomoji",
     titleSegment: "Flower Kaomoji (✿◠‿◠)",
     description:
-      "Flower kaomoji copy and paste: blossom, petal, and floral text faces. Tap once to add a (✿) flower accent to any message.",
+      "Flower kaomoji copy and paste: sakura, cherry blossom, and flower-in-hair faces like (◕‿◕✿) and (✿◠‿◠). Tap once to add a floral accent to any message.",
     intro:
       "Soft flower faces, cherry blossom poses, and floral accents for gentle, pretty messages. Flower and sakura kaomoji use ✿, ❀, and ꕤ glyphs to bring nature and warmth to plain text.",
     group: "browse",
@@ -1683,7 +1793,7 @@ export const pages: SitePage[] = [
         answer: "Sakura kaomoji are cherry blossom themed text faces, popular during spring in Japan. They share the same soft floral aesthetic as flower kaomoji and are included on this page.",
       },
     ],
-    related: ["/sparkle-kaomoji", "/star-kaomoji", "/cute-kaomoji", "/shy-kaomoji"],
+    related: ["/sparkle-kaomoji", "/star-kaomoji", "/cute-kaomoji", "/shy-kaomoji", "/love-kaomoji"],
   },
   {
     path: "/kiss-kaomoji",
@@ -1724,7 +1834,7 @@ export const pages: SitePage[] = [
         answer: "Most kiss faces use standard Unicode characters that paste fine in SMS. Very rare symbols may show as boxes on older devices — pick a simpler face if that happens.",
       },
     ],
-    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/cute-kaomoji"],
+    related: ["/heart-kaomoji", "/love-kaomoji", "/shy-kaomoji", "/cute-kaomoji", "/wink-kaomoji"],
   },
   {
     path: "/smile-kaomoji",
@@ -1765,7 +1875,7 @@ export const pages: SitePage[] = [
         answer: "Smiley faces usually means the broad category of happy text faces. On this site, smile kaomoji focuses on the quiet grin and warm expression, not the full happy cheer category.",
       },
     ],
-    related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji"],
+    related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji", "/wink-kaomoji"],
   },
   {
     path: "/excited-kaomoji",
@@ -1806,7 +1916,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Discord supports Unicode kaomoji well. These faces paste cleanly in messages, servers, and DMs.",
       },
     ],
-    related: ["/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji", "/cute-kaomoji"],
+    related: ["/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji", "/cute-kaomoji", "/dance-kaomoji", "/running-kaomoji"],
   },
   {
     path: "/nervous-kaomoji",
@@ -1847,7 +1957,7 @@ export const pages: SitePage[] = [
         answer: "Most sweat marks use standard Unicode and paste fine. If a drop shows a box, pick a nervous face built from more common characters.",
       },
     ],
-    related: ["/shy-kaomoji", "/confused-kaomoji", "/sad-kaomoji", "/crying-kaomoji"],
+    related: ["/shy-kaomoji", "/confused-kaomoji", "/sad-kaomoji", "/crying-kaomoji", "/thinking-kaomoji"],
   },
   {
     path: "/wink-kaomoji",
@@ -1933,7 +2043,7 @@ export const pages: SitePage[] = [
           "Yes. All characters are standard Unicode that copy cleanly on iOS and Android. Paste into chat, a reply, or a caption.",
       },
     ],
-    related: ["/excited-kaomoji", "/happy-kaomoji", "/waving-kaomoji", "/birthday-kaomoji"],
+    related: ["/excited-kaomoji", "/happy-kaomoji", "/waving-kaomoji", "/birthday-kaomoji", "/bowing-kaomoji"],
   },
   {
     path: "/bowing-kaomoji",
@@ -1978,7 +2088,7 @@ export const pages: SitePage[] = [
           "Yes. Most readers recognize the bow gesture even without the cultural context. Pair it with a word or two if needed, but the shape reads clearly as respect or thanks.",
       },
     ],
-    related: ["/waving-kaomoji", "/shy-kaomoji", "/heart-kaomoji", "/hug-kaomoji"],
+    related: ["/thank-you-kaomoji", "/sorry-kaomoji", "/waving-kaomoji", "/shy-kaomoji", "/heart-kaomoji", "/hug-kaomoji"],
   },
   {
     path: "/running-kaomoji",
@@ -2024,6 +2134,545 @@ export const pages: SitePage[] = [
       },
     ],
     related: ["/excited-kaomoji", "/dance-kaomoji", "/waving-kaomoji", "/table-flip-kaomoji"],
+  },
+  {
+    path: "/lenny-face",
+    label: "Lenny face",
+    heading: "Lenny Face ( ͡° ͜ʖ ͡°)",
+    titleSegment: "Lenny Face Copy and Paste ( ͡° ͜ʖ ͡°) — 100+ Variations",
+    description:
+      "Lenny face copy and paste: the original ( ͡° ͜ʖ ͡°) plus 100+ variations — wink, sad, angry, hug, sunglasses, shrug, and dollar Lenny. One tap to copy.",
+    intro:
+      "The original Lenny face ( ͡° ͜ʖ ͡°) and every popular variation in one place — winking, sad, angry, hugging, flexing, and meme versions. Tap Copy and the full string, including the tricky combining marks, lands on your clipboard intact.",
+    group: "browse",
+    inHeader: true,
+    tags: ["lenny"],
+    howTo: [
+      "Start with the classic ( ͡° ͜ʖ ͡°) at the top, or scan for a variation that matches your tone — wink, sad ʖ̯ mouth, or arms.",
+      "Tap Copy. The combining characters above the eyes are invisible on their own, so copying is safer than retyping.",
+      "Paste into Discord, Reddit, Twitch chat, or a text. If the eyebrows drift, the app's font is the cause — the text itself is unchanged.",
+    ],
+    definition:
+      "The Lenny face is a text emoticon, ( ͡° ͜ʖ ͡°), built from eleven Unicode characters. It usually signals a sly, mischievous, or suggestive grin — the internet's way of saying \"wink wink\" without words.",
+    learnMore:
+      "The face first spread in November 2012 on the Finnish imageboard Ylilauta, then jumped to 4chan and Reddit the same day. Nobody knows for sure why it is called Lenny; the name stuck through meme sites and has never been replaced. Other names include Le Lenny Face and the \"deg deg\" face.\n\nHow it is built: the eyes are degree signs (°) with a combining double inverted breve ( ͡) above them as eyebrows. The nose and mouth are ͜ʖ — a combining breve below paired with the Latin letter ʖ (a reversed glottal stop). Because the eyebrows and smile are combining marks, they attach to whatever character sits next to them. That is why retyping a Lenny face by hand often breaks it, and why copying a ready-made one is the reliable route.\n\nVariations swap one part at a time: ʖ̯ turns the smile into a frown, ಠ gives a disapproving glare, ~ adds a wink, and ♥ makes heart eyes. Add arms with つ for a hug, ᕦ ᕤ to flex, or ┻━┻ to flip a table. Once you know the parts, you can build your own.\n\nTone tip: the classic Lenny reads as a cheeky, sometimes suggestive smirk. Keep it for friends, memes, and gaming chats rather than formal or work messages.",
+    faqs: [
+      {
+        question: "How do I copy and paste the Lenny face?",
+        answer: "Tap Copy next to ( ͡° ͜ʖ ͡°) at the top of this page, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. The face is plain text, so it works in any app that accepts typing.",
+      },
+      {
+        question: "What does ( ͡° ͜ʖ ͡°) mean?",
+        answer: "It is a sly, knowing grin. People use it to hint at a joke, an innuendo, or a mischievous plan. Context decides how cheeky it reads.",
+      },
+      {
+        question: "Why is it called the Lenny face?",
+        answer: "The origin of the name is unknown. The face appeared on Ylilauta and 4chan in 2012, and the Lenny label spread with it through meme sites.",
+      },
+      {
+        question: "Can I type the Lenny face on a keyboard?",
+        answer: "Not with a normal key combination — it uses combining Unicode marks. Copy it from this page, or save it as a text replacement (for example, typing 'lenny' expands to the face) on iPhone, Android, or Mac.",
+      },
+      {
+        question: "Why do the eyebrows look shifted on my phone?",
+        answer: "The eyebrows are combining marks drawn by your font. Different fonts place them differently, so the face can look slightly off on some apps while the characters stay correct.",
+      },
+    ],
+    related: ["/shrug-kaomoji", "/text-faces", "/smug-kaomoji", "/emoticons"],
+  },
+  {
+    path: "/shrug-kaomoji",
+    label: "Shrug",
+    heading: "Shrug Kaomoji ¯\\_(ツ)_/¯",
+    titleSegment: "Shrug Emoticon Copy and Paste ¯\\_(ツ)_/¯ — Shrug Kaomoji",
+    description:
+      "Copy the shrug emoticon ¯\\_(ツ)_/¯ in one tap, plus 90+ shrug kaomoji: ┐(￣ヘ￣)┌, ʅ(°_°)ʃ, Lenny shrug, cute and cat shrugs. Includes how to type it on every device.",
+    intro:
+      "The classic shrug ¯\\_(ツ)_/¯ and 90+ variations — whatever, I don't know, and oh well faces. Tap Copy to keep the backslash intact; typing it by hand often deletes the left arm.",
+    group: "browse",
+    inHeader: true,
+    tags: ["shrug"],
+    howTo: [
+      "Copy the classic ¯\\_(ツ)_/¯ or pick a mood: smug ┐(︶▽︶)┌, unimpressed ╮(︶︿︶)╭, or confused ¯\\_(°_o)_/¯.",
+      "Tap Copy once — the full string, backslash included, goes to your clipboard.",
+      "To type it daily, save it as a text replacement: iPhone Settings › General › Keyboard › Text Replacement, Mac System Settings › Keyboard › Text Replacements, or Gboard's personal dictionary on Android.",
+    ],
+    definition:
+      "The shrug kaomoji ¯\\_(ツ)_/¯ shows a person raising both arms with palms up. It means \"I don't know,\" \"whatever,\" or \"oh well\" — a light way to admit uncertainty or let something go.",
+    learnMore:
+      "The face is built from a macron (¯) for each hand, a backslash and underscore for the arms, and the Japanese katakana ツ (tsu) as a smiling face. Markdown apps such as Discord, Reddit, and Slack treat a single backslash as an escape character and an underscore as italics, which is why the left arm often disappears. If that happens, add one more backslash before the left arm, or wrap the face in backticks.\n\nOther shrug families skip the backslash completely. ┐( ˘_˘ )┌ and ╮(￣ω￣)╭ use box-drawing corners as raised hands, while ʅ(°_°)ʃ and 乁(ツ)ㄏ use curved letters. These paste cleanly everywhere, which makes them a good choice for Discord bios and usernames.\n\nOn Windows 10 and 11, press Win + . (period), open the kaomoji tab, and you will find a shrug in the list. On a phone, a text replacement shortcut is the fastest route after the first copy.\n\nTone: a shrug is casual and slightly playful. It softens \"I don't know\" in friendly chats but can read as dismissive in a serious work thread.",
+    faqs: [
+      {
+        question: "How do I copy the shrug emoji ¯\\_(ツ)_/¯?",
+        answer: "Tap Copy next to the first face on this page. It copies the exact string, including the backslash that is easy to lose when typing.",
+      },
+      {
+        question: "Why does my shrug lose an arm on Discord or Reddit?",
+        answer: "Markdown treats the backslash as an escape character. Type one extra backslash before the left arm, or use a shrug without backslashes, such as ┐(￣ヘ￣)┌.",
+      },
+      {
+        question: "What does ¯\\_(ツ)_/¯ mean?",
+        answer: "It means \"I don't know,\" \"whatever,\" or \"oh well.\" The raised arms show uncertainty or acceptance.",
+      },
+      {
+        question: "Is there a shrug shortcut on iPhone or Android?",
+        answer: "Not built in. Copy the face once, then save it as a text replacement — for example, typing 'shrug' auto-expands into ¯\\_(ツ)_/¯.",
+      },
+      {
+        question: "What is the face in the middle of the shrug?",
+        answer: "It is ツ, the Japanese katakana character for 'tsu.' Its shape looks like a smiling face.",
+      },
+    ],
+    related: ["/lenny-face", "/text-faces", "/confused-kaomoji", "/emoticons"],
+  },
+  {
+    path: "/uwu-kaomoji",
+    label: "UwU",
+    heading: "UwU Kaomoji",
+    titleSegment: "UwU Face Copy and Paste — UwU & OwO Kaomoji (˘ω˘)",
+    description:
+      "UwU face and OwO kaomoji to copy and paste: UwU, (ᵘʷᵘ), (◡ ω ◡), (⁄ ⁄•⁄ω⁄•⁄ ⁄) and 50+ soft, blushing, and teasing faces. What UwU means and when to use it.",
+    intro:
+      "UwU, OwO, and every soft ω-mouth face in between — sleepy, blushing, cheeky, and flustered. Tap Copy and paste into Discord, TikTok, or any chat.",
+    group: "browse",
+    inHeader: false,
+    tags: ["uwu"],
+    howTo: [
+      "Pick plain-letter UwU or OwO for speed, or a bracketed ω face like (˘ω˘) for a softer look.",
+      "Tap Copy — superscript faces such as (ᵘʷᵘ) are hard to type, so copying keeps them exact.",
+      "Paste at the end of a message to soften it or show you are flustered.",
+    ],
+    definition:
+      "UwU is a cute text face: the two U's are closed, happy eyes and the w is a small cat-like mouth. It expresses warmth, contentment, or being adorably flustered. OwO swaps in round, open eyes for curiosity or surprise.",
+    learnMore:
+      "UwU grew out of anime fandom and furry communities in the 2000s and became mainstream through Discord, Twitch, and TikTok. The ω (Greek omega) mouth that many UwU faces use is borrowed from classic Japanese kaomoji such as (・ω・), where it reads as a small, cat-like smile.\n\nUwU vs OwO: UwU (closed eyes) is soft and content — think a cozy, happy sigh. OwO (open eyes) is curious or surprised, famously paired with \"what's this?\" UnU and TwT lean sad, and >w< reads excited or embarrassed.\n\nUwU is playful and affectionate. Friends, fandom spaces, and gaming chats welcome it; formal or work messages usually do not. Some communities also use it ironically, so read the room before you send it.",
+    faqs: [
+      {
+        question: "What does UwU mean?",
+        answer: "UwU is a cute face showing happiness, warmth, or affection. The U's are closed eyes and the w is a little mouth.",
+      },
+      {
+        question: "What is the difference between UwU and OwO?",
+        answer: "UwU has closed, content eyes. OwO has wide, open eyes and signals curiosity or surprise.",
+      },
+      {
+        question: "How do I type a small uwu like ᵘʷᵘ?",
+        answer: "The small letters are Unicode superscript characters that most keyboards cannot type. Copy (ᵘʷᵘ) from this page instead.",
+      },
+      {
+        question: "Is UwU a kaomoji?",
+        answer: "Yes, in the broad sense. Plain UwU is a letter emoticon, while bracketed faces like (˘ω˘) follow the classic kaomoji style with an ω mouth.",
+      },
+    ],
+    related: ["/cute-kaomoji", "/shy-kaomoji", "/cat-kaomoji", "/lenny-face"],
+  },
+  {
+    path: "/food-kaomoji",
+    label: "Food",
+    heading: "Food Kaomoji",
+    titleSegment: "Food Kaomoji — Eating & Drinking Faces (っ˘ڡ˘ς)",
+    description:
+      "Food kaomoji to copy and paste: eating, drooling, and drinking faces like (っ˘ڡ˘ς), (*´﹃｀*), ~旦, plus ramen, sushi, cake, and boba kaomoji with emoji.",
+    intro:
+      "Hungry, drooling, munching, and sipping faces — from (*´﹃｀*) to ramen-slurping (っ˘ڡ˘ς). Tap Copy for snack-time chats, food posts, and lunch plans.",
+    group: "browse",
+    inHeader: false,
+    tags: ["food"],
+    howTo: [
+      "Scan for the moment you want: craving (*´﹃｀*), tasting (๑´ڡ`๑), munching ﾓｸﾞﾓｸﾞ, or sipping tea ~旦.",
+      "Tap Copy to grab the full face, including any food emoji attached to it.",
+      "Paste into a lunch invite, recipe caption, or a message about your favorite snack.",
+    ],
+    definition:
+      "Food kaomoji show eating, drinking, craving, or being full. They use special mouths — ﹃ for drooling, ڡ for licking lips — and often hold a food emoji or a teacup.",
+    learnMore:
+      "Two characters do most of the work. ﹃ (a vertical-form bracket) hangs below the face like a drool line, so (¯﹃¯) reads as \"I want that.\" ڡ, an Arabic letter, looks like a tongue licking the lips, giving (๑´ڡ`๑) a \"so tasty\" meaning.\n\n旦 (the kanji for dawn) looks like a teacup on a saucer, so ~旦 or (´・ω・)っ旦 means offering or sipping tea. Japanese sound words often appear beside the face too: ﾓｸﾞﾓｸﾞ (mogu mogu) is chewing, ﾊﾟｸﾊﾟｸ (paku paku) is eating quickly, and ｺﾞｸｺﾞｸ (goku goku) is gulping a drink.\n\nModern food kaomoji mix in emoji — 🍜, 🍣, 🍰, 🧋 — so the face shows exactly what you are eating. Keep the face first and the emoji second for the cleanest look in chat.",
+    faqs: [
+      {
+        question: "What does (*´﹃｀*) mean?",
+        answer: "It is a drooling face. The ﹃ mark is a line of drool, so it means you are craving something delicious.",
+      },
+      {
+        question: "What does 旦 mean in a kaomoji?",
+        answer: "旦 looks like a cup of tea on a saucer. Faces like (´・ω・)っ旦 are offering or drinking tea.",
+      },
+      {
+        question: "What is the ڡ mouth?",
+        answer: "ڡ is an Arabic letter that looks like a tongue licking the lips. It turns a face into a \"yummy\" reaction.",
+      },
+      {
+        question: "Do food kaomoji with emoji paste everywhere?",
+        answer: "Yes on modern phones and computers. The text face looks the same everywhere, while the food emoji follows each platform's emoji style.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/cute-kaomoji", "/birthday-kaomoji", "/emoji-combos", "/fish-kaomoji"],
+  },
+  {
+    path: "/emoticons",
+    label: "Emoticons",
+    heading: "Emoticons — Keyboard Faces & Meanings",
+    titleSegment: "Emoticons Copy and Paste — Text Emoticons List with Meanings :)",
+    description:
+      "Full list of text emoticons with meanings: :) :D ;) :P XD <3 :( and 130+ keyboard faces to copy and paste. Smiley, laughing, sad, angry, love, and cool emoticons explained.",
+    intro:
+      "Every classic keyboard emoticon with what it means — smileys :), laughs XD, winks ;), hearts <3, and more. Tap Copy, or learn how to type each one with your own keyboard.",
+    group: "browse",
+    inHeader: true,
+    howToName: "How to type and copy text emoticons",
+    howTo: [
+      "Find the feeling in the groups below — smile, laugh, wink, sad, angry, surprised, love, or characters.",
+      "Read the meaning column so the emoticon fits your tone, then tap Copy.",
+      "Or type it yourself: almost every emoticon on this page uses keys on a standard US keyboard, apart from a few Unicode extras at the end.",
+    ],
+    definition:
+      "An emoticon (emotion + icon) is a face made from ordinary keyboard characters, such as :) for a smile. Western emoticons are read sideways — tilt your head left — while Japanese-style kaomoji like (^_^) are read upright.",
+    learnMore:
+      "Computer scientist Scott Fahlman proposed :-) and :-( on a Carnegie Mellon University message board on September 19, 1982, to mark jokes and serious posts. The nose later became optional, giving the shorter :) that most people type today.\n\nEmoticons vs emoji vs kaomoji: emoticons are typed characters read sideways. Emoji are picture characters (😀) drawn differently by Apple, Google, and Microsoft. Kaomoji are upright Japanese text faces such as (◕‿◕). Many apps auto-convert :) into 😊 — if you want the text version to stay, paste it, or add a space after it.\n\nReading the parts: the colon is two eyes, a semicolon is a wink, an equals sign is wide eyes, 8 or B is glasses, and > above the eyes adds angry brows. The mouth sets the mood — ) is happy, ( is sad, D is laughing, P is a tongue, O is surprise, and | is no reaction. An apostrophe is a tear or sweat drop.\n\nWhen to use them: emoticons feel casual and a bit retro. A single :) softens a short work message without the playfulness of an emoji, while XD and :P belong in friendly chats.",
+    faqs: [
+      {
+        question: "What is the difference between an emoticon and an emoji?",
+        answer: "An emoticon is typed from keyboard characters, like :). An emoji is a single picture character, like 😀, that looks different on each platform.",
+      },
+      {
+        question: "Who invented the emoticon?",
+        answer: "Scott Fahlman of Carnegie Mellon University suggested :-) and :-( in 1982 to mark jokes in online posts.",
+      },
+      {
+        question: "What does XD mean?",
+        answer: "XD is a laughing face with eyes squeezed shut. It means something is very funny.",
+      },
+      {
+        question: "What does <3 mean?",
+        answer: "<3 is a sideways heart. It means love, thanks, or appreciation. </3 is a broken heart.",
+      },
+      {
+        question: "How do I stop my phone turning :) into an emoji?",
+        answer: "Many apps auto-replace emoticons. Turn off emoji replacement in the app or keyboard settings, or paste the emoticon instead of typing it.",
+      },
+      {
+        question: "Are kaomoji emoticons too?",
+        answer: "Yes — kaomoji are Japanese-style emoticons read upright, like (^_^). Browse thousands of them on our kaomoji pages.",
+      },
+    ],
+    related: ["/text-faces", "/japanese-emoticons", "/shrug-kaomoji", "/lenny-face"],
+  },
+  {
+    path: "/cute-symbols",
+    label: "Cute symbols",
+    heading: "Cute Symbols Copy and Paste ♡",
+    titleSegment: "Cute Symbols Copy and Paste ♡ ✿ ☆ — Aesthetic Text Symbols",
+    description:
+      "Cute symbols to copy and paste: hearts ♡, stars ✧, flowers ✿, bows ʚɞ, brackets ꒰ ꒱, dividers, and arrows for bios, usernames, and captions. 250+ aesthetic text symbols.",
+    intro:
+      "Hearts, stars, flowers, bows, frames, and dividers — 250+ aesthetic text symbols for Instagram bios, TikTok names, and Discord servers. Tap any symbol to copy it.",
+    group: "browse",
+    inHeader: true,
+    howToName: "How to copy and paste cute symbols",
+    howTo: [
+      "Jump to a group — hearts, stars, flowers, bows, frames, dividers, or arrows.",
+      "Tap Copy under a symbol. Mix several to build your own pattern, like ₊˚ʚ ♡ ɞ˚₊.",
+      "Paste into your bio, display name, or caption, then check how it looks in the app before saving.",
+    ],
+    definition:
+      "Cute symbols are Unicode text characters — hearts, stars, flowers, and decorative marks — that you can paste anywhere text is allowed. Unlike emoji, they take the color of the text around them, which gives bios and names a clean, aesthetic look.",
+    learnMore:
+      "Every symbol here is a standard Unicode character, so it is plain text rather than an image. That means it works in Instagram and TikTok bios, Discord nicknames, game names (where allowed), and documents. Most come from the Dingbats, Miscellaneous Symbols, and Geometric Shapes blocks that every modern phone supports.\n\nBuilding combos: aesthetic decorations usually stack small marks around a center symbol — for example ⋆｡°✩ or ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚. The tiny characters (˚, ₊, ‧, ⋆) are spacers that add sparkle without visual weight. Frames like ꒰ ꒱ or 『 』 wrap a name or word, and dividers split a bio into neat sections.\n\nIf a symbol shows as an empty box, the app's font does not have it. Swap to a more common alternative from the same group — ♡ and ☆ work almost everywhere. Some username fields also strip special characters; test once before you save.\n\nPair them with kaomoji: symbols turn a plain face into a styled one, like ⋆˙⟡(◕‿◕)⟡˙⋆ or ♡ (˶ᵔ ᵕ ᵔ˶) ♡.",
+    faqs: [
+      {
+        question: "How do I copy and paste cute symbols?",
+        answer: "Tap Copy under any symbol, then paste it in your app with Ctrl+V, Cmd+V, or a long-press Paste on mobile.",
+      },
+      {
+        question: "Can I use these symbols in my Instagram or TikTok bio?",
+        answer: "Yes. They are standard Unicode text. A few rare ones may show as boxes on older phones, so preview your bio before saving.",
+      },
+      {
+        question: "Why does a symbol show as a box?",
+        answer: "The font on that device does not include the character. Choose a more common symbol from the same group, such as ♡, ☆, or ✿.",
+      },
+      {
+        question: "What is the difference between cute symbols and emoji?",
+        answer: "Symbols are text characters that take your text color. Emoji are colorful pictures that look different on each platform.",
+      },
+      {
+        question: "Are these symbols free to use?",
+        answer: "Yes. They are Unicode characters that anyone can type or paste anywhere — no license is needed.",
+      },
+    ],
+    related: ["/emoji-combos", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji"],
+  },
+  {
+    path: "/emoji-combos",
+    label: "Emoji combos",
+    heading: "Aesthetic Emoji Combos",
+    titleSegment: "Aesthetic Emoji Combos Copy and Paste 🎀✨ — Cute Emoji Combinations",
+    description:
+      "Aesthetic and cute emoji combos to copy and paste 🎀✨: love, funny, birthday, Christmas, Halloween, food, and study combinations for bios, captions, and texts. 120+ combos.",
+    intro:
+      "120+ ready-made emoji combinations — aesthetic, cute, love, funny, birthday, holiday, and food. Tap Copy to grab the whole set at once for your bio, caption, or text.",
+    group: "browse",
+    inHeader: true,
+    howToName: "How to copy and use emoji combos",
+    howTo: [
+      "Browse by theme: aesthetic, cute, love, funny, birthday, holidays, seasons, food, or daily vibes.",
+      "Tap Copy to grab the full combo in one go — no need to hunt for each emoji.",
+      "Paste at the end of a caption or between lines in your bio. Two or three emoji usually look cleaner than a long row.",
+    ],
+    definition:
+      "An emoji combo is a short sequence of emoji that tells a mini story or sets a mood together, like 🍂☕📖 for cozy autumn. Combos are popular in Instagram and TikTok bios, captions, and group chats.",
+    learnMore:
+      "Good combos stick to one color family or one theme. White and cream (🤍🕊️☁️), pink coquette (🎀🩰🦢), and dark academia (🕯️📜🪶) are popular because the emoji look coordinated side by side. Three emoji is the sweet spot — enough to set a mood without crowding your text.\n\nEmoji look different on iPhone, Android, Windows, and Samsung devices because each company draws its own set. A combo that matches perfectly on an iPhone may clash slightly on Android, so check your post on the device your audience uses most. Newer emoji (released in the last year or two) can show as empty boxes on older phones.\n\nFor a softer, text-based look, mix emoji with kaomoji or cute symbols — for example (˶ᵔ ᵕ ᵔ˶)🎀 or ⋆｡‧˚ʚ🍓ɞ˚‧｡⋆. The kaomoji and symbols stay the same on every device, which keeps your style consistent.",
+    faqs: [
+      {
+        question: "What are aesthetic emoji combos?",
+        answer: "They are groups of 2–4 emoji with a shared color or theme, used to decorate bios, captions, and messages.",
+      },
+      {
+        question: "How do I copy an emoji combo?",
+        answer: "Tap Copy under the combo. The whole set is copied in one go, ready to paste.",
+      },
+      {
+        question: "Why does my combo look different on Android?",
+        answer: "Apple, Google, Samsung, and Microsoft each draw their own emoji. The meaning is the same, but colors and details change.",
+      },
+      {
+        question: "How many emoji should I use in a bio?",
+        answer: "Two to four per line usually looks clean. Long rows of emoji can be hard to read and are read out one by one by screen readers.",
+      },
+    ],
+    related: ["/cute-symbols", "/kaomoji-copy-paste", "/cute-kaomoji", "/food-kaomoji", "/halloween-kaomoji", "/christmas-kaomoji"],
+  },
+  {
+    path: "/sorry-kaomoji",
+    label: "Sorry",
+    heading: "Sorry Kaomoji",
+    titleSegment: "Sorry Kaomoji (｡•́︿•̀｡) Apology Faces to Copy and Paste",
+    description:
+      "Sorry kaomoji to copy and paste: apology faces like m(_ _)m, (｡•́︿•̀｡), orz, and ごめんね. 100+ ways to say sorry, my bad, and please forgive me in a message.",
+    intro:
+      "Apologies, my-bads, and please-forgive-me faces — from a quick (>_<) to a full m(_ _)m bow. Tap Copy and soften your sorry in any chat.",
+    group: "browse",
+    inHeader: false,
+    tags: ["sorry"],
+    faceGroups: [
+      { id: "bow", heading: "Bowing apology kaomoji", glyphs: ["m(_", "(シ_", "_(._.)_", "_ _"] },
+      { id: "orz", heading: "orz & OTL (on your knees)", glyphs: ["orz", "OTL", "○|￣|_"] },
+      { id: "teary", heading: "Teary sorry kaomoji", glyphs: ["；ω；", ";ω;", "╥", "T", "ᗒ", "ノ_<"] },
+      { id: "japanese", heading: "Japanese sorry: gomen kaomoji", glyphs: ["ごめん", "ゴメン", "ｺﾞﾒﾝ", "すみません"] },
+      { id: "please", heading: "Please forgive me", glyphs: ["人", "forgive", "please"] },
+    ],
+    howTo: [
+      "Match the size of the mistake: a light (>_<) my bad for small slips, m(_ _)m or orz for big ones.",
+      "Tap Copy to grab the face, including any words like ごめんね (gomen ne, sorry).",
+      "Paste it after your written apology — the face softens the tone but should not replace saying sorry.",
+    ],
+    definition:
+      "Sorry kaomoji are apology text faces. They show regret through bowing (m(_ _)m), kneeling (orz), teary eyes, or hands pressed together asking for forgiveness.",
+    learnMore:
+      "Bowing is how apologies are shown in Japan, and kaomoji copy it: m(_ _)m is a person bowing so low that only the top of the head and the hands (m) on the floor are visible. orz goes further — it is a person on hands and knees, seen from the side: o is the head, r the arms, and z the folded legs. OTL is the same pose in capital letters.\n\nThe Japanese words you will see are ごめん / ごめんね (gomen / gomen ne, a casual sorry), すみません (sumimasen, a polite excuse me or sorry), and 申し訳ありません (mōshiwake arimasen, a formal apology). Half-width katakana like ｺﾞﾒﾝ is the same word written smaller.\n\nHands pressed together — 人 in faces like (*_ _)人 — mean please or forgive me. Teary eyes (；ω；) make the apology heartfelt, while (>_<) or (￣▽￣;)ゞ keep it light and a little embarrassed.\n\nTone tip: a kaomoji makes an apology feel warmer, but for anything serious, say sorry in words first and add the face after.",
+    faqs: [
+      {
+        question: "What does m(_ _)m mean?",
+        answer: "It is a person bowing deeply — the m shapes are hands on the floor and _ _ is the lowered head. It means a sincere sorry or thank you.",
+      },
+      {
+        question: "What does orz mean?",
+        answer: "orz is a person kneeling on the ground: o is the head, r the arms, and z the legs. It means 'I give up,' deep regret, or 'I am so sorry.'",
+      },
+      {
+        question: "How do you say sorry in Japanese kaomoji?",
+        answer: "Add ごめんね (gomen ne) to a face, like (´；ω；`) ごめんね, or use the bowing face m(_ _)m.",
+      },
+      {
+        question: "Is a sorry kaomoji okay at work?",
+        answer: "A simple m(_ _)m or (>_<) works in friendly team chats. For formal or serious apologies, write the apology in full and skip the face.",
+      },
+    ],
+    related: ["/bowing-kaomoji", "/thank-you-kaomoji", "/crying-kaomoji", "/sad-kaomoji", "/nervous-kaomoji"],
+  },
+  {
+    path: "/thank-you-kaomoji",
+    label: "Thank you",
+    heading: "Thank You Kaomoji",
+    titleSegment: "Thank You Kaomoji (◍•ᴗ•◍)❤ Thanks Faces to Copy and Paste",
+    description:
+      "Thank you kaomoji to copy and paste: (◍•ᴗ•◍)❤, (人´∀`), ありがとう faces, and 100+ cute ways to say thanks, ty, and arigato in any message.",
+    intro:
+      "Cute thank-yous, grateful hands, and arigato faces — from a quick ty ♡ to a heartfelt (人´∀`). Tap Copy and paste your thanks anywhere.",
+    group: "browse",
+    inHeader: false,
+    tags: ["thanks"],
+    faceGroups: [
+      { id: "hands", heading: "Grateful hands kaomoji 人", glyphs: ["人", "ㅅ"] },
+      { id: "arigato", heading: "Arigato kaomoji ありがとう", glyphs: ["ありがと", "ｱﾘｶﾞﾄ", "アリガト", "arigato"] },
+      { id: "love", heading: "Thank you with love ♡", glyphs: ["♡", "♥", "❤", "💕"] },
+      { id: "english", heading: "Thanks, ty & thx kaomoji", glyphs: ["thank", "Thank", "thx", "ty"] },
+    ],
+    howTo: [
+      "Pick the tone: a quick ty ♡, a grateful (人´∀`), or a Japanese ありがとう (arigatou).",
+      "Tap Copy to grab the face and its words.",
+      "Paste it after a thank-you message, a gift, a favor, or a nice compliment.",
+    ],
+    definition:
+      "Thank you kaomoji are grateful text faces — hands pressed together, warm smiles, hearts, and the Japanese word ありがとう (arigatou) — that make a thank-you feel warmer than plain text.",
+    learnMore:
+      "The most common thank-you shape is 人, a Chinese and Japanese character that looks like two hands pressed together. In faces like (人´∀`) or (*˘︶˘人), it shows gratitude or a small bow of thanks. ㅅ, a Korean letter, plays the same role in faces like (ㅅ´ ˘ `).\n\nありがとう (arigatou) means thank you in Japanese, and ありがとうございます (arigatou gozaimasu) is the polite form. Half-width ｱﾘｶﾞﾄ is the same word in a cute, compact style. English shortcuts — ty, thx, tysm (thank you so much) — pair well with soft faces like (˶ᵔ ᵕ ᵔ˶).\n\nFor a deeper thank-you, a bow works too: m(_ _)m can mean both sorry and thank you, depending on the words around it.",
+    faqs: [
+      {
+        question: "What is the kaomoji for thank you?",
+        answer: "Popular ones are (◍•ᴗ•◍)❤ thank you, (人´∀`) thanks, and ありがとう (◕ᴗ◕✿). The 人 shape is two hands pressed together in gratitude.",
+      },
+      {
+        question: "How do you say thank you in Japanese with a kaomoji?",
+        answer: "Add ありがとう (arigatou) or ｱﾘｶﾞﾄ to a face, such as (*´ｰ`人)ｱﾘｶﾞﾄ.",
+      },
+      {
+        question: "What does 人 mean in kaomoji?",
+        answer: "人 looks like two hands pressed together. It means thanks, please, or a small respectful bow.",
+      },
+      {
+        question: "Can I use thank you kaomoji at work?",
+        answer: "Yes — soft ones like (◍•ᴗ•◍) thank you are friendly and polite for team chats.",
+      },
+    ],
+    related: ["/sorry-kaomoji", "/bowing-kaomoji", "/thanksgiving-kaomoji", "/heart-kaomoji", "/cute-kaomoji"],
+  },
+  {
+    path: "/cool-kaomoji",
+    label: "Cool",
+    heading: "Cool Kaomoji (⌐■_■)",
+    titleSegment: "Cool Kaomoji (⌐■_■) Sunglasses Faces to Copy and Paste",
+    description:
+      "Cool kaomoji with sunglasses to copy and paste: (⌐■_■), ( •_•)>⌐■-■ deal with it, (▀̿Ĺ̯▀̿ ̿), finger guns, and 50+ confident, chill faces.",
+    intro:
+      "Sunglasses, finger guns, and deal-with-it faces — the coolest kaomoji, from (⌐■_■) to (▀̿Ĺ̯▀̿ ̿). Tap Copy for confident, chill, or show-off moments.",
+    group: "browse",
+    inHeader: false,
+    tags: ["cool"],
+    howTo: [
+      "Pick your move: plain shades (⌐■_■), the put-on gag ( •_•)>⌐■-■, or finger guns (☞⌐■_■)☞.",
+      "Tap Copy to grab the full face.",
+      "Send the put-on and take-off faces one after another for the classic deal-with-it meme.",
+    ],
+    definition:
+      "Cool kaomoji wear sunglasses made from ■ blocks, ▀ bars, or ⌐ frames. They show confidence, swagger, or a relaxed 'no big deal' attitude.",
+    learnMore:
+      "The sunglasses are built from three pieces: ⌐ is the frame arm, ■ are the dark lenses, and _ or - is the bridge. Put together, (⌐■_■) reads instantly as shades. The bigger (▀̿Ĺ̯▀̿ ̿) uses ▀ bars with combining marks for a heavier, cooler look, and Ĺ̯ is a smirking mouth.\n\nThe 'deal with it' meme plays out in two steps: ( •_•)>⌐■-■ is someone holding the glasses, then (⌐■_■) is the moment they put them on. Reverse it, (⌐■_■)>( •_•), for taking them off in surprise.\n\nAdd arms for attitude: ☞ ☜ are finger guns, ᕙ ᕗ are flexed arms, and ノ♪ makes the face dance.",
+    faqs: [
+      {
+        question: "What is the sunglasses kaomoji?",
+        answer: "(⌐■_■) is the classic. ⌐ is the frame, ■ the lenses, and _ the bridge.",
+      },
+      {
+        question: "How do I do the deal with it kaomoji?",
+        answer: "Send ( •_•)>⌐■-■ (holding the glasses), then (⌐■_■) (wearing them). It is a two-step joke.",
+      },
+      {
+        question: "What does (▀̿Ĺ̯▀̿ ̿) mean?",
+        answer: "It is a cool guy with big dark sunglasses and a smirk — confident or unbothered.",
+      },
+    ],
+    related: ["/smug-kaomoji", "/lenny-face", "/dance-kaomoji", "/thumbs-up-kaomoji"],
+  },
+  {
+    path: "/sick-kaomoji",
+    label: "Sick",
+    heading: "Sick Kaomoji",
+    titleSegment: "Sick Kaomoji (´×ω×`)😷 Ill, Cold & Get Well Faces",
+    description:
+      "Sick kaomoji to copy and paste: mask (´×ω×`)😷, fever, sneezing 🤧, coughing, and get-well-soon faces for when you or a friend feel under the weather.",
+    intro:
+      "Masks, fevers, sneezes, and get-well-soon faces. Copy one to say you're sick without a long explanation, or to cheer up a friend who is.",
+    group: "browse",
+    inHeader: false,
+    tags: ["illness"],
+    faceGroups: [
+      { id: "cold", heading: "Cold & flu kaomoji 🤧", glyphs: ["🤧", "ｸｼｭﾝ", "ｺﾞﾎ", "ｹﾞﾎ", "😷", "cold", "Cough"] },
+      { id: "fever", heading: "Fever kaomoji 🤒", glyphs: ["🤒", "🌡", "fever"] },
+      { id: "queasy", heading: "Dizzy & queasy kaomoji", glyphs: ["@_@", "×﹏×", "🤮", "꒪ö꒪", "ᴗ˳ᴗ"] },
+      { id: "get-well", heading: "Get well soon kaomoji 💊", glyphs: ["get well", "feel better", "💊", "🍵", "🍲", "🍯"] },
+    ],
+    howTo: [
+      "Pick the symptom: sneezing 🤧, fever 🤒, dizzy (@_@), or a mask 😷.",
+      "Tap Copy to grab the face.",
+      "Send a get-well face like (づ｡◕‿‿◕｡)づ💊 feel better to someone who is ill.",
+    ],
+    definition:
+      "Sick kaomoji are text faces for being ill — masks, fevers, sneezes, coughs, dizziness — plus get-well-soon faces to send to someone else.",
+    learnMore:
+      "Sick faces swap the eyes for crosses or spirals: × eyes as in (×_×) mean knocked out or unwell, and @ eyes as in (@_@) mean dizzy. 😷 is a face mask, 🤒 a thermometer, and 🤧 a tissue for sneezing.\n\nJapanese sound words show up often. ｸｼｭﾝ (kushun) is a sneeze, ｺﾞﾎｺﾞﾎ (goho goho) and ｹﾞﾎｯ (geho) are coughs, and 風邪 (kaze) means a cold. Pairing a face with 🍵 tea, 🍲 soup, or 🍯🍋 honey and lemon turns it into a care message.\n\nUse sick faces to let a team or class know you are out, or as a gentle way to check in on a friend.",
+    faqs: [
+      { question: "What is the sick kaomoji?", answer: "Popular ones are (´×ω×`)😷 with a mask, (×_×;) for under the weather, and (@_@) for dizzy." },
+      { question: "How do I say get well soon with a kaomoji?", answer: "Try (づ｡◕‿‿◕｡)づ💊 feel better or ヾ(˙❥˙)ﾉ get well soon." },
+      { question: "What does ｸｼｭﾝ mean?", answer: "ｸｼｭﾝ (kushun) is the Japanese sound of a sneeze, like 'achoo'." },
+    ],
+    related: ["/sad-kaomoji", "/sleepy-kaomoji", "/hug-kaomoji", "/crying-kaomoji"],
+  },
+  {
+    path: "/scared-kaomoji",
+    label: "Scared",
+    heading: "Scared Kaomoji",
+    titleSegment: "Scared Kaomoji (((( ;°Д°)))) Afraid & Trembling Faces",
+    description:
+      "Scared kaomoji to copy and paste: trembling (((( ;°Д°)))), terrified, hiding, and running-away faces for horror movies, jump scares, and nervous moments.",
+    intro:
+      "Trembling, hiding, and running-away faces for when something is genuinely frightening. For a quick 'whoa, what?' surprise, Shocked Kaomoji fits better.",
+    group: "browse",
+    inHeader: false,
+    tags: ["fear"],
+    faceGroups: [
+      { id: "trembling", heading: "Trembling kaomoji", glyphs: ["((((", "(((", "ﾌﾞﾙﾌﾞﾙ", "ガクブル", "{{"] },
+      { id: "hiding", heading: "Hiding & can't look", glyphs: ["/ω＼", "＞＿＜", "don't look", ">_<", ">﹏<"] },
+      { id: "fleeing", heading: "Running away scared", glyphs: ["ε=", "┌(", "っ°Д°", "ﾉﾟ0ﾟ"] },
+    ],
+    howTo: [
+      "Pick the level of fear: uneasy (ㆆ_ㆆ), trembling (((( ;°Д°)))), or fleeing ε=ε=┌(;°□°)┘.",
+      "Tap Copy to grab the face.",
+      "Paste it during a horror movie chat, a spooky story, or before a scary exam.",
+    ],
+    definition:
+      "Scared kaomoji show fear: shaking, hiding the eyes, backing away, or running. They differ from shocked faces, which show sudden surprise rather than fear.",
+    learnMore:
+      "The trembling effect comes from stacked brackets: (((( and )))) on both sides of a face look like it is vibrating with fear. Japanese adds sound words for it — ブルブル (buru buru) is shivering and ガクブル (gakuburu) is shaking so hard your knees knock.\n\nHiding faces cover the eyes with hands, as in (/ω＼), while ε= dust puffs behind a running figure mean you are getting away fast. Wide °Д° eyes with an open mouth show terror; ;; sweat drops add nervousness.\n\nScared vs shocked: use scared faces for fear that lasts (a horror film, a dark hallway) and shocked faces for a sudden surprise.",
+    faqs: [
+      { question: "What is the scared kaomoji?", answer: "(((( ;°Д°)))) is the classic: the stacked brackets show trembling and °Д° is a terrified face." },
+      { question: "What is the difference between scared and shocked kaomoji?", answer: "Scared faces show fear (trembling, hiding, fleeing). Shocked faces show sudden surprise." },
+      { question: "What does ガクブル mean?", answer: "ガクブル (gakuburu) means shaking with fear, so badly your knees knock." },
+    ],
+    related: ["/shocked-kaomoji", "/nervous-kaomoji", "/halloween-kaomoji", "/crying-kaomoji"],
+  },
+  {
+    path: "/devil-kaomoji",
+    label: "Devil",
+    heading: "Devil Kaomoji Ψ(｀▽´)Ψ",
+    titleSegment: "Devil Kaomoji Ψ(｀▽´)Ψ Evil & Mischievous Faces to Copy",
+    description:
+      "Devil kaomoji to copy and paste: Ψ(｀▽´)Ψ, ψ(｀∇´)ψ, evil grins (◣‿◢)Ψ, and 😈 mischief faces for pranks, plotting, and playful evil.",
+    intro:
+      "Little devils, evil grins, and plotting faces with pitchforks — for pranks, mischief, and playful villainy. Tap Copy and unleash your inner devil.",
+    group: "browse",
+    inHeader: false,
+    tags: ["devil"],
+    faceGroups: [
+      { id: "pitchfork", heading: "Pitchfork devil kaomoji Ψ", glyphs: ["Ψ(", ")Ψ", "ψ(", ")ψ"] },
+      { id: "evil-grin", heading: "Evil grin kaomoji", glyphs: ["◣", "◢", "▼", "ᗨ"] },
+      { id: "emoji", heading: "Devil emoji kaomoji 😈", glyphs: ["😈", "👿", "🔥"] },
+    ],
+    howTo: [
+      "Pick the mood: cheeky Ψ(｀▽´)Ψ, wicked (◣‿◢)Ψ, or plotting (¬‿¬)👿.",
+      "Tap Copy to grab the face.",
+      "Paste it when you're up to something — a prank, a plot twist, or a playful threat.",
+    ],
+    definition:
+      "Devil kaomoji are mischievous or evil-looking text faces, usually holding a pitchfork made from the Greek letter Ψ (psi) or ψ.",
+    learnMore:
+      "Ψ looks like a trident or pitchfork, so placing it beside a face — Ψ(｀▽´)Ψ — turns any grin into a little devil. The eyes ｀ and ´ slant inward like scheming brows, and ▽ or ∀ is a wide, wicked grin. ◣ ◢ make heavier, angrier brows for a darker look.\n\nNote that Ψ also appears in some food faces as a fork, so a Ψ next to a food emoji usually means eating, not evil.\n\nDevil faces are playful in most chats: a teasing threat, a prank, or a plot twist. For full Halloween monsters, see the devil section on Halloween Kaomoji.",
+    faqs: [
+      { question: "What is the devil kaomoji?", answer: "Ψ(｀▽´)Ψ is the most popular: Ψ is a pitchfork on each side of a wicked grin." },
+      { question: "What does Ψ mean in kaomoji?", answer: "Ψ is the Greek letter psi. It looks like a pitchfork, so it marks a face as a devil. Next to food it can also be a fork." },
+      { question: "Are devil kaomoji mean?", answer: "Usually not — they read as playful mischief. Avoid them in serious conversations." },
+    ],
+    related: ["/halloween-kaomoji", "/smug-kaomoji", "/angry-kaomoji", "/cool-kaomoji"],
   },
   {
     path: "/about",
@@ -2117,8 +2766,27 @@ export function topLevelBrowsePages(): SitePage[] {
   return pagesByGroup("browse").filter((page) => !page.parentPath);
 }
 
+/** Max related links per page (own picks first, then reciprocal links). */
+const RELATED_LIMIT = 8;
+
+/**
+ * Hand-picked related pages, then pages that list this one in their own
+ * `related` (reciprocal), so every link earns a link back and no browse page
+ * depends on nav/footer alone for internal links.
+ */
 export function relatedPages(page: SitePage): SitePage[] {
-  return page.related.map((path) => getPage(path));
+  const out = page.related.map((path) => getPage(path));
+  const seen = new Set([page.path, ...page.related]);
+  for (const other of pages) {
+    if (out.length >= RELATED_LIMIT) break;
+    if (seen.has(other.path) || other.path === "/") continue;
+    if (other.group !== page.group) continue;
+    if (other.related.includes(page.path)) {
+      out.push(other);
+      seen.add(other.path);
+    }
+  }
+  return out;
 }
 
 /** Sibling subcategory pages that share the same parentPath (excludes self). */

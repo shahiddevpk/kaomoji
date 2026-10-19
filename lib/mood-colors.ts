@@ -59,6 +59,21 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/fish-kaomoji": "mood-tile--teal",
   "/kaomoji-generator": "mood-tile--teal",
   "/bowing-kaomoji": "mood-tile--teal",
+  // Famous text faces + new themes
+  "/lenny-face": "mood-tile--purple",
+  "/shrug-kaomoji": "mood-tile--purple",
+  "/uwu-kaomoji": "mood-tile--rose",
+  "/food-kaomoji": "mood-tile--amber",
+  "/thanksgiving-kaomoji": "mood-tile--amber",
+  "/sorry-kaomoji": "mood-tile--blue",
+  "/thank-you-kaomoji": "mood-tile--love",
+  "/cool-kaomoji": "mood-tile--purple",
+  "/sick-kaomoji": "mood-tile--green",
+  "/scared-kaomoji": "mood-tile--blue",
+  "/devil-kaomoji": "mood-tile--red",
+  "/emoticons": "mood-tile--teal",
+  "/cute-symbols": "mood-tile--love",
+  "/emoji-combos": "mood-tile--warm",
 };
 
 export function moodTileClass(path?: string): string {

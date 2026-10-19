@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-/** Brand mark: soft orange tile with a tiny kaomoji face (site primary #C2410C). */
+/** Brand mark: soft violet tile with a tiny kaomoji face (site primary #7C3AED). */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
@@ -11,18 +11,18 @@ export function LogoMark({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <rect width="40" height="40" rx="12" fill="#C2410C" />
-      <rect x="4" y="4" width="32" height="32" rx="9" fill="#FFF7ED" />
-      <circle cx="14.5" cy="17" r="2.25" fill="#C2410C" />
-      <circle cx="25.5" cy="17" r="2.25" fill="#C2410C" />
+      <rect width="40" height="40" rx="12" fill="#7C3AED" />
+      <rect x="4" y="4" width="32" height="32" rx="9" fill="#F5F0FF" />
+      <circle cx="14.5" cy="17" r="2.25" fill="#7C3AED" />
+      <circle cx="25.5" cy="17" r="2.25" fill="#7C3AED" />
       <path
         d="M14 24.5c1.6 2.2 4 3.3 6 3.3s4.4-1.1 6-3.3"
-        stroke="#C2410C"
+        stroke="#7C3AED"
         strokeWidth="2"
         strokeLinecap="round"
       />
-      <circle cx="10.5" cy="21.5" r="1.35" fill="#FDBA74" />
-      <circle cx="29.5" cy="21.5" r="1.35" fill="#FDBA74" />
+      <circle cx="10.5" cy="21.5" r="1.35" fill="#F9A8D4" />
+      <circle cx="29.5" cy="21.5" r="1.35" fill="#F9A8D4" />
     </svg>
   );
 }

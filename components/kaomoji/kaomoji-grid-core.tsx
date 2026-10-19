@@ -2,7 +2,7 @@ import type { Kaomoji } from "@/data/types";
 import { copyAriaLabel, faceLangAttr } from "@/lib/utils";
 
 export type GridItem = Pick<Kaomoji, "id" | "face" | "name"> &
-  Partial<Kaomoji> & { multiline?: boolean };
+  Partial<Kaomoji> & { multiline?: boolean; caption?: string; wide?: boolean };
 
 function isTall(item: GridItem): boolean {
   if (item.multiline === true) return true;
@@ -13,9 +13,12 @@ function isTall(item: GridItem): boolean {
 export function KaomojiGridCore({
   items,
   empty = "No faces for this page yet.",
+  compact = false,
 }: {
   items: Array<GridItem>;
   empty?: string;
+  /** Denser grid for single symbols. */
+  compact?: boolean;
 }) {
   if (items.length === 0) {
     return (
@@ -26,12 +29,12 @@ export function KaomojiGridCore({
   }
 
   return (
-    <ul className="kaomoji-grid">
+    <ul className={compact ? "kaomoji-grid kaomoji-grid--compact" : "kaomoji-grid"}>
       {items.map((item) => {
         const tall = isTall(item);
         const faceId = `face-${item.id}`;
         return (
-          <li key={item.id}>
+          <li key={item.id} className={item.wide ? "kaomoji-cell--wide" : undefined}>
             <article
               className={
                 tall ? "kaomoji-card kaomoji-card--tall" : "kaomoji-card"
@@ -46,6 +49,20 @@ export function KaomojiGridCore({
               >
                 {item.face}
               </p>
+              {item.caption ? (
+                <p className="kaomoji-caption">{item.caption}</p>
+              ) : null}
+              <button
+                type="button"
+                className="kaomoji-fav"
+                aria-pressed="false"
+                aria-label={`Add ${item.name} to favorites`}
+                data-fav-id={item.id}
+                data-fav-name={item.name}
+                data-fav-face={item.face}
+              >
+                ☆
+              </button>
               <button
                 type="button"
                 className="kaomoji-copy"

@@ -84,7 +84,9 @@ export function HeaderNav({
         ref={scrollerRef}
         className={cn(
           "-mx-4 flex flex-nowrap justify-start gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:gap-2 sm:px-0",
-          "scroll-smooth [scrollbar-width:thin]",
+          "nav-scroller scroll-smooth",
+          canLeft && "nav-scroller--fade-left",
+          canRight && "nav-scroller--fade-right",
         )}
       >
         {links.map((page) => {

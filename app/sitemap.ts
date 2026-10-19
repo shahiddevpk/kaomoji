@@ -25,6 +25,28 @@ function lastModified(page: SitePage): string {
     case "/fight-kaomoji":
     case "/pout-kaomoji":
       return "2026-10-05";
+    case "/lenny-face":
+    case "/shrug-kaomoji":
+    case "/uwu-kaomoji":
+    case "/food-kaomoji":
+    case "/emoticons":
+    case "/cute-symbols":
+    case "/emoji-combos":
+    case "/shy-kaomoji":
+      return "2026-10-19";
+    case "/halloween-kaomoji":
+    case "/christmas-kaomoji":
+    case "/thanksgiving-kaomoji":
+    case "/bear-kaomoji":
+    case "/table-flip-kaomoji":
+    case "/hug-kaomoji":
+    case "/sorry-kaomoji":
+    case "/thank-you-kaomoji":
+    case "/cool-kaomoji":
+    case "/sick-kaomoji":
+    case "/scared-kaomoji":
+    case "/devil-kaomoji":
+      return "2026-10-19";
     default:
       return "2026-09-25";
   }
@@ -42,7 +64,15 @@ function sitemapPriority(page: SitePage): number {
       return 0.85;
     case "/text-faces":
     case "/kaomoji-generator":
+    case "/lenny-face":
+    case "/shrug-kaomoji":
+    case "/emoticons":
+    case "/cute-symbols":
+    case "/emoji-combos":
       return 0.8;
+    case "/uwu-kaomoji":
+    case "/food-kaomoji":
+      return 0.75;
     case "/happy-kaomoji":
     case "/cat-kaomoji":
     case "/sad-kaomoji":

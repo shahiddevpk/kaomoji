@@ -1,0 +1,277 @@
+<title>Paste Kaomoji Growth Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~72ch) with full-width tables; faces set as specimens in a mono-ish stage. */
+:root {
+  --bg: #FBF9FF;
+  --surface: #FFFFFF;
+  --ink: #1C1530;
+  --muted: #5A5170;
+  --line: #E6DFF3;
+  --accent: #6D28D9;
+  --accent-soft: #EFE7FF;
+  --pink: #BE185D;
+  --good: #15803D;
+  --good-soft: #E7F6EC;
+  --warn: #A16207;
+  --warn-soft: #FDF4DC;
+  --face-stage: #F4EFFD;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-face: "Noto Sans JP", "Segoe UI Symbol", "Yu Gothic", "Hiragino Sans", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #110C1C; --surface: #19132A; --ink: #F1ECFB; --muted: #B5ACC9; --line: #2E2546;
+    --accent: #C4B5FD; --accent-soft: #2A2048; --pink: #F9A8D4; --good: #86EFAC; --good-soft: #14301F;
+    --warn: #FCD34D; --warn-soft: #33290F; --face-stage: #221A3A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #110C1C; --surface: #19132A; --ink: #F1ECFB; --muted: #B5ACC9; --line: #2E2546;
+  --accent: #C4B5FD; --accent-soft: #2A2048; --pink: #F9A8D4; --good: #86EFAC; --good-soft: #14301F;
+  --warn: #FCD34D; --warn-soft: #33290F; --face-stage: #221A3A; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+}
+main { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+section { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; line-height: 1.05; }
+h2 { font-size: 1.6rem; font-weight: 800; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+p { margin: 0; max-width: 72ch; }
+.eyebrow { font: 600 0.78rem/1 var(--f-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.face { font-family: var(--f-face); background: var(--face-stage); border-radius: 6px; padding: 1px 7px; white-space: nowrap; font-size: 0.95em; }
+header.top { display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid var(--line); padding-bottom: 32px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 0.92rem; }
+.meta b { color: var(--ink); font-weight: 600; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.stat strong { font: 800 2rem/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th { text-align: left; font: 600 0.75rem/1.2 var(--f-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+tr:first-child td { border-top: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.url { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.85rem; color: var(--accent); white-space: nowrap; }
+
+.chip { display: inline-block; font-size: 0.78rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chip.done { background: var(--good-soft); color: var(--good); }
+.chip.open { background: var(--warn-soft); color: var(--warn); }
+.chip.skip { background: var(--accent-soft); color: var(--accent); }
+
+.bars { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) 4.5rem; gap: 12px; align-items: center; font-size: 0.92rem; }
+.bar-track { height: 12px; background: var(--face-stage); border-radius: 999px; position: relative; overflow: hidden; }
+.bar-before { position: absolute; inset: 0 auto 0 0; background: var(--line); border-radius: 999px; }
+.bar-after { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 999px; opacity: 0.85; }
+.bar-row .v { font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+.legend { display: flex; gap: 18px; font-size: 0.85rem; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+@media (max-width: 520px) { .bar-row { grid-template-columns: 6.5rem minmax(0, 1fr) 3.8rem; } }
+
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.panel ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+
+ol.plan { margin: 0; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 10px; max-width: 72ch; }
+ol.plan b { font-weight: 600; }
+.note { color: var(--muted); font-size: 0.9rem; }
+footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); padding-top: 20px; }
+a { color: var(--accent); }
+</style>
+
+<main>
+  <header class="top">
+    <span class="eyebrow">pastekaomoji.com · SEO, content &amp; UX</span>
+    <h1>Growth report: from 48 to 62 pages, and fuller ones</h1>
+    <p class="lede">What we found in Search Console, the keyword data and competitor sites, what was built and fixed, and what to do next. Target market: United States.</p>
+    <div class="meta">
+      <span><b>Period:</b> Oct 17–19, 2026</span>
+      <span><b>Inputs:</b> GSC (last 7 days), Semrush US export (2,000 keywords), US SERP checks</span>
+      <span><b>Status:</b> built and verified locally, not yet committed</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="summary">
+    <h2 id="summary">At a glance</h2>
+    <div class="stats">
+      <div class="stat"><strong>+14</strong><span>new indexable pages (48 → 62)</span></div>
+      <div class="stat"><strong>25.0k</strong><span>faces in the catalog (+309 curated)</span></div>
+      <div class="stat"><strong>0</strong><span>orphan pages; every content page has 4+ in-content links</span></div>
+      <div class="stat"><strong>0</strong><span>duplicate titles, H1s or descriptions</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="gsc">
+    <h2 id="gsc">What Search Console says</h2>
+    <p>Halloween is the only cluster on page 1, and it peaks Oct 24–31. A few pages sit just outside the top spots. Head terms rank 38–85, which is normal for a young domain and needs authority more than more pages.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Query cluster</th><th>Impressions</th><th>Clicks</th><th>Avg. position</th><th>Action taken</th></tr></thead>
+        <tbody>
+          <tr><td>halloween kaomoji (+ variants)</td><td class="num">~470</td><td class="num">12</td><td class="num">6–7</td><td>Rebuilt the page; see below</td></tr>
+          <tr><td>bowing kaomoji</td><td class="num">17</td><td class="num">0</td><td class="num">8.7</td><td>Title tuned; meaning cards</td></tr>
+          <tr><td>pout / pouting kaomoji</td><td class="num">14</td><td class="num">0</td><td class="num">8.7–10</td><td>"Pouting" added to title</td></tr>
+          <tr><td>kaomoji sakura</td><td class="num">2</td><td class="num">0</td><td class="num">9.0</td><td>"Sakura" added to Flower title</td></tr>
+          <tr><td>japanese emoji (≈10 variants)</td><td class="num">~25</td><td class="num">0</td><td class="num">55–86</td><td>"Japanese emoji" added to title</td></tr>
+          <tr><td>kaomoji / kaomoji copy and paste</td><td class="num">5</td><td class="num">0</td><td class="num">38–47</td><td>Titles split (home owns "kaomoji"); Chrome extension built for links</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="competitors">
+    <h2 id="competitors">Competitors in the US results</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Site</th><th>Strength</th><th>Weakness we use</th></tr></thead>
+        <tbody>
+          <tr><td>gyanmirai.com</td><td>34.5k faces, 53 moods, 179 bear faces, "anatomy" teaching block</td><td>Heavy course and WhatsApp promotion; generic per-page text</td></tr>
+          <tr><td>kaomojis.jp</td><td>Claims 56k faces, 300+ categories, history and random-pick features</td><td>Many near-duplicate thin categories (Peek / Peeking, Thinking / Thoughtful)</td></tr>
+          <tr><td>kaomojisymbols.com, emojicombos.com</td><td>Rank above us for Halloween by splitting faces by type (ghost, zombie, bat)</td><td>Dated design, little explanation</td></tr>
+          <tr><td>thelennyface.com</td><td>Separate emoticon and text-symbol sections</td><td>Faces repeat in cycles down the page</td></tr>
+          <tr><td>Chrome Web Store extensions</td><td>Fill the results for lenny face, cute symbols and uwu</td><td>No real content, so a quality page can outrank them</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="pages">
+    <h2 id="pages">New pages</h2>
+    <p>Each page owns one search intent. Sick and Scared use fresh tags, because the catalog's old "sick" and "scared" tags were mostly unrelated faces. Volumes are US monthly searches from the Semrush export; KD is keyword difficulty.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Page</th><th>Main keyword (vol / KD)</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td class="url">/lenny-face/</td><td>lenny face (22,200 / 46)</td><td>117 variations, how the <span class="face">( ͡° ͜ʖ ͡°)</span> characters work</td></tr>
+          <tr><td class="url">/emoticons/</td><td>emoticons (60,500 / 87), keyboard faces (1,900 / 28)</td><td>130 keyboard emoticons with a meaning for each, <span class="face">:) XD &lt;3</span></td></tr>
+          <tr><td class="url">/cute-symbols/</td><td>cute copy paste symbols (8,100 / 15)</td><td>250+ symbols: hearts, stars, bows, frames, dividers</td></tr>
+          <tr><td class="url">/emoji-combos/</td><td>cute emoji combos (5,400 / 22)</td><td>120+ combos by theme</td></tr>
+          <tr><td class="url">/shrug-kaomoji/</td><td>shrug emoticon</td><td>99 faces, fix for the "lost arm" on Discord</td></tr>
+          <tr><td class="url">/uwu-kaomoji/</td><td>uwu face (2,900 / 32)</td><td>56 faces, UwU vs OwO</td></tr>
+          <tr><td class="url">/food-kaomoji/</td><td>food kaomoji</td><td>766 faces, what <span class="face">ڡ ﹃ 旦</span> mean</td></tr>
+          <tr><td class="url">/thanksgiving-kaomoji/</td><td>thanksgiving kaomoji (US holiday)</td><td>39 faces, 4 type groups</td></tr>
+          <tr><td class="url">/sorry-kaomoji/</td><td>sorry kaomoji</td><td>148 faces, what <span class="face">m(_ _)m</span> and <span class="face">orz</span> mean</td></tr>
+          <tr><td class="url">/thank-you-kaomoji/</td><td>thank you kaomoji</td><td>171 faces, arigato faces</td></tr>
+          <tr><td class="url">/cool-kaomoji/</td><td>cool / sunglasses kaomoji</td><td>50 faces, the "deal with it" two-step</td></tr>
+          <tr><td class="url">/sick-kaomoji/</td><td>sick kaomoji</td><td>112 faces: masks, sneezes <span class="face">ｸｼｭﾝ</span>, get-well-soon</td></tr>
+          <tr><td class="url">/scared-kaomoji/</td><td>scared kaomoji</td><td>140 faces, trembling <span class="face">(((( ;°Д°))))</span>; kept apart from Shocked</td></tr>
+          <tr><td class="url">/devil-kaomoji/</td><td>devil kaomoji</td><td>28 faces, why <span class="face">Ψ</span> is a pitchfork</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Shy now also owns "blush kaomoji" (1,300 / 24), and the /blush-kaomoji alias redirects to it.</p>
+  </section>
+
+  <section aria-labelledby="fixes">
+    <h2 id="fixes">Faces visitors can now find</h2>
+    <p>Several pages were filtering out most of their own faces, so visitors saw a few results while competitors showed hundreds.</p>
+    <div class="legend"><span><i style="background: var(--line)"></i>Before</span><span><i style="background: var(--accent)"></i>After</span></div>
+    <div class="bars" role="img" aria-label="Faces shown before and after: Bear 8 to 150, Table Flip 22 to 67, Hug 67 to 194, Christmas 153 to 190, Halloween 96 reachable to 351.">
+      <div class="bar-row"><span>Bear</span><div class="bar-track"><div class="bar-after" style="width: 42.7%"></div><div class="bar-before" style="width: 2.3%"></div></div><span class="v">8 → 150</span></div>
+      <div class="bar-row"><span>Table Flip</span><div class="bar-track"><div class="bar-after" style="width: 19.1%"></div><div class="bar-before" style="width: 6.3%"></div></div><span class="v">22 → 67</span></div>
+      <div class="bar-row"><span>Hug</span><div class="bar-track"><div class="bar-after" style="width: 55.3%"></div><div class="bar-before" style="width: 19.1%"></div></div><span class="v">67 → 194</span></div>
+      <div class="bar-row"><span>Christmas</span><div class="bar-track"><div class="bar-after" style="width: 54.1%"></div><div class="bar-before" style="width: 43.6%"></div></div><span class="v">153 → 190</span></div>
+      <div class="bar-row"><span>Halloween*</span><div class="bar-track"><div class="bar-after" style="width: 100%"></div><div class="bar-before" style="width: 27.4%"></div></div><span class="v">96 → 351</span></div>
+    </div>
+    <p class="note">*Halloween had more tagged faces, but only the first 96 were reachable before pagination was added. It now opens with ghosts and pumpkins instead of generic shocked faces like <span class="face">(ﾟДﾟ)</span>, and has 8 type sections: ghost, pumpkin, bat, zombie, devil, skull, vampire and witch, spider and candy.</p>
+  </section>
+
+  <section aria-labelledby="thin">
+    <h2 id="thin">Thin content</h2>
+    <p>Words of unique explanation per page, not counting the face grids. Every content page now has at least 368 words (the thinnest was 276), and Contact went from 51 to 157.</p>
+    <div class="bars" role="img" aria-label="Unique prose words before and after: Christmas 276 to over 500, Confused 283 to 395, Dance 287 to 384, Birthday 291 to 385, Shocked 294 to 390, Sleepy 298 to 387, Contact 51 to 157.">
+      <div class="bar-row"><span>Christmas</span><div class="bar-track"><div class="bar-after" style="width: 92%"></div><div class="bar-before" style="width: 50%"></div></div><span class="v">276 → 500+</span></div>
+      <div class="bar-row"><span>Confused</span><div class="bar-track"><div class="bar-after" style="width: 71.8%"></div><div class="bar-before" style="width: 51.5%"></div></div><span class="v">283 → 395</span></div>
+      <div class="bar-row"><span>Dance</span><div class="bar-track"><div class="bar-after" style="width: 69.8%"></div><div class="bar-before" style="width: 52.2%"></div></div><span class="v">287 → 384</span></div>
+      <div class="bar-row"><span>Birthday</span><div class="bar-track"><div class="bar-after" style="width: 70%"></div><div class="bar-before" style="width: 52.9%"></div></div><span class="v">291 → 385</span></div>
+      <div class="bar-row"><span>Shocked</span><div class="bar-track"><div class="bar-after" style="width: 70.9%"></div><div class="bar-before" style="width: 53.5%"></div></div><span class="v">294 → 390</span></div>
+      <div class="bar-row"><span>Contact</span><div class="bar-track"><div class="bar-after" style="width: 28.5%"></div><div class="bar-before" style="width: 9.3%"></div></div><span class="v">51 → 157</span></div>
+    </div>
+    <p>The new copy is a "popular faces and what they mean" block on 39 pages. Each card shows a face, its meaning, and which characters build it. For example, in <span class="face">(=^･ω･^=)</span> the ^ ^ are ears, = = are whiskers and ω is the mouth.</p>
+  </section>
+
+  <section aria-labelledby="ux">
+    <h2 id="ux">Design and user experience</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>Shipped</h3>
+        <ul>
+          <li>New violet and pink theme with automatic dark mode</li>
+          <li>Home page hero with one-tap quick-copy faces and a random-face button</li>
+          <li>Home tiles grouped by theme, with face counts</li>
+          <li>"Browse by type" sections on 13 pages (cat paws, sleeping cats, Santa, and more)</li>
+          <li>Kaomoji meanings and "how to type on any device" on the home page</li>
+          <li>Seasonal home banner: Halloween in October, Thanksgiving in November, Christmas in December</li>
+          <li>New favicon, phone icon and link-preview image</li>
+          <li>Favorites: a ☆ on every face card, saved in the browser, with a "Your favorites" strip on every page</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Verified</h3>
+        <ul>
+          <li>Production build passes</li>
+          <li>No sideways scrolling at 390px phone width</li>
+          <li>Copy button tested: clipboard receives the face and the button flashes "Copied"</li>
+          <li>Favorites tested: star, strip, kept across pages, remove</li>
+          <li>All 62 sitemap pages reachable from the home page</li>
+          <li>Page 2+ of each category stays noindex, follow</li>
+          <li>Redirects for common aliases (/lenny, /shrug, /uwu, /blush-kaomoji, /thanksgiving)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="status">
+    <h2 id="status">Gap tracker</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Gap</th><th>Status</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Orphan and weakly linked pages</td><td><span class="chip done">Done</span></td><td>Related links now work both ways</td></tr>
+          <tr><td>Christmas before Dec 1</td><td><span class="chip done">Done</span></td><td>6 type groups, new copy</td></tr>
+          <tr><td>Thanksgiving page</td><td><span class="chip done">Done</span></td><td>New page plus November banner</td></tr>
+          <tr><td>Thin mood pages</td><td><span class="chip done">Done</span></td><td>Meaning cards on 36 pages</td></tr>
+          <tr><td>Sorry, Thank You, Cool</td><td><span class="chip done">Done</span></td><td>Bowing now owns only the bow gesture</td></tr>
+          <tr><td>Sick, Scared, Devil pages</td><td><span class="chip done">Done</span></td><td>Curated faces and fresh tags; Scared covers fear, Shocked covers surprise</td></tr>
+          <tr><td>Favorites</td><td><span class="chip done">Done</span></td><td>Stars on every card, saved in the browser</td></tr>
+          <tr><td>Home title overlaps /kaomoji-copy-paste/</td><td><span class="chip done">Done</span></td><td>Home: "Kaomoji … Japanese Text Faces"; copy-paste page owns "copy and paste" (GSC showed 3 impressions at position 47, so little to lose)</td></tr>
+          <tr><td>Authority: Chrome extension</td><td><span class="chip done">Built</span></td><td>In <span class="url">extension/</span>; needs you to submit it to the Chrome Web Store</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="next">
+    <h2 id="next">How we win from here</h2>
+    <ol class="plan">
+      <li><b>Commit and deploy before Oct 24</b>, so the Halloween changes are live for the peak week. Then request indexing for /halloween-kaomoji/ in Search Console.</li>
+      <li><b>Run seasonal sprints 4–6 weeks before each holiday.</b> Halloween proved seasonal queries rank fast on a young domain. Next are Valentine's Day (ship by mid-January) and Easter.</li>
+      <li><b>Publish the Chrome extension.</b> It is ready in the <span class="url">extension/</span> folder with a README: zip the folder and upload it in the Chrome Web Store Developer Dashboard (one-time $5 fee). Its links are tagged, so visits show up in analytics. Pinterest boards for symbols and emoji combos are a good second channel.</li>
+      <li><b>Keep quality over count.</b> One strong page per real intent beats kaomojis.jp's 300+ thin categories, and stays safe under Google's helpful-content and scaled-content policies.</li>
+      <li><b>Re-check GSC in 2–3 weeks</b> for the new pages: lenny face, emoticons, cute symbols and emoji combos face the weakest competition.</li>
+    </ol>
+  </section>
+
+  <footer>
+    Prepared Oct 19, 2026 for pastekaomoji.com. Keyword volumes: Semrush US database, snapshot Sep 26, 2026. Word counts and face counts measured on a local production build.
+  </footer>
+</main>
