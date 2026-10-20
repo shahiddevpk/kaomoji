@@ -677,6 +677,17 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   flex-shrink: 0;
 }
 
+/* "All categories" panel: overlays content below the fixed header */
+.category-menu {
+  max-height: calc(100dvh - var(--site-header-offset));
+}
+.category-menu-backdrop {
+  position: fixed;
+  inset: var(--site-header-offset) 0 0 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--foreground) 28%, transparent);
+}
+
 /* FAQ disclosure — open state picks up brand tint */
 .faq-details[open] {
   border-color: color-mix(in srgb, var(--primary) 38%, var(--border));
@@ -875,6 +886,53 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   color: var(--link);
 }
 
+/* Guides */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .guide-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.guide-toc {
+  border: 1px solid var(--border);
+  border-radius: 1.125rem;
+  background: var(--card);
+  padding: 0.875rem 1rem;
+}
+.guide-tip {
+  border-left: 3px solid var(--primary);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: color-mix(in srgb, var(--primary) 8%, var(--card));
+  padding: 0.75rem 1rem;
+}
+.guide-table {
+  background: var(--card);
+}
+.guide-table th,
+.guide-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.625rem 0.75rem;
+  vertical-align: top;
+}
+.guide-table thead th {
+  background: var(--hover);
+  font-weight: 600;
+}
+.guide-table tbody th {
+  font-weight: 600;
+}
+.guide-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
 /* Meaning / anatomy cards */
 .meaning-grid {
   display: grid;
@@ -915,18 +973,6 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
-}
-
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 1rem;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-@media (min-width: 768px) {
-  .footer-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Dense grid for single symbols (cute symbols page) */

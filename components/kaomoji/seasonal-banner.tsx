@@ -37,11 +37,16 @@ const SEASONS: Season[] = [
   },
 ];
 
-/** Time-boxed internal link to the in-season page; renders nothing off-season. */
-export function SeasonalBanner({ now = new Date() }: { now?: Date }) {
-  const season = SEASONS.find(
+/** In-season holiday, if any (shared by the hub banner and header strip). */
+export function currentSeason(now = new Date()): Season | undefined {
+  return SEASONS.find(
     (s) => s.month === now.getMonth() && now.getDate() <= s.lastDay,
   );
+}
+
+/** Time-boxed internal link to the in-season page; renders nothing off-season. */
+export function SeasonalBanner({ now = new Date() }: { now?: Date }) {
+  const season = currentSeason(now);
   if (!season) return null;
 
   return (

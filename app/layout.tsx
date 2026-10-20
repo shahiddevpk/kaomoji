@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
+import { currentSeason } from "@/components/kaomoji/seasonal-banner";
 import { Footer } from "@/components/layout/footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/layout/json-ld";
@@ -99,7 +100,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
-          <SiteHeader />
+          <SiteHeader seasonalPath={currentSeason()?.href.replace(/\/$/, "")} />
           <main id="content" className="relative z-0 flex-1" role="main">
             {children}
           </main>

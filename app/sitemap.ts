@@ -1,10 +1,19 @@
 import type { MetadataRoute } from "next";
+import { guidePath, guides, guidesForPage } from "@/lib/guides";
 import { pages, type SitePage } from "@/lib/site";
 import { absoluteUrl } from "@/lib/utils";
 
+/** Latest content date: page's own edit date, or a newer guide it now features. */
 function lastModified(page: SitePage): string {
+  const dates = [contentModified(page), ...guidesForPage(page.path).map((g) => g.updated)];
+  return dates.reduce((latest, d) => (d > latest ? d : latest));
+}
+
+function contentModified(page: SitePage): string {
   switch (page.path) {
     case "/":
+      // Guides section + guide links added to the hub.
+      return "2026-10-20";
     case "/kaomoji-copy-paste":
     case "/japanese-emoticons":
     case "/text-faces":
@@ -126,7 +135,21 @@ function sitemapPriority(page: SitePage): number {
  * ~6MB catalog via category-pagination / crawlablePageCountForMeta.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return pages.map((page) => ({
+  const guideEntries: MetadataRoute.Sitemap = [
+    {
+      url: absoluteUrl("/guides"),
+      lastModified: guides.reduce((latest, g) => (g.updated > latest ? g.updated : latest), ""),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    ...guides.map((guide) => ({
+      url: absoluteUrl(guidePath(guide)),
+      lastModified: guide.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+  const pageEntries: MetadataRoute.Sitemap = pages.map((page) => ({
     url: absoluteUrl(page.path),
     lastModified: lastModified(page),
     changeFrequency:
@@ -137,4 +160,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : "monthly",
     priority: sitemapPriority(page),
   }));
+  return [...pageEntries, ...guideEntries];
 }

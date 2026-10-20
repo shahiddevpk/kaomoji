@@ -3,93 +3,7 @@ import { countByCategory, countByTags } from "@/data/index";
 import { pages, type SitePage } from "@/lib/site";
 import { moodTileClass } from "@/lib/mood-colors";
 import { cn } from "@/lib/utils";
-
-/** Hub browse groups by intent — each path appears once. */
-const TILE_GROUPS: { heading: string; paths: string[] }[] = [
-  // Each group is a multiple of 4 so rows fill at 2 and 4 columns.
-  {
-    heading: "Emotions",
-    paths: [
-      "/cute-kaomoji",
-      "/happy-kaomoji",
-      "/sad-kaomoji",
-      "/crying-kaomoji",
-      "/angry-kaomoji",
-      "/shy-kaomoji",
-      "/excited-kaomoji",
-      "/nervous-kaomoji",
-      "/shocked-kaomoji",
-      "/scared-kaomoji",
-      "/confused-kaomoji",
-      "/smug-kaomoji",
-      "/sleepy-kaomoji",
-      "/thinking-kaomoji",
-      "/pout-kaomoji",
-      "/sick-kaomoji",
-    ],
-  },
-  {
-    heading: "Famous faces",
-    paths: [
-      "/lenny-face",
-      "/shrug-kaomoji",
-      "/table-flip-kaomoji",
-      "/uwu-kaomoji",
-      "/cool-kaomoji",
-      "/devil-kaomoji",
-      "/text-faces",
-      "/japanese-emoticons",
-    ],
-  },
-  {
-    heading: "Love & manners",
-    paths: [
-      "/heart-kaomoji",
-      "/love-kaomoji",
-      "/kiss-kaomoji",
-      "/hug-kaomoji",
-      "/wink-kaomoji",
-      "/thank-you-kaomoji",
-      "/sorry-kaomoji",
-      "/bowing-kaomoji",
-    ],
-  },
-  {
-    heading: "Actions",
-    paths: [
-      "/smile-kaomoji",
-      "/giggling-kaomoji",
-      "/waving-kaomoji",
-      "/dance-kaomoji",
-      "/running-kaomoji",
-      "/fight-kaomoji",
-      "/thumbs-up-kaomoji",
-      "/sparkle-kaomoji",
-    ],
-  },
-  {
-    heading: "Animals, food & nature",
-    paths: [
-      "/cat-kaomoji",
-      "/dog-kaomoji",
-      "/bear-kaomoji",
-      "/bunny-kaomoji",
-      "/fish-kaomoji",
-      "/food-kaomoji",
-      "/flower-kaomoji",
-      "/star-kaomoji",
-    ],
-  },
-  {
-    heading: "Holidays",
-    paths: [
-      "/halloween-kaomoji",
-      "/thanksgiving-kaomoji",
-      "/christmas-kaomoji",
-      "/birthday-kaomoji",
-    ],
-  },
-];
+import { CATEGORY_GROUPS, TOOL_PATHS } from "@/lib/nav-groups";
 
 /** Tile glyphs for pages whose title does not start with the heading + face. */
 const TILE_FACE: Record<string, string> = {
@@ -167,17 +81,17 @@ function Tile({ page }: { page: SitePage }) {
 
 export function CategoryTiles() {
   const byPath = new Map(pages.map((page) => [page.path, page]));
-  const placed = new Set(TILE_GROUPS.flatMap((g) => g.paths));
+  const placed = new Set(CATEGORY_GROUPS.flatMap((g) => g.paths));
   // Any browse page not placed above still gets a tile (never orphaned).
   const extra = pages.filter(
     (p) =>
       p.group === "browse" &&
       !placed.has(p.path) &&
-      !["/kaomoji-copy-paste", "/kaomoji-generator", "/emoticons", "/cute-symbols", "/emoji-combos"].includes(p.path),
+      !TOOL_PATHS.includes(p.path),
   );
   const groups = extra.length
-    ? [...TILE_GROUPS, { heading: "More", paths: extra.map((p) => p.path) }]
-    : TILE_GROUPS;
+    ? [...CATEGORY_GROUPS, { heading: "More", paths: extra.map((p) => p.path) }]
+    : CATEGORY_GROUPS;
 
   return (
     <div>

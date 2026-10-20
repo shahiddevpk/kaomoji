@@ -22,6 +22,8 @@ import { MeaningCards } from "@/components/kaomoji/meaning-cards";
 import { PAGE_MEANINGS } from "@/data/page-meanings";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
+import { GuideCardList } from "@/components/guides/guide-card-list";
+import { guidesForPage } from "@/lib/guides";
 import { relatedPages, type SitePage } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
 
@@ -214,6 +216,7 @@ export function CategoryView({
   const safePage = Math.max(1, Math.floor(pageNumber));
   const faces = getForPage({ ...page, page: safePage });
   const related = relatedPages(page);
+  const guides = guidesForPage(page.path);
   const relatedFaces = getRelatedKaomojiFromScopes(
     relatedFaceScopes(page, related),
   );
@@ -424,6 +427,15 @@ export function CategoryView({
       </section>
 
       {showEducation ? <FaqSection faqs={page.faqs} /> : null}
+
+      {showEducation && guides.length > 0 ? (
+        <section className="mt-10" aria-labelledby="guides-heading">
+          <h2 id="guides-heading" className="type-h2">
+            Learn more
+          </h2>
+          <GuideCardList items={guides} />
+        </section>
+      ) : null}
 
       {related.length > 0 ? (
         <section className="mt-10" aria-labelledby="related-heading">

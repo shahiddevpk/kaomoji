@@ -2,6 +2,7 @@ import Link from "next/link";
 import { catalogSize, getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { countCollection } from "@/data/collections";
 import { DEVICE_GUIDES, FACE_MEANINGS } from "@/data/home-content";
+import { GuideCardList } from "@/components/guides/guide-card-list";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { RandomFace } from "@/components/kaomoji/random-face";
 import { SeasonalBanner } from "@/components/kaomoji/seasonal-banner";
@@ -12,6 +13,7 @@ import { MeaningCards } from "@/components/kaomoji/meaning-cards";
 import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { JsonLd } from "@/components/layout/json-ld";
 import { faqJsonLd, howToJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
+import { guides } from "@/lib/guides";
 import { getPage, pagesByGroup } from "@/lib/site";
 import { copyAriaLabel } from "@/lib/utils";
 
@@ -103,6 +105,11 @@ function HomeFacesAndSeo() {
         <MeaningCards
           items={FACE_MEANINGS.map((item) => ({ ...item, parts: item.anatomy }))}
         />
+        <p className="mt-4 type-meta">
+          <Link href="/guides/how-to-read-kaomoji/" className="link-in-prose">
+            Read the full guide to kaomoji eyes, mouths, and arms
+          </Link>
+        </p>
       </section>
 
       <section className="mt-12" aria-labelledby="steps-heading">
@@ -143,6 +150,11 @@ function HomeFacesAndSeo() {
             </div>
           ))}
         </dl>
+        <p className="mt-4 type-meta">
+          <Link href="/guides/how-to-type-kaomoji/" className="link-in-prose">
+            Step-by-step: how to type kaomoji on iPhone, Android, Windows, and Mac
+          </Link>
+        </p>
       </section>
 
       <LearnSection
@@ -150,6 +162,19 @@ function HomeFacesAndSeo() {
         definition={page.definition}
         learnMore={page.learnMore}
       />
+      <p className="mt-3 max-w-2xl type-meta">
+        <Link href="/guides/what-is-kaomoji/" className="link-in-prose">
+          Kaomoji meaning, history, and kaomoji vs emoji
+        </Link>
+      </p>
+
+      <section className="mt-12" aria-labelledby="guides-heading">
+        <h2 id="guides-heading" className="type-h2">
+          Kaomoji guides
+        </h2>
+        <GuideCardList items={guides} />
+      </section>
+
       <FaqSection faqs={page.faqs} />
     </>
   );
