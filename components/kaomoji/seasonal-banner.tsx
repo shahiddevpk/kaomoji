@@ -3,6 +3,8 @@ import Link from "next/link";
 type Season = {
   /** 0-based month the banner shows in (static pages revalidate daily). */
   month: number;
+  /** First day of the window (defaults to 1). */
+  firstDay?: number;
   lastDay: number;
   href: string;
   face: string;
@@ -35,12 +37,49 @@ const SEASONS: Season[] = [
     title: "Christmas kaomoji",
     blurb: "Festive faces, snow, and gifts for holiday messages.",
   },
+  {
+    month: 11,
+    firstDay: 26,
+    lastDay: 31,
+    href: "/new-year-kaomoji/",
+    face: "🎆＼(＾▽＾)／🥂",
+    title: "New Year kaomoji",
+    blurb: "Fireworks, champagne toasts, and countdown faces for midnight texts.",
+  },
+  {
+    month: 0,
+    lastDay: 7,
+    href: "/new-year-kaomoji/",
+    face: "🎍(｡･ω･｡)🎆",
+    title: "Happy New Year kaomoji",
+    blurb: "Fireworks, あけおめ greetings, and resolution faces for the new year.",
+  },
+  {
+    month: 0,
+    firstDay: 8,
+    lastDay: 31,
+    href: "/winter-kaomoji/",
+    face: "❄(˘︶˘)☕",
+    title: "Winter kaomoji",
+    blurb: "Snowflakes, shivers, hot cocoa, and cozy faces for cold days.",
+  },
+  {
+    month: 1,
+    lastDay: 14,
+    href: "/valentine-kaomoji/",
+    face: "(◍•ᴗ•◍)💘",
+    title: "Valentine's Day kaomoji",
+    blurb: "Love letters, chocolates, roses, and Cupid faces for February 14.",
+  },
 ];
 
 /** In-season holiday, if any (shared by the hub banner and header strip). */
 export function currentSeason(now = new Date()): Season | undefined {
   return SEASONS.find(
-    (s) => s.month === now.getMonth() && now.getDate() <= s.lastDay,
+    (s) =>
+      s.month === now.getMonth() &&
+      now.getDate() >= (s.firstDay ?? 1) &&
+      now.getDate() <= s.lastDay,
   );
 }
 

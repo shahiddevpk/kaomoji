@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AdSenseScript } from "@/components/ads/adsense-script";
+import { FooterAd } from "@/components/ads/footer-ad";
 import { CopyProvider } from "@/components/kaomoji/copy-provider";
 import { currentSeason } from "@/components/kaomoji/seasonal-banner";
 import { Footer } from "@/components/layout/footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/layout/json-ld";
+import { ADSENSE_CLIENT_ID, isAdSenseEnabled } from "@/lib/ads";
 import { websiteJsonLd } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { navPages, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const revalidate = 86400;
@@ -22,7 +25,9 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
+  // optional, not swap: a late swap re-flows every face grid (CLS). Faces keep
+  // the fallback on a cold load and pick up Geist Mono once it is cached.
+  display: "optional",
   // Faces use mono but are not LCP text; keep preload off critical path.
   preload: false,
 });
@@ -83,6 +88,10 @@ export const metadata: Metadata = {
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
       "google991fcccf4c181387",
   },
+  // AdSense site ownership — only once a real publisher ID is set in lib/ads.ts.
+  ...(isAdSenseEnabled()
+    ? { other: { "google-adsense-account": ADSENSE_CLIENT_ID } }
+    : {}),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -93,6 +102,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         <JsonLd data={websiteJsonLd()} />
+        <AdSenseScript />
         <CopyProvider>
           <a
             href="#content"
@@ -100,10 +110,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             Skip to content
           </a>
-          <SiteHeader seasonalPath={currentSeason()?.href.replace(/\/$/, "")} />
+          <SiteHeader
+            seasonalPath={currentSeason()?.href.replace(/\/$/, "")}
+            navPages={navPages()}
+          />
           <main id="content" className="relative z-0 flex-1" role="main">
             {children}
           </main>
+          <FooterAd />
           <Footer />
         </CopyProvider>
       </body>

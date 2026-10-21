@@ -1,5 +1,6 @@
 "use server";
 
+import { searchCollection, type CollectionKey } from "@/data/collections";
 import type { SearchDoc } from "@/data/index";
 import { searchIndexed } from "@/lib/search/index-engine";
 
@@ -8,6 +9,8 @@ export type SearchScope = {
   category?: string;
   tags?: string[];
   includeNewlines?: boolean;
+  /** Curated non-kaomoji collection owned by this page (emoticons, symbols, combos). */
+  collection?: CollectionKey;
 };
 
 export type SearchHit = Pick<SearchDoc, "id" | "face" | "name">;
@@ -19,6 +22,10 @@ export async function searchFaces(
 ): Promise<SearchHit[]> {
   const trimmed = query.trim();
   if (trimmed.length < 2) return [];
+
+  if (scope.collection) {
+    return searchCollection(scope.collection, trimmed);
+  }
 
   if (scope.tags && scope.tags.length > 0) {
     return searchIndexed(trimmed, {

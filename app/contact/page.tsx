@@ -18,7 +18,6 @@ export default function ContactPage() {
         <a
           href="mailto:hello@pastekaomoji.com"
           className={emailLink}
-          aria-label="Email hello at pastekaomoji.com"
         >
           hello@pastekaomoji.com
         </a>
@@ -31,7 +30,15 @@ export default function ContactPage() {
         <li>
           <strong className="text-foreground">Face suggestions</strong> — a
           kaomoji, text face, or symbol you would like added. Paste the face
-          and say which page it belongs on.
+          and say which page it belongs on, for example{" "}
+          <Link href="/happy-kaomoji/" className={emailLink}>
+            happy kaomoji
+          </Link>{" "}
+          or{" "}
+          <Link href="/cute-symbols/" className={emailLink}>
+            cute symbols
+          </Link>
+          .
         </li>
         <li>
           <strong className="text-foreground">Corrections</strong> — a face in
@@ -51,13 +58,22 @@ export default function ContactPage() {
       <p>
         Include the page link, the face itself (copy and paste it into the
         email), and for display problems your device, browser, and the app you
-        pasted into. Screenshots help when a face looks wrong.
+        pasted into. Screenshots help when a face looks wrong. For questions
+        about typing faces on your own device, the{" "}
+        <Link href="/guides/how-to-type-kaomoji/" className={emailLink}>
+          guide to typing kaomoji
+        </Link>{" "}
+        may already have the answer.
       </p>
 
       <p>
         How the site handles data is described in the{" "}
         <Link href="/privacy/" className={emailLink}>
           privacy policy
+        </Link>
+        , and the rules for using the site are in the{" "}
+        <Link href="/terms/" className={emailLink}>
+          terms of use
         </Link>
         .
       </p>

@@ -45,9 +45,12 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/bear-kaomoji": "mood-tile--green",
   "/flower-kaomoji": "mood-tile--green",
   "/christmas-kaomoji": "mood-tile--green",
+  "/winter-kaomoji": "mood-tile--blue",
+  "/valentine-kaomoji": "mood-tile--love",
   // Star / celebration / surprise
   "/star-kaomoji": "mood-tile--amber",
   "/sparkle-kaomoji": "mood-tile--amber",
+  "/new-year-kaomoji": "mood-tile--amber",
   "/birthday-kaomoji": "mood-tile--amber",
   "/shocked-kaomoji": "mood-tile--amber",
   // Mystery / thinking / spooky

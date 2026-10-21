@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CATEGORY_GROUPS, TOOLS_GROUP } from "@/lib/nav-groups";
-import { pages } from "@/lib/site";
+import type { NavPage } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const GROUPS = [...CATEGORY_GROUPS, TOOLS_GROUP];
 
 /** Short chip label (e.g. "Cute") — the group heading supplies context. */
-function labelFor(path: string): string | null {
+function labelFor(path: string, pages: NavPage[]): string | null {
   return pages.find((p) => p.path === path)?.label ?? null;
 }
 
@@ -20,9 +20,11 @@ function labelFor(path: string): string | null {
  */
 export function CategoryMenu({
   id,
+  navPages,
   onNavigate,
 }: {
   id: string;
+  navPages: NavPage[];
   onNavigate: () => void;
 }) {
   const pathname = usePathname();
@@ -43,7 +45,7 @@ export function CategoryMenu({
             <p className="type-label text-foreground">{group.heading}</p>
             <ul className="mt-1 grid grid-cols-2 gap-x-3">
               {group.paths.map((path) => {
-                const label = labelFor(path);
+                const label = labelFor(path, navPages);
                 if (!label) return null;
                 const active =
                   pathname === path || pathname.startsWith(`${path}/`);

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { catalogSize, getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { countCollection } from "@/data/collections";
 import { DEVICE_GUIDES, FACE_MEANINGS } from "@/data/home-content";
+import { PostCardList } from "@/components/blog/post-card-list";
 import { GuideCardList } from "@/components/guides/guide-card-list";
 import { CategoryTiles } from "@/components/kaomoji/category-tiles";
 import { RandomFace } from "@/components/kaomoji/random-face";
@@ -13,6 +14,7 @@ import { MeaningCards } from "@/components/kaomoji/meaning-cards";
 import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { JsonLd } from "@/components/layout/json-ld";
 import { faqJsonLd, howToJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
+import { posts } from "@/lib/blog";
 import { guides } from "@/lib/guides";
 import { getPage, pagesByGroup } from "@/lib/site";
 import { copyAriaLabel } from "@/lib/utils";
@@ -173,6 +175,13 @@ function HomeFacesAndSeo() {
           Kaomoji guides
         </h2>
         <GuideCardList items={guides} />
+      </section>
+
+      <section className="mt-12" aria-labelledby="blog-heading">
+        <h2 id="blog-heading" className="type-h2">
+          Seasonal messages from the blog
+        </h2>
+        <PostCardList items={posts} />
       </section>
 
       <FaqSection faqs={page.faqs} />

@@ -3,7 +3,7 @@ import { guidePath, type Guide } from "@/lib/guides";
 import { siteConfig } from "@/lib/site";
 import { absoluteUrl, canonicalPath } from "@/lib/utils";
 
-const OG_IMAGE = {
+export const OG_IMAGE = {
   url: absoluteUrl("/og.png"),
   width: 1200,
   height: 630,
@@ -13,14 +13,14 @@ const OG_IMAGE = {
 export const GUIDES_INDEX = {
   path: "/guides",
   heading: "Kaomoji Guides",
-  titleSegment: "Kaomoji Guides — How to Type, Read & Use Text Faces",
+  titleSegment: "Kaomoji Guides: Type, Read & Use Text Faces",
   description:
     "Practical kaomoji guides: how to type kaomoji on any device, what kaomoji mean and where they came from, and how to read eyes, mouths, and arms.",
   intro:
     "Short, practical guides that answer the questions people ask most about kaomoji. Each one links to faces you can copy right away.",
 };
 
-function metadataFor(
+export function metadataFor(
   path: string,
   titleSegment: string,
   description: string,

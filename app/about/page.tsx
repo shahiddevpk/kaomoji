@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { TrustView } from "@/components/layout/trust-view";
 import { pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
+import { isAdSenseEnabled } from "@/lib/ads";
 
 const page = getPage("/about");
 
@@ -21,14 +23,33 @@ export default function AboutPage() {
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.
         Mood shelves beat one endless combo dump when you already know the vibe you need.
         You can also build a custom face with the{" "}
-        <a href="/kaomoji-generator/" className="link-in-prose">
+        <Link href="/kaomoji-generator/" className="link-in-prose">
           Kaomoji Generator
-        </a>
-        . This release does not run ads.
+        </Link>
+        .{" "}
+        {isAdSenseEnabled()
+          ? "Ads from Google AdSense help keep the site free; they sit below the page content, never inside the copy grids."
+          : "This release does not run ads."}
       </p>
       <p>
         Faces on the site are unicode text, the same kind of characters you can already type.
-        Paste Kaomoji arranges them so they are easy to find.
+        Paste Kaomoji arranges them so they are easy to find. Start with{" "}
+        <Link href="/cute-kaomoji/" className="link-in-prose">
+          cute kaomoji
+        </Link>
+        ,{" "}
+        <Link href="/happy-kaomoji/" className="link-in-prose">
+          happy kaomoji
+        </Link>
+        , or{" "}
+        <Link href="/japanese-emoticons/" className="link-in-prose">
+          Japanese emoticons
+        </Link>
+        , and read the{" "}
+        <Link href="/guides/" className="link-in-prose">
+          kaomoji guides
+        </Link>{" "}
+        to learn how to type and read them.
       </p>
       <p>
         Much of the expanded face catalog comes from the open{" "}
@@ -45,6 +66,52 @@ export default function AboutPage() {
         faces, English names, mood and tag organization, category integrity rules so grids
         match their intent, and one-tap copy in the browser—not a bare republish of the
         source dump.
+      </p>
+      <h2 className="type-h2 text-foreground">Who runs Paste Kaomoji</h2>
+      <p>
+        Hi, I&apos;m Muhammad Shahid. I build and run Paste Kaomoji as an independent project:
+        I write the page explanations, the{" "}
+        <Link href="/guides/" className="link-in-prose">
+          guides
+        </Link>
+        , and the{" "}
+        <Link href="/blog/" className="link-in-prose">
+          seasonal blog posts
+        </Link>
+        , and I decide which faces belong on each page.
+      </p>
+      <h2 className="type-h2 text-foreground">How faces are reviewed</h2>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>
+          <strong className="text-foreground">One mood per page.</strong> Each page keeps faces
+          that match its intent, so laughing faces live on giggling kaomoji instead of crowding
+          the happy page.
+        </li>
+        <li>
+          <strong className="text-foreground">Family-friendly by design.</strong> Faces with
+          crude, suggestive, or offensive meanings are removed from the catalog, even when they
+          appear in public kaomoji lists.
+        </li>
+        <li>
+          <strong className="text-foreground">Names and meanings in English.</strong> Japanese
+          sound words and symbols are explained on each page, so you know what a face says
+          before you send it.
+        </li>
+        <li>
+          <strong className="text-foreground">Tested on real devices.</strong> Faces are checked
+          for copying and display on phones and computers; the guide to{" "}
+          <Link href="/guides/how-to-type-kaomoji/" className="link-in-prose">
+            typing kaomoji
+          </Link>{" "}
+          covers fixes when something breaks.
+        </li>
+      </ul>
+      <p>
+        Spotted a face in the wrong mood or want one added? Reach us through the{" "}
+        <Link href="/contact/" className="link-in-prose">
+          contact page
+        </Link>
+        .
       </p>
     </TrustView>
   );

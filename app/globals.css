@@ -66,8 +66,9 @@
   --shadow-md: 0 8px 24px rgb(76 29 149 / 0.08);
 
   --control-h: 2.75rem;
-  /* Updated live by SiteHeader ResizeObserver; fallback until hydration */
-  --site-header-offset: 7.25rem;
+  /* Updated live by SiteHeader ResizeObserver. The fallback must equal the real
+     header height (69px mobile, 129px from sm), or content jumps on hydration (CLS). */
+  --site-header-offset: 4.3125rem;
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -162,7 +163,7 @@ html {
 
 @media (min-width: 640px) {
   :root {
-    --site-header-offset: 9.25rem;
+    --site-header-offset: 8.0625rem;
   }
 }
 
@@ -963,6 +964,39 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
   flex: none;
 }
 .meaning-card .kaomoji-copy {
+  margin-top: auto;
+}
+
+/* Blog: ready-to-send messages (prose font, left-aligned, wraps freely) */
+.message-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .message-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.message-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1.125rem;
+  background: var(--card);
+  padding: 0.875rem;
+}
+.message-text {
+  flex: 1;
+  border-radius: 0.75rem;
+  background: var(--secondary);
+  padding: 0.625rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+.message-card .kaomoji-copy {
   margin-top: auto;
 }
 

@@ -847,6 +847,8 @@ const TEXT_FACES_DEMOTE = [
 const TEXT_FACES_DEMOTE_FACE = ["┻━┻", "┬─┬", "彡┻"];
 
 const CUTE_DEMOTE_HEART = ["heart", "love", "kiss", "hug"];
+/** Happy page-1: smiles and joy lead; laugh faces defer to /giggling-kaomoji/. */
+const HAPPY_DEMOTE_LAUGH = ["giggle", "laugh"];
 
 const HEART_PREFER = ["heart", "love"];
 
@@ -876,6 +878,9 @@ function rankOptionsForCategory(
   if (categoryId === "cute") {
     return { demoteTags: CUTE_DEMOTE_HEART };
   }
+  if (categoryId === "happy") {
+    return { demoteTags: HAPPY_DEMOTE_LAUGH };
+  }
   return undefined;
 }
 
@@ -889,6 +894,11 @@ function rankedPoolForCategory(categoryId: string): Kaomoji[] {
     // Happy first-screen should not mirror the hub popular stack.
     if (categoryId === "happy") {
       pool = rotatePopularFirst(pool, 20);
+      // Popular rotation would pull laugh faces back up; keep them behind so
+      // /giggling-kaomoji/ owns laughs and the two first screens differ.
+      const isLaugh = (item: Kaomoji) =>
+        item.tags.some((tag) => HAPPY_DEMOTE_LAUGH.includes(tag.toLowerCase()));
+      pool = [...pool.filter((item) => !isLaugh(item)), ...pool.filter(isLaugh)];
     }
     rankedCategoryPool.set(categoryId, pool);
   }
@@ -914,6 +924,18 @@ const TAG_GLYPH_RANK: Record<string, { prefer: string[]; demote: string[] }> = {
   },
   christmas: {
     prefer: ["🎄", "🎅", "🤶", "⛄", "☃", "❄", "🎁", "🦌", "🔔", "🌟", "Merry", "ﾒﾘｰ", "メリー", "サンタ", "ｻﾝﾀ", "由"],
+    demote: [],
+  },
+  "new year": {
+    prefer: ["🎆", "🎇", "🥂", "🍾", "🎍", "🎉", "🎊", "Happy New Year", "あけおめ", "あけまして", "謹賀"],
+    demote: [],
+  },
+  winter: {
+    prefer: ["❄", "❅", "❆", "☃", "⛄", "🧣", "🧤", "☕", "⛷", "🏂", "⛸", "ｻﾑｲ", "寒"],
+    demote: [],
+  },
+  valentine: {
+    prefer: ["💘", "💌", "💝", "🍫", "🌹", "Valentine", "チョコ"],
     demote: [],
   },
   thanksgiving: {

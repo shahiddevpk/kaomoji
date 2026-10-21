@@ -2,11 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  childPages,
-  getPage,
-  type SitePage,
-} from "@/lib/site";
 import { moodChipClass } from "@/lib/mood-colors";
 import { cn } from "@/lib/utils";
 
@@ -14,19 +9,14 @@ import { cn } from "@/lib/utils";
  * Mood chips under angry (and similar parents): All + siblings.
  * Mirrors competitor mood-group labels without thin duplicate pages.
  */
-export function SubcategoryNav({ page }: { page: SitePage }) {
+export function SubcategoryNav({
+  items,
+}: {
+  /** All + sibling chips, built on the server by subcategoryNavItems(). */
+  items: { path: string; label: string }[];
+}) {
   const pathname = usePathname().replace(/\/$/, "") || "/";
-  const parentPath = page.parentPath ?? (childPages(page.path).length ? page.path : null);
-  if (!parentPath) return null;
-
-  const parent = getPage(parentPath);
-  const children = childPages(parentPath);
-  if (children.length === 0) return null;
-
-  const items: { path: string; label: string }[] = [
-    { path: parent.path, label: `All ${parent.label.toLowerCase()}` },
-    ...children.map((child) => ({ path: child.path, label: child.label })),
-  ];
+  if (items.length === 0) return null;
 
   const focus =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";

@@ -12,7 +12,7 @@ import {
   guideHowToJsonLd,
   guideMetadata,
 } from "@/lib/guide-seo";
-import { getGuide, guides, type Guide } from "@/lib/guides";
+import { getGuide, guides, readingMinutes } from "@/lib/guides";
 import { faqJsonLd } from "@/lib/seo";
 import { getPage } from "@/lib/site";
 
@@ -29,26 +29,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const guide = getGuide((await params).slug);
   return guide ? guideMetadata(guide) : {};
-}
-
-function readingMinutes(guide: Guide): number {
-  const text = guide.sections
-    .flatMap((section) => section.blocks)
-    .map((block) => {
-      switch (block.type) {
-        case "p":
-        case "tip":
-          return block.text;
-        case "table":
-          return block.rows.flat().join(" ");
-        case "faces":
-          return block.items.map((face) => face.note).join(" ");
-        default:
-          return block.items.join(" ");
-      }
-    })
-    .join(" ");
-  return Math.max(1, Math.round(text.split(/\s+/).length / 200));
 }
 
 function formatDate(iso: string): string {
@@ -83,7 +63,7 @@ export default async function GuidePage({
       <h1 className="mt-4 type-h1 tracking-tight">{guide.title}</h1>
       <p className="mt-2 type-meta">
         Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time> ·{" "}
-        {readingMinutes(guide)} min read
+        {readingMinutes(guide.sections)} min read
       </p>
       <p className="mt-4 type-body text-muted">{guide.intro}</p>
 

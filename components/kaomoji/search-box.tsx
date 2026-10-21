@@ -22,7 +22,8 @@ import {
   type SearchHit,
   type SearchScope,
 } from "@/lib/search/actions";
-import { resolveSearchScope, searchPlaceholderForScope } from "@/lib/site";
+import { resolveSearchScope, searchPlaceholderForScope } from "@/lib/search/scope";
+import type { NavPage } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function subscribeNoop() {
@@ -33,24 +34,27 @@ export function SearchBox({
   scope: scopeProp,
   placeholder: placeholderProp,
   variant = "page",
+  navPages = [],
 }: {
   scope?: SearchScope;
   placeholder?: string;
   /** page = inline results; header = compact input, results in #header-search-results */
   variant?: "page" | "header";
+  /** Slim page list for resolving the header search scope from the URL. */
+  navPages?: NavPage[];
 }) {
   const searchId = useId();
   const pathname = usePathname();
   const isHeader = variant === "header";
   const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
   const scope =
-    scopeProp ?? (isHeader ? resolveSearchScope(pathname) : { path: "/" });
+    scopeProp ?? (isHeader ? resolveSearchScope(pathname, navPages) : { path: "/" });
   const placeholder =
     placeholderProp ??
     (isHeader
-      ? searchPlaceholderForScope(scope)
+      ? searchPlaceholderForScope(scope, navPages)
       : "Search faces, like cute, cry, or shrug");
-  const scopedSearch = Boolean(scope.category || scope.tags);
+  const scopedSearch = Boolean(scope.category || scope.tags || scope.collection);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchHit[]>([]);
   const [debouncing, setDebouncing] = useState(false);
@@ -58,6 +62,7 @@ export function SearchBox({
   const path = scope.path;
   const category = scope.category;
   const tags = scope.tags;
+  const collection = scope.collection;
   const trimmed = query.trim();
   const searching = trimmed.length >= 2;
 
@@ -72,7 +77,7 @@ export function SearchBox({
     let cancelled = false;
     const handle = window.setTimeout(() => {
       startTransition(() => {
-        void searchFaces(trimmed, { path, category, tags })
+        void searchFaces(trimmed, { path, category, tags, collection })
           .then((hits) => {
             if (!cancelled) {
               setResults(hits);
@@ -92,7 +97,7 @@ export function SearchBox({
       cancelled = true;
       window.clearTimeout(handle);
     };
-  }, [trimmed, path, category, tags]);
+  }, [trimmed, path, category, tags, collection]);
 
   useEffect(() => {
     if (!isHeader || !searching) return;

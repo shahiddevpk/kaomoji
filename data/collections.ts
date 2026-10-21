@@ -552,3 +552,26 @@ export const collections: Record<CollectionKey, CollectionSection[]> = {
 export function countCollection(key: CollectionKey): number {
   return collections[key].reduce((n, s) => n + s.items.length, 0);
 }
+
+/** Case-insensitive match on the item text, its meaning, or its section heading. */
+export function searchCollection(
+  key: CollectionKey,
+  query: string,
+): { id: string; face: string; name: string }[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const hits: { id: string; face: string; name: string }[] = [];
+  for (const section of collections[key]) {
+    const headingHit = section.heading.toLowerCase().includes(q);
+    section.items.forEach((item, i) => {
+      if (
+        headingHit ||
+        item.v.toLowerCase().includes(q) ||
+        (item.m?.toLowerCase().includes(q) ?? false)
+      ) {
+        hits.push({ id: `${key}-${section.id}-${i}`, face: item.v, name: item.m ?? item.v });
+      }
+    });
+  }
+  return hits;
+}

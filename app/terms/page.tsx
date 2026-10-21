@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TrustView } from "@/components/layout/trust-view";
 import { pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";
@@ -13,14 +14,27 @@ export default function TermsPage() {
       <h2 className="text-base font-semibold">Using the site</h2>
       <p>
         Paste Kaomoji is a free library for copying kaomoji and text faces into your own
-        messages. You may use the faces in chats, posts, and bios.
+        messages. You may use the faces in chats, posts, and bios, whether you copy them from a
+        category such as{" "}
+        <Link href="/cute-kaomoji/" className="link-in-prose">
+          cute kaomoji
+        </Link>{" "}
+        or build your own with the{" "}
+        <Link href="/kaomoji-generator/" className="link-in-prose">
+          kaomoji generator
+        </Link>
+        .
       </p>
       <h2 className="text-base font-semibold">The faces</h2>
       <p>
         Kaomoji are arrangements of unicode characters. The site does not claim an exclusive
         right in those characters. The page text, layout, curation, tags, and category rules
         are the site&apos;s own presentation. Much of the expanded catalog is derived from the
-        open kaomoji-collection project (MIT License); see the About page for attribution.
+        open kaomoji-collection project (MIT License); see the{" "}
+        <Link href="/about/" className="link-in-prose">
+          About page
+        </Link>{" "}
+        for attribution.
       </p>
       <h2 className="text-base font-semibold">Acceptable use</h2>
       <p>
@@ -32,7 +46,21 @@ export default function TermsPage() {
         The site is provided as is, without warranties. Faces may render differently from one
         font or app to another. We may update or remove faces and pages as the library evolves.
       </p>
-      <p>Questions about these terms: hello@pastekaomoji.com.</p>
+      <p>
+        How the site handles data is covered in the{" "}
+        <Link href="/privacy/" className="link-in-prose">
+          privacy policy
+        </Link>
+        . Questions about these terms:{" "}
+        <a href="mailto:hello@pastekaomoji.com" className="link-in-prose">
+          hello@pastekaomoji.com
+        </a>{" "}
+        or the{" "}
+        <Link href="/contact/" className="link-in-prose">
+          contact page
+        </Link>
+        .
+      </p>
     </TrustView>
   );
 }

@@ -22,9 +22,11 @@ import { MeaningCards } from "@/components/kaomoji/meaning-cards";
 import { PAGE_MEANINGS } from "@/data/page-meanings";
 import { JsonLd } from "@/components/layout/json-ld";
 import { categoryPageHref } from "@/lib/category-pagination";
+import { PostCardList } from "@/components/blog/post-card-list";
 import { GuideCardList } from "@/components/guides/guide-card-list";
+import { postsForPage } from "@/lib/blog";
 import { guidesForPage } from "@/lib/guides";
-import { relatedPages, type SitePage } from "@/lib/site";
+import { relatedPages, subcategoryNavItems, type SitePage } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
 
 function isAngryFamilyPage(page: SitePage): boolean {
@@ -217,6 +219,7 @@ export function CategoryView({
   const faces = getForPage({ ...page, page: safePage });
   const related = relatedPages(page);
   const guides = guidesForPage(page.path);
+  const blogPosts = postsForPage(page.path);
   const relatedFaces = getRelatedKaomojiFromScopes(
     relatedFaceScopes(page, related),
   );
@@ -298,7 +301,7 @@ export function CategoryView({
         ) : null}
       </h1>
       <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted lcp-hero">{page.intro}</p>
-      <SubcategoryNav page={page} />
+      <SubcategoryNav items={subcategoryNavItems(page)} />
 
       <LazyRecentlyCopied />
 
@@ -434,6 +437,15 @@ export function CategoryView({
             Learn more
           </h2>
           <GuideCardList items={guides} />
+        </section>
+      ) : null}
+
+      {showEducation && blogPosts.length > 0 ? (
+        <section className="mt-10" aria-labelledby="blog-heading">
+          <h2 id="blog-heading" className="type-h2">
+            From the blog
+          </h2>
+          <PostCardList items={blogPosts} />
         </section>
       ) : null}
 

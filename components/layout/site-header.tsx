@@ -9,9 +9,9 @@ import { CategoryMenu } from "@/components/layout/category-menu";
 import { HeaderNav } from "@/components/layout/header-nav";
 import { SiteLogoLink } from "@/components/layout/logo";
 import { POPULAR_PATHS } from "@/lib/nav-groups";
-import { getPage, pages } from "@/lib/site";
+import type { NavPage } from "@/lib/site";
 
-function ctaHref(pathname: string): string {
+function ctaHref(pathname: string, pages: NavPage[]): string {
   const page = pages.find(
     (item) =>
       pathname === item.path ||
@@ -27,14 +27,23 @@ function ctaHref(pathname: string): string {
  * Fixed top chrome: nav stays visible on scroll; spacer reserves height so
  * main content never slides under the bar (including when search results open).
  */
-export function SiteHeader({ seasonalPath }: { seasonalPath?: string }) {
+export function SiteHeader({
+  seasonalPath,
+  navPages,
+}: {
+  seasonalPath?: string;
+  /** Slim page list from the server (labels, groups, tags; no page copy). */
+  navPages: NavPage[];
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuId = useId();
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   // Popular strip; in-season holiday (computed on the server) leads.
-  const links = (seasonalPath ? [seasonalPath, ...POPULAR_PATHS] : POPULAR_PATHS).map(getPage);
+  const links = (seasonalPath ? [seasonalPath, ...POPULAR_PATHS] : POPULAR_PATHS).flatMap(
+    (path) => navPages.find((page) => page.path === path) ?? [],
+  );
 
   // Esc closes the categories panel and returns focus to its toggle.
   useEffect(() => {
@@ -77,7 +86,7 @@ export function SiteHeader({ seasonalPath }: { seasonalPath?: string }) {
             <SiteLogoLink />
 
             <div className="min-w-0 flex-1">
-              <SearchBox key={pathname} variant="header" />
+              <SearchBox key={pathname} variant="header" navPages={navPages} />
             </div>
 
             <button
@@ -100,7 +109,7 @@ export function SiteHeader({ seasonalPath }: { seasonalPath?: string }) {
             </button>
 
             <Link
-              href={ctaHref(pathname)}
+              href={ctaHref(pathname, navPages)}
               className="hidden min-h-11 shrink-0 items-center justify-center rounded-full bg-primary px-4 type-button text-accent-foreground transition-colors hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring sm:inline-flex"
             >
               Copy a face
@@ -117,7 +126,11 @@ export function SiteHeader({ seasonalPath }: { seasonalPath?: string }) {
             aria-live="polite"
           />
           {menuOpen ? (
-            <CategoryMenu id={menuId} onNavigate={() => setMenuOpen(false)} />
+            <CategoryMenu
+              id={menuId}
+              navPages={navPages}
+              onNavigate={() => setMenuOpen(false)}
+            />
           ) : null}
         </div>
       </header>

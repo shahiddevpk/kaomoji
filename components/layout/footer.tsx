@@ -77,6 +77,11 @@ export function Footer() {
                   All guides
                 </Link>
               </li>
+              <li>
+                <Link href="/blog/" className={linkClass}>
+                  Blog
+                </Link>
+              </li>
             </ul>
           </nav>
           <nav aria-label="Site">

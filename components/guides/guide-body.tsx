@@ -88,6 +88,33 @@ function Block({ block, sectionId, index }: { block: GuideBlock; sectionId: stri
           </table>
         </div>
       );
+    case "messages":
+      return (
+        <ul className="message-list mt-4">
+          {block.items.map((item, i) => {
+            const id = `msg-${sectionId}-${index}-${i}`;
+            return (
+              <li key={id} className="message-card">
+                <p className="type-label text-foreground">{item.label}</p>
+                <p id={`face-${id}`} className="message-text">
+                  {item.text}
+                </p>
+                <button
+                  type="button"
+                  className="kaomoji-copy"
+                  aria-label={`Copy message: ${item.label}`}
+                  aria-describedby={`face-${id}`}
+                  data-copy-id={id}
+                  data-copy-name={item.label}
+                  data-copy-face={item.text}
+                >
+                  Copy
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      );
     case "faces":
       return (
         <ul className="meaning-grid mt-4">

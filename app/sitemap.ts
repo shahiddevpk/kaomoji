@@ -1,11 +1,16 @@
 import type { MetadataRoute } from "next";
+import { postPath, posts, postsForPage } from "@/lib/blog";
 import { guidePath, guides, guidesForPage } from "@/lib/guides";
 import { pages, type SitePage } from "@/lib/site";
 import { absoluteUrl } from "@/lib/utils";
 
-/** Latest content date: page's own edit date, or a newer guide it now features. */
+/** Latest content date: page's own edit date, or a newer guide or post it now features. */
 function lastModified(page: SitePage): string {
-  const dates = [contentModified(page), ...guidesForPage(page.path).map((g) => g.updated)];
+  const dates = [
+    contentModified(page),
+    ...guidesForPage(page.path).map((g) => g.updated),
+    ...postsForPage(page.path).map((p) => p.updated),
+  ];
   return dates.reduce((latest, d) => (d > latest ? d : latest));
 }
 
@@ -56,6 +61,11 @@ function contentModified(page: SitePage): string {
     case "/scared-kaomoji":
     case "/devil-kaomoji":
       return "2026-10-19";
+    case "/new-year-kaomoji":
+    case "/winter-kaomoji":
+    case "/valentine-kaomoji":
+    case "/disclaimer":
+      return "2026-10-21";
     default:
       return "2026-09-25";
   }
@@ -115,6 +125,9 @@ function sitemapPriority(page: SitePage): number {
     case "/birthday-kaomoji":
     case "/christmas-kaomoji":
     case "/halloween-kaomoji":
+    case "/new-year-kaomoji":
+    case "/winter-kaomoji":
+    case "/valentine-kaomoji":
       return 0.7;
     case "/thumbs-up-kaomoji":
     case "/bowing-kaomoji":
@@ -149,6 +162,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
   ];
+  const blogEntries: MetadataRoute.Sitemap = [
+    {
+      url: absoluteUrl("/blog"),
+      lastModified: posts.reduce((latest, p) => (p.updated > latest ? p.updated : latest), ""),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    ...posts.map((post) => ({
+      url: absoluteUrl(postPath(post)),
+      lastModified: post.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
   const pageEntries: MetadataRoute.Sitemap = pages.map((page) => ({
     url: absoluteUrl(page.path),
     lastModified: lastModified(page),
@@ -160,5 +187,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : "monthly",
     priority: sitemapPriority(page),
   }));
-  return [...pageEntries, ...guideEntries];
+  return [...pageEntries, ...guideEntries, ...blogEntries];
 }
