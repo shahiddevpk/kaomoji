@@ -2407,7 +2407,7 @@ export const pages: SitePage[] = [
     heading: "Emoticons — Keyboard Faces & Meanings",
     titleSegment: "Emoticons Copy and Paste: List with Meanings :)",
     description:
-      "Text emoticons with meanings: :) :D ;) :P XD <3 :( and 130+ keyboard faces to copy and paste. Smiley, laughing, sad, angry, love, and cool emoticons explained.",
+      "130+ text emoticons with meanings — :) :D ;) :P XD <3 :( — keyboard smileys to copy and paste for chat, posts, and bios.",
     intro:
       "Every classic keyboard emoticon with what it means — smileys :), laughs XD, winks ;), hearts <3, and more. Tap Copy, or learn how to type each one with your own keyboard.",
     group: "browse",
@@ -2794,7 +2794,8 @@ export const pages: SitePage[] = [
     label: "Contact",
     heading: "Contact",
     titleSegment: "Contact",
-    description: "Contact Paste Kaomoji by email at hello@pastekaomoji.com.",
+    description:
+      "Contact Paste Kaomoji: email hello@pastekaomoji.com for face suggestions, corrections, display issues, or rights requests. No contact form.",
     intro:
       "Send corrections, face suggestions, or site questions by email. There is no account system and no contact form in this release.",
     group: "trust",
@@ -2806,9 +2807,9 @@ export const pages: SitePage[] = [
     heading: "Privacy",
     titleSegment: "Privacy",
     description:
-      "Privacy notes for Paste Kaomoji. This release sets no accounts, ads, or analytics cookies.",
+      "Privacy notes for Paste Kaomoji: copy storage, Google AdSense, and consent choices in the EEA, UK, Switzerland, and U.S. states.",
     intro:
-      "Privacy policy for pastekaomoji.com, effective September 25, 2026. Plain-language summary of what the site stores and how copy works.",
+      "Privacy policy for pastekaomoji.com, effective October 20, 2026. Plain-language summary of what the site stores, how copy works, and how advertising and consent messages work.",
     group: "trust",
     related: ["/terms", "/contact"],
   },

@@ -66,6 +66,28 @@ export default function ContactPage() {
         may already have the answer.
       </p>
 
+      <h2 className="type-h2 text-foreground">Response time</h2>
+      <p>
+        This is a small editorial site, not a support desk with guaranteed SLAs.
+        Most messages get a reply within a few business days. Urgent security or
+        rights issues should say so in the subject line.
+      </p>
+
+      <h2 className="type-h2 text-foreground">What we cannot do by email</h2>
+      <p>
+        We cannot recover faces you copied hours ago from clipboard history, fix
+        how a third-party app renders Unicode, or add account features — there are
+        no logins on pastekaomoji.com. For browsing tips, start with the{" "}
+        <Link href="/guides/" className={emailLink}>
+          guides hub
+        </Link>{" "}
+        or the{" "}
+        <Link href="/blog/" className={emailLink}>
+          blog
+        </Link>
+        .
+      </p>
+
       <p>
         How the site handles data is described in the{" "}
         <Link href="/privacy/" className={emailLink}>
@@ -74,6 +96,10 @@ export default function ContactPage() {
         , and the rules for using the site are in the{" "}
         <Link href="/terms/" className={emailLink}>
           terms of use
+        </Link>
+        . Advertising and disclaimer notes live on the{" "}
+        <Link href="/disclaimer/" className={emailLink}>
+          disclaimer page
         </Link>
         .
       </p>

@@ -79,9 +79,20 @@ export default function PrivacyPage() {
           </h2>
           <p>
             Visitors in the European Economic Area, the United Kingdom, or Switzerland see a
-            Google-certified consent message before personalized ads load. You can accept or
-            refuse personalized advertising and related cookies there. Non-personalized ads may
-            still appear if you refuse, subject to your choices and applicable law.
+            Google-certified consent message before personalized ads load. You can accept,
+            refuse, or manage personalized advertising and related cookies there. Non-personalized
+            ads may still appear if you refuse, subject to your choices and applicable law.
+          </p>
+          <h2 className="text-base font-semibold">United States privacy choices</h2>
+          <p>
+            Visitors in U.S. states with privacy laws may see a Google-certified message with a
+            link to opt out of the sale or sharing of personal information used for personalized
+            advertising. You can also limit personalized ads in{" "}
+            <a href="https://adssettings.google.com/" className="link-in-prose">
+              Google Ads Settings
+            </a>
+            . We do not sell personal information for money; ad partners may use cookies and
+            similar technologies as described in the advertising section above.
           </p>
           <h2 className="text-base font-semibold">Children</h2>
           <p>
