@@ -22,7 +22,13 @@ const EVENTS: {
     facesLabel: "Halloween kaomoji",
     postHref: "/blog/halloween-messages-with-kaomoji/",
   },
-  { date: "Nov 26, 2026", name: "Thanksgiving (US)", facesHref: "/thanksgiving-kaomoji/", facesLabel: "Thanksgiving kaomoji" },
+  {
+    date: "Nov 26, 2026",
+    name: "Thanksgiving (US)",
+    facesHref: "/thanksgiving-kaomoji/",
+    facesLabel: "Thanksgiving kaomoji",
+    postHref: "/blog/thanksgiving-messages-with-kaomoji/",
+  },
   {
     date: "Dec 25, 2026",
     name: "Christmas",
@@ -37,7 +43,13 @@ const EVENTS: {
     facesLabel: "New Year kaomoji",
     postHref: "/blog/new-years-eve-texts-with-kaomoji/",
   },
-  { date: "Dec – Mar", name: "Winter season", facesHref: "/winter-kaomoji/", facesLabel: "Winter kaomoji" },
+  {
+    date: "Dec – Mar",
+    name: "Winter season",
+    facesHref: "/winter-kaomoji/",
+    facesLabel: "Winter kaomoji",
+    postHref: "/blog/winter-messages-with-kaomoji/",
+  },
   {
     date: "Feb 14, 2027",
     name: "Valentine's Day",

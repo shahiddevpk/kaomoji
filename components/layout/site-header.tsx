@@ -10,6 +10,13 @@ import { HeaderNav } from "@/components/layout/header-nav";
 import { SiteLogoLink } from "@/components/layout/logo";
 import { POPULAR_PATHS } from "@/lib/nav-groups";
 import type { NavPage } from "@/lib/site";
+import { cn } from "@/lib/utils";
+
+/** Desktop-only text links; mobile reaches them through the Menu panel. */
+const ARTICLE_LINKS = [
+  { href: "/guides/", label: "Guides" },
+  { href: "/blog/", label: "Blog" },
+];
 
 function ctaHref(pathname: string, pages: NavPage[]): string {
   const page = pages.find(
@@ -88,6 +95,25 @@ export function SiteHeader({
             <div className="min-w-0 flex-1">
               <SearchBox key={pathname} variant="header" navPages={navPages} />
             </div>
+
+            <nav aria-label="Articles" className="hidden shrink-0 items-center lg:flex">
+              {ARTICLE_LINKS.map((link) => {
+                const active = pathname.startsWith(link.href.replace(/\/$/, ""));
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "inline-flex min-h-11 items-center rounded-full px-3 type-button transition-colors hover:bg-hover hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                      active ? "text-link" : "text-muted",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
 
             <button
               ref={menuButtonRef}

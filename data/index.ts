@@ -1035,15 +1035,20 @@ export function getFaceGroupsForPage(
         ? rankedPoolForCategory(scope.category)
         : [];
   const used = new Set<string>();
+  // Groups are the page's showcase: compact faces first (they fit one line in a
+  // card), longer ones only to fill a group. The full grid keeps ranking order.
+  const isCompact = (item: Kaomoji) => [...item.face].length <= 14;
   return groups
     .map((group) => {
       const items: Kaomoji[] = [];
-      for (const item of pool) {
-        if (items.length >= perGroup) break;
-        if (used.has(item.id)) continue;
-        if (group.glyphs.some((g) => item.face.includes(g))) {
-          items.push(item);
-          used.add(item.id);
+      for (const compactPass of [true, false]) {
+        for (const item of pool) {
+          if (items.length >= perGroup) break;
+          if (used.has(item.id) || isCompact(item) !== compactPass) continue;
+          if (group.glyphs.some((g) => item.face.includes(g))) {
+            items.push(item);
+            used.add(item.id);
+          }
         }
       }
       return { id: group.id, heading: group.heading, items };

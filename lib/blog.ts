@@ -202,6 +202,139 @@ export const posts: BlogPost[] = [
     ],
   },
   {
+    slug: "thanksgiving-messages-with-kaomoji",
+    title: "Thanksgiving Messages with Kaomoji: Grateful, Funny & Family Texts",
+    titleSegment: "Thanksgiving Messages with Kaomoji to Copy",
+    description:
+      "Thanksgiving messages with kaomoji for family, friends, Friendsgiving, your host, coworkers, and anyone you are grateful for, plus funny food-coma texts.",
+    intro:
+      "Thanksgiving is the one holiday built around saying thank you, and a warm kaomoji makes a short text feel heartfelt. These messages cover the whole day, from inviting people and thanking the host to the inevitable food coma, and every one can be copied in a tap.",
+    face: "🦃(◕ᴗ◕)🥧",
+    event: "Thanksgiving · Nov 26",
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    related: ["/thanksgiving-kaomoji", "/thank-you-kaomoji", "/food-kaomoji", "/bowing-kaomoji"],
+    sections: [
+      {
+        id: "grateful",
+        heading: "Grateful messages for people you love",
+        blocks: [
+          {
+            type: "p",
+            text: "The best Thanksgiving texts name one specific thing you are thankful for. 'Thankful for you' is nice; 'thankful you drove me to every exam this year' is unforgettable.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Simple", text: "Happy Thanksgiving! I'm so thankful to have you in my life (◍•ᴗ•◍)❤" },
+              { label: "Specific", text: "Thankful for you and every late-night call this year. Happy Thanksgiving 🦃(っ´▽`)っ" },
+              { label: "Best friend", text: "Grateful for snacks, naps, and a best friend who puts up with me. Happy Thanksgiving! (◕‿◕✿)🍂" },
+              { label: "Partner", text: "Of everything on the table today, you're still my favorite (˘ω˘)♡🥧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "family",
+        heading: "For family",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Parents", text: "Happy Thanksgiving, Mom and Dad! Thank you for everything, always m(_ _)m🍂" },
+              { label: "Far away", text: "Missing your cooking and your company today. Happy Thanksgiving from far away (っ´▽`)っ🦃" },
+              { label: "Grandparents", text: "Happy Thanksgiving! Save me a slice of your famous pie 🥧(๑´ڡ`๑)" },
+              { label: "Family chat", text: "Who's bringing what? I call dibs on the mashed potatoes (｀・ω・´)ゞ🍽️" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "friendsgiving",
+        heading: "Friendsgiving invites and plans",
+        blocks: [
+          {
+            type: "p",
+            text: "Friendsgiving is a Thanksgiving-style dinner with friends, usually potluck. Put the date and what to bring in the invite so the menu sorts itself out.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Invite", text: "Friendsgiving at mine on Saturday, 6 p.m.! Potluck style, bring a dish and your appetite 🦃ヽ(・∀・)ﾉ🥧" },
+              { label: "Menu sign-up", text: "Reply with what you're bringing so we don't end up with five pies. (Five pies is fine, actually) (｡•̀ᴗ-)✧" },
+              { label: "Day of", text: "Oven's on, table's set, see you all soon! (◕ᴗ◕✿)🍂" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "host",
+        heading: "Thank the host",
+        blocks: [
+          {
+            type: "p",
+            text: "Send a thank-you the same evening or the next morning. A [bowing face](/bowing-kaomoji/) like m(_ _)m adds a sincere, polite touch.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Same night", text: "Thank you for having us! Dinner was incredible and I'm still full m(_ _)m🦃" },
+              { label: "Next morning", text: "Still dreaming about that stuffing. Thank you for a wonderful Thanksgiving (◍•ᴗ•◍)✧" },
+              { label: "Leftovers", text: "Thank you for the leftovers! Lunch today is the best lunch of the year (っ˘ڡ˘ς)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "work",
+        heading: "For coworkers",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Team chat", text: "Happy Thanksgiving, team! Grateful to work with all of you. Enjoy the long weekend (•‿•)🍂" },
+              { label: "Out of office", text: "I'm out for Thanksgiving and back on Monday. Have a great holiday! 🦃(・ω・)ノ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "funny",
+        heading: "Funny food-coma texts",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Food coma", text: "Status: horizontal. Ate too much. Regret nothing (´-ω-`)🥧" },
+              { label: "Pie priorities", text: "Thanksgiving plan: skip the turkey, go straight to pie 🥧(๑•̀ㅂ•́)و✧" },
+              { label: "Stretchy pants", text: "Wearing my stretchy pants today. I came prepared (｀・ω・´)🍗" },
+            ],
+          },
+          {
+            type: "p",
+            text: "Need more faces? The [Thanksgiving kaomoji](/thanksgiving-kaomoji/) page has turkeys, pies, and autumn-leaf faces, and the [thank you kaomoji](/thank-you-kaomoji/) page has grateful faces for any time of year.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is Thanksgiving in 2026?",
+        answer:
+          "US Thanksgiving is the fourth Thursday of November, which is November 26 in 2026. Canadian Thanksgiving is the second Monday of October.",
+      },
+      {
+        question: "What is a good Thanksgiving kaomoji?",
+        answer: "🦃(◕ᴗ◕)🥧 combines a turkey and a pie, and m(_ _)m is a grateful bow for thanking the host.",
+      },
+      {
+        question: "What is Friendsgiving?",
+        answer:
+          "Friendsgiving is a Thanksgiving-style meal shared with friends, usually potluck, held on or around Thanksgiving.",
+      },
+    ],
+  },
+  {
     slug: "christmas-messages-with-kaomoji",
     title: "Christmas Messages with Kaomoji for Friends, Family & Coworkers",
     titleSegment: "Christmas Messages with Kaomoji to Copy",
@@ -450,6 +583,118 @@ export const posts: BlogPost[] = [
       {
         question: "What does あけおめ mean?",
         answer: "It is the casual short form of あけましておめでとう, Japanese for Happy New Year.",
+      },
+    ],
+  },
+  {
+    slug: "winter-messages-with-kaomoji",
+    title: "Winter Messages with Kaomoji: Snow Day, Stay Warm & Cozy Texts",
+    titleSegment: "Winter Messages with Kaomoji to Copy",
+    description:
+      "Cozy winter messages with kaomoji: snow-day texts, stay-warm check-ins, cozy night invites, winter break plans, and funny cold-weather complaints.",
+    intro:
+      "Winter lasts long after the holidays end, and cold days are full of small moments worth a message: the first snow, a canceled school day, a friend stuck in the cold. These texts cover the whole season, from December to March, each with a snowy or cozy kaomoji.",
+    face: "❄(˘︶˘)☕",
+    event: "Winter · Dec – Mar",
+    published: "2026-10-21",
+    updated: "2026-10-21",
+    related: ["/winter-kaomoji", "/sleepy-kaomoji", "/sick-kaomoji", "/hug-kaomoji"],
+    sections: [
+      {
+        id: "first-snow",
+        heading: "First snow and snow days",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "First snow", text: "IT'S SNOWING! Look outside right now ❅ ❆ (ﾉ◕ヮ◕)ﾉ ❆ ❅" },
+              { label: "Snow day", text: "School's canceled! Snowman building at 10, hot chocolate at 11 ☃️(＾▽＾)☃️" },
+              { label: "Snowball fight", text: "Snowball fight in the park? Losers buy the cocoa (ノ°▽°)ノ ⚪))" },
+              { label: "Photo", text: "Sending you a photo of the snow because it's too pretty not to share (*˘︶˘*).｡.:*❄" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "stay-warm",
+        heading: "Stay warm check-ins",
+        blocks: [
+          {
+            type: "p",
+            text: "A quick check-in during a cold snap means a lot, especially to older relatives or friends who live alone. Keep it warm and practical.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Check-in", text: "It's freezing out there! Stay warm and text me if you need anything 🧣(◕ᴗ◕✿)" },
+              { label: "Grandparents", text: "Thinking of you on this cold day. Are you warm enough? Call me anytime ☕(っ´ω`)っ" },
+              { label: "Drive safe", text: "Roads are icy tonight, drive slowly and let me know when you're home safe (｡•́︿•̀｡)❄" },
+              { label: "Under the weather", text: "Heard you caught a cold. Soup, blankets, and rest, doctor's orders 🍲(っ´ω`)っ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "cozy",
+        heading: "Cozy night invites",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Movie night", text: "Blankets, hot chocolate, and a movie at mine tonight? (✿˘︶˘)♡☕" },
+              { label: "Game night", text: "Too cold to go out, so board games at mine? I'll make soup 🍲(◕‿◕)" },
+              { label: "Partner", text: "Perfect weather for staying in and cuddling under a blanket (っ˘ω˘ς)💤" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "winter-break",
+        heading: "Winter break and ski trips",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Break plans", text: "Winter break plan: sleep in, eat snacks, repeat (－_－) zzZ" },
+              { label: "Ski trip", text: "Ski trip countdown: 3 days! Who's ready to fall over gracefully? ⛷️ ┗(＾0＾)┓" },
+              { label: "Skating", text: "Ice skating Saturday? I promise to only hold onto the wall a little ⛸️ ヽ(・∀・)ﾉ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "funny",
+        heading: "Funny cold-weather texts",
+        blocks: [
+          {
+            type: "p",
+            text: "Trembling faces from the [winter kaomoji](/winter-kaomoji/) page are perfect for exaggerating how cold it is. Stacked brackets like ((( ))) show the shivering.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Freezing", text: "It's so cold my coffee froze on the way to the car (((;ꏿ_ꏿ;)))" },
+              { label: "Bed", text: "Not leaving my bed until spring. Send snacks (っ- ‸ – ς)🛌" },
+              { label: "Hibernating", text: "Officially in hibernation mode. Wake me up in March ʕ•ᴥ•ʔ💤" },
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a cute winter kaomoji?",
+        answer: "❄(˘︶˘)☕ is a cozy face with a warm drink, and ☃️(＾▽＾)☃️ is a happy snowman.",
+      },
+      {
+        question: "What should I text someone on a cold day?",
+        answer:
+          "A short check-in works best: tell them to stay warm, offer help if they need anything, and add a cozy face like 🧣(◕ᴗ◕✿).",
+      },
+      {
+        question: "How are winter messages different from Christmas messages?",
+        answer:
+          "Christmas messages are for December 25. Winter messages fit the whole cold season, from the first snow in December to the last cold snap in March.",
       },
     ],
   },

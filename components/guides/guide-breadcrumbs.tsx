@@ -22,7 +22,7 @@ export function GuideBreadcrumbs({ current }: { current?: string }) {
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li aria-current="page" className="text-foreground">
+            <li aria-current="page" className="min-w-0 max-w-full truncate text-foreground sm:max-w-md">
               {current}
             </li>
           </>

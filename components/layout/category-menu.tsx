@@ -8,6 +8,12 @@ import { cn } from "@/lib/utils";
 
 const GROUPS = [...CATEGORY_GROUPS, TOOLS_GROUP];
 
+/** Article sections, listed first so mobile users (no header links) see them. */
+const LEARN_LINKS = [
+  { href: "/guides/", label: "Guides: type, read & make kaomoji" },
+  { href: "/blog/", label: "Blog: holiday messages" },
+];
+
 /** Short chip label (e.g. "Cute") — the group heading supplies context. */
 function labelFor(path: string, pages: NavPage[]): string | null {
   return pages.find((p) => p.path === path)?.label ?? null;
@@ -36,6 +42,29 @@ export function CategoryMenu({
       className="category-menu absolute inset-x-0 top-full z-20 overflow-y-auto overscroll-contain border-b border-border bg-card shadow-[var(--shadow-md)]"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-x-6 gap-y-5 px-4 py-5 sm:grid-cols-2 lg:grid-cols-4">
+        <section aria-label="Learn" className="sm:col-span-2 lg:col-span-4">
+          <p className="type-label text-foreground">Learn</p>
+          <ul className="mt-1 flex flex-wrap gap-x-5">
+            {LEARN_LINKS.map((link) => {
+              const active = pathname.startsWith(link.href.slice(0, -1));
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={onNavigate}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "inline-flex min-h-10 items-center text-sm font-medium transition-colors hover:text-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                      active ? "font-semibold text-foreground" : "text-link",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
         {GROUPS.map((group) => (
           <section
             key={group.heading}
@@ -57,7 +86,7 @@ export function CategoryMenu({
                       aria-current={active ? "page" : undefined}
                       className={cn(
                         "inline-flex min-h-10 items-center text-sm transition-colors hover:text-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-                        active ? "font-medium text-primary" : "text-muted",
+                        active ? "font-medium text-link" : "text-muted",
                       )}
                     >
                       {label}
@@ -68,15 +97,6 @@ export function CategoryMenu({
             </ul>
           </section>
         ))}
-        <p className="sm:col-span-2 lg:col-span-4">
-          <Link
-            href="/guides/"
-            onClick={onNavigate}
-            className="inline-flex min-h-10 items-center text-sm font-medium text-link hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-          >
-            Kaomoji guides: how to type, read &amp; use text faces →
-          </Link>
-        </p>
       </div>
     </nav>
   );
