@@ -12,17 +12,17 @@ export default function AboutPage() {
   return (
     <TrustView page={page}>
       <p>
-        The library is organized by intent: core moods (cute, happy, cat, sad, crying,
-        angry, and more), animal and reaction hubs (heart, shy, bunny, dog, bear, smug,
-        sleepy, confused, shocked), angry-family specialties (table flip, fight, pout),
-        plus Japanese emoticons, text faces, a kaomoji generator, and a copy-and-paste
-        utility. Each browse URL is one strong page; synonyms and legacy paths redirect
-        instead of spawning lookalike routes.
+        Faces are sorted by how they feel: core moods (cute, happy, cat, sad, crying,
+        angry, and more), animals and reactions (heart, shy, bunny, dog, bear, smug,
+        sleepy, confused, shocked), and the angrier extras (table flip, fight, pout).
+        There are also pages for Japanese emoticons, text faces, a kaomoji generator, and
+        a quick copy-and-paste list. Each mood gets one page, so you are not clicking
+        through three near-identical lists to find the same faces.
       </p>
       <p>
         Browse a mood, search the catalog, and tap Copy once to paste a face into chat.
-        Mood shelves beat one endless combo dump when you already know the vibe you need.
-        You can also build a custom face with the{" "}
+        When you already know the feeling you want, a page for that mood is quicker than
+        scrolling one giant list. You can also build a custom face with the{" "}
         <Link href="/kaomoji-generator/" className="link-in-prose">
           Kaomoji Generator
         </Link>
@@ -62,10 +62,10 @@ export default function AboutPage() {
           kaomoji-collection
         </a>{" "}
         project (MIT License), curated by Kaomojiya (kaomojiya.org). Paste Kaomoji is not
-        affiliated with that project. We add value on top of the raw list: deduplicated
-        faces, English names, mood and tag organization, category integrity rules so grids
-        match their intent, and one-tap copy in the browser—not a bare republish of the
-        source dump.
+        affiliated with that project. On top of the raw list, I remove duplicates, add
+        English names and meanings, sort faces by mood, check that each face actually fits
+        the page it is on, and add one-tap copy. It is not a straight copy of the source
+        list.
       </p>
       <h2 className="type-h2 text-foreground">Who runs Paste Kaomoji</h2>
       <p>
@@ -84,7 +84,7 @@ export default function AboutPage() {
       <ul className="list-disc space-y-2 pl-5">
         <li>
           <strong className="text-foreground">One mood per page.</strong> Each page keeps faces
-          that match its intent, so laughing faces live on giggling kaomoji instead of crowding
+          that match its mood, so laughing faces live on giggling kaomoji instead of crowding
           the happy page.
         </li>
         <li>

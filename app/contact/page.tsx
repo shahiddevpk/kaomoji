@@ -79,7 +79,7 @@ export default function ContactPage() {
         how a third-party app renders Unicode, or add account features — there are
         no logins on pastekaomoji.com. For browsing tips, start with the{" "}
         <Link href="/guides/" className={emailLink}>
-          guides hub
+          guides page
         </Link>{" "}
         or the{" "}
         <Link href="/blog/" className={emailLink}>

@@ -33,9 +33,9 @@ export const BLOG_INDEX = {
   heading: "Kaomoji Blog",
   titleSegment: "Kaomoji Blog: Holiday Messages & Seasonal Ideas",
   description:
-    "Ready-to-send holiday messages with kaomoji, seasonal texting ideas, and tips for upcoming events like Christmas, New Year, and Valentine's Day.",
+    "Ready-to-send holiday messages and seasonal captions with kaomoji, texting ideas, and tips for Halloween, Diwali, Thanksgiving, Christmas, New Year, and Valentine's Day.",
   intro:
-    "Seasonal posts with ready-to-send messages for upcoming holidays and events. Every message has a Copy button, and every post links to the full face collection for that occasion.",
+    "Seasonal posts with copy-paste messages and captions for holidays and events. Every line has a Copy button, and every post links to the full face collection for that occasion.",
 };
 
 /** In event order: the next upcoming event first. */
@@ -51,7 +51,7 @@ export const posts: BlogPost[] = [
     face: "👻(◕ᴗ◕)🎃",
     event: "Halloween · Oct 31",
     published: "2026-10-21",
-    updated: "2026-10-21",
+    updated: "2026-10-22",
     related: ["/halloween-kaomoji", "/scared-kaomoji", "/devil-kaomoji", "/food-kaomoji"],
     sections: [
       {
@@ -179,7 +179,7 @@ export const posts: BlogPost[] = [
           },
           {
             type: "p",
-            text: "Want more spooky faces? The [Halloween kaomoji](/halloween-kaomoji/) page has 350+ ghosts, pumpkins, bats, zombies, and witches, and the [devil kaomoji](/devil-kaomoji/) page has mischievous faces for tricks.",
+            text: "Want more spooky faces? The [Halloween kaomoji](/halloween-kaomoji/) page has 350+ ghosts, pumpkins, bats, zombies, and witches, and the [devil kaomoji](/devil-kaomoji/) page has mischievous faces for tricks. Posting a costume photo instead of texting? Try these [Halloween captions](/blog/halloween-captions-and-social-posts-with-kaomoji/).",
           },
         ],
       },
@@ -202,6 +202,496 @@ export const posts: BlogPost[] = [
     ],
   },
   {
+    slug: "halloween-captions-and-social-posts-with-kaomoji",
+    title: "Halloween Captions & Social Posts with Kaomoji for Instagram, TikTok & Status",
+    titleSegment: "Halloween Captions with Kaomoji to Copy",
+    description:
+      "Halloween captions and post ideas with kaomoji for Instagram, TikTok, WhatsApp status, Discord bios, costume photos, pumpkin posts, and October 31 countdowns.",
+    intro:
+      "A costume photo deserves more than pumpkin emoji spam. These captions are written for posts and profiles: short enough for a story, punchy enough for TikTok, and weird in the good way that kaomoji do best. Copy one as-is, or trim the second line if your platform has a character limit.",
+    face: "🦇(◕‿◕)✨",
+    event: "Halloween · Oct 31",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    related: ["/halloween-kaomoji", "/scared-kaomoji", "/sparkle-kaomoji", "/emoji-combos"],
+    sections: [
+      {
+        id: "costume-captions",
+        heading: "Costume photo captions for Instagram and TikTok",
+        blocks: [
+          {
+            type: "p",
+            text: "Lead with the joke or the vibe, then drop the face at the end so it reads like a sign-off, not a random symbol pile. On TikTok, the first line is what people see before they tap \"more,\" so put the hook there.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Main character", text: "Legally distinct from any copyrighted character (trust me) 🎃(｀・ω・´)" },
+              { label: "Effort flex", text: "Three hours of makeup, one photo, zero regrets (☆▽☆)👻" },
+              { label: "Low effort pride", text: "Budget costume, premium attitude ＼(＾▽＾)／" },
+              { label: "Mystery", text: "Guess who I am before you swipe 👀(◕‿◕)🎃" },
+              { label: "Reused costume", text: "Same costume as last year because it still slaps ♻️(◕ᴗ◕✿)" },
+              { label: "Solo post", text: "Dressed up anyway. The party is in my camera roll 🦇(っ´▽`)っ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "group-couple",
+        heading: "Group and couple costume captions",
+        blocks: [
+          {
+            type: "p",
+            text: "Tag everyone in the photo, but keep the caption about the group energy. Matching faces in the text (two ghosts, a row of pumpkins) mirror the photo without repeating every name.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Squad", text: "The gang's all here and slightly feral 👻👻👻 ヽ(°〇°)ﾉ" },
+              { label: "Couple", text: "His and hers horror (or her and hers, we don't judge) 🧛♡🧟(◕‿◕)" },
+              { label: "Parents + kids", text: "One family, one theme, one sugar rush incoming 🍬(◕‿◕)🎃" },
+              { label: "Work friends", text: "We do spreadsheets by day, chaos by night 🎃(•‿•)✧" },
+              { label: "Last-minute trio", text: "Three people, one sheet ghost, infinite dignity lost (；・∀・)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "pumpkin-fall",
+        heading: "Pumpkin patch, carving, and cozy October posts",
+        blocks: [
+          {
+            type: "p",
+            text: "Not every Halloween post is the 31st. Patch days and carving nights fill your feed all month, and warm faces fit them better than jump-scare ones. Save the trembling faces from the [scared kaomoji](/scared-kaomoji/) page for horror-movie posts later.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Patch day", text: "Picked the roundest pumpkin in the field. Judge me 🎃(*´▽`*)" },
+              { label: "Carving fail", text: "Jack-o'-lantern looks like it saw things 👻(；´Д｀) Still cute though." },
+              { label: "Carving win", text: "Knife skills: questionable. Results: iconic (๑•̀ㅂ•́)و✧🎃" },
+              { label: "Candle glow", text: "Porch light off, pumpkin light on ✨(◕‿◕)✨" },
+              { label: "Rainy October", text: "Mood: fog machine but make it weather ☁️(˘▾˘~)🎃" },
+              { label: "Hot cocoa", text: "Spooky season is mostly just cold hands and warm drinks ☕(◕ᴗ◕)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "party-night",
+        heading: "Party, club, and night-out captions",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Pre-game", text: "Costume check passed. Hydration check pending 🎃(｀・ω・´)🍸" },
+              { label: "Dance floor", text: "Doing the monster mash unironically ヽ(・∀・)ﾉ👻" },
+              { label: "2 a.m.", text: "Still standing. Mostly glitter and willpower ✨(っ˘ڡ˘ς)" },
+              { label: "Photo dump", text: "October 31 in 12 blurry photos 📸(◕‿◕) swipe if you dare" },
+              { label: "Ride home", text: "Our driver rated us 5 stars for commitment to the bit 🚗(°〇°)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "funny-self-aware",
+        heading: "Funny, chaotic, and self-aware captions",
+        blocks: [
+          {
+            type: "p",
+            text: "Honest captions usually get more laughs than try-hard spooky poetry. If you ate the fun-size bars before trick-or-treaters showed up, say so. Your friends already suspect it.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Candy confession", text: "Bought candy for the neighborhood. Ate the neighborhood's candy 🍫(っ˘ڡ˘ς)" },
+              { label: "Scared adult", text: "Age 30, still won't watch the trailer alone (/ω＼)👻" },
+              { label: "Decorations", text: "Spent too much on fake cobwebs. No regrets, only spiders 🕸️(•‿•)" },
+              { label: "No costume", text: "My costume is \"person who said they'd have one by Friday\" (；・∀・)" },
+              { label: "Pet stole show", text: "I wore a costume. The dog is the main post 🐕(◕ᴗ◕)👑" },
+              { label: "Nov 1", text: "Halloween is over. I am 80% mini chocolate bars now 🍬(´-ω-`)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "status-bio",
+        heading: "WhatsApp status, Discord bio, and display-name lines",
+        blocks: [
+          {
+            type: "p",
+            text: "Statuses and bios need to be short. One kaomoji plus five words often fits where a full caption will not. Sparkle faces from the [sparkle kaomoji](/sparkle-kaomoji/) page work well next to a single Halloween word.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Status", text: "🎃 spooky season mode (◕‿◕)" },
+              { label: "Status", text: "👻 boo 👻 (◕ᴗ◕)" },
+              { label: "Bio", text: "Professional candy inspector 🍬(•‿•)" },
+              { label: "Bio", text: "Here for tricks, staying for treats 🎃(っ´▽`)っ" },
+              { label: "Discord", text: "🦇 AFK — haunting the snack table" },
+              { label: "Name tag", text: "(ง •̀_•́)ง pumpkin warrior" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "countdown",
+        heading: "Countdown posts and October 31 captions",
+        blocks: [
+          {
+            type: "p",
+            text: "A one-week countdown story and a same-day post can reuse the same face so people recognize your theme. Post the big photo after sunset local time if you want it in friends' feeds when they are out, not at lunch when the costume is still in a bag.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "7 days", text: "One week until chaos 🎃(๑•̀ㅂ•́)و✧" },
+              { label: "Tomorrow", text: "Costume tomorrow. Panic today (；・∀・)👻" },
+              { label: "Oct 31 morning", text: "Happy Halloween! May your coffee be strong and your candy stash hidden ☕👻(◕‿◕)" },
+              { label: "Oct 31 night", text: "Trick or treat, be safe, text me when you're home 🍬(◕‿◕)🎃" },
+              { label: "Midnight", text: "November tried to start. We said not yet 🦇ヽ(°〇°)ﾉ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "comments",
+        heading: "Comments on friends' Halloween posts",
+        blocks: [
+          {
+            type: "p",
+            text: "Comments can be shorter than captions. A single face plus one line often gets more replies than a paragraph. If you need words to send in DMs instead of public posts, the [Halloween messages guide](/blog/halloween-messages-with-kaomoji/) is built for that.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Hype", text: "STOP this is so good (☆▽☆)👻" },
+              { label: "Scared", text: "I would run from you in a parking lot, compliment only (((;°Д°)))" },
+              { label: "Cute", text: "Protect this little monster at all costs 👻(*´▽`*)" },
+              { label: "Group photo", text: "Everyone ate. No crumbs left 🎃＼(＾▽＾)／" },
+              { label: "Kids", text: "Officially the cutest trick-or-treater on my feed 🍬(◕‿◕)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tips",
+        heading: "Platform tips (without fighting the algorithm)",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Instagram: put the kaomoji after the last sentence so it does not break hashtag blocks at the bottom.",
+              "TikTok: keep the hook short enough to show before \"more\"; move the face to the caption body or on-screen text.",
+              "WhatsApp status: one line only; skip hashtags entirely.",
+              "Accessibility: add a short alt-text description of your costume in the post settings, not only in the caption.",
+              "Mix emoji and kaomoji sparingly. One pumpkin or ghost emoji plus one face reads cleaner than a wall of symbols.",
+              "Need more faces? Browse [Halloween kaomoji](/halloween-kaomoji/) for ghosts and pumpkins, or [emoji combos](/emoji-combos/) for ready-made Halloween emoji sets.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What are good Halloween captions for Instagram?",
+        answer:
+          "Short hooks work best: a joke about your costume, an honest line about effort or chaos, then a kaomoji sign-off like 🎃(◕‿◕) or 👻(☆▽☆). Save long stories for carousel captions.",
+      },
+      {
+        question: "Can I use kaomoji in TikTok captions?",
+        answer:
+          "Yes. Kaomoji paste as plain text in TikTok captions. Keep the visible first line short; put the face after \"more\" so the hook still shows in preview.",
+      },
+      {
+        question: "What is a short Halloween WhatsApp status?",
+        answer:
+          "Try 🎃 spooky season (◕‿◕) or 👻 boo (◕ᴗ◕). One face and a few words fit the status bar without getting cut off.",
+      },
+      {
+        question: "How is this different from Halloween text messages?",
+        answer:
+          "Captions are for public posts and profiles. For party invites, family check-ins, and one-to-one texts, the Halloween messages post on this blog is the better fit.",
+      },
+    ],
+  },
+  {
+    slug: "diwali-wishes-and-messages-with-kaomoji",
+    title: "Diwali Wishes & Messages with Kaomoji: Warm, Funny & Family Texts",
+    titleSegment: "Diwali Wishes and Messages with Kaomoji",
+    description:
+      "Happy Diwali wishes with kaomoji for family, friends, and coworkers, plus Hindi wishes, WhatsApp status lines, Instagram captions, and Dhanteras to Bhai Dooj texts.",
+    intro:
+      "Diwali is five days of cleaning, shopping, lamps, sweets, and a phone that does not stop buzzing. These wishes are grouped by moment, from the Dhanteras shopping trip to the Bhai Dooj message for your sibling, so you can find the right tone quickly. Every line copies in one tap and pastes cleanly into WhatsApp, Instagram, or a work chat.",
+    face: "🪔(◕‿◕)✨",
+    event: "Diwali · Nov 8",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    related: ["/sparkle-kaomoji", "/heart-kaomoji", "/food-kaomoji", "/flower-kaomoji"],
+    sections: [
+      {
+        id: "short-wishes",
+        heading: "Short Happy Diwali wishes",
+        blocks: [
+          {
+            type: "p",
+            text: "On Diwali morning everyone sends the same forwarded image. A short line in your own words, with one small face, stands out more than another glittery card.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Classic", text: "Happy Diwali! May your home be full of light and your plate full of sweets 🪔(◕‿◕)✨" },
+              { label: "Short", text: "Happy Diwali 🪔 (◕ᴗ◕)" },
+              { label: "Warm", text: "Wishing you and your family a bright, peaceful Diwali ✨(っ´▽`)っ🪔" },
+              { label: "Deepavali", text: "Happy Deepavali! Light, laughter, and too much murukku this year (*´▽`*)🪔" },
+              { label: "New beginnings", text: "Here's to new beginnings, fresh starts, and a year that treats you kindly 🪔(◕‿◕✿)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "diwali-kaomoji",
+        heading: "Diwali kaomoji to copy",
+        blocks: [
+          {
+            type: "p",
+            text: "Want just the face? These pair a kaomoji with a diya, sparkle, or sweet so it reads as Diwali at a glance. Add one to the end of any wish, or send it on its own as a reply.",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "🪔(◕‿◕)✨", name: "Diya smile", note: "The all-rounder. Works for family, friends, and work." },
+              { face: "(人´∀`)🪔", name: "Folded hands", note: "人 looks like palms pressed together. Good for blessings and elders." },
+              { face: "✨(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", name: "Throwing sparkles", note: "Excited, festive, a little extra. Best for friends." },
+              { face: "(っ˘ڡ˘ς)🍬", name: "Sweets", note: "Licking lips over the mithai box." },
+              { face: "🎆ヽ(・∀・)ﾉ🎇", name: "Fireworks", note: "Arms up under the sky on Diwali night." },
+              { face: "🌸(◕ᴗ◕✿)🌸", name: "Rangoli", note: "Soft and pretty, for rangoli and flower photos." },
+              { face: "♡(◕‿◕✿)🪔", name: "Family love", note: "Warm and gentle, for parents and relatives." },
+              { face: "🪔🪔🪔(☆▽☆)", name: "Row of lamps", note: "Starry eyes for a balcony full of diyas." },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hindi-hinglish",
+        heading: "Diwali wishes in Hindi and Hinglish",
+        blocks: [
+          {
+            type: "p",
+            text: "A lot of Diwali messages are sent in Hindi written in English letters, the way people actually type on WhatsApp. Kaomoji sit just as well at the end of these.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Formal", text: "Aapko aur aapke parivaar ko Diwali ki hardik shubhkamnayein 🪔(◕‿◕)🙏" },
+              { label: "Short", text: "Shubh Deepavali! ✨(◕ᴗ◕)" },
+              { label: "Warm", text: "Is Diwali aapke ghar mein khushiyan, sehat aur roshni aaye 🪔(っ´▽`)っ" },
+              { label: "To friends", text: "Happy Diwali yaar! Mithai bacha ke rakhna mere liye (っ˘ڡ˘ς)" },
+              { label: "To family", text: "Happy Diwali Mummy Papa, aap dono ki bahut yaad aa rahi hai ♡(◕‿◕✿)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "dhanteras",
+        heading: "Dhanteras and the days of getting ready",
+        blocks: [
+          {
+            type: "p",
+            text: "The festival starts before the big night. Dhanteras is the day people buy something new for the home, often a steel pot, a silver coin, or gold if the budget allows, and the days before are mostly cleaning and decorating.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Dhanteras", text: "Happy Dhanteras! May whatever you bring home today bring luck with it ✨(◕‿◕)" },
+              { label: "Shopping", text: "Went out for one steel pot. Came back with three bags and no regrets (๑•̀ㅂ•́)و✧" },
+              { label: "Cleaning", text: "Diwali cleaning update: found a sock from 2019 and my old school diary (；・∀・)" },
+              { label: "Lights up", text: "Fairy lights are up, only took four arguments and one ladder ✨ヽ(・∀・)ﾉ" },
+              { label: "Mom's list", text: "Mom has assigned the whole family cleaning duties. Send help (´-ω-`)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "lakshmi-puja",
+        heading: "Lakshmi Puja night wishes",
+        blocks: [
+          {
+            type: "p",
+            text: "The main evening is a prayer for prosperity and well-being, so keep these messages sincere. Gentle, smiling faces fit better here than the loud ones you might send a friend.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Blessings", text: "May Goddess Lakshmi bless your home with health, peace, and plenty this Diwali 🪔(◕‿◕)🙏" },
+              { label: "Prosperity", text: "Wishing you a Diwali that brings good health first and good fortune right behind it ✨(◕ᴗ◕)" },
+              { label: "Simple", text: "Puja done, diyas lit, family together. Happy Diwali from all of us 🪔(*^▽^*)" },
+              { label: "For elders", text: "Happy Diwali, Dadi and Dada. Thank you for your blessings, we miss you tonight 🙏(◕‿◕✿)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "diyas-rangoli-sweets",
+        heading: "Diyas, rangoli, and sweets",
+        blocks: [
+          {
+            type: "p",
+            text: "These work as photo captions or as a message sent with a picture. Food faces from the [food kaomoji](/food-kaomoji/) page are perfect for the mithai box that somehow empties itself by evening.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Rangoli", text: "Two hours on the floor for this rangoli. My knees are done, my heart is happy 🌸(◕‿◕)🌸" },
+              { label: "Diyas", text: "Every diya on the balcony is lit and nobody burned a finger. Diwali miracle 🪔🪔🪔(☆▽☆)" },
+              { label: "Sweets", text: "Ate one kaju katli. Then another. Then stopped counting (っ˘ڡ˘ς)" },
+              { label: "Sweet box", text: "Sending you a box of ladoos today. Please share. Or don't, I won't know 🍬(¬‿¬)" },
+              { label: "Lights", text: "Our street looks like a galaxy tonight ✨(◕ᴗ◕)✨" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "status-captions",
+        heading: "WhatsApp status and Instagram captions",
+        blocks: [
+          {
+            type: "p",
+            text: "Statuses get a quick glance, so keep them to one line. On Instagram, put the face at the end of the caption so it does not crowd your photo's first line.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Status", text: "🪔 Happy Diwali from our home to yours (◕‿◕)" },
+              { label: "Status", text: "Lights on, phone off, family time ✨(˘▾˘~)" },
+              { label: "Outfit post", text: "Festive fit, borrowed jhumkas, zero regrets ✨(◕ᴗ◕✿)" },
+              { label: "Family photo", text: "Took 20 tries to get everyone in the frame. Worth it 🪔(*´▽`*)" },
+              { label: "Night shot", text: "Same street, a thousand little lights 🪔✨(◕‿◕)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "family",
+        heading: "For family, near and far",
+        blocks: [
+          {
+            type: "p",
+            text: "For relatives abroad, Diwali can be the hardest day of the year to be away. Mention something specific, like the food or the sound of the house, so the message feels like home and not like a template.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Parents", text: "Happy Diwali, Mummy and Papa. Thank you for every Diwali you made special for us ♡(◕‿◕✿)🪔" },
+              { label: "Living abroad", text: "Lit one diya in my tiny apartment and called it a celebration. Missing your cooking so much 🪔(´；ω；`)♡" },
+              { label: "Video call", text: "Video call at 8? I want to see the whole house lit up 🪔(っ´▽`)っ" },
+              { label: "Cousins", text: "Cousins group chat, who is coming over for Diwali night? Bring sweets, not excuses ヽ(・∀・)ﾉ" },
+              { label: "First Diwali", text: "Baby's first Diwali! Tiny kurta, big eyes, zero sleep for the parents 🪔(*´▽`*)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "friends",
+        heading: "Funny Diwali messages for friends",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Card party", text: "Diwali card night at mine. Bring snacks and be ready to lose your pocket money (｀・ω・´)🃏" },
+              { label: "Food coma", text: "Diwali status: emotionally full, physically fuller (´-ω-`)🍬" },
+              { label: "Relatives", text: "Survived the \"when are you getting married\" round. Rewarding myself with gulab jamun (；・∀・)" },
+              { label: "New clothes", text: "New kurta on, photo-ready, will still spill chai on it by 7 p.m. ✨(◕‿◕)" },
+              { label: "Crackers", text: "Our pet has filed a formal complaint about the noise outside (/ω＼)🐕" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "work",
+        heading: "For coworkers, clients, and friends who don't celebrate",
+        blocks: [
+          {
+            type: "p",
+            text: "In a work chat, keep the wish short and leave out religious lines unless you know the person well. A diya, a sparkle, and one friendly face is plenty. Friends who don't celebrate are usually happy to get a wish too; a line about sweets or lights keeps it easy.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Team chat", text: "Happy Diwali, everyone! Wishing you a restful break and a bright year ahead 🪔(•‿•)" },
+              { label: "Client", text: "Wishing you and your team a happy and prosperous Diwali. Thank you for a great year together ✨(◕‿◕)" },
+              { label: "Office sweets", text: "Diwali sweets are on the kitchen counter. First come, first served 🍬(｡•̀ᴗ-)✧" },
+              { label: "Non-celebrating friend", text: "It's Diwali, so I'm bringing you sweets whether you like it or not ＼(＾▽＾)／" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "bhai-dooj",
+        heading: "Govardhan Puja and Bhai Dooj",
+        blocks: [
+          {
+            type: "p",
+            text: "The last two days are easy to forget once the lights come down. Bhai Dooj is about siblings, so a little teasing is expected.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Govardhan Puja", text: "Happy Govardhan Puja! Wishing your family health and a full kitchen 🙏(◕‿◕)" },
+              { label: "To a brother", text: "Happy Bhai Dooj! You still owe me a gift from last year, just saying (¬‿¬)♡" },
+              { label: "To a sister", text: "Happy Bhai Dooj, didi. Thank you for putting up with me for this many years ♡(◕ᴗ◕✿)" },
+              { label: "Far away", text: "Can't put tilak on your forehead this year, so here's a digital one 🪔(っ´▽`)っ Happy Bhai Dooj!" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tips",
+        heading: "A few things to keep in mind",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Diwali is celebrated by Hindus, Sikhs, and Jains, each with their own meaning. Sikhs mark Bandi Chhor Divas on the same day, so a simple \"Happy Diwali\" or \"Happy Bandi Chhor Divas\" works for Sikh friends.",
+              "In South India and Singapore, many people say Deepavali, and the main day can fall a day earlier than in the north.",
+              "Send family wishes in the morning or before the evening puja. Most people are busy and offline during the puja itself.",
+              "One diya 🪔 or sparkle ✨ next to a kaomoji reads cleaner than a long row of emoji, especially on WhatsApp status.",
+              "Want more faces? The [sparkle kaomoji](/sparkle-kaomoji/) page has light and glitter faces, and the [heart kaomoji](/heart-kaomoji/) page has warm ones for family.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is Diwali in 2026?",
+        answer:
+          "The main day of Diwali, with Lakshmi Puja, is Sunday, November 8, 2026. The festival runs about five days around it, from Dhanteras to Bhai Dooj, and exact dates can shift by a day depending on region and calendar.",
+      },
+      {
+        question: "What is a good Diwali kaomoji?",
+        answer:
+          "🪔(◕‿◕)✨ is a smiling face with a diya and a sparkle, and it suits almost anyone. For sweets, try (っ˘ڡ˘ς), and for family, ♡(◕‿◕✿).",
+      },
+      {
+        question: "How do you say Happy Diwali in Hindi?",
+        answer:
+          "\"Diwali ki hardik shubhkamnayein\" is the formal way, and \"Shubh Deepavali\" is short and works for anyone. With friends, plain \"Happy Diwali\" is just as common.",
+      },
+      {
+        question: "Is it Diwali or Deepavali?",
+        answer:
+          "Both are correct. Deepavali means \"row of lamps\" and is common in South India, Sri Lanka, Malaysia, and Singapore. Diwali is the shorter form used across North India and most of the diaspora.",
+      },
+      {
+        question: "How do I wish a coworker Happy Diwali?",
+        answer:
+          "Keep it short and general: \"Happy Diwali! Wishing you a bright and restful festival\" with a small face like 🪔(•‿•). Save religious blessings for people you know well.",
+      },
+    ],
+  },
+  {
     slug: "thanksgiving-messages-with-kaomoji",
     title: "Thanksgiving Messages with Kaomoji: Grateful, Funny & Family Texts",
     titleSegment: "Thanksgiving Messages with Kaomoji to Copy",
@@ -212,7 +702,7 @@ export const posts: BlogPost[] = [
     face: "🦃(◕ᴗ◕)🥧",
     event: "Thanksgiving · Nov 26",
     published: "2026-10-21",
-    updated: "2026-10-21",
+    updated: "2026-10-22",
     related: ["/thanksgiving-kaomoji", "/thank-you-kaomoji", "/food-kaomoji", "/bowing-kaomoji"],
     sections: [
       {
@@ -294,6 +784,58 @@ export const posts: BlogPost[] = [
             items: [
               { label: "Team chat", text: "Happy Thanksgiving, team! Grateful to work with all of you. Enjoy the long weekend (•‿•)🍂" },
               { label: "Out of office", text: "I'm out for Thanksgiving and back on Monday. Have a great holiday! 🦃(・ω・)ノ" },
+              { label: "Thanking a manager", text: "Thanks for having our backs this year. Have a relaxing Thanksgiving with your family (◕‿◕)🍂" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "captions",
+        heading: "Captions for the table photo",
+        blocks: [
+          {
+            type: "p",
+            text: "Everyone takes the same photo of the full table before anyone is allowed to eat. A short caption with one face is all it needs.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Full table", text: "Took 6 hours to cook and 12 minutes to eat 🦃(っ˘ڡ˘ς)" },
+              { label: "Grateful", text: "Full table, fuller heart 🍂(◕‿◕✿)" },
+              { label: "First host", text: "First time hosting Thanksgiving. Nobody got food poisoning. I'm calling it a win (๑•̀ㅂ•́)و✧" },
+              { label: "Pie shot", text: "The pie is the main character today 🥧(☆▽☆)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "missing-someone",
+        heading: "When someone is missing from the table",
+        blocks: [
+          {
+            type: "p",
+            text: "For a lot of people, Thanksgiving is also the day they notice who is not there. If a friend lost someone this year or is spending the day alone, a quiet message that does not ask anything of them is often the kindest one. Keep the face gentle, or leave it out.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Thinking of you", text: "Thinking of you today. No need to reply, just wanted you to know (っ´▽`)っ" },
+              { label: "Alone this year", text: "If you end up on your own today, my door's open and there's way too much food 🍂(◕‿◕)" },
+              { label: "Remembering", text: "I know today's a hard one without your mom. Sending you a big hug ♡" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "black-friday",
+        heading: "Black Friday and the day after",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Shopping trip", text: "Black Friday plan: leave at 6 a.m., buy one thing I actually need, come home with nine ε=ε=┌(;°□°)┘" },
+              { label: "Staying home", text: "Doing my Black Friday shopping from bed, in leftover-stuffing pajamas (´-ω-`)" },
+              { label: "Leftovers", text: "Day-after sandwich with turkey, stuffing, and cranberry is the real holiday 🥪(๑´ڡ`๑)" },
             ],
           },
         ],
@@ -345,7 +887,7 @@ export const posts: BlogPost[] = [
     face: "🎄(◕ᴗ◕✿)🎅",
     event: "Christmas · Dec 25",
     published: "2026-10-21",
-    updated: "2026-10-21",
+    updated: "2026-10-22",
     related: ["/christmas-kaomoji", "/winter-kaomoji", "/emoji-combos", "/happy-kaomoji"],
     sections: [
       {
@@ -420,6 +962,73 @@ export const posts: BlogPost[] = [
               { label: "Gift note", text: "From your Secret Santa: hope this makes you smile 🎁(｡•̀ᴗ-)✧" },
               { label: "Thank you", text: "Thank you, Secret Santa! I love it ＼(≧▽≦)／🎁" },
               { label: "Group reminder", text: "Reminder: Secret Santa gifts by Friday! Budget is $25 🎅(・ω・)ノ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "christmas-eve",
+        heading: "Christmas Eve messages",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Night before", text: "Merry Christmas Eve! Cookies out, stockings up, kids finally asleep (´-ω-`)🎄" },
+              { label: "Wrapping", text: "Wrapping presents at 11 p.m. like every year. Send tape (；・∀・)🎁" },
+              { label: "Church or service", text: "Heading to the candlelight service tonight. Wishing you a peaceful Christmas Eve 🕯️(◕‿◕)" },
+              { label: "Movie night", text: "Christmas Eve plan: pajamas, hot chocolate, and the same movie we watch every year ☕(˘▾˘~)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "card-notes",
+        heading: "Short notes for Christmas cards",
+        blocks: [
+          {
+            type: "p",
+            text: "Handwritten cards only have room for a line or two. Simple faces like (◕‿◕) are easy to draw by hand; save the complicated Unicode ones for texts and digital cards.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Neighbors", text: "Merry Christmas from number 12! Thanks for always taking in our packages (◕‿◕)" },
+              { label: "Teacher", text: "Thank you for a wonderful year of learning. Have a restful Christmas break! (^▽^)" },
+              { label: "Old friend", text: "It's been too long. Let's actually meet up in the new year this time ♡(◕‿◕)" },
+              { label: "Family card", text: "Love and warm wishes from all four of us (and the dog) 🎄(◕ᴗ◕✿)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "captions",
+        heading: "Captions for tree, sweater, and family photos",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Tree", text: "The tree is up and only slightly crooked 🎄(◕‿◕)" },
+              { label: "Ugly sweater", text: "Wore it ironically. Now I love it unironically (☆▽☆)🎄" },
+              { label: "Family photo", text: "Took 47 tries to get everyone looking at the camera 📸(；・∀・)" },
+              { label: "Snow", text: "White Christmas, finally ⛄(*´▽`*)❄" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "hard-holidays",
+        heading: "For friends who find Christmas hard",
+        blocks: [
+          {
+            type: "p",
+            text: "Not everyone has a merry December. For someone who is grieving, alone, or just tired, a low-pressure check-in usually lands better than a cheerful greeting.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Check-in", text: "No pressure to be festive. Just thinking of you this week (っ´▽`)っ" },
+              { label: "Open invite", text: "If you want company on the 25th, there's a seat and a plate here for you ♡" },
+              { label: "After the day", text: "Glad the holidays are almost done? Coffee next week, my treat ☕(◕‿◕)" },
             ],
           },
         ],
