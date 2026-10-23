@@ -180,12 +180,12 @@ export const pages: SitePage[] = [
       { id: "smile", heading: "Smiling kaomoji", glyphs: ["◕‿◕", "^_^", "＾＾", "◠‿◠", "ᵔᴗᵔ", "^‿^"] },
     ],
     howTo: [
-      "Scan for the energy level — calm grin, cheerful wave, or arms-up celebration cheer.",
-      "Tap Copy once; the full character string goes to your clipboard.",
-      "Paste into a congratulation, hello, or any message where positive energy should show.",
+      "Decide how loud you want to be: a calm grin, a cheerful wave, or both arms up.",
+      "Tap Copy. The whole face, arms included, goes to your clipboard.",
+      "Paste it into a congratulations, a hello, or any message that should sound happy.",
     ],
     definition:
-      "Happy kaomoji lean cheerful and upbeat — big grins, cheers, and waves that signal genuine positive energy. They are louder than a quiet smile and warmer than a neutral face.",
+      "Happy kaomoji are the cheerful ones: big grins, cheers, and waves. They are louder than a quiet smile and warmer than a plain face.",
     learnMore:
       "Eyes crinkled or wide open, mouths raised or open in laughter, arms sometimes extended — these faces carry the energy of good news or a warm hello. They sit between the soft gentleness of cute and the intensity of excited.",
     faqs: [
@@ -214,7 +214,7 @@ export const pages: SitePage[] = [
     heading: "Cat Kaomoji",
     titleSegment: "Cat Kaomoji (=^･ω･^=)",
     description:
-      "Cat kaomoji (=^･ω･^=) copy and paste — neko and catmoji faces from calm to excited. Browse 100+ cat text faces and tap once to copy into any chat.",
+      "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, from sleepy cats to startled ones. 100+ faces for any chat.",
     intro:
       "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one.",
     group: "browse",
@@ -366,12 +366,12 @@ export const pages: SitePage[] = [
       { id: "shout", heading: "Shouting kaomoji", glyphs: ["Д", "ﾟДﾟ", "ﾛ", "ロ"] },
     ],
     howTo: [
-      "Scan the angry grid for scowls and growls that match your chat tone.",
+      "Start small: a mild scowl usually says enough, and the giant rage faces work best as a joke.",
       "Tap Copy once - the face goes to your clipboard with any spacing intact.",
       "Want a more specific mood? Open table flip, fight, or pout. Rage and glare faces are on this page, and search finds them fast.",
     ],
     definition:
-      "These faces lean into mad energy, from mild irritation to full meltdown jokes. Pick the intensity that matches the chat, not the loudest option by default.",
+      "These faces go from mild irritation to over-the-top meltdowns. Match the chat: a small scowl usually says enough, and the loudest face is rarely the right one.",
     learnMore:
       "Angry kaomoji concentrate the visual cues of frustration into a small character set. A sharp glare — ᵒ益ᵒ or ╬ಠ益ಠ — is built from a high-contrast pair of symbols that the eye reads as scowl before the viewer processes any individual character. The intensity scales from mild side-eye to full-volume rage by swapping one or two marks in the face, making these some of the most expressive kaomoji per character.",
     faqs: [
@@ -414,9 +414,9 @@ export const pages: SitePage[] = [
     tags: ["tableflip", "table flip"],
     parentPath: "/angry-kaomoji",
     howTo: [
-      "Table flip faces are the classic flip-desk reaction, not every angry scowl.",
+      "Pick how hard you want to flip: a quick one-handed flip or both arms sending the table flying.",
       "Copy the flip that matches your intensity, then paste into chat or a caption.",
-      "For punches or silent stares, jump to fight or glare instead.",
+      "For punches, try fight kaomoji instead; for a quiet sulk, try pout.",
     ],
     definition:
       "Table flip kaomoji capture the desk-flip gag in text: a figure raising arms and sending a table airborne. The pose is comic, not threatening — it signals \"I am done\" or \"this is unbelievable\" in a way that defuses tension with humor.",
@@ -460,12 +460,12 @@ export const pages: SitePage[] = [
     tags: ["fight", "punch", "hit"],
     parentPath: "/angry-kaomoji",
     howTo: [
-      "Fight faces lean into punches, hits, and sparring poses.",
-      "Copy one action face when you want motion, not just a mad look.",
-      "Keep full fury on rage and desk flips on table flip so each set stays clear.",
+      "Pick the move: fists up and ready, a punch landing, or a full flurry of hits.",
+      "Tap Copy so the fists and motion lines come along with the face.",
+      "Send it as a friendly challenge before a game, or when someone says your favorite show is bad.",
     ],
     definition:
-      "Fight kaomoji put a figure in motion: fists raised, a punch landing, or a sparring stance that signals action rather than just a scowl. The energy is kinetic — these read as \"bring it\" or \"I'm ready,\" not quiet seething.",
+      "Fight kaomoji put a figure in motion: fists raised, a punch landing, or a sparring stance. They say \"bring it\" or \"I'm ready,\" which is a long way from sitting there quietly fuming.",
     learnMore:
       "Fight kaomoji lean on characters like ง, ᕦ, and ᕙ to build the raised-fist silhouette in plain text. These are among the most physically active kaomoji — where most faces express a static emotion, a fight pose implies the next action. The forward body lean and raised arms read as challenge even without knowing the specific Unicode values involved, making them instantly legible as action and not just mood.",
     faqs: [
@@ -506,12 +506,12 @@ export const pages: SitePage[] = [
     tags: ["pout", "hmph", "annoyed"],
     parentPath: "/angry-kaomoji",
     howTo: [
-      "Pout faces cover hmph, sulk, and mild annoyance - soft pushback.",
-      "Copy a pout when you want attitude without full rage.",
-      "Hard scowls stay on angry; silent stares stay on glare.",
+      "Look for puffed cheeks, crossed arms, or a side-eye.",
+      "Tap Copy when you want attitude without real anger.",
+      "Send it when someone eats the last slice, spoils the ending, or forgets to text back.",
     ],
     definition:
-      "Pout kaomoji lean into the sulky, hmph register: crossed arms, tight mouths, or a side-eye that says \"I'm unimpressed\" without going loud. The mood is petulant rather than explosive — attitude with the volume turned low.",
+      "Pout kaomoji are sulky: crossed arms, tight mouths, or a side-eye that says \"I'm unimpressed\" without raising its voice. Think attitude with the volume turned down.",
     learnMore:
       "Pout kaomoji fill the emotional gap between happy and angry that most emoticon sets leave empty. The sulky face is petulant, not explosive — it signals displeasure at low volume so the receiver knows the sender is not genuinely upset. In Japanese internet culture the pout pose became a staple of playful banter, where showing attitude without heat is often the funnier and more socially precise move.",
     faqs: [
@@ -686,7 +686,7 @@ export const pages: SitePage[] = [
       "Copy the preview, or hit Randomize for a quick surprise face.",
     ],
     definition:
-      "Parts and presets exist so you can invent a face instead of only browsing. Copy the string you like and keep a personal shortlist outside the tool if you reuse it often.",
+      "Pick parts or start from a preset, and you end up with a face nobody else sent today. If you make one you love, save it in your notes app so it is ready next time.",
     learnMore:
       "Kaomoji are built from three zones: the outer bracket pair sets the face shape, the eye characters carry the dominant mood, and the mouth in the center lands the expression. Arms and extras outside the brackets are optional but change the reading dramatically — the same neutral face becomes excited, bowing, or dancing with one appended character. Understanding these zones makes it faster to remix any existing face into something new.",
     faqs: [
@@ -724,7 +724,7 @@ export const pages: SitePage[] = [
     heading: "Heart Kaomoji",
     titleSegment: "Heart & Love Kaomoji (♡‿♡)",
     description:
-      "Heart and love kaomoji to copy for affection, crush energy, and warm thanks. Browse love-ready text faces, tap once, and paste into any chat.",
+      "Heart kaomoji to copy and paste, like (◍•ᴗ•◍)❤, for crushes, partners, and warm thank-yous. Small hearts for friends, full heart eyes for someone special.",
     intro:
       "These faces are about affection, not just cuteness. Grab one with hearts woven in when you mean love, a crush, or a warm thank-you. For adorable without the romance, try cute kaomoji; for a bashful blush, try shy kaomoji.",
     group: "browse",
@@ -736,8 +736,8 @@ export const pages: SitePage[] = [
       { id: "big", heading: "Big heart kaomoji ♥", glyphs: ["♥", "❤", "💕", "💗", "💞"] },
     ],
     howTo: [
-      "Open a heart face that matches the warmth you want (light thanks vs full swoon).",
-      "Tap Copy so the full string lands on your clipboard.",
+      "Choose how much heart you mean: a small ♡ for a thank-you, or full heart eyes for someone special.",
+      "Tap Copy. Heart symbols copy with the face, so nothing goes missing.",
       "Paste into your chat, then add your own words around it if you need context.",
     ],
     definition:
@@ -786,7 +786,7 @@ export const pages: SitePage[] = [
     tags: ["shy", "blush", "embarrassed"],
     howTo: [
       "Pick a face with blush, peeking eyes, or a tiny mouth that feels nervous, not shouty.",
-      "Tap Copy and keep the page handy on mobile until you switch apps.",
+      "Tap Copy. Blush marks are separate characters, so copying keeps them in place.",
       "Paste into the chat; if the face looks empty, try a simpler shy face from the same grid.",
     ],
     definition:
@@ -823,18 +823,18 @@ export const pages: SitePage[] = [
     heading: "Bunny Kaomoji",
     titleSegment: "Bunny Kaomoji (•ㅅ•)",
     description:
-      "Bunny kaomoji with rabbit ears and soft animal faces to copy. Tap once and paste cute rabbit text faces into any chat.",
+      "Bunny kaomoji to copy and paste: long-eared rabbit text faces for soft replies, Easter messages, and anyone who loves rabbits. Works in any chat or bio.",
     intro:
       "Bunny and rabbit text faces, all with long ears. Use them for soft, springy, animal-cute energy, Easter messages, or anyone who just really likes rabbits. Bears and dogs have their own pages.",
     group: "browse",
     tags: ["bunny", "rabbit"],
     howTo: [
       "Pick a bunny face with the ear style you like.",
-      "Tap Copy so the full character string is on your clipboard.",
+      "Tap Copy. Bunny ears are built from slashes and brackets, so copying keeps them lined up.",
       "Paste into chat and add a short line if the face alone needs context.",
     ],
     definition:
-      "These faces lean rabbit: ears, soft animal eyes, and gentle poses made for playful chats. Choose them when you want an animal read, not only a human cute smile.",
+      "Long ears are the giveaway, usually with soft eyes and small, gentle poses. Pick one when you want something animal-cute rather than a human smile.",
     learnMore:
       "Bunny kaomoji follow the same character logic as cat kaomoji but position the ear marks differently. Where cat ears sit inside the face brackets, rabbit ears are taller and built from characters that extend vertically above the head. The softness of the bunny face also draws from kawaii character design, where round soft features signal harmlessness and warmth — a combination that makes rabbit faces naturally suitable for affectionate chat moments.",
     faqs: [
@@ -878,12 +878,12 @@ export const pages: SitePage[] = [
     group: "browse",
     tags: ["dog", "puppy"],
     howTo: [
-      "Scan for floppy-ear or snout styles that read as a dog.",
-      "Tap Copy to capture the full face.",
-      "Paste into your message, then tweak surrounding words to match the tone.",
+      "Look for floppy ears or a little snout.",
+      "Tap Copy. The ears are part of the face, so copy the whole thing.",
+      "Paste it under a dog photo, in a pet-sitting update, or as a reply to \"who's a good boy?\"",
     ],
     definition:
-      "Expect pup energy: soft ears, snout shapes, and loyal or playful poses. They are for animal charm, not a stand-in for happy or heart pages.",
+      "Look for floppy ears, little snouts, and wagging poses. These are for dog lovers, pet photos, and anyone who deserves a good-boy compliment.",
     learnMore:
       "Dog kaomoji borrow the U and w characters for their rounded snout shapes, using the natural curve of those glyphs to suggest a muzzle without explicit nose marks. The loyalty association of dogs in Japanese popular culture made them a natural fit for affectionate or playful text expressions. Dog faces pair naturally with heart and happy content because the animal mood skews warmly positive and the visual cues read as friendly on sight.",
     faqs: [
@@ -928,11 +928,11 @@ export const pages: SitePage[] = [
     tags: ["shocked", "surprised"],
     howTo: [
       "Choose a face whose eyes and mouth look stunned, not merely confused.",
-      "Tap Copy before you switch apps on mobile.",
+      "Tap Copy. The bigger gasps use rare characters, so copying is safer than typing them.",
       "Paste into the chat right when the reaction lands.",
     ],
     definition:
-      "Wide eyes and open mouths carry the shock. Pick intensity to match the moment, from mild stun to full cartoon gasp.",
+      "Wide eyes and open mouths do the work here. Match the size of the face to the news, from a small blink to a full cartoon gasp.",
     learnMore:
       "Shock kaomoji typically exaggerate the mouth opening — a wide O shape that signals a sudden intake of breath. The eye-widening cue borrows from manga panel conventions, where pupils shrink or eyes go circular to signal a jolt. Short one-line shocked faces read faster than complex multi-character ones in a busy chat thread.",
     faqs: [
@@ -976,7 +976,7 @@ export const pages: SitePage[] = [
       "Paste and add a short line if the tease needs a softener.",
     ],
     definition:
-      "These lean into knowing smiles and light swagger. Use them for teasing confidence, not soft cute warmth or shy nerves.",
+      "Knowing smiles and a bit of swagger. Use them when you were right all along, or when you want to tease someone without being mean.",
     learnMore:
       "Smug kaomoji emerged from the reaction-face tradition of Japanese forums where a single expressive character could end a debate better than a paragraph. The narrow lidded eye — often a dash or a squint — signals self-satisfaction in a way that round open eyes never could. Reading the room matters: a smug face lands as teasing between friends and lands sharp in unfamiliar threads.\n\nSmug faces are built from half-closed eyes and a small sideways smile. ￣ー￣ uses flat bars as lidded eyes, ¬‿¬ uses side-eye marks, and adding ┐ ┌ arms as in ┐(￣ー￣)┌ turns smugness into a 'told you so' shrug. Good moments for a smug face: winning a friendly bet, guessing a plot twist, beating a friend's game score, or being right about the restaurant. Pair it with a short line like 'called it' so the meaning is clear. Avoid smug faces after a real argument or when someone has made a mistake at work, where they feel like gloating rather than teasing.",
     faqs: [
@@ -1016,11 +1016,11 @@ export const pages: SitePage[] = [
     tags: ["sleepy", "tired"],
     howTo: [
       "Choose a face with closed or heavy eyes, z's, or a yawn mouth.",
-      "Tap Copy while the string is still selected.",
+      "Tap Copy, including any zzz or 💤 after the face.",
       "Paste into your goodnight or \"brb sleeping\" message.",
     ],
     definition:
-      "Heavy lids, yawns, and quiet doze poses define this set. Send them for low energy and rest, not for cute or affectionate moods.",
+      "Heavy lids, yawns, and little zzz's. Send them at bedtime, after a long day, or when you are about to fall asleep mid-conversation.",
     learnMore:
       "Sleepy kaomoji use a simple visual trick: the eyes close from a wide-open position to a droop or a flat line, signaling fatigue through reduced alertness. Z characters reinforce the yawn signal in English-language chat. Drooped mouths and narrowed eyes carry the same meaning in the original Japanese faces where Z marks were less common.\n\nSleepy faces fit plenty of real moments: saying goodnight, admitting to a 3 a.m. study session, signing off after a long shift, or replying to an early-morning message. A soft (－_－) zzZ says you are drifting off, and a yawning face suits a meeting that ran too long. Japanese sleepy faces often add ｽﾔｧ (suyaa), the sound of peaceful sleep, or ﾈﾑｲ (nemui), meaning sleepy. For goodnight messages to family or a partner, pair a sleepy face with 🌙 or 💤 so the message reads as warm rather than bored.",
     faqs: [
@@ -1065,11 +1065,11 @@ export const pages: SitePage[] = [
     tags: ["confused"],
     howTo: [
       "Pick a face that looks puzzled rather than scared or angry.",
-      "Tap Copy to grab the full string.",
+      "Tap Copy. The question marks and tilted brackets are part of the face.",
       "Paste as a standalone reaction or before your clarifying question.",
     ],
     definition:
-      "Puzzled eyes, tilts, and soft question energy sit here. They mark uncertainty, not surprise gasps or shy blush.",
+      "Puzzled eyes, head tilts, and question marks. They say \"wait, what do you mean?\" rather than a shocked gasp.",
     learnMore:
       "Confusion in kaomoji is often signaled by a tilted head — achieved by leaning the whole face with character spacing — or a question mark placed outside the brackets. The head-tilt cue is intuitive cross-culturally because the physical gesture of tilting one's head when puzzled appears across many human cultures and translates directly into text.",
     faqs: [
@@ -1102,7 +1102,7 @@ export const pages: SitePage[] = [
     heading: "Bear Kaomoji",
     titleSegment: "Bear Kaomoji ʕ•ᴥ•ʔ",
     description:
-      "Bear kaomoji ʕ•ᴥ•ʔ copy and paste: teddy-style text bears with round bracket ears and ᴥ snout. Tap once for the classic bear face in any chat.",
+      "Bear kaomoji ʕ•ᴥ•ʔ to copy and paste: round-eared text bears, from the classic face to sleepy ʕ-ᴥ-ʔ and grumpy bears. Works in Discord, WhatsApp, and bios.",
     intro:
       "The ʕ•ᴥ•ʔ shape is one of the most recognizable kaomoji on the internet — the rounded bracket ears and centered ᴥ snout are unmistakably bear. This page collects bear-shaped faces specifically: angry bears, sleepy droops, and the classic neutral pose. Cat and dog have their own pages; soft human smiles belong on cute.",
     group: "browse",
@@ -1158,7 +1158,7 @@ export const pages: SitePage[] = [
     heading: "Hug Kaomoji",
     titleSegment: "Hug Kaomoji (づ｡◕‿‿◕｡)づ",
     description:
-      "Hug kaomoji copy and paste: warm embrace and hugging text faces (づ｡◕‿‿◕｡)づ. Tap once for the perfect hug reaction in any chat.",
+      "Hug kaomoji (づ｡◕‿‿◕｡)づ to copy and paste: open-arm hugs, gentle pats, and big squeezes for when someone needs comfort or you just miss them.",
     intro:
       "Warm embrace poses and open-arm hugs for when words are not enough — tap to copy. Hug kaomoji are the outstretched-arms reaction for comfort, celebration, and big welcomes.",
     group: "browse",
@@ -1169,7 +1169,7 @@ export const pages: SitePage[] = [
       "Paste into your message as a warm standalone gesture.",
     ],
     definition:
-      "Hug kaomoji use outstretched arms and embrace poses built from Unicode characters. They convey warmth, comfort, and affection more expressively than a plain heart.",
+      "Hug kaomoji are all arms: つ and づ reach out from the sides of the face to wrap around someone. They feel warmer than a heart because they are actually doing something.",
     learnMore:
       "Hug kaomoji use the づ and ⊂ characters as outstretched arms — a natural fit because both characters already curve in the direction of reaching forward. The gesture covers a range of emotional registers from a comforting shoulder-squeeze to a full enthusiastic embrace. Posting a hug face is one of the few kaomoji gestures that sends a clear physical action to the reader rather than simply expressing an emotion.",
     faqs: [
@@ -1209,7 +1209,7 @@ export const pages: SitePage[] = [
       "Paste into your opening or closing message for a friendly, visible wave.",
     ],
     definition:
-      "Waving kaomoji feature arm-raising and wave poses that signal hello, goodbye, or friendly acknowledgment in plain text. They cover everything from a gentle greeting to an enthusiastic farewell cheer.",
+      "Waving kaomoji have an arm up, usually ノ or ﾉ, for hello, goodbye, or \"over here!\" They range from a small polite wave to a big two-armed goodbye.",
     learnMore:
       "Waving kaomoji are culturally versatile because the wave gesture reads the same way in almost every language — it is a hello, a goodbye, or a friendly acknowledgment. The ﾉ character became the most widely used wave arm in kaomoji because its diagonal line naturally suggests a raised hand. A simple face with a single ﾉ needs no decoding — the gesture is self-explanatory across cultural contexts without any Japanese internet knowledge.",
     faqs: [
@@ -1238,18 +1238,18 @@ export const pages: SitePage[] = [
     heading: "Thinking Kaomoji",
     titleSegment: "Thinking Kaomoji (◔_◔)",
     description:
-      "Thinking kaomoji copy and paste: pondering, wondering, and deep-thought text faces. Tap once for the perfect thinking reaction.",
+      "Thinking kaomoji to copy and paste: hand-on-chin, eyes-up, and \"hmm\" faces for working out a question, making plans, or stalling before you reply.",
     intro:
       "Pondering faces and deep-thought expressions for when you need to show the gears turning — tap to copy. Thinking kaomoji cover curiosity, contemplation, and the universal \"hmm\".",
     group: "browse",
     tags: ["thinking"],
     howTo: [
       "Pick a face that reads pensive or curious, not blank or confused.",
-      "Tap Copy to grab the thinking pose.",
-      "Paste as your reaction to a complex question or before your considered reply.",
+      "Tap Copy. Hand-on-chin faces use a small arm character, so copy the face whole.",
+      "Send it when you need a minute, like when someone asks where you want to eat.",
     ],
     definition:
-      "Thinking kaomoji feature hand-to-chin poses, upward glances, and contemplative expressions that signal deep thought or genuine curiosity.",
+      "Thinking kaomoji look up, look sideways, or rest a hand on the chin. Use them when you are still working something out, or to show you are taking a question seriously.",
     learnMore:
       "Thinking kaomoji borrowed the hand-to-chin gesture from Japanese manga, where a tilted head and upward glance signal a character deep in thought. The pose translates well to text because a slightly asymmetric eye — one larger or more open than the other — creates the impression of looking off to one side. Even a two-character difference in the eyes shifts the face from blank to pensive, making the mood readable at a glance.",
     faqs: [
@@ -1278,18 +1278,18 @@ export const pages: SitePage[] = [
     heading: "Dance Kaomoji",
     titleSegment: "Dance Kaomoji ♪(┌・。・)┌",
     description:
-      "Dance kaomoji copy and paste: dancing, grooving, and celebration text faces. Tap once for an animated dance reaction in any chat.",
+      "Dance kaomoji to copy and paste: grooving, spinning, and ♪ party faces for good news, Friday nights, or a song you cannot stop playing.",
     intro:
       "Grooving, spinning, and full dance-mode poses for when the vibe calls for a celebration — tap to copy. Dance kaomoji bring movement and joy to plain text.",
     group: "browse",
     tags: ["dance"],
     howTo: [
-      "Pick a dance face that matches the music energy — subtle groove or full party mode.",
-      "Tap Copy to grab the pose.",
+      "Pick a small shuffle or a full party move.",
+      "Tap Copy. Try sending two or three in a row so they look like they are dancing.",
       "Paste as your reaction to good news, a party invite, or a song you love.",
     ],
     definition:
-      "Dance kaomoji feature spinning poses, arm movements, and celebratory stances that suggest motion and rhythm in plain text.",
+      "Dance kaomoji are faces caught mid-move, with arms swapping sides and ♪ notes floating around them. Send a few in a row and they almost look animated.",
     learnMore:
       "Dance kaomoji capture motion through asymmetric arm placement and musical note characters like ♪ placed outside the face frame. The ♪ glyph is an unusually efficient shorthand — it signals music and movement in a single character, turning a static face into one that clearly reads as grooving. Adding a second ♫ mark intensifies the musical energy further.\n\nDance faces are built from moving arms on both sides: ┏(＾0＾)┛ and ┗(＾0＾)┓ are the same dancer mid-move, and sending them one after another looks like a little routine. ヾ(⌐■_■)ノ♪ adds sunglasses for a cooler dancer, while ~(˘▾˘~) and (~˘▾˘)~ sway side to side. Use them for good news, weekend plans, payday, a favorite song coming on, or the end of exams. Pair them with 🎶 or 🪩 for a party mood. Because dance faces are energetic, they fit friends and group chats better than formal messages.",
     faqs: [
@@ -1318,18 +1318,18 @@ export const pages: SitePage[] = [
     heading: "Fish Kaomoji",
     titleSegment: "Fish Kaomoji ><(((°>",
     description:
-      "Fish kaomoji copy and paste: fishy, aquatic, and underwater text faces ><(((°>. Tap once for a fun fish reaction in any chat.",
+      "Fish kaomoji ><(((°> to copy and paste: little text fish, fish faces, and ocean scenes for fishing jokes, aquarium trips, and random replies.",
     intro:
       "Fishy faces and aquatic text art for fishing jokes, aquarium fans, and anyone who loves a good ><(((°> — tap to copy. Fish kaomoji are a niche favorite in kaomoji culture.",
     group: "browse",
     tags: ["fish"],
     howTo: [
-      "Pick a fish face that shows the size or mood you want.",
-      "Tap Copy to grab the fishy characters intact.",
-      "Paste into chat for an unexpected aquatic reaction.",
+      "Pick a classic ><(((°> fish, a fish face, or a whole little school.",
+      "Tap Copy. The brackets and arrows have to stay in order, so copying beats typing.",
+      "Paste it for fishing trips, aquarium photos, or a reply that makes no sense on purpose.",
     ],
     definition:
-      "Fish kaomoji use bracket and arrow characters to create the classic ><(((°> fish shape, along with aquatic-themed face variants. They are a beloved novelty in the kaomoji tradition.",
+      "The classic text fish is ><(((°>: the brackets are its body and the > at the front is its nose. There are fish faces and little schools of fish too, for when a reply should be a bit random.",
     learnMore:
       "The ><(((°> fish shape is one of the earliest kaomoji to spread widely in Western internet culture, appearing on IRC and early forums in the 1990s before most Western users had encountered Japanese-style text faces. Its purely pictographic nature — it represents an object, not a mood — makes it accessible without any knowledge of kaomoji grammar.",
     faqs: [
@@ -1358,18 +1358,18 @@ export const pages: SitePage[] = [
     heading: "Birthday Kaomoji",
     titleSegment: "Birthday Kaomoji ☆彡(ﾉ^^)ﾉ",
     description:
-      "Birthday kaomoji copy and paste: celebration, cake, and party text faces. Tap once to send the perfect birthday reaction in any chat.",
+      "Birthday kaomoji to copy and paste: cheering faces with cakes, balloons, and party poppers for birthday texts, group cards, and late wishes.",
     intro:
       "Party faces, cake poses, and celebratory cheers for birthdays — one tap to copy. Birthday kaomoji are the text-face way to celebrate someone without hunting for the right emoji combo.",
     group: "browse",
     tags: ["birthday"],
     howTo: [
-      "Pick a face with the celebration intensity you want — heartfelt cheer or full party mode.",
-      "Tap Copy to capture every party character.",
-      "Paste into your birthday message for an instant text-face celebration.",
+      "Pick a cheering face, a cake face, or one holding balloons.",
+      "Tap Copy. Cake and balloon emoji copy along with the face.",
+      "Paste it at the end of your birthday message, after the part where you say something nice.",
     ],
     definition:
-      "Birthday kaomoji combine party, celebration, and festive poses to create text faces perfect for birthday wishes, congratulations, and milestone moments.",
+      "Birthday kaomoji pair cheering faces with cakes, candles, balloons, and party poppers. One at the end of a birthday text makes it feel more like a card.",
     learnMore:
       "Birthday kaomoji borrow celebratory elements from the sparkle and star pages — ★ and ☆ characters — and combine them with cheering poses to signal a special occasion. They occupy the overlap between festive decoration and expressive reaction, making them work equally well as a standalone birthday greeting or as a flourish alongside a written message.\n\nA good birthday message pairs one face with one personal line. 'Happy birthday! Hope this year is your best yet ＼(＾▽＾)／🎂' feels warmer than a face on its own, and putting the face at the end keeps the message easy to read. Cake 🎂, balloons 🎈, party poppers 🎉, and gifts 🎁 are the emoji that make a face read as a birthday at a glance. For a belated wish, a sheepish face with a sweat drop, such as (^_^;)🎂, admits you are late with a smile. For group cards and office chats, choose simple cheering faces that everyone can read.",
     faqs: [
@@ -1643,7 +1643,7 @@ export const pages: SitePage[] = [
     path: "/halloween-kaomoji",
     label: "Halloween",
     heading: "Halloween Kaomoji",
-    titleSegment: "Halloween Kaomoji ヾ(⌐■_■)ノ♪",
+    titleSegment: "Halloween Kaomoji 👻(◕ᴗ◕) 350+ Spooky Faces",
     description:
       "Halloween kaomoji copy and paste 🎃 350+ spooky faces: ghosts 👻(◕ᴗ◕), pumpkins, bats ⎛⎝(•ⱅ•)⎠⎞, zombies [¬º-°]¬, vampires, witches, and devils. Tap to copy.",
     intro:
@@ -1695,7 +1695,7 @@ export const pages: SitePage[] = [
         answer: "Mostly, but skulls, devils, and zombies also work year-round for horror fans, gaming chats, and dark humor.",
       },
     ],
-    related: ["/emoji-combos", "/devil-kaomoji", "/christmas-kaomoji", "/shocked-kaomoji", "/cute-symbols", "/birthday-kaomoji"],
+    related: ["/scared-kaomoji", "/devil-kaomoji", "/emoji-combos", "/cute-symbols", "/thanksgiving-kaomoji", "/christmas-kaomoji"],
   },
   {
     path: "/star-kaomoji",
@@ -1703,15 +1703,15 @@ export const pages: SitePage[] = [
     heading: "Star Kaomoji",
     titleSegment: "Star Kaomoji ★(^_^)★",
     description:
-      "Star kaomoji copy and paste: shining, sparkling, and star-filled text faces. Tap once to copy a star kaomoji and drop it into any chat or bio.",
+      "Star kaomoji to copy and paste: faces with ★ and ✦ for wishes, wins, and late-night chats, plus starry borders for bios and usernames.",
     intro:
       "Shining and twinkling star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. This collection covers classic ★ faces and soft twinkling poses. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
     group: "browse",
     tags: ["star", "twinkle"],
     howTo: [
-      "Pick a star face with the glow intensity you want — from a single ★ accent to a twinkling full-starfield pose.",
+      "Pick a face with a single ★, or one surrounded by stars.",
       "Tap Copy so every character, including spacing, lands on your clipboard.",
-      "Paste into chat, a bio, or a username for instant celestial flair.",
+      "Paste it into a chat, a bio, or a username. Stars look good at both ends of a name.",
     ],
     definition:
       "Star kaomoji weave ★ and ✦ glyphs into expressive faces, twinkling poses, and decorative borders. Use them for wishes, achievements, nighttime vibes, or any moment that deserves a little sparkle.",
@@ -1743,7 +1743,7 @@ export const pages: SitePage[] = [
     heading: "Giggling Kaomoji",
     titleSegment: "Giggling Kaomoji (≧▽≦)",
     description:
-      "Giggling kaomoji copy and paste: laughter, giggles, and burst-laugh text faces. Tap once for the perfect giggle reaction in chat.",
+      "Giggling kaomoji to copy and paste: quiet giggles, hand-over-mouth snickers, and full laughing fits for when \"lol\" is not enough.",
     intro:
       "Giggles, chuckles, and burst laughs ready to copy in one tap. Giggling and laughing faces share this page so you get the full spectrum from shy titter to uncontrollable cackle.",
     group: "browse",
@@ -1754,7 +1754,7 @@ export const pages: SitePage[] = [
       "Paste into chat as a standalone reaction or after a funny line.",
     ],
     definition:
-      "These faces lean into laughter: squinted happy eyes, open mouths, and the energetic poses that signal you found something genuinely funny.",
+      "These are laughing faces: squinted eyes, open mouths, and hands over the mouth. Use them when something is actually funny, not just polite-funny.",
     learnMore:
       "Giggling kaomoji evolved alongside Japanese onomatopoeia culture, where specific laugh sounds (kuku, fufu, ufufu) were associated with certain levels of amusement. The squinted crescents that form the giggle-eyes in text are a direct visual equivalent of these sounds — a contained, soft laugh that is distinct from the wide-open mouth of a full burst laugh.",
     faqs: [
@@ -1789,9 +1789,9 @@ export const pages: SitePage[] = [
     group: "browse",
     tags: ["sparkle"],
     howTo: [
-      "Choose a sparkle face that matches your sparkle level — subtle shimmer to full glitter bomb.",
-      "Tap Copy to capture all glitter glyphs intact.",
-      "Paste into your message or bio for that ✨ effect.",
+      "Pick a little shimmer or a full glitter bomb.",
+      "Tap Copy. Sparkle trails like ✧ﾟ･ are part of the face, so they come along too.",
+      "Paste it into a message, a bio, or a caption that needs a bit of shine.",
     ],
     definition:
       "Sparkle kaomoji wrap faces in glitter and shine glyphs like ✨, ★, and ✦. Use them for celebratory vibes, magical moments, or aesthetic text decoration.",
@@ -1823,15 +1823,15 @@ export const pages: SitePage[] = [
     heading: "Love Kaomoji",
     titleSegment: "Love Kaomoji (♡ω♡)",
     description:
-      "Love kaomoji copy and paste: lovestruck, affection, and romantic text faces. Tap once for the perfect love reaction beyond a plain heart emoji.",
+      "Love kaomoji to copy and paste: heart eyes, lovestruck sighs, and cuddly faces for partners and crushes, when a plain ❤️ does not say enough.",
     intro:
       "Lovestruck faces and deep affection poses — more expressive than a single ♡ emoji. Love kaomoji go beyond heart symbols into full \"I adore you\" energy, perfect for crush confessions and warm appreciation.",
     group: "browse",
     tags: ["love"],
     howTo: [
-      "Pick a face that matches your love intensity — soft warmth, crush energy, or full lovestruck swoon.",
+      "Decide how much you want to say: a soft smile, a blush, or full heart eyes.",
       "Tap Copy once so every heart glyph stays intact.",
-      "Paste into a message, a bio, or wherever affection fits.",
+      "Paste it into a good-morning text, a love note, or your bio.",
     ],
     definition:
       "Love kaomoji go beyond a simple heart symbol into full expressive poses — heart-eyes, lovestruck sighs, and affection-filled stances.",
@@ -1863,18 +1863,18 @@ export const pages: SitePage[] = [
     heading: "Flower Kaomoji",
     titleSegment: "Flower Kaomoji (✿◠‿◠)",
     description:
-      "Flower kaomoji copy and paste: sakura, cherry blossom, and flower-in-hair faces like (◕‿◕✿) and (✿◠‿◠). Tap once to add a floral accent to any message.",
+      "Flower kaomoji to copy and paste: sakura and blossom faces like (◕‿◕✿) and (✿◠‿◠), plus ✿ borders for spring messages, bios, and soft captions.",
     intro:
       "Soft flower faces, cherry blossom poses, and floral accents for gentle, pretty messages. Flower and sakura kaomoji use ✿, ❀, and ꕤ glyphs to bring nature and warmth to plain text.",
     group: "browse",
     tags: ["flower", "sakura"],
     howTo: [
-      "Pick a flower or blossom face that matches the softness you want — subtle petal accent or full sakura pose.",
-      "Tap Copy so every floral glyph stays intact.",
-      "Paste into chat, a caption, or a username for a soft natural touch.",
+      "Pick a face with a single ✿, or one covered in blossoms.",
+      "Tap Copy. Flower symbols like ✿ and ❀ copy with the face.",
+      "Paste it into a spring message, a caption, or a username.",
     ],
     definition:
-      "Flower kaomoji use blossom glyphs like ✿, ❀, and ꕤ woven into text faces and decorative borders. Sakura kaomoji add cherry blossom energy — ideal for spring messages and Japanese-inspired aesthetics.",
+      "Flower kaomoji use blossom glyphs like ✿, ❀, and ꕤ woven into text faces and decorative borders. Sakura faces add cherry blossoms, which suit spring messages and anything with a Japanese feel.",
     learnMore:
       "Floral glyphs like ✿ and ❀ entered kaomoji through Japanese mobile culture in the early 2000s, when the limited character sets on flip phones became a creative constraint that drove inventive decoration. Adding a single ✿ to a text face transformed a generic smile into a nature-themed expression. Sakura kaomoji followed the same aesthetic logic — pairing soft cherry-blossom glyphs with gentle eye and mouth marks to evoke the warmth of spring in a single line.",
     faqs: [
@@ -1907,18 +1907,18 @@ export const pages: SitePage[] = [
     heading: "Kiss Kaomoji",
     titleSegment: "Kiss Kaomoji (ˊᗜˋ*)♡",
     description:
-      "Kiss kaomoji copy and paste: blowing kisses, smooch faces, and affectionate peck text faces. Tap once for a sweet kiss reaction in any chat.",
+      "Kiss kaomoji to copy and paste: blown kisses, little pecks, and smooch faces for goodnight texts, partners, and friends you like to tease.",
     intro:
       "Blowing kisses, smooch poses, and sweet peck faces — tap to copy. Kiss kaomoji focus on the act of kissing, not just a floating heart symbol. Great for goodnight messages, love notes, and affectionate friend chats.",
     group: "browse",
     tags: ["kiss"],
     howTo: [
-      "Pick a kiss face that matches the vibe — playful blown kiss, sweet peck, or romantic smooch.",
-      "Tap Copy to capture every character.",
-      "Paste into your message as a standalone affectionate gesture.",
+      "Pick a blown kiss for friends, or a real smooch for a partner.",
+      "Tap Copy. Hearts and kiss marks come along with the face.",
+      "Send it at the end of a goodnight text.",
     ],
     definition:
-      "Kiss kaomoji feature puckered mouths, blown kiss poses, and smooch expressions built from Unicode characters — more expressive than a plain 😘 emoji.",
+      "Kiss kaomoji have puckered mouths, blown kisses, and little smooches, often with a ♡ flying off. They say more than a 😘 because you can pick exactly how much you mean it.",
     learnMore:
       "Kiss kaomoji express the gesture rather than the emotion alone, using mouth-shape characters and motion marks to suggest puckering or a blown kiss in progress. The blown-kiss variant — a figure leaning forward with an extended arm — is one of the more expressive kaomoji poses because it implies movement toward the recipient rather than a static expression.",
     faqs: [
@@ -1947,18 +1947,18 @@ export const pages: SitePage[] = [
     heading: "Smile Kaomoji",
     titleSegment: "Smile Kaomoji (﹡ᵕ꒳ᵕ﹡)",
     description:
-      "Smile kaomoji copy and paste: soft smiles, gentle grins, and warm text faces. Tap once for a friendly smile reaction in any message.",
+      "Smile kaomoji to copy and paste: soft grins and calm, friendly faces like (◕‿◕) for hellos, thank-yous, and messages that just need to sound kind.",
     intro:
       "Warm smiles and gentle grins for everyday friendly messages — one tap to copy. Smile kaomoji cover the broad soft-smile mood, from tiny resting smiles to warm welcoming grins.",
     group: "browse",
     tags: ["smile"],
     howTo: [
-      "Pick a smile that matches the warmth level — barely-there grin or wide open smile.",
+      "Pick a small, quiet smile or a wide one.",
       "Tap Copy so every character comes along.",
       "Paste as a soft positive reaction or a friendly standalone message.",
     ],
     definition:
-      "Smile kaomoji feature curved mouths and gentle expressions that read as friendly, warm, and approachable. They are softer than happy cheers and less intense than excited faces.",
+      "Smile kaomoji are calm and friendly: curved mouths, soft eyes, no shouting. They are quieter than happy cheers and much calmer than excited faces.",
     learnMore:
       "Smile kaomoji represent the baseline of the kaomoji vocabulary: the simple curved mouth between eye characters is the starting point from which almost all other expressions diverge. The (◡‿◡) and ( ˙‿˙ ) patterns have been in use since the earliest days of Japanese text culture and remain among the most universally recognized text faces.",
     faqs: [
@@ -1987,7 +1987,7 @@ export const pages: SitePage[] = [
     heading: "Excited Kaomoji",
     titleSegment: "Excited Kaomoji ヽ(✿゚▽゚)ノ",
     description:
-      "Excited kaomoji copy and paste: hype, enthusiasm, and high-energy text faces. Tap once for the perfect excited reaction in Discord, WhatsApp, or any chat.",
+      "Excited kaomoji to copy and paste: arms-up, sparkly-eyed faces like ＼(≧▽≦)／ for good news, big announcements, and anything you have been waiting for.",
     intro:
       "Arms-up, wide-eyed, and bursting-with-energy faces for genuine excitement — tap to copy. Excited kaomoji bring the hype when a simple smile is not enough.",
     group: "browse",
@@ -1998,7 +1998,7 @@ export const pages: SitePage[] = [
       "Paste as your reaction to good news, an announcement, or a hype moment.",
     ],
     definition:
-      "Excited kaomoji are high-energy expressions: raised arms, sparkling eyes, and dynamic poses built from Unicode characters. They signal enthusiasm and genuine joy.",
+      "Excited kaomoji can barely sit still: arms thrown up, sparkly eyes, and plenty of ✧. Use them when you want to jump up and down a little.",
     learnMore:
       "Excited kaomoji are among the most arm-heavy in the kaomoji vocabulary — the high-energy expression almost always involves raised or spread characters at the edges. This mirrors the physical experience of excitement: arms go up, the body opens outward. Characters like ヽ, ノ, and \\(^o^)/ translate that physical open-armed gesture directly into plain text.",
     faqs: [
@@ -2027,18 +2027,18 @@ export const pages: SitePage[] = [
     heading: "Nervous Kaomoji",
     titleSegment: "Nervous Kaomoji (;´・ω・)",
     description:
-      "Nervous kaomoji copy and paste: anxious, worried, and uneasy text faces. Tap once for an authentic nervous reaction — sweat drops and tense eyes included.",
+      "Nervous kaomoji to copy and paste: sweat-drop faces like (；・∀・) for exams, first dates, awkward texts, and those \"I just hit send\" moments.",
     intro:
       "Anxious sweat drops, tense eyes, and uneasy expressions for those \"uh oh\" moments — one tap to copy. Nervous kaomoji cover the full range from mild worry to full anxiety spiral.",
     group: "browse",
     tags: ["nervous"],
     howTo: [
       "Pick a face that matches your nerves — mild uneasy look or full sweat-drop panic.",
-      "Tap Copy to grab the face.",
+      "Tap Copy. Sweat drops like ; are part of the face, so they come along too.",
       "Paste as your honest reaction to a stressful or uncertain moment.",
     ],
     definition:
-      "Nervous kaomoji feature sweat drops, tense mouths, and anxious eyes. They signal unease, worry, or mild dread in a way that pure text descriptions often miss.",
+      "Nervous kaomoji sweat. Look for ; drops, tight mouths, and eyes darting sideways. They show worry better than typing \"lol I'm fine.\"",
     learnMore:
       "Nervous kaomoji often feature the sweat drop — a small mark placed outside the face brackets to signal stress without changing the facial expression itself. This convention comes directly from manga panel language, where a single bead of sweat at the temple communicates anxiety more economically than any other visual shorthand in Japanese comics and animation.",
     faqs: [
@@ -2067,18 +2067,18 @@ export const pages: SitePage[] = [
     heading: "Wink Kaomoji",
     titleSegment: "Wink Kaomoji (｡•̀ᴗ-)✧",
     description:
-      "Wink kaomoji copy and paste: playful winks, cheeky one-eyed text faces. Tap once and paste a wink reaction into any chat or message.",
+      "Wink kaomoji to copy and paste: one-eyed faces for jokes, light teasing, and shared secrets, from friendly winks to slightly flirty ones.",
     intro:
       "Playful one-eyed winks and cheeky expressions for teasing messages — tap to copy. A wink kaomoji says more than words when you want to keep something light.",
     group: "browse",
     tags: ["wink"],
     howTo: [
-      "Choose a wink face that feels playful without being too flirty for the context.",
-      "Tap Copy to grab the face.",
-      "Paste after a teasing line or as a standalone cheeky reply.",
+      "Choose a friendly wink for friends and coworkers, and save the flirty ones for someone who will get it.",
+      "Tap Copy, then paste it right after the joke.",
+      "Use it to show you are kidding, so a tease does not get taken the wrong way.",
     ],
     definition:
-      "Wink kaomoji feature one closed eye and one open eye, suggesting a playful, knowing expression. They signal teasing, flirting, or a shared secret without saying a word.",
+      "Wink kaomoji close one eye and keep the other open. They say \"just kidding,\" \"you know what I mean,\" or, with the right person, a little flirt.",
     learnMore:
       "The wink kaomoji achieves its effect through asymmetry: one eye closes while the other stays open, creating an imbalance that the face-reading part of the brain immediately recognizes as intentional. In kaomoji, this is usually achieved by using an open eye character on one side and a dash or arc on the other — a minimal change with a clear meaning shift.\n\nCommon wink parts include ‿ or ᴗ for the mouth, - or ~ for the closed eye, and ✧ or ☆ thrown out from the eye as a sparkle, as in (｡•̀ᴗ-)✧. That sparkle version is the classic 'leave it to me' wink and works well when you agree to do someone a favor. A wink can also soften a joke so it does not read as mean: 'You're late again (^_~)' sounds friendly, while the same line without the face can sound like a complaint. In work chats, keep winks for colleagues you know well, because a wink can read as flirty to someone who does not know your style.",
     faqs: [
@@ -2107,7 +2107,7 @@ export const pages: SitePage[] = [
     heading: "Thumbs Up Kaomoji",
     titleSegment: "Thumbs Up Kaomoji (b ^_^ )b",
     description:
-      "Thumbs up kaomoji and OK text faces copy and paste. Tap once for an approval, agreement, or good-job reaction in any chat.",
+      "Thumbs up kaomoji and OK faces to copy and paste, for saying yes, nice work, or sounds good with a little more warmth than a plain 👍.",
     intro:
       "Approval and OK reactions for when a plain \"yes\" feels flat — tap to copy. This page covers thumbs-up poses and OK-gesture kaomoji that signal agreement, confirmation, and encouragement.",
     group: "browse",
@@ -2118,7 +2118,7 @@ export const pages: SitePage[] = [
       "Paste after a message you agree with, or as a standalone reaction to good news.",
     ],
     definition:
-      "Thumbs-up and OK kaomoji use raised-arm poses and approval gestures to signal yes, good, or well done. They are the text-face equivalent of a 👍 — direct, positive, and easy to read.",
+      "Thumbs-up and OK kaomoji are a 👍 with a face attached. Use them to say yes, nice work, or sounds good when a plain thumbs-up feels a bit cold.",
     learnMore:
       "Thumbs-up kaomoji use the b or ᕙ character as the raised thumb placed at the arm position in the standard kaomoji frame. The b character is particularly elegant because it reads as a thumb visually while also being a basic keyboard character that pastes cleanly on all devices. The OK variant uses circle-shaped characters to form the approval gesture.",
     faqs: [
@@ -2151,7 +2151,7 @@ export const pages: SitePage[] = [
     heading: "Bowing Kaomoji",
     titleSegment: "Bowing Kaomoji m(_ _)m",
     description:
-      "Bowing kaomoji copy and paste: respect, thank you, and deep-bow text faces m(_ _)m. Tap once for a sincere greeting or gratitude reaction.",
+      "Bowing kaomoji m(_ _)m to copy and paste: polite nods, deep bows, and full dogeza for thank-yous, apologies, and asking someone a favor.",
     intro:
       "Respectful bows, thank-you gestures, and deep dogeza poses for formal and sincere moments — tap to copy. Bowing kaomoji carry real cultural weight in Japanese internet culture, where a bow communicates gratitude, apology, or deep respect in a way a plain \"thanks\" cannot.",
     group: "browse",
@@ -2195,7 +2195,7 @@ export const pages: SitePage[] = [
     heading: "Running Kaomoji",
     titleSegment: "Running Kaomoji ε=ε=┌( >_<)┘",
     description:
-      "Running kaomoji copy and paste: dashing, sprinting, and action text faces ε=ε=┌( >_<)┘. Tap once for a run, dash, or zoom-off reaction.",
+      "Running kaomoji ε=ε=┌( >_<)┘ to copy and paste: dashing, sprinting, and running-late faces for \"brb\", escaping chores, or rushing out the door.",
     intro:
       "Dashing, sprinting, and zoom-off action faces for when you are out the door — tap to copy. Running kaomoji use ε= motion marks and a leaning pose to show speed and urgency in a single line of text.",
     group: "browse",
@@ -2681,7 +2681,7 @@ export const pages: SitePage[] = [
     ],
     howTo: [
       "Pick the symptom: sneezing 🤧, fever 🤒, dizzy (@_@), or a mask 😷.",
-      "Tap Copy to grab the face.",
+      "Tap Copy. Emoji like 🤧 and 😷 copy together with the face.",
       "Send a get-well face like (づ｡◕‿‿◕｡)づ💊 feel better to someone who is ill.",
     ],
     definition:
@@ -2713,7 +2713,7 @@ export const pages: SitePage[] = [
     ],
     howTo: [
       "Pick the level of fear: uneasy (ㆆ_ㆆ), trembling (((( ;°Д°)))), or fleeing ε=ε=┌(;°□°)┘.",
-      "Tap Copy to grab the face.",
+      "Tap Copy. The extra (((( )))) brackets are what make it shake, so copy it whole.",
       "Paste it during a horror movie chat, a spooky story, or before a scary exam.",
     ],
     definition:
@@ -2745,7 +2745,7 @@ export const pages: SitePage[] = [
     ],
     howTo: [
       "Pick the mood: cheeky Ψ(｀▽´)Ψ, wicked (◣‿◢)Ψ, or plotting (¬‿¬)👿.",
-      "Tap Copy to grab the face.",
+      "Tap Copy. The Ψ pitchfork is a Greek letter, so copying is easier than hunting for it.",
       "Paste it when you're up to something — a prank, a plot twist, or a playful threat.",
     ],
     definition:

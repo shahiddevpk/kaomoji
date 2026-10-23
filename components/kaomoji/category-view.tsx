@@ -189,6 +189,13 @@ function facesSectionHeading(page: SitePage): string {
   }
 }
 
+/** Lowercase mood labels mid-sentence, but keep holiday names capitalized. */
+function meaningLabel(label: string): string {
+  return /^(Halloween|Christmas|Thanksgiving|Valentine|New Year)/.test(label)
+    ? label
+    : label.toLowerCase();
+}
+
 function learnHeadingFor(pagePath: string, label: string): string {
   switch (pagePath) {
     case "/japanese-emoticons":
@@ -368,11 +375,11 @@ export function CategoryView({
       {showEducation && PAGE_MEANINGS[page.path] ? (
         <section className="mt-10" aria-labelledby="meanings-heading">
           <h2 id="meanings-heading" className="type-h2">
-            Popular {page.label.toLowerCase()} kaomoji and what they mean
+            Popular {meaningLabel(page.label)} kaomoji and what they mean
           </h2>
           <p className="mt-2 max-w-2xl type-meta leading-6">
             Every face is built from characters that each play a part. Here is
-            how the most-used {page.label.toLowerCase()} faces work.
+            how the most-used {meaningLabel(page.label)} faces work.
           </p>
           <MeaningCards
             items={PAGE_MEANINGS[page.path]!.map((item, i) => ({

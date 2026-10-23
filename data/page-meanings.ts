@@ -11,6 +11,16 @@ export type PageMeaning = {
 };
 
 export const PAGE_MEANINGS: Record<string, PageMeaning[]> = {
+  "/halloween-kaomoji": [
+    { face: "👻(◕ᴗ◕)👻", name: "Friendly ghost", meaning: "Cute spooky. Safe for family chats and kids.", parts: "👻 ghosts on both sides of a soft ◕ᴗ◕ smile." },
+    { face: "[¬º-°]¬", name: "Zombie walk", meaning: "Shuffling toward you, arms out.", parts: "¬ is an arm reaching forward; º and ° are mismatched, dead-looking eyes." },
+    { face: "{¬ºཀ°}¬", name: "Groaning zombie", meaning: "The creepier zombie, mid-groan.", parts: "ཀ (a Tibetan letter) becomes a twisted, drooling mouth." },
+    { face: "⎛⎝(•ⱅ•)⎠⎞", name: "Bat", meaning: "A little bat with its wings spread.", parts: "⎛⎝ and ⎠⎞ are the wings; ⱅ in the middle looks like tiny fangs." },
+    { face: "Ψ(｀▽´)Ψ", name: "Little devil", meaning: "Tricks, pranks, and mischief.", parts: "Ψ is the Greek letter psi, used as a pitchfork; ｀ ´ are scheming brows." },
+    { face: "(☠_☠)", name: "Skull eyes", meaning: "Dead tired, or scared to death.", parts: "☠ skull-and-crossbones symbols sit where the eyes go." },
+    { face: "💀_(:3」∠)_", name: "Collapsed skeleton", meaning: "\"I'm dead,\" from laughing or from too much candy.", parts: "_(:3」∠)_ is a body flat on the floor; 💀 turns it into a skeleton." },
+    { face: "🧙‍♀️(◕‿◕)🔮", name: "Witch", meaning: "Spells, potions, and fortune-telling.", parts: "A witch 🧙‍♀️ and her crystal ball 🔮 on either side of a calm smile." },
+  ],
   "/sick-kaomoji": [
     { face: "(´×ω×`)😷", name: "Mask on", meaning: "I'm sick, staying away.", parts: "× eyes look unwell; 😷 is a face mask." },
     { face: "🤧( >_<)ｸｼｭﾝ", name: "Sneeze", meaning: "Cold or hay fever.", parts: "> < squeezed eyes mid-sneeze; ｸｼｭﾝ (kushun) is 'achoo'." },

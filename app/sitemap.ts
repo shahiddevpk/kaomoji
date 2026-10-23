@@ -19,6 +19,9 @@ function contentModified(page: SitePage): string {
     case "/":
       // Guides section + guide links added to the hub.
       return "2026-10-20";
+    case "/halloween-kaomoji":
+      // Named popular-faces section and new title.
+      return "2026-10-23";
     case "/kaomoji-copy-paste":
     case "/japanese-emoticons":
     case "/text-faces":
