@@ -1,3 +1,4 @@
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 import type { SitePage } from "@/lib/site";
 
 type LearnSectionProps = {
@@ -32,7 +33,7 @@ export function LearnSection({
           key={para.slice(0, 48)}
           className="mt-3 type-body text-muted whitespace-pre-line"
         >
-          {para}
+          <ProseLinks text={para} />
         </p>
       ))}
       {learnMoreParagraphs.map((para) => (
@@ -40,7 +41,7 @@ export function LearnSection({
           key={para.slice(0, 48)}
           className="mt-3 type-meta leading-7 whitespace-pre-line"
         >
-          {para}
+          <ProseLinks text={para} />
         </p>
       ))}
     </section>

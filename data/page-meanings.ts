@@ -267,4 +267,26 @@ export const PAGE_MEANINGS: Record<string, PageMeaning[]> = {
     { face: "(・x・)", name: "Bunny mouth", meaning: "Small bunny face.", parts: "x is a rabbit's split lip." },
     { face: "／(･ × ･)＼", name: "Long ears", meaning: "Bunny with ears out.", parts: "／ ＼ are long ears, × the nose." },
   ],
+  "/border-kaomoji": [
+    { face: "─── ⋆⋅☆⋅⋆ ───", name: "Star center divider", meaning: "Clean section break for bios and Discord rules.", parts: "─ box-drawing lines frame a ☆ star and ⋆⋅ dot accents." },
+    { face: "────── ୨୧ ──────", name: "Ribbon divider", meaning: "Soft, coquette separator between bio lines.", parts: "୨୧ is a pair of Odia digits that look like a tied ribbon bow." },
+    { face: "╭──────────────────╮", name: "Rounded top border", meaning: "Top cap for framing a bio quote or status.", parts: "╭ and ╮ are rounded box-drawing corners joined by ─ lines." },
+    { face: "✧･ﾟ: *✧･ﾟ:*", name: "Sparkle burst", meaning: "Glittery header or line end.", parts: "✧ four-point stars mixed with half-width ･ﾟ dots and colons." },
+    { face: "˚₊‧꒰ა ☆ ໒꒱ ‧₊˚", name: "Winged star frame", meaning: "Angel-wing frame for a name or short word.", parts: "꒰ა and ໒꒱ form little wings around a central ☆ star." },
+    { face: "────── (˶ᵔ ᵕ ᵔ˶) ──────", name: "Soft face divider", meaning: "A friendly face built right into a bio line break.", parts: "Horizontal ─ bars hold a blushing (˶ᵔ ᵕ ᵔ˶) smile in the center." },
+  ],
+  "/roblox-kaomoji": [
+    { face: "(^_^)", name: "Classic smile", meaning: "Friendly hello that passes almost every chat filter.", parts: "Standard parentheses, caret ^ eyes, and an underscore mouth." },
+    { face: "UwU", name: "UwU", meaning: "Soft, cozy, or playful gaming reaction.", parts: "Three plain keyboard letters: U eyes and a w cat mouth." },
+    { face: "(T_T)", name: "Crying tears", meaning: "Comic heartbreak after losing a round or trade.", parts: "Capital T letters look like eyes with tears streaming down." },
+    { face: "=^.^=", name: "ASCII cat", meaning: "Cute kitty face that fits inside short display names.", parts: "= whiskers, ^ ears/eyes, and a period nose." },
+    { face: "d(^_^)b", name: "Headphones", meaning: "Listening to music or AFK vibing.", parts: "Lowercase d and b on the outside look like over-ear headphones." },
+    { face: "(>_<)b", name: "Nice try", meaning: "Thumbs up through the pain after a tough obby.", parts: "Squeezed >_< eyes paired with a b thumbs-up hand." },
+  ],
+  "/art-kaomoji": [
+    { face: "(\\_/)\n(•ㅅ•)\n/ 　 づ", name: "Sign bunny", meaning: "A stacked rabbit holding out a message or heart.", parts: "Row 1 is the ears, row 2 is the face with a ㅅ nose, row 3 is the body and arm." },
+    { face: "╭──────╮\n│ paste │\n╰──────╯", name: "Mini sign box", meaning: "A small framed box you can type a short word inside.", parts: "╭ ╮ ╰ ╯ corners and │ vertical walls keep the box aligned across three lines." },
+    { face: "🌸🌷🌸\n　 /)/)\n ꒰｡•ᴗ•｡꒱\n　/　づ♡", name: "Flower bunny", meaning: "Sending love or a warm greeting in Discord or notes.", parts: "A row of blossoms above a 3-line bunny holding out a ♡ heart." },
+    { face: "∧＿∧\n(｡･ω･｡)\n┏━O━O━┓\n┃ 　　 ┃\n┗━━━━━┛", name: "Cat at a desk", meaning: "Peeking over a box or sign board.", parts: "∧＿∧ cat ears on top, (｡･ω･｡) face in the middle, and ┏━┓ box paws gripping a board." },
+  ],
 };

@@ -77,6 +77,10 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/emoticons": "mood-tile--teal",
   "/cute-symbols": "mood-tile--love",
   "/emoji-combos": "mood-tile--warm",
+  "/border-kaomoji": "mood-tile--love",
+  "/roblox-kaomoji": "mood-tile--teal",
+  "/art-kaomoji": "mood-tile--purple",
+  "/kaomoji-app": "mood-tile--amber",
 };
 
 export function moodTileClass(path?: string): string {

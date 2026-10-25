@@ -31,6 +31,8 @@ const FAMILIES = {
     /﹃|ڡ|🍙|🍰|🍜|🍕|🍔|🍩|🍪|🍡|🍣|🍵|☕|🍺|🍻|🍷|🍫|🍦|🍭|🍓|🍎|🥤|🍝|🍱|🍚|🥢|旦|🧋|🍮|🍧|🍨|🥞|🧁|🍤|🍟|🌭|🍿|🍉|🍑|🍒|🍞|🥐|🍳/.test(
       f,
     ),
+  // Only the Worlds-era 【=◈︿◈=】 family; generic sparkles belong on /sparkle-kaomoji/.
+  porter: (f) => /【=[◈✧]|◈︿◈|◈◡◈|◈ω◈/.test(f),
 };
 
 const CURATED = {
@@ -218,6 +220,230 @@ const CURATED = {
       ["(⊙_◎)👻", "Ghost sighting"], ["ヾ(｡ꏿ﹏ꏿ)ﾉ", "Spooked"], ["(((;ꏿ_ꏿ;)))", "Shaking in fear"],
     ],
   },
+  border: {
+    category: "text-faces",
+    faces: [
+      ["━━━━━━━━━━━━━━━━━━", "Solid line border"],
+      ["──────────────────", "Thin line divider"],
+      ["┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈", "Dotted line divider"],
+      ["══════════════════", "Double line border"],
+      ["▬▬▬▬▬▬▬▬▬▬▬▬▬", "Bold bar divider"],
+      ["╭──────────────────╮", "Rounded top border"],
+      ["╰──────────────────╯", "Rounded bottom border"],
+      ["┌──────────────────┐", "Sharp box top border"],
+      ["└──────────────────┘", "Sharp box bottom border"],
+      ["╔══════════════════╗", "Double box top"],
+      ["╚══════════════════╝", "Double box bottom"],
+      ["─── ⋆⋅☆⋅⋆ ───", "Star center divider"],
+      ["────── ⋆⋅☆⋅⋆ ──────", "Wide star divider"],
+      ["─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───", "Moon and star divider"],
+      ["────── ୨୧ ──────", "Coquette ribbon divider"],
+      ["─── ⋆⋅ ♰ ⋅⋆ ───", "Gothic cross divider"],
+      ["─── ⋆⋅ ♡ ⋅⋆ ───", "Heart center divider"],
+      ["────── ✿ ──────", "Flower line divider"],
+      ["─── ･ ｡ﾟ✧: *.✦ .* :✧ﾟ. ───", "Sparkle trail divider"],
+      ["⋆｡°✩ ──────── ✩°｡⋆", "Starry line border"],
+      ["✧･ﾟ: *✧･ﾟ:* ──── *:･ﾟ✧*:･ﾟ✧", "Double sparkle divider"],
+      ["⊹˚₊‧───────────‧₊˚⊹", "Soft glow divider"],
+      ["•───────•°•❀•°•───────•", "Blossom vine border"],
+      ["°•. ✿ .•°•. ✿ .•°", "Petal wave divider"],
+      ["⋆ ˚｡⋆୨୧˚ ──── ˚୨୧⋆｡˚ ⋆", "Ribbon sparkle border"],
+      ["‿︵‿︵‿︵‿︵‿︵‿︵", "Wave line border"],
+      ["‿︵‿︵୨˚̣̣̣͙୧ - - ୨˚̣̣̣͙୧‿︵‿︵", "Lace ribbon wave border"],
+      ["︵‿︵‿୨♡୧‿︵‿︵", "Heart wave divider"],
+      ["︶꒦꒷♡꒷꒦︶", "drip heart divider"],
+      ["꒷꒦︶꒷꒦︶꒷꒦︶", "Aesthetic drip border"],
+      ["⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆", "Cloud and moon divider"],
+      ["·.·.·.·.·.·.·.·.·.·", "Dot trail divider"],
+      ["┊ ┊ ┊ ┊ ⋆｡˚ ❀", "Hanging stars and flower border"],
+      ["┊ ┊ ┊ ┊ ˚✩ ⋆｡˚ ✩", "Hanging star drops"],
+      ["╭┈┈┈┈╯ ╰┈┈┈➤", "Curved arrow divider"],
+      ["╭┈➤ ──────────", "Bio bullet arrow line"],
+      ["ˏˋ°•*⁀➷ ────────", "Cupid arrow divider"],
+      ["꒰ঌ ────────── ໒꒱", "Angel wing divider"],
+      ["˚₊‧꒰ა ☆ ໒꒱ ‧₊˚", "Winged star frame"],
+      ["˚₊‧꒰ა ♡ ໒꒱ ‧₊˚", "Winged heart frame"],
+      ["✧･ﾟ: *✧･ﾟ:*", "Classic sparkle divider"],
+      ["*:･ﾟ✧*:･ﾟ✧", "Right sparkle divider"],
+      ["⋆｡°✩°｡⋆", "Mini star divider"],
+      ["⋆⁺₊⋆ ☾ ⋆⁺₊⋆", "Crescent moon divider"],
+      ["⋆⁺₊⋆ ☀︎ ⋆⁺₊⋆", "Sunburst divider"],
+      ["⋆˙⟡ ──────── ⟡˙⋆", "Gemstone line border"],
+      ["╭────── · · ୨୧ · · ──────╮", "Ribbon top frame"],
+      ["╰────── · · ୨୧ · · ──────╯", "Ribbon bottom frame"],
+      ["╭────── · · ✧ · · ──────╮", "Sparkle top frame"],
+      ["╰────── · · ✧ · · ──────╯", "Sparkle bottom frame"],
+      ["┌────── ⋆⋅☆⋅⋆ ──────┐", "Star box top"],
+      ["└────── ⋆⋅☆⋅⋆ ──────┘", "Star box bottom"],
+      ["〖 ────────── 〗", "Bracket bar divider"],
+      ["『 ────────── 』", "Corner quote divider"],
+      ["【 ────────── 】", "Lenticular bracket border"],
+      ["༺ ────────── ༻", "Tibetan flourish border"],
+      ["༺♥༻ ──────── ༺♥༻", "Ornate heart border"],
+      ["─── ･ ｡ﾟ☆: *(◕‿◕)* :☆ﾟ. ───", "Smiling face divider"],
+      ["────── (˶ᵔ ᵕ ᵔ˶) ──────", "Soft face line divider"],
+      ["─── ⋆⋅ (｡•̀ᴗ-)✧ ⋅⋆ ───", "Winking face divider"],
+      ["────── ʕ•ᴥ•ʔ ──────", "Bear face divider"],
+      ["─── ⋆⋅ ฅ^•ﻌ•^ฅ ⋅⋆ ───", "Cat face divider"],
+      ["╭─── (◕‿◕✿) ───╮", "Flower face top frame"],
+      ["꒰ ˶• ༝ •˶ ꒱ ──────", "Bunny bio header line"],
+      ["─── ♡ (˘ω˘) ♡ ───", "Cozy face divider"],
+      ["✧*｡٩(ˊᗜˋ*)و✧*｡ ────", "Cheer sparkle divider"],
+      ["▁▂▃▄▅▆▇█", "Rising bar border"],
+      ["█▇▆▅▄▃▂▁", "Falling bar border"],
+      ["▁▂▃▄▅▆▇▉▊▋▌▍▎▏", "Fade out block bar"],
+      ["░▒▓█ ──────── █▓▒░", "Shaded block border"],
+      ["•°¯`•• ──────── ••´¯°•", "Retro wave border"],
+      ["×º°”˜`”°º× ──── ×º°”˜`”°º×", "Swirl flourish divider"],
+      ["╭──────╮\n│ paste │\n╰──────╯", "Mini rounded text box"],
+    ],
+  },
+  roblox: {
+    // Default bucket is happy; per-face meta keeps sad/angry/etc. ASCII faces off /happy-kaomoji/.
+    category: "happy",
+    faces: [
+      ["(^_^)", "Classic bracket smile"],
+      ["^_^", "Simple happy eyes"],
+      ["(^-^)", "Gentle smile"],
+      ["^-^", "Compact happy face"],
+      ["(^o^)", "Cheerful open smile"],
+      ["\\(^o^)/", "Hooray arms up"],
+      ["\\(^_^)/", "Happy wave both hands"],
+      ["(^_^)/", "Friendly wave"],
+      ["(^_^)v", "Peace sign smile"],
+      ["(^_^)b", "Thumbs up smile"],
+      ["(>_<)b", "Determined thumbs up", { category: "text-faces", tags: ["thumbs up"] }],
+      ["d(^_^)b", "Headphones music face"],
+      ["d(-_-)b", "Chill music headphones", { category: "text-faces", tags: ["music"] }],
+      [":)", "Simple smiley"],
+      [":D", "Big grin"],
+      [":3", "Cat smile", { category: "text-faces", tags: ["cute"] }],
+      ["=3", "Wide-eyed cat smile", { category: "text-faces", tags: ["cute"] }],
+      [";3", "Winking cat smile", { category: "text-faces", tags: ["wink"] }],
+      [":P", "Tongue out", { category: "text-faces", tags: ["tongue", "playful"] }],
+      [";P", "Wink tongue out", { category: "text-faces", tags: ["wink", "tongue"] }],
+      ["XD", "Laughing eyes shut"],
+      ["xD", "Playful laugh"],
+      [";)", "Classic wink"],
+      ["(^_~)", "Kaomoji wink"],
+      ["(^_-)", "One-eye wink"],
+      ["UwU", "Soft UwU"],
+      ["uwu", "Lowercase uwu"],
+      ["OwO", "Surprised OwO"],
+      ["owo", "Lowercase owo"],
+      ["(UwU)", "Bracket UwU"],
+      ["(OwO)", "Bracket OwO"],
+      ["(>w<)", "Excited squeeze", { category: "text-faces", tags: ["excited"] }],
+      ["(^w^)", "Happy cat grin"],
+      ["(-w-)", "Sleepy cat mouth", { category: "text-faces", tags: ["sleepy"] }],
+      ["=^.^=", "Classic ASCII cat", { category: "cat", tags: ["cat"] }],
+      ["(=^.^=)", "Bracket cat face", { category: "cat", tags: ["cat"] }],
+      ["=^..^=", "Whiskered cat", { category: "cat", tags: ["cat"] }],
+      ["(^._.^)ﾉ", "Waving kitty", { category: "cat", tags: ["cat", "waving"] }],
+      ["(>_<)", "Wince or oops", { category: "text-faces", tags: ["frustrated"] }],
+      ["(>o<)", "Yelling face", { category: "text-faces", tags: ["frustrated"] }],
+      ["(T_T)", "Crying tears", { category: "crying", tags: ["crying", "sad"] }],
+      ["(ToT)", "Bawling tears", { category: "crying", tags: ["crying", "sad"] }],
+      ["(;_;)", "Quiet tears", { category: "crying", tags: ["crying", "sad"] }],
+      ["(;o;)", "Weeping face", { category: "crying", tags: ["crying", "sad"] }],
+      ["(o_o)", "Wide-eyed stare", { category: "text-faces", tags: ["surprised"] }],
+      ["(O_O)", "Shocked stare", { category: "text-faces", tags: ["shocked", "surprised"] }],
+      ["(o_O)", "Raised eyebrow", { category: "text-faces", tags: ["confused"] }],
+      ["(O_o)", "Confused eyebrow", { category: "text-faces", tags: ["confused"] }],
+      ["(0_0)", "Stunned eyes", { category: "text-faces", tags: ["shocked", "surprised"] }],
+      ["(._.)", "Looking down", { category: "text-faces", tags: ["awkward"] }],
+      ["(-_-)", "Unimpressed", { category: "text-faces", tags: ["unimpressed"] }],
+      ["(=_=)", "Exhausted eyes", { category: "text-faces", tags: ["tired"] }],
+      ["(-_-;)", "Awkward sweat", { category: "text-faces", tags: ["nervous", "awkward"] }],
+      ["(^_^;)", "Nervous laugh", { category: "text-faces", tags: ["nervous"] }],
+      ["(x_x)", "Knocked out", { category: "text-faces", tags: ["dizzy"] }],
+      ["(X_X)", "Game over eyes", { category: "text-faces", tags: ["dizzy"] }],
+      ["(+_+)", "Dizzy crosses", { category: "text-faces", tags: ["dizzy"] }],
+      ["(@_@)", "Spinning dizzy", { category: "text-faces", tags: ["dizzy"] }],
+      ["(*_*)", "Starstruck eyes", { category: "text-faces", tags: ["starstruck"] }],
+      ["($.$)", "Money eyes", { category: "text-faces", tags: ["money"] }],
+      ["(u_u)", "Eyes closed calm", { category: "text-faces", tags: ["calm"] }],
+      ["(v_v)", "Sad downcast", { category: "sad", tags: ["sad"] }],
+      ["(n_n)", "Pleased squint"],
+      ["(>'-')>", "Kirby dance right", { category: "text-faces", tags: ["dance", "kirby"] }],
+      ["<('-'<)", "Kirby dance left", { category: "text-faces", tags: ["dance", "kirby"] }],
+      ["^('-')^", "Kirby dance up", { category: "text-faces", tags: ["dance", "kirby"] }],
+      ["v('-')v", "Kirby peace dance", { category: "text-faces", tags: ["dance", "kirby"] }],
+      ["(>^_^)>", "Hug right", { category: "text-faces", tags: ["hug"] }],
+      ["<(^_^<)", "Hug left", { category: "text-faces", tags: ["hug"] }],
+      ["(^3^)", "Kiss face", { category: "text-faces", tags: ["kiss"] }],
+      ["(*^3^*)", "Blushing kiss", { category: "text-faces", tags: ["kiss"] }],
+      ["(>_>)", "Side-eye right", { category: "text-faces", tags: ["suspicious"] }],
+      ["(<_<)", "Side-eye left", { category: "text-faces", tags: ["suspicious"] }],
+      ["(¬_¬)", "Unamused side-eye", { category: "text-faces", tags: ["suspicious"] }],
+      ["(B_B)", "Cool shades ASCII", { category: "text-faces", tags: ["cool"] }],
+      ["(⌐■_■)", "Deal with it shades", { category: "text-faces", tags: ["cool"] }],
+      ["¯\\_(ツ)_/¯", "Classic shrug", { category: "text-faces", tags: ["shrug"] }],
+      ["ʕ•ᴥ•ʔ", "Little bear", { category: "cute", tags: ["bear"] }],
+      ["(◕‿◕)", "Cute round eyes", { category: "cute", tags: ["cute"] }],
+      ["(•‿•)", "Friendly smile"],
+      ["m(_ _)m", "Polite bow", { category: "text-faces", tags: ["sorry", "bow"] }],
+      ["orz", "Kneeling defeat", { category: "text-faces", tags: ["sorry", "defeat"] }],
+      ["o7", "Gamer salute", { category: "text-faces", tags: ["salute"] }],
+      ["\\o/", "Cheer hands up"],
+      [">:)", "Mischievous grin", { category: "text-faces", tags: ["mischief"] }],
+      [">:(", "Angry frown", { category: "text-faces", tags: ["angry"] }],
+      [">:D", "Evil laugh", { category: "text-faces", tags: ["mischief"] }],
+      [">:3", "Cheeky cat grin", { category: "text-faces", tags: ["mischief"] }],
+    ],
+  },
+  goth: {
+    category: "japanese",
+    faces: [
+      ["♰ (◣_◢) ♰", "Goth glare"],
+      ["†(◣_◢)†", "Cross glare"],
+      ["⛧ (｀▽´) ⛧", "Pentagram grin"],
+      ["⛧°。⋆༺♱༻⋆。°⛧", "Gothic flourish"],
+      ["⋆˚✮♱✮˚⋆", "Cross and stars"],
+      ["♱♡‿♡♰", "Goth heart eyes"],
+      ["⎛⎝(•ⱅ•)⎠⎞", "Bat wings"],
+      ["⎛⎝( ` ᢍ ´ )⎠⎞", "Bat wings grin"],
+      ["🦇(ㆆ_ㆆ)🦇", "Bat side-eye"],
+      ["🖤(˘ ³˘)🖤", "Black heart kiss"],
+      ["( ¬_¬)🖤", "Unbothered black heart"],
+      ["(⸝⸝ᵕ ᴗ ᵕ⸝⸝)🖤", "Soft goth blush"],
+      ["‧₊˚🖤 (-_-) 🖤˚₊‧", "Deadpan black hearts"],
+      ["♰ ˚₊‧ (˘︶˘) ‧₊˚ ♰", "Peaceful goth"],
+      ["🥀(｡•́︿•̀｡)🥀", "Wilted rose sad"],
+      ["🥀 (◣_◢) 🥀", "Rose glare"],
+      ["🕸(◣_◢)🕸", "Cobweb glare"],
+      ["☠ (◣‿◢) ☠", "Skull grin"],
+      ["🧛(｀▽´)🍷", "Vampire toast"],
+      ["⛧ ⋆｡˚ (◕‿◕) ˚｡⋆ ⛧", "Sweet but goth"],
+    ],
+  },
+  porter: {
+    category: "cute",
+    faces: [
+      ["【=◈︿◈=】", "Porter Robinson Worlds face"],
+      ["【=◈◡◈=】", "Happy Worlds face"],
+      ["【=◈ω◈=】", "Cat mouth Worlds face"],
+      ["【=◈_◈=】", "Neutral Worlds face"],
+      ["【=✧︿✧=】", "Sparkle Worlds face"],
+      ["✧【=◈︿◈=】✧", "Framed Worlds kaomoji"],
+    ],
+  },
+  sparkle: {
+    category: "cute",
+    faces: [
+      ["✧･ﾟ: *✧･ﾟ:*", "Sparkle burst"],
+      ["⋆｡°✩°｡⋆", "Star divider sparkle"],
+      ["˚₊‧꒰ა ☆ ໒꒱ ‧₊˚", "Winged star frame"],
+      ["(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "Throw sparkles"],
+      ["(ﾉ≧∀≦)ﾉ ✧", "Cheer sparkle"],
+      ["☆*:.｡.o(≧▽≦)o.｡.:*☆", "Celebration stars"],
+      ["✧(◕‿◕)✧", "Sparkle eyes"],
+      ["⋆(◕‿◕)⋆", "Star eyes"],
+      ["(◕‿◕)✧", "Soft sparkle"],
+      ["･ﾟ✧:･ﾟ✧", "Floating sparkles"],
+      ["✧*｡٩(ˊᗜˋ*)و✧*｡", "Happy sparkle wave"],
+    ],
+  },
   lenny: {
     category: "text-faces",
     faces: [
@@ -241,6 +467,16 @@ const CURATED = {
   },
 };
 
+// Clean up previous runs of border/divider/roblox/porter/goth so tightening rules removes stale tags/items.
+const RESET_TAGS = new Set(["border", "divider", "roblox", "porter", "goth"]);
+for (let i = items.length - 1; i >= 0; i--) {
+  if (/^pk-(border|roblox|porter|goth)-/.test(items[i].id)) {
+    items.splice(i, 1);
+    continue;
+  }
+  items[i].tags = items[i].tags.filter((t) => !RESET_TAGS.has(t));
+}
+
 let tagged = 0;
 for (const item of items) {
   for (const [tag, test] of Object.entries(FAMILIES)) {
@@ -254,14 +490,22 @@ for (const item of items) {
 const existing = new Set(items.map((x) => x.face));
 let added = 0;
 for (const [tag, { category, faces }] of Object.entries(CURATED)) {
-  faces.forEach(([face, name], i) => {
+  faces.forEach(([face, name, meta], i) => {
+    const extraTags = tag === "border" ? ["border", "divider"] : [tag];
     if (existing.has(face)) {
       const item = items.find((x) => x.face === face);
-      if (!item.tags.includes(tag)) item.tags.push(tag);
+      for (const et of extraTags) {
+        if (!item.tags.includes(et)) item.tags.push(et);
+      }
       return;
     }
     existing.add(face);
-    const tags = [tag, "kaomoji", face.includes("\n") ? "multiline" : "single-line"];
+    const tags = [
+      ...extraTags,
+      ...(meta?.tags ?? []),
+      "kaomoji",
+      face.includes("\n") ? "multiline" : "single-line",
+    ];
     for (const [other, test] of Object.entries(FAMILIES)) {
       if (other !== tag && test(face)) tags.push(other);
     }
@@ -269,7 +513,7 @@ for (const [tag, { category, faces }] of Object.entries(CURATED)) {
       id: `pk-${tag}-${String(i + 1).padStart(3, "0")}`,
       face,
       name,
-      categories: [category],
+      categories: [meta?.category ?? category],
       tags,
       aliases: [name.toLowerCase()],
       popular: i < 6,

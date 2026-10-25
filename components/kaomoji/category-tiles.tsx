@@ -30,6 +30,10 @@ const TILE_FACE: Record<string, string> = {
   "/scared-kaomoji": "((;°Д°))",
   "/devil-kaomoji": "Ψ(｀▽´)Ψ",
   "/thank-you-kaomoji": "(◍•ᴗ•◍)❤",
+  "/border-kaomoji": "╭────────╮",
+  "/roblox-kaomoji": "(^_^)",
+  "/art-kaomoji": "ʕ•ᴥ•ʔ",
+  "/kaomoji-app": "(◕‿◕)",
 };
 
 /** Extract decorative face from titleSegment by stripping the heading prefix. */
@@ -53,7 +57,9 @@ function tileLabel(page: SitePage): string {
 }
 
 function faceCount(page: SitePage): number {
-  if (page.tags && page.tags.length > 0) return countByTags(page.tags);
+  if (page.tags && page.tags.length > 0) {
+    return countByTags(page.tags, { includeNewlines: page.includeNewlineFaces });
+  }
   if (page.category) return countByCategory(page.category);
   return 0;
 }

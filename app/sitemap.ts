@@ -20,8 +20,8 @@ function contentModified(page: SitePage): string {
       // Guides section + guide links added to the hub.
       return "2026-10-20";
     case "/halloween-kaomoji":
-      // Named popular-faces section and new title.
-      return "2026-10-23";
+      // Happy Halloween & trick-or-treat group, 20 new faces, new FAQs.
+      return "2026-10-25";
     case "/kaomoji-copy-paste":
     case "/japanese-emoticons":
     case "/text-faces":
@@ -69,6 +69,11 @@ function contentModified(page: SitePage): string {
     case "/valentine-kaomoji":
     case "/disclaimer":
       return "2026-10-21";
+    case "/border-kaomoji":
+    case "/roblox-kaomoji":
+    case "/art-kaomoji":
+    case "/kaomoji-app":
+      return "2026-10-24";
     default:
       return "2026-09-25";
   }
@@ -94,6 +99,10 @@ function sitemapPriority(page: SitePage): number {
       return 0.8;
     case "/uwu-kaomoji":
     case "/food-kaomoji":
+    case "/border-kaomoji":
+    case "/roblox-kaomoji":
+    case "/art-kaomoji":
+    case "/kaomoji-app":
       return 0.75;
     case "/happy-kaomoji":
     case "/cat-kaomoji":

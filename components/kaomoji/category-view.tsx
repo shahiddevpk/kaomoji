@@ -28,6 +28,7 @@ import { postsForPage } from "@/lib/blog";
 import { guidesForPage } from "@/lib/guides";
 import { relatedPages, subcategoryNavItems, type SitePage } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 function isAngryFamilyPage(page: SitePage): boolean {
   if (page.path === "/angry-kaomoji" || page.parentPath === "/angry-kaomoji") {
@@ -189,9 +190,32 @@ function facesSectionHeading(page: SitePage): string {
   }
 }
 
-/** Lowercase mood labels mid-sentence, but keep holiday names capitalized. */
+/** Heading + lead for the meanings cards; borders and art are not "faces". */
+function meaningsCopy(page: SitePage): { heading: string; lead: string } {
+  switch (page.path) {
+    case "/border-kaomoji":
+      return {
+        heading: "Popular kaomoji borders and what they mean",
+        lead: "Every divider is built from characters that each play a part. Here is how the most-used borders are put together.",
+      };
+    case "/art-kaomoji":
+      return {
+        heading: "Popular kaomoji art and how it is built",
+        lead: "Each drawing is stacked row by row. Here is what every line of the most-copied pieces is doing.",
+      };
+    default: {
+      const label = meaningLabel(page.label);
+      return {
+        heading: `Popular ${label} kaomoji and what they mean`,
+        lead: `Every face is built from characters that each play a part. Here is how the most-used ${label} faces work.`,
+      };
+    }
+  }
+}
+
+/** Lowercase mood labels mid-sentence, but keep holiday and proper names capitalized. */
 function meaningLabel(label: string): string {
-  return /^(Halloween|Christmas|Thanksgiving|Valentine|New Year)/.test(label)
+  return /^(Halloween|Christmas|Thanksgiving|Valentine|New Year|Roblox)/.test(label)
     ? label
     : label.toLowerCase();
 }
@@ -210,6 +234,14 @@ function learnHeadingFor(pagePath: string, label: string): string {
       return "About cute kaomoji";
     case "/kaomoji-generator":
       return "About the kaomoji generator";
+    case "/border-kaomoji":
+      return "About kaomoji borders and dividers";
+    case "/roblox-kaomoji":
+      return "About Roblox kaomoji";
+    case "/art-kaomoji":
+      return "About kaomoji art";
+    case "/kaomoji-app":
+      return "About the kaomoji app";
     default:
       return `About ${label.toLowerCase()} faces`;
   }
@@ -232,7 +264,9 @@ export function CategoryView({
   );
   const total =
     page.tags && page.tags.length > 0
-      ? countByTags(page.tags)
+      ? countByTags(page.tags, {
+          includeNewlines: page.includeNewlineFaces,
+        })
       : page.category != null
         ? countByCategory(page.category)
         : page.path === "/kaomoji-copy-paste"
@@ -240,7 +274,9 @@ export function CategoryView({
           : faces.length;
   const browsePages =
     page.tags && page.tags.length > 0
-      ? pageCountForTags(page.tags)
+      ? pageCountForTags(page.tags, {
+          includeNewlines: page.includeNewlineFaces,
+        })
       : page.category != null
         ? pageCountForCategory(page.category)
         : 1;
@@ -375,11 +411,10 @@ export function CategoryView({
       {showEducation && PAGE_MEANINGS[page.path] ? (
         <section className="mt-10" aria-labelledby="meanings-heading">
           <h2 id="meanings-heading" className="type-h2">
-            Popular {meaningLabel(page.label)} kaomoji and what they mean
+            {meaningsCopy(page).heading}
           </h2>
           <p className="mt-2 max-w-2xl type-meta leading-6">
-            Every face is built from characters that each play a part. Here is
-            how the most-used {meaningLabel(page.label)} faces work.
+            {meaningsCopy(page).lead}
           </p>
           <MeaningCards
             items={PAGE_MEANINGS[page.path]!.map((item, i) => ({
@@ -397,7 +432,9 @@ export function CategoryView({
           </h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
             {page.howTo.map((step) => (
-              <li key={step}>{step}</li>
+              <li key={step}>
+                <ProseLinks text={step} />
+              </li>
             ))}
           </ol>
         </section>

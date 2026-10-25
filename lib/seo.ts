@@ -202,16 +202,18 @@ export function howToJsonLd(page: SitePage): Record<string, unknown> | null {
     step: page.howTo.map((text, i) => ({
       "@type": "HowToStep",
       position: i + 1,
-      text,
+      text: plainTextAnswer(text),
     })),
   };
 }
 
-/** Strip light markdown so FAQ answers stay plain text in JSON-LD. */
+/**
+ * Strip [label](/path/) links so FAQ and HowTo text stays plain in JSON-LD.
+ * Do not strip * _ ` ~ — they are part of faces like (^_^) and ¯\_(ツ)_/¯.
+ */
 function plainTextAnswer(answer: string): string {
   return answer
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/[*_`~]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }

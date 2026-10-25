@@ -93,11 +93,11 @@ export const PAGINATED_SLUGS: Record<string, PaginatedPageMeta> = {
   "cool-kaomoji": { path: "/cool-kaomoji", tags: ["cool"] },
   "sick-kaomoji": { path: "/sick-kaomoji", tags: ["illness"] },
   "scared-kaomoji": { path: "/scared-kaomoji", tags: ["fear"] },
-  "devil-kaomoji": { path: "/devil-kaomoji", tags: ["devil"] },
+  "devil-kaomoji": { path: "/devil-kaomoji", tags: ["devil", "goth"] },
   "halloween-kaomoji": { path: "/halloween-kaomoji", tags: ["halloween"] },
   "birthday-kaomoji": { path: "/birthday-kaomoji", tags: ["birthday"] },
   "bowing-kaomoji": { path: "/bowing-kaomoji", tags: ["bow", "bowing", "dogeza"] },
-  "dance-kaomoji": { path: "/dance-kaomoji", tags: ["dance"] },
+  "dance-kaomoji": { path: "/dance-kaomoji", tags: ["dance", "music"] },
   "excited-kaomoji": { path: "/excited-kaomoji", tags: ["excited"] },
   "fish-kaomoji": { path: "/fish-kaomoji", tags: ["fish"] },
   "flower-kaomoji": { path: "/flower-kaomoji", tags: ["flower", "sakura"] },
@@ -114,6 +114,16 @@ export const PAGINATED_SLUGS: Record<string, PaginatedPageMeta> = {
   "thumbs-up-kaomoji": { path: "/thumbs-up-kaomoji", tags: ["thumbs up", "ok"] },
   "waving-kaomoji": { path: "/waving-kaomoji", tags: ["waving", "wave"] },
   "wink-kaomoji": { path: "/wink-kaomoji", tags: ["wink"] },
+  "border-kaomoji": {
+    path: "/border-kaomoji",
+    tags: ["border", "divider"],
+  },
+  "roblox-kaomoji": { path: "/roblox-kaomoji", tags: ["roblox"] },
+  "art-kaomoji": {
+    path: "/art-kaomoji",
+    tags: ["multiline", "multi-line", "ascii art"],
+    includeNewlines: true,
+  },
 };
 
 export type PaginatedSlug = string;

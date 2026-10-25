@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/layout/json-ld";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage, relatedPages } from "@/lib/site";
 import Link from "next/link";
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 const page = getPage("/kaomoji-generator");
 
@@ -31,7 +32,9 @@ export default function KaomojiGeneratorPage() {
           </h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
             {page.howTo.map((step) => (
-              <li key={step}>{step}</li>
+              <li key={step}>
+                <ProseLinks text={step} />
+              </li>
             ))}
           </ol>
         </section>

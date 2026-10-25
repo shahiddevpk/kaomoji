@@ -15,6 +15,7 @@ import {
 import { getGuide, guides, readingMinutes } from "@/lib/guides";
 import { faqJsonLd } from "@/lib/seo";
 import { getPage } from "@/lib/site";
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 export const dynamicParams = false;
 
@@ -65,7 +66,9 @@ export default async function GuidePage({
         Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time> ·{" "}
         {readingMinutes(guide.sections)} min read
       </p>
-      <p className="mt-4 type-body text-muted">{guide.intro}</p>
+      <p className="mt-4 type-body text-muted">
+        <ProseLinks text={guide.intro} />
+      </p>
 
       <nav aria-labelledby="toc-heading" className="guide-toc mt-6">
         <p id="toc-heading" className="type-label text-foreground">

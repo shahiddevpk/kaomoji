@@ -26,6 +26,8 @@ export type SitePage = {
    * A page uses either category or tags, not both.
    */
   tags?: string[];
+  /** When true, tag pages also include faces with real newline characters. */
+  includeNewlineFaces?: boolean;
   /** Parent browse path for nested subcategory IA (breadcrumbs + chips). */
   parentPath?: string;
   /** Optional robots override; omit for index,follow. Pagination n>=2 uses noindex in pageMetadata. */
@@ -67,7 +69,7 @@ export const pages: SitePage[] = [
     definition:
       "Kaomoji are Japanese-style text faces made from punctuation, symbols, and letters so feeling shows up in plain text. They travel as normal characters, so they work in chats and comments where picture stickers sometimes fail or look inconsistent.\n\nPaste Kaomoji groups them by mood and format so you can find a face fast, copy it in one tap, and drop it into Discord, WhatsApp, Slack, SMS, or a comment. Because they are editable text, you can type around them or tweak a character when you want a custom twist.",
     learnMore:
-      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone. The result is a face that travels as editable text — you can type around it, tweak a character, or drop it into any field that accepts typing.\n\nFaces are sorted by mood so you can go straight to the feeling you want instead of scrolling through thousands of random faces. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.\n\nHow to read a kaomoji: look at the eyes first. Wide circles (°o°) signal shock; happy crescents (＾▽＾) signal joy; downcast lines (╥﹏╥) signal sadness. Arms formed by characters like \\, /, ง, and ε= show whether a figure is waving, fighting, or running. Cheek marks and sweat drops add blush, nerves, or embarrassment. The pattern is consistent enough that a new face reads at a glance once you know the grammar.\n\nKaomoji vs emoji: emoji are single picture glyphs rendered by a font — they can look completely different on iPhone vs Android vs Windows. Kaomoji are assembled from ordinary punctuation and Unicode letters, so they look the same everywhere text appears. They are also editable: copy one and change a character to shift the mood, something you cannot do with a picture glyph.\n\nWhere kaomoji paste cleanly: Discord, WhatsApp, Instagram captions and bios, Twitter/X, TikTok bios, Slack, Telegram, SMS, and most email clients all handle single-line faces without issues. Multiline stacked art needs a field that preserves line breaks — notes apps and long bio fields usually work; tight single-line inputs collapse the stack into one messy row.\n\nKaomoji outside Japan: the format spread beyond Japan through early forum culture and later through Discord and Tumblr, where the expressive range — from a blush to a full table-flip gag — gave them staying power that emoji could not replace. A hand-assembled text face feels intentional in a way a single-tap sticker does not.\n\nCommon spellings: kaomoji (顔文字) is the standard romanization. Frequent alternate spellings include kaomojis, kamoji, kaomiji, kaimoji, koamoji, kaoemoji, and kaemoji — all point to the same family of Japanese-style text faces.",
+      "Most kaomoji are built from punctuation and Unicode symbols rather than a single picture glyph. Eyes usually carry the mood; arms, cheeks, and sweat marks add motion or tone. The result is a face that travels as editable text — you can type around it, tweak a character, or drop it into any field that accepts typing.\n\nFaces are sorted by mood so you can go straight to the feeling you want instead of scrolling through thousands of random faces. Multiline faces need a font and chat field that preserve line breaks, or the stack can collapse into one messy row.\n\nHow to read a kaomoji: look at the eyes first. Wide circles (°o°) signal shock; happy crescents (＾▽＾) signal joy; downcast lines (╥﹏╥) signal sadness. Arms formed by characters like \\, /, ง, and ε= show whether a figure is waving, fighting, or running. Cheek marks and sweat drops add blush, nerves, or embarrassment. The pattern is consistent enough that a new face reads at a glance once you know the grammar.\n\nKaomoji vs emoji: emoji are single picture glyphs rendered by a font — they can look completely different on iPhone vs Android vs Windows. Kaomoji are assembled from ordinary punctuation and Unicode letters, so they look the same everywhere text appears. They are also editable: copy one and change a character to shift the mood, something you cannot do with a picture glyph.\n\nWhere kaomoji paste cleanly: Discord, WhatsApp, Instagram captions and bios, Twitter/X, TikTok bios, Slack, Telegram, SMS, and most email clients all handle single-line faces without issues. Multiline stacked art, like the drawings on [kaomoji art](/art-kaomoji/), needs a field that preserves line breaks — notes apps and long bio fields usually work; tight single-line inputs collapse the stack into one messy row.\n\nKaomoji outside Japan: the format spread beyond Japan through early forum culture and later through Discord and Tumblr, where the expressive range — from a blush to a full table-flip gag — gave them staying power that emoji could not replace. A hand-assembled text face feels intentional in a way a single-tap sticker does not.\n\nCommon spellings: kaomoji (顔文字) is the standard romanization. Frequent alternate spellings include kaomojis, kamoji, kaomiji, kaimoji, koamoji, kaoemoji, and kaemoji — all point to the same family of Japanese-style text faces.",
     faqs: [
       {
         question: "What is a kaomoji?",
@@ -116,9 +118,9 @@ export const pages: SitePage[] = [
     path: "/cute-kaomoji",
     label: "Cute",
     heading: "Cute Kaomoji",
-    titleSegment: "Cute Kaomoji & Kawaii (◕‿◕)",
+    titleSegment: "Cute Kaomoji & Kawaii (◕‿◕) Aesthetic Faces",
     description:
-      "Cute kaomoji and kawaii faces (◕‿◕) to copy and paste: soft blushes, tiny hugs, gentle charm. 100+ adorable Japanese text faces for Discord, WhatsApp, and chat.",
+      "Cute kaomoji and aesthetic kawaii faces (◕‿◕) to copy and paste: soft blushes and tiny hugs. 100+ adorable Japanese text faces for Discord, WhatsApp, and chat.",
     intro:
       "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste in one tap. This is the gentle, soft side of kaomoji. For louder cheers, waves, and big grins, try happy kaomoji.",
     group: "browse",
@@ -156,8 +158,9 @@ export const pages: SitePage[] = [
         answer: "Often yes, if the platform allows special characters. Test paste once. Some sites strip unusual symbols from display names.",
       },
       {
-        question: "What makes a kaomoji cute instead of just happy?",
-        answer: "Cute faces are softer: blushing cheeks, tiny hands, flowers, and gentle eyes like ◕‿◕. Happy faces are louder, with open mouths and raised arms. If you just want a popular mix of everything, Kaomoji Copy and Paste has that.",
+        question: "What are aesthetic and cutecore kaomoji?",
+        answer:
+          "Aesthetic and cutecore kaomoji combine soft blushing faces like (˶ᵔ ᵕ ᵔ˶) or ꒰ᐢ. .ᐢ꒱ with ribbons ୨୧, flowers ✿, and sparkles ✧ for pastel bios and captions.",
       },
     ],
     related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji"],
@@ -1275,27 +1278,37 @@ export const pages: SitePage[] = [
   {
     path: "/dance-kaomoji",
     label: "Dance",
-    heading: "Dance Kaomoji",
-    titleSegment: "Dance Kaomoji ♪(┌・。・)┌",
+    heading: "Dance & Music Kaomoji",
+    titleSegment: "Dance & Music Kaomoji ♪(┌・。・)┌",
     description:
-      "Dance kaomoji to copy and paste: grooving, spinning, and ♪ party faces for good news, Friday nights, or a song you cannot stop playing.",
+      "Dance and music kaomoji to copy and paste: grooving ♪(┌・。・)┌, spinning, and ♫ musical note faces for good news, playlists, or a song you cannot stop playing.",
     intro:
-      "Grooving, spinning, and full dance-mode poses for when the vibe calls for a celebration — tap to copy. Dance kaomoji bring movement and joy to plain text.",
+      "Grooving, spinning, singing into a mic, and ♪ music note faces for good news, a playlist share, or the song you have had on repeat all week. Tap any face to copy it.",
     group: "browse",
-    tags: ["dance"],
+    tags: ["dance", "music"],
+    faceGroups: [
+      { id: "music", heading: "Music note kaomoji ♪ ♫", glyphs: ["♪", "♫", "♬", "♩", "🎶"] },
+      { id: "singing", heading: "Singing & karaoke mic kaomoji ρ(^o^)♪", glyphs: ["θ～", "θ~", "～θ", "ρ(", "ρ（"] },
+      { id: "groove", heading: "Left & right groove", glyphs: ["┌(", "┐(", "┏(", "┗(", "~("] },
+      { id: "cool", heading: "Cool sunglasses dancer", glyphs: ["⌐■", "▀̿"] },
+    ],
     howTo: [
-      "Pick a small shuffle or a full party move.",
+      "Pick a small shuffle, a musical ♪ face, or a full party move.",
       "Tap Copy. Try sending two or three in a row so they look like they are dancing.",
       "Paste as your reaction to good news, a party invite, or a song you love.",
     ],
     definition:
-      "Dance kaomoji are faces caught mid-move, with arms swapping sides and ♪ notes floating around them. Send a few in a row and they almost look animated.",
+      "Dance and music kaomoji are faces caught mid-move, with arms swapping sides and ♪ or ♫ notes floating around them. Send a few in a row and they almost look animated.",
     learnMore:
       "Dance kaomoji capture motion through asymmetric arm placement and musical note characters like ♪ placed outside the face frame. The ♪ glyph is an unusually efficient shorthand — it signals music and movement in a single character, turning a static face into one that clearly reads as grooving. Adding a second ♫ mark intensifies the musical energy further.\n\nDance faces are built from moving arms on both sides: ┏(＾0＾)┛ and ┗(＾0＾)┓ are the same dancer mid-move, and sending them one after another looks like a little routine. ヾ(⌐■_■)ノ♪ adds sunglasses for a cooler dancer, while ~(˘▾˘~) and (~˘▾˘)~ sway side to side. Use them for good news, weekend plans, payday, a favorite song coming on, or the end of exams. Pair them with 🎶 or 🪩 for a party mood. Because dance faces are energetic, they fit friends and group chats better than formal messages.",
     faqs: [
       {
-        question: "When should I use a dance kaomoji?",
-        answer: "For celebration, party invites, when a favorite song hits, or any moment where the mood calls for a little movement.",
+        question: "When should I use a dance or music kaomoji?",
+        answer: "For celebration, party invites, sharing a playlist, when a favorite song hits, or any moment where the mood calls for movement.",
+      },
+      {
+        question: "What is the music kaomoji with ♪ notes?",
+        answer: "Faces like ♪(┌・。・)┌, ヾ(⌐■_■)ノ♪, and (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧♪ pair a happy or dancing pose with Unicode eighth notes (♪, ♫) to show singing, listening to music, or grooving.",
       },
       {
         question: "Are dance and excited kaomoji different?",
@@ -1304,10 +1317,6 @@ export const pages: SitePage[] = [
       {
         question: "Can I use dance faces in group chats?",
         answer: "Yes. Dance and party reactions are universally understood and usually land well in celebration threads.",
-      },
-      {
-        question: "Will dancing arms paste correctly?",
-        answer: "Most dance poses use common Unicode characters that paste fine on all modern devices.",
       },
     ],
     related: ["/excited-kaomoji", "/happy-kaomoji", "/running-kaomoji", "/giggling-kaomoji"],
@@ -1643,14 +1652,15 @@ export const pages: SitePage[] = [
     path: "/halloween-kaomoji",
     label: "Halloween",
     heading: "Halloween Kaomoji",
-    titleSegment: "Halloween Kaomoji 👻(◕ᴗ◕) 350+ Spooky Faces",
+    titleSegment: "Halloween Kaomoji 👻(◕ᴗ◕) 370+ Spooky Faces",
     description:
-      "Halloween kaomoji copy and paste 🎃 350+ spooky faces: ghosts 👻(◕ᴗ◕), pumpkins, bats ⎛⎝(•ⱅ•)⎠⎞, zombies [¬º-°]¬, vampires, witches, and devils. Tap to copy.",
+      "Halloween kaomoji copy and paste 🎃 370+ spooky faces: Happy Halloween greetings, ghosts 👻(◕ᴗ◕), pumpkins, bats ⎛⎝(•ⱅ•)⎠⎞, zombies [¬º-°]¬, witches, and black cats.",
     intro:
-      "Ghosts, pumpkins, bats, skulls, zombies, vampires, and witches — 350+ spooky and cute Halloween text faces. Tap Copy and paste them into texts, Discord, Instagram captions, or trick-or-treat plans.",
+      "Happy Halloween greetings, trick-or-treat faces, ghosts, pumpkins, bats, skulls, zombies, vampires, and witches — 370+ spooky and cute Halloween text faces. Tap Copy and paste them into texts, Discord, Instagram captions, or trick-or-treat plans.",
     group: "browse",
     tags: ["halloween"],
     faceGroups: [
+      { id: "greeting", heading: "Happy Halloween & trick-or-treat kaomoji 🎃", glyphs: ["Halloween", "ﾊﾛｳｨﾝ", "ハロウィン", "Trick or treat", "trick or treat", "Treats", "BOO", "boo~", "spooky"] },
       { id: "ghost", heading: "Ghost kaomoji 👻", glyphs: ["👻", "ｵﾊﾞｹ", "ᯅ", "お化け"] },
       { id: "pumpkin", heading: "Pumpkin kaomoji 🎃", glyphs: ["🎃"] },
       { id: "bat", heading: "Bat kaomoji 🦇", glyphs: ["🦇", "⎛⎝"] },
@@ -1658,10 +1668,10 @@ export const pages: SitePage[] = [
       { id: "devil", heading: "Devil kaomoji Ψ", glyphs: ["Ψ", "ψ", "😈"] },
       { id: "skull", heading: "Skull & dead kaomoji 💀", glyphs: ["💀", "☠", "✖", "×_×", "⚰"] },
       { id: "vampire-witch", heading: "Vampire & witch kaomoji 🧛", glyphs: ["🧛", "🩸", "🧙", "🔮", "━☆"] },
-      { id: "spider-candy", heading: "Spider, cat & candy kaomoji 🕷️", glyphs: ["🕷", "🕸", "🍬", "🍭", "ᐟ\\", "ↀ"] },
+      { id: "spider-candy", heading: "Black cat, spider & candy kaomoji 🐈‍⬛", glyphs: ["🐈", "🕷", "🕸", "🍬", "🍭", "ᐟ\\", "ↀ"] },
     ],
     howTo: [
-      "Pick your spook level: cute ghosts and pumpkins up top, then creepier zombies, devils, and dead-eyed faces further down.",
+      "Need a greeting? Start with the Happy Halloween and trick-or-treat faces. Otherwise pick your spook level: cute ghosts and pumpkins up top, then creepier zombies, devils, and dead-eyed faces further down.",
       "Tap Copy — emoji such as 🎃 and 👻 copy together with the text face.",
       "Paste into a Halloween greeting, party invite, costume post, or group chat.",
     ],
@@ -1677,6 +1687,14 @@ export const pages: SitePage[] = [
       {
         question: "What are some cute Halloween kaomoji?",
         answer: "Try 👻(◕ᴗ◕)👻 for friendly ghosts, ʕ•ᴥ•ʔ🎃 for a pumpkin bear, 🍬(〃＾▽＾〃)🍭 for trick-or-treat, or /ᐠ｡ꞈ｡ᐟ\\🎃 for a black cat.",
+      },
+      {
+        question: "What is a good Happy Halloween kaomoji?",
+        answer: "🎃 Happy Halloween! ヽ(＾▽＾)ﾉ works for anyone. For a cuter text, send 👻(◕ᴗ◕) Happy Halloween (◕ᴗ◕)👻, or Trick or treat! 🍬(〃＾▽＾〃)🎃 for kids and party chats.",
+      },
+      {
+        question: "How do you say Happy Halloween in Japanese kaomoji?",
+        answer: "Halloween is ハロウィン (harowin) in Japanese. Try 🎃ハッピーハロウィン(*´▽`*)👻, or the half-width banner ☆ﾟ.*･｡ﾟ【ﾊﾛｳｨﾝ】ﾟ｡･*.ﾟ☆🎃.",
       },
       {
         question: "What is the zombie kaomoji?",
@@ -1703,7 +1721,7 @@ export const pages: SitePage[] = [
     heading: "Star Kaomoji",
     titleSegment: "Star Kaomoji ★(^_^)★",
     description:
-      "Star kaomoji to copy and paste: faces with ★ and ✦ for wishes, wins, and late-night chats, plus starry borders for bios and usernames.",
+      "Star kaomoji to copy and paste: faces with ★ and ✦ for wishes, wins, and late-night chats, plus starry accents for bios and usernames.",
     intro:
       "Shining and twinkling star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. This collection covers classic ★ faces and soft twinkling poses. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
     group: "browse",
@@ -1735,7 +1753,7 @@ export const pages: SitePage[] = [
         answer: "Usually yes, if the platform allows special characters. Test paste into a profile field once before saving.",
       },
     ],
-    related: ["/sparkle-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+    related: ["/sparkle-kaomoji", "/border-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
   },
   {
     path: "/giggling-kaomoji",
@@ -2455,7 +2473,7 @@ export const pages: SitePage[] = [
     heading: "Cute Symbols Copy and Paste ♡",
     titleSegment: "Cute Symbols Copy and Paste ♡ ✿ ☆ Aesthetic",
     description:
-      "Cute symbols to copy and paste: hearts ♡, stars ✧, flowers ✿, bows ʚɞ, brackets ꒰ ꒱, dividers, and arrows. 250+ aesthetic text symbols for bios and captions.",
+      "Cute symbols to copy and paste: hearts ♡, stars ✧, flowers ✿, bows ʚɞ, brackets ꒰ ꒱, and arrows. 250+ aesthetic text symbols for bios and captions.",
     intro:
       "Hearts, stars, flowers, bows, frames, and dividers — 250+ aesthetic text symbols for Instagram bios, TikTok names, and Discord servers. Tap any symbol to copy it.",
     group: "browse",
@@ -2468,7 +2486,7 @@ export const pages: SitePage[] = [
     definition:
       "Cute symbols are Unicode text characters — hearts, stars, flowers, and decorative marks — that you can paste anywhere text is allowed. Unlike emoji, they take the color of the text around them, which gives bios and names a clean, aesthetic look.",
     learnMore:
-      "Every symbol here is a standard Unicode character, so it is plain text rather than an image. That means it works in Instagram and TikTok bios, Discord nicknames, game names (where allowed), and documents. Most come from the Dingbats, Miscellaneous Symbols, and Geometric Shapes blocks that every modern phone supports.\n\nBuilding combos: aesthetic decorations usually stack small marks around a center symbol — for example ⋆｡°✩ or ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚. The tiny characters (˚, ₊, ‧, ⋆) are spacers that add sparkle without visual weight. Frames like ꒰ ꒱ or 『 』 wrap a name or word, and dividers split a bio into neat sections.\n\nIf a symbol shows as an empty box, the app's font does not have it. Swap to a more common alternative from the same group — ♡ and ☆ work almost everywhere. Some username fields also strip special characters; test once before you save.\n\nPair them with kaomoji: symbols turn a plain face into a styled one, like ⋆˙⟡(◕‿◕)⟡˙⋆ or ♡ (˶ᵔ ᵕ ᵔ˶) ♡.",
+      "Every symbol here is a standard Unicode character, so it is plain text rather than an image. That means it works in Instagram and TikTok bios, Discord nicknames, game names (where allowed), and documents. Most come from the Dingbats, Miscellaneous Symbols, and Geometric Shapes blocks that every modern phone supports.\n\nBuilding combos: aesthetic decorations usually stack small marks around a center symbol — for example ⋆｡°✩ or ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚. The tiny characters (˚, ₊, ‧, ⋆) are spacers that add sparkle without visual weight. Frames like ꒰ ꒱ or 『 』 wrap a name or word. For ready-made full-width lines, see [kaomoji borders and dividers](/border-kaomoji/).\n\nIf a symbol shows as an empty box, the app's font does not have it. Swap to a more common alternative from the same group — ♡ and ☆ work almost everywhere. Some username fields also strip special characters; test once before you save.\n\nPair them with kaomoji: symbols turn a plain face into a styled one, like ⋆˙⟡(◕‿◕)⟡˙⋆ or ♡ (˶ᵔ ᵕ ᵔ˶) ♡.",
     faqs: [
       {
         question: "How do I copy and paste cute symbols?",
@@ -2491,7 +2509,7 @@ export const pages: SitePage[] = [
         answer: "Yes. They are Unicode characters that anyone can type or paste anywhere — no license is needed.",
       },
     ],
-    related: ["/emoji-combos", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji"],
+    related: ["/emoji-combos", "/border-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji"],
   },
   {
     path: "/emoji-combos",
@@ -2730,17 +2748,18 @@ export const pages: SitePage[] = [
   {
     path: "/devil-kaomoji",
     label: "Devil",
-    heading: "Devil Kaomoji Ψ(｀▽´)Ψ",
-    titleSegment: "Devil Kaomoji Ψ(｀▽´)Ψ Evil Faces to Copy",
+    heading: "Devil & Evil Kaomoji Ψ(｀▽´)Ψ",
+    titleSegment: "Devil & Evil Kaomoji Ψ(｀▽´)Ψ Goth & Mischief Faces",
     description:
-      "Devil kaomoji to copy and paste: Ψ(｀▽´)Ψ, ψ(｀∇´)ψ, evil grins (◣‿◢)Ψ, and 😈 mischief faces for pranks, plotting, and playful evil.",
+      "Devil, evil, and goth kaomoji to copy and paste: Ψ(｀▽´)Ψ, ψ(｀∇´)ψ, wicked grins (◣‿◢)Ψ, and 😈 mischief faces for pranks, plotting, and dark aesthetics.",
     intro:
-      "Little devils, evil grins, and plotting faces with pitchforks — for pranks, mischief, and playful villainy. Perfect for the friend who is definitely planning something.",
+      "Little devils, evil grins, goth accents, and plotting faces with pitchforks — for pranks, mischief, and playful villainy. Perfect for the friend who is definitely planning something.",
     group: "browse",
-    tags: ["devil"],
+    tags: ["devil", "goth"],
     faceGroups: [
       { id: "pitchfork", heading: "Pitchfork devil kaomoji Ψ", glyphs: ["Ψ(", ")Ψ", "ψ(", ")ψ"] },
-      { id: "evil-grin", heading: "Evil grin kaomoji", glyphs: ["◣", "◢", "▼", "ᗨ"] },
+      { id: "goth", heading: "Goth & dark aesthetic kaomoji ♰", glyphs: ["♰", "♱", "⛧", "🖤", "🦇", "⎛⎝", "🥀", "†"] },
+      { id: "evil-grin", heading: "Evil & goth grin kaomoji", glyphs: ["◣", "◢", "▼", "ᗨ"] },
       { id: "emoji", heading: "Devil emoji kaomoji 😈", glyphs: ["😈", "👿", "🔥"] },
     ],
     howTo: [
@@ -2749,15 +2768,214 @@ export const pages: SitePage[] = [
       "Paste it when you're up to something — a prank, a plot twist, or a playful threat.",
     ],
     definition:
-      "Devil kaomoji are mischievous or evil-looking text faces, usually holding a pitchfork made from the Greek letter Ψ (psi) or ψ.",
+      "Devil and evil kaomoji are mischievous text faces, usually holding a pitchfork made from the Greek letter Ψ (psi) or ψ, or sporting sharp, gothic brows like ◣ and ◢.",
     learnMore:
-      "Ψ looks like a trident or pitchfork, so placing it beside a face — Ψ(｀▽´)Ψ — turns any grin into a little devil. The eyes ｀ and ´ slant inward like scheming brows, and ▽ or ∀ is a wide, wicked grin. ◣ ◢ make heavier, angrier brows for a darker look.\n\nNote that Ψ also appears in some food faces as a fork, so a Ψ next to a food emoji usually means eating, not evil.\n\nDevil faces are playful in most chats: a teasing threat, a prank, or a plot twist. For full Halloween monsters, see the devil section on Halloween Kaomoji.\n\nDevil faces fit plenty of everyday chat moments: suggesting one more episode before bed, tempting a friend with dessert, or admitting you ate the last slice. Pair them with an emoji to make the joke clear, such as Ψ(｀▽´)Ψ🍰 for temptation or Ψ(｀∀´)Ψ🎮 for staying up too late gaming. Around Halloween, devil faces join ghosts and pumpkins as costume-style reactions. If you want mischief without the evil look, a sly grin such as (¬‿¬) does the job, and an innocent face like (◕‿◕) makes a nice contrast when you want to play good versus bad.",
+      "Ψ looks like a trident or pitchfork, so placing it beside a face — Ψ(｀▽´)Ψ — turns any grin into a little devil. The eyes ｀ and ´ slant inward like scheming brows, and ▽ or ∀ is a wide, wicked grin. ◣ ◢ make heavier, angrier brows for a darker, goth or villainous look.\n\nNote that Ψ also appears in some food faces as a fork, so a Ψ next to a food emoji usually means eating, not evil.\n\nDevil faces are playful in most chats: a teasing threat, a prank, or a plot twist. For full Halloween monsters, bats, and skeletons, see [Halloween kaomoji](/halloween-kaomoji/). For dark cross dividers like ─── ⋆⋅ ♰ ⋅⋆ ─── to frame a goth bio, check [kaomoji borders and dividers](/border-kaomoji/).\n\nDevil faces fit plenty of everyday chat moments: suggesting one more episode before bed, tempting a friend with dessert, or admitting you ate the last slice. Pair them with an emoji to make the joke clear, such as Ψ(｀▽´)Ψ🍰 for temptation or Ψ(｀∀´)Ψ🎮 for staying up too late gaming. If you want mischief without the evil look, a sly grin such as (¬‿¬) on [smug kaomoji](/smug-kaomoji/) does the job.",
     faqs: [
       { question: "What is the devil kaomoji?", answer: "Ψ(｀▽´)Ψ is the most popular: Ψ is a pitchfork on each side of a wicked grin." },
       { question: "What does Ψ mean in kaomoji?", answer: "Ψ is the Greek letter psi. It looks like a pitchfork, so it marks a face as a devil. Next to food it can also be a fork." },
+      { question: "What are goth or evil kaomoji?", answer: "Goth kaomoji keep the face simple and let the accents set the mood: crosses ♰, pentagram stars ⛧, bat wings ⎛⎝(•ⱅ•)⎠⎞, black hearts 🖤, or a wilted rose 🥀. Evil kaomoji lean on sharp ◣ ◢ brows and wicked grins like (◣‿◢)Ψ." },
       { question: "Are devil kaomoji mean?", answer: "Usually not — they read as playful mischief. Avoid them in serious conversations." },
     ],
     related: ["/halloween-kaomoji", "/smug-kaomoji", "/angry-kaomoji", "/cool-kaomoji"],
+  },
+  {
+    path: "/border-kaomoji",
+    label: "Borders",
+    heading: "Kaomoji Borders & Dividers",
+    titleSegment: "Kaomoji Borders & Dividers ─── ⋆⋅☆⋅⋆ ─── Copy & Paste",
+    description:
+      "Kaomoji borders and dividers to copy and paste: 70+ box lines, sparkle separators, coquette ribbons ୨୧, and bracket frames for bios, captions, and Discord.",
+    intro:
+      "Decorative lines, coquette ribbons, brackets, and sparkle dividers for bios, captions, and Discord servers. Tap Copy on any border or divider to frame your text or kaomoji.",
+    group: "browse",
+    howToName: "How to use kaomoji borders and dividers",
+    tags: ["border", "divider"],
+    faceGroups: [
+      { id: "sparkle", heading: "Sparkle & star dividers ✧", glyphs: ["✧", "⋆", "☆", "☾", "･ﾟ"] },
+      { id: "ribbons", heading: "Ribbon, heart & flower dividers ୨୧", glyphs: ["୨୧", "♡", "✿", "❀", "‿︵"] },
+      { id: "boxes", heading: "Box caps & bracket frames ╭─╮", glyphs: ["┌", "╭", "╔", "꒰", "『", "【", "〖", "༺"] },
+      { id: "lines", heading: "Clean line & bar borders ───", glyphs: ["━", "═", "┈", "▬", "▁", "░"] },
+    ],
+    howTo: [
+      "Pick a line, box cap, or sparkle divider that fits the width of your bio or chat column.",
+      "Tap Copy, then paste it above or below a face from [cute kaomoji](/cute-kaomoji/) or [star kaomoji](/star-kaomoji/).",
+      "Preview the result on mobile before saving, since long horizontal lines can wrap onto a second row on narrow screens.",
+    ],
+    definition:
+      "Kaomoji borders and dividers are decorative Unicode lines, ribbon bars, and box frames used to split sections in a profile bio, frame a message, or highlight a text face.",
+    learnMore:
+      "While mood kaomoji show an expression, borders and dividers give your text structure. They are built from Unicode box-drawing characters (━, ─, ┌, ╭, ╰, ╯), dotted leaders (┈), wave marks (‿︵‿︵), and aesthetic accents like the Odia ribbon digits ୨୧ or four-point stars ✧. Placed between your display name and your links, a single short divider turns a plain profile into a neat card.\n\nWidth matters more than anything else when pasting borders. Desktop Discord channels and Tumblr posts have room for twenty-character bars, while an Instagram or TikTok bio on a small phone screen can wrap a wide line in the middle and break the symmetry. If a border wraps on your phone, either delete two or three dashes from each side after pasting or pick one of the compact center dividers like ⋆｡°✩°｡⋆.\n\nPairings follow the mood of your profile: soft pastel and coquette accounts usually pair ୨୧ or ꒰ა ♡ ໒꒱ dividers with blushing faces from [cute kaomoji](/cute-kaomoji/) or [shy kaomoji](/shy-kaomoji/). Music and fan accounts often combine ✧･ﾟ: *✧･ﾟ:* sparkle bars with [Porter Robinson kaomoji](/guides/porter-robinson-kaomoji/) or [sparkle kaomoji](/sparkle-kaomoji/). Dark or gothic layouts tend to use ♰ crosses, ︶꒦꒷ drip borders, or shaded block bars.\n\nIf you want individual hearts, stars, and brackets to build your own custom line from scratch, visit [cute symbols](/cute-symbols/). For full multi-row drawings and sign-holding characters rather than single horizontal bars, check [kaomoji art](/art-kaomoji/).",
+    faqs: [
+      {
+        question: "What is a kaomoji border?",
+        answer:
+          "A kaomoji border is a decorative text line or frame made from Unicode characters like ━, ╭, ୨୧, and ✧. People paste them above, below, or around text and kaomoji to organize bios and Discord posts.",
+      },
+      {
+        question: "What is the difference between a kaomoji border and a divider?",
+        answer:
+          "A divider is a single horizontal line that separates two sections of text, like ─── ⋆⋅☆⋅⋆ ───. A border usually has top and bottom caps (╭───╮ and ╰───╯) or left and right brackets that wrap around your words.",
+      },
+      {
+        question: "Can I use kaomoji borders in a Discord server?",
+        answer:
+          "Yes. They are plain text, so they work in channel names, rules posts, role menus, and your About Me. Short center dividers like ─── ⋆⋅☆⋅⋆ ─── read best in narrow channel lists; save the long box caps for announcement posts.",
+      },
+      {
+        question: "How do I type the ୨୧ ribbon symbol in dividers?",
+        answer:
+          "୨୧ is two digits from the Odia script: ୨ (two) and ୧ (one). Side by side they look like a tied ribbon bow, which is why aesthetic bios use them. No standard keyboard has them, so copy the divider straight from this page.",
+      },
+    ],
+    related: ["/cute-symbols", "/star-kaomoji", "/sparkle-kaomoji", "/art-kaomoji", "/kaomoji-copy-paste"],
+  },
+  {
+    path: "/roblox-kaomoji",
+    label: "Roblox",
+    heading: "Roblox Kaomoji",
+    titleSegment: "Roblox Kaomoji (^_^) Filter-Friendly Faces to Copy",
+    description:
+      "Roblox kaomoji to copy and paste: 85+ short keyboard faces like (^_^), UwU, (T_T), and =^.^= for Roblox chat and your About bio that rarely get hashed.",
+    intro:
+      "Short, clean kaomoji for Roblox, picked for your profile About section and in-game chat. Most are plain keyboard punctuation, so they are far less likely to turn into ### tags or empty boxes than fancy Unicode faces.",
+    group: "browse",
+    howToName: "How to use kaomoji on Roblox",
+    tags: ["roblox"],
+    faceGroups: [
+      { id: "happy", heading: "Happy, wave & peace (^_^)v", glyphs: ["^_^", "^-^", "^o^", ":)", ":D", "\\o/", "o7"] },
+      { id: "uwu", heading: "UwU, OwO & cat faces =^.^=", glyphs: ["UwU", "uwu", "OwO", "owo", ">w<", "^w^", ":3", "=3", ";3", "=^"] },
+      { id: "reactions", heading: "Crying, shocked & oof (T_T)", glyphs: ["T_T", "ToT", ";_;", ";o;", ">_<", "o_o", "O_O", "x_x", "-_-", "=_="] },
+      { id: "dance", heading: "Kirby dance, music & cool d(^_^)b", glyphs: ["'-'", "d(", "B_B", "⌐■"] },
+    ],
+    howTo: [
+      "Pick a compact face under 15 characters for in-game chat or your profile About box.",
+      "Tap Copy, open Roblox, and paste into your About bio, status, or experience chat.",
+      "Keep them out of your name: @usernames and Display Names only accept a narrow set of characters, so text faces belong in your About bio or chat.",
+    ],
+    definition:
+      "Roblox kaomoji are compact, single-line text faces built mostly from standard keyboard characters, like (^_^), UwU, (T_T), and =^.^=, so they display cleanly in Roblox profiles and chat.",
+    learnMore:
+      "Roblox has three text places with very different rules. Your @username only takes letters, numbers, and underscores, and Display Names are almost as strict, so parenthesis faces will not save there. Your profile About section and in-game experience chat accept normal punctuation, which makes them the right home for kaomoji.\n\nWhy do some kaomoji turn into ### hashes or empty boxes in Roblox? Two separate things are going on. The text filter can hash out long runs of unusual symbols because they look like spam or filter bypasses. And the UI fonts many experiences use cover Latin letters and common punctuation well, but not rarer scripts like Tibetan or Kannada that fancy kaomoji borrow for eyes. Faces made from parentheses, carets, underscores, colons, and letters — like (^_^), (>_<)b, d(^_^)b, and =^.^= — avoid both problems.\n\nIn-game chat moves fast during obbies, trading, and roleplay, so shorter faces work best. A quick o7 salute, \\(^o^)/ cheer after beating a stage, or (T_T) after falling at the last jump takes less than ten characters, so it fits in a chat bubble without wrapping.\n\nWant ready-made profile lines to paste around these faces? Our [Roblox bio ideas](/blog/roblox-bio-kaomoji-ideas/) post has About Me templates and trading statuses, or browse [uwu kaomoji](/uwu-kaomoji/) and [cool kaomoji](/cool-kaomoji/) for wider variations to use on Discord.",
+    faqs: [
+      {
+        question: "What kaomoji work on Roblox without getting tagged as ###?",
+        answer:
+          "Short faces built from normal keyboard keys, like (^_^), (T_T), (>_<), UwU, OwO, =^.^=, and d(^_^)b, rarely get hashed. The filter is not public and can change, so send one test message if a face matters to you.",
+      },
+      {
+        question: "Can you put kaomoji in your Roblox Display Name?",
+        answer:
+          "No. @usernames only allow letters, numbers, and underscores, and Display Names block the brackets and symbols kaomoji are made of. Put your kaomoji in your profile About section, group posts, or in-game chat instead.",
+      },
+      {
+        question: "Why do some kaomoji show up as boxes [ ? ] in Roblox games?",
+        answer:
+          "Many Roblox games use UI fonts that do not include rare Japanese or mathematical characters, so the device draws an empty box instead. The keyboard faces on this page avoid that, so other players see the face you meant to send.",
+      },
+      {
+        question: "What do o7 and d(^_^)b mean in Roblox chat?",
+        answer:
+          "o7 looks like a head (o) with a raised arm saluting (7). d(^_^)b is a happy face wearing headphones on both ears.",
+      },
+    ],
+    related: ["/happy-kaomoji", "/uwu-kaomoji", "/cool-kaomoji", "/cat-kaomoji", "/kaomoji-copy-paste"],
+  },
+  {
+    path: "/art-kaomoji",
+    label: "Art",
+    heading: "Kaomoji Art",
+    titleSegment: "Kaomoji Art & Multiline ASCII Faces to Copy",
+    description:
+      "80+ kaomoji art pieces to copy and paste: multiline ASCII bunnies holding signs, stacked cats, and framed boxes that keep their line breaks in Discord and bios.",
+    intro:
+      "Multi-row kaomoji art, sign-holding bunnies, and stacked text drawings that span two to six lines. Tap Copy to grab the entire block with its line breaks intact.",
+    group: "browse",
+    howToName: "How to copy and paste kaomoji art",
+    tags: ["multiline", "multi-line", "ascii art"],
+    includeNewlineFaces: true,
+    faceGroups: [
+      { id: "bunny", heading: "Bunny & sign-holding art (\\_/)", glyphs: ["(\\_/)", "/)/)", "ᕱ", "ᘏ"] },
+      { id: "cat", heading: "Stacked cat & animal art ∧_∧", glyphs: ["∧_∧", "∧＿∧", "∧∧", "ʕ"] },
+      { id: "boxes", heading: "Framed box & sign art ┏━┓", glyphs: ["┏", "╔", "╭", "┌"] },
+      { id: "scenes", heading: "Sparkle, flower & scene art 🌸", glyphs: ["🌸", "☁", "🌙", "✧", "☕"] },
+    ],
+    howTo: [
+      "Tap Copy on any piece of art to copy all rows and line breaks at once.",
+      "Paste into an app that keeps line breaks, such as Discord, iMessage, WhatsApp, Notes, or an Instagram bio.",
+      "If you are pasting into Discord and the spacing shifts, wrap the art in triple backticks (```) so it renders in a fixed-width code block.",
+    ],
+    definition:
+      "Kaomoji art (also called multiline kaomoji or small ASCII art) is a text drawing stacked across two or more lines — usually a bunny, cat, or character with ears on the top row, a face in the middle, and paws holding a heart, sign, or cup on the bottom row.",
+    learnMore:
+      "Standard kaomoji sit on a single line of text so they can slip into the end of any sentence. Kaomoji art breaks out of that single line: by stacking characters vertically with newline breaks, three short rows can draw a full standing bunny ((\\_/) over (•ㅅ•) over / づ) or a cat peeking over a wooden sign (┏━O━O━┓). Because these drawings stay narrow — usually under fifteen characters wide — they do not scramble on mobile screens the way old 80-column desktop ASCII art does.\n\nTwo things decide whether multiline art looks right after you paste it: line breaks and spacing characters. Single-line inputs (like a Twitch chat box that sends on Enter, or a game nickname field) strip newlines and flatten the drawing into one messy row. Use multiline art in places that allow Shift+Enter or multi-row text, such as Discord messages, Instagram and TikTok bios, iMessage, Telegram, and Notes.\n\nMany pieces here use the ideographic full-width space (　) to push ears or paws into alignment above the face. Unlike a regular spacebar tap, a full-width space is not collapsed by HTML or social bios, which keeps the ears sitting squarely on top of the head. If you edit the text inside a sign box, try to keep the same number of characters so the right wall (┃ or │) stays straight.\n\nIf you only want a single horizontal separator or frame rather than a stacked character, head over to [kaomoji borders and dividers](/border-kaomoji/). For why certain fonts shift alignment on iPhone versus Android, read our [kaomoji font and display guide](/guides/kaomoji-font-and-display/).",
+    faqs: [
+      {
+        question: "What is kaomoji art?",
+        answer:
+          "Kaomoji art is a small text drawing built across multiple lines — such as the famous sign-holding bunny or a cat behind a box — combining Japanese kaomoji expressions with vertical ASCII art.",
+      },
+      {
+        question: "Why does my kaomoji art collapse into one line when I paste it?",
+        answer:
+          "Some text fields remove newline breaks or submit the message as soon as they see an Enter character. Paste into Discord, iMessage, Notes, or a multi-line bio field that supports line breaks.",
+      },
+      {
+        question: "How do I keep the ears and paws aligned in Discord?",
+        answer:
+          "Copy the block with the Copy button here so the invisible full-width spaces stay intact, or wrap the art in triple backticks (```) in Discord to force an even monospace font.",
+      },
+      {
+        question: "How do I put my own words inside a sign bunny or box kaomoji?",
+        answer:
+          "Paste the art into your notes app first, then type your word next to the bunny's paw (づ) or between the box walls (┃). Keep the word short so the box sides stay lined up.",
+      },
+    ],
+    related: ["/border-kaomoji", "/text-faces", "/bunny-kaomoji", "/cat-kaomoji", "/kaomoji-copy-paste"],
+  },
+  {
+    path: "/kaomoji-app",
+    label: "App",
+    heading: "Kaomoji App",
+    titleSegment: "Kaomoji App (◕‿◕) Free Web App for Phone & PC",
+    description:
+      "Use Paste Kaomoji as a free kaomoji app on iPhone, Android, PC, or Mac: one-tap copy in your browser, a home-screen icon, and no keyboard permissions or sign-up.",
+    intro:
+      "You do not need a keyboard download that asks for full access to everything you type. Paste Kaomoji works as a web app on any phone or computer: open it, tap a face, paste it. Add it to your home screen and it opens like any other app.",
+    group: "browse",
+    howToName: "How to add the Paste Kaomoji app to your phone or desktop",
+    howTo: [
+      "Use the quick-copy pad right on this page or open any mood collection to copy faces in a single tap.",
+      "On iPhone (Safari → Share → Add to Home Screen) or Android (Chrome ⋮ → Add to Home screen), save Paste Kaomoji as an app icon on your phone.",
+      "On a PC or Mac, bookmark the page or keep it pinned as a tab so it is one click away while you chat.",
+    ],
+    definition:
+      "A kaomoji app is a tool for browsing, searching, and copying Japanese text faces into your messages and bios. Paste Kaomoji works directly in the browser as a lightweight web app, so there is nothing to install.",
+    learnMore:
+      "Many third-party kaomoji keyboard apps in the App Store and Google Play come with two trade-offs: many ask you to turn on 'Allow Full Access' for their keyboard, and a lot of them lean on subscriptions or full-screen ads. Because kaomoji are standard Unicode text, you do not actually need a custom keyboard installed in your operating system to use them.\n\nAdding Paste Kaomoji to your phone's home screen gives you the same one-tap icon experience without handing over keyboard permissions. Every face you copy is saved locally in your browser's Recently Copied strip, so your go-to reactions sit at the top of the screen the next time you open it.\n\nLooking for a kaomoji keyboard app instead? Check what you already have first. iPhone, Android, and Windows all ship with a small built-in kaomoji picker, and our guide on [how to type kaomoji on iPhone, Android, Windows, and Mac](/guides/how-to-type-kaomoji/) shows where each one hides. Those pickers cover a few dozen classics; this site is for the other 24,000. If you want to mix and match eyes, mouths, and arms yourself, try the [kaomoji generator](/kaomoji-generator/).",
+    faqs: [
+      {
+        question: "Is there a free kaomoji app without ads or keyboard tracking?",
+        answer:
+          "Yes. Paste Kaomoji runs in your browser on iOS, Android, Windows, and Mac with one-tap copy and no account, and it never sees what you type in other apps. Add it to your home screen and it opens from an icon like any other app.",
+      },
+      {
+        question: "How do I put the Paste Kaomoji app on my iPhone or Android home screen?",
+        answer:
+          "On iPhone, open pastekaomoji.com in Safari, tap the Share icon, and tap Add to Home Screen. On Android, open the site in Chrome, tap the three-dot menu, and tap Add to Home screen.",
+      },
+      {
+        question: "Is third-party kaomoji keyboard software safe?",
+        answer:
+          "Some are fine, but a custom keyboard with 'Full Access' turned on can technically see what you type, so you are trusting the developer. Copying from a website or using your phone's built-in Japanese Kana keyboard avoids that trade-off.",
+      },
+      {
+        question: "How do I use Paste Kaomoji on a PC or Mac?",
+        answer:
+          "Open the site in any browser and bookmark it or keep it pinned as a tab. Click a face to copy it, then paste with Ctrl+V on Windows or Cmd+V on Mac into Discord, Twitch, Google Docs, or anywhere else.",
+      },
+    ],
+    related: ["/kaomoji-copy-paste", "/kaomoji-generator", "/cute-kaomoji", "/happy-kaomoji"],
   },
   {
     path: "/about",

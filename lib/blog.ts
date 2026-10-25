@@ -51,7 +51,7 @@ export const posts: BlogPost[] = [
     face: "👻(◕ᴗ◕)🎃",
     event: "Halloween · Oct 31",
     published: "2026-10-21",
-    updated: "2026-10-22",
+    updated: "2026-10-25",
     related: ["/halloween-kaomoji", "/scared-kaomoji", "/devil-kaomoji", "/food-kaomoji"],
     sections: [
       {
@@ -179,7 +179,7 @@ export const posts: BlogPost[] = [
           },
           {
             type: "p",
-            text: "Want more spooky faces? The [Halloween kaomoji](/halloween-kaomoji/) page has 350+ ghosts, pumpkins, bats, zombies, and witches, and the [devil kaomoji](/devil-kaomoji/) page has mischievous faces for tricks. Posting a costume photo instead of texting? Try these [Halloween captions](/blog/halloween-captions-and-social-posts-with-kaomoji/).",
+            text: "Want more spooky faces? The [Halloween kaomoji](/halloween-kaomoji/) page has 370+ greetings, ghosts, pumpkins, bats, zombies, and witches, and the [devil kaomoji](/devil-kaomoji/) page has mischievous faces for tricks. Posting a costume photo instead of texting? Try these [Halloween captions](/blog/halloween-captions-and-social-posts-with-kaomoji/).",
           },
         ],
       },
@@ -1424,6 +1424,296 @@ export const posts: BlogPost[] = [
       {
         question: "When is Galentine's Day?",
         answer: "Galentine's Day is celebrated on February 13, the day before Valentine's Day, to celebrate friendship.",
+      },
+    ],
+  },
+  {
+    slug: "roblox-bio-kaomoji-ideas",
+    title: "Roblox Bio Ideas with Kaomoji: About Me Templates, Trading Statuses & Chat Lines",
+    titleSegment: "Roblox Bio Ideas: About Me Templates with Kaomoji",
+    description:
+      "25+ Roblox bio templates and chat lines with filter-safe kaomoji: About section intros, trading statuses, obby reactions, AFK messages, and co-op openers.",
+    intro:
+      "Roblox keeps @usernames and Display Names strict, but your profile About box and in-game chat let you show personality with short text faces. Every template below uses compact punctuation faces, which are much less likely to turn into ### hashes than fancy Unicode ones.",
+    face: "(^_^)v",
+    event: "Gaming · Roblox",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/roblox-kaomoji", "/happy-kaomoji", "/uwu-kaomoji", "/cool-kaomoji", "/kaomoji-app"],
+    sections: [
+      {
+        id: "about-casual",
+        heading: "Friendly About section bios",
+        blocks: [
+          {
+            type: "p",
+            text: "Keep your About text to two or three short lines so mobile players can read the whole bio without tapping More. One clean face per line looks sharper than a wall of symbols.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Friendly", text: "Just here to have fun and play obbies (^_^)v" },
+              { label: "Cozy", text: "ʕ•ᴥ•ʔ casual player | joins are on for friends" },
+              { label: "UwU vibe", text: "UwU cozy games + dress up | say hi in chat!" },
+              { label: "Cat lover", text: "=^.^= certified cat person | builder in training" },
+              { label: "Music mood", text: "d(^_^)b probably listening to music while I play" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "trading-and-roles",
+        heading: "Trading, builder & status templates",
+        blocks: [
+          {
+            type: "p",
+            text: "Let people know your trade rules or timezone right in your profile so you do not have to repeat yourself in every server:",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Trader", text: "(^_^)b trades open | fair offers only please!" },
+              { label: "No trades", text: "(-_-) not trading my inventory right now, sorry!" },
+              { label: "Builder", text: "Studio builder & scripter (⌐■_■) commissions closed" },
+              { label: "Collector", text: "(*_*) limiteds collector | check my favorites" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "chat-openers",
+        heading: "In-game chat openers and team invites",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Join invite", text: "Anyone want to team up for the next round? (^_^)/" },
+              { label: "Greeting", text: "Hey everyone! Good luck this round \\(^o^)/" },
+              { label: "Help", text: "Wait for me at the checkpoint! (>_<)" },
+              { label: "Thank you", text: "Thanks so much for the revive! (^_^)v" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "reactions",
+        heading: "Obby fails, clutches & GG reactions",
+        blocks: [
+          {
+            type: "p",
+            text: "Short ASCII faces shine in fast-moving game chat because they are under ten characters and fit in a chat bubble without wrapping:",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Clutch win", text: "GG! I cannot believe we survived that (O_O)" },
+              { label: "Last jump fail", text: "I fell on the very last jump... (T_T)" },
+              { label: "Dizzy", text: "That boss fight had me spinning (@_@)" },
+              { label: "Salute", text: "GG team, it was an honor o7" },
+              { label: "Cool win", text: "First try, no sweat (B_B)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "afk",
+        heading: "AFK and busy status lines",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "AFK", text: "AFK for 5 mins, grabbing snacks (u_u)" },
+              { label: "Grinding", text: "d(-_-)b grinding levels | slow replies" },
+              { label: "Logging off", text: "Logging off for tonight, see you tomorrow! (^_^)/" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tips",
+        heading: "What to do when Roblox blocks a symbol",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Swap to pure keyboard punctuation from the [Roblox kaomoji](/roblox-kaomoji/) page — faces built from ( ), ^, _, and T rarely get hashed.",
+              "Remember that @usernames and Display Names will not accept kaomoji symbols; save your faces for your About bio and in-game chat.",
+              "Skip multiline drawings on Roblox and save [kaomoji art](/art-kaomoji/) for your Discord server.",
+              "Playing on PC? Keep the [kaomoji app](/kaomoji-app/) open in a pinned browser tab so you can copy faces between rounds in one click.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What should I write in my Roblox bio?",
+        answer:
+          "Two or three short lines: what you like to play, whether your trades or joins are open, and one face that matches your vibe. Leave out personal details like your real name, school, or phone number. Roblox's filter blocks a lot of that anyway, and it keeps you safer.",
+      },
+      {
+        question: "Why did my Roblox bio turn into ### hashtags?",
+        answer:
+          "Roblox's automated filter hashes out text it cannot verify as safe, including long runs of unusual symbols and number strings that look like personal info. A short keyboard face like (^_^) or (T_T) usually gets through.",
+      },
+      {
+        question: "Can I use the same bio line on Roblox and Discord?",
+        answer:
+          "Usually, yes. Every template here is short keyboard text, so it pastes cleanly into a Discord About Me too. The reverse is not always true: fancy Unicode Discord bios can show up as boxes or hashes on Roblox.",
+      },
+      {
+        question: "How many characters can a Roblox About bio have?",
+        answer:
+          "Roblox allows up to 1,000 characters in the profile About box, though keeping it under three lines makes it much easier to read on mobile.",
+      },
+    ],
+  },
+  {
+    slug: "instagram-bio-dividers-with-kaomoji",
+    title: "Instagram & TikTok Bio Dividers with Kaomoji: Aesthetic Lines to Copy",
+    titleSegment: "Instagram Bio Dividers with Kaomoji to Copy",
+    description:
+      "25+ aesthetic Instagram and TikTok bio dividers with kaomoji: coquette ribbons ୨୧, sparkle lines ✧, soft pastel stacks, and one-line captions ready to copy.",
+    intro:
+      "A good bio divider gives your profile breathing room — separating your name from your links or framing a single mood face so your bio looks intentional instead of crowded. Every template below pairs lines from our [kaomoji borders and dividers](/border-kaomoji/) collection with soft faces you can copy in one tap.",
+    face: "─── ⋆⋅☆⋅⋆ ───",
+    event: "Social · Bios",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/border-kaomoji", "/cute-kaomoji", "/sparkle-kaomoji", "/shy-kaomoji", "/cute-symbols"],
+    sections: [
+      {
+        id: "coquette-and-soft",
+        heading: "Soft & coquette bio stacks",
+        blocks: [
+          {
+            type: "p",
+            text: "These three-line stacks stay narrow enough to fit on both iPhone and Android screens without wrapping in the middle:",
+          },
+          {
+            type: "messages",
+            items: [
+              {
+                label: "Ribbon bow",
+                text: "────── ୨୧ ──────\n(˶ᵔ ᵕ ᵔ˶) ♡\nart · coffee · slow days",
+              },
+              {
+                label: "Angel wings",
+                text: "˚₊‧꒰ა ♡ ໒꒱ ‧₊˚\n꒰ᐢ. .ᐢ꒱\nshe/her · daydreaming",
+              },
+              {
+                label: "Blossom vine",
+                text: "°•. ✿ .•°•. ✿ .•°\n(◕‿◕✿)\ncreating little things",
+              },
+              {
+                label: "Shy blush",
+                text: "─── ⋆⋅ ♡ ⋅⋆ ───\n(⁄ ⁄•⁄ω⁄•⁄ ⁄)\nwelcome to my corner",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "sparkle-and-star",
+        heading: "Sparkle, star & night-sky bio dividers",
+        blocks: [
+          {
+            type: "p",
+            text: "Inspired by starry fan bios and the [Porter Robinson kaomoji guide](/guides/porter-robinson-kaomoji/), these lines mix four-point ✧ sparkles with crescent moons and stars:",
+          },
+          {
+            type: "messages",
+            items: [
+              {
+                label: "Star center",
+                text: "─── ⋆⋅☆⋅⋆ ───\n✧(◕‿◕)✧\nlooking at the sky",
+              },
+              {
+                label: "Moon & cloud",
+                text: "⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆\n(˘ω˘) zzZ\nlate night playlists",
+              },
+              {
+                label: "Worlds vibe",
+                text: "✧･ﾟ: *✧･ﾟ:*\n【=◈︿◈=】\ngoodbye to a world",
+              },
+              {
+                label: "Sparkle frame",
+                text: "╭──── · · ✧ · · ────╮\n   (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧\n╰──── · · ✧ · · ────╯",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "one-line-bios",
+        heading: "Compact one-line bios for TikTok (80-character limit)",
+        blocks: [
+          {
+            type: "p",
+            text: "TikTok caps bios at 80 characters, and line breaks count toward the limit. A single centered line with a face in the middle saves space:",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Soft smile", text: "─── ⋆⋅ (˶ᵔ ᵕ ᵔ˶) ⋅⋆ ───" },
+              { label: "Little bear", text: "────── ʕ•ᴥ•ʔ ──────" },
+              { label: "Kitty paws", text: "─── ⋆⋅ ฅ^•ﻌ•^ฅ ⋅⋆ ───" },
+              { label: "Wink", text: "✧･ﾟ (｡•̀ᴗ-)✧ ･ﾟ✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "captions",
+        heading: "Matching photo dump & Reel captions",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Photo dump", text: "little moments from lately ✧･ﾟ: *(˶ᵔ ᵕ ᵔ˶)*:･ﾟ✧" },
+              { label: "Outfit post", text: "୨୧ dressed up with nowhere to be (◕ᴗ◕✿) ୨୧" },
+              { label: "Cozy weekend", text: "iced latte and zero plans ─── ♡ (˘ω˘) ♡ ───" },
+              { label: "Night out", text: "⋆⁺₊⋆ stars out, overthinking off ⋆⁺₊⋆ (｡•̀ᴗ-)✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tips",
+        heading: "How to keep bio dividers from wrapping on mobile",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Keep horizontal lines under 16–18 characters wide so they stay on a single row on smaller iPhones.",
+              "If a divider wraps after you save, edit the bio and delete two ─ dashes from both the left and right ends.",
+              "Want to mix individual hearts, bows, and brackets yourself? Grab pieces from [cute symbols](/cute-symbols/) or read our [soft kaomoji copy guide](/guides/kaomoji-soft-copy/).",
+              "Check how your bio looks in both light mode and dark mode — Unicode text dividers automatically switch color with the user's theme.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a kaomoji divider in an Instagram bio?",
+        answer:
+          "A kaomoji divider is a short decorative line made from Unicode dashes, stars, or ribbons (like ─── ⋆⋅☆⋅⋆ ───) placed above, below, or around a text face to organize a profile bio.",
+      },
+      {
+        question: "Why did my Instagram bio divider split onto two lines?",
+        answer:
+          "Instagram bios use a proportional font and narrow mobile margins. Shorten the line by removing two or three dash characters from each side so it fits on a single row.",
+      },
+      {
+        question: "Do Instagram and TikTok bios keep line breaks when you paste?",
+        answer:
+          "Yes, both keep line breaks. TikTok caps the whole bio at 80 characters, so on TikTok a three-line stack has to stay short.",
+      },
+      {
+        question: "Where can I find more borders without text?",
+        answer:
+          "Visit our Kaomoji Borders & Dividers page for 70+ standalone lines, box caps, and ribbon separators ready to copy.",
       },
     ],
   },

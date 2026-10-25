@@ -204,6 +204,8 @@ function passesTextFacesCategory(item: Kaomoji): boolean {
   if (hasAnyTag(item, ["fish", "ascii art", "multi-line", "multiline"])) {
     return false;
   }
+  // Borders and dividers are decoration, not faces; they live on /border-kaomoji/.
+  if (hasAnyTag(item, ["border", "divider"])) return false;
   if (item.face.includes("\n") || item.face.includes("\r")) return false;
   if (faceHasJapaneseScript(item.face)) return false;
   if (/U・|∪◕|▽・|ᐡ|U｡|・ᴥ・|・ﻌ・/.test(item.face)) return false;
@@ -371,9 +373,43 @@ export function passesSearchScope(
   return true;
 }
 
+function passesBorderTagPage(item: Kaomoji): boolean {
+  if (!hasAnyTag(item, ["border", "divider"])) return false;
+  if (hasTableFlipGlyph(item.face)) return false;
+  return true;
+}
+
+function passesRobloxTagPage(item: Kaomoji): boolean {
+  if (!hasAnyTag(item, ["roblox"])) return false;
+  if (item.face.includes("\n") || item.face.length > 24) return false;
+  return true;
+}
+
+/** Art page shows stacked drawings only; some single-line faces carry a stray multi-line tag. */
+function passesArtTagPage(item: Kaomoji): boolean {
+  return isMultilineFace(item);
+}
+
+function isMultilineFace(item: Pick<Kaomoji, "face">): boolean {
+  return item.face.includes("\n") || item.face.includes("\r");
+}
+
 /** Hard exclusions for tag-based browse pages. */
 export function passesTagIntegrity(item: Kaomoji, tags: string[]): boolean {
   const normalized = tags.map(normTag);
+  if (normalized.some((t) => t === "border" || t === "divider")) {
+    return passesBorderTagPage(item);
+  }
+  if (normalized.some((t) => t === "roblox")) {
+    return passesRobloxTagPage(item);
+  }
+  if (
+    normalized.some(
+      (t) => t === "multiline" || t === "multi-line" || t === "ascii art",
+    )
+  ) {
+    return passesArtTagPage(item);
+  }
   if (normalized.length === 1 && normalized[0] === "bear") {
     return passesBearTagPage(item);
   }

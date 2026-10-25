@@ -19,7 +19,7 @@ const SEASONS: Season[] = [
     href: "/halloween-kaomoji/",
     face: "👻(◕ᴗ◕)🎃",
     title: "Halloween kaomoji are here",
-    blurb: "350+ ghosts, pumpkins, bats, zombies, and devils — copy a spooky face in one tap.",
+    blurb: "370+ Happy Halloween greetings, ghosts, pumpkins, bats, and zombies — copy a spooky face in one tap.",
   },
   {
     month: 10,

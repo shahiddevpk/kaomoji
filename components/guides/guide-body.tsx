@@ -1,26 +1,6 @@
-import Link from "next/link";
-import type { ReactNode } from "react";
+import { ProseLinks as Prose } from "@/components/kaomoji/prose-links";
 import type { GuideBlock, GuideSection } from "@/lib/guides";
 import { copyAriaLabel } from "@/lib/utils";
-
-/** Renders [label](/path/) links inside guide prose; everything else is text. */
-function Prose({ text }: { text: string }) {
-  const parts: ReactNode[] = [];
-  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let last = 0;
-  let match: RegExpExecArray | null;
-  while ((match = re.exec(text))) {
-    if (match.index > last) parts.push(text.slice(last, match.index));
-    parts.push(
-      <Link key={match.index} href={match[2]} className="link-in-prose">
-        {match[1]}
-      </Link>,
-    );
-    last = match.index + match[0].length;
-  }
-  if (last < text.length) parts.push(text.slice(last));
-  return <>{parts}</>;
-}
 
 function Block({ block, sectionId, index }: { block: GuideBlock; sectionId: string; index: number }) {
   switch (block.type) {

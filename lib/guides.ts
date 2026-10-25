@@ -1028,6 +1028,416 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "porter-robinson-kaomoji",
+    title: "Porter Robinson Kaomoji: Copy 【=◈︿◈=】 & Worlds / Nurture Sparkles",
+    shortTitle: "Porter Robinson kaomoji",
+    titleSegment: "Porter Robinson Kaomoji 【=◈︿◈=】 Copy & Paste",
+    description:
+      "Copy the Porter Robinson kaomoji 【=◈︿◈=】 from the Worlds era and its fan-made variants, plus Nurture-style sparkle dividers and SMILE! :D faces.",
+    intro:
+      "Ask any Porter Robinson fan for his kaomoji and you will get the same answer: 【=◈︿◈=】. The diamond-eyed face is tied to the Worlds era that began in 2014, and fans still use it in bios, Discord names, and even tattoos. Below are the main versions to copy in one tap, how each symbol works, and the sparkle text fans pair with his later albums.",
+    face: "【=◈︿◈=】",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/sparkle-kaomoji", "/star-kaomoji", "/border-kaomoji", "/cute-kaomoji"],
+    sections: [
+      {
+        id: "copy-worlds",
+        heading: "Copy the Porter Robinson Worlds kaomoji and variants",
+        blocks: [
+          {
+            type: "p",
+            text: "The classic face uses heavy lenticular brackets on the outside, equals signs for cheeks, diamond eyes, and a small arched mouth. Fans also swap the mouth and eyes to match different songs and moods:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "【=◈︿◈=】", name: "Original Worlds kaomoji", note: "The face fans know from the Worlds era." },
+              { face: "【=◈◡◈=】", name: "Happy Worlds face", note: "Smiling mouth version used in fan bios and encore chats." },
+              { face: "【=◈ω◈=】", name: "Cat-mouth Worlds face", note: "Playful kawaii variation with the ω mouth." },
+              { face: "【=◈_◈=】", name: "Calm Worlds face", note: "Flat, robot-like neutral expression." },
+              { face: "【=✧︿✧=】", name: "Star-eyed Worlds face", note: "Swaps the diamonds for four-point ✧ sparkles." },
+              { face: "✧･ﾟ: *【=◈︿◈=】*:･ﾟ✧", name: "Sparkle-framed Worlds", note: "Ready for Discord About Me or Twitter/X bios." },
+            ],
+          },
+          {
+            type: "tip",
+            text: "Typing 【=◈︿◈=】 on a regular keyboard is a pain because it mixes CJK brackets, geometric diamonds, and a rare arch character. Copy it once and save it to your phone's text replacement under a shortcut like prface.",
+          },
+        ],
+      },
+      {
+        id: "anatomy",
+        heading: "What each symbol in 【=◈︿◈=】 means",
+        blocks: [
+          {
+            type: "p",
+            text: "Unlike standard round-bracket kaomoji, the Worlds face is built like a little screen or helmet. Its five distinct characters come from four different corners of Unicode:",
+          },
+          {
+            type: "table",
+            head: ["Character", "Unicode name", "Role in the face"],
+            rows: [
+              ["【 】", "Black lenticular brackets (U+3010 / U+3011)", "Frames the head like a screen or visor"],
+              ["=", "Equals sign", "Acts as digital blush marks or cheek wires on both sides"],
+              ["◈", "White diamond containing black small diamond (U+25C8)", "Glowing, emotional eyes"],
+              ["︿", "Presentation form for vertical left angle bracket (U+FE3F)", "Trembling, bittersweet mouth"],
+            ],
+          },
+          {
+            type: "p",
+            text: "Because ︿ is a wide, low arch rather than a sharp ^, the expression reads as quietly overwhelmed rather than angry, which suits the nostalgic, bittersweet tone of tracks like Sad Machine and Goodbye to a World.",
+          },
+        ],
+      },
+      {
+        id: "eras",
+        heading: "From Worlds to Nurture and SMILE! :D",
+        blocks: [
+          {
+            type: "p",
+            text: "These are not official logos, just the text styles fans tend to use for each album era:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "✧･ﾟ: *✧･ﾟ:*", name: "Sparkle trail", note: "Glitter line fans pair with Nurture-era nature and sky lyrics." },
+              { face: "˚₊‧꒰ა ☆ ໒꒱ ‧₊˚", name: "Sky & star wing frame", note: "A soft frame for a favorite lyric, such as a line from Look at the Sky." },
+              { face: "°•. ✿ .•°", name: "Blossom divider", note: "Floral line that matches the green, outdoorsy feel of Nurture." },
+              { face: ":D", name: "SMILE! :D emoticon", note: "The classic sideways grin from the 2024 album title." },
+            ],
+          },
+          {
+            type: "p",
+            text: "For more glittery text lines to pair with lyrics, browse [sparkle kaomoji](/sparkle-kaomoji/), [star kaomoji](/star-kaomoji/), and [kaomoji borders and dividers](/border-kaomoji/). Thinking about getting the Worlds face inked? Read our [kaomoji tattoo ideas](/guides/kaomoji-tattoo-ideas/) guide first.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the Porter Robinson kaomoji?",
+        answer:
+          "【=◈︿◈=】 is the kaomoji fans link to Porter Robinson's 2014 album Worlds. It uses lenticular brackets 【 】, equals signs for cheeks, ◈ diamond eyes, and a ︿ arch for the mouth.",
+      },
+      {
+        question: "Is the 【=◈︿◈=】 face crying or smiling?",
+        answer:
+          "It is an emotional, bittersweet face — overwhelmed rather than purely sad. Fans also use 【=◈◡◈=】 when they want an unmistakably smiling version.",
+      },
+      {
+        question: "Why does the mouth in 【=◈︿◈=】 look different from a normal ^ caret?",
+        answer:
+          "It uses ︿ (U+FE3F, a presentation form of the angle bracket) instead of the ASCII caret ^. It is wider and flatter than ^, so it reads as a soft arched mouth.",
+      },
+      {
+        question: "Can I get 【=◈︿◈=】 as a tattoo?",
+        answer:
+          "Yes, it is a popular fan tattoo because its geometric lines are bold and symmetrical. See our kaomoji tattoo ideas guide for sizing tips so the small diamond inside ◈ does not blur over time.",
+      },
+    ],
+  },
+  {
+    slug: "kaomoji-font-and-display",
+    title: "Kaomoji Font & Display Guide: Why Faces Look Different on Phone & PC",
+    shortTitle: "Kaomoji font & display",
+    titleSegment: "Kaomoji Font & Display Guide (iPhone, Android & PC)",
+    description:
+      "Is there a kaomoji font? Why faces change shape on iPhone, Android, Windows, and Discord, which fonts cover rare symbols, and how to fix empty boxes.",
+    intro:
+      "You copy a face that looked cute in a screenshot, paste it, and it turns into uneven lines or empty boxes. The natural guess is that you need a special kaomoji font. You don't: kaomoji are ordinary Unicode characters, drawn by whatever font your phone or app already uses. This guide explains why faces shift between devices and how to keep yours looking clean.",
+    face: "(◕‿◕)",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/text-faces", "/art-kaomoji", "/kaomoji-copy-paste", "/japanese-emoticons"],
+    sections: [
+      {
+        id: "how-fonts-work",
+        heading: "How phones and computers render a kaomoji",
+        blocks: [
+          {
+            type: "p",
+            text: "A single kaomoji like ヽ(・∀・)ﾉ mixes characters from several alphabets at once: Latin parentheses, Japanese katakana (ヽ, ・, ﾉ), and a mathematical logic symbol (∀). Because no single Western font contains every character in Unicode, your operating system uses font fallback — pulling each symbol from a backup font when the main font does not have it.",
+          },
+          {
+            type: "table",
+            head: ["Platform", "Default UI font", "Fallback font for kaomoji glyphs", "How faces look"],
+            rows: [
+              ["iPhone & iPad (iOS)", "San Francisco", "Hiragino Sans / Apple Symbols", "Round, balanced, and wide Japanese spacing"],
+              ["Android", "Roboto / Google Sans", "Noto Sans CJK / Noto Sans Symbols", "Very high symbol coverage; slightly narrower brackets"],
+              ["Windows 10 & 11", "Segoe UI", "Yu Gothic UI / Meiryo / Segoe UI Symbol", "Crisp on desktop; some Georgian/Kannada eyes look thinner"],
+              ["macOS", "SF Pro", "Hiragino Kaku Gothic", "Matches iPhone spacing closely"],
+              ["Discord", "gg sans", "System CJK & symbol fallbacks", "Great single-line support; multiline art needs code blocks"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "safe-swaps",
+        heading: "Rare characters that break vs universal swaps",
+        blocks: [
+          {
+            type: "p",
+            text: "When a device lacks a fallback font for an obscure script (such as Tibetan, Vai, or Canadian Aboriginal syllabics), it draws a blank rectangle called 'tofu' (□ or [ ? ]). If you are putting a face in a public bio or game profile, these widely supported faces stay readable on almost every screen:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "(◕‿◕)", name: "Universal cute smile", note: "Geometric circles and standard undertie; works on iOS, Android, and PC." },
+              { face: "(＾▽＾)", name: "Full-width Japanese grin", note: "Standard CJK symbols built into every phone and computer." },
+              { face: "ʕ•ᴥ•ʔ", name: "Teddy bear", note: "IPA phonetic letters that render cleanly across all modern OS fonts." },
+              { face: "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", name: "Fraction-slash blush", note: "Uses standard fraction slashes and Greek omega." },
+              { face: "¯\\_(ツ)_/¯", name: "Classic shrug", note: "Macron, backslashes, and katakana ツ; shows up on practically every device." },
+              { face: "(^_^)", name: "Pure ASCII smile", note: "Nothing but keyboard punctuation, so it works even in strict game chats like Roblox." },
+            ],
+          },
+        ],
+      },
+      {
+        id: "multiline-alignment",
+        heading: "Why multiline kaomoji art shifts out of alignment",
+        blocks: [
+          {
+            type: "p",
+            text: "Most chat apps use proportional fonts, where an 'i' or a space is much narrower than a 'W' or a Japanese character. When you paste a three-row bunny from [kaomoji art](/art-kaomoji/), a proportional font can compress the spaces on row one so the ears slide to the left of the head.",
+          },
+          {
+            type: "list",
+            items: [
+              "Keep the full-width spaces (　) that come with the Copy button on this site — they are the same width as Japanese characters and do not collapse.",
+              "In Discord or Slack, wrap multiline drawings in triple backticks (```) to render them in a fixed-width monospace font.",
+              "For single-line inputs like game names, use [Roblox kaomoji](/roblox-kaomoji/) or [classic emoticons](/emoticons/) instead of multi-row art.",
+              "Test your bio on both an iPhone and an Android screen if you use long [kaomoji borders](/border-kaomoji/).",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What font do kaomoji use?",
+        answer:
+          "Kaomoji do not use a single special font. They use your app's default text font (such as San Francisco on iPhone, Roboto on Android, or gg sans on Discord) combined with system fallback fonts like Hiragino Sans and Noto Sans CJK.",
+      },
+      {
+        question: "Why do some kaomoji show up as empty boxes [ ? ]?",
+        answer:
+          "An empty box (called tofu) means the font on that device does not have a drawing for that specific Unicode character. Swap the face for one built from common Japanese or geometric symbols.",
+      },
+      {
+        question: "Which font is best for making kaomoji art on PC?",
+        answer:
+          "MS PGothic (the traditional Japanese Shift_JIS art font), Noto Sans CJK JP, or any monospace font inside a Discord code block keeps multi-line drawings aligned.",
+      },
+      {
+        question: "Do copy-and-paste fancy font generators work with kaomoji?",
+        answer:
+          "Yes, mathematical bold or script Unicode letters can be placed next to a kaomoji, though screen readers struggle with fancy font letters. Keeping your words in normal text and adding a kaomoji at the end is cleaner and more accessible.",
+      },
+    ],
+  },
+  {
+    slug: "kaomoji-tattoo-ideas",
+    title: "Kaomoji Tattoo Ideas: Minimal Text Faces That Age Well on Skin",
+    shortTitle: "Kaomoji tattoo ideas",
+    titleSegment: "Kaomoji Tattoo Ideas ( ; ; ) Minimal Designs & Tips",
+    description:
+      "Kaomoji tattoo ideas to show your artist: minimal crying faces ( ; ; ), Porter Robinson 【=◈︿◈=】, tiny cats, plus sizing and placement tips so fine lines last.",
+    intro:
+      "Small text-face tattoos have become a favorite fine-line style — from the minimal crying face ( ; ; ) and Porter Robinson's 【=◈︿◈=】 to tiny cats and shrugs on a wrist or ankle. Because tattoo ink spreads slightly under the skin as it heals and ages, not every kaomoji that looks crisp on a phone screen makes a good tattoo. Here are the designs that translate best to ink and how to prepare them for your artist.",
+    face: "( ; ; )",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/sad-kaomoji", "/cute-kaomoji", "/cat-kaomoji", "/shrug-kaomoji"],
+    sections: [
+      {
+        id: "best-designs",
+        heading: "Kaomoji that make the cleanest fine-line tattoos",
+        blocks: [
+          {
+            type: "p",
+            text: "Faces that tattoo well usually have five to nine distinct strokes with open space between each symbol. Copy any of these to bring to your appointment as a reference:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "( ; ; )", name: "Minimal crying face", note: "Clean dots and commas with wide spacing; a classic fine-line wrist tattoo." },
+              { face: "【=◈︿◈=】", name: "Porter Robinson Worlds face", note: "Bold geometric symmetry; ask your artist to leave clear skin inside the ◈ diamonds." },
+              { face: "(◕‿◕)", name: "Soft smile", note: "Simple three-part face inside parentheses; timeless and friendly." },
+              { face: "ʕ•ᴥ•ʔ", name: "Tiny teddy bear", note: "Five clean shapes that read immediately even at 1 inch wide." },
+              { face: "ฅ^•ﻌ•^ฅ", name: "Cat paws & ears", note: "Playful silhouette for cat lovers; space the ฅ paw strokes slightly wider for skin." },
+              { face: "¯\\_(ツ)_/¯", name: "Classic shrug", note: "Iconic internet tattoo; keep the katakana ツ strokes separated so they do not merge." },
+              { face: "(T_T)", name: "Straight-line tears", note: "Straight lines and open space, so it holds its shape well as the ink settles." },
+              { face: "(>_<)", name: "Wince / oops", note: "Four straight angle strokes and an underscore; very little to blur together." },
+            ],
+          },
+        ],
+      },
+      {
+        id: "sizing-and-placement",
+        heading: "Placement and sizing so tiny symbols do not blur together",
+        blocks: [
+          {
+            type: "p",
+            text: "Over the years, every tattoo line spreads a little as the ink settles in the skin. If two tiny marks (like the dots inside a semicolon ; or the slashes in a blush //) are inked less than two millimeters apart, they can fuse into a single blob. Where you put the tattoo matters just as much as how big it is:",
+          },
+          {
+            type: "table",
+            head: ["Placement", "Recommended width", "How well fine lines hold"],
+            rows: [
+              ["Inner forearm or wrist", "1.2 to 2 inches (3–5 cm)", "Excellent; smooth skin keeps brackets and dots sharp"],
+              ["Above the ankle", "1.5 to 2.5 inches (4–6 cm)", "Very good; great spot for horizontal faces like ¯\\_(ツ)_/¯"],
+              ["Upper inner arm", "1.2 to 2 inches (3–5 cm)", "Low sun exposure helps thin lines stay crisp"],
+              ["Behind the ear or collarbone", "1 to 1.5 inches (2.5–4 cm)", "Stick to 5-character faces like ( ; ; ) or (•‿•)"],
+              ["Side of finger or palm", "Not recommended for detailed kaomoji", "High friction causes rapid fading and line spread"],
+            ],
+          },
+          {
+            type: "tip",
+            text: "Avoid cramming multi-line ASCII art or dense combining-mark faces (like Zalgo or heavy Lenny eyebrows) into a micro tattoo. Simpler strokes always age better on skin.",
+          },
+        ],
+      },
+      {
+        id: "artist-prep",
+        heading: "How to hand the reference to your tattoo artist",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Copy the literal text string from this site AND take a high-resolution screenshot on your phone so the artist sees the exact font proportions you like.",
+              "Tell your artist whether you want a monoline typewriter look (even line weight everywhere) or a calligraphy/brush look (tapered parentheses).",
+              "Let the artist widen the gaps between eyes, cheeks, and brackets by 15–20% on the stencil — what looks slightly spaced out on stencil paper heals at the right proportion on skin.",
+              "Check the stencil in a mirror with your arm or leg relaxed in its natural resting posture before the needle starts.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the most popular kaomoji tattoo?",
+        answer:
+          "The ones you see most often are the minimal crying face ( ; ; ), the Porter Robinson Worlds face 【=◈︿◈=】, the classic shrug ¯\\_(ツ)_/¯, and small cat or bear faces like ฅ^•ﻌ•^ฅ and ʕ•ᴥ•ʔ. Their shapes are recognizable and uncluttered, which is what you want in ink.",
+      },
+      {
+        question: "How small can a kaomoji tattoo be?",
+        answer:
+          "For a simple five-character face like (•‿•) or ( ; ; ), about 1 inch (2.5 cm) wide is the safe minimum so the eyes and mouth do not blur together as the ink ages. Wider faces with arms or brackets look better at 1.5 to 2 inches.",
+      },
+      {
+        question: "Should my artist trace a computer font directly?",
+        answer:
+          "Use the font as a starting point, but let your artist redraw it with uniform single-needle line weights and slightly wider spacing between tiny dots and slashes so it heals cleanly.",
+      },
+      {
+        question: "Do finger kaomoji tattoos last?",
+        answer:
+          "Finger tattoos tend to fade and blur faster than most spots because of friction and constant hand washing. If you still want one, stick to an ultra-simple face like :) or :3 and ask your artist about touch-ups.",
+      },
+    ],
+  },
+  {
+    slug: "kaomoji-soft-copy",
+    title: "Soft Kaomoji Copy and Paste: Pastel, Coquette & Cozy Bio Faces",
+    shortTitle: "Soft kaomoji copy",
+    titleSegment: "Soft Kaomoji Copy and Paste (˶ᵔ ᵕ ᵔ˶) Pastel Faces",
+    description:
+      "Soft kaomoji copy and paste guide: gentle pastel faces (˶ᵔ ᵕ ᵔ˶), bunny ears ꒰ᐢ. .ᐢ꒱, angel wings, and soft bio dividers for Instagram, TikTok, and Discord.",
+    intro:
+      "Soft kaomoji are the quiet side of Japanese text faces: rounded cheeks, sleepy eyes, tiny bunny ears, and thin ribbon dividers that suit pastel, coquette, and cozy profiles. Every face and combo below copies in one tap, and the table at the end shows which symbols go with which look.",
+    face: "(˶ᵔ ᵕ ᵔ˶)",
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    related: ["/cute-kaomoji", "/shy-kaomoji", "/border-kaomoji", "/sparkle-kaomoji"],
+    sections: [
+      {
+        id: "soft-faces",
+        heading: "Most-loved soft kaomoji to copy",
+        blocks: [
+          {
+            type: "p",
+            text: "Soft faces trade sharp angles and loud exclamation marks for curved brackets, tiny dot eyes, and subtle blush marks (˶ or ⁄). Tap any card to copy the face:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "(˶ᵔ ᵕ ᵔ˶)", name: "Soft blushing smile", note: "Curved ᵔ eyes and ˶ blush marks; a go-to cozy bio face." },
+              { face: "꒰ᐢ. .ᐢ꒱", name: "Soft bunny peek", note: "Rounded ꒰ ꒱ brackets and tiny dot eyes." },
+              { face: "૮ ˶ᵔ ᵕ ᵔ˶ ა", name: "Floppy-ear puppy", note: "Droopy ૮ ა ears with a warm, gentle grin." },
+              { face: "(◕‿◕✿)", name: "Flower hairpin smile", note: "Classic pastel face with a blossom tucked on the side." },
+              { face: "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", name: "Shy soft blush", note: "Flustered, bashful expression for crushes and thank-yous." },
+              { face: "(っ˘ω˘ς )", name: "Cozy hug", note: "Closed eyes and curled hands; great for sleepy or comfort posts." },
+              { face: "ଘ(੭*ˊᵕˋ)੭* ੈ♡‧₊˚", name: "Angel wing fairy", note: "Floating hearts and wings for dreamy captions." },
+              { face: "( ˶ˆᗜˆ˵ )", name: "Warm happy cheeks", note: "Soft, rounded grin that fits any friendly message." },
+            ],
+          },
+        ],
+      },
+      {
+        id: "soft-dividers",
+        heading: "Soft frames and dividers to pair with your face",
+        blocks: [
+          {
+            type: "p",
+            text: "A soft bio usually pairs one face with a thin ribbon or star divider from [kaomoji borders](/border-kaomoji/) or [cute symbols](/cute-symbols/). Copy any of these ready-made headers:",
+          },
+          {
+            type: "faces",
+            items: [
+              { face: "────── ୨୧ ──────", name: "Coquette ribbon bar", note: "Clean line with a central ୨୧ bow." },
+              { face: "˚₊‧꒰ა ♡ ໒꒱ ‧₊˚", name: "Angel wing heart frame", note: "Frames a short name or status word." },
+              { face: "✧･ﾟ: *✧･ﾟ:*", name: "Soft sparkle trail", note: "Light glitter accent for the start or end of a line." },
+              { face: "─── ⋆⋅☆⋅⋆ ───", name: "Dainty star divider", note: "Short enough to stay on one line on mobile." },
+            ],
+          },
+        ],
+      },
+      {
+        id: "styles",
+        heading: "Matching the face to your profile aesthetic",
+        blocks: [
+          {
+            type: "table",
+            head: ["Aesthetic style", "Signature symbols", "Example combination"],
+            rows: [
+              ["Coquette & ballet", "୨୧, ʚɞ, ♡, 🎀", "୨୧ (˶ᵔ ᵕ ᵔ˶) ୨୧"],
+              ["Pastel kawaii", "꒰ ꒱, ✿, ⋆, ˚", "꒰ᐢ. .ᐢ꒱ ⋆｡°✩"],
+              ["Cottagecore & nature", "❀, 🍄, 🌿, ʕ•ᴥ•ʔ", "°•. ✿ ʕ•ᴥ•ʔ ✿ .•°"],
+              ["Dreamy night & lo-fi", "☾, ☁︎, ✧, (˘ω˘)", "⋆｡ﾟ☁︎ (˘ω˘) ☾ ﾟ｡⋆"],
+            ],
+          },
+          {
+            type: "tip",
+            text: "Keep your bio uncluttered: one divider line and one soft face reads much more 'soft aesthetic' than five crowded lines of symbols. Browse [cute kaomoji](/cute-kaomoji/) and [shy kaomoji](/shy-kaomoji/) when you want to rotate your face for a new season.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What makes a kaomoji look soft?",
+        answer:
+          "Curved eyes, small blush marks, and rounded brackets instead of sharp angles and wide-open mouths. (˶ᵔ ᵕ ᵔ˶) and ꒰ᐢ. .ᐢ꒱ are typical, often paired with a thin divider like ────── ୨୧ ────── in a bio.",
+      },
+      {
+        question: "What are the round brackets ꒰ ꒱ used in soft kaomoji?",
+        answer:
+          "꒰ and ꒱ are Yi radicals, characters from the script used to write the Yi languages of southwest China. Their curved shape looks like fluffy cheeks, so people use them instead of plain ( ) parentheses to give faces a softer outline.",
+      },
+      {
+        question: "Do soft kaomoji work on both iPhone and Android?",
+        answer:
+          "Yes. All of the faces in this guide use standard Unicode characters supported by modern iOS and Android fonts.",
+      },
+      {
+        question: "Where can I find more soft blushing faces?",
+        answer:
+          "Our cute kaomoji and shy kaomoji pages have hundreds of blushing, flower, and heart-cheek faces sorted by style.",
+      },
+    ],
+  },
 ];
 
 /** Rough reading time at 200 words per minute (guides and blog posts). */

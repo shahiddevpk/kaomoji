@@ -14,6 +14,7 @@ import {
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
 import { relatedPages, type SitePage } from "@/lib/site";
 import { copyAriaLabel } from "@/lib/utils";
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 /** Dense grid when most items are single symbols (long strings just wrap). */
 function isMostlyShort(section: CollectionSection): boolean {
@@ -165,7 +166,9 @@ export function CollectionView({
           </h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5 type-meta leading-6">
             {page.howTo.map((step) => (
-              <li key={step}>{step}</li>
+              <li key={step}>
+                <ProseLinks text={step} />
+              </li>
             ))}
           </ol>
         </section>

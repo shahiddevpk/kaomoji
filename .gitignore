@@ -133,3 +133,7 @@ agent-tools/
 # QA flash/debug scratch
 _qa_*
 _qa_*/
+
+# Semrush keyword exports + local coverage audit (reads ~/Downloads; local only)
+docs/kaomoji-keywords-*.csv
+scripts/keyword-coverage-audit.py

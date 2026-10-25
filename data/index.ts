@@ -182,10 +182,12 @@ const TAG_SEARCH: Record<string, string[]> = {
   "multi-line": [
     "multiline kaomoji",
     "multi-line kaomoji",
+    "kaomoji art",
     "ascii art kaomoji",
     "ascii art faces",
   ],
-  multiline: ["multiline kaomoji", "multi-line kaomoji", "ascii art"],
+  multiline: ["multiline kaomoji", "multi-line kaomoji", "kaomoji art", "ascii art"],
+  "ascii art": ["kaomoji art", "ascii art kaomoji", "multiline kaomoji"],
   heart: [
     "heart kaomoji",
     "love kaomoji",
@@ -295,7 +297,17 @@ const TAG_SEARCH: Record<string, string[]> = {
   giggle: ["giggling kaomoji", "giggle kaomoji", "kaomoji giggle", "laugh kaomoji"],
   laugh: ["laughing kaomoji", "laugh kaomoji", "giggling kaomoji", "kaomoji laugh", "burst laugh kaomoji"],
   star: ["star kaomoji", "kaomoji star", "stars kaomoji", "kaomoji stars", "star copy and paste"],
-  sparkle: ["sparkle kaomoji", "kaomoji sparkle", "sparkles copy paste", "glitter kaomoji", "sparkle copy and paste"],
+  sparkle: [
+    "sparkle kaomoji",
+    "kaomoji sparkle",
+    "kaomojis sparkles",
+    "kaomoji sparkles",
+    "sparkles kaomoji",
+    "sparkles copy paste",
+    "glitter kaomoji",
+    "sparkle copy and paste",
+    "sparkle ribbon kaomoji",
+  ],
   flower: ["flower kaomoji", "kaomoji flower", "floral kaomoji", "blossom kaomoji", "sakura kaomoji", "cherry blossom kaomoji"],
   sakura: ["sakura kaomoji", "cherry blossom kaomoji", "flower kaomoji"],
   nervous: ["nervous kaomoji", "kaomoji nervous", "anxious kaomoji", "worried kaomoji"],
@@ -319,6 +331,31 @@ const TAG_SEARCH: Record<string, string[]> = {
   running: ["running kaomoji", "kaomoji running", "dash kaomoji", "sprint kaomoji"],
   dash: ["dash kaomoji", "running kaomoji", "kaomoji dash", "sprint kaomoji"],
   twinkle: ["star kaomoji", "twinkling kaomoji", "sparkle kaomoji", "kaomoji star"],
+  border: [
+    "kaomoji borders",
+    "kaomoji border",
+    "border kaomoji",
+    "kaomoji dividers",
+    "kaomoji divider",
+    "divider kaomoji",
+    "text border kaomoji",
+  ],
+  divider: [
+    "kaomoji divider",
+    "kaomoji dividers",
+    "divider kaomoji",
+    "kaomoji borders",
+    "border kaomoji",
+  ],
+  goth: ["goth kaomoji", "gothic kaomoji", "dark aesthetic kaomoji", "emo kaomoji"],
+  music: ["music kaomoji", "kaomoji music", "singing kaomoji", "karaoke kaomoji"],
+  roblox: ["roblox kaomoji", "kaomoji for roblox", "kaomoji roblox", "roblox display name kaomoji"],
+  porter: [
+    "porter robinson kaomoji",
+    "kaomoji porter robinson",
+    "porter robinson sparkle",
+    "sparkle ribbon kaomoji",
+  ],
 };
 
 /** Builder / maker intent (hub + generator page; not a separate category bucket). */
@@ -1024,13 +1061,15 @@ export function getForTagPage(
 
 /** Page-1 "browse by type" groups for a tag page; each face is used once. */
 export function getFaceGroupsForPage(
-  scope: { tags?: string[]; category?: string },
+  scope: { tags?: string[]; category?: string; includeNewlineFaces?: boolean },
   groups: { id: string; heading: string; glyphs: string[] }[],
   perGroup = 8,
 ): { id: string; heading: string; items: Kaomoji[] }[] {
   const pool =
     scope.tags && scope.tags.length > 0
-      ? rankedPoolForTags(scope.tags)
+      ? rankedPoolForTags(scope.tags, {
+          includeNewlines: scope.includeNewlineFaces,
+        })
       : scope.category
         ? rankedPoolForCategory(scope.category)
         : [];

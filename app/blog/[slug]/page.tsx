@@ -11,6 +11,7 @@ import { blogBreadcrumbJsonLd, postJsonLd, postMetadata } from "@/lib/blog-seo";
 import { readingMinutes } from "@/lib/guides";
 import { faqJsonLd } from "@/lib/seo";
 import { getPage } from "@/lib/site";
+import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 export const dynamicParams = false;
 
@@ -59,7 +60,9 @@ export default async function BlogPostPage({
         {post.event} · Published <time dateTime={post.published}>{formatDate(post.published)}</time> ·{" "}
         {readingMinutes(post.sections)} min read
       </p>
-      <p className="mt-4 type-body text-muted">{post.intro}</p>
+      <p className="mt-4 type-body text-muted">
+        <ProseLinks text={post.intro} />
+      </p>
 
       <nav aria-labelledby="toc-heading" className="guide-toc mt-6">
         <p id="toc-heading" className="type-label text-foreground">

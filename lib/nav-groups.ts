@@ -99,6 +99,10 @@ export const TOOLS_GROUP: NavGroup = {
   paths: [
     "/kaomoji-copy-paste",
     "/kaomoji-generator",
+    "/kaomoji-app",
+    "/border-kaomoji",
+    "/roblox-kaomoji",
+    "/art-kaomoji",
     "/emoticons",
     "/cute-symbols",
     "/emoji-combos",
