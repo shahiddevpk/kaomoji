@@ -7,7 +7,7 @@ import type { NextRequest } from "next/server";
  */
 const APEX_HOST = "pastekaomoji.com";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
   if (host === `www.${APEX_HOST}`) {
     const url = request.nextUrl.clone();
@@ -54,10 +54,16 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // Only run for the two cases handled above, so normal page views are served
+  // straight from the CDN without invoking a function (saves Fluid Active CPU).
   matcher: [
-    /*
-     * All app routes except Next internals and static assets.
-     */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)",
+    {
+      source: "/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)",
+      has: [{ type: "query", key: "page" }],
+    },
+    {
+      source: "/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)",
+      has: [{ type: "host", value: "www.pastekaomoji.com" }],
+    },
   ],
 };
