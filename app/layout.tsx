@@ -12,8 +12,6 @@ import { websiteJsonLd } from "@/lib/seo";
 import { navPages, siteConfig } from "@/lib/site";
 import "./globals.css";
 
-export const revalidate = 86400;
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

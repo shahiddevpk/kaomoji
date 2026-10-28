@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type Season = {
-  /** 0-based month the banner shows in (static pages revalidate daily). */
+  /** 0-based month the banner shows in (picked at build time; see .github/workflows/season-rebuild.yml). */
   month: number;
   /** First day of the window (defaults to 1). */
   firstDay?: number;

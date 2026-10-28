@@ -1,0 +1,28 @@
+# Pages are fully static (no ISR), so the in-season header link and homepage
+# banner are chosen at build time. Rebuild on the days a season window opens or
+# closes (see SEASONS in components/kaomoji/seasonal-banner.tsx). Builds do not
+# use Vercel Fluid Active CPU.
+#
+# Setup: Vercel → Project → Settings → Git → Deploy Hooks → create one for
+# "main", then add its URL as the GitHub secret VERCEL_DEPLOY_HOOK_URL.
+name: Seasonal rebuild
+
+on:
+  schedule:
+    - cron: "10 0 1 * *"   # 1st of every month (Oct, Nov, Dec, Jan, Feb windows; Jan 1 also bumps footer year)
+    - cron: "10 0 28 11 *" # Thanksgiving window closes after Nov 27
+    - cron: "10 0 26 12 *" # Christmas → New Year
+    - cron: "10 0 8 1 *"   # New Year → Winter
+    - cron: "10 0 15 2 *"  # Valentine's window closes after Feb 14
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "VERCEL_DEPLOY_HOOK_URL not set"; exit 1; fi
+          curl -fsS -X POST "$HOOK"

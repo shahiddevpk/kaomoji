@@ -113,7 +113,7 @@ export const TOOL_PATHS = TOOLS_GROUP.paths;
 
 /**
  * Header quick-access strip, ordered by search demand. The in-season holiday
- * page is prepended at render time (see currentSeason).
+ * page is prepended at build time (see currentSeason).
  */
 export const POPULAR_PATHS = [
   "/cute-kaomoji",

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   trailingSlash: true,
   async headers() {
-    // HTML: ISR revalidate=86400 — CDN may cache (s-maxage); browsers revalidate (max-age=0).
+    // HTML is fully static (no ISR); CDN may cache (s-maxage), browsers revalidate (max-age=0).
     const htmlCache =
       "public, max-age=0, must-revalidate, s-maxage=86400, stale-while-revalidate=604800";
     return [
