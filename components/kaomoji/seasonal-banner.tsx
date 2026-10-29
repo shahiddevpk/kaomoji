@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 
 type Season = {
   /** 0-based month the banner shows in (picked at build time; see .github/workflows/season-rebuild.yml). */

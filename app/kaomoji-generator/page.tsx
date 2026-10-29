@@ -5,7 +5,7 @@ import { KaomojiGenerator } from "@/components/kaomoji/kaomoji-generator";
 import { JsonLd } from "@/components/layout/json-ld";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage, relatedPages } from "@/lib/site";
-import Link from "next/link";
+import Link from "@/components/link";
 import { ProseLinks } from "@/components/kaomoji/prose-links";
 
 const page = getPage("/kaomoji-generator");

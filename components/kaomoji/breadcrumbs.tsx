@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { getPage, type SitePage } from "@/lib/site";
 import { categoryPageHref } from "@/lib/category-pagination";
 

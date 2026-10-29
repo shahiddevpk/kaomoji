@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { usePathname } from "next/navigation";
 import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
 import { SearchBox } from "@/components/kaomoji/search-box";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { guidePath, type Guide } from "@/lib/guides";
 
 /** Guide cards (index page, home "Learn" row, related reading). */

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { BlogBreadcrumbs } from "@/components/blog/blog-breadcrumbs";
 import { PostCardList } from "@/components/blog/post-card-list";
 import { JsonLd } from "@/components/layout/json-ld";

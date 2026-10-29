@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/link";
 import { usePathname } from "next/navigation";
 import { moodChipClass } from "@/lib/mood-colors";
 import { cn } from "@/lib/utils";

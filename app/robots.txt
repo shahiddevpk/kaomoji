@@ -1,11 +1,26 @@
-User-Agent: *
+# Google + Bing crawlers may crawl the site; every other bot is disallowed.
+# Same list as YoutubeTollKit/src/app/robots.ts.
+User-Agent: Googlebot
+User-Agent: Googlebot-Image
+User-Agent: Googlebot-Video
+User-Agent: Googlebot-News
+User-Agent: Storebot-Google
+User-Agent: Google-InspectionTool
+User-Agent: GoogleOther
+User-Agent: Google-Extended
+User-Agent: AdsBot-Google
+User-Agent: AdsBot-Google-Mobile
+User-Agent: Mediapartners-Google
+User-Agent: Bingbot
 Allow: /
-
 Disallow: /search
 Disallow: /*?*q=
 Disallow: /*?*tag=
 Disallow: /*?*filter=
 Disallow: /*?*mood=
 Disallow: /api/
+
+User-Agent: *
+Disallow: /
 
 Sitemap: https://pastekaomoji.com/sitemap.xml

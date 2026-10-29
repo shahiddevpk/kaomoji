@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { GuideBreadcrumbs } from "@/components/guides/guide-breadcrumbs";
 import { GuideCardList } from "@/components/guides/guide-card-list";
 import { JsonLd } from "@/components/layout/json-ld";

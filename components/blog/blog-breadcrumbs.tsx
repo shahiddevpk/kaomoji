@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 
 const linkClass =
   "inline-flex min-h-11 items-center text-link underline-offset-2 transition-colors hover:text-link-hover hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { countByCategory, countByTags } from "@/data/index";
 import { pages, type SitePage } from "@/lib/site";
 import { moodTileClass } from "@/lib/mood-colors";

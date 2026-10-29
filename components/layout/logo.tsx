@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { cn } from "@/lib/utils";
 
 /** Brand mark: soft violet tile with a tiny kaomoji face (site primary #7C3AED). */

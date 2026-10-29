@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { PostCardList } from "@/components/blog/post-card-list";
 import { GuideCardList } from "@/components/guides/guide-card-list";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";

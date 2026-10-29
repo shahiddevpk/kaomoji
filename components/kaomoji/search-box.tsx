@@ -13,7 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import Link from "@/components/link";
 import { usePathname } from "next/navigation";
 import { SearchKaomojiGrid } from "@/components/kaomoji/search-kaomoji-grid";
 import type { GridItem } from "@/components/kaomoji/kaomoji-grid-core";

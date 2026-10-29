@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { LearnSection } from "@/components/kaomoji/learn-section";

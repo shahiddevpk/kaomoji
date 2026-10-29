@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link";
 import { notFound } from "next/navigation";
 import { BlogBreadcrumbs } from "@/components/blog/blog-breadcrumbs";
 import { PostCardList } from "@/components/blog/post-card-list";

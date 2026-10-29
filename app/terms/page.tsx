@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { TrustView } from "@/components/layout/trust-view";
 import { pageMetadata } from "@/lib/seo";
 import { getPage } from "@/lib/site";

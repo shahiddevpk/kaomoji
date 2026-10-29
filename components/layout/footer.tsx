@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { guidePath, guides } from "@/lib/guides";
 import { CATEGORY_GROUPS, TOOLS_GROUP, type NavGroup } from "@/lib/nav-groups";
 import { pages, pagesByGroup, siteConfig, type SitePage } from "@/lib/site";

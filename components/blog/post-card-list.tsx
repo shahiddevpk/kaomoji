@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { postPath, type BlogPost } from "@/lib/blog";
 
 /** Blog post cards (blog index, category pages, related posts). */

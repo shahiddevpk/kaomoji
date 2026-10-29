@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { catalogSize, getForPage, ITEM_LIST_LIMIT } from "@/data/index";
 import { countCollection } from "@/data/collections";
 import { DEVICE_GUIDES, FACE_MEANINGS } from "@/data/home-content";
