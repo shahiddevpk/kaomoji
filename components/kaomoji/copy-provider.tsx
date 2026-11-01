@@ -85,15 +85,26 @@ function startFlash(id: string, state: "copied" | "error", label: string) {
     flashCache = null;
     flashTimer = null;
     emit();
+    mirrorFlashToDom(null);
   }, FLASH_MS);
+}
+
+/** Grid cards omit data-copy-id; id is derived from aria-describedby="face-<id>". */
+const GRID_COPY = ".kaomoji-card .kaomoji-copy[aria-describedby]";
+function copyIdOf(el: Element): string | null {
+  const id = el.getAttribute("data-copy-id");
+  if (id) return id;
+  if (!el.matches(GRID_COPY)) return null;
+  const d = el.getAttribute("aria-describedby") ?? "";
+  return d.startsWith("face-") ? d.slice(5) : null;
 }
 
 function mirrorFlashToDom(flash: CopyFlash | null) {
   if (typeof document === "undefined") return;
 
-  document.querySelectorAll("[data-copy-id][data-copied]").forEach((node) => {
+  document.querySelectorAll(`[data-copy-id][data-copied], ${GRID_COPY}[data-copied]`).forEach((node) => {
     if (!(node instanceof HTMLElement)) return;
-    const id = node.getAttribute("data-copy-id");
+    const id = copyIdOf(node);
     if (flash && id === flash.id) return;
     if (node.children.length === 0) {
       const original = node.getAttribute("data-copy-label-original") ?? "Copy";
@@ -107,7 +118,9 @@ function mirrorFlashToDom(flash: CopyFlash | null) {
   if (!flash) return;
 
   document
-    .querySelectorAll(`[data-copy-id="${CSS.escape(flash.id)}"]`)
+    .querySelectorAll(
+      `[data-copy-id="${CSS.escape(flash.id)}"], .kaomoji-card .kaomoji-copy[aria-describedby="face-${CSS.escape(flash.id)}"]`,
+    )
     .forEach((node) => {
       if (!(node instanceof HTMLElement)) return;
       if (!node.hasAttribute("data-copy-label-original")) {
@@ -180,7 +193,7 @@ function copyFace(item: CopiedFace, _control?: Element | null) {
 }
 
 function faceFromElement(el: Element): CopiedFace | null {
-  const id = el.getAttribute("data-copy-id");
+  const id = copyIdOf(el);
   const name =
     el.getAttribute("data-copy-name") ??
     el.closest("[data-n]")?.getAttribute("data-n") ??
@@ -201,7 +214,7 @@ function faceFromElement(el: Element): CopiedFace | null {
 function onDocumentClick(event: MouseEvent) {
   const target = event.target;
   if (!(target instanceof Element)) return;
-  const control = target.closest("[data-copy-id]");
+  const control = target.closest(`[data-copy-id], ${GRID_COPY}`);
   if (!control) return;
   // React buttons handle their own onClick; skip if defaultPrevented by React.
   if (event.defaultPrevented) return;

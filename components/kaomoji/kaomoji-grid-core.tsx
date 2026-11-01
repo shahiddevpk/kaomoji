@@ -68,8 +68,7 @@ export function KaomojiGridCore({
                 className="kaomoji-copy"
                 aria-label={copyAriaLabel(item.face, item.name)}
                 aria-describedby={faceId}
-                data-copy-id={item.id}
-                /* face read from .kaomoji-face sibling (copy-provider fallback) to keep HTML lean */
+                /* id derived from aria-describedby; face read from .kaomoji-face sibling (copy-provider fallback) to keep HTML lean */
               >
                 Copy
               </button>
