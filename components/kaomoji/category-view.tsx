@@ -6,8 +6,6 @@ import {
   getFaceGroupsForPage,
   getForPage,
   getRelatedKaomojiFromScopes,
-  pageCountForCategory,
-  pageCountForTags,
   ITEM_LIST_LIMIT,
   PAGE_GRID_LIMIT,
 } from "@/data/index";
@@ -21,7 +19,10 @@ import { FaqSection } from "@/components/kaomoji/faq-section";
 import { MeaningCards } from "@/components/kaomoji/meaning-cards";
 import { PAGE_MEANINGS } from "@/data/page-meanings";
 import { JsonLd } from "@/components/layout/json-ld";
-import { categoryPageHref } from "@/lib/category-pagination";
+import {
+  categoryPageHref,
+  crawlablePageCountForMeta,
+} from "@/lib/category-pagination";
 import { PostCardList } from "@/components/blog/post-card-list";
 import { GuideCardList } from "@/components/guides/guide-card-list";
 import { postsForPage } from "@/lib/blog";
@@ -272,14 +273,14 @@ export function CategoryView({
         : page.path === "/kaomoji-copy-paste"
           ? countPopular()
           : faces.length;
-  const browsePages =
-    page.tags && page.tags.length > 0
-      ? pageCountForTags(page.tags, {
-          includeNewlines: page.includeNewlineFaces,
-        })
-      : page.category != null
-        ? pageCountForCategory(page.category)
-        : 1;
+  // Must match getStaticPaths (capped at MAX_PAGINATION_PAGES). Using the
+  // uncapped catalog count here linked to /page/16+ URLs that 404 on live.
+  const browsePages = crawlablePageCountForMeta({
+    path: page.path,
+    categoryId: page.category,
+    tags: page.tags,
+    includeNewlines: page.includeNewlineFaces,
+  });
   const rangeStart =
     faces.length === 0 ? 0 : (safePage - 1) * PAGE_GRID_LIMIT + 1;
   const rangeEnd =
