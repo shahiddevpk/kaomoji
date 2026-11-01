@@ -7,6 +7,12 @@ User-agent: Google-Display-Ads-Bot
 User-agent: AdsBot-Google
 User-agent: AdsBot-Google-Mobile
 Allow: /
+# Thin pagination slices — same template, no unique education. Keep them
+# for people; do not send them to site review or ad classification.
+Disallow: /*/page/
+Disallow: /search
+Disallow: /api/
+Disallow: /search-data/
 
 # All other crawlers (Googlebot, Bingbot, DuckDuckBot, Applebot, social previews, etc.)
 User-agent: *
@@ -14,6 +20,7 @@ Allow: /
 Disallow: /search
 Disallow: /api/
 Disallow: /search-data/
+Disallow: /*/page/
 Disallow: /*?*q=
 Disallow: /*?*tag=
 Disallow: /*?*filter=

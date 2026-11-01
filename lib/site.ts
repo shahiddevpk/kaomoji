@@ -3264,12 +3264,12 @@ export const pages: SitePage[] = [
     description:
       "About Paste Kaomoji: curated kaomoji and text-face library with mood pages, integrity filters, and MIT-licensed source attribution.",
     intro:
-      "Paste Kaomoji is a focused library for copying kaomoji and text faces. The goal is simple: find, copy, and paste, without a giant emoji catalog or a wall of ads.",
+      "Paste Kaomoji is a focused library for copying kaomoji and text faces. The goal is simple: find, copy, and paste, without a giant emoji catalog.",
     group: "trust",
     definition:
       "Paste Kaomoji is a focused copy-paste library for Japanese-style text faces and related character expressions. Faces are Unicode text you can edit, not a sticker pack locked to one app.",
     learnMore:
-      "Kaomoji (often called Japanese emoticons) are usually read upright, with eyes carrying most of the mood. This site groups faces by mood so you can find, copy, and paste without wading through thousands of random faces or a wall of ads.\n\nEach mood page on Paste Kaomoji pairs a face grid with a short explanation of how that mood is built: which eye shapes, mouths, arms, and symbols carry the feeling, and when the face fits a conversation. The aim is to help you choose a face with confidence instead of guessing from a long list. Pages also link to nearby moods, so you can move from sad to crying or from happy to excited when the first page is not quite right.\n\nThe site is kept intentionally simple. There are no accounts, no paid packs, and no uploads; faces are plain Unicode text that you copy with one tap. We review categories to remove duplicates, broken characters, and faces that do not fit a mood, and we welcome corrections by email when a face looks wrong on your device.",
+      "Kaomoji (often called Japanese emoticons) are usually read upright, with eyes carrying most of the mood. This site groups faces by mood so you can find, copy, and paste without wading through thousands of random faces.\n\nEach mood page on Paste Kaomoji pairs a face grid with a short explanation of how that mood is built: which eye shapes, mouths, arms, and symbols carry the feeling, and when the face fits a conversation. The aim is to help you choose a face with confidence instead of guessing from a long list. Pages also link to nearby moods, so you can move from sad to crying or from happy to excited when the first page is not quite right.\n\nThe site is kept intentionally simple. There are no accounts, no paid packs, and no uploads; faces are plain Unicode text that you copy with one tap. We review categories to remove duplicates, broken characters, and faces that do not fit a mood, and we welcome corrections by email when a face looks wrong on your device.",
     faqs: [
       {
         question: "How are faces sorted into moods?",

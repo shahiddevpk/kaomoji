@@ -463,6 +463,7 @@ export function CategoryView({
         </section>
       ) : null}
 
+      {showEducation && !(page.howTo && page.howTo.length > 0) ? (
       <section className="mt-10" aria-labelledby="how-heading">
         <h2 id="how-heading" className="type-h2">
           How to copy
@@ -473,6 +474,7 @@ export function CategoryView({
           <li>Paste it into chat, a caption, or a bio.</li>
         </ol>
       </section>
+      ) : null}
 
       {showEducation ? <FaqSection faqs={page.faqs} /> : null}
 

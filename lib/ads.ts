@@ -40,3 +40,30 @@ export const ADSENSE_CLIENT_ID = `ca-${ADSENSE_PUBLISHER_ID}`;
 export function adsTxtBody(): string {
   return `google.com, ${ADSENSE_PUBLISHER_ID}, DIRECT, ${GOOGLE_ADS_TXT_CERT_ID}\n`;
 }
+
+/**
+ * Paths that must never load the AdSense script or a manual unit.
+ * Keep this list string-only so the footer island does not pull the catalog.
+ *
+ * Trust / search: no publisher inventory beside an ad.
+ * /page/n: thin grid slices (same shell, no unique education).
+ */
+const AD_FREE_PREFIXES = [
+  "/about",
+  "/contact",
+  "/privacy",
+  "/terms",
+  "/disclaimer",
+  "/search",
+];
+
+export function normalizePath(pathname: string): string {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
+}
+
+export function isAdFreePath(pathname: string): boolean {
+  const path = normalizePath(pathname);
+  if (path.includes("/page/")) return true;
+  return AD_FREE_PREFIXES.some((prefix) => path === `${prefix}/`);
+}

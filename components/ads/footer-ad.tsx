@@ -3,14 +3,7 @@ import { island } from "@/lib/island";
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { ADSENSE_CLIENT_ID, ADSENSE_FOOTER_SLOT, isAdSenseEnabled } from "@/lib/ads";
-
-/**
- * Pages that never show a manual ad unit: trust pages and search have no
- * publisher content an ad could sit beside (AdSense "screens without publisher
- * content" policy).
- */
-const AD_FREE_PATHS = ["/about/", "/contact/", "/privacy/", "/terms/", "/disclaimer/", "/search/"];
+import { ADSENSE_CLIENT_ID, ADSENSE_FOOTER_SLOT, isAdFreePath, isAdSenseEnabled } from "@/lib/ads";
 
 /**
  * One labelled ad unit after the page content and before the footer. It is kept
@@ -20,7 +13,7 @@ const AD_FREE_PATHS = ["/about/", "/contact/", "/privacy/", "/terms/", "/disclai
 function FooterAd__impl() {
   const pathname = usePathname() ?? "/";
   const pushed = useRef(false);
-  const adFree = AD_FREE_PATHS.some((path) => pathname.startsWith(path));
+  const adFree = isAdFreePath(pathname);
   const active = isAdSenseEnabled() && ADSENSE_FOOTER_SLOT !== "" && !adFree;
 
   useEffect(() => {

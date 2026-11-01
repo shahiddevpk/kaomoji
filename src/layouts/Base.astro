@@ -11,13 +11,15 @@ import { currentSeason } from "@/components/kaomoji/seasonal-banner";
 import { Footer } from "@/components/layout/footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/layout/json-ld";
+import { isAdFreePath, isAdSenseEnabled } from "@/lib/ads";
 import { websiteJsonLd } from "@/lib/seo";
 import { navPages } from "@/lib/site";
 
-interface Props { meta?: Metadata }
-const { meta } = Astro.props;
+interface Props { meta?: Metadata; adFree?: boolean }
+const { meta, adFree = false } = Astro.props;
 setServerPathname(Astro.url.pathname);
 const { title, tags } = buildHead(meta);
+const serveAds = isAdSenseEnabled() && !adFree && !isAdFreePath(Astro.url.pathname);
 ---
 <!doctype html>
 <html lang="en" class="h-full antialiased">
@@ -26,7 +28,7 @@ const { title, tags } = buildHead(meta);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {tags.map((t) => (t.tag === "meta" ? <meta {...t.attrs} /> : <link {...t.attrs} />))}
-    <AdSenseScript />
+    {serveAds ? <AdSenseScript /> : null}
   </head>
   <body class="flex min-h-full flex-col">
     <JsonLd data={websiteJsonLd()} />
@@ -35,7 +37,7 @@ const { title, tags } = buildHead(meta);
     <main id="content" class="relative z-0 flex-1" role="main">
       <slot />
     </main>
-    <FooterAd />
+    {serveAds ? <FooterAd /> : null}
     <Footer />
     <script>import "../client/islands.ts";</script>
   </body>
