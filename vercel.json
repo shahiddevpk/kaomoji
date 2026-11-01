@@ -3,5 +3,3567 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/cute",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cry",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cry/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-emoticons",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-emoticons/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cry-kaomoji",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cry-kaomoji/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cry",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cry/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-crying",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-crying/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-and-paste-kaomoji",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-and-paste-kaomoji/",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-copy-and-paste",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-copy-and-paste/",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kamoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kamoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/koamoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/koamoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaoomoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaoomoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaommoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaommoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaamoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaamoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaimoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaimoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sad",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad/",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kamoji",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kamoji/",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kaomojis",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kaomojis/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kaomojis",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kaomojis/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomojis",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomojis/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kaomojis",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kaomojis/",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-kaomojis",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-kaomojis/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-emoticon",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-emoticon/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/text-face",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-face/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kaomoji/page/1",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kaomoji/page/1/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kaomoji/page/1",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kaomoji/page/1/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomoji/page/1",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomoji/page/1/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kaomoji/page/1",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sad-kaomoji/page/1/",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-kaomoji/page/1",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-kaomoji/page/1/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-emoticons/page/1",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-emoticons/page/1/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/text-faces/page/1",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-faces/page/1/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/angry",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomojis",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomojis/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/table-flip",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/table-flip/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tableflip",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tableflip/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tableflip-kaomoji",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tableflip-kaomoji/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fight",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fight/",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/mad",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/mad/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/mad-kaomoji",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/mad-kaomoji/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/furious",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/furious/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/furious-kaomoji",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/furious-kaomoji/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/pout",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/pout/",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/annoyed",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/annoyed/",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/annoyed-kaomoji",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/annoyed-kaomoji/",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/table-flip",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/table-flip/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/fight",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/fight/",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/rage",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/rage/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/pout",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/pout/",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/glare",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/glare/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multi-line-kaomoji",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multi-line-kaomoji/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline-kaomoji",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline-kaomoji/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-art",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-art/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-art-kaomoji",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-art-kaomoji/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-borders",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-borders/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-border",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-border/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/borders-kaomoji",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/borders-kaomoji/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-dividers",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-dividers/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-divider",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-divider/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/divider-kaomoji",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/divider-kaomoji/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dividers-kaomoji",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dividers-kaomoji/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-for-roblox",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-for-roblox/",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-roblox",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-roblox/",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porter-robinson-kaomoji",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porter-robinson-kaomoji/",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-tattoo",
+      "destination": "/guides/kaomoji-tattoo-ideas/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-tattoo/",
+      "destination": "/guides/kaomoji-tattoo-ideas/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-font",
+      "destination": "/guides/kaomoji-font-and-display/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-font/",
+      "destination": "/guides/kaomoji-font-and-display/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-soft-copy",
+      "destination": "/guides/kaomoji-soft-copy/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-soft-copy/",
+      "destination": "/guides/kaomoji-soft-copy/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline-kaomoji/page/:n",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/multiline-kaomoji/page/:n/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/border-kaomoji/page/1",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/border-kaomoji/page/1/",
+      "destination": "/border-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/roblox-kaomoji/page/1",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/roblox-kaomoji/page/1/",
+      "destination": "/roblox-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/art-kaomoji/page/1",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/art-kaomoji/page/1/",
+      "destination": "/art-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/generator",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/generator/",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/make-kaomoji",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/make-kaomoji/",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/page/1",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-kaomoji/page/1/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/table-flip-kaomoji/page/1",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/table-flip-kaomoji/page/1/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fight-kaomoji/page/1",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fight-kaomoji/page/1/",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage-kaomoji/page/1",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage-kaomoji/page/1/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/pout-kaomoji/page/1",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/pout-kaomoji/page/1/",
+      "destination": "/pout-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare-kaomoji/page/1",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare-kaomoji/page/1/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage-kaomoji",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rage-kaomoji/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare-kaomoji",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/glare-kaomoji/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/love",
+      "destination": "/love-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/love/",
+      "destination": "/love-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart/",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/blush",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/blush/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/blush-kaomoji",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/blush-kaomoji/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shy",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shy/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/embarrassed-kaomoji",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/embarrassed-kaomoji/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-kaomoji/page/1",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-kaomoji/page/1/",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shy-kaomoji/page/1",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shy-kaomoji/page/1/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bunny",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bunny/",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rabbit",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rabbit/",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rabbit-kaomoji",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/rabbit-kaomoji/",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dog",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dog/",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/puppy",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/puppy/",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/puppy-kaomoji",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/puppy-kaomoji/",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shocked",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shocked/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/surprised",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/surprised/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/surprised-kaomoji",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/surprised-kaomoji/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smug",
+      "destination": "/smug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smug/",
+      "destination": "/smug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleepy",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleepy/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleeping",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleeping/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleeping-kaomoji",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleeping-kaomoji/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleep-kaomoji",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleep-kaomoji/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tired",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tired/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tired-kaomoji",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/tired-kaomoji/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/confused",
+      "destination": "/confused-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/confused/",
+      "destination": "/confused-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bear",
+      "destination": "/bear-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bear/",
+      "destination": "/bear-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bunny-kaomoji/page/1",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bunny-kaomoji/page/1/",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dog-kaomoji/page/1",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dog-kaomoji/page/1/",
+      "destination": "/dog-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shocked-kaomoji/page/1",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shocked-kaomoji/page/1/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smug-kaomoji/page/1",
+      "destination": "/smug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smug-kaomoji/page/1/",
+      "destination": "/smug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleepy-kaomoji/page/1",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sleepy-kaomoji/page/1/",
+      "destination": "/sleepy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/confused-kaomoji/page/1",
+      "destination": "/confused-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/confused-kaomoji/page/1/",
+      "destination": "/confused-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bear-kaomoji/page/1",
+      "destination": "/bear-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bear-kaomoji/page/1/",
+      "destination": "/bear-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-kaomoji",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-kaomoji/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-kaomoji",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-kaomoji/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-faces",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-faces/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/textface",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/textface/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/textfaces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/textfaces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-kaomoji",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-kaomoji/",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-art",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-art/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-kaomoji",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-kaomoji/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/surprise-kaomoji",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/surprise-kaomoji/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/neko-kaomoji",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/neko-kaomoji/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/flip-table",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/flip-table/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/punch-kaomoji",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/punch-kaomoji/",
+      "destination": "/fight-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/create-kaomoji",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/create-kaomoji/",
+      "destination": "/kaomoji-generator/",
+      "permanent": true
+    },
+    {
+      "source": "/thumbs-up",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thumbs-up/",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ok-kaomoji",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ok-kaomoji/",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thumbs-up-kaomoji/page/1",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thumbs-up-kaomoji/page/1/",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bowing",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bowing/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bow-kaomoji",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bow-kaomoji/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dogeza",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dogeza/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dogeza-kaomoji",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dogeza-kaomoji/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bowing-kaomoji/page/1",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/bowing-kaomoji/page/1/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/running",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/running/",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/run-kaomoji",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/run-kaomoji/",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dash-kaomoji",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dash-kaomoji/",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/running-kaomoji/page/1",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/running-kaomoji/page/1/",
+      "destination": "/running-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lennyface",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lennyface/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-faces",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-faces/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/le-lenny-face",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/le-lenny-face/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-kaomoji",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-kaomoji/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face/page/1",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face/page/1/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-emoji",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-emoji/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-emoticon",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-emoticon/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-face",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-face/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrugging-kaomoji",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrugging-kaomoji/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-kaomoji/page/1",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shrug-kaomoji/page/1/",
+      "destination": "/shrug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-face",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-face/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/owo",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/owo/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/owo-kaomoji",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/owo-kaomoji/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-faces",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-faces/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-kaomoji/page/1",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/uwu-kaomoji/page/1/",
+      "destination": "/uwu-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sorry",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sorry/",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/apology-kaomoji",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/apology-kaomoji/",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/apologize-kaomoji",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/apologize-kaomoji/",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/gomen-kaomoji",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/gomen-kaomoji/",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sorry-kaomoji/page/1",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sorry-kaomoji/page/1/",
+      "destination": "/sorry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks-kaomoji",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks-kaomoji/",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thankyou-kaomoji",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thankyou-kaomoji/",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/arigato-kaomoji",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/arigato-kaomoji/",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-kaomoji/page/1",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-kaomoji/page/1/",
+      "destination": "/thank-you-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cool",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cool/",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sunglasses-kaomoji",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sunglasses-kaomoji/",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/deal-with-it-kaomoji",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/deal-with-it-kaomoji/",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cool-kaomoji/page/1",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cool-kaomoji/page/1/",
+      "destination": "/cool-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sick",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sick/",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ill-kaomoji",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/ill-kaomoji/",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/get-well-kaomoji",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/get-well-kaomoji/",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sick-kaomoji/page/1",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sick-kaomoji/page/1/",
+      "destination": "/sick-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/scared",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/scared/",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/afraid-kaomoji",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/afraid-kaomoji/",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fear-kaomoji",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/fear-kaomoji/",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/scared-kaomoji/page/1",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/scared-kaomoji/page/1/",
+      "destination": "/scared-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/devil",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/devil/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/evil-kaomoji",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/evil-kaomoji/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/demon-kaomoji",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/demon-kaomoji/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/devil-kaomoji/page/1",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/devil-kaomoji/page/1/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thanksgiving",
+      "destination": "/thanksgiving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/thanksgiving/",
+      "destination": "/thanksgiving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/turkey-kaomoji",
+      "destination": "/thanksgiving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/turkey-kaomoji/",
+      "destination": "/thanksgiving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/xmas-kaomoji",
+      "destination": "/christmas-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/xmas-kaomoji/",
+      "destination": "/christmas-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/spooky-kaomoji",
+      "destination": "/halloween-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/spooky-kaomoji/",
+      "destination": "/halloween-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-kaomoji/page/1",
+      "destination": "/christmas-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-kaomoji/page/1/",
+      "destination": "/christmas-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/halloween-kaomoji/page/1",
+      "destination": "/halloween-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/halloween-kaomoji/page/1/",
+      "destination": "/halloween-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/food",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/food/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/eating-kaomoji",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/eating-kaomoji/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/drink-kaomoji",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/drink-kaomoji/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/drinking-kaomoji",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/drinking-kaomoji/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hungry-kaomoji",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hungry-kaomoji/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/food-kaomoji/page/1",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/food-kaomoji/page/1/",
+      "destination": "/food-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/text-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/text-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/keyboard-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/keyboard-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/keyboard-faces",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/keyboard-faces/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/ascii-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/blushing-kaomoji",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/blushing-kaomoji/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkles-kaomoji",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkles-kaomoji/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sparkles",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sparkles/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smiling-kaomoji",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/smiling-kaomoji/",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-smiling",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-smiling/",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/winking-kaomoji",
+      "destination": "/wink-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/winking-kaomoji/",
+      "destination": "/wink-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kissing-kaomoji",
+      "destination": "/kiss-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kissing-kaomoji/",
+      "destination": "/kiss-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/laughing-kaomoji",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/laughing-kaomoji/",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/laugh-kaomoji",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/laugh-kaomoji/",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/funny-kaomoji",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/funny-kaomoji/",
+      "destination": "/giggling-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hugging-kaomoji",
+      "destination": "/hug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hugging-kaomoji/",
+      "destination": "/hug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dancing-kaomoji",
+      "destination": "/dance-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/dancing-kaomoji/",
+      "destination": "/dance-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sweating-kaomoji",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sweating-kaomoji/",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sweat-kaomoji",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sweat-kaomoji/",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/worried-kaomoji",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/worried-kaomoji/",
+      "destination": "/nervous-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kitty-kaomoji",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kitty-kaomoji/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cats-kaomoji",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cats-kaomoji/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-kaomoji",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-kaomoji/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cutecore-kaomoji",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cutecore-kaomoji/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cutecore-kaomojis",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cutecore-kaomojis/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shock-kaomoji",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/shock-kaomoji/",
+      "destination": "/shocked-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/music-kaomoji",
+      "destination": "/dance-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/music-kaomoji/",
+      "destination": "/dance-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/goth-kaomoji",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/goth-kaomoji/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/gothic-kaomoji",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/gothic-kaomoji/",
+      "destination": "/devil-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-kaomoji",
+      "destination": "/guides/what-is-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/what-is-kaomoji/",
+      "destination": "/guides/what-is-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-meaning",
+      "destination": "/guides/what-is-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-meaning/",
+      "destination": "/guides/what-is-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-emoticons",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-emoticons/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-in-texting",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-in-texting/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-on-text-messages",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-on-text-messages/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-through-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-through-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-message-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-message-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-with-smiley-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-with-smiley-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-smiley-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-smiley-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiling-faces-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiling-faces-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-text-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-text-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-text-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-text-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/face-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/face-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-faces-with-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-faces-with-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-text-message-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-text-message-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-faces-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-faces-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-using-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-using-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/face-to-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/face-to-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-emoji-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-emoji-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-text-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-text-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-text-symbol",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-text-symbol/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-from-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-from-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-japanese",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-japanese/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-japanese-emoticons",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-japanese-emoticons/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-keyboard-emoticons",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-keyboard-emoticons/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-happy",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-happy/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cute",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cute/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sad",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sad/",
+      "destination": "/sad-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-copy-and-paste",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-copy-and-paste/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-copy-paste",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-copy-paste/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-to-copy-and-paste",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-to-copy-and-paste/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-type-lenny-face",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-type-lenny-face/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-face",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/lenny-face-face/",
+      "destination": "/lenny-face/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cat",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-cat/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-cat-kaomoji",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-cat-kaomoji/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomoji-copy-and-paste",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cat-kaomoji-copy-and-paste/",
+      "destination": "/cat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-angry",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-angry/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-table-flip",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-table-flip/",
+      "destination": "/table-flip-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-heart",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-heart/",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hearts-kaomoji",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/hearts-kaomoji/",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-shy",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-shy/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-shy",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-shy/",
+      "destination": "/shy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bunny",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bunny/",
+      "destination": "/bunny-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-hug",
+      "destination": "/hug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-hug/",
+      "destination": "/hug-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-waving",
+      "destination": "/waving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-waving/",
+      "destination": "/waving-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-star",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-star/",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-stars",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-stars/",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/stars-kaomoji",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/stars-kaomoji/",
+      "destination": "/star-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sparkle",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sparkle/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-sparkles",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-sparkles/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkle-bow-kaomoji",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkle-bow-kaomoji/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkle-ribbon-kaomoji",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/sparkle-ribbon-kaomoji/",
+      "destination": "/sparkle-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-love",
+      "destination": "/love-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-love/",
+      "destination": "/love-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-flower",
+      "destination": "/flower-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-flower/",
+      "destination": "/flower-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-kiss",
+      "destination": "/kiss-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-kiss/",
+      "destination": "/kiss-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-smile",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-smile/",
+      "destination": "/smile-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-excited",
+      "destination": "/excited-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-excited/",
+      "destination": "/excited-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-wink",
+      "destination": "/wink-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-wink/",
+      "destination": "/wink-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-thumbs-up",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-thumbs-up/",
+      "destination": "/thumbs-up-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bow",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bow/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bowing",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-bowing/",
+      "destination": "/bowing-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-copy-and-paste",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-copy-and-paste/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-copy-and-paste",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-copy-and-paste/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-and-paste-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-and-paste-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-copy-paste",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-copy-paste/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-copy-paste",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-copy-paste/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/copy-paste-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-faces",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-faces/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/facial-emoticons",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/facial-emoticons/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoticons",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoticons/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoticon",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoticon/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-emoticon",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-emoticon/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-emoticon",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/crying-emoticon/",
+      "destination": "/crying-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-emoticon",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/angry-emoticon/",
+      "destination": "/angry-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-make-kaomoji",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-make-kaomoji/",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-make-a-kaomoji",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-make-a-kaomoji/",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/make-your-own-kaomoji",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/make-your-own-kaomoji/",
+      "destination": "/guides/how-to-make-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porter-robinson-kaomojis",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porter-robinson-kaomojis/",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porterrobinson-kaomoji",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/porterrobinson-kaomoji/",
+      "destination": "/guides/porter-robinson-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kamojis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kamojis/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomiji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomiji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomijis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomijis/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaimojis",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaimojis/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaoemoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaoemoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaemoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaemoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-text-faces",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/japanese-text-faces/",
+      "destination": "/japanese-emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kamoji",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-kamoji/",
+      "destination": "/cute-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-kamoji",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/heart-kamoji/",
+      "destination": "/heart-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kamoji",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-kamoji/",
+      "destination": "/happy-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kao-emoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kao-emoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ka-emoji",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ka-emoji/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbol",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbol/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/text-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/text-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/kawaii-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-heart-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-heart-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbols-copy-and-paste",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbols-copy-and-paste/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbols-for-text",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-symbols-for-text/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cut-and-paste-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cut-and-paste-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/symbols-to-cut-and-paste",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/symbols-to-cut-and-paste/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-bow-symbols",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-bow-symbols/",
+      "destination": "/cute-symbols/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combo",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combo/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combinations",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combinations/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-emoji-combos",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/aesthetic-emoji-combos/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoji-combos",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-emoji-combos/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combos-copy-and-paste",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-combos-copy-and-paste/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/combo-emoji",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/combo-emoji/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/funny-emoji-combos",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/funny-emoji-combos/",
+      "destination": "/emoji-combos/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-symbols",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticon-symbols/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-symbols",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/emoticons-symbols/",
+      "destination": "/emoticons/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-texting",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-texting/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-in-text-messages",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/faces-in-text-messages/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-face",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-face/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-message-smiley-face",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/text-message-smiley-face/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-on-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-on-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-faces-in-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/happy-faces-in-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-faces-in-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/cute-faces-in-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/adorable-text-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/adorable-text-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-faces-with-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/emoji-faces-with-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-emoji-faces",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/texting-emoji-faces/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-icon-text",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/smiley-face-icon-text/",
+      "destination": "/text-faces/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-copy-and-paste",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomojis-copy-and-paste/",
+      "destination": "/kaomoji-copy-paste/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-symbols",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-symbols/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

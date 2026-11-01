@@ -25,6 +25,7 @@ Disallow: /*?*tag=
 Disallow: /*?*filter=
 Disallow: /*?*mood=
 Disallow: /api/
+Disallow: /search-data/
 
 # Everyone else
 User-Agent: *

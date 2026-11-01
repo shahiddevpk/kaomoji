@@ -59,7 +59,7 @@ export const pages: SitePage[] = [
     path: "/",
     label: "Home",
     heading: "Kaomoji",
-    titleSegment: "Kaomoji Copy and Paste — Japanese Text Faces | Paste Kaomoji",
+    titleSegment: "Paste Kaomoji — Japanese Text Faces to Copy & Paste",
     description:
       "Browse 24,000+ kaomoji by mood: cute (◕‿◕), happy (＾▽＾), cat, sad, Lenny face, shrug ¯\\_(ツ)_/¯, and more. One tap copies it into Discord, WhatsApp, or any chat.",
     intro:
@@ -440,8 +440,12 @@ export const pages: SitePage[] = [
     definition:
       "Table flip kaomoji capture the desk-flip gag in text: a figure raising arms and sending a table airborne. The pose is comic, not threatening — it signals \"I am done\" or \"this is unbelievable\" in a way that defuses tension with humor.",
     learnMore:
-      "The ┻━┻ table is one of the most recognized pieces of kaomoji typography outside Japan. It spread through 4chan and Reddit in the late 2000s and became a fixture of gaming culture, where flipping a virtual table was the natural response to a bad match or a frustrating loss. The (╯°□°)╯︵ prefix adds the actor, making it a complete scene in one line.",
+      "The ┻━┻ table is one of the most recognized pieces of kaomoji typography outside Japan. It spread through 4chan and Reddit in the late 2000s and became a fixture of gaming culture, where flipping a virtual table was the natural response to a bad match or a frustrating loss. The (╯°□°)╯︵ prefix adds the actor, making it a complete scene in one line.\n\nVariations tell a story. A table being set back down, ┬─┬ノ( º _ ºノ), is the calm reply to someone else's flip, a way to say \"let's put that back.\" Double flips with both arms raised read as maximum exasperation, and a flip with a tiny face or a sweat mark feels more tired than angry. In a group chat, a flip followed by a put-back reply makes a quick, friendly back-and-forth.",
     faqs: [
+      {
+        question: "What does ┬─┬ノ( º _ ºノ) mean?",
+        answer: "It is the \"unflip\": someone calmly setting the table back on its legs. People send it in reply to a table flip to cool things down or to joke that order has been restored.",
+      },
       {
         question: "What is a table flip kaomoji?",
         answer: "A classic desk-flip reaction face for when words are not enough. It says \"I give up\" or \"this is ridiculous\" in a funny, over-the-top way rather than real anger.",
@@ -486,8 +490,12 @@ export const pages: SitePage[] = [
     definition:
       "Fight kaomoji put a figure in motion: fists raised, a punch landing, or a sparring stance. They say \"bring it\" or \"I'm ready,\" which is a long way from sitting there quietly fuming.",
     learnMore:
-      "Fight kaomoji lean on characters like ง, ᕦ, and ᕙ to build the raised-fist silhouette in plain text. These are among the most physically active kaomoji — where most faces express a static emotion, a fight pose implies the next action. The forward body lean and raised arms read as challenge even without knowing the specific Unicode values involved, making them instantly legible as action and not just mood.",
+      "Fight kaomoji lean on characters like ง, ᕦ, and ᕙ to build the raised-fist silhouette in plain text. These are among the most physically active kaomoji — where most faces express a static emotion, a fight pose implies the next action. The forward body lean and raised arms read as challenge even without knowing the specific Unicode values involved, making them instantly legible as action and not just mood.\n\nReading a fight face: the arms do most of the talking. ง( •̀_•́ )ง is the classic boxer's guard, fists up and waiting; ᕦ(ò_óˇ)ᕤ flexes both biceps to show strength rather than attack. Faces with a trailing ε or ═ add a speed line, so the punch is already in motion. Choose a guard pose for \"come at me,\" a flex for \"I've got this,\" and a swinging punch for a mock knockout after a friendly roast.",
     faqs: [
+      {
+        question: "Can fight kaomoji mean motivation instead of conflict?",
+        answer: "Often, yes. A flexing ᕦ(ò_óˇ)ᕤ is widely used for \"let's do this\" before an exam, a workout, or a hard task. The context around it decides whether it reads as a challenge or a pep talk.",
+      },
       {
         question: "What makes fight kaomoji different from angry?",
         answer: "Fight faces lean into punches, hits, and sparring poses. An angry face is just mad; a fight face is doing something about it.",
@@ -715,8 +723,12 @@ export const pages: SitePage[] = [
     definition:
       "Pick parts or start from a preset, and you end up with a face nobody else sent today. If you make one you love, save it in your notes app so it is ready next time.",
     learnMore:
-      "Kaomoji are built from three zones: the outer bracket pair sets the face shape, the eye characters carry the dominant mood, and the mouth in the center lands the expression. Arms and extras outside the brackets are optional but change the reading dramatically — the same neutral face becomes excited, bowing, or dancing with one appended character. Understanding these zones makes it faster to remix any existing face into something new.",
+      "Kaomoji are built from three zones: the outer bracket pair sets the face shape, the eye characters carry the dominant mood, and the mouth in the center lands the expression. Arms and extras outside the brackets are optional but change the reading dramatically — the same neutral face becomes excited, bowing, or dancing with one appended character. Understanding these zones makes it faster to remix any existing face into something new.\n\nA good way to start is to pick the mood first, then the eyes. Eyes carry most of the expression, so choose those before adding a mouth, arms, or extras. Brackets such as ( ), ʕ ʔ, or ᕦ ᕤ change the overall shape, and small details like blush marks or a sparkle can shift the same face from neutral to cute. Keep generated faces short if you plan to use them in usernames or bios, since long strings may be trimmed.",
     faqs: [
+      {
+        question: "Can I use kaomoji I make here anywhere?",
+        answer: "Yes. Generated faces are ordinary Unicode text, so you can paste them into chats, bios, and posts. If a part shows as an empty box on another device, swap it for a more common character.",
+      },
       {
         question: "What does the kaomoji generator do?",
         answer: "It helps you build or remix a text face from parts (eyes, mouth, arms) or presets so you can make something that is not only from a static list.",
@@ -912,8 +924,12 @@ export const pages: SitePage[] = [
     definition:
       "Look for floppy ears, little snouts, and wagging poses. These are for dog lovers, pet photos, and anyone who deserves a good-boy compliment.",
     learnMore:
-      "Dog kaomoji borrow the U and w characters for their rounded snout shapes, using the natural curve of those glyphs to suggest a muzzle without explicit nose marks. The loyalty association of dogs in Japanese popular culture made them a natural fit for affectionate or playful text expressions. Dog faces pair naturally with heart and happy content because the animal mood skews warmly positive and the visual cues read as friendly on sight.",
+      "Dog kaomoji borrow the U and w characters for their rounded snout shapes, using the natural curve of those glyphs to suggest a muzzle without explicit nose marks. The loyalty association of dogs in Japanese popular culture made them a natural fit for affectionate or playful text expressions. Dog faces pair naturally with heart and happy content because the animal mood skews warmly positive and the visual cues read as friendly on sight.\n\nMost dog faces are built around a few recognizable parts: floppy ears made from characters like U or ∪ on either side of the face, a small ᴥ or ω snout, and sometimes a wagging tail drawn with ~ or ฅ paws. Ears are the quickest tell; once you spot them, the face reads as a dog rather than a generic cute animal. Pick a face with paws up for begging or excitement, and a calm snout-only face for a simple friendly reaction.",
     faqs: [
+      {
+        question: "How can I tell a dog kaomoji from a cat or bear face?",
+        answer: "Look at the ears and snout. Dogs usually have drooping ears on the sides, like U・ᴥ・U. Cats tend to have pointed ears on top (ΦωΦ or =^･ω･^=), and bears often use round ʕ ʔ brackets.",
+      },
       {
         question: "What makes a dog kaomoji different from a cute face?",
         answer:
@@ -961,8 +977,12 @@ export const pages: SitePage[] = [
     definition:
       "Wide eyes and open mouths do the work here. Match the size of the face to the news, from a small blink to a full cartoon gasp.",
     learnMore:
-      "Shock kaomoji typically exaggerate the mouth opening — a wide O shape that signals a sudden intake of breath. The eye-widening cue borrows from manga panel conventions, where pupils shrink or eyes go circular to signal a jolt. Short one-line shocked faces read faster than complex multi-character ones in a busy chat thread.",
+      "Shock kaomoji typically exaggerate the mouth opening — a wide O shape that signals a sudden intake of breath. The eye-widening cue borrows from manga panel conventions, where pupils shrink or eyes go circular to signal a jolt. Short one-line shocked faces read faster than complex multi-character ones in a busy chat thread.\n\nThe eyes carry most of the shock. Round eyes like ° or ⊙ show a sudden gasp, and the mouth adds intensity: a small o is quiet surprise, while □ or 口 is a full open-mouthed scream. Hands on the cheeks, written with characters like ノ or ﾉ, turn it into a dramatic reaction. Scale the face to the news: a small gasp for a plot twist in a show, a big scream for a real bombshell from a friend.",
     faqs: [
+      {
+        question: "Which shocked kaomoji works for good news?",
+        answer: "Pick a gasp with sparkles or open hands, which reads as delighted surprise. Faces with sweat marks or trembling lines lean more toward alarm, so save them for bad or awkward news.",
+      },
       {
         question: "When should I send a shocked kaomoji?",
         answer:
@@ -1098,8 +1118,12 @@ export const pages: SitePage[] = [
     definition:
       "Puzzled eyes, head tilts, and question marks. They say \"wait, what do you mean?\" rather than a shocked gasp.",
     learnMore:
-      "Confusion in kaomoji is often signaled by a tilted head — achieved by leaning the whole face with character spacing — or a question mark placed outside the brackets. The head-tilt cue is intuitive cross-culturally because the physical gesture of tilting one's head when puzzled appears across many human cultures and translates directly into text.",
+      "Confusion in kaomoji is often signaled by a tilted head — achieved by leaning the whole face with character spacing — or a question mark placed outside the brackets. The head-tilt cue is intuitive cross-culturally because the physical gesture of tilting one's head when puzzled appears across many human cultures and translates directly into text.\n\nDifferent confused faces suit different moments. A face with a single trailing ? works as a light \"huh?\" after a vague message. Faces with a sweat mark mix confusion with awkwardness, which helps when you missed something you probably should have caught. Blank dot-eyed stares, like (・・?), suit deadpan humor when someone says something strange on purpose.",
     faqs: [
+      {
+        question: "Can a confused kaomoji come across as rude?",
+        answer: "Rarely, but a blank stare after a sincere explanation can feel dismissive. When someone is trying to help, pair the face with a short line about what you did not follow so it reads as curiosity, not mockery.",
+      },
       {
         question: "When is confused better than shocked?",
         answer:
@@ -1238,8 +1262,12 @@ export const pages: SitePage[] = [
     definition:
       "Waving kaomoji have an arm up, usually ノ or ﾉ, for hello, goodbye, or \"over here!\" They range from a small polite wave to a big two-armed goodbye.",
     learnMore:
-      "Waving kaomoji are culturally versatile because the wave gesture reads the same way in almost every language — it is a hello, a goodbye, or a friendly acknowledgment. The ﾉ character became the most widely used wave arm in kaomoji because its diagonal line naturally suggests a raised hand. A simple face with a single ﾉ needs no decoding — the gesture is self-explanatory across cultural contexts without any Japanese internet knowledge.",
+      "Waving kaomoji are culturally versatile because the wave gesture reads the same way in almost every language — it is a hello, a goodbye, or a friendly acknowledgment. The ﾉ character became the most widely used wave arm in kaomoji because its diagonal line naturally suggests a raised hand. A simple face with a single ﾉ needs no decoding — the gesture is self-explanatory across cultural contexts without any Japanese internet knowledge.\n\nThe arm placement shows the direction of the wave. A raised arm on the right, such as (^_^)/, is a typical hello, and an arm on the left, \\(^_^), reads the same way when the face sits at the start of a line. Faces with both arms up look more like cheering than a wave. For a goodbye, try a wave with closed or teary eyes; for a quick check-in, a small single-arm wave keeps it light.",
     faqs: [
+      {
+        question: "Can I use a waving kaomoji to start a conversation?",
+        answer: "Yes. A small wave before your first message, like (・ω・)ﾉ hi!, makes an opening line feel friendly and less abrupt, especially when messaging someone after a long gap.",
+      },
       {
         question: "When should I use a waving kaomoji?",
         answer: "For greetings, farewells, or casual check-ins when a written hello feels flat. A wave face makes the warmth visible.",
@@ -1278,8 +1306,12 @@ export const pages: SitePage[] = [
     definition:
       "Thinking kaomoji look up, look sideways, or rest a hand on the chin. Use them when you are still working something out, or to show you are taking a question seriously.",
     learnMore:
-      "Thinking kaomoji borrowed the hand-to-chin gesture from Japanese manga, where a tilted head and upward glance signal a character deep in thought. The pose translates well to text because a slightly asymmetric eye — one larger or more open than the other — creates the impression of looking off to one side. Even a two-character difference in the eyes shifts the face from blank to pensive, making the mood readable at a glance.",
+      "Thinking kaomoji borrowed the hand-to-chin gesture from Japanese manga, where a tilted head and upward glance signal a character deep in thought. The pose translates well to text because a slightly asymmetric eye — one larger or more open than the other — creates the impression of looking off to one side. Even a two-character difference in the eyes shifts the face from blank to pensive, making the mood readable at a glance.\n\nEye direction is the main signal. Eyes glancing up or to the side, such as (¬‿¬) or ( ˘･з･), suggest someone recalling or weighing options; a hand under the chin, often built with ┐ or ε, mirrors the classic thinker's pose. A sweat drop changes it to \"I'm thinking, but this is hard.\" Send a thinking face when you need a moment before answering, so the other person knows a real reply is on the way.",
     faqs: [
+      {
+        question: "Can a thinking kaomoji show doubt or skepticism?",
+        answer: "Yes. A thinking face with narrowed eyes or a side glance often reads as \"hmm, I'm not so sure,\" which is a gentle way to question a claim without sounding confrontational.",
+      },
       {
         question: "When should I use a thinking kaomoji?",
         answer: "When you are genuinely processing something, stalling playfully, or signaling \"let me think about this\" in chat. It softens a pause in conversation.",
@@ -1798,8 +1830,12 @@ export const pages: SitePage[] = [
     definition:
       "These are laughing faces: squinted eyes, open mouths, and hands over the mouth. Use them when something is actually funny, not just polite-funny.",
     learnMore:
-      "Giggling kaomoji evolved alongside Japanese onomatopoeia culture, where specific laugh sounds (kuku, fufu, ufufu) were associated with certain levels of amusement. The squinted crescents that form the giggle-eyes in text are a direct visual equivalent of these sounds — a contained, soft laugh that is distinct from the wide-open mouth of a full burst laugh.",
+      "Giggling kaomoji evolved alongside Japanese onomatopoeia culture, where specific laugh sounds (kuku, fufu, ufufu) were associated with certain levels of amusement. The squinted crescents that form the giggle-eyes in text are a direct visual equivalent of these sounds — a contained, soft laugh that is distinct from the wide-open mouth of a full burst laugh.\n\nWatch the mouth and hands to set the volume. A tiny ω or ‿ mouth keeps the laugh quiet, while a wide ▽ or ∀ mouth is open laughter. A hand over the mouth, often drawn with ｍ or ノ, adds a sneaky or teasing feel, which suits gossip or an inside joke. Faces with tears at the corners are for laughing so hard it hurts, so save them for something genuinely funny.",
     faqs: [
+      {
+        question: "Is a giggle kaomoji better than typing \"lol\"?",
+        answer: "It can be more specific. \"lol\" has become so common that it often reads as neutral, while a giggle face shows how hard you are laughing and whether it is a soft chuckle or a real fit.",
+      },
       {
         question: "When should I use a giggling kaomoji?",
         answer: "Use one when laughing feels more expressive than typing 'lol'. Giggle faces work for light amusement; burst-laugh faces hit harder for genuinely hilarious moments.",
@@ -2002,8 +2038,12 @@ export const pages: SitePage[] = [
     definition:
       "Smile kaomoji are calm and friendly: curved mouths, soft eyes, no shouting. They are quieter than happy cheers and much calmer than excited faces.",
     learnMore:
-      "Smile kaomoji represent the baseline of the kaomoji vocabulary: the simple curved mouth between eye characters is the starting point from which almost all other expressions diverge. The (◡‿◡) and ( ˙‿˙ ) patterns have been in use since the earliest days of Japanese text culture and remain among the most universally recognized text faces.",
+      "Smile kaomoji represent the baseline of the kaomoji vocabulary: the simple curved mouth between eye characters is the starting point from which almost all other expressions diverge. The (◡‿◡) and ( ˙‿˙ ) patterns have been in use since the earliest days of Japanese text culture and remain among the most universally recognized text faces.\n\nSmall changes shift a smile's tone. Closed crescent eyes, as in (◡‿◡), feel content and relaxed; open dot eyes with a wide mouth, like (・▽・), feel brighter and more talkative. Adding blush marks makes a smile shy or affectionate, and a ✿ or ♪ beside it adds a cheerful, decorative touch. If you want the face to support your message rather than take it over, keep it short and simple.",
     faqs: [
+      {
+        question: "Which smile kaomoji suits a simple thank-you?",
+        answer: "A gentle closed-eye smile such as (◡‿◡) or (´▽`) works well. It adds warmth to \"thanks\" without making the message feel overexcited.",
+      },
       {
         question: "Are smile kaomoji different from happy kaomoji?",
         answer: "Happy kaomoji include cheers, waves, and upbeat celebrations. Smile kaomoji are quieter — a warm grin without the loud cheer energy.",
@@ -2082,8 +2122,12 @@ export const pages: SitePage[] = [
     definition:
       "Nervous kaomoji sweat. Look for ; drops, tight mouths, and eyes darting sideways. They show worry better than typing \"lol I'm fine.\"",
     learnMore:
-      "Nervous kaomoji often feature the sweat drop — a small mark placed outside the face brackets to signal stress without changing the facial expression itself. This convention comes directly from manga panel language, where a single bead of sweat at the temple communicates anxiety more economically than any other visual shorthand in Japanese comics and animation.",
+      "Nervous kaomoji often feature the sweat drop — a small mark placed outside the face brackets to signal stress without changing the facial expression itself. This convention comes directly from manga panel language, where a single bead of sweat at the temple communicates anxiety more economically than any other visual shorthand in Japanese comics and animation.\n\nSweat drops, trembling lines, and glancing eyes are the main nervous cues. A single sweat mark, like (^_^;), is mild awkwardness, the kind you send after a small mistake. Shaking marks and wide eyes suggest real anxiety, and faces fidgeting with their hands, often drawn with characters like ・・ between the arms, feel shy and unsure. Choosing a milder face keeps a small apology from sounding more dramatic than it needs to.",
     faqs: [
+      {
+        question: "What does the ; mark in faces like (^_^;) mean?",
+        answer: "The semicolon stands for a sweat drop running down the side of the face. It signals awkwardness, embarrassment, or a nervous laugh, similar to a cold sweat in Japanese manga.",
+      },
       {
         question: "When should I use a nervous kaomoji?",
         answer: "For waiting on news, admitting a mistake, social awkwardness, or any message where you want to show genuine nervousness without a long explanation.",
@@ -2162,8 +2206,12 @@ export const pages: SitePage[] = [
     definition:
       "Thumbs-up and OK kaomoji are a 👍 with a face attached. Use them to say yes, nice work, or sounds good when a plain thumbs-up feels a bit cold.",
     learnMore:
-      "Thumbs-up kaomoji use the b or ᕙ character as the raised thumb placed at the arm position in the standard kaomoji frame. The b character is particularly elegant because it reads as a thumb visually while also being a basic keyboard character that pastes cleanly on all devices. The OK variant uses circle-shaped characters to form the approval gesture.",
+      "Thumbs-up kaomoji use the b or ᕙ character as the raised thumb placed at the arm position in the standard kaomoji frame. The b character is particularly elegant because it reads as a thumb visually while also being a basic keyboard character that pastes cleanly on all devices. The OK variant uses circle-shaped characters to form the approval gesture.\n\nA thumbs-up face is mostly about acknowledgment. It closes a loop (\"got it,\" \"sounds good,\" \"done\") without adding a full sentence. Faces that pair the thumb with a wink or a grin feel more enthusiastic, while a plain face with 👍-style ｂ or ɖ characters reads as a calm confirmation. Because they are text, these faces avoid the mixed tone some people associate with the single thumbs-up emoji.",
     faqs: [
+      {
+        question: "Is a thumbs-up kaomoji friendlier than the thumbs-up emoji?",
+        answer: "For many people, yes. A lone emoji thumb can feel curt in some chats, while a text face adds eyes and a smile, so the approval reads as warm rather than dismissive.",
+      },
       {
         question: "When should I use a thumbs-up kaomoji?",
         answer:
@@ -3013,10 +3061,10 @@ export const pages: SitePage[] = [
     description:
       "About Paste Kaomoji: curated kaomoji and text-face library with mood pages, integrity filters, and MIT-licensed source attribution.",
     intro:
-      "Paste Kaomoji is a focused library for copying kaomoji and text faces. The point is find, copy, paste - without a giant emoji catalog or a wall of ads.",
+      "Paste Kaomoji is a focused library for copying kaomoji and text faces. The goal is simple: find, copy, and paste, without a giant emoji catalog or a wall of ads.",
     group: "trust",
     definition:
-      "Paste Kaomoji is a focused copy-paste library for Japanese-style text faces and related character expressions. Faces are unicode text you can edit, not a sticker pack locked to one app.",
+      "Paste Kaomoji is a focused copy-paste library for Japanese-style text faces and related character expressions. Faces are Unicode text you can edit, not a sticker pack locked to one app.",
     learnMore:
       "Kaomoji (often called Japanese emoticons) are usually read upright, with eyes carrying most of the mood. This site groups faces by mood so you can find, copy, and paste without wading through thousands of random faces or a wall of ads.",
     faqs: [
@@ -3030,7 +3078,7 @@ export const pages: SitePage[] = [
       },
       {
         question: "Does this site sell faces or require signup?",
-        answer: "No. Faces are unicode text arranged for browsing. There is no paywall and no account to make; you copy from the grid and paste wherever you need.",
+        answer: "No. Faces are Unicode text arranged for browsing. There is no paywall and no account to make; you copy from the grid and paste wherever you need.",
       },
     ],
     related: ["/contact", "/privacy"],
@@ -3065,7 +3113,7 @@ export const pages: SitePage[] = [
     heading: "Terms",
     titleSegment: "Terms",
     description:
-      "Terms of use for Paste Kaomoji. Faces are unicode text; the site is a free copy-paste library.",
+      "Terms of use for Paste Kaomoji. Faces are Unicode text; the site is a free copy-paste library.",
     intro:
       "Terms of use for pastekaomoji.com, effective September 25, 2026. How you may use the library and what we provide.",
     group: "trust",
