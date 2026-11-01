@@ -45,6 +45,11 @@ export default function PrivacyPage() {
         </Link>
         .
       </p>
+      <p>
+        You can clear the recently-copied list at any time by clearing site data for
+        pastekaomoji.com in your browser settings. Private or incognito windows usually discard it
+        when you close them. Nothing in that list is linked to your name or email address.
+      </p>
       {ads ? (
         <>
           <h2 className="text-base font-semibold">Advertising</h2>
@@ -54,7 +59,8 @@ export default function PrivacyPage() {
             other websites. Google&apos;s use of advertising cookies enables it and its partners
             to serve ads to you based on your visit to this site and/or other sites on the
             internet. Google and its partners may also read and place cookies, or use web
-            beacons and IP addresses, to measure and deliver ads.
+            beacons and IP addresses, to measure and deliver ads. Ads on this site are served under AdSense publisher ID
+            pub-1493183147218727, and that ID is also listed in our ads.txt file.
           </p>
           <p>
             You can opt out of personalized advertising in{" "}
@@ -113,13 +119,26 @@ export default function PrivacyPage() {
         </Link>
         ), the message is used to answer you. It is not added to a marketing list.
       </p>
+      <h2 className="text-base font-semibold">Your choices</h2>
+      <p>
+        You can browse every page without signing in, and you can block or delete cookies in your
+        browser at any time. Blocking cookies does not stop the copy buttons from working, although
+        ads may become less relevant. If you want us to delete an email you sent, ask in a reply
+        and we will remove it from our inbox.
+      </p>
       <h2 className="text-base font-semibold">Hosting</h2>
       <p>
-        The domain is on Cloudflare, which may log ordinary request data such as IP address and
-        user agent for security and operations.
+        The site is hosted on Vercel, which may log ordinary request data such as IP address
+        and user agent for security and operations.
         {ads
           ? " Apart from the Google advertising described above, we do not add trackers on top of that hosting layer."
           : " We do not add extra trackers on top of that hosting layer."}
+      </p>
+      <h2 className="text-base font-semibold">Changes to this policy</h2>
+      <p>
+        If the way the site handles data changes, for example if a new feature or ad setting is
+        added, we will update this page and the effective date at the top. Please check back from
+        time to time.
       </p>
       <p>
         The rules for using the site are in the{" "}

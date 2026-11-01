@@ -25,9 +25,22 @@ export default function DisclaimerPage() {
       </p>
       <h2 className="text-base font-semibold">How faces display</h2>
       <p>
-        Faces are unicode text. How they look depends on the fonts in your device, browser, and
+        Faces are Unicode text. How they look depends on the fonts in your device, browser, and
         the app you paste into. A face that looks right here may show boxes or break across lines
         elsewhere. We are not responsible for how third-party apps render copied text.
+      </p>
+      <p>
+        Some faces use rare symbols from scripts such as Kannada, Thai, or Canadian syllabics.
+        Older phones and some desktop fonts do not include every one of these, which is why a face
+        may look incomplete. If that happens, try a simpler face from the same mood page, or send
+        the face to yourself first to check how it looks.
+      </p>
+      <h2 className="text-base font-semibold">Tone and context</h2>
+      <p>
+        Our mood labels describe how a face is commonly used, not a fixed rule. A crying face may
+        mean sadness in one chat and happy tears in another, and a smug face may read as a joke
+        between friends but as rude with a stranger. Please use your own judgment about whether a
+        face suits the person and the situation.
       </p>
       <h2 className="text-base font-semibold">Advertising</h2>
       {isAdSenseEnabled() ? (

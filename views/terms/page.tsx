@@ -27,7 +27,7 @@ export default function TermsPage() {
       </p>
       <h2 className="text-base font-semibold">The faces</h2>
       <p>
-        Kaomoji are arrangements of unicode characters. The site does not claim an exclusive
+        Kaomoji are arrangements of Unicode characters. The site does not claim an exclusive
         right in those characters. The page text, layout, curation, tags, and category rules
         are the site&apos;s own presentation. Much of the expanded catalog is derived from the
         open kaomoji-collection project (MIT License); see the{" "}
@@ -39,7 +39,16 @@ export default function TermsPage() {
       <h2 className="text-base font-semibold">Acceptable use</h2>
       <p>
         Do not misuse the site to attack the service, scrape it in a way that degrades it for
-        other people, or present the grid as something it is not.
+        other people, or present the grid as something it is not. You may share links to any page and quote
+        individual faces freely. Please do not republish the site&apos;s written explanations,
+        guides, or full category lists as your own without credit.
+      </p>
+      <h2 className="text-base font-semibold">Your responsibility for posts</h2>
+      <p>
+        You decide where and how you paste a face. Some faces, such as table flips or angry
+        reactions, can read as rude in the wrong setting, so check the tone before sending them in
+        work, school, or support chats. You are responsible for following the rules of the apps and
+        communities where you post.
       </p>
       <h2 className="text-base font-semibold">Advertising</h2>
       <p>
@@ -59,7 +68,9 @@ export default function TermsPage() {
       <h2 className="text-base font-semibold">No warranty</h2>
       <p>
         The site is provided as is, without warranties. Faces may render differently from one
-        font or app to another. We may update or remove faces and pages as the library evolves.
+        font or app to another. We may update or remove faces and pages as the library evolves. We try to keep the site online, but it may be unavailable at times for
+        maintenance or reasons outside our control. To the extent the law allows, we are not
+        liable for losses that come from using or being unable to use the site.
       </p>
       <h2 className="text-base font-semibold">Changes</h2>
       <p>
