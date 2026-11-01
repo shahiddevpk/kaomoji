@@ -173,3 +173,6 @@ Star, sparkle, love, flower, kiss, smile, excited, wink: word-order synonyms 301
 
 ## US keyword batch 5 (2026-11-01)
 Thumbs up, bowing, emoticons, cute symbols, emoji combos: synonyms 301 to existing owners (cute/happy/crying/angry emoticon → mood pages). cute-symbols and emoji-combos keep their own pages. See docs/KEYWORD-BATCH5-US-2026-11-01.md.
+
+## UK keyword batch 1 (2026-11-01)
+63 UK keywords reviewed; all heads already owned by existing pages. 13 missing synonyms (11 text-faces phrasings, kaomojis copy and paste, kaomoji symbols → hub) added as 301 pairs. No new pages, no title edits. See docs/KEYWORD-BATCH1-UK-2026-11-01.md.

@@ -1242,11 +1242,16 @@ button.border-border, a.border-border { border-color: var(--control-border); }
   font-size: 1.0625rem; line-height: 1.8; color: var(--foreground); font-weight: 450;
 }
 .trust-intro p { white-space: normal; }
-/* Face cards: keep faces on one line (no wrap mid-face) */
+/* Face cards: one line; scroll sideways if the face is wider than the tile */
 .kaomoji-face {
+  display: block;
+  max-width: 100%;
   white-space: nowrap; overflow-wrap: normal; word-break: normal;
-  overflow: hidden; text-overflow: clip; line-height: 1.25;
+  overflow-x: auto; overflow-y: hidden; text-overflow: clip; line-height: 1.25;
+  scrollbar-width: thin;
 }
+.kaomoji-face::-webkit-scrollbar { height: 4px; }
+.kaomoji-face::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
 .kaomoji-face--tall { white-space: pre; }
 .kaomoji-grid--compact .kaomoji-face { font-size: 1.1875rem; padding-inline: 0.25rem; }
 .kaomoji-grid--compact .kaomoji-cell--wide .kaomoji-face { font-size: 1.0625rem; }
