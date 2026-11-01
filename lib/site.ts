@@ -1051,7 +1051,7 @@ export const pages: SitePage[] = [
     tags: ["smug"],
     howTo: [
       "Pick a face that looks satisfied or teasing, not loudly joyful.",
-      "Tap Copy so every character comes along.",
+      "Tap Copy so the smirk and every side mark paste intact.",
       "Paste and add a short line if the tease needs a softener.",
     ],
     definition:
@@ -1536,7 +1536,7 @@ export const pages: SitePage[] = [
     faqs: [
       {
         question: "How do I copy and paste Christmas kaomoji?",
-        answer: "Tap Copy under any face, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Emoji inside the face copy with it.",
+        answer: "Press Copy beside the festive face you like and paste it into your card, chat, or post. Any tree or gift emoji inside it travels along.",
       },
       {
         question: "What is the reindeer kaomoji?",
@@ -1552,7 +1552,7 @@ export const pages: SitePage[] = [
       },
       {
         question: "Will festive glyphs paste correctly?",
-        answer: "Yes on modern phones and computers. If a rare symbol shows as a box, choose a simpler face from the same group.",
+        answer: "Almost always — current iOS, Android, Windows, and macOS fonts cover them. If a rare symbol shows as a box, choose a simpler face from the same group.",
       },
     ],
     related: ["/new-year-kaomoji", "/winter-kaomoji", "/thanksgiving-kaomoji", "/halloween-kaomoji", "/birthday-kaomoji", "/emoji-combos"],
@@ -1586,7 +1586,7 @@ export const pages: SitePage[] = [
     faqs: [
       {
         question: "How do I copy and paste New Year kaomoji?",
-        answer: "Tap Copy under any face, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Fireworks and champagne emoji copy with the face.",
+        answer: "Copy a countdown or cheering face, then paste it into your midnight message. Fireworks and champagne emoji copy with the face.",
       },
       {
         question: "What does あけおめ mean?",
@@ -1602,7 +1602,7 @@ export const pages: SitePage[] = [
       },
       {
         question: "Will fireworks emoji paste correctly?",
-        answer: "Yes on modern phones and computers. If a rare symbol shows as a box, pick a simpler face from the same group.",
+        answer: "On current devices, yes. If a rare symbol shows as a box, pick a simpler face from the same group.",
       },
     ],
     related: ["/christmas-kaomoji", "/winter-kaomoji", "/birthday-kaomoji", "/excited-kaomoji", "/dance-kaomoji", "/sparkle-kaomoji"],
@@ -1636,7 +1636,7 @@ export const pages: SitePage[] = [
     faqs: [
       {
         question: "How do I copy and paste winter kaomoji?",
-        answer: "Tap Copy under any face, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Snowflakes and emoji copy with the face.",
+        answer: "Hit Copy on a bundled-up or snowy face and paste it wherever you type, on desktop or phone. Snowflakes and emoji copy with the face.",
       },
       {
         question: "What is the shivering kaomoji?",
@@ -1685,7 +1685,7 @@ export const pages: SitePage[] = [
     faqs: [
       {
         question: "How do I copy and paste Valentine's Day kaomoji?",
-        answer: "Tap Copy under any face, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. Hearts and emoji copy with the face.",
+        answer: "Choose a loving face, tap Copy, and paste it into a text, note, or card for your partner. Hearts and emoji copy with the face.",
       },
       {
         question: "What is a cute Valentine kaomoji for my partner?",
@@ -2112,7 +2112,7 @@ export const pages: SitePage[] = [
     tags: ["smile"],
     howTo: [
       "Pick a small, quiet smile or a wide one.",
-      "Tap Copy so every character comes along.",
+      "Tap Copy; the whole smile, cheeks included, goes to your clipboard.",
       "Paste as a soft positive reaction or a friendly standalone message.",
     ],
     definition:
@@ -2961,7 +2961,7 @@ export const pages: SitePage[] = [
       "Ψ looks like a trident or pitchfork, so placing it beside a face — Ψ(｀▽´)Ψ — turns any grin into a little devil. The eyes ｀ and ´ slant inward like scheming brows, and ▽ or ∀ is a wide, wicked grin. ◣ ◢ make heavier, angrier brows for a darker, goth or villainous look.\n\nNote that Ψ also appears in some food faces as a fork, so a Ψ next to a food emoji usually means eating, not evil.\n\nDevil faces are playful in most chats: a teasing threat, a prank, or a plot twist. For full Halloween monsters, bats, and skeletons, see [Halloween kaomoji](/halloween-kaomoji/). For dark cross dividers like ─── ⋆⋅ ♰ ⋅⋆ ─── to frame a goth bio, check [kaomoji borders and dividers](/border-kaomoji/).\n\nDevil faces fit plenty of everyday chat moments: suggesting one more episode before bed, tempting a friend with dessert, or admitting you ate the last slice. Pair them with an emoji to make the joke clear, such as Ψ(｀▽´)Ψ🍰 for temptation or Ψ(｀∀´)Ψ🎮 for staying up too late gaming. If you want mischief without the evil look, a sly grin such as (¬‿¬) on [smug kaomoji](/smug-kaomoji/) does the job.",
     faqs: [
       { question: "What is the devil kaomoji?", answer: "Ψ(｀▽´)Ψ is the most popular: Ψ is a pitchfork on each side of a wicked grin." },
-      { question: "What does Ψ mean in kaomoji?", answer: "Ψ is the Greek letter psi. It looks like a pitchfork, so it marks a face as a devil. Next to food it can also be a fork." },
+      { question: "What does Ψ mean in kaomoji?", answer: "The psi symbol (Ψ) resembles a pitchfork, so it marks a face as a devil. Next to food it can also be a fork." },
       { question: "What are goth or evil kaomoji?", answer: "Goth kaomoji keep the face simple and let the accents set the mood: crosses ♰, pentagram stars ⛧, bat wings ⎛⎝(•ⱅ•)⎠⎞, black hearts 🖤, or a wilted rose 🥀. Evil kaomoji lean on sharp ◣ ◢ brows and wicked grins like (◣‿◢)Ψ." },
       { question: "Are devil kaomoji mean?", answer: "Usually not — they read as playful mischief. Avoid them in serious conversations." },
     ],

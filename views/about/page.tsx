@@ -32,7 +32,7 @@ export default function AboutPage() {
           : "This release does not run ads."}
       </p>
       <p>
-        Faces on the site are unicode text, the same kind of characters you can already type.
+        Faces on the site are Unicode text, the same kind of characters you can already type.
         Paste Kaomoji arranges them so they are easy to find. Start with{" "}
         <Link href="/cute-kaomoji/" className="link-in-prose">
           cute kaomoji

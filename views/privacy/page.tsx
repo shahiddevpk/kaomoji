@@ -22,15 +22,15 @@ export default function PrivacyPage() {
       <h2 className="text-base font-semibold">What this site stores</h2>
       {ads ? (
         <p>
-          Paste Kaomoji does not ask you to create an account. Most browsing content is
-          rendered without accounts. Search requests are processed on the server. The site
+          Paste Kaomoji does not ask you to create an account. All pages can be browsed
+          without signing in. Search requests are processed on the server. The site
           does not embed analytics. It shows ads served by Google AdSense, which uses cookies
           and similar identifiers as described in the advertising section below.
         </p>
       ) : (
         <p>
-          Paste Kaomoji does not ask you to create an account. Most browsing content is
-          rendered without accounts. Search requests are processed on the server. The site does
+          Paste Kaomoji does not ask you to create an account. All pages can be browsed
+          without signing in. Search requests are processed on the server. The site does
           not embed analytics or advertising, does not use a cookie banner for tracking, and does
           not set marketing cookies.
         </p>
