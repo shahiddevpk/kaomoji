@@ -31,11 +31,17 @@ function FooterAd__impl() {
   if (!active) return null;
 
   return (
-    <aside aria-label="Advertisement" className="mx-auto mt-16 w-full max-w-6xl px-4">
+    <aside
+      aria-label="Advertisement"
+      className="mx-auto mt-16 w-full max-w-6xl px-4"
+      // Reserve the slot height before AdSense fills it, so the footer does not
+      // jump when the ad loads (CLS). 280px covers the common responsive units.
+      style={{ minHeight: 304, contain: "layout" }}
+    >
       <p className="type-meta text-center text-muted">Advertisement</p>
       <ins
         className="adsbygoogle mt-2"
-        style={{ display: "block" }}
+        style={{ display: "block", minHeight: 280 }}
         data-ad-client={ADSENSE_CLIENT_ID}
         data-ad-slot={ADSENSE_FOOTER_SLOT}
         data-ad-format="auto"

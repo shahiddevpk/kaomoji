@@ -70,8 +70,9 @@ function shardKey(scope: SearchScope): string | null {
   if (scope.category || (scope.tags && scope.tags.length > 0)) {
     return scope.path.replace(/^\/|\/$/g, "").replace(/\//g, "-");
   }
-  if (scope.path === "/" || scope.path === "/kaomoji-copy-paste") return "all";
-  return null;
+  // Every other page (guides, blog, unscoped hubs) searches the full catalog
+  // instead of silently returning no matches.
+  return "all";
 }
 
 export async function searchFaces(query: string, scope: SearchScope): Promise<SearchHit[]> {

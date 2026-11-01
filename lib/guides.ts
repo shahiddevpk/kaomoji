@@ -1350,7 +1350,7 @@ export const guides: Guide[] = [
     face: "(˶ᵔ ᵕ ᵔ˶)",
     published: "2026-10-24",
     updated: "2026-10-24",
-    related: ["/cute-kaomoji", "/shy-kaomoji", "/border-kaomoji", "/sparkle-kaomoji"],
+    related: ["/aesthetic-kaomoji", "/cute-kaomoji", "/shy-kaomoji", "/border-kaomoji", "/sparkle-kaomoji"],
     sections: [
       {
         id: "soft-faces",
@@ -1410,7 +1410,7 @@ export const guides: Guide[] = [
           },
           {
             type: "tip",
-            text: "Keep your bio uncluttered: one divider line and one soft face reads much more 'soft aesthetic' than five crowded lines of symbols. Browse [cute kaomoji](/cute-kaomoji/) and [shy kaomoji](/shy-kaomoji/) when you want to rotate your face for a new season.",
+            text: "Keep your bio uncluttered: one divider line and one soft face reads much more 'soft aesthetic' than five crowded lines of symbols. When you want more faces in this style, browse the full set of [aesthetic kaomoji with ribbons and ꒰ ꒱ brackets](/aesthetic-kaomoji/), or [shy kaomoji](/shy-kaomoji/) for blushing looks.",
           },
         ],
       },
@@ -1434,7 +1434,7 @@ export const guides: Guide[] = [
       {
         question: "Where can I find more soft blushing faces?",
         answer:
-          "Our cute kaomoji and shy kaomoji pages have hundreds of blushing, flower, and heart-cheek faces sorted by style.",
+          "The aesthetic kaomoji page has ribbon, ꒰ ꒱ bracket, fluffy, and dreamy faces sorted by style, and the shy kaomoji page covers blushing and bashful faces.",
       },
     ],
   },

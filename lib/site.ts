@@ -130,10 +130,10 @@ export const pages: SitePage[] = [
     group: "browse",
     category: "cute",
     faceGroups: [
-      { id: "blush", heading: "Blushing cute kaomoji", glyphs: ["⁄", "///", "〃", "˶", "*´", "♡"] },
-      { id: "flower", heading: "Flower & aesthetic cute kaomoji", glyphs: ["✿", "❀", "ꕤ", "🌸", "𐙚"] },
-      { id: "animal", heading: "Cute animal kaomoji", glyphs: ["ʕ", "ฅ", "ᴥ", "ᐢ", "૮", "ω"] },
-      { id: "sparkle", heading: "Sparkly cute kaomoji", glyphs: ["✧", "☆", "⋆", "✩", "˚"] },
+      { id: "blush", heading: "Blushing faces", glyphs: ["⁄", "///", "〃", "˶", "*´", "♡"] },
+      { id: "flower", heading: "Flower & pastel faces", glyphs: ["✿", "❀", "ꕤ", "🌸", "𐙚"] },
+      { id: "animal", heading: "Tiny animal faces", glyphs: ["ʕ", "ฅ", "ᴥ", "ᐢ", "૮", "ω"] },
+      { id: "sparkle", heading: "Sparkly faces", glyphs: ["✧", "☆", "⋆", "✩", "˚"] },
     ],
     howTo: [
       "Scan for the softness level you want — blushing smile, tiny wave, or gentle kawaii pose.",
@@ -143,7 +143,7 @@ export const pages: SitePage[] = [
     definition:
       "This set favors soft eyes, blush, and gentle smiles meant to feel warm on sight. Use them when you want sweetness without a long written compliment.",
     learnMore:
-      "Kawaii (可愛い) culture elevated cuteness from a visual style into a social language in 1970s Japan. Cute kaomoji follow the same logic as kawaii design: oversized eyes, miniaturized features, and soft round shapes trigger warmth instinctively. The faces work across language barriers because the visual cues — wide eyes, small mouth, gentle blush — are emotionally legible to almost any viewer without any cultural context.\n\nMost adorable faces share a few construction habits: round brackets instead of square ones, a tiny mouth like ω or ▽, and blush marks drawn with ⁄ or *. Sparkles such as ✧ placed beside the eyes add brightness. Because the features are small and soft, these faces rarely read as sarcastic, which makes them a dependable choice for compliments, thank-you notes, and friendly greetings.",
+      "Kawaii (可愛い) culture elevated cuteness from a visual style into a social language in 1970s Japan. These text faces follow the same logic as kawaii design: oversized eyes, miniaturized features, and soft round shapes trigger warmth instinctively. The faces work across language barriers because the visual cues — wide eyes, small mouth, gentle blush — are emotionally legible to almost any viewer without any cultural context.\n\nMost adorable faces share a few construction habits: round brackets instead of square ones, a tiny mouth like ω or ▽, and blush marks drawn with ⁄ or *. Sparkles such as ✧ placed beside the eyes add brightness. Because the features are small and soft, these faces rarely read as sarcastic, which makes them a dependable choice for compliments, thank-you notes, and friendly greetings.",
     faqs: [
       {
         question: "Why does the ω mouth look so cute?",
@@ -159,7 +159,7 @@ export const pages: SitePage[] = [
         answer: "Cute sets lean soft: round eyes, blush marks, tiny mouths, or shy sparkles. Happy can be big and loud; cute stays gentle and approachable.",
       },
       {
-        question: "Are cute kaomoji okay for work chats?",
+        question: "Are kawaii faces okay for work chats?",
         answer: "Soft smiles and tiny waves usually read friendly. Skip overly flirty or baby-talk faces in formal threads, and match whatever tone your team already uses.",
       },
       {
@@ -167,7 +167,7 @@ export const pages: SitePage[] = [
         answer: "Scan for the eye style you like (big, sparkly, or half-closed), then copy the first face that fits the message length you need. Shorter faces paste cleaner in tight SMS fields.",
       },
       {
-        question: "Do cute kaomoji work in usernames or bios?",
+        question: "Do these faces work in usernames or bios?",
         answer: "Often yes, if the platform allows special characters. Test paste once. Some sites strip unusual symbols from display names.",
       },
       {
@@ -2430,7 +2430,7 @@ export const pages: SitePage[] = [
     definition:
       "Aesthetic kaomoji are text faces styled for looks as much as feeling. They swap plain round brackets for decorative ones like ꒰ ꒱, add soft cheek marks such as ⸝⸝ or ˶, and finish with bows, hearts, or sparkles. The mood is gentle and calm rather than loud.",
     learnMore:
-      "The aesthetic style grew out of soft and pastel social media trends, where people wanted text that matched a curated feed. Instead of building a new face, creators decorated familiar ones. Round brackets became ꒰ ꒱ (characters from the Yi script that look like puffy cheeks), plain blush became tiny ⸝⸝ strokes, and small marks like ⑅ or ೀ became bows tied beside the face.\n\nThree details make a face read as aesthetic. Small, low features, such as ᵕ ᵕ eyes or a ꒳ mouth, keep it quiet. Light framing, like ⋆ or ˚ placed around the face, adds air without clutter. And a single accent, often 🎀 or ♡, gives it a finishing touch. Faces built this way suit profile bios, story captions, and username decoration better than a busy reaction face.\n\nFor broader cute faces with big smiles and hugs, see [cute kaomoji](/cute-kaomoji/). For glitter-heavy faces, try [sparkle kaomoji](/sparkle-kaomoji/), and for lines to frame your bio, use [kaomoji borders](/border-kaomoji/).",
+      "The aesthetic style grew out of soft and pastel social media trends, where people wanted text that matched a curated feed. Instead of building a new face, creators decorated familiar ones. Round brackets became ꒰ ꒱ (characters from the Yi script that look like puffy cheeks), plain blush became tiny ⸝⸝ strokes, and small marks like ⑅ or ೀ became bows tied beside the face.\n\nThree details make a face read as aesthetic. Small, low features, such as ᵕ ᵕ eyes or a ꒳ mouth, keep it quiet. Light framing, like ⋆ or ˚ placed around the face, adds air without clutter. And a single accent, often 🎀 or ♡, gives it a finishing touch. Faces built this way suit profile bios, story captions, and username decoration better than a busy reaction face.\n\nFor broader cute faces with big smiles and hugs, see [cute kaomoji](/cute-kaomoji/). For glitter-heavy faces, try [sparkle kaomoji](/sparkle-kaomoji/), and for lines to frame your bio, use [kaomoji borders](/border-kaomoji/). If you want ready-made pastel bio layouts that pair one face with a divider, the [soft kaomoji copy and paste guide](/guides/kaomoji-soft-copy/) walks through them step by step.",
     faqs: [
       {
         question: "What makes a kaomoji \"aesthetic\" instead of just cute?",
