@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import type { Kaomoji } from "@/data/types";
-import {
-  categoryPageHref,
-  crawlablePageCountForMeta,
-  PAGINATED_SLUGS,
-} from "@/lib/category-pagination";
 import { getPage, siteConfig, type SitePage } from "@/lib/site";
 import { absoluteUrl, canonicalPath } from "@/lib/utils";
 
@@ -30,10 +25,9 @@ export function pageMetadata(
     pageNumber > 1 ? `${page.path}/page/${pageNumber}` : page.path;
   const canonical = canonicalPath(pathForCanonical);
 
-  // Pagination page 2+ stays noindex,follow (anti-cannibalization for GSC):
-  // page 1 owns the head intent; deeper pages stay crawlable via follow +
-  // prev/next/sitemap but must not compete as indexable duplicates.
-  // Valuable unique intent pages stay indexable unless page.robots overrides.
+  // Page 2+ is noindex,follow and robots.txt Disallow /*/page/.
+  // Do not emit rel=prev/next: Google does not use those hints, and they
+  // would point crawlers at URLs we intentionally keep out of the index.
   const robots =
     pageNumber > 1
       ? { index: false, follow: true }
@@ -44,32 +38,10 @@ export function pageMetadata(
           }
         : undefined;
 
-  const paginatedMeta = Object.values(PAGINATED_SLUGS).find(
-    (entry) => entry.path === page.path,
-  );
-  const totalPages = paginatedMeta
-    ? crawlablePageCountForMeta(paginatedMeta)
-    : undefined;
-  let pagination: Metadata["pagination"];
-  if (totalPages && totalPages > 1) {
-    if (pageNumber > 1) {
-      pagination = {
-        previous: absoluteUrl(categoryPageHref(page.path, pageNumber - 1)),
-      };
-    }
-    if (pageNumber < totalPages) {
-      pagination = {
-        ...pagination,
-        next: absoluteUrl(categoryPageHref(page.path, pageNumber + 1)),
-      };
-    }
-  }
-
   return {
     title: page.path === "/" ? { absolute: segment } : segment,
     description: page.description,
     ...(robots ? { robots } : {}),
-    ...(pagination ? { pagination } : {}),
     alternates: {
       canonical,
     },

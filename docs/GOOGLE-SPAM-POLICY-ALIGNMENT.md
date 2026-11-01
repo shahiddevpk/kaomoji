@@ -42,7 +42,7 @@
 ## Operational checklist (post-deploy)
 
 1. **Search Console** — Manual actions report empty; Security issues empty.
-2. **Page indexing** — Money URLs index; pagination page 2+ may be “Excluded by noindex” (expected).
+2. **Page indexing** — Money URLs index; pagination `/page/n/` (`n≥2`) should appear as **Blocked by robots.txt** (and would be noindex if crawled). Do not request indexing for those URLs.
 3. **After deploys** — Re-run `node scripts/detect-title-h1-dups.mjs`; spot-check canonical on hub + one category.
 4. **Growth guardrails** — Improve **existing** money URLs (copy, FAQs, data quality) before adding new indexable routes.
 5. **If expanding moods** — Require unique H1, intro, FAQ, and enough **distinct** grid inventory; otherwise keep as **tags/chips** only.

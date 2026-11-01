@@ -2,6 +2,7 @@
 
 **Product:** pastekaomoji.com · **Project:** `D:\\kaomoji`  
 **Date:** 2026-09-24 (PKT / Asia/Karachi)  
+**Current (2026-11-01):** Pagination page 2+ is **not** indexable (`noindex,follow` + `robots.txt` `Disallow: /*/page/` + omitted from sitemap). Live sitemap is page-1 URLs only. Trust `docs/INTENT-PAGE-MAP.md` for current index/ad flags; tables below are the 2026-09-24 freeze.  
 **Freeze status:** **READY** (SEO + Data + Intent map merged)  
 **Owners:** PK SEO (this file) · PK Data (`docs/CONTENT-UNIQUENESS-AUDIT-DATA.md` = **numbers SoT**) · New Bot (`docs/INTENT-PAGE-MAP.md` = keyword ownership map)  
 **Policy (restated):** **One meaningful search intent → one strong page.** Pagination ≠ new intent. No face pages. No synonym doorways. No new routes in this audit.

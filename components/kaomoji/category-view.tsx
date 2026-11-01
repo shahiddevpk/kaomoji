@@ -151,7 +151,7 @@ function PaginationNav({
       className="mt-6 flex flex-wrap items-center justify-center gap-2"
     >
       {prevHref ? (
-        <Link href={prevHref} className={dominantClass} rel="prev">
+        <Link href={prevHref} className={dominantClass}>
           Previous
         </Link>
       ) : (
@@ -162,7 +162,7 @@ function PaginationNav({
       {renderPageList(pagesMobile, "flex sm:hidden")}
       {renderPageList(pagesDesktop, "hidden sm:flex")}
       {nextHref ? (
-        <Link href={nextHref} className={dominantClass} rel="next">
+        <Link href={nextHref} className={dominantClass}>
           Next
         </Link>
       ) : (

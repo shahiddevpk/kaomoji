@@ -48,8 +48,6 @@ export function buildHead(page: Metadata = {}) {
   const gb = (m.robots as { googleBot?: Metadata["robots"] })?.googleBot;
   if (gb) meta({ name: "googlebot", content: robotsContent(gb) });
   if (m.alternates?.canonical) link({ rel: "canonical", href: abs(m.alternates.canonical) });
-  if (m.pagination?.previous) link({ rel: "prev", href: m.pagination.previous });
-  if (m.pagination?.next) link({ rel: "next", href: m.pagination.next });
   const v = m.verification as { google?: string } | undefined;
   if (v?.google) meta({ name: "google-site-verification", content: v.google });
   for (const [k, val] of Object.entries((m.other ?? {}) as Record<string, string>)) meta({ name: k, content: val });

@@ -1,13 +1,13 @@
 ﻿# Intent → Page Map
 
 **Site:** `https://pastekaomoji.com`  
-**Reviewed:** 2026-09-24 (PKT)  
+**Reviewed:** 2026-11-01 (PKT)  
 **Sources:** `lib/site.ts`, `next.config.ts`, `app/sitemap.ts`, `lib/seo.ts`, `lib/category-pagination.ts`, `data/index.ts`, `data/items.json`.
 
 ## Reading rules
 
 - Rows marked **indexable: Yes** are the canonical URLs emitted by the sitemap. `trailingSlash: true` means the rendered canonical has a trailing slash.
-- Pagination rows use an explicit `n` range: every integer in that range is an individual indexable URL (75 pagination URLs total). Page 1 is the bare category URL; `/page/1` is permanently redirected to it.
+- Pagination `/page/{n}/` (`n≥2`) is **not** a new intent and is **not** indexable: `noindex,follow`, omitted from the sitemap, and `Disallow: /*/page/` in `robots.txt` (AdsBot and `*`). Page 1 is the bare category URL; `/page/1` permanently redirects to it. Users can still click Next/Previous.
 - **Secondary/synonyms are tags-only:** keep them as on-page/search vocabulary, aliases, or supporting copy. Do not create another landing URL for them without a separate intent and manual review.
 - “Money” means a browse/utility landing that can satisfy a copy-paste visit. Trust pages are indexable content, but ads are optional and should not overwhelm the page.
 
@@ -28,19 +28,19 @@
 | `/contact/` | Paste Kaomoji contact | corrections; face suggestions; site questions; email | Contact the publisher | Hub → trust child | self | Yes | Eligible (content; ads optional) | about; privacy |
 | `/privacy/` | Paste Kaomoji privacy | privacy policy; cookies; data handling | Read privacy terms | Hub → trust child | self | Yes | Eligible (content; ads optional) | terms; contact |
 | `/terms/` | Paste Kaomoji terms | terms of use; unicode text; free library | Read usage terms | Hub → trust child | self | Yes | Eligible (content; ads optional) | privacy; about |
-| `/cute-kaomoji/page/{n}/` (`n=2..15`) | cute kaomoji | same tags-only set as `/cute-kaomoji/` | Same cute browse intent at crawl depth | Child of `/cute-kaomoji/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/happy-kaomoji/page/{n}/` (`n=2..15`) | happy kaomoji | same tags-only set as `/happy-kaomoji/` | Same happy browse intent at crawl depth | Child of `/happy-kaomoji/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/cat-kaomoji/page/{n}/` (`n=2..4`) | cat kaomoji | same tags-only set as `/cat-kaomoji/` | Same cat browse intent at crawl depth | Child of `/cat-kaomoji/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/sad-kaomoji/page/{n}/` (`n=2..15`) | sad kaomoji | same tags-only set as `/sad-kaomoji/` | Same sad browse intent at crawl depth | Child of `/sad-kaomoji/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/crying-kaomoji/page/{n}/` (`n=2..3`) | crying kaomoji | same tags-only set as `/crying-kaomoji/` | Same crying browse intent at crawl depth | Child of `/crying-kaomoji/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/japanese-emoticons/page/{n}/` (`n=2..15`) | Japanese emoticons | same tags-only set as `/japanese-emoticons/` | Same Japanese-emoticon browse intent at crawl depth | Child of `/japanese-emoticons/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
-| `/text-faces/page/{n}/` (`n=2..15`) | text faces | same tags-only set as `/text-faces/` | Same text-face browse intent at crawl depth | Child of `/text-faces/`; not a new intent | self (`/page/n/`) | Yes | Review | same related set as base |
+| `/cute-kaomoji/page/{n}/` (`n=2..15`) | cute kaomoji | same tags-only set as `/cute-kaomoji/` | Same cute browse intent; utility depth only | Child of `/cute-kaomoji/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/happy-kaomoji/page/{n}/` (`n=2..15`) | happy kaomoji | same tags-only set as `/happy-kaomoji/` | Same happy browse intent; utility depth only | Child of `/happy-kaomoji/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/cat-kaomoji/page/{n}/` (`n=2..4`) | cat kaomoji | same tags-only set as `/cat-kaomoji/` | Same cat browse intent; utility depth only | Child of `/cat-kaomoji/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/sad-kaomoji/page/{n}/` (`n=2..15`) | sad kaomoji | same tags-only set as `/sad-kaomoji/` | Same sad browse intent; utility depth only | Child of `/sad-kaomoji/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/crying-kaomoji/page/{n}/` (`n=2..3`) | crying kaomoji | same tags-only set as `/crying-kaomoji/` | Same crying browse intent; utility depth only | Child of `/crying-kaomoji/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/japanese-emoticons/page/{n}/` (`n=2..15`) | Japanese emoticons | same tags-only set as `/japanese-emoticons/` | Same Japanese-emoticon browse intent; utility depth only | Child of `/japanese-emoticons/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
+| `/text-faces/page/{n}/` (`n=2..15`) | text faces | same tags-only set as `/text-faces/` | Same text-face browse intent; utility depth only | Child of `/text-faces/`; not a new intent | self (`/page/n/`) | No (`noindex` + robots Disallow) | Not suitable | same related set as base |
 
 ### Pagination inventory and depth note
 
 `PAGE_GRID_LIMIT` is 96. Current primary-category counts produce these total/crawlable page ranges:
 
-| Category | Primary faces | Total pages | Sitemap/indexable page 1 | Sitemap/indexable page 2+ |
+| Category | Primary faces | Total pages | Sitemap / indexable page 1 | Page 2+ (noindex + robots Disallow) |
 |---|---:|---:|---|---|
 | cute | 6,422 | 67 / capped at 15 | `/cute-kaomoji/` | `/cute-kaomoji/page/2/` … `/page/15/` |
 | happy | 5,042 | 53 / capped at 15 | `/happy-kaomoji/` | `/happy-kaomoji/page/2/` … `/page/15/` |
@@ -50,7 +50,7 @@
 | Japanese | 6,774 | 71 / capped at 15 | `/japanese-emoticons/` | `/japanese-emoticons/page/2/` … `/page/15/` |
 | text-faces | 2,878 | 30 / capped at 15 | `/text-faces/` | `/text-faces/page/2/` … `/page/15/` |
 
-Pagination is crawl depth for the **same** category intent, not seven new intents or a license to make thin keyword variants. Each page has a self canonical and a page-number title; page 1 is the canonical bare path. The sitemap currently contains 13 base URLs plus 75 page-2+ URLs.
+Pagination is user browse depth for the **same** category intent, not a new keyword landing. Page 1 is the only indexable URL in each family. Deeper pages keep a self canonical and a page-number title for humans; they are `noindex,follow`, omitted from the sitemap, and blocked in `robots.txt`. The live sitemap is page-1 URLs only (93 as of 2026-11-01). Do not emit `rel=prev`/`rel=next`.
 
 ## Redirects and non-indexable aliases
 
@@ -84,16 +84,15 @@ No automatic merge is recommended. Keep one intent owner per URL and use the fol
 | `/` ↔ `/kaomoji-copy-paste/` | Both are broad kaomoji copy surfaces and both can rank for “kaomoji” and “copy paste.” | **Differentiate:** home owns broad library discovery; utility owns the explicit copy-and-paste task. Avoid duplicating H1/intro and use clear internal links. |
 | `/japanese-emoticons/` ↔ all kaomoji categories | “Japanese emoticons” is the parent concept of many category faces. | **Differentiate:** Japanese page owns the classic construction/language concept; mood/animal pages own the specific use case. Do not canonicalize it to a mood page. |
 | `/japanese-emoticons/` ↔ `/text-faces/` | Both can include punctuation/unicode expressions and classic emoticons. | **Differentiate:** Japanese = kana/punctuation kaomoji; text-faces = ASCII/unicode faces such as shrug/Lenny/disapproval. Keep alternate terms tags-only. |
-| Any base category ↔ its `/page/n/` URLs | Same title root, H1 intent, and category pool by design. | **Keep as crawl depth:** self-canonical each valid page, unique page-number title, sitemap pages 2–15 only where data exists; never treat pagination as a new keyword intent. |
+| Any base category ↔ its `/page/n/` URLs | Same title root, H1 intent, and category pool by design. | **Keep out of the index:** `noindex,follow` + `robots.txt` `Disallow: /*/page/` + omit from sitemap; self-canonical on `/page/n/` for users; never treat pagination as a new keyword intent. |
 
 The current 301 map already handles near-duplicate slugs (`cry`, copy/paste word order, plurals, misspellings, singular aliases). Recheck title/H1/intro and actual query splits manually after launch before considering any merge, canonical change, or noindex action.
 
 ## Monetization and indexing cross-reference
 
 - **Eligible:** `/`, the eight browse/utility money landings, and trust pages as content (ads optional on trust pages).
-- **Review:** all pagination URLs; preserve usability and avoid placing ads between the first useful faces and the copy action.
-- **Not suitable:** search/filter result URLs, query variants, tag-only views, and redirect aliases.
-- Search indexability and ad eligibility are separate decisions: a page can be indexable without being a good ad landing, and noindex search/filter URLs must remain outside the sitemap regardless of ad policy.
+- **Not suitable:** pagination `/page/n/` (`n≥2`), search/filter result URLs, query variants, tag-only views, and redirect aliases. Ads stay off `/page/`, trust leaks, and 404s.
+- Search indexability and ad eligibility are separate decisions: a page can be indexable without being a good ad landing, and noindex search/filter/pagination URLs must remain outside the sitemap regardless of ad policy.
 
 ## GSC status and post-launch checks
 
@@ -101,8 +100,8 @@ The current 301 map already handles near-duplicate slugs (`cry`, copy/paste word
 
 After launch, check:
 
-1. Sitemap fetch/processing and submitted-vs-indexed counts (13 base + 75 pagination URLs).
-2. URL Inspection for each base family and representative page 2/last page: HTTP status, selected canonical, robots/indexing, rendered H1/title.
+1. Sitemap fetch/processing and submitted-vs-indexed counts (page-1 URLs only; ~93 live).
+2. URL Inspection for each money family: HTTP status, selected canonical, robots/indexing, rendered H1/title. `/page/2` should appear as **Blocked by robots.txt** — do not request indexing.
 3. Coverage/exclusions for redirects, duplicate Google-selected canonicals, crawled-not-indexed, and soft-404 pagination.
 4. Queries/impressions/clicks by intent owner: cute, happy, cat, sad, crying, copy-paste, Japanese emoticons, and text faces; watch synonym leakage between the flagged pairs.
 5. Crawl stats and logs for alias loops, `/page/1`, query traps, and out-of-range pagination.
@@ -117,7 +116,7 @@ After launch, check:
 | URL class | Search indexable | Ad eligible | Sitemap |
 |---|---|---|---|
 | Base hub, browse, utility, and trust URLs | Yes | Eligible (trust ads optional) | Yes |
-| Valid pagination URLs | Yes | Review | Yes |
+| Valid pagination URLs (`/page/n/`, `n≥2`) | No (`noindex,follow` + robots Disallow) | Not suitable | No |
 | Search/filter paths and query variants | No (`noindex,follow`) | Not suitable | No |
 | Redirect aliases and `/page/1` | No; 301 target only | Not suitable | No |
 
