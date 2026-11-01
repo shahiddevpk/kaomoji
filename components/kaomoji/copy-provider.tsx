@@ -174,6 +174,7 @@ function finishCopy(item: CopiedFace, ok: boolean) {
     } catch {
       /* ignore quota */
     }
+    bumpCopyCount(item);
     startFlash(item.id, "copied", "Copied");
   } else {
     startFlash(item.id, "error", "Failed");
@@ -256,4 +257,27 @@ export function useCopy(): CopyState {
   const recent = useSyncExternalStore(subscribe, getRecent, () => EMPTY);
   const flash = useSyncExternalStore(subscribe, getFlash, () => null);
   return { recent, flash, copy: copyFace };
+}
+
+/** Per-device copy counts for "Your most copied" (no server, no tracking). */
+export const COUNT_KEY = "pastekaomoji-copy-counts";
+export type CopyCount = { id: string; face: string; name: string; n: number };
+function bumpCopyCount(item: CopiedFace) {
+  try {
+    const all = JSON.parse(localStorage.getItem(COUNT_KEY) || "{}") as Record<string, CopyCount>;
+    const prev = all[item.face];
+    all[item.face] = { id: item.id, face: item.face, name: item.name, n: (prev?.n ?? 0) + 1 };
+    const keep = Object.values(all).sort((x, y) => y.n - x.n).slice(0, 50);
+    localStorage.setItem(COUNT_KEY, JSON.stringify(Object.fromEntries(keep.map((c) => [c.face, c]))));
+  } catch {
+    /* ignore */
+  }
+}
+export function readTopCopied(limit = 8): CopyCount[] {
+  try {
+    const all = JSON.parse(localStorage.getItem(COUNT_KEY) || "{}") as Record<string, CopyCount>;
+    return Object.values(all).filter((c) => c && c.n >= 2).sort((x, y) => y.n - x.n).slice(0, limit);
+  } catch {
+    return [];
+  }
 }

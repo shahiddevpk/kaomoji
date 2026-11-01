@@ -126,7 +126,7 @@ export const pages: SitePage[] = [
     description:
       "Cute kaomoji and kawaii faces (◕‿◕) to copy and paste: soft blushes and tiny hugs. 100+ adorable Japanese text faces for Discord, WhatsApp, and chat.",
     intro:
-      "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste in one tap. This is the gentle, soft side of kaomoji. For louder cheers, waves, and big grins, try happy kaomoji.",
+      "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste in one tap. These are the classic kawaii faces; for decorated, pastel bio styles see aesthetic kaomoji. For louder cheers, waves, and big grins, try happy kaomoji.",
     group: "browse",
     category: "cute",
     faceGroups: [
@@ -240,7 +240,7 @@ export const pages: SitePage[] = [
     description:
       "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, 100+ faces from sleepy to startled.",
     intro:
-      "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one. Searching for kaomoji cat or cat kaomoji copy and paste? It is the same list: tap any face and it is on your clipboard.",
+      "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one. Tap any face and it is on your clipboard.",
     group: "browse",
     category: "cat",
     faceGroups: [
@@ -2305,7 +2305,7 @@ export const pages: SitePage[] = [
     description:
       "Nervous kaomoji to copy and paste: sweat-drop faces like (；・∀・) for exams, first dates, awkward texts, and those \"I just hit send\" moments.",
     intro:
-      "Anxious sweat drops, tense eyes, and uneasy expressions for those \"uh oh\" moments — one tap to copy. Nervous kaomoji cover the full range from mild worry to full anxiety spiral.",
+      "Worried eyes, trembling hands, and tense, waiting faces for the moments before exam results, a job reply, or a big announcement. Nervous kaomoji run from a small flutter of worry to a full anxiety spiral, and every one copies in one tap. For the light, laugh-it-off kind of awkward, the sweat-drop faces have their own page.",
     group: "browse",
     tags: ["nervous"],
     howTo: [
@@ -2316,16 +2316,12 @@ export const pages: SitePage[] = [
     definition:
       "Nervous kaomoji sweat. Look for ; drops, tight mouths, and eyes darting sideways. They show worry better than typing \"lol I'm fine.\"",
     learnMore:
-      "Nervous kaomoji often feature the sweat drop — a small mark placed outside the face brackets to signal stress without changing the facial expression itself. This convention comes directly from manga panel language, where a single bead of sweat at the temple communicates anxiety more economically than any other visual shorthand in Japanese comics and animation.\n\nSweat drops, trembling lines, and glancing eyes are the main nervous cues. A single sweat mark, like (^_^;), is mild awkwardness, the kind you send after a small mistake. Shaking marks and wide eyes suggest real anxiety, and faces fidgeting with their hands, often drawn with characters like ・・ between the arms, feel shy and unsure. Choosing a milder face keeps a small apology from sounding more dramatic than it needs to.\n\nNervousness usually shows through a single sweat drop, drawn with ; or ^^; beside the face, plus a strained smile that does not quite reach the eyes. Fidgeting hands or shifting eyes add extra tension. This mix makes the expression useful for awkward admissions, late replies, or asking a favor, since it signals self-awareness without sounding overly apologetic.",
+      "Nervous kaomoji draw worry with motion and posture: trembling lines like ((( ))) around the face, eyes that dart sideways (・・;), and hands pulled close to the chest. In manga, the same cues mark a character who is waiting for something bad to happen rather than reacting to a slip.\n\nPick by intensity. Glancing eyes are mild unease, the kind you send while waiting for a reply. Shaking marks and wide eyes suggest real anxiety before a test or an interview. Choosing a milder face keeps a small worry from sounding more dramatic than it is.",
     faqs: [
       {
-        question: "What does the semicolon mean in nervous kaomoji?",
+        question: "What is the difference between nervous and sweat kaomoji here?",
         answer:
-          "The ; usually represents a bead of sweat on the forehead or cheek. It adds awkwardness or anxiety to otherwise calm faces, much like a nervous laugh in speech.",
-      },
-      {
-        question: "What does the ; mark in faces like (^_^;) mean?",
-        answer: "The semicolon stands for a sweat drop running down the side of the face. It signals awkwardness, embarrassment, or a nervous laugh, similar to a cold sweat in Japanese manga.",
+          "Nervous faces show worry about something still ahead: shaking, glancing eyes, hands held close. Faces whose whole point is the ; drop after a small slip live on [sweat kaomoji](/sweat-kaomoji/), so the two lists stay distinct.",
       },
       {
         question: "When should I use a nervous kaomoji?",

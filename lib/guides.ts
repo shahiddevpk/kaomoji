@@ -1346,7 +1346,7 @@ export const guides: Guide[] = [
     description:
       "Soft kaomoji copy and paste guide: gentle pastel faces (˶ᵔ ᵕ ᵔ˶), bunny ears ꒰ᐢ. .ᐢ꒱, angel wings, and soft bio dividers for Instagram, TikTok, and Discord.",
     intro:
-      "Soft kaomoji are the quiet side of Japanese text faces: rounded cheeks, sleepy eyes, tiny bunny ears, and thin ribbon dividers that suit pastel, coquette, and cozy profiles. Every face and combo below copies in one tap, and the table at the end shows which symbols go with which look.",
+      "Soft kaomoji are the quiet side of Japanese text faces: rounded cheeks, sleepy eyes, tiny bunny ears, and thin ribbon dividers that suit pastel, coquette, and cozy profiles. Every face and combo below copies in one tap, and the table at the end shows which symbols go with which look. This page teaches the soft pastel style; for hundreds more faces to copy, open the [full aesthetic kaomoji collection](/aesthetic-kaomoji/).",
     face: "(˶ᵔ ᵕ ᵔ˶)",
     published: "2026-10-24",
     updated: "2026-10-24",

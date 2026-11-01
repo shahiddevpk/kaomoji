@@ -3,7 +3,7 @@ import { island } from "@/lib/island";
 
 import { useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { useCopy } from "@/components/kaomoji/copy-provider";
+import { readTopCopied, useCopy } from "@/components/kaomoji/copy-provider";
 import {
   bindFavorites,
   getFavorites,
@@ -42,6 +42,9 @@ function RecentlyCopied__impl() {
     syncStarButtons();
   }, [pathname]);
 
+  // Recomputed whenever `recent` changes (i.e. after every copy).
+  const top = typeof window === "undefined" ? [] : readTopCopied();
+
   if (recent.length === 0 && favorites.length === 0) {
     return null;
   }
@@ -66,6 +69,19 @@ function RecentlyCopied__impl() {
                 >
                   ×
                 </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+      {top.length > 0 ? (
+        <section aria-label="Your most copied">
+          <h2 className="type-h2">Your most copied</h2>
+          <p className="mt-1 type-meta text-muted">Counted on this device only, from your own copies.</p>
+          <ul className="kaomoji-recent-list">
+            {top.map((item) => (
+              <li key={item.face}>
+                <FaceChip id={`top-${item.id}`} face={item.face} name={item.name} label={`Copy ${item.name} (copied ${item.n} times)`} />
               </li>
             ))}
           </ul>

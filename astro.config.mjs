@@ -10,7 +10,7 @@ export default defineConfig({
   site: "https://pastekaomoji.com",
   trailingSlash: "always",
   output: "static",
-  build: { format: "directory", inlineStylesheets: "auto" },
+  build: { format: "directory", inlineStylesheets: "always" },
   compressHTML: true,
   // compat: existing components import from "react"; preact/compat serves them.
   integrations: [preact({ compat: true })],

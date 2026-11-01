@@ -30,6 +30,7 @@ import { guidesForPage } from "@/lib/guides";
 import { relatedPages, subcategoryNavItems, type SitePage } from "@/lib/site";
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd, itemListJsonLd } from "@/lib/seo";
 import { ProseLinks } from "@/components/kaomoji/prose-links";
+import { HubExtras } from "@/components/kaomoji/hub-extras";
 
 function isAngryFamilyPage(page: SitePage): boolean {
   if (page.path === "/angry-kaomoji" || page.parentPath === "/angry-kaomoji") {
@@ -475,6 +476,8 @@ export function CategoryView({
         </ol>
       </section>
       ) : null}
+
+      {showEducation ? <HubExtras path={page.path} /> : null}
 
       {showEducation ? <FaqSection faqs={page.faqs} /> : null}
 

@@ -60,6 +60,7 @@ function SearchBox__impl({
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchHit[]>([]);
   const [debouncing, setDebouncing] = useState(false);
+  const [widened, setWidened] = useState(false);
   const [pending, startTransition] = useTransition();
   const path = scope.path;
   const category = scope.category;
@@ -80,8 +81,15 @@ function SearchBox__impl({
     const handle = window.setTimeout(() => {
       startTransition(() => {
         void searchFaces(trimmed, { path, category, tags, collection })
-          .then((hits) => {
+          .then(async (hits) => {
+            // Nothing on this page: fall back to the whole catalog instead of a dead end.
+            let wide = false;
+            if (hits.length === 0 && (category || tags || collection)) {
+              hits = await searchFaces(trimmed, { path: "/" });
+              wide = hits.length > 0;
+            }
             if (!cancelled) {
+              setWidened(wide);
               setResults(hits);
               setDebouncing(false);
             }
@@ -136,7 +144,11 @@ function SearchBox__impl({
           {statusText}
         </p>
       ) : null}
-      {scopedSearch && trimmed.length >= 2 ? (
+      {scopedSearch && widened && trimmed.length >= 2 && !(pending || debouncing) ? (
+        <p className={cn("type-meta", isHeader ? "mt-1 px-1" : "mt-1")}>
+          No matches on this page, so these results come from all faces.
+        </p>
+      ) : scopedSearch && trimmed.length >= 2 ? (
         <p className={cn("type-meta", isHeader ? "mt-1 px-1" : "mt-1")}>
           Results are limited to this page.{" "}
           <Link href="/" className="link-in-prose">
@@ -147,7 +159,7 @@ function SearchBox__impl({
       <div className={cn("min-w-0", isHeader ? "mt-3" : "mt-4")}>
         <SearchKaomojiGrid
           items={results as GridItem[]}
-          empty={pending ? "Searching..." : "No faces match that search."}
+          empty={pending || debouncing ? "Searching..." : "No faces match that search."}
         />
       </div>
     </>
