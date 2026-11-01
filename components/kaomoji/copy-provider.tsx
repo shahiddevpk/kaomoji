@@ -181,7 +181,10 @@ function copyFace(item: CopiedFace, _control?: Element | null) {
 
 function faceFromElement(el: Element): CopiedFace | null {
   const id = el.getAttribute("data-copy-id");
-  const name = el.getAttribute("data-copy-name");
+  const name =
+    el.getAttribute("data-copy-name") ??
+    el.closest("[data-n]")?.getAttribute("data-n") ??
+    null;
   if (!id || !name) return null;
   let face = el.getAttribute("data-copy-face");
   if (face === null || face === "") {

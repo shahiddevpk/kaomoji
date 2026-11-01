@@ -1256,3 +1256,8 @@ button.border-border, a.border-border { border-color: var(--control-border); }
 .kaomoji-grid--compact .kaomoji-face { font-size: 1.1875rem; padding-inline: 0.25rem; }
 .kaomoji-grid--compact .kaomoji-cell--wide .kaomoji-face { font-size: 1.0625rem; }
 @media (min-width: 640px) { .kaomoji-card .kaomoji-face:not(.kaomoji-face--tall) { font-size: 1.25rem; } }
+
+/* Footer link: same rules as the former utility string, one short class in HTML (83 links/page). */
+@utility footer-link {
+  @apply inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring;
+}

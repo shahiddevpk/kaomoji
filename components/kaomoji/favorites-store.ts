@@ -60,9 +60,8 @@ function isFavorite(face: string): boolean {
 /** Reflect saved state on every star currently in the page. */
 export function syncStarButtons() {
   if (typeof document === "undefined") return;
-  document.querySelectorAll<HTMLElement>("[data-fav-face]").forEach((node) => {
-    const face = node.getAttribute("data-fav-face") ?? "";
-    const name = node.getAttribute("data-fav-name") ?? face;
+  document.querySelectorAll<HTMLElement>("[data-fav-id]").forEach((node) => {
+    const { face, name } = favData(node);
     const on = isFavorite(face);
     node.setAttribute("aria-pressed", on ? "true" : "false");
     node.setAttribute("aria-label", on ? `Remove ${name} from favorites` : `Add ${name} to favorites`);
@@ -84,15 +83,28 @@ export function toggleFavorite(item: FavoriteFace) {
   syncStarButtons();
 }
 
+/** Face/name live on the button (legacy) or on the parent card (lean grid markup). */
+function favData(node: Element): { face: string; name: string } {
+  const card = node.closest(".kaomoji-card, li, article");
+  const face =
+    node.getAttribute("data-fav-face") ??
+    card?.querySelector(".kaomoji-face")?.textContent ??
+    "";
+  const name =
+    node.getAttribute("data-fav-name") ??
+    node.closest("[data-n]")?.getAttribute("data-n") ??
+    face;
+  return { face, name };
+}
+
 function onClick(event: MouseEvent) {
   const target = event.target;
   if (!(target instanceof Element)) return;
-  const control = target.closest("[data-fav-face]");
+  const control = target.closest("[data-fav-id]");
   if (!control) return;
   event.preventDefault();
-  const face = control.getAttribute("data-fav-face");
+  const { face, name } = favData(control);
   const id = control.getAttribute("data-fav-id");
-  const name = control.getAttribute("data-fav-name");
   if (!face || !id || !name) return;
   toggleFavorite({ id, face, name });
 }

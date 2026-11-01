@@ -36,6 +36,7 @@ export function KaomojiGridCore({
         return (
           <li key={item.id} className={item.wide ? "kaomoji-cell--wide" : undefined}>
             <article
+              data-n={item.name}
               className={
                 tall ? "kaomoji-card kaomoji-card--tall" : "kaomoji-card"
               }
@@ -58,8 +59,7 @@ export function KaomojiGridCore({
                 aria-pressed="false"
                 aria-label={`Add ${item.name} to favorites`}
                 data-fav-id={item.id}
-                data-fav-name={item.name}
-                data-fav-face={item.face}
+                /* name/face read from parent card (data-n + .kaomoji-face) to keep HTML lean */
               >
                 ☆
               </button>
@@ -69,7 +69,6 @@ export function KaomojiGridCore({
                 aria-label={copyAriaLabel(item.face, item.name)}
                 aria-describedby={faceId}
                 data-copy-id={item.id}
-                data-copy-name={item.name}
                 /* face read from .kaomoji-face sibling (copy-provider fallback) to keep HTML lean */
               >
                 Copy

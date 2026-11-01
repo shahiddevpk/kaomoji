@@ -9,7 +9,7 @@ function anchorText(heading: string): string {
 }
 
 const linkClass =
-  "inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring";
+  "footer-link";
 
 function groupPages(group: NavGroup): SitePage[] {
   return group.paths
