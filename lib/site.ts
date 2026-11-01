@@ -3302,7 +3302,7 @@ export const pages: SitePage[] = [
     description:
       "Contact Paste Kaomoji: email hello@pastekaomoji.com for face suggestions, corrections, display issues, or rights requests. No contact form.",
     intro:
-      "Send corrections, face suggestions, or site questions by email. There is no account system and no contact form in this release.",
+      "Send corrections, face suggestions, or site questions by email. There is no account system and no contact form.",
     group: "trust",
     related: ["/about", "/privacy"],
   },
