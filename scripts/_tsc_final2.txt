@@ -1,0 +1,3 @@
+﻿lib/site.ts(616,79): error TS1005: ',' expected.
+lib/site.ts(616,83): error TS1127: Invalid character.
+lib/site.ts(616,87): error TS1005: ':' expected.

@@ -1,12 +1,2 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-/** Chrome-only islands (not face HTML). Faces stay in SSR KaomojiGrid. */
-export const LazyRecentlyCopied = dynamic(
-  () =>
-    import("@/components/kaomoji/recently-copied").then(
-      (m) => m.RecentlyCopied,
-    ),
-  { ssr: false },
-);
+/** RecentlyCopied is an island: SSR renders nothing until localStorage has faces, then hydrates. */
+export { RecentlyCopied as LazyRecentlyCopied } from "@/components/kaomoji/recently-copied";

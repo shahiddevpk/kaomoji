@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { useState } from "react";
 import { copyAriaLabel } from "@/lib/utils";
@@ -9,7 +10,7 @@ type Face = { id: string; face: string; name: string };
  * "Random face" picker (like competitors' gacha). The picked face renders as a
  * normal copy chip, so the document-level copy delegation handles the click.
  */
-export function RandomFace({ faces }: { faces: Face[] }) {
+function RandomFace__impl({ faces }: { faces: Face[] }) {
   const [pick, setPick] = useState<Face | null>(null);
 
   function roll() {
@@ -46,3 +47,6 @@ export function RandomFace({ faces }: { faces: Face[] }) {
     </div>
   );
 }
+
+export { RandomFace__impl };
+export const RandomFace = island("kaomoji/random-face#RandomFace", RandomFace__impl);

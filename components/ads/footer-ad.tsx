@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -16,7 +17,7 @@ const AD_FREE_PATHS = ["/about/", "/contact/", "/privacy/", "/terms/", "/disclai
  * clear of the copy grids and of the footer navigation so taps cannot land on
  * it by accident. Renders nothing until ADSENSE_FOOTER_SLOT is set.
  */
-export function FooterAd() {
+function FooterAd__impl() {
   const pathname = usePathname() ?? "/";
   const pushed = useRef(false);
   const adFree = AD_FREE_PATHS.some((path) => pathname.startsWith(path));
@@ -50,3 +51,6 @@ export function FooterAd() {
     </aside>
   );
 }
+
+export { FooterAd__impl };
+export const FooterAd = island("ads/footer-ad#FooterAd", FooterAd__impl);

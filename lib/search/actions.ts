@@ -1,5 +1,4 @@
-"use server";
-
+/** Face search. Loaded lazily in the browser by SearchBox. */
 import { searchCollection, type CollectionKey } from "@/data/collections";
 import type { SearchDoc } from "@/data/index";
 import { searchIndexed } from "@/lib/search/index-engine";

@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import Link from "@/components/link";
@@ -34,7 +35,7 @@ function ctaHref(pathname: string, pages: NavPage[]): string {
  * Fixed top chrome: nav stays visible on scroll; spacer reserves height so
  * main content never slides under the bar (including when search results open).
  */
-export function SiteHeader({
+function SiteHeader__impl({
   seasonalPath,
   navPages,
 }: {
@@ -171,3 +172,6 @@ export function SiteHeader({
     </>
   );
 }
+
+export { SiteHeader__impl };
+export const SiteHeader = island("layout/site-header#SiteHeader", SiteHeader__impl);

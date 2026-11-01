@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { useMemo, useState } from "react";
 import { CopyButton } from "@/components/kaomoji/copy-button";
@@ -66,8 +67,8 @@ function ChipRow({
               onClick={() => onChange(opt)}
               className={
                 active
-                  ? "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-primary bg-primary px-3 type-button font-semibold text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-                  : "inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-card px-3 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                  ? "gen-opt inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-primary bg-primary px-3 type-button font-semibold text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                  : "gen-opt inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-card px-3 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
               }
               aria-pressed={active}
             >
@@ -80,7 +81,7 @@ function ChipRow({
   );
 }
 
-export function KaomojiGenerator() {
+function KaomojiGenerator__impl() {
   const [left, setLeft] = useState("╰");
   const [eyeL, setEyeL] = useState("◕");
   const [mouth, setMouth] = useState("‿");
@@ -130,14 +131,14 @@ export function KaomojiGenerator() {
           <button
             type="button"
             onClick={randomize}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            className="gen-preset inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
           >
             Randomize
           </button>
           <button
             type="button"
             onClick={reset}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+            className="gen-preset inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
           >
             Reset
           </button>
@@ -160,7 +161,7 @@ export function KaomojiGenerator() {
                 setExtra(preset.extra);
                 setRawCore(Boolean(preset.rawCore));
               }}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+              className="gen-preset inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-card px-4 type-button transition-colors hover:border-primary hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
             >
               {preset.name}
             </button>
@@ -176,3 +177,6 @@ export function KaomojiGenerator() {
     </div>
   );
 }
+
+export { KaomojiGenerator__impl };
+export const KaomojiGenerator = island("kaomoji/kaomoji-generator#KaomojiGenerator", KaomojiGenerator__impl);

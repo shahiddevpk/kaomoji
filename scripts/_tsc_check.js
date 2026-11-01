@@ -1,0 +1,1 @@
+const {execSync}=require('child_process'); try { const o=execSync('npx tsc --noEmit',{encoding:'utf8',stdio:['pipe','pipe','pipe']}); console.log('TSC_OK'); if(o) console.log(o); } catch(e){ console.log('TSC_FAIL'); console.log(e.stdout||''); console.log(e.stderr||''); process.exit(1);} 

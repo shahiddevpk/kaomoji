@@ -34,6 +34,7 @@ const TILE_FACE: Record<string, string> = {
   "/roblox-kaomoji": "(^_^)",
   "/art-kaomoji": "ʕ•ᴥ•ʔ",
   "/kaomoji-app": "(◕‿◕)",
+  "/cute-kaomoji": "(◕‿◕✿)",
 };
 
 /** Extract decorative face from titleSegment by stripping the heading prefix. */

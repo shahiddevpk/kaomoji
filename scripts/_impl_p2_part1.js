@@ -1,0 +1,383 @@
+﻿const fs = require("fs");
+const path = require("path");
+
+function write(p, content) {
+  fs.mkdirSync(path.dirname(p), { recursive: true });
+  fs.writeFileSync(p, content, "utf8");
+  console.log("wrote", p);
+}
+
+const PAGE_TEMPLATE = (slug) => `import { CategoryView } from "@/components/kaomoji/category-view";
+import { pageMetadata } from "@/lib/seo";
+import { getPage } from "@/lib/site";
+
+const page = getPage("/${slug}");
+
+export const metadata = pageMetadata(page);
+
+export default function Page() {
+  return <CategoryView page={page} />;
+}
+`;
+
+const PAG_TEMPLATE = (slug) => `import { createPaginatedCategoryRoute } from "@/lib/paginated-category-route";
+
+const route = createPaginatedCategoryRoute("${slug}");
+
+export const generateStaticParams = route.generateStaticParams;
+export const generateMetadata = route.generateMetadata;
+export default route.Page;
+`;
+
+const SLUGS = [
+  "bunny-kaomoji",
+  "dog-kaomoji",
+  "shocked-kaomoji",
+  "smug-kaomoji",
+  "sleepy-kaomoji",
+  "confused-kaomoji",
+  "bear-kaomoji",
+];
+
+const PAGES_BLOCK = `
+  {
+    path: "/bunny-kaomoji",
+    label: "Bunny",
+    heading: "Bunny Kaomoji",
+    titleSegment: "Bunny Kaomoji Copy & Paste (\u2022\u3145\u2022)",
+    description:
+      "Bunny kaomoji with rabbit ears and soft animal faces to copy. Tap once and paste cute rabbit text faces into any chat.",
+    intro:
+      "This page is for bunny and rabbit-style text faces, not a general cute dump. Use it when you want ear poses and animal softness; open the rabbit chip for that angle inside the same grid. Cute hubs stay human soft-smile vibes; bear and dog own their own animal looks.",
+    group: "browse",
+    inHeader: true,
+    tags: ["bunny", "rabbit"],
+    howTo: [
+      "Pick a bunny face with the ear style you like.",
+      "Tap Copy so the full character string is on your clipboard.",
+      "Paste into chat and add a short line if the face alone needs context.",
+    ],
+    definition:
+      "These faces lean rabbit: ears, soft animal eyes, and gentle poses made for playful chats. Choose them when you want an animal read, not only a human cute smile.",
+    faqs: [
+      {
+        question: "What counts as a bunny kaomoji?",
+        answer:
+          "Faces that read as a rabbit: ear marks, round soft eyes, or classic bunny mouth shapes built from text characters.",
+      },
+      {
+        question: "Is rabbit different from bunny on this site?",
+        answer:
+          "No separate rabbit page. Rabbit is a chip on this bunny hub so one grid covers both wordings without thin duplicate URLs.",
+      },
+      {
+        question: "How is bunny different from cute kaomoji?",
+        answer:
+          "Cute is mostly human soft smiles. Bunny is animal-shaped, with ears and rabbit cues as the main point.",
+      },
+      {
+        question: "Will bunny faces paste on mobile?",
+        answer:
+          "Yes for most apps. If a rare symbol shows as a box, pick a simpler bunny from the same grid.",
+      },
+    ],
+    related: [
+      "/dog-kaomoji",
+      "/bear-kaomoji",
+      "/cat-kaomoji",
+      "/cute-kaomoji",
+    ],
+  },
+  {
+    path: "/dog-kaomoji",
+    label: "Dog",
+    heading: "Dog Kaomoji",
+    titleSegment: "Dog Kaomoji Copy & Paste (U\u30fbx\u30fbU)",
+    description:
+      "Dog kaomoji and puppy-style text faces ready to copy. Browse loyal, playful pup looks and paste them into any chat.",
+    intro:
+      "Built for dog and puppy text faces, not generic happy or cute humans. Grab a pup when you want pet energy; use the puppy chip inside this hub instead of a thin extra URL. Bear and bunny cover other animals; happy pages stay for human grins.",
+    group: "browse",
+    inHeader: true,
+    tags: ["dog", "puppy"],
+    howTo: [
+      "Scan for floppy-ear or snout styles that read as a dog.",
+      "Tap Copy to capture the full face.",
+      "Paste into your message, then tweak surrounding words to match the tone.",
+    ],
+    definition:
+      "Expect pup energy: soft ears, snout shapes, and loyal or playful poses. They are for animal charm, not a stand-in for happy or heart pages.",
+    faqs: [
+      {
+        question: "What makes a dog kaomoji different from a cute face?",
+        answer:
+          "Dog faces use pet cues like ears, snouts, or paw-like arms. Cute faces are usually human soft expressions without a clear animal shape.",
+      },
+      {
+        question: "Where do puppy faces live?",
+        answer:
+          "On this dog page via the puppy chip. There is no separate puppy URL, so searchers still land on one strong dog hub.",
+      },
+      {
+        question: "Are dog kaomoji only for pet talk?",
+        answer:
+          "No. People also send them for loyalty jokes, \\"good boy\\" teasing, or playful check-ins.",
+      },
+      {
+        question: "Can I use these in usernames?",
+        answer:
+          "Often, if the platform allows special characters. Test paste once before saving a bio or display name.",
+      },
+    ],
+    related: [
+      "/bunny-kaomoji",
+      "/bear-kaomoji",
+      "/cat-kaomoji",
+      "/cute-kaomoji",
+    ],
+  },
+  {
+    path: "/shocked-kaomoji",
+    label: "Shocked",
+    heading: "Shocked Kaomoji",
+    titleSegment: "Shocked Kaomoji Copy & Paste (\u00b0\u25a1\u00b0)",
+    description:
+      "Shocked kaomoji for wide-eyed surprise and sudden reactions. Copy stunned text faces and paste them when words feel too slow.",
+    intro:
+      "This hub owns shock and stun reactions: wide eyes, open mouths, and \\"wait, what\\" energy. Surprised sits as a chip here so you do not need a second thin page. Confused is for puzzled tilts; smug is knowing; cute and happy are warmer moods, not gasp faces.",
+    group: "browse",
+    inHeader: true,
+    tags: ["shocked", "surprised"],
+    howTo: [
+      "Choose a face whose eyes and mouth look stunned, not merely confused.",
+      "Tap Copy before you switch apps on mobile.",
+      "Paste into the chat right when the reaction lands.",
+    ],
+    definition:
+      "Wide eyes and open mouths carry the shock. Pick intensity to match the moment, from mild stun to full cartoon gasp.",
+    faqs: [
+      {
+        question: "When should I send a shocked kaomoji?",
+        answer:
+          "Use one for sudden news, plot twists, or playful overreactions when a plain \\"wow\\" feels flat.",
+      },
+      {
+        question: "Shocked vs surprised on Paste Kaomoji?",
+        answer:
+          "Same hub. Surprised is a chip on this shocked page so both wordings share one indexable grid.",
+      },
+      {
+        question: "How is shocked different from confused?",
+        answer:
+          "Shocked is a jolt. Confused is uncertainty or a head-tilt \\"I don\\'t get it\\" feel without the gasp.",
+      },
+      {
+        question: "Do big shocked faces break in SMS?",
+        answer:
+          "Usually not. If spacing looks odd, pick a shorter one-line shocked face from the grid.",
+      },
+    ],
+    related: [
+      "/confused-kaomoji",
+      "/smug-kaomoji",
+      "/sad-kaomoji",
+      "/crying-kaomoji",
+    ],
+  },
+  {
+    path: "/smug-kaomoji",
+    label: "Smug",
+    heading: "Smug Kaomoji",
+    titleSegment: "Smug Kaomoji Copy & Paste (\uffe3\u03c9\uffe3)",
+    description:
+      "Smug kaomoji for knowing smiles and playful swagger. Copy confident text faces when you want a teasing \\"told you so\\" vibe.",
+    intro:
+      "Smug is confidence with a wink: closed or half-lidded eyes, satisfied mouths, and light teasing energy. It is not happy cheer, not cute softness, and not shy blush. Use this grid when you want swagger without tipping into angry or mean.",
+    group: "browse",
+    inHeader: true,
+    tags: ["smug"],
+    howTo: [
+      "Pick a face that looks satisfied or teasing, not loudly joyful.",
+      "Tap Copy so every character comes along.",
+      "Paste and add a short line if the tease needs a softener.",
+    ],
+    definition:
+      "These lean into knowing smiles and light swagger. Use them for teasing confidence, not soft cute warmth or shy nerves.",
+    faqs: [
+      {
+        question: "What does a smug kaomoji signal?",
+        answer:
+          "Playful superiority or \\"I knew it\\" energy. In friendly chats it reads as teasing; in tense threads it can feel sharp, so match the room.",
+      },
+      {
+        question: "Smug vs happy kaomoji?",
+        answer:
+          "Happy is open and bright. Smug is cooler and self-satisfied, often with narrower eyes or a smirk shape.",
+      },
+      {
+        question: "Can smug faces seem rude?",
+        answer:
+          "They can. Soften with words, or switch to cute/happy if the chat is sensitive.",
+      },
+      {
+        question: "Are these good for memes and replies?",
+        answer:
+          "Yes. Short smug faces work well as one-tap reactions under a winning take or lucky outcome.",
+      },
+    ],
+    related: [
+      "/confused-kaomoji",
+      "/happy-kaomoji",
+      "/sleepy-kaomoji",
+      "/shy-kaomoji",
+    ],
+  },
+  {
+    path: "/sleepy-kaomoji",
+    label: "Sleepy",
+    heading: "Sleepy Kaomoji",
+    titleSegment: "Sleepy Kaomoji Copy & Paste (\uffe3\u03c1\uffe3)",
+    description:
+      "Sleepy kaomoji for tired eyes, yawns, and dozy chats. Copy drowsy text faces and paste them when you are running on empty.",
+    intro:
+      "Sleepy covers drowsy, yawning, and half-asleep faces. Tired is a chip on this page, not its own URL. This is low-energy mood, not sad, not shy blush, and not cute bounce. Reach for it when you mean \\"I\\'m fading,\\" not \\"I\\'m adorable.\\"",
+    group: "browse",
+    inHeader: true,
+    tags: ["sleepy", "tired"],
+    howTo: [
+      "Choose a face with closed or heavy eyes, z\\'s, or a yawn mouth.",
+      "Tap Copy while the string is still selected.",
+      "Paste into your goodnight or \\"brb sleeping\\" message.",
+    ],
+    definition:
+      "Heavy lids, yawns, and quiet doze poses define this set. Send them for low energy and rest, not for cute or affectionate moods.",
+    faqs: [
+      {
+        question: "Sleepy vs tired wording?",
+        answer:
+          "One page. Tired lives as a chip under sleepy so both searches share a single strong hub.",
+      },
+      {
+        question: "Can I use sleepy faces for boredom?",
+        answer:
+          "Sometimes, if the face reads checked-out. For true boredom without sleep cues, a milder neutral or confused face may fit better.",
+      },
+      {
+        question: "Will zzz characters paste everywhere?",
+        answer:
+          "Most chats keep them. If z\\'s vanish, pick a sleepy face that uses only eyes and mouth.",
+      },
+      {
+        question: "How is sleepy different from shy?",
+        answer:
+          "Shy is bashful and blushy. Sleepy is exhausted or dozy, with no need for social nerves.",
+      },
+    ],
+    related: [
+      "/confused-kaomoji",
+      "/sad-kaomoji",
+      "/shy-kaomoji",
+      "/smug-kaomoji",
+    ],
+  },
+  {
+    path: "/confused-kaomoji",
+    label: "Confused",
+    heading: "Confused Kaomoji",
+    titleSegment: "Confused Kaomoji Copy & Paste (\u30fb\u30fb\uff1f)",
+    description:
+      "Confused kaomoji for puzzled looks and \\"huh?\\" moments. Copy tilted text faces when you need a soft question without a long reply.",
+    intro:
+      "Confused owns uncertainty: tilted heads, question marks, and blank stares that mean \\"I don\\'t follow.\\" It is not shock (that is the shocked hub), not smug knowing, and not shy blush. Use it for clarifying beats and gentle bewilderment.",
+    group: "browse",
+    inHeader: true,
+    tags: ["confused"],
+    howTo: [
+      "Pick a face that looks puzzled rather than scared or angry.",
+      "Tap Copy to grab the full string.",
+      "Paste as a standalone reaction or before your clarifying question.",
+    ],
+    definition:
+      "Puzzled eyes, tilts, and soft question energy sit here. They mark uncertainty, not surprise gasps or shy blush.",
+    faqs: [
+      {
+        question: "When is confused better than shocked?",
+        answer:
+          "When you are unsure or lost, not startled. Shocked is a jolt; confused is \\"please explain.\\"",
+      },
+      {
+        question: "Do confused kaomoji work in work chats?",
+        answer:
+          "Mild ones can, as a polite \\"I\\'m not following.\\" Skip overly dramatic spirals in formal threads.",
+      },
+      {
+        question: "Can these replace asking a question?",
+        answer:
+          "They help as a tone marker, but a short written question still clears things up faster when stakes are high.",
+      },
+      {
+        question: "Confused vs smug?",
+        answer:
+          "Confused admits you do not know. Smug signals you do, with a tease.",
+      },
+    ],
+    related: [
+      "/shocked-kaomoji",
+      "/smug-kaomoji",
+      "/sleepy-kaomoji",
+      "/sad-kaomoji",
+    ],
+  },
+  {
+    path: "/bear-kaomoji",
+    label: "Bear",
+    heading: "Bear Kaomoji",
+    titleSegment: "Bear Kaomoji Copy & Paste \u0295\u2022\u1d25\u2022\u0294",
+    description:
+      "Bear kaomoji with soft animal faces ready to copy and paste. Browse teddy-style text bears for cozy, playful chats.",
+    intro:
+      "Bear faces are animal-first: round ears, snout marks, and teddy warmth. This is not the bunny ear set, not dog/puppy, and not a generic cute human smile page. Use bear when you want cozy animal energy; keep other animals on their own hubs.",
+    group: "browse",
+    inHeader: true,
+    tags: ["bear"],
+    howTo: [
+      "Select a bear with the roundness or snout style you like.",
+      "Tap Copy so ears and eyes stay intact.",
+      "Paste into chat; add a word or two if you want the bear to \\"say\\" something.",
+    ],
+    definition:
+      "Round ears and soft snouts give these their teddy read. Pick them for cozy animal charm, not as a duplicate of cute or heart hubs.",
+    faqs: [
+      {
+        question: "What defines a bear kaomoji?",
+        answer:
+          "Round bear-like ears, a centered snout or mouth, and a soft animal silhouette built from characters (classic examples look like \u0295\u2022\u1d25\u2022\u0294).",
+      },
+      {
+        question: "Bear vs bunny vs dog pages?",
+        answer:
+          "Each animal gets its own hub so grids stay intent-matched. Bear is teddy/cozy; bunny is rabbit ears; dog is pup energy.",
+      },
+      {
+        question: "Are bear faces only \\"cute\\"?",
+        answer:
+          "Many read cute, but the primary intent is the animal shape. Human cute smiles still belong on the cute page.",
+      },
+      {
+        question: "Can bear kaomoji look broken on old phones?",
+        answer:
+          "Rare symbols sometimes fail. If that happens, choose a simpler bear from the same list.",
+      },
+    ],
+    related: [
+      "/bunny-kaomoji",
+      "/dog-kaomoji",
+      "/cat-kaomoji",
+      "/cute-kaomoji",
+    ],
+  },
+`;
+
+// Fix apostrophe escaping - SitePage uses normal strings with \" for quotes.
+// The block above used \\' inside double-quoted strings which becomes \' in output - WRONG.
+// Rebuild carefully via JS objects instead.

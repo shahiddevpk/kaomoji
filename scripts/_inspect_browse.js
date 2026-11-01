@@ -1,0 +1,11 @@
+const fs = require("fs");
+const tiles = fs.readFileSync("components/kaomoji/category-tiles.tsx", "utf8");
+console.log(tiles);
+console.log("\n=== topLevelBrowsePages ===");
+const site = fs.readFileSync("lib/site.ts", "utf8");
+const m = site.match(/export function topLevelBrowsePages[\s\S]*?\n\}/);
+console.log(m && m[0]);
+console.log("\n=== paginated-category-route exports ===");
+console.log(fs.readFileSync("lib/paginated-category-route.tsx", "utf8").slice(0, 800));
+console.log("\n=== countByTags heart ===");
+const data = require("../data/index.ts");

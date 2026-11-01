@@ -1,0 +1,263 @@
+diff --git a/app/globals.css b/app/globals.css
+index 2662378..3c3ad4b 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -1,55 +1,56 @@
+ @import "tailwindcss";
+ 
+ /*
+-  PasteKaomoji ΓÇö "Ink & Violet" theme (2026-10 redesign, rev 2)
++  PasteKaomoji ΓÇö "Ink & Blue" theme (2026-10 redesign, rev 2)
+ 
+   Color theory: 60/30/10. Cool neutral canvas (--canvas) and white cards
+-  (--card) carry ~90% of the page; violet (--primary, white label AA) is
++  (--card) carry ~90% of the page; blue (--primary, white label AA) is
+   reserved for actions, active state and links, so it always means "tap".
+-  Amber (--highlight, violet's complement) is the single rare highlight:
+-  seasonal banner and saved stars. Mood hues never fill surfaces; they tint
++  Supporting hues (--highlight, mood tiles, logo blush) are lighter and
++  deeper blues, not pink or amber. Mood hues never fill surfaces; they tint
+   the face glyph on each mood tile (.mood-tile--*), darkened toward ink so
+-  they pass AA. Dark tokens switch on prefers-color-scheme.
++  they pass AA. Success, warning, and error stay their own status colors.
++  Dark tokens switch on prefers-color-scheme.
+ 
+   Typography roles (classes): .type-h1 .type-h2 .type-h3 .type-body
+   .type-button .type-label .type-meta .type-tag .kaomoji-face
+ */
+ 
+ :root {
+-  /* Ink & Violet ΓÇö 60/30/10: cool neutral canvas, white cards, violet only
+-     for actions and active state; amber (violet's complement) for the rare
+-     highlight; mood hues live in the faces, not the surfaces. */
+-  --primary: #7C3AED;
+-  --primary-hover: #6D28D9;
+-  --secondary: #F3F2F7;
+-  --accent: #7C3AED;
++  /* Ink & Blue ΓÇö 60/30/10: cool neutral canvas, white cards, blue only
++     for actions and active state. Highlight and mood tiles are other blues.
++     Status colors (success, warning, error) are separate. */
++  --primary: #1D4ED8;
++  --primary-hover: #1E40AF;
++  --secondary: #F1F5F9;
++  --accent: #1D4ED8;
+   --accent-foreground: #FFFFFF;
+-  --pink: #DB2777;
+-  --highlight: #D97706;
++  --pink: #0EA5E9;
++  --highlight: #0284C7;
+   --background: #FFFFFF;
+   --bg: #FFFFFF;
+   --surface: #FFFFFF;
+   --card: #FFFFFF;
+-  --foreground: #17131F;
+-  --muted: #5C5768;
+-  --placeholder: #77728A;
+-  --border: #E4E1EC;
+-  --canvas: #F7F6FA;
+-  --link: #6D28D9;
+-  --link-hover: #5B21B6;
+-  --hover: #F4F1FB;
+-  --active: #ECE6FB;
+-  --focus-ring: #7C3AED;
++  --foreground: #151A24;
++  --muted: #566074;
++  --placeholder: #6E778A;
++  --border: #E2E6EE;
++  --canvas: #F6F7FA;
++  --link: #1D4ED8;
++  --link-hover: #1E3A8A;
++  --hover: #EFF6FF;
++  --active: #DBEAFE;
++  --focus-ring: #2563EB;
+   --success: #166534;
+   --success-foreground: #F0FDF4;
+   --warning: #A16207;
+   --warning-foreground: #FFFBEB;
+   --error: #B91C1C;
+   --error-foreground: #FEF2F2;
+-  --disabled: #A7A2B5;
+-  --disabled-border: #DCD8E5;
+-  --hero-from: #F1ECFC;
+-  --hero-to: #F1ECFC;
++  --disabled: #94A3B8;
++  --disabled-border: #E2E8F0;
++  --hero-from: #EFF6FF;
++  --hero-to: #EFF6FF;
+ 
+   --space-xs: 0.25rem;
+   --space-sm: 0.5rem;
+@@ -62,8 +63,8 @@
+   --radius-lg: 1.25rem;
+   --radius-full: 9999px;
+ 
+-  --shadow-sm: 0 1px 2px rgb(30 21 48 / 0.06);
+-  --shadow-md: 0 8px 24px rgb(76 29 149 / 0.08);
++  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
++  --shadow-md: 0 8px 24px rgb(29 78 216 / 0.08);
+ 
+   --control-h: 2.75rem;
+   /* Updated live by SiteHeader ResizeObserver. The fallback must equal the real
+@@ -130,27 +131,27 @@
+ 
+ @media (prefers-color-scheme: dark) {
+   :root {
+-    --secondary: #201D29;
+-    --pink: #F472B6;
+-    --highlight: #FBBF24;
+-    --background: #17151E;
+-    --bg: #17151E;
+-    --surface: #17151E;
+-    --card: #17151E;
+-    --foreground: #EEEBF5;
+-    --muted: #ABA5BA;
+-    --placeholder: #8A8499;
+-    --border: #2C2838;
+-    --canvas: #0F0E14;
+-    --link: #C4B5FD;
+-    --link-hover: #DDD6FE;
+-    --hover: #221E2E;
+-    --active: #2A2342;
+-    --focus-ring: #A78BFA;
+-    --disabled: #6B6680;
+-    --disabled-border: #2C2838;
+-    --hero-from: #1C1830;
+-    --hero-to: #1C1830;
++    --secondary: #1A2030;
++    --pink: #7DD3FC;
++    --highlight: #38BDF8;
++    --background: #151922;
++    --bg: #151922;
++    --surface: #151922;
++    --card: #151922;
++    --foreground: #E8EEF6;
++    --muted: #A8B0C0;
++    --placeholder: #8892A6;
++    --border: #2A3142;
++    --canvas: #0E1218;
++    --link: #93C5FD;
++    --link-hover: #BFDBFE;
++    --hover: #1C2433;
++    --active: #1E2A44;
++    --focus-ring: #60A5FA;
++    --disabled: #667084;
++    --disabled-border: #2A3142;
++    --hero-from: #161E30;
++    --hero-to: #161E30;
+     --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+     --shadow-md: 0 8px 24px rgb(0 0 0 / 0.35);
+   }
+@@ -633,15 +634,15 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
+   box-shadow: var(--shadow-md);
+   transform: translateY(-2px);
+ }
+-.mood-tile--warm { --tile-hue: #B45309; }
+-.mood-tile--rose { --tile-hue: #F43F5E; }
+-.mood-tile--love { --tile-hue: #D946EF; }
+-.mood-tile--blue { --tile-hue: #0369A1; }
+-.mood-tile--red { --tile-hue: #EF4444; }
+-.mood-tile--green { --tile-hue: #047857; }
+-.mood-tile--amber { --tile-hue: #C2410C; }
+-.mood-tile--purple { --tile-hue: #8B5CF6; }
+-.mood-tile--teal { --tile-hue: #0F766E; }
++.mood-tile--warm { --tile-hue: #0284C7; }
++.mood-tile--rose { --tile-hue: #0EA5E9; }
++.mood-tile--love { --tile-hue: #1D4ED8; }
++.mood-tile--blue { --tile-hue: #075985; }
++.mood-tile--red { --tile-hue: #1E3A8A; }
++.mood-tile--green { --tile-hue: #0F766E; }
++.mood-tile--amber { --tile-hue: #0891B2; }
++.mood-tile--purple { --tile-hue: #2563EB; }
++.mood-tile--teal { --tile-hue: #155E75; }
+ 
+ .nav-scroll-arrow {
+   border-color: var(--border);
+diff --git a/app/icon.svg b/app/icon.svg
+index dad26cb..b7460a6 100644
+--- a/app/icon.svg
++++ b/app/icon.svg
+@@ -1,4 +1,4 @@
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+-  <rect width="32" height="32" rx="8" fill="#7C3AED"/>
++  <rect width="32" height="32" rx="8" fill="#1D4ED8"/>
+   <text x="16" y="20" text-anchor="middle" font-size="11" fill="#FFFFFF" font-family="ui-monospace, monospace">^_^</text>
+ </svg>
+\ No newline at end of file
+diff --git a/components/layout/logo.tsx b/components/layout/logo.tsx
+index ec4d16c..38899d9 100644
+--- a/components/layout/logo.tsx
++++ b/components/layout/logo.tsx
+@@ -1,7 +1,7 @@
+ import Link from "next/link";
+ import { cn } from "@/lib/utils";
+ 
+-/** Brand mark: soft violet tile with a tiny kaomoji face (site primary #7C3AED). */
++/** Brand mark: blue tile with a tiny kaomoji face (site primary #1D4ED8). */
+ export function LogoMark({ className }: { className?: string }) {
+   return (
+     <svg
+@@ -11,18 +11,18 @@ export function LogoMark({ className }: { className?: string }) {
+       xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true"
+     >
+-      <rect width="40" height="40" rx="12" fill="#7C3AED" />
+-      <rect x="4" y="4" width="32" height="32" rx="9" fill="#F5F0FF" />
+-      <circle cx="14.5" cy="17" r="2.25" fill="#7C3AED" />
+-      <circle cx="25.5" cy="17" r="2.25" fill="#7C3AED" />
++      <rect width="40" height="40" rx="12" fill="#1D4ED8" />
++      <rect x="4" y="4" width="32" height="32" rx="9" fill="#EFF6FF" />
++      <circle cx="14.5" cy="17" r="2.25" fill="#1D4ED8" />
++      <circle cx="25.5" cy="17" r="2.25" fill="#1D4ED8" />
+       <path
+         d="M14 24.5c1.6 2.2 4 3.3 6 3.3s4.4-1.1 6-3.3"
+-        stroke="#7C3AED"
++        stroke="#1D4ED8"
+         strokeWidth="2"
+         strokeLinecap="round"
+       />
+-      <circle cx="10.5" cy="21.5" r="1.35" fill="#F9A8D4" />
+-      <circle cx="29.5" cy="21.5" r="1.35" fill="#F9A8D4" />
++      <circle cx="10.5" cy="21.5" r="1.35" fill="#60A5FA" />
++      <circle cx="29.5" cy="21.5" r="1.35" fill="#60A5FA" />
+     </svg>
+   );
+ }
+diff --git a/extension/popup.css b/extension/popup.css
+index aacf2d6..89223bb 100644
+--- a/extension/popup.css
++++ b/extension/popup.css
+@@ -1,10 +1,10 @@
+ :root {
+-  --bg: #fbf9ff; --card: #ffffff; --ink: #1e1530; --muted: #554c69;
+-  --line: #e7e0f5; --accent: #7c3aed; --accent-ink: #6d28d9; --soft: #f5f0ff;
++  --bg: #f8fafc; --card: #ffffff; --ink: #151a24; --muted: #566074;
++  --line: #e2e6ee; --accent: #1d4ed8; --accent-ink: #1e40af; --soft: #eff6ff;
+   color-scheme: light;
+ }
+ @media (prefers-color-scheme: dark) {
+-  :root { --bg: #0e0a17; --card: #17112a; --ink: #f3effc; --muted: #b9b0cc; --line: #30274a; --accent-ink: #c4b5fd; --soft: #221a3a; color-scheme: dark; }
++  :root { --bg: #0e1218; --card: #151922; --ink: #e8eef6; --muted: #a8b0c0; --line: #2a3142; --accent-ink: #93c5fd; --soft: #1e2a44; color-scheme: dark; }
+ }
+ * { box-sizing: border-box; }
+ body { margin: 0; width: 360px; background: var(--bg); color: var(--ink); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }
+diff --git a/public/logo.svg b/public/logo.svg
+index 3b5b599..acb4948 100644
+--- a/public/logo.svg
++++ b/public/logo.svg
+@@ -1,9 +1,9 @@
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+-  <rect width="40" height="40" rx="12" fill="#7C3AED"/>
+-  <rect x="4" y="4" width="32" height="32" rx="9" fill="#F5F0FF"/>
+-  <circle cx="14.5" cy="17" r="2.25" fill="#7C3AED"/>
+-  <circle cx="25.5" cy="17" r="2.25" fill="#7C3AED"/>
+-  <path d="M14 24.5c1.6 2.2 4 3.3 6 3.3s4.4-1.1 6-3.3" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+-  <circle cx="10.5" cy="21.5" r="1.35" fill="#F9A8D4"/>
+-  <circle cx="29.5" cy="21.5" r="1.35" fill="#F9A8D4"/>
++  <rect width="40" height="40" rx="12" fill="#1D4ED8"/>
++  <rect x="4" y="4" width="32" height="32" rx="9" fill="#EFF6FF"/>
++  <circle cx="14.5" cy="17" r="2.25" fill="#1D4ED8"/>
++  <circle cx="25.5" cy="17" r="2.25" fill="#1D4ED8"/>
++  <path d="M14 24.5c1.6 2.2 4 3.3 6 3.3s4.4-1.1 6-3.3" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"/>
++  <circle cx="10.5" cy="21.5" r="1.35" fill="#60A5FA"/>
++  <circle cx="29.5" cy="21.5" r="1.35" fill="#60A5FA"/>
+ </svg>

@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import Link from "@/components/link";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -10,7 +11,7 @@ import { moodChipClass } from "@/lib/mood-colors";
  * Category strip starts at the beginning (Cute/Happy visible).
  * Scroll arrows + edge fades improve discoverability; all links stay in the HTML.
  */
-export function HeaderNav({
+function HeaderNav__impl({
   links,
   onNavigate,
 }: {
@@ -115,3 +116,6 @@ export function HeaderNav({
     </nav>
   );
 }
+
+export { HeaderNav__impl };
+export const HeaderNav = island("layout/header-nav#HeaderNav", HeaderNav__impl);

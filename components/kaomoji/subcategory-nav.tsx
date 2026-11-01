@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import Link from "@/components/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +10,7 @@ import { cn } from "@/lib/utils";
  * Mood chips under angry (and similar parents): All + siblings.
  * Mirrors competitor mood-group labels without thin duplicate pages.
  */
-export function SubcategoryNav({
+function SubcategoryNav__impl({
   items,
 }: {
   /** All + sibling chips, built on the server by subcategoryNavItems(). */
@@ -50,3 +51,5 @@ export function SubcategoryNav({
     </nav>
   );
 }
+export { SubcategoryNav__impl };
+export const SubcategoryNav = island("kaomoji/subcategory-nav#SubcategoryNav", SubcategoryNav__impl);

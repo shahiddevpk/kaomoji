@@ -1,0 +1,47 @@
+export type SitePage = {
+  path: string;
+  label: string;
+  /** Visible H1 - matches primary intent, not a shared template. */
+  heading: string;
+  /**
+   * Document title segment before `| Paste Kaomoji`.
+   * Hub uses a full absolute title (includes brand) instead.
+   */
+  titleSegment: string;
+  description: string;
+  intro: string;
+  group: PageGroup;
+  inHeader: boolean;
+  /** Category key for primary grid filter. Omitted pages show popular or full mix. */
+  category?: string;
+  /**
+   * Tag filter (ANY match). Use instead of category for mood/tag browse pages.
+   * A page uses either category or tags, not both.
+   */
+  tags?: string[];
+  /** When true, also include faces whose decoded face contains a real newline. */
+  includeNewlineFaces?: boolean;
+  /** Parent browse path for nested subcategory IA (breadcrumbs + chips). */
+  parentPath?: string;
+  /** Optional robots override; omit for index,follow. Pagination n>=2 uses noindex in pageMetadata. */
+  robots?: { index?: boolean; follow?: boolean };
+  /** Short how-to / explainer bullets under the grid intro (unique per page). */
+  howTo?: string[];
+  /** Optional FAQ pairs for FAQPage JSON-LD + on-page FAQ section (page 1 only). */
+  faqs?: { question: string; answer: string }[];
+  /** Short unique "what is…" block when set. */
+  definition?: string;
+  /** Extra educational paragraph(s); multiline with \n\n. */
+  learnMore?: string;
+  related: string[];
+};
+
+export const pages: SitePage[] = [
+  {
+    path: "/",
+    label: "Home",
+    heading: "Kaomoji Copy and Paste Library",
+    titleSegment: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    description: siteConfig.description,
+    intro:
+      "Browse kaomoji and text faces by mood, then one-tap copy. Start from category tiles when you are exploring; ope

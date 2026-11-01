@@ -1,0 +1,19 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { CategoryView } from "@/components/kaomoji/category-view";
+import { buildPageStaticParamsFromMeta, PAGINATED_SLUGS } from "@/lib/category-pagination";
+import { pageMetadata } from "@/lib/seo";
+import { getPage } from "@/lib/site";
+
+export function getStaticPaths() {
+  return Object.entries(PAGINATED_SLUGS).flatMap(([slug, meta]) =>
+    buildPageStaticParamsFromMeta(meta)
+      .filter(({ n }) => Number(n) > 1)
+      .map(({ n }) => ({ params: { slug, n } })),
+  );
+}
+const { slug, n } = Astro.params;
+const page = getPage(PAGINATED_SLUGS[slug!].path);
+const num = Number(n);
+---
+<Base meta={pageMetadata(page, { pageNumber: num })}><CategoryView page={page} pageNumber={num} /></Base>

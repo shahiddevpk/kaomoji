@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
@@ -31,7 +32,7 @@ function FaceChip({ id, face, name, label }: { id: string; face: string; name: s
 }
 
 /** Personal strips: Favorites (starred) and Recently copied. Client-only. */
-export function RecentlyCopied() {
+function RecentlyCopied__impl() {
   const { recent } = useCopy();
   const favorites = useSyncExternalStore(subscribeFavorites, getFavorites, getServerFavorites);
   const pathname = usePathname();
@@ -86,3 +87,6 @@ export function RecentlyCopied() {
     </div>
   );
 }
+
+export { RecentlyCopied__impl };
+export const RecentlyCopied = island("kaomoji/recently-copied#RecentlyCopied", RecentlyCopied__impl);

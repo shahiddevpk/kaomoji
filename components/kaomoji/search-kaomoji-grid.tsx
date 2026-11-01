@@ -1,9 +1,10 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { KaomojiGridCore, type GridItem } from "@/components/kaomoji/kaomoji-grid-core";
 
 /** Client chunk for search results only (main grids stay server-rendered). */
-export function SearchKaomojiGrid({
+function SearchKaomojiGrid__impl({
   items,
   empty,
 }: {
@@ -12,3 +13,6 @@ export function SearchKaomojiGrid({
 }) {
   return <KaomojiGridCore items={items} empty={empty} />;
 }
+
+export { SearchKaomojiGrid__impl };
+export const SearchKaomojiGrid = island("kaomoji/search-kaomoji-grid#SearchKaomojiGrid", SearchKaomojiGrid__impl);

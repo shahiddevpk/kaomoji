@@ -1,0 +1,42 @@
+---
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
+import "../styles.css";
+import type { Metadata } from "next";
+import { setServerPathname } from "next/navigation";
+import { buildHead } from "@/lib/head";
+import { AdSenseScript } from "@/components/ads/adsense-script";
+import { FooterAd } from "@/components/ads/footer-ad";
+import { currentSeason } from "@/components/kaomoji/seasonal-banner";
+import { Footer } from "@/components/layout/footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { JsonLd } from "@/components/layout/json-ld";
+import { websiteJsonLd } from "@/lib/seo";
+import { navPages } from "@/lib/site";
+
+interface Props { meta?: Metadata }
+const { meta } = Astro.props;
+setServerPathname(Astro.url.pathname);
+const { title, tags } = buildHead(meta);
+---
+<!doctype html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {tags.map((t) => (t.tag === "meta" ? <meta {...t.attrs} /> : <link {...t.attrs} />))}
+    <AdSenseScript />
+  </head>
+  <body class="flex min-h-full flex-col">
+    <JsonLd data={websiteJsonLd()} />
+    <a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-foreground">Skip to content</a>
+    <SiteHeader seasonalPath={currentSeason()?.href.replace(/\/$/, "")} navPages={navPages()} />
+    <main id="content" class="relative z-0 flex-1" role="main">
+      <slot />
+    </main>
+    <FooterAd />
+    <Footer />
+    <script>import "../client/islands.ts";</script>
+  </body>
+</html>

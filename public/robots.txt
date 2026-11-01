@@ -1,0 +1,33 @@
+# Google + Bing crawlers may crawl the site; every other bot is disallowed.
+# AdSense verification requires Google-Display-Ads-Bot (see AdSense help 10532 / 99376).
+
+# AdSense verification + ads crawlers — must reach all public content
+User-Agent: Mediapartners-Google
+User-Agent: Google-Display-Ads-Bot
+User-Agent: AdsBot-Google
+User-Agent: AdsBot-Google-Mobile
+Allow: /
+
+# Search crawlers
+User-Agent: Googlebot
+User-Agent: Googlebot-Image
+User-Agent: Googlebot-Video
+User-Agent: Googlebot-News
+User-Agent: Storebot-Google
+User-Agent: Google-InspectionTool
+User-Agent: GoogleOther
+User-Agent: Google-Extended
+User-Agent: Bingbot
+Allow: /
+Disallow: /search
+Disallow: /*?*q=
+Disallow: /*?*tag=
+Disallow: /*?*filter=
+Disallow: /*?*mood=
+Disallow: /api/
+
+# Everyone else
+User-Agent: *
+Disallow: /
+
+Sitemap: https://pastekaomoji.com/sitemap.xml

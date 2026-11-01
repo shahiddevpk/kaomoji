@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import { HEADER_SEARCH_RESULTS_ID } from "@/components/kaomoji/search-constants";
 
@@ -17,11 +18,12 @@ import Link from "@/components/link";
 import { usePathname } from "next/navigation";
 import { SearchKaomojiGrid } from "@/components/kaomoji/search-kaomoji-grid";
 import type { GridItem } from "@/components/kaomoji/kaomoji-grid-core";
-import {
-  searchFaces,
-  type SearchHit,
-  type SearchScope,
-} from "@/lib/search/actions";
+import type { SearchHit, SearchScope } from "@/lib/search/actions";
+
+/** Static site: the catalog search chunk loads only on first query (was a server action). */
+function searchFaces(query: string, scope: SearchScope): Promise<SearchHit[]> {
+  return import("@/lib/search/actions").then((m) => m.searchFaces(query, scope));
+}
 import { resolveSearchScope, searchPlaceholderForScope } from "@/lib/search/scope";
 import type { NavPage } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -30,7 +32,7 @@ function subscribeNoop() {
   return () => {};
 }
 
-export function SearchBox({
+function SearchBox__impl({
   scope: scopeProp,
   placeholder: placeholderProp,
   variant = "page",
@@ -236,3 +238,5 @@ export function SearchBox({
     </div>
   );
 }
+export { SearchBox__impl };
+export const SearchBox = island("kaomoji/search-box#SearchBox", SearchBox__impl);

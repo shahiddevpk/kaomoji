@@ -1,0 +1,12 @@
+const fs = require("fs");
+const pag = fs.readFileSync("lib/category-pagination.ts", "utf8");
+console.log("PAGINATED_SLUGS", /PAGINATED_SLUGS/.test(pag), "PAGINATED_SLUGS", /PAGINATED_SLUGS/.test(pag));
+console.log("createPaginated", fs.readFileSync("lib/paginated-category-route.tsx","utf8").match(/export function \w+/g));
+console.log("seo", fs.readFileSync("lib/seo.ts","utf8").match(/export function \w+/g));
+console.log("site", fs.readFileSync("lib/site.ts","utf8").match(/export function \w+/g));
+console.log("site type keys sample");
+const site = fs.readFileSync("lib/site.ts","utf8");
+const t = site.match(/export type SitePage = \{[\s\S]*?\n\};/);
+console.log(t && t[0]);
+console.log("\nangry page imports:\n", fs.readFileSync("app/angry-kaomoji/page.tsx","utf8"));
+console.log("\npout page n:\n", fs.readFileSync("app/pout-kaomoji/page/[n]/page.tsx","utf8"));

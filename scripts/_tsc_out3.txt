@@ -1,0 +1,6 @@
+﻿lib/site.ts(583,141): error TS1005: ':' expected.
+lib/site.ts(584,324): error TS1005: ':' expected.
+lib/site.ts(588,187): error TS1005: ':' expected.
+lib/site.ts(632,134): error TS1005: ':' expected.
+lib/site.ts(633,314): error TS1005: ':' expected.
+lib/site.ts(637,126): error TS1005: ':' expected.

@@ -1,0 +1,25 @@
+export function relatedPages(page: SitePage): SitePage[] {
+  return page.related.map((path) => getPage(path));
+}
+
+/** Sibling subcategory pages that share the same parentPath (excludes self). */
+export function siblingPages(page: SitePage): SitePage[] {
+  if (!page.parentPath) return [];
+  return pages.filter(
+    (item) => item.parentPath === page.parentPath && item.path !== page.path,
+  );
+}
+
+/** Child subcategory pages under a parent path. */
+export function childPages(parentPath: string): SitePage[] {
+  return pages.filter((item) => item.parentPath === parentPath);
+}
+
+function normalizePathname(pathname: string): string {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
+/** Header search scope from the current pathname (longest path match). */
+export function resolveSearchScope(pathname: string): SearchScope {
+  const normalized = norm

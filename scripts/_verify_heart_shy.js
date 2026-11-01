@@ -1,0 +1,13 @@
+const fs = require("fs");
+const site = fs.readFileSync("lib/site.ts", "utf8");
+const heartIdx = site.indexOf('path: "/heart-kaomoji"');
+const shyIdx = site.indexOf('path: "/shy-kaomoji"');
+console.log("HEART\n", site.slice(heartIdx, heartIdx + 1600));
+console.log("\nSHY\n", site.slice(shyIdx, shyIdx + 1400));
+console.log("\ncute related:", /path: "\/cute-kaomoji"[\s\S]*?related: \[[^\]]+\]/.exec(site)?.[0]?.slice(-120));
+console.log("\npage files:");
+console.log(fs.readFileSync("app/heart-kaomoji/page.tsx","utf8"));
+console.log(fs.readFileSync("app/heart-kaomoji/page/[n]/page.tsx","utf8"));
+console.log("pout reference:\n", fs.readFileSync("app/pout-kaomoji/page/[n]/page.tsx","utf8"));
+console.log("pag has heart", fs.readFileSync("lib/category-pagination.ts","utf8").includes("heart-kaomoji"));
+console.log("tiles", fs.readFileSync("components/kaomoji/category-tiles.tsx","utf8").includes("/heart-kaomoji"));

@@ -1,0 +1,15 @@
+const fs = require("fs");
+const src = fs.readFileSync("components/kaomoji/category-view.tsx", "utf8");
+console.log("---imports---");
+console.log(src.split("\n").slice(0, 30).join("\n"));
+console.log("---has LearnSection---", src.includes("LearnSection"));
+console.log("---has FaqSection---", src.includes("FaqSection"));
+console.log("---has faqSchema---", src.includes("faqSchema"));
+console.log("---has showEducation---", src.includes("showEducation"));
+console.log("---has learnHeadingFor---", src.includes("learnHeadingFor"));
+const idx = src.indexOf("RecentlyCopied");
+console.log("---around RecentlyCopied---");
+console.log(src.slice(idx - 200, idx + 100));
+const idx2 = src.indexOf('aria-labelledby="related-heading"');
+console.log("---around related---");
+console.log(src.slice(idx2 - 250, idx2 + 80));

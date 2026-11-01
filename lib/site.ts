@@ -1,4 +1,8 @@
-import { cache } from "react";
+/** Per-argument memo (stand-in for React cache() in a static build). */
+function memo<A, R>(fn: (a: A) => R): (a: A) => R {
+  const m = new Map<A, R>();
+  return (a) => { if (!m.has(a)) m.set(a, fn(a)); return m.get(a)!; };
+}
 
 // Lives in its own module so client code (lib/utils) can use it without
 // bundling every page's copy from this file.
@@ -142,6 +146,10 @@ export const pages: SitePage[] = [
       "Kawaii (可愛い) culture elevated cuteness from a visual style into a social language in 1970s Japan. Cute kaomoji follow the same logic as kawaii design: oversized eyes, miniaturized features, and soft round shapes trigger warmth instinctively. The faces work across language barriers because the visual cues — wide eyes, small mouth, gentle blush — are emotionally legible to almost any viewer without any cultural context.",
     faqs: [
       {
+        question: "Is kaomoji cute the same as cute kaomoji?",
+        answer: "Yes. Kaomoji cute and cute kaomoji both mean kawaii text faces like (◕‿◕) — everything on this page.",
+      },
+      {
         question: "What makes a kaomoji “cute” instead of just happy?",
         answer: "Cute sets lean soft: round eyes, blush marks, tiny mouths, or shy sparkles. Happy can be big and loud; cute stays gentle and approachable.",
       },
@@ -193,6 +201,10 @@ export const pages: SitePage[] = [
       "Eyes crinkled or wide open, mouths raised or open in laughter, arms sometimes extended — these faces carry the energy of good news or a warm hello. They sit between the soft gentleness of cute and the intensity of excited.",
     faqs: [
       {
+        question: "Is kaomoji happy the same as happy kaomoji?",
+        answer: "Yes, just a different word order. Kaomoji happy searches want joyful text faces like (＾▽＾) — tap any face here to copy it.",
+      },
+      {
         question: "How is happy different from cute on this site?",
         answer: "Happy faces are cheers, waves, and big grins. Cute faces are soft blushes and gentle kawaii affection. Use happy when the vibe should feel upbeat and loud rather than soft.",
       },
@@ -217,9 +229,9 @@ export const pages: SitePage[] = [
     heading: "Cat Kaomoji",
     titleSegment: "Cat Kaomoji (=^･ω･^=)",
     description:
-      "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, from sleepy cats to startled ones. 100+ faces for any chat.",
+      "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, from sleepy cats to startled ones. Cute cat kaomoji, 100+ faces for any chat.",
     intro:
-      "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one.",
+      "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one. Searching for kaomoji cat or cat kaomoji copy and paste? It is the same list: tap any face and it is on your clipboard.",
     group: "browse",
     category: "cat",
     faceGroups: [
@@ -257,7 +269,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Neko and catmoji faces copy here with one tap. The general Kaomoji Copy and Paste page is for mixed popular faces when you do not need whiskers only.",
       },
     ],
-    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste", "/fish-kaomoji", "/uwu-kaomoji"],
+    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
   },
   {
     path: "/sad-kaomoji",
@@ -311,7 +323,7 @@ export const pages: SitePage[] = [
     heading: "Crying Kaomoji",
     titleSegment: "Crying Kaomoji (ಥ﹏ಥ)",
     description:
-      "Crying kaomoji (ಥ﹏ಥ) copy and paste: cry, tears, and sobbing faces. Cry searches land here; quiet downcast faces stay on sad.",
+      "Crying kaomoji (ಥ﹏ಥ) copy and paste: cry kaomoji, tears, and sobbing faces. Cry searches land here; quiet downcast faces stay on sad.",
     intro:
       "Tears, sobs, and weeping faces for when a quiet frown is not enough - tap to copy. Cry and sob aliases share this page; quiet downcast faces stay on sad kaomoji.",
     group: "browse",
@@ -332,6 +344,10 @@ export const pages: SitePage[] = [
     learnMore:
       "Tear glyphs like ;_; and T_T are the classic shorthand. Most paste fine on all devices; a few rare tear marks may show as boxes on older systems. If that happens, pick a simpler crying face from the same grid.",
     faqs: [
+      {
+        question: "Is kaomoji cry the same as crying kaomoji?",
+        answer: "Yes. Kaomoji cry, cry kaomoji, and crying kaomoji all mean tearful text faces like (ಥ﹏ಥ) and (╥_╥), collected on this page.",
+      },
       {
         question: "What belongs on crying kaomoji?",
         answer: "Cry, tear, and sobbing faces. For quiet, downcast faces without tears, try sad kaomoji instead.",
@@ -359,7 +375,7 @@ export const pages: SitePage[] = [
     description:
       "Angry kaomoji (╬ಠ益ಠ) copy and paste: scowls, growls, and mad faces. Includes rage and glare faces, with separate pages for table flip, fight, and pout.",
     intro:
-      "Scowls, growls, and mad faces when chat needs heat - tap Copy once and paste anywhere. The most-used faces are at the top.\n\nWant something more specific? Table flip, fight, and pout each have their own page. Rage and glare faces are mixed in here, and the search box finds them fast.",
+      "Scowls, growls, and mad faces when chat needs heat - tap Copy once and paste anywhere. The most-used faces are at the top.\n\nWant something more specific? Table flip, fight, and pout each have their own page. Rage and glare faces are mixed in here, and the search box finds them fast. Every kaomoji angry face here copies as plain text, so it looks the same in Discord, texts, or comments.",
     group: "browse",
     tags: ["angry"],
     faceGroups: [
@@ -412,7 +428,7 @@ export const pages: SitePage[] = [
     description:
       "Table flip kaomoji (╯°□°)╯︵ ┻━┻ copy and paste: classic flip-the-table faces for the moment you are completely done.",
     intro:
-      "Flip-the-table faces for classic desk-flip reactions - one tap to copy. Every face here is some version of the (╯°□°)╯︵ ┻━┻ gag: one arm up, table in the air.\n\nGrab a flip when words are not enough. For punches, open fight kaomoji; for soft sulks, try pout. Plain scowls, growls, and glares are on the angry kaomoji page.",
+      "Flip-the-table faces for classic desk-flip reactions - one tap to copy. Every face here is some version of the (╯°□°)╯︵ ┻━┻ gag: one arm up, table in the air.\n\nGrab a flip when words are not enough. For punches, open fight kaomoji; for soft sulks, try pout. Plain scowls, growls, and glares are on the angry kaomoji page. Whether you search table flip kaomoji or kaomoji table flip, the ┻━┻ faces are all here.",
     group: "browse",
     tags: ["tableflip", "table flip"],
     parentPath: "/angry-kaomoji",
@@ -601,7 +617,7 @@ export const pages: SitePage[] = [
     description:
       "Japanese emoticons (Japanese emoji text faces) to copy and paste: thousands of upright kaomoji like (^_^), (＾▽＾), and (´・ω・`) built from punctuation and kana.",
     intro:
-      "Classic Japanese emoticon construction from punctuation, kana, and symbols - ready to copy. These are the faces that started it all in Japan. ASCII shrugs and Lenny faces are on the text faces page.",
+      "Classic Japanese emoticon construction (cute Japanese emoticons included) from punctuation, kana, and symbols - ready to copy. These are the faces that started it all in Japan. ASCII shrugs and Lenny faces are on the text faces page.",
     group: "browse",
     category: "japanese",
     howTo: [
@@ -614,6 +630,10 @@ export const pages: SitePage[] = [
     learnMore:
       "Punctuation, kana, and symbols combine into faces that stay editable text. If a rare glyph shows as a box, your device font is missing that code point. Try a simpler face from the same grid; stacked multi-line art also appears on mood pages such as cute when it fits the category.",
     faqs: [
+      {
+        question: "Can I type Japanese emoticons on my keyboard?",
+        answer: "Some, like (^_^), use plain keyboard emoticons characters. Faces with kana or rare symbols are easier to copy here; Windows also has a kaomoji panel under Win + .",
+      },
       {
         question: "What are Japanese emoticons?",
         answer: "Japanese emoticons are text faces built from punctuation and symbols, typically read the right way up. They are the same family many people call kaomoji, distinct from sideways Western smiles like :-).",
@@ -639,9 +659,9 @@ export const pages: SitePage[] = [
     heading: "Text Faces",
     titleSegment: "Text Faces Copy and Paste ಠ_ಠ — Unicode Faces",
     description:
-      "Text faces to copy and paste: disapproval ಠ_ಠ, unicode and ASCII character faces beyond classic Japanese kaomoji. Shrug and Lenny have their own full pages.",
+      "Text faces to copy and paste for texting: smiley face text, cute faces, and Unicode classics like ಠ_ಠ that go beyond Japanese kaomoji.",
     intro:
-      "Unicode and ASCII faces such as disapproval ಠ_ಠ and compact character faces — one-tap copy. Looking for one famous face? The shrug ¯\\_(ツ)_/¯ and the Lenny face ( ͡° ͜ʖ ͡°) each have a dedicated page with every variation.",
+      "Unicode and ASCII faces for texting — smiley face text, cute text faces, and disapproval ಠ_ಠ — one-tap copy. Looking for one famous face? The shrug ¯\\_(ツ)_/¯ and the Lenny face ( ͡° ͜ʖ ͡°) each have a dedicated page with every variation.",
     group: "browse",
     category: "text-faces",
     howTo: [
@@ -654,6 +674,10 @@ export const pages: SitePage[] = [
     learnMore:
       "The shrug face became a Western internet landmark in the 2010s through wide sharing on Reddit and Twitter. Unlike traditional kaomoji — which read upright and use Japanese punctuation — most text faces here are rotated 90 degrees or built from common keyboard characters on Western layouts. The ツ character at the center of the shrug is borrowed from Japanese katakana, making it a natural meeting point of both traditions.",
     faqs: [
+      {
+        question: "Can I use these faces in texting and text messages?",
+        answer: "Yes. These text message faces are plain characters, so they paste into SMS, iMessage, WhatsApp, and Discord. For smiley face text or cute text faces, tap Copy and paste — no emoji keyboard needed.",
+      },
       {
         question: "What counts as a text face here?",
         answer: "ASCII and unicode expressions such as shrug, Lenny, and disapproval. They are character faces, but this page leans Western-style catalogs rather than classic Japanese kaomoji construction.",
@@ -681,7 +705,7 @@ export const pages: SitePage[] = [
     description:
       "Free kaomoji generator: pick eyes, mouth, and arms, preview your custom face live, then copy it. Or browse mood categories for ready-made kaomoji lists.",
     intro:
-      "Make or remix a custom kaomoji in your browser: pick arms, eyes, mouth, and optional extras, preview live, then copy. This page is for building and remixing faces, not browsing a ready-made grid. When you want curated lists instead of a builder, use the category links in the header.",
+      "How to make kaomoji: make or remix a custom face in your browser: pick arms, eyes, mouth, and optional extras, preview live, then copy. This page is for building and remixing faces, not browsing a ready-made grid. When you want curated lists instead of a builder, use the category links in the header.",
     group: "browse",
     howTo: [
       "Pick left arm, eyes, mouth, and right arm from the curated sets.",
@@ -729,7 +753,7 @@ export const pages: SitePage[] = [
     description:
       "Heart kaomoji to copy and paste, like (◍•ᴗ•◍)❤, for crushes, partners, and warm thank-yous. Small hearts for friends, full heart eyes for someone special.",
     intro:
-      "These faces are about affection, not just cuteness. Grab one with hearts woven in when you mean love, a crush, or a warm thank-you. For adorable without the romance, try cute kaomoji; for a bashful blush, try shy kaomoji.",
+      "These faces are about affection, not just cuteness. Grab one with hearts woven in when you mean love, a crush, or a warm thank-you. For adorable without the romance, try cute kaomoji; for a bashful blush, try shy kaomoji. Every kaomoji heart face here, from one tiny ♡ to hearts kaomoji with several, copies as plain text.",
     group: "browse",
     tags: ["heart", "love", "kiss", "hug"],
     faceGroups: [
@@ -774,7 +798,7 @@ export const pages: SitePage[] = [
           "Something soft that does not shout, like (〃▽〃)♡ or (◍•ᴗ•◍)❤. A blush says \"I like you\" without the full heart-eyes swoon, which is easier to send early on.",
       },
     ],
-    related: ["/shy-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/kaomoji-generator", "/hug-kaomoji", "/kiss-kaomoji"],
+    related: ["/shy-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/hug-kaomoji", "/kiss-kaomoji"],
   },
   {
     path: "/shy-kaomoji",
@@ -784,7 +808,7 @@ export const pages: SitePage[] = [
     description:
       "Shy and blushing kaomoji (⁄ ⁄•⁄ω⁄•⁄ ⁄) to copy and paste — blush, bashful, and flustered faces for when a big smile feels too bold.",
     intro:
-      "Shy faces are for hesitation and blush, not loud cute energy. Use this grid after compliments, nervous hellos, or gentle \"I'm flustered\" beats, and look for blush marks like 〃 or ⁄ ⁄ when you want red cheeks. For warm, adorable faces try cute; for open affection, try heart. These are the quiet, bashful ones.",
+      "Shy faces are for hesitation and blush, not loud cute energy. Use this grid after compliments, nervous hellos, or gentle \"I'm flustered\" beats, and look for blush marks like 〃 or ⁄ ⁄ when you want red cheeks. For warm, adorable faces try cute; for open affection, try heart. These are the quiet, bashful ones: the kaomoji shy people reach for when a compliment lands.",
     group: "browse",
     tags: ["shy", "blush", "embarrassed"],
     howTo: [
@@ -818,7 +842,7 @@ export const pages: SitePage[] = [
           "Cute aims for adorable warmth. Shy aims for hesitation and blush. They overlap, but a shy face is bashful first and pretty second.",
       },
     ],
-    related: ["/heart-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/sad-kaomoji", "/bowing-kaomoji", "/nervous-kaomoji"],
+    related: ["/heart-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/nervous-kaomoji"],
   },
   {
     path: "/bunny-kaomoji",
@@ -828,7 +852,7 @@ export const pages: SitePage[] = [
     description:
       "Bunny kaomoji to copy and paste: long-eared rabbit text faces for soft replies, Easter messages, and anyone who loves rabbits. Works in any chat or bio.",
     intro:
-      "Bunny and rabbit text faces, all with long ears. Use them for soft, springy, animal-cute energy, Easter messages, or anyone who just really likes rabbits. Bears and dogs have their own pages.",
+      "Bunny and rabbit text faces, all with long ears. Use them for soft, springy, animal-cute energy, Easter messages, or anyone who just really likes rabbits. Bears and dogs have their own pages. Every kaomoji bunny face here copies with its ears lined up.",
     group: "browse",
     tags: ["bunny", "rabbit"],
     howTo: [
@@ -926,7 +950,7 @@ export const pages: SitePage[] = [
     description:
       "Shocked kaomoji for wide-eyed surprise and sudden reactions. Copy stunned text faces and paste them when words feel too slow.",
     intro:
-      "Shock and stun reactions: wide eyes, open mouths, and \"wait, what\" energy. Surprised faces are here too. Confused is for puzzled tilts; smug is knowing; cute and happy are warmer moods, not gasp faces.",
+      "Shock and stun reactions: wide eyes, open mouths, and \"wait, what\" energy. Surprised faces are here too, so any shock kaomoji you need is one tap away. Confused is for puzzled tilts; smug is knowing; cute and happy are warmer moods, not gasp faces.",
     group: "browse",
     tags: ["shocked", "surprised"],
     howTo: [
@@ -1163,7 +1187,7 @@ export const pages: SitePage[] = [
     description:
       "Hug kaomoji (づ｡◕‿‿◕｡)づ to copy and paste: open-arm hugs, gentle pats, and big squeezes for when someone needs comfort or you just miss them.",
     intro:
-      "Warm embrace poses and open-arm hugs for when words are not enough — tap to copy. Hug kaomoji are the outstretched-arms reaction for comfort, celebration, and big welcomes.",
+      "Warm embrace poses and open-arm hugs for when words are not enough — tap to copy. Hug kaomoji (or hugging kaomoji) are the outstretched-arms reaction for comfort, celebration, and big welcomes.",
     group: "browse",
     tags: ["hug"],
     howTo: [
@@ -1203,7 +1227,7 @@ export const pages: SitePage[] = [
     description:
       "Waving kaomoji copy and paste: hello, goodbye, and waving text faces. One-tap copy for a friendly wave in any chat.",
     intro:
-      "Friendly waves for hellos, goodbyes, and casual check-ins — tap to copy. Waving kaomoji are the text-face equivalent of a cheerful wave across the room.",
+      "Friendly waves for hellos, goodbyes, and casual check-ins — tap to copy. Waving kaomoji are the text-face equivalent of a cheerful wave across the room; every kaomoji waving face here copies as plain text.",
     group: "browse",
     tags: ["waving", "wave"],
     howTo: [
@@ -1283,7 +1307,7 @@ export const pages: SitePage[] = [
     description:
       "Dance and music kaomoji to copy and paste: grooving ♪(┌・。・)┌, spinning, and ♫ musical note faces for good news, playlists, or a song you cannot stop playing.",
     intro:
-      "Grooving, spinning, singing into a mic, and ♪ music note faces for good news, a playlist share, or the song you have had on repeat all week. Tap any face to copy it.",
+      "Grooving, spinning, singing into a mic, and ♪ music note faces for good news, a playlist share, or the song you have had on repeat all week. Dancing kaomoji included. Tap any face to copy it.",
     group: "browse",
     tags: ["dance", "music"],
     faceGroups: [
@@ -1723,7 +1747,7 @@ export const pages: SitePage[] = [
     description:
       "Star kaomoji to copy and paste: faces with ★ and ✦ for wishes, wins, and late-night chats, plus starry accents for bios and usernames.",
     intro:
-      "Shining and twinkling star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. This collection covers classic ★ faces and soft twinkling poses. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
+      "Shining and twinkling star text faces for celestial vibes, good luck wishes, and sparkling reactions — one tap to copy. This collection covers classic ★ faces, stars kaomoji with ✦ and ☆ trails, and soft twinkling poses. Stars pair naturally with sparkle and flower pages for a glowing aesthetic.",
     group: "browse",
     tags: ["star", "twinkle"],
     howTo: [
@@ -1803,7 +1827,7 @@ export const pages: SitePage[] = [
     description:
       "Sparkle kaomoji copy and paste: glittery, glowing, and twinkling text faces. One-tap copy for that ✨ magic effect in any chat.",
     intro:
-      "Glitter, twinkle, and dazzle — sparkle kaomoji for moments that need that extra shine. Copy in one tap and paste into messages, bios, or captions for instant magic.",
+      "Glitter, twinkle, and dazzle — sparkle kaomoji for moments that need that extra shine. Includes sparkles kaomoji with ✧ and ✨ trails; for a sparkle bow or ribbon look, paste 🎀 after any face here. Copy in one tap and paste into messages, bios, or captions.",
     group: "browse",
     tags: ["sparkle"],
     howTo: [
@@ -1843,7 +1867,7 @@ export const pages: SitePage[] = [
     description:
       "Love kaomoji to copy and paste: heart eyes, lovestruck sighs, and cuddly faces for partners and crushes, when a plain ❤️ does not say enough.",
     intro:
-      "Lovestruck faces and deep affection poses — more expressive than a single ♡ emoji. Love kaomoji go beyond heart symbols into full \"I adore you\" energy, perfect for crush confessions and warm appreciation.",
+      "Lovestruck faces and deep affection poses — more expressive than a single ♡ emoji. Love kaomoji go beyond heart symbols into full \"I adore you\" energy, perfect for crush confessions and warm appreciation. For heart symbols on their own, see heart kaomoji.",
     group: "browse",
     tags: ["love"],
     howTo: [
@@ -1927,7 +1951,7 @@ export const pages: SitePage[] = [
     description:
       "Kiss kaomoji to copy and paste: blown kisses, little pecks, and smooch faces for goodnight texts, partners, and friends you like to tease.",
     intro:
-      "Blowing kisses, smooch poses, and sweet peck faces — tap to copy. Kiss kaomoji focus on the act of kissing, not just a floating heart symbol. Great for goodnight messages, love notes, and affectionate friend chats.",
+      "Blowing kisses, smooch poses, and sweet peck faces — tap to copy. Kiss and kissing kaomoji focus on the act itself, not just a floating heart symbol. Great for goodnight messages, love notes, and affectionate friend chats.",
     group: "browse",
     tags: ["kiss"],
     howTo: [
@@ -2087,7 +2111,7 @@ export const pages: SitePage[] = [
     description:
       "Wink kaomoji to copy and paste: one-eyed faces for jokes, light teasing, and shared secrets, from friendly winks to slightly flirty ones.",
     intro:
-      "Playful one-eyed winks and cheeky expressions for teasing messages — tap to copy. A wink kaomoji says more than words when you want to keep something light.",
+      "Playful one-eyed winks and cheeky expressions for teasing messages — tap to copy. A winking face says more than words when you want to keep something light.",
     group: "browse",
     tags: ["wink"],
     howTo: [
@@ -2127,7 +2151,7 @@ export const pages: SitePage[] = [
     description:
       "Thumbs up kaomoji and OK faces to copy and paste, for saying yes, nice work, or sounds good with a little more warmth than a plain 👍.",
     intro:
-      "Approval and OK reactions for when a plain \"yes\" feels flat — tap to copy. This page covers thumbs-up poses and OK-gesture kaomoji that signal agreement, confirmation, and encouragement.",
+      "Kaomoji thumbs up and OK reactions for when a plain \"yes\" feels flat — tap to copy. This page covers thumbs-up poses and OK-gesture kaomoji that signal agreement, confirmation, and encouragement.",
     group: "browse",
     tags: ["thumbs up", "ok"],
     howTo: [
@@ -2171,7 +2195,7 @@ export const pages: SitePage[] = [
     description:
       "Bowing kaomoji m(_ _)m to copy and paste: polite nods, deep bows, and full dogeza for thank-yous, apologies, and asking someone a favor.",
     intro:
-      "Respectful bows, thank-you gestures, and deep dogeza poses for formal and sincere moments — tap to copy. Bowing kaomoji carry real cultural weight in Japanese internet culture, where a bow communicates gratitude, apology, or deep respect in a way a plain \"thanks\" cannot.",
+      "Respectful bows (bow kaomoji, including aesthetic 🎀-style bows), thank-you gestures, and deep dogeza poses for formal and sincere moments — tap to copy. Bowing kaomoji carry real cultural weight in Japanese internet culture, where a bow communicates gratitude, apology, or deep respect in a way a plain \"thanks\" cannot.",
     group: "browse",
     tags: ["bow", "bowing", "dogeza"],
     howTo: [
@@ -2273,6 +2297,10 @@ export const pages: SitePage[] = [
       "The face first spread in November 2012 on the Finnish imageboard Ylilauta, then jumped to 4chan and Reddit the same day. Nobody knows for sure why it is called Lenny; the name stuck through meme sites and has never been replaced. Other names include Le Lenny Face and the \"deg deg\" face.\n\nHow it is built: the eyes are degree signs (°) with a combining double inverted breve ( ͡) above them as eyebrows. The nose and mouth are ͜ʖ — a combining breve below paired with the Latin letter ʖ (a reversed glottal stop). Because the eyebrows and smile are combining marks, they attach to whatever character sits next to them. That is why retyping a Lenny face by hand often breaks it, and why copying a ready-made one is the reliable route.\n\nVariations swap one part at a time: ʖ̯ turns the smile into a frown, ಠ gives a disapproving glare, ~ adds a wink, and ♥ makes heart eyes. Add arms with つ for a hug, ᕦ ᕤ to flex, or ┻━┻ to flip a table. Once you know the parts, you can build your own.\n\nTone tip: the classic Lenny reads as a cheeky, sometimes suggestive smirk. Keep it for friends, memes, and gaming chats rather than formal or work messages.",
     faqs: [
       {
+        question: "How do I type the Lenny face ( ͡° ͜ʖ ͡°)?",
+        answer: "Easiest is copy and paste: tap Copy here, then paste. To type it often, save ( ͡° ͜ʖ ͡°) as a keyboard text replacement such as \"lenny\".",
+      },
+      {
         question: "How do I copy and paste the Lenny face?",
         answer: "Tap Copy next to ( ͡° ͜ʖ ͡°) at the top of this page, then paste with Ctrl+V, Cmd+V, or a long-press Paste on your phone. The face is plain text, so it works in any app that accepts typing.",
       },
@@ -2301,7 +2329,7 @@ export const pages: SitePage[] = [
     heading: "Shrug Kaomoji ¯\\_(ツ)_/¯",
     titleSegment: "Shrug Emoticon ¯\\_(ツ)_/¯ Copy and Paste",
     description:
-      "Copy the shrug emoticon ¯\\_(ツ)_/¯ in one tap, plus 90+ shrug kaomoji: ┐(￣ヘ￣)┌, ʅ(°_°)ʃ, Lenny, cute, and cat shrugs, and how to type it on any device.",
+      "Copy the shrug emoticon ¯\\_(ツ)_/¯ in one tap, plus 90+ shrug and shrugging kaomoji: ┐(￣ヘ￣)┌, ʅ(°_°)ʃ, Lenny, cute, and cat shrugs, and how to type it on any device.",
     intro:
       "The classic shrug ¯\\_(ツ)_/¯ and 90+ variations — whatever, I don't know, and oh well faces. Tap Copy to keep the backslash intact; typing it by hand often deletes the left arm.",
     group: "browse",
@@ -2427,7 +2455,7 @@ export const pages: SitePage[] = [
     description:
       "130+ text emoticons with meanings — :) :D ;) :P XD <3 :( — keyboard smileys to copy and paste for chat, posts, and bios.",
     intro:
-      "Every classic keyboard emoticon with what it means — smileys :), laughs XD, winks ;), hearts <3, and more. Tap Copy, or learn how to type each one with your own keyboard.",
+      "Every classic keyboard emoticon with what it means — smileys :), laughs XD, winks ;), hearts <3, and more emoticon faces for texting. Tap Copy to paste anywhere, or learn how to type each one with your own keyboard.",
     group: "browse",
     howToName: "How to type and copy text emoticons",
     howTo: [
@@ -2475,7 +2503,7 @@ export const pages: SitePage[] = [
     description:
       "Cute symbols to copy and paste: hearts ♡, stars ✧, flowers ✿, bows ʚɞ, brackets ꒰ ꒱, and arrows. 250+ aesthetic text symbols for bios and captions.",
     intro:
-      "Hearts, stars, flowers, bows, frames, and dividers — 250+ aesthetic text symbols for Instagram bios, TikTok names, and Discord servers. Tap any symbol to copy it.",
+      "Cute heart symbols, stars, flowers, bows, frames, and dividers — 250+ aesthetic text symbols for Instagram bios, TikTok names, and Discord servers. Tap any symbol to copy it.",
     group: "browse",
     howToName: "How to copy and paste cute symbols",
     howTo: [
@@ -2519,7 +2547,7 @@ export const pages: SitePage[] = [
     description:
       "120+ aesthetic and cute emoji combos to copy and paste 🎀✨: love, funny, birthday, Christmas, Halloween, food, and study combinations for bios and captions.",
     intro:
-      "120+ ready-made emoji combinations — aesthetic, cute, love, funny, birthday, holiday, and food. Tap Copy to grab the whole set at once for your bio, caption, or text.",
+      "120+ ready-made emoji combos — aesthetic, cute, love, funny, birthday, holiday, and food. Tap Copy to grab the whole set at once for your bio, caption, or text.",
     group: "browse",
     howToName: "How to copy and use emoji combos",
     howTo: [
@@ -3057,7 +3085,7 @@ export const pages: SitePage[] = [
   },
 ];
 
-export const getPage = cache(function getPage(path: string): SitePage {
+export const getPage = memo(function getPage(path: string): SitePage {
   const page = pages.find((item) => item.path === path);
   if (!page) {
     throw new Error(`Unknown page: ${path}`);

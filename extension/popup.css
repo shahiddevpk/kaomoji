@@ -1,10 +1,10 @@
 :root {
-  --bg: #fbf9ff; --card: #ffffff; --ink: #1e1530; --muted: #554c69;
-  --line: #e7e0f5; --accent: #7c3aed; --accent-ink: #6d28d9; --soft: #f5f0ff;
+  --bg: #f8fafc; --card: #ffffff; --ink: #151a24; --muted: #566074;
+  --line: #e2e6ee; --accent: #1d4ed8; --accent-ink: #1e40af; --soft: #eff6ff;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0e0a17; --card: #17112a; --ink: #f3effc; --muted: #b9b0cc; --line: #30274a; --accent-ink: #c4b5fd; --soft: #221a3a; color-scheme: dark; }
+  :root { --bg: #0e1218; --card: #151922; --ink: #e8eef6; --muted: #a8b0c0; --line: #2a3142; --accent-ink: #93c5fd; --soft: #1e2a44; color-scheme: dark; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; width: 360px; background: var(--bg); color: var(--ink); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }

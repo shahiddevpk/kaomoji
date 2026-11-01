@@ -1,0 +1,9 @@
+const pages: SitePage[] = [
+  {
+    path: "/",
+    label: "Home",
+    heading: "Kaomoji Copy and Paste Library",
+    titleSegment: "Kaomoji Copy and Paste | Text Faces | Paste Kaomoji",
+    description: siteConfig.description,
+    intro:
+      "Browse kaomoji and text faces by mood, then one-tap copy. Start from category tiles when you are exploring; open Kaomoji Copy and Paste when you only need 

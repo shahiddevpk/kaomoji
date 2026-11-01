@@ -6,6 +6,8 @@ import type { ComponentProps } from "react";
  * viewport prefetching fetched each one's full payload on every view (CDN
  * requests, ISR reads, origin transfer). Navigation still works on click and
  * crawlers still see a plain <a href>. Pass prefetch explicitly to opt back in.
+ *
+ * Trailing-slash normalization lives in shims/next-link.tsx (Astro trailingSlash: always).
  */
 export default function Link({ prefetch = false, ...props }: ComponentProps<typeof NextLink>) {
   return <NextLink prefetch={prefetch} {...props} />;

@@ -75,3 +75,16 @@ Still later, not Phase 2: the face maker, favourites, AdSense, and a blog.
 ## Deploy
 
 Not wired in this phase. The intended target is Cloudflare Pages or Workers, since the domain is already on Cloudflare. Point `hello@pastekaomoji.com` at a real inbox before launch.
+
+## Stack (2026-11 migration)
+
+Astro 7 (static output) + Preact islands + TypeScript + Tailwind v4 (`@tailwindcss/vite`). Theme: Ink & Blue (`--primary: #1D4ED8`).
+
+- `src/pages/` – Astro routes (one per old `app/` route, plus `[slug]/page/[n]`, blog/guides slugs, sitemap.xml, ads.txt, 404)
+- `src/layouts/Base.astro` – root layout + head tags built from Next-style metadata (`lib/head.ts`, `lib/root-metadata.ts`)
+- `views/` – former `app/*/page.tsx` bodies, rendered server-side by Preact
+- `lib/island.tsx` + `src/client/islands.ts` – formerly "use client" components hydrate as islands
+- `shims/` – tiny stand-ins for `next/link`, `next/navigation`, `next/dynamic`, `next` types
+- `public/_redirects`, `public/_headers`, `functions/_middleware.ts` – Cloudflare Pages redirects, headers, www + `?page=` handling
+
+`npm run dev` (port 4321) · `npm run build` → `dist/` · `npm run preview`

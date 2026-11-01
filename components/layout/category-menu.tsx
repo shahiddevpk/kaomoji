@@ -1,4 +1,5 @@
 "use client";
+import { island } from "@/lib/island";
 
 import Link from "@/components/link";
 import { usePathname } from "next/navigation";
@@ -24,7 +25,7 @@ function labelFor(path: string, pages: NavPage[]): string | null {
  * hides behind the header's horizontal strip. Rendered only while open —
  * the footer carries the same links for crawlers on every page.
  */
-export function CategoryMenu({
+function CategoryMenu__impl({
   id,
   navPages,
   onNavigate,
@@ -101,3 +102,6 @@ export function CategoryMenu({
     </nav>
   );
 }
+
+export { CategoryMenu__impl };
+export const CategoryMenu = island("layout/category-menu#CategoryMenu", CategoryMenu__impl);

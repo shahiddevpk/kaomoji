@@ -1,0 +1,9 @@
+---
+import Base from "../../../layouts/Base.astro";
+import View from "@/views/guides/[slug]/page";
+import { getGuide, guides } from "@/lib/guides";
+import { guideMetadata } from "@/lib/guide-seo";
+export function getStaticPaths() { return guides.map((g) => ({ params: { slug: g.slug } })); }
+const { slug } = Astro.params;
+---
+<Base meta={guideMetadata(getGuide(slug!)!)}><View slug={slug!} /></Base>

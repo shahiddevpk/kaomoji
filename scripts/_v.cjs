@@ -1,0 +1,13 @@
+﻿const fs=require("fs");
+const cv=fs.readFileSync("components/kaomoji/category-view.tsx","utf8");
+console.log(cv.match(/import \{[\s\S]*?\} from "@\/data\/index"/)[0]);
+console.log("---");
+console.log(cv.includes("countByTags"), cv.includes("SubcategoryNav"), cv.includes("howTo"));
+console.log(cv.slice(cv.indexOf("const tagOpts"), cv.indexOf("const tagOpts")+800));
+const site=fs.readFileSync("lib/site.ts","utf8");
+console.log("include field", (site.match(/include\w+Faces\?:/)||[])[0]);
+console.log("howTo field", (site.match(/howTo\?:/)||[])[0]);
+const data=fs.readFileSync("data/index.ts","utf8");
+console.log("countByTags sig", (data.match(/export function countByTags\([\s\S]*?\): number/)||[])[0]);
+console.log("crawlable tags", (data.match(/export function crawlablePageCountForTags\([\s\S]*?\): number/)||[])[0]);
+console.log("PAGE const", (data.match(/export const PAGE_\w+/)||[])[0]);

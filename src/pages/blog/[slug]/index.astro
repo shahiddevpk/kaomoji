@@ -1,0 +1,9 @@
+---
+import Base from "../../../layouts/Base.astro";
+import View from "@/views/blog/[slug]/page";
+import { getPost, posts } from "@/lib/blog";
+import { postMetadata } from "@/lib/blog-seo";
+export function getStaticPaths() { return posts.map((p) => ({ params: { slug: p.slug } })); }
+const { slug } = Astro.params;
+---
+<Base meta={postMetadata(getPost(slug!)!)}><View slug={slug!} /></Base>

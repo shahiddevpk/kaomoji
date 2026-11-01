@@ -18,12 +18,12 @@
 | `/` | kaomoji | kaomojis; kamoji; koamoji; kaimoji; kaamoji; text faces; copy paste | Broad library discovery and quick copy | Hub | `/` | Yes | Eligible | — |
 | `/cute-kaomoji/` | cute kaomoji | kaomoji cute; kawaii; kawaii kaomoji; kawaii emoticons; aesthetic kaomoji | Browse cute/kawaii faces | Hub → browse child | self | Yes | Eligible | happy; cat; text-faces |
 | `/happy-kaomoji/` | happy kaomoji | kaomoji happy; smiling kaomoji; kaomoji smiling; excited kaomoji | Browse smiles, cheers, and waves | Hub → browse child | self | Yes | Eligible | cute; cat; sad |
-| `/cat-kaomoji/` | cat kaomoji | neko; nyanko; catmoji; kitty; kitten | Browse cat/animal faces | Hub → browse child | self | Yes | Eligible | cute; happy; text-faces |
+| `/cat-kaomoji/` | cat kaomoji | kaomoji cat; cute cat kaomoji; cat kaomoji copy and paste; cat kaomojis; neko; nyanko; catmoji; kitty; kitten | Browse cat/animal faces | Hub → browse child | self | Yes | Eligible | cute; happy; text-faces |
 | `/sad-kaomoji/` | sad kaomoji | kaomoji sad; sad kamoji; downcast; frown | Browse quiet sad/downcast faces | Hub → browse child | self | Yes | Eligible | crying; happy; cute |
 | `/crying-kaomoji/` | crying kaomoji | cry kaomoji; kaomoji cry; kaomoji crying; sob; tearful | Browse crying/tearful faces | Hub → browse child | self | Yes | Eligible | sad; happy; cute |
 | `/kaomoji-copy-paste/` | kaomoji copy and paste | copy and paste kaomoji; kaomoji copy paste; copy paste; one-tap copy | Utility: find and copy a face fast | Hub → utility child | self | Yes | Eligible | cute; happy; japanese-emoticons; text-faces |
-| `/japanese-emoticons/` | Japanese emoticons | Japanese kaomoji; kaomoji Japanese; Japan kaomoji; punctuation; kana | Browse the classic Japanese-emoticon concept | Hub → browse child | self | Yes | Eligible | text-faces; cute; kaomoji-copy-paste |
-| `/text-faces/` | text faces | kaomoji faces; kaomoji face; shrug; shrug kaomoji; Lenny; disapproval; unicode expressions | Browse ASCII/unicode faces beside kaomoji | Hub → browse child | self | Yes | Eligible | japanese-emoticons; cute; kaomoji-copy-paste |
+| `/japanese-emoticons/` | Japanese emoticons | Japanese kaomoji; kaomoji Japanese; Japan kaomoji; japanese emoticon; emoticons japanese; cute japanese emoticons; keyboard emoticons; punctuation; kana | Browse the classic Japanese-emoticon concept | Hub → browse child | self | Yes | Eligible | text-faces; cute; kaomoji-copy-paste |
+| `/text-faces/` | text faces | kaomoji faces; kaomoji face; faces in texting; faces on text messages; faces through text; text message faces; smiley face text; texting smiley faces; cute text faces; copy paste text faces; kawaii text faces; shrug; Lenny; disapproval; unicode expressions | Browse ASCII/unicode faces beside kaomoji | Hub → browse child | self | Yes | Eligible | japanese-emoticons; cute; kaomoji-copy-paste |
 | `/about/` | Paste Kaomoji about | kaomoji library; site information | Understand the site and its purpose | Hub → trust child | self | Yes | Eligible (content; ads optional) | contact; privacy |
 | `/contact/` | Paste Kaomoji contact | corrections; face suggestions; site questions; email | Contact the publisher | Hub → trust child | self | Yes | Eligible (content; ads optional) | about; privacy |
 | `/privacy/` | Paste Kaomoji privacy | privacy policy; cookies; data handling | Read privacy terms | Hub → trust child | self | Yes | Eligible (content; ads optional) | terms; contact |
@@ -127,8 +127,8 @@ Competitors reviewed (US SERPs): gyanmirai.com/tools/kaomoji (34k faces, 53 mood
 
 | URL | Primary (US vol / KD) | Secondary (tags-only) | Owner rule |
 |---|---|---|---|
-| `/lenny-face/` | lenny face (22.2k / 46) | lenny face copy and paste, lennyface, lenny faces, ( ͡° ͜ʖ ͡°) | Only page titled "Lenny". `/text-faces/` no longer claims Lenny. |
-| `/shrug-kaomoji/` | shrug emoticon / ¯\_(ツ)_/¯ | shrug emoji, shrug kaomoji, shrug face | Only page titled "Shrug". |
+| `/lenny-face/` | lenny face (22.2k / 46) | lenny face copy and paste, lenny face copy paste, lenny face to copy and paste, how to type lenny face, lennyface, lenny faces, ( ͡° ͜ʖ ͡°) | Only page titled "Lenny". `/text-faces/` no longer claims Lenny. |
+| `/shrug-kaomoji/` | shrug emoticon / ¯\_(ツ)_/¯ | shrug emoji, shrug kaomoji, shrugging kaomoji, shrug face | Only page titled "Shrug". |
 | `/uwu-kaomoji/` | uwu face (2.9k / 32) | owo, uwu kaomoji | Only page titled "UwU". |
 | `/food-kaomoji/` | food kaomoji | eating / drinking / hungry kaomoji | Tag `food` (glyph-detected: ﹃ ڡ 旦 + food emoji). |
 | `/emoticons/` | emoticons (60.5k / 87), text emoticons, keyboard faces (1.9k / 28) | smiley face copy and paste, ascii emoticons, emoticon list, emoticon meanings | Western keyboard emoticons with meanings. `/japanese-emoticons/` keeps the Japanese modifier. |
@@ -139,3 +139,37 @@ Competitors reviewed (US SERPs): gyanmirai.com/tools/kaomoji (34k faces, 53 mood
 Data: `scripts/tag-face-families.mjs` adds `lenny`, `shrug`, `uwu`, `food` tags by glyph pattern and appends curated faces (idempotent). Curated non-face collections live in `data/collections.ts`.
 
 Open item: the home title contains "Kaomoji Copy and Paste", the primary of `/kaomoji-copy-paste/`. Review in GSC (queries for both URLs) before changing the home title.
+
+- US Semrush batch 1 (2026-11-01): text-faces texting synonyms, japanese/lenny/shrug/mood word-order synonyms → canonical URLs via `public/_redirects`; `/smiley-face-text` repointed from `/emoticons/` to `/text-faces/`. See `docs/KEYWORD-BATCH1-US-2026-11-01.md`.
+
+## US batch 2 secondaries (2026-11-01, high-tier EN targeting)
+
+| URL | Secondaries (redirect + on-page) |
+|---|---|
+| `/cat-kaomoji/` | kaomoji cat; cute cat kaomoji; cat kaomoji copy and paste; cat kaomojis |
+| `/angry-kaomoji/` | kaomoji angry |
+| `/table-flip-kaomoji/` | kaomoji table flip |
+| `/heart-kaomoji/` | kaomoji heart; hearts kaomoji |
+| `/shy-kaomoji/` | kaomoji shy; kaomojis shy |
+| `/bunny-kaomoji/` | kaomoji bunny |
+| `/shocked-kaomoji/` | shock kaomoji |
+| `/pout-kaomoji/`, `/dog-kaomoji/`, `/sleepy-kaomoji/` | primary only |
+
+See `docs/KEYWORD-BATCH2-US-2026-11-01.md`.
+
+## US batch 3 secondaries (2026-11-01, high-tier EN targeting)
+
+| URL | Secondaries |
+|---|---|
+| `/hug-kaomoji/` | kaomoji hug; hugging kaomoji |
+| `/waving-kaomoji/` | kaomoji waving |
+| `/dance-kaomoji/` | dancing kaomoji |
+| `/bear-kaomoji/`, `/thinking-kaomoji/`, `/birthday-kaomoji/`, `/christmas-kaomoji/` | primary only |
+
+See `docs/KEYWORD-BATCH3-US-2026-11-01.md`.
+
+## US keyword batch 4 (2026-11-01)
+Star, sparkle, love, flower, kiss, smile, excited, wink: word-order synonyms 301 to existing owners. See docs/KEYWORD-BATCH4-US-2026-11-01.md.
+
+## US keyword batch 5 (2026-11-01)
+Thumbs up, bowing, emoticons, cute symbols, emoji combos: synonyms 301 to existing owners (cute/happy/crying/angry emoticon → mood pages). cute-symbols and emoji-combos keep their own pages. See docs/KEYWORD-BATCH5-US-2026-11-01.md.
