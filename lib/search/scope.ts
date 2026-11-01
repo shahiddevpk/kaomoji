@@ -26,14 +26,14 @@ export function searchPlaceholderForScope(
 ): string {
   if (scope.collection) {
     const page = pages.find((item) => item.path === scope.path);
-    return page ? `Search within ${page.label}` : "Search this page";
+    return page ? `Search ${page.label}…` : "Search…";
   }
   if (!scope.category && !scope.tags) {
-    return "Search faces, like cute, cry, or shrug";
+    return "Search faces…";
   }
   const page = pages.find((item) => item.path === scope.path);
-  if (page) return `Search within ${page.label}`;
-  return "Search faces on this page";
+  if (page) return `Search ${page.label}…`;
+  return "Search…";
 }
 
 /** Header search scope from the current pathname (longest path match). */

@@ -229,7 +229,7 @@ export const pages: SitePage[] = [
     heading: "Cat Kaomoji",
     titleSegment: "Cat Kaomoji (=^･ω･^=)",
     description:
-      "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, from sleepy cats to startled ones. Cute cat kaomoji, 100+ faces for any chat.",
+      "Cat kaomoji (=^･ω･^=) to copy and paste: neko faces with ears, whiskers, and that little ω mouth, 100+ faces from sleepy to startled.",
     intro:
       "Neko faces from calm cats to excited ones - one tap to copy. Every face here has cat ears, whiskers, or that little ω mouth, so you do not have to dig through human faces to find one. Searching for kaomoji cat or cat kaomoji copy and paste? It is the same list: tap any face and it is on your clipboard.",
     group: "browse",
@@ -472,7 +472,7 @@ export const pages: SitePage[] = [
     heading: "Fight Kaomoji",
     titleSegment: "Fight Kaomoji (ง •̀_•́)ง",
     description:
-      "Fight kaomoji (ง •̀_•́)ง copy and paste: punching, hitting, and sparring faces with fists up and ready to go.",
+      "Fight kaomoji (ง •̀_•́)ง copy and paste: punching, hitting, and sparring faces with fists up, plus victory poses and duel faces for games and chat.",
     intro:
       "Punching, hitting, and sparring poses for fight-mode chat - tap to copy. These faces are moving: fists up, punches flying, ready to spar.\n\nUse them for playful trash talk, game nights, or \"bring it\" energy. For a flipped table, open table flip kaomoji; for a quiet sulk, try pout. Plain scowls and glares are on the angry kaomoji page.",
     group: "browse",
@@ -2811,7 +2811,7 @@ export const pages: SitePage[] = [
     path: "/border-kaomoji",
     label: "Borders",
     heading: "Kaomoji Borders & Dividers",
-    titleSegment: "Kaomoji Borders & Dividers ─── ⋆⋅☆⋅⋆ ─── Copy & Paste",
+    titleSegment: "Kaomoji Borders & Dividers ⋆⋅☆⋅⋆ Copy & Paste",
     description:
       "Kaomoji borders and dividers to copy and paste: 70+ box lines, sparkle separators, coquette ribbons ୨୧, and bracket frames for bios, captions, and Discord.",
     intro:

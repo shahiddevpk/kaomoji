@@ -55,7 +55,7 @@ function SearchBox__impl({
     placeholderProp ??
     (isHeader
       ? searchPlaceholderForScope(scope, navPages)
-      : "Search faces, like cute, cry, or shrug");
+      : "Search faces…");
   const scopedSearch = Boolean(scope.category || scope.tags || scope.collection);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchHit[]>([]);

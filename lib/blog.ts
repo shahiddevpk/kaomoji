@@ -33,7 +33,7 @@ export const BLOG_INDEX = {
   heading: "Kaomoji Blog",
   titleSegment: "Kaomoji Blog: Holiday Messages & Seasonal Ideas",
   description:
-    "Ready-to-send holiday messages and seasonal captions with kaomoji, texting ideas, and tips for Halloween, Diwali, Thanksgiving, Christmas, New Year, and Valentine's Day.",
+    "Ready-to-send holiday messages and captions with kaomoji for Halloween, Diwali, Thanksgiving, Christmas, New Year, and Valentine's Day.",
   intro:
     "Seasonal posts with copy-paste messages and captions for holidays and events. Every line has a Copy button, and every post links to the full face collection for that occasion.",
 };
