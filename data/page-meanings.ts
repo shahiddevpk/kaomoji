@@ -201,6 +201,24 @@ export const PAGE_MEANINGS: Record<string, PageMeaning[]> = {
     { face: "(ᗒᗣᗕ)՞", name: "Wailing", meaning: "Upset, whiny sadness.", parts: "ᗒ ᗕ squeezed eyes and an open ᗣ mouth." },
     { face: "( ´_ゝ`)", name: "Deflated", meaning: "Disappointed, unimpressed.", parts: "Droopy ´ ` eyes and a flat ゝ mouth." },
   ],
+  "/sweat-kaomoji": [
+    { face: "(^_^;)", name: "Awkward smile", meaning: "Oops, laughing it off.", parts: "; is a sweat drop beside a calm ^_^ smile." },
+    { face: "(^^;)ｱｾｱｾ", name: "Flustered", meaning: "Rushing or covering a slip.", parts: "ｱｾｱｾ (ase ase) is the sound of panicked sweating." },
+    { face: "(;^_^A ｱｾｱｾ･･･", name: "Wiping sweat", meaning: "Phew, that was close.", parts: "A is a hand wiping the forehead; ; is the drop." },
+    { face: "( ´•ᴗ•ก )💦", name: "Splash", meaning: "Hot, tired, or very flustered.", parts: "💦 is a big sweat splash; ก is a hand at the cheek." },
+  ],
+  "/aesthetic-kaomoji": [
+    { face: "(⑅•ᴗ•⑅)🎀", name: "Ribbon smile", meaning: "Soft and sweet.", parts: "⑅ marks are tiny bows on the cheeks; 🎀 finishes the look." },
+    { face: "( ⸝⸝´꒳`⸝⸝)", name: "Fluffy blush", meaning: "Shy, warm, content.", parts: "⸝⸝ are soft blush strokes around a small ꒳ mouth." },
+    { face: "꒰ ˶• ༝ •˶꒱", name: "Bracket face", meaning: "Gentle and calm.", parts: "꒰ ꒱ are puffy brackets; ˶ adds light cheeks." },
+    { face: "ヾ(❀╹◡╹)ﾉﾞ❀", name: "Flower wave", meaning: "Dreamy hello.", parts: "❀ is a hair flower; ヾ ﾉﾞ are waving hands." },
+  ],
+  "/animal-kaomoji": [
+    { face: "(￣(oo)￣)", name: "Pig", meaning: "Oink, or feeling greedy.", parts: "(oo) is the pig snout between flat eyes." },
+    { face: "( ´ω`っ )3", name: "Seal", meaning: "Lazy, flopped over.", parts: "っ is a flipper and 3 is the tail." },
+    { face: "^･ω･^", name: "Fox", meaning: "Sly little critter.", parts: "^ ^ are pointed ears around a small ω mouth." },
+    { face: "ʕ •ᴥ• ʔ", name: "Bear", meaning: "Classic animal face.", parts: "ʕ ʔ are round ears and ᴥ is the snout." },
+  ],
   "/nervous-kaomoji": [
     { face: "(・_・;)", name: "Sweat drop", meaning: "Awkward or nervous.", parts: "; is a sweat drop on a blank face." },
     { face: "(°ー°〃)", name: "Uneasy", meaning: "Nervous laughter.", parts: "〃 are worry marks beside wide ° eyes." },

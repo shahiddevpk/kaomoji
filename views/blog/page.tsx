@@ -16,11 +16,11 @@ const EVENTS: {
   postHref?: string;
 }[] = [
   {
-    date: "Oct 31, 2026",
-    name: "Halloween",
-    facesHref: "/halloween-kaomoji/",
-    facesLabel: "Halloween kaomoji",
-    postHref: "/blog/halloween-messages-with-kaomoji/",
+    date: "Nov 8, 2026",
+    name: "Diwali",
+    facesHref: "/sparkle-kaomoji/",
+    facesLabel: "Sparkle kaomoji",
+    postHref: "/blog/diwali-wishes-and-messages-with-kaomoji/",
   },
   {
     date: "Nov 26, 2026",

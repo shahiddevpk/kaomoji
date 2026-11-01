@@ -122,9 +122,9 @@ export const pages: SitePage[] = [
     path: "/cute-kaomoji",
     label: "Cute",
     heading: "Cute Kaomoji",
-    titleSegment: "Cute Kaomoji & Kawaii (◕‿◕) Aesthetic Faces",
+    titleSegment: "Cute Kaomoji & Kawaii Faces (◕‿◕)",
     description:
-      "Cute kaomoji and aesthetic kawaii faces (◕‿◕) to copy and paste: soft blushes and tiny hugs. 100+ adorable Japanese text faces for Discord, WhatsApp, and chat.",
+      "Cute kaomoji and kawaii faces (◕‿◕) to copy and paste: soft blushes and tiny hugs. 100+ adorable Japanese text faces for Discord, WhatsApp, and chat.",
     intro:
       "Soft kawaii smiles, blush, and tiny hugs ready to copy and paste in one tap. This is the gentle, soft side of kaomoji. For louder cheers, waves, and big grins, try happy kaomoji.",
     group: "browse",
@@ -173,10 +173,10 @@ export const pages: SitePage[] = [
       {
         question: "What are aesthetic and cutecore kaomoji?",
         answer:
-          "Aesthetic and cutecore kaomoji combine soft blushing faces like (˶ᵔ ᵕ ᵔ˶) or ꒰ᐢ. .ᐢ꒱ with ribbons ୨୧, flowers ✿, and sparkles ✧ for pastel bios and captions.",
+          "Aesthetic and cutecore kaomoji are the soft, decorated subset of cute faces, like (˶ᵔ ᵕ ᵔ˶) or ꒰ᐢ. .ᐢ꒱ with ribbons, flowers, and sparkles. The aesthetic kaomoji page collects the ribbon, ꒰ ꒱ bracket, fluffy, and dreamy styles on their own.",
       },
     ],
-    related: ["/happy-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji"],
+    related: ["/happy-kaomoji", "/aesthetic-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji"],
   },
   {
     path: "/happy-kaomoji",
@@ -278,7 +278,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Neko and catmoji faces copy here with one tap. The general Kaomoji Copy and Paste page is for mixed popular faces when you do not need whiskers only.",
       },
     ],
-    related: ["/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
+    related: ["/animal-kaomoji", "/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
   },
   {
     path: "/sad-kaomoji",
@@ -379,10 +379,10 @@ export const pages: SitePage[] = [
       },
       {
         question: "Can I use a crying kaomoji for laughing-so-hard-I-cried?",
-        answer: "Yes. The crying aesthetic crosses into laughter in many chats. A sobbing face after a hilarious message reads as \"crying laughing\" in most contexts, similar to the 😂 emoji.",
+        answer: "You can, and many people do. For faces made specifically for laughing so hard you cry, the giggling and laughing kaomoji page has the crying-with-laughter set; this page stays focused on real tears and sobbing.",
       },
     ],
-    related: ["/sad-kaomoji", "/happy-kaomoji", "/cute-kaomoji"],
+    related: ["/sad-kaomoji", "/giggling-kaomoji", "/happy-kaomoji", "/cute-kaomoji"],
   },
   {
     path: "/angry-kaomoji",
@@ -431,6 +431,11 @@ export const pages: SitePage[] = [
       {
         question: "Can angry faces come across as too harsh?",
         answer: "Yes in serious conversations. For light teasing, prefer pout or a mild mad face; save full rage and flips for friends who share that humor.",
+      },
+      {
+        question: "Do annoyed kaomoji count as angry?",
+        answer:
+          "Yes. Annoyed faces are the mild end of anger, with flat ಠ_ಠ stares or a ╬ vein mark, and they sit in this collection. For a sulky, puffed-cheek mood, try the pout page.",
       },
     ],
     related: [
@@ -906,6 +911,11 @@ export const pages: SitePage[] = [
         answer:
           "Cute aims for adorable warmth. Shy aims for hesitation and blush. They overlap, but a shy face is bashful first and pretty second.",
       },
+      {
+        question: "Where are embarrassed kaomoji?",
+        answer:
+          "On this page. Embarrassed faces share the blush marks, covered eyes, and small mouths of shy faces, so they are tagged and collected together here.",
+      },
     ],
     related: ["/heart-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/nervous-kaomoji"],
   },
@@ -955,7 +965,7 @@ export const pages: SitePage[] = [
           "Yes for most apps. If a rare symbol shows as a box, pick a simpler bunny from the same grid.",
       },
     ],
-    related: [
+    related: ["/animal-kaomoji", 
       "/dog-kaomoji",
       "/bear-kaomoji",
       "/cat-kaomoji",
@@ -1007,8 +1017,13 @@ export const pages: SitePage[] = [
         answer:
           "Often, if the platform allows special characters. Test paste once before saving a bio or display name.",
       },
+      {
+        question: "What is the 狗头 dog head kaomoji?",
+        answer:
+          "狗头 (gǒu tóu, \"dog head\") is a Chinese internet habit of adding a dog face to show a remark is a joke or sarcasm. Any dog face here, such as (U・x・U), can play that role.",
+      },
     ],
-    related: [
+    related: ["/animal-kaomoji", 
       "/bunny-kaomoji",
       "/bear-kaomoji",
       "/cat-kaomoji",
@@ -1064,6 +1079,11 @@ export const pages: SitePage[] = [
         question: "Do big shocked faces break in SMS?",
         answer:
           "Usually not. If spacing looks odd, pick a shorter one-line shocked face from the grid.",
+      },
+      {
+        question: "Is a shock kaomoji the same as a shocked kaomoji?",
+        answer:
+          "Yes. Shock, shocked, and surprised searches all land here. Wide eyes like (°□°) and open mouths like Д are the shared signal.",
       },
     ],
     related: ["/confused-kaomoji", "/scared-kaomoji", "/smug-kaomoji", "/sad-kaomoji", "/crying-kaomoji"],
@@ -1273,7 +1293,7 @@ export const pages: SitePage[] = [
           "Yes. The ʕ ʔ brackets and ᴥ snout are standard Unicode supported on iOS, Android, and most chat apps. If a variant with rare characters shows a box, pick one of the simpler bears in the grid.",
       },
     ],
-    related: [
+    related: ["/animal-kaomoji", 
       "/bunny-kaomoji",
       "/dog-kaomoji",
       "/cat-kaomoji",
@@ -1464,6 +1484,11 @@ export const pages: SitePage[] = [
         question: "Can I use dance faces in group chats?",
         answer: "Yes. Dance and party reactions are universally understood and usually land well in celebration threads.",
       },
+      {
+        question: "Is dancing kaomoji the same as dance kaomoji?",
+        answer:
+          "Yes. Dancing kaomoji and dance kaomoji mean the same moving, musical faces, so both searches are covered by this page.",
+      },
     ],
     related: ["/excited-kaomoji", "/happy-kaomoji", "/running-kaomoji", "/giggling-kaomoji"],
   },
@@ -1513,7 +1538,7 @@ export const pages: SitePage[] = [
         answer: "Fish kaomoji focus on the aquatic shape — arrows and brackets forming a fish body. Animal pages like cat, dog, and bunny use facial expression cues instead.",
       },
     ],
-    related: ["/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji"],
+    related: ["/animal-kaomoji", "/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji"],
   },
   {
     path: "/birthday-kaomoji",
@@ -1925,12 +1950,12 @@ export const pages: SitePage[] = [
   {
     path: "/giggling-kaomoji",
     label: "Giggling",
-    heading: "Giggling Kaomoji",
-    titleSegment: "Giggling Kaomoji (≧▽≦)",
+    heading: "Giggling & Laughing Kaomoji",
+    titleSegment: "Giggling & Laughing Kaomoji (≧▽≦)",
     description:
-      "Giggling kaomoji to copy and paste: quiet giggles, hand-over-mouth snickers, and full laughing fits for when \"lol\" is not enough.",
+      "Giggling and laughing kaomoji to copy and paste: quiet giggles, hand-over-mouth snickers, crying-with-laughter faces, and full laughing fits for when \"lol\" is not enough.",
     intro:
-      "Giggles, chuckles, and burst laughs ready to copy in one tap. Giggling and laughing faces share this page so you get the full spectrum from shy titter to uncontrollable cackle.",
+      "Giggles, chuckles, and burst laughs ready to copy in one tap. Giggling and laughing faces share this page so you get the full spectrum from shy titter to crying-with-laughter cackle.",
     group: "browse",
     tags: ["giggle", "laugh"],
     howTo: [
@@ -1968,8 +1993,18 @@ export const pages: SitePage[] = [
         question: "Will these paste correctly in Discord?",
         answer: "Yes. Discord renders Unicode characters well, so most laugh and giggle faces paste intact. Avoid very long multiline faces in tight channel threads.",
       },
+      {
+        question: "Where are the crying-with-laughter kaomoji?",
+        answer:
+          "Here. The laughing-so-hard-you-cry feeling, the text version of the 😂 emoji, belongs with laughter: pick a squeezed-eye burst like (≧▽≦)ｱﾊﾊ or (ﾉ≧∀≦)ﾉｱﾊﾊ. For real sadness and sobbing, use the crying kaomoji page instead.",
+      },
+      {
+        question: "Is there a funny kaomoji page?",
+        answer:
+          "Funny reactions live on this page, because most people send a funny kaomoji to show they are laughing. For pranks and mischievous grins, the smug and devil pages fit better.",
+      },
     ],
-    related: ["/happy-kaomoji", "/smile-kaomoji", "/excited-kaomoji", "/cute-kaomoji"],
+    related: ["/happy-kaomoji", "/crying-kaomoji", "/smile-kaomoji", "/excited-kaomoji", "/sweat-kaomoji", "/cute-kaomoji"],
   },
   {
     path: "/sparkle-kaomoji",
@@ -2013,7 +2048,7 @@ export const pages: SitePage[] = [
         answer: "On most modern apps, yes. If a sparkle face shows a box on an older device, pick a simpler face using more basic glyph sets.",
       },
     ],
-    related: ["/star-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+    related: ["/aesthetic-kaomoji", "/star-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
   },
   {
     path: "/love-kaomoji",
@@ -2205,6 +2240,11 @@ export const pages: SitePage[] = [
         question: "Is there a difference between smiley face and smile kaomoji?",
         answer: "Smiley faces usually means the broad category of happy text faces. On this site, smile kaomoji focuses on the quiet grin and warm expression, not the full happy cheer category.",
       },
+      {
+        question: "Are smiling kaomoji the same as smile kaomoji?",
+        answer:
+          "Yes. Smiling kaomoji, smile kaomoji, and kaomoji smiling all point to the same gentle, closed-mouth or soft-grin faces collected here.",
+      },
     ],
     related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji", "/wink-kaomoji"],
   },
@@ -2248,6 +2288,11 @@ export const pages: SitePage[] = [
       {
         question: "Can I use excited kaomoji in Discord?",
         answer: "Yes. Discord supports Unicode kaomoji well. These faces paste cleanly in messages, servers, and DMs.",
+      },
+      {
+        question: "Where can I find cheering kaomoji?",
+        answer:
+          "Cheering faces with raised arms, like ＼(^o^)／, are here with the other excited faces. For calmer approval, try thumbs-up kaomoji.",
       },
     ],
     related: ["/happy-kaomoji", "/giggling-kaomoji", "/smile-kaomoji", "/cute-kaomoji", "/dance-kaomoji", "/running-kaomoji"],
@@ -2299,7 +2344,175 @@ export const pages: SitePage[] = [
         answer: "Most sweat marks use standard Unicode and paste fine. If a drop shows a box, pick a nervous face built from more common characters.",
       },
     ],
-    related: ["/shy-kaomoji", "/confused-kaomoji", "/sad-kaomoji", "/crying-kaomoji", "/thinking-kaomoji"],
+    related: ["/sweat-kaomoji", "/shy-kaomoji", "/confused-kaomoji", "/sad-kaomoji", "/crying-kaomoji", "/thinking-kaomoji"],
+  },
+  {
+    path: "/sweat-kaomoji",
+    label: "Sweat",
+    heading: "Sweat Kaomoji",
+    titleSegment: "Sweat Kaomoji (^_^;)",
+    description:
+      "Sweat kaomoji to copy and paste: sweat-drop faces like (^_^;) and (^^;)ｱｾｱｾ for awkward laughs, oops moments, heat, and hard work. 200+ sweating text faces.",
+    intro:
+      "Sweat kaomoji put a drop of sweat beside the face: the awkward laugh after a typo, the \"ahaha… about that\" reply, or a face melting in summer heat. Every sweating face here carries a visible drop, from a tiny ; to a full 💦 splash, ready to copy in one tap.",
+    group: "browse",
+    tags: ["sweat"],
+    faceGroups: [
+      { id: "splash", heading: "Splashing sweat 💦", glyphs: ["💦"] },
+      { id: "ase", heading: "Flustered ｱｾｱｾ faces", glyphs: ["ｱｾ", "あせ", "焦"] },
+      { id: "drop", heading: "Classic sweat-drop kaomoji (^_^;)", glyphs: [";", "；", "٥"] },
+    ],
+    howTo: [
+      "Decide how big the sweat should be: a single ; for a small slip, ｱｾｱｾ for flustered rushing, or 💦 for heat and hard effort.",
+      "Tap Copy. The drop is part of the face string, so it pastes in the right spot.",
+      "Send it after an awkward admission, a late reply, or a \"whew, made it\" update.",
+    ],
+    definition:
+      "A sweat kaomoji is a text face with a sweat mark added, usually ; or ； beside the eyes, ٥ on the cheek, or 💦 in the air. The drop changes the tone from plain to awkward, flustered, or overheated without changing the eyes or mouth.",
+    learnMore:
+      "The sweat drop is one of the oldest conventions borrowed from manga: a single bead at the temple tells the reader a character is caught out, embarrassed, or laughing it off. In text, the semicolon took that job because its shape looks like a falling drop. Put it after a calm face, as in (^_^;), and the smile turns into a polite, slightly strained one.\n\nPlacement matters. A drop on the outside of the bracket, like (^^;), reads as a light \"oops\". Drops inside the face, as in (；・∀・), feel closer and more flustered. The katakana ｱｾｱｾ (ase ase) is the sound of panicked sweating, so faces like (;^_^A ｱｾｱｾ･･･ suit a rushed apology or a deadline sprint. The 💦 splash is the loudest option and also works literally, for hot weather, a workout, or spicy food.\n\nSweat is not the same as fear. Use these faces for awkward, sheepish, or overheated moments. When the feeling is real worry about what happens next, [nervous kaomoji](/nervous-kaomoji/) fit better; for blushing embarrassment, try [shy kaomoji](/shy-kaomoji/).",
+    faqs: [
+      {
+        question: "Is \"kaomoji sweat\" the same as sweat kaomoji?",
+        answer:
+          "Yes. Both phrases, along with sweating kaomoji, describe text faces with a sweat drop, like (^_^;) or (；´▽`). They are all collected on this page.",
+      },
+      {
+        question: "What does ｱｾｱｾ mean next to a face?",
+        answer:
+          "ｱｾｱｾ (ase ase) is Japanese for the feeling of sweating in a rush or panic. Adding it to a face says you are flustered, hurrying, or trying to cover a small mistake.",
+      },
+      {
+        question: "How is a sweat kaomoji different from a nervous kaomoji?",
+        answer:
+          "Sweat faces are mostly about awkwardness: a sheepish laugh, an oops, or literal heat. Nervous faces focus on worry and anxiety about something uncertain. A single drop with a smile is sweat; tense eyes and shaking marks are nervous.",
+      },
+      {
+        question: "Can I use the 💦 sweat faces for hot weather or the gym?",
+        answer:
+          "Yes. The splash style reads literally as well as emotionally, so it works for a summer heat post, a hard workout, or a very spicy meal.",
+      },
+      {
+        question: "Why do some sweat drops look like a small hand or letter?",
+        answer:
+          "Faces such as (;^_^A use the letter A as a hand wiping sweat from the forehead. The ٥ mark is an Arabic-script character chosen because it looks like a round drop on the cheek.",
+      },
+      {
+        question: "Where are worried or anxious faces?",
+        answer:
+          "Real worry has its own collection on the nervous kaomoji page. This page keeps to the awkward, sheepish sweat-drop look, so the two sets do not overlap.",
+      },
+    ],
+    related: ["/nervous-kaomoji", "/shy-kaomoji", "/sorry-kaomoji", "/giggling-kaomoji", "/confused-kaomoji"],
+  },
+  {
+    path: "/aesthetic-kaomoji",
+    label: "Aesthetic",
+    heading: "Aesthetic Kaomoji",
+    titleSegment: "Aesthetic Kaomoji ꒰ ᵕ ᵕ ꒱",
+    description:
+      "Aesthetic kaomoji to copy and paste: soft ꒰ ꒱ bracket faces, ribbon 🎀 bows, fluffy ( ⸝⸝´꒳`⸝⸝) blushes, and dreamy ✧ text faces for bios, captions, and soft-style posts.",
+    intro:
+      "Aesthetic kaomoji are the soft, decorated side of text faces: rounded ꒰ ꒱ brackets, tiny ⸝⸝ blush marks, ribbon bows, and dreamy sparkles that look good in a bio or caption. Pick a pastel, styled face and tap it to copy.",
+    group: "browse",
+    tags: ["ribbon", "fluffy", "dreamy"],
+    faceGroups: [
+      { id: "ribbon", heading: "Ribbon & bow faces 🎀", glyphs: ["🎀", "ೀ", "ʚ", "ɞ", "୨୧", "⑅"] },
+      { id: "bracket", heading: "Soft bracket faces ꒰ ꒱", glyphs: ["꒰", "꒱", "໒", "ঌ"] },
+      { id: "blush", heading: "Fluffy blush faces ⸝⸝", glyphs: ["⸝⸝", "もふ", "ﾓﾌ", "˶"] },
+      { id: "dreamy", heading: "Dreamy sparkle faces ✧", glyphs: ["✧", "✨", "⋆", "˚", "𓂃", "♡"] },
+    ],
+    howTo: [
+      "Pick a style first: ribbon bows, soft ꒰ ꒱ brackets, fluffy blush, or dreamy sparkles.",
+      "Tap Copy, then paste it into your bio, caption, or display name and check how it looks there.",
+      "Keep one or two aesthetic faces per line; several in a row can crowd a small profile field.",
+    ],
+    definition:
+      "Aesthetic kaomoji are text faces styled for looks as much as feeling. They swap plain round brackets for decorative ones like ꒰ ꒱, add soft cheek marks such as ⸝⸝ or ˶, and finish with bows, hearts, or sparkles. The mood is gentle and calm rather than loud.",
+    learnMore:
+      "The aesthetic style grew out of soft and pastel social media trends, where people wanted text that matched a curated feed. Instead of building a new face, creators decorated familiar ones. Round brackets became ꒰ ꒱ (characters from the Yi script that look like puffy cheeks), plain blush became tiny ⸝⸝ strokes, and small marks like ⑅ or ೀ became bows tied beside the face.\n\nThree details make a face read as aesthetic. Small, low features, such as ᵕ ᵕ eyes or a ꒳ mouth, keep it quiet. Light framing, like ⋆ or ˚ placed around the face, adds air without clutter. And a single accent, often 🎀 or ♡, gives it a finishing touch. Faces built this way suit profile bios, story captions, and username decoration better than a busy reaction face.\n\nFor broader cute faces with big smiles and hugs, see [cute kaomoji](/cute-kaomoji/). For glitter-heavy faces, try [sparkle kaomoji](/sparkle-kaomoji/), and for lines to frame your bio, use [kaomoji borders](/border-kaomoji/).",
+    faqs: [
+      {
+        question: "What makes a kaomoji \"aesthetic\" instead of just cute?",
+        answer:
+          "Cute faces can be loud and bouncy. Aesthetic faces are quieter and more decorated: soft brackets like ꒰ ꒱, tiny blush marks, bows, and sparkles arranged for how they look in a bio or caption.",
+      },
+      {
+        question: "Is kaomoji aesthetic the same as aesthetic kaomoji?",
+        answer:
+          "Yes. Both searches mean the same soft, styled text faces, and this page collects them in one place.",
+      },
+      {
+        question: "What are the ꒰ ꒱ brackets in aesthetic faces?",
+        answer:
+          "They are characters from the Yi script. Their rounded, puffy shape looks softer than ( ), so they are a favorite frame for pastel and soft-style kaomoji.",
+      },
+      {
+        question: "Will aesthetic kaomoji show up in my Instagram or TikTok bio?",
+        answer:
+          "Most do, because they are standard Unicode. A few rare marks can show as boxes on older phones, so paste once and preview your profile before saving.",
+      },
+      {
+        question: "Where can I find a ribbon bow kaomoji?",
+        answer:
+          "Look in the ribbon section at the top of this page for faces with 🎀, ⑅, or ೀ bows. For bowing as a polite gesture, like m(_ _)m, use the bowing kaomoji page instead.",
+      },
+    ],
+    related: ["/cute-kaomoji", "/sparkle-kaomoji", "/flower-kaomoji", "/uwu-kaomoji", "/border-kaomoji", "/cute-symbols"],
+  },
+  {
+    path: "/animal-kaomoji",
+    label: "Animals",
+    heading: "Animal Kaomoji",
+    titleSegment: "Animal Kaomoji ʕ•ᴥ•ʔ (=^･ω･^=)",
+    description:
+      "Animal kaomoji to copy and paste: pigs (￣(oo)￣), seals ( ´ω`っ)3, foxes ^･ω･^, plus quick links to cat, dog, bunny, bear, and fish kaomoji collections.",
+    intro:
+      "Every animal kaomoji family in one place. Jump to a dedicated page for cats, dogs, bunnies, bears, or fish, or scroll down for the animals that do not have their own page yet: pigs, seals, foxes, and mixed critters. Tap any face to copy it.",
+    group: "browse",
+    tags: ["animal", "pig", "seal", "fox"],
+    faceGroups: [
+      { id: "pig", heading: "Pig kaomoji 🐽", glyphs: ["🐽", "(oo)", "(00)", "⚇"] },
+      { id: "seal", heading: "Seal kaomoji ( ´ω`っ)3", glyphs: ["З", ")3", "3", "ε("] },
+      { id: "fox", heading: "Fox kaomoji ^･ω･^", glyphs: ["◝", "^･", "^◕", "^˘", "^-"] },
+    ],
+    howTo: [
+      "Want a cat, dog, bunny, bear, or fish? Use the matching link below for the full collection.",
+      "For pigs, seals, and foxes, scroll the sections on this page and tap Copy on the face you like.",
+      "Paste it into chat, a pet photo caption, or a username; most animal faces are a single line.",
+    ],
+    definition:
+      "Animal kaomoji are text faces that suggest a specific creature through one or two signature characters: ᴥ for a muzzle, ω for a cat mouth, (oo) for a pig snout, ㅅ for a bunny nose, or ><((( for a fish body. Swap the signature piece and the same eyes become a different animal.",
+    learnMore:
+      "Most animals in kaomoji are recognized by one detail. Bears use the ʕ ʔ ears and ᴥ snout, as in ʕ•ᴥ•ʔ. Cats use =^ ^= whiskers and an ω mouth. Dogs lean on floppy U ears, as in (U・x・U), while bunnies use ㅅ or ᐢ ᐢ ears. Pigs swap in a snout made from (oo) or 🐽, seals lie on their side with っ )3, and foxes keep pointed ^ ^ ears around a small face.\n\nThe biggest animal families have their own pages so you can browse them fully: [cat kaomoji](/cat-kaomoji/), [dog kaomoji](/dog-kaomoji/), [bunny kaomoji](/bunny-kaomoji/), [bear kaomoji](/bear-kaomoji/), and [fish kaomoji](/fish-kaomoji/). The grid on this page covers the rest, so you are not scrolling past hundreds of cats to find a pig.\n\nBats appear in the library only as Halloween decorations beside human faces, not as their own animal faces, so they live on [Halloween kaomoji](/halloween-kaomoji/).",
+    faqs: [
+      {
+        question: "Which animal kaomoji have their own pages?",
+        answer:
+          "Cats, dogs, bunnies, bears, and fish each have a dedicated collection, linked from this page. This page shows the animals that do not, including pigs, seals, and foxes.",
+      },
+      {
+        question: "How do I make a pig kaomoji?",
+        answer:
+          "Put a snout in the middle of the face: (oo), (00), or the 🐽 emoji. For example, (￣(oo)￣) and (◕🐽◕) both read as pigs.",
+      },
+      {
+        question: "What does the ( ´ω`っ)3 seal kaomoji mean?",
+        answer:
+          "It is a seal lying on its side, with っ as a flipper and 3 or З as the tail. People use it for lazy, relaxed, or flopped-over moods.",
+      },
+      {
+        question: "Are fox kaomoji different from cat kaomoji?",
+        answer:
+          "They overlap. Fox faces usually skip the = whiskers and keep sharp ^ ^ ears around a small face, like ^･ω･^, so they look a little slyer than a round cat face.",
+      },
+      {
+        question: "Can I use these faces for a pet photo or username?",
+        answer:
+          "Yes. Most of these faces fit on one short line, so they work well in a pet photo caption, a game username, or a group chat nickname. Preview it once, since a few rare symbols may show as boxes on older phones.",
+      },
+    ],
+    related: ["/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji", "/fish-kaomoji", "/food-kaomoji"],
   },
   {
     path: "/wink-kaomoji",
@@ -2439,6 +2652,11 @@ export const pages: SitePage[] = [
         question: "Can I use bowing kaomoji in non-Japanese chats?",
         answer:
           "Yes. Most readers recognize the bow gesture even without the cultural context. Pair it with a word or two if needed, but the shape reads clearly as respect or thanks.",
+      },
+      {
+        question: "Is a ribbon bow kaomoji the same as a bowing kaomoji?",
+        answer:
+          "No. A bowing kaomoji shows a person bending politely, like m(_ _)m. A ribbon bow is the 🎀 decoration, and those faces are on the aesthetic kaomoji page in the ribbon section.",
       },
     ],
     related: ["/thank-you-kaomoji", "/sorry-kaomoji", "/waving-kaomoji", "/shy-kaomoji", "/heart-kaomoji", "/hug-kaomoji"],
@@ -3055,6 +3273,11 @@ export const pages: SitePage[] = [
       { question: "What does Ψ mean in kaomoji?", answer: "The psi symbol (Ψ) resembles a pitchfork, so it marks a face as a devil. Next to food it can also be a fork." },
       { question: "What are goth or evil kaomoji?", answer: "Goth kaomoji keep the face simple and let the accents set the mood: crosses ♰, pentagram stars ⛧, bat wings ⎛⎝(•ⱅ•)⎠⎞, black hearts 🖤, or a wilted rose 🥀. Evil kaomoji lean on sharp ◣ ◢ brows and wicked grins like (◣‿◢)Ψ." },
       { question: "Are devil kaomoji mean?", answer: "Usually not — they read as playful mischief. Avoid them in serious conversations." },
+      {
+        question: "Are evil kaomoji the same as devil kaomoji?",
+        answer:
+          "Mostly, yes. Evil kaomoji use the same wicked grins and Ψ pitchforks as devil faces, so they are collected here rather than on a separate page.",
+      },
     ],
     related: ["/halloween-kaomoji", "/smug-kaomoji", "/angry-kaomoji", "/cool-kaomoji"],
   },
@@ -3105,6 +3328,11 @@ export const pages: SitePage[] = [
         question: "How do I type the ୨୧ ribbon symbol in dividers?",
         answer:
           "୨୧ is two digits from the Odia script: ୨ (two) and ୧ (one). Side by side they look like a tied ribbon bow, which is why aesthetic bios use them. No standard keyboard has them, so copy the divider straight from this page.",
+      },
+      {
+        question: "Are kaomoji dividers on this page too?",
+        answer:
+          "Yes. Dividers are single lines you drop between sections, and borders frame text on all sides. Both are here. For bio layout ideas, see the guide to Instagram bio dividers with kaomoji on the blog.",
       },
     ],
     related: ["/cute-symbols", "/star-kaomoji", "/sparkle-kaomoji", "/art-kaomoji", "/kaomoji-copy-paste"],

@@ -128,6 +128,9 @@ function sitemapPriority(page: SitePage): number {
     case "/smile-kaomoji":
     case "/excited-kaomoji":
     case "/nervous-kaomoji":
+    case "/sweat-kaomoji":
+    case "/aesthetic-kaomoji":
+    case "/animal-kaomoji":
     case "/wink-kaomoji":
     case "/hug-kaomoji":
     case "/waving-kaomoji":

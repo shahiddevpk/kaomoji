@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/kaomoji/breadcrumbs";
 import { FaqSection } from "@/components/kaomoji/faq-section";
 import { LearnSection } from "@/components/kaomoji/learn-section";
 import { KaomojiGenerator } from "@/components/kaomoji/kaomoji-generator";
+import { LazyRecentlyCopied } from "@/components/kaomoji/lazy-client";
 import { JsonLd } from "@/components/layout/json-ld";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { getPage, relatedPages } from "@/lib/site";
@@ -41,6 +42,8 @@ export default function KaomojiGeneratorPage() {
       ) : null}
 
       <KaomojiGenerator />
+
+      <LazyRecentlyCopied />
 
       <LearnSection
         heading="About the kaomoji generator"

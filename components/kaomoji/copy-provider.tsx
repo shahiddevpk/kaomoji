@@ -212,8 +212,11 @@ function faceFromElement(el: Element): CopiedFace | null {
 }
 
 function onDocumentClick(event: MouseEvent) {
-  const target = event.target;
-  if (!(target instanceof Element)) return;
+  const raw = event.target;
+  if (!(raw instanceof Node)) return;
+  // Clicks on the text node inside a <button>Copy</button> are not Elements.
+  const target = raw instanceof Element ? raw : raw.parentElement;
+  if (!target) return;
   const control = target.closest(`[data-copy-id], ${GRID_COPY}`);
   if (!control) return;
   // React buttons handle their own onClick; skip if defaultPrevented by React.

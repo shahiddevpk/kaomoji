@@ -2197,22 +2197,12 @@
     },
     {
       "source": "/sweating-kaomoji",
-      "destination": "/nervous-kaomoji/",
+      "destination": "/sweat-kaomoji/",
       "permanent": true
     },
     {
       "source": "/sweating-kaomoji/",
-      "destination": "/nervous-kaomoji/",
-      "permanent": true
-    },
-    {
-      "source": "/sweat-kaomoji",
-      "destination": "/nervous-kaomoji/",
-      "permanent": true
-    },
-    {
-      "source": "/sweat-kaomoji/",
-      "destination": "/nervous-kaomoji/",
+      "destination": "/sweat-kaomoji/",
       "permanent": true
     },
     {
@@ -2243,16 +2233,6 @@
     {
       "source": "/cats-kaomoji/",
       "destination": "/cat-kaomoji/",
-      "permanent": true
-    },
-    {
-      "source": "/aesthetic-kaomoji",
-      "destination": "/cute-kaomoji/",
-      "permanent": true
-    },
-    {
-      "source": "/aesthetic-kaomoji/",
-      "destination": "/cute-kaomoji/",
       "permanent": true
     },
     {
@@ -3563,6 +3543,46 @@
     {
       "source": "/kaomoji-symbols/",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sweat",
+      "destination": "/sweat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-sweat/",
+      "destination": "/sweat-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-aesthetic",
+      "destination": "/aesthetic-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-aesthetic/",
+      "destination": "/aesthetic-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/animals-kaomoji",
+      "destination": "/animal-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/animals-kaomoji/",
+      "destination": "/animal-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-animals",
+      "destination": "/animal-kaomoji/",
+      "permanent": true
+    },
+    {
+      "source": "/kaomoji-animals/",
+      "destination": "/animal-kaomoji/",
       "permanent": true
     }
   ]

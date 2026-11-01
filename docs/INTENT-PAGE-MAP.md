@@ -16,11 +16,14 @@
 | URL | Primary | Secondary/synonyms (tags-only) | Intent | Parent/child | Canonical | Indexable | Monetization | Related |
 |---|---|---|---|---|---|---|---|---|
 | `/` | kaomoji | kaomojis; kamoji; koamoji; kaimoji; kaamoji; text faces; copy paste | Broad library discovery and quick copy | Hub | `/` | Yes | Eligible | — |
-| `/cute-kaomoji/` | cute kaomoji | kaomoji cute; kawaii; kawaii kaomoji; kawaii emoticons; aesthetic kaomoji | Browse cute/kawaii faces | Hub → browse child | self | Yes | Eligible | happy; cat; text-faces |
+| `/cute-kaomoji/` | cute kaomoji | kaomoji cute; kawaii; kawaii kaomoji; kawaii emoticons; cutecore | Browse cute/kawaii faces | Hub → browse child | self | Yes | Eligible | happy; cat; text-faces |
 | `/happy-kaomoji/` | happy kaomoji | kaomoji happy; smiling kaomoji; kaomoji smiling; excited kaomoji | Browse smiles, cheers, and waves | Hub → browse child | self | Yes | Eligible | cute; cat; sad |
 | `/cat-kaomoji/` | cat kaomoji | kaomoji cat; cute cat kaomoji; cat kaomoji copy and paste; cat kaomojis; neko; nyanko; catmoji; kitty; kitten | Browse cat/animal faces | Hub → browse child | self | Yes | Eligible | cute; happy; text-faces |
 | `/sad-kaomoji/` | sad kaomoji | kaomoji sad; sad kamoji; downcast; frown | Browse quiet sad/downcast faces | Hub → browse child | self | Yes | Eligible | crying; happy; cute |
 | `/crying-kaomoji/` | crying kaomoji | cry kaomoji; kaomoji cry; kaomoji crying; sob; tearful | Browse crying/tearful faces | Hub → browse child | self | Yes | Eligible | sad; happy; cute |
+| `/sweat-kaomoji/` | sweat kaomoji | kaomoji sweat; sweating kaomoji; sweat drop; ｱｾｱｾ | Browse sweat-drop faces (awkward, flustered, heat) | Hub → browse child | self | Yes | Eligible | nervous; shy; sorry; giggling |
+| `/aesthetic-kaomoji/` | aesthetic kaomoji | kaomoji aesthetic; soft kaomoji; ribbon bow kaomoji; ꒰ ꒱ bracket faces; fluffy; dreamy | Browse soft/decorated text faces (tags ribbon, fluffy, dreamy) | Hub → browse child | self | Yes | Eligible | cute; sparkle; flower; border |
+| `/animal-kaomoji/` | animal kaomoji | kaomoji animals; pig kaomoji; seal kaomoji; fox kaomoji | Animal browse hub: links to cat/dog/bunny/bear/fish owners; grid = pig, seal, fox, mixed animals | Hub → browse child | self | Yes | Eligible | cat; dog; bunny; bear; fish |
 | `/kaomoji-copy-paste/` | kaomoji copy and paste | copy and paste kaomoji; kaomoji copy paste; copy paste; one-tap copy | Utility: find and copy a face fast | Hub → utility child | self | Yes | Eligible | cute; happy; japanese-emoticons; text-faces |
 | `/japanese-emoticons/` | Japanese emoticons | Japanese kaomoji; kaomoji Japanese; Japan kaomoji; japanese emoticon; emoticons japanese; cute japanese emoticons; keyboard emoticons; punctuation; kana | Browse the classic Japanese-emoticon concept | Hub → browse child | self | Yes | Eligible | text-faces; cute; kaomoji-copy-paste |
 | `/text-faces/` | text faces | kaomoji faces; kaomoji face; faces in texting; faces on text messages; faces through text; text message faces; smiley face text; texting smiley faces; cute text faces; copy paste text faces; kawaii text faces; shrug; Lenny; disapproval; unicode expressions | Browse ASCII/unicode faces beside kaomoji | Hub → browse child | self | Yes | Eligible | japanese-emoticons; cute; kaomoji-copy-paste |
@@ -175,3 +178,11 @@ Thumbs up, bowing, emoticons, cute symbols, emoji combos: synonyms 301 to existi
 
 ## UK keyword batch 1 (2026-11-01)
 63 UK keywords reviewed; all heads already owned by existing pages. 13 missing synonyms (11 text-faces phrasings, kaomojis copy and paste, kaomoji symbols → hub) added as 301 pairs. No new pages, no title edits. See docs/KEYWORD-BATCH1-UK-2026-11-01.md.
+
+## 2026-11-01 coverage additions (sweat / aesthetic / animal + synonym ownership)
+
+- New owners: `/sweat-kaomoji/` (previously 301 → nervous), `/aesthetic-kaomoji/` (previously 301 → cute), `/animal-kaomoji/`. Old redirects removed; `/sweating-kaomoji` now 301 → `/sweat-kaomoji/`; `/kaomoji-sweat`, `/kaomoji-aesthetic`, `/animals-kaomoji`, `/kaomoji-animals` added as aliases.
+- Cute no longer claims "aesthetic" in its title/description; cute FAQ points aesthetic/cutecore detail to `/aesthetic-kaomoji/`.
+- Crying with laughter / laughing-crying → `/giggling-kaomoji/` (H1/title "Giggling & Laughing Kaomoji"); `/crying-kaomoji/` FAQ hands laughter-crying to giggling. Funny → giggling.
+- Synonyms kept on existing owners (FAQ only, no new URLs): smiling → smile; shock → shocked; embarrassed → shy; annoyed → angry; worried → nervous (sweat-only look → sweat); cheering → excited; dancing → dance; evil → devil; dividers → border (+ blog: instagram-bio-dividers-with-kaomoji); ribbon bow → aesthetic (bowing FAQ disambiguates; no `/bow-kaomoji/`); 狗头 note on dog.
+- Residual gap: no bat faces in data (bats only as Halloween decoration) → covered by note on `/animal-kaomoji/`, no page.

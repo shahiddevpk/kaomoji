@@ -33,6 +33,7 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/sad-kaomoji": "mood-tile--blue",
   "/crying-kaomoji": "mood-tile--blue",
   "/nervous-kaomoji": "mood-tile--blue",
+  "/sweat-kaomoji": "mood-tile--blue",
   "/sleepy-kaomoji": "mood-tile--blue",
   // Anger / intensity
   "/angry-kaomoji": "mood-tile--red",
@@ -40,6 +41,7 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/fight-kaomoji": "mood-tile--red",
   "/pout-kaomoji": "mood-tile--red",
   // Nature / animals
+  "/animal-kaomoji": "mood-tile--green",
   "/cat-kaomoji": "mood-tile--green",
   "/dog-kaomoji": "mood-tile--green",
   "/bear-kaomoji": "mood-tile--green",
@@ -66,6 +68,7 @@ const MOOD_TILE_VARIANTS: Record<string, string> = {
   "/lenny-face": "mood-tile--purple",
   "/shrug-kaomoji": "mood-tile--purple",
   "/uwu-kaomoji": "mood-tile--rose",
+  "/aesthetic-kaomoji": "mood-tile--rose",
   "/food-kaomoji": "mood-tile--amber",
   "/thanksgiving-kaomoji": "mood-tile--amber",
   "/sorry-kaomoji": "mood-tile--blue",
