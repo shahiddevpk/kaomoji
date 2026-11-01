@@ -2617,10 +2617,6 @@ export const pages: SitePage[] = [
         answer: "UwU is a cute face showing happiness, warmth, or affection. The U's are closed eyes and the w is a little mouth.",
       },
       {
-        question: "What is the difference between UwU and OwO?",
-        answer: "UwU has closed, content eyes. OwO has wide, open eyes and signals curiosity or surprise.",
-      },
-      {
         question: "How do I type a small uwu like ᵘʷᵘ?",
         answer: "The small letters are Unicode superscript characters that most keyboards cannot type. Copy (ᵘʷᵘ) from this page instead.",
       },

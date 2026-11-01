@@ -185,26 +185,11 @@ export function itemListJsonLd(
 }
 
 /**
- * HowTo JSON-LD for pages with step-by-step howTo copy instructions.
- * Emit only on page 1.
+ * HowTo JSON-LD retired: Google no longer shows HowTo rich results.
+ * Kept as a no-op so callers stay simple; visible how-to steps are unchanged.
  */
-export function howToJsonLd(page: SitePage): Record<string, unknown> | null {
-  if (!page.howTo || page.howTo.length === 0) return null;
-  const name =
-    page.howToName ??
-    (page.path === "/"
-      ? "How to copy and paste kaomoji"
-      : `How to copy ${page.label.toLowerCase()} kaomoji`);
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name,
-    step: page.howTo.map((text, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      text: plainTextAnswer(text),
-    })),
-  };
+export function howToJsonLd(_page: SitePage): Record<string, unknown> | null {
+  return null;
 }
 
 /**

@@ -97,16 +97,7 @@ export function guideArticleJsonLd(guide: Guide) {
   };
 }
 
-export function guideHowToJsonLd(guide: Guide) {
-  if (!guide.howTo) return null;
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: guide.howTo.name,
-    step: guide.howTo.steps.map((text, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      text,
-    })),
-  };
+/** HowTo JSON-LD retired: Google no longer shows HowTo rich results. */
+export function guideHowToJsonLd(_guide: Guide): Record<string, unknown> | null {
+  return null;
 }
