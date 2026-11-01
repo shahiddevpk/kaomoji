@@ -1,34 +1,22 @@
-# Google + Bing crawlers may crawl the site; every other bot is disallowed.
-# AdSense verification requires Google-Display-Ads-Bot (see AdSense help 10532 / 99376).
+# PasteKaomoji robots.txt — allow all crawlers, block only internal/duplicate URLs.
+# https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
 
-# AdSense verification + ads crawlers — must reach all public content
-User-Agent: Mediapartners-Google
-User-Agent: Google-Display-Ads-Bot
-User-Agent: AdsBot-Google
-User-Agent: AdsBot-Google-Mobile
+# AdSense / Google Ads crawlers (AdsBot ignores the * group, so list them explicitly)
+User-agent: Mediapartners-Google
+User-agent: Google-Display-Ads-Bot
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
 Allow: /
 
-# Search crawlers
-User-Agent: Googlebot
-User-Agent: Googlebot-Image
-User-Agent: Googlebot-Video
-User-Agent: Googlebot-News
-User-Agent: Storebot-Google
-User-Agent: Google-InspectionTool
-User-Agent: GoogleOther
-User-Agent: Google-Extended
-User-Agent: Bingbot
+# All other crawlers (Googlebot, Bingbot, DuckDuckBot, Applebot, social previews, etc.)
+User-agent: *
 Allow: /
 Disallow: /search
+Disallow: /api/
+Disallow: /search-data/
 Disallow: /*?*q=
 Disallow: /*?*tag=
 Disallow: /*?*filter=
 Disallow: /*?*mood=
-Disallow: /api/
-Disallow: /search-data/
-
-# Everyone else
-User-Agent: *
-Disallow: /
 
 Sitemap: https://pastekaomoji.com/sitemap.xml
