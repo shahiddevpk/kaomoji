@@ -3520,9 +3520,9 @@ export const pages: SitePage[] = [
     heading: "Contact",
     titleSegment: "Contact",
     description:
-      "Contact Paste Kaomoji: email hello@pastekaomoji.com for face suggestions, corrections, display issues, or rights requests. No contact form.",
+      "Contact Paste Kaomoji: email hello@pastekaomoji.com or call +92 348 5903367 for face suggestions, corrections, display issues, or rights requests. No contact form.",
     intro:
-      "Send corrections, face suggestions, or site questions by email. There is no account system and no contact form.",
+      "Send corrections, face suggestions, or site questions by email or phone (+92 348 5903367). There is no account system and no contact form.",
     group: "trust",
     related: ["/about", "/privacy"],
   },

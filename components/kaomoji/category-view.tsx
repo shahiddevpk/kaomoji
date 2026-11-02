@@ -345,6 +345,11 @@ export function CategoryView({
           <span className="text-muted"> - page {safePage}</span>
         ) : null}
       </h1>
+      {safePage === 1 && total > 0 ? (
+        <p className="mt-2 type-meta text-muted">
+          {total.toLocaleString("en-US")} faces in this collection - Updated November 2026
+        </p>
+      ) : null}
       <p className="mt-3 max-w-2xl whitespace-pre-line type-body text-muted lcp-hero">{page.intro}</p>
       <SubcategoryNav items={subcategoryNavItems(page)} />
 

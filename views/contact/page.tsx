@@ -21,8 +21,13 @@ export default function ContactPage() {
         >
           hello@pastekaomoji.com
         </a>
-        . It is the only contact channel for pastekaomoji.com; there is no
-        contact form, account system, or chat.
+        {" "}
+        or call{" "}
+        <a href="tel:+923485903367" className={emailLink}>
+          +92 348 5903367
+        </a>
+        . There is no contact form, account system, or chat on
+        pastekaomoji.com.
       </p>
 
       <h2 className="type-h2 text-foreground">What you can send</h2>
