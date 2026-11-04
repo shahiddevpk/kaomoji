@@ -30,6 +30,20 @@ const EVENTS: {
     postHref: "/blog/thanksgiving-messages-with-kaomoji/",
   },
   {
+    date: "Nov 27, 2026",
+    name: "Black Friday",
+    facesHref: "/excited-kaomoji/",
+    facesLabel: "Excited kaomoji",
+    postHref: "/blog/black-friday-and-cyber-monday-texts-with-kaomoji/",
+  },
+  {
+    date: "Dec 4–12, 2026",
+    name: "Hanukkah",
+    facesHref: "/sparkle-kaomoji/",
+    facesLabel: "Sparkle kaomoji",
+    postHref: "/blog/hanukkah-messages-with-kaomoji/",
+  },
+  {
     date: "Dec 25, 2026",
     name: "Christmas",
     facesHref: "/christmas-kaomoji/",
@@ -49,6 +63,13 @@ const EVENTS: {
     facesHref: "/winter-kaomoji/",
     facesLabel: "Winter kaomoji",
     postHref: "/blog/winter-messages-with-kaomoji/",
+  },
+  {
+    date: "Feb 6, 2027",
+    name: "Lunar New Year",
+    facesHref: "/sparkle-kaomoji/",
+    facesLabel: "Sparkle kaomoji",
+    postHref: "/blog/lunar-new-year-messages-with-kaomoji/",
   },
   {
     date: "Feb 14, 2027",

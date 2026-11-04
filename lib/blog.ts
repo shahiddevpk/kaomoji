@@ -877,6 +877,326 @@ export const posts: BlogPost[] = [
     ],
   },
   {
+    slug: "black-friday-and-cyber-monday-texts-with-kaomoji",
+    title: "Black Friday & Cyber Monday Texts with Kaomoji: Shopping Captions and Messages",
+    titleSegment: "Black Friday & Cyber Monday Texts with Kaomoji",
+    description:
+      "Funny and friendly Black Friday and Cyber Monday texts with kaomoji: shopping plans, deal alerts for friends, gift budgets, store announcements, and shopping-regret captions.",
+    intro:
+      "Black Friday and Cyber Monday are half shopping, half group-chat commentary. These texts cover deal alerts, shopping plans, gift budgets, and the inevitable regret, and every one can be copied in a tap.",
+    face: "🛍️(☆▽☆)💸",
+    event: "Black Friday · Nov 27",
+    published: "2026-11-04",
+    updated: "2026-11-04",
+    related: ["/excited-kaomoji", "/shocked-kaomoji", "/running-kaomoji", "/thumbs-up-kaomoji"],
+    sections: [
+      {
+        id: "plans",
+        heading: "Shopping plans with friends",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Early start", text: "Black Friday plan: be at the store at 6 a.m., buy one thing, come home with nine ε=ε=┌(;°□°)┘" },
+              { label: "Invite", text: "Shopping trip Friday? I'll bring coffee, you bring the coupons (๑•̀ㅂ•́)و✧" },
+              { label: "Online", text: "Doing my Black Friday shopping from bed, in pajamas (´-ω-`)🛍️" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "deals",
+        heading: "Deal alerts for friends",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Found it", text: "The thing you wanted is 40% off right now! Go go go ε=ε=┌(;°□°)┘" },
+              { label: "Worth it", text: "This deal is actually good. I checked the price history (｀・ω・´)ゞ" },
+              { label: "Sold out", text: "It sold out in four minutes. I'm not okay (T_T)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "budget",
+        heading: "Gift budgets and self-control",
+        blocks: [
+          {
+            type: "p",
+            text: "Setting a budget in the group chat keeps gift lists honest. A light face keeps it friendly rather than strict.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Budget", text: "Secret Santa budget this year: $25. Please don't be creative about it (｡•̀ᴗ-)✧" },
+              { label: "Self-control", text: "Reminder: I do not need another candle (；一_一)" },
+              { label: "Wishlist", text: "Wishlist is updated! Cheap things first (◕‿◕)🎁" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "cyber-monday",
+        heading: "Cyber Monday and the aftermath",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Cart", text: "Cyber Monday, my cart is full and my wallet is scared (´；ω；`)💸" },
+              { label: "Package", text: "A package arrived. I don't remember ordering it. I'm delighted anyway (☆▽☆)📦" },
+              { label: "Regret", text: "Bought it at 2 a.m. Regretting it at 2 p.m. (´-ω-`)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "gift-lists",
+        heading: "Coordinating gifts with family",
+        blocks: [
+          {
+            type: "p",
+            text: "Sales are the moment families realize nobody agreed on who is buying what. A quick message in the family chat before the deals go live prevents double purchases and keeps the surprise intact.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Claim a gift", text: "I'm buying Dad's headphones from the sale. Please nobody else get them! (｀・ω・´)ゞ" },
+              { label: "Split cost", text: "Want to go halves on Grandma's gift? The bundle deal ends tonight ✧(◕‿◕)" },
+              { label: "Hide the evidence", text: "Delivery is coming Tuesday. If you see a box, you saw nothing (¬‿¬)" },
+              { label: "Kids' lists", text: "Reminder: toy lists go to me, not Santa's inbox 🎁(๑•̀ㅂ•́)و✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "returns",
+        heading: "Returns, delays, and delivery drama",
+        blocks: [
+          {
+            type: "p",
+            text: "The week after the sales is mostly tracking numbers. These are the texts people actually send when a deal does not go to plan.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Late shipping", text: "My Black Friday order says 'delayed'. Gift plan is now 'a very nice card' (；一_一)" },
+              { label: "Wrong size", text: "Started the return before the box was even open (´-ω-`)📦" },
+              { label: "Price drop", text: "It went on sale for less the day after I bought it. I need a minute (╥﹏╥)" },
+              { label: "Arrived early", text: "It arrived three days early! Black Friday blessings (≧▽≦)📦" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "tips",
+        heading: "Using kaomoji in sale messages without looking spammy",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Use one face per message. A single kaomoji adds personality; a row of them reads like a scam text.",
+              "Put the deal first and the face last, so the useful part shows in the notification preview.",
+              "Keep faces simple (parentheses and punctuation) for SMS and email subject lines, since fancy symbols can turn into empty boxes on some phones.",
+              "Match the mood to the message: excited faces for good deals, a sorry face for a delayed order, never a smug one in a customer apology.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "business",
+        heading: "For small shops and creators",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Announcement", text: "Our Black Friday sale starts now! 20% off everything this weekend ✧(◕ᴗ◕✿)🛍️" },
+              { label: "Thank you", text: "Thank you for supporting our small shop this weekend m(_ _)m" },
+              { label: "Last call", text: "Last chance! Sale ends at midnight (≧◡≦)" },
+            ],
+          },
+          {
+            type: "p",
+            text: "More expressions: [excited kaomoji](/excited-kaomoji/) for deal alerts and [shocked kaomoji](/shocked-kaomoji/) for the price tags.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is Black Friday in 2026?",
+        answer: "Black Friday is the day after US Thanksgiving, which is November 27, 2026. Cyber Monday follows on November 30.",
+      },
+      {
+        question: "What is a good Black Friday kaomoji?",
+        answer: "ε=ε=┌(;°□°)┘ for rushing to a deal, and 🛍️(☆▽☆)💸 for happy shopping.",
+      },
+      {
+        question: "What is the difference between Black Friday and Cyber Monday?",
+        answer:
+          "Black Friday is the Friday after US Thanksgiving and started with in-store sales. Cyber Monday is the following Monday and focuses on online deals, though both now run online and in stores.",
+      },
+      {
+        question: "Should I put kaomoji in a sale email subject line?",
+        answer:
+          "One simple face is fine and can lift attention, but keep it to parentheses and common punctuation so it displays correctly on every device, and put the offer before the face.",
+      },
+    ],
+  },
+  {
+    slug: "hanukkah-messages-with-kaomoji",
+    title: "Hanukkah Messages with Kaomoji: Warm Wishes for Family, Friends & Coworkers",
+    titleSegment: "Hanukkah Messages with Kaomoji to Copy",
+    description:
+      "Warm Hanukkah messages with kaomoji for family, friends, and coworkers, plus candle-lighting texts, gift thank-yous, and latke and dreidel captions.",
+    intro:
+      "Hanukkah is eight nights of candles, food, and family, and in 2026 it begins at sundown on Friday, December 4. These messages cover greetings, nightly candle texts, long-distance family, gifts, food, and workplace wishes, and every one can be copied in a tap.",
+    face: "🕎(◕ᴗ◕✿)✨",
+    event: "Hanukkah · Dec 4–12",
+    published: "2026-11-04",
+    updated: "2026-11-04",
+    related: ["/sparkle-kaomoji", "/happy-kaomoji", "/thank-you-kaomoji", "/food-kaomoji"],
+    sections: [
+      {
+        id: "greetings",
+        heading: "Happy Hanukkah greetings",
+        blocks: [
+          {
+            type: "p",
+            text: "Hanukkah celebrates the rededication of the Temple in Jerusalem and the miracle of the oil that burned for eight nights. Common greetings are 'Happy Hanukkah', 'Chag Sameach' (happy holiday), and 'Chag Urim Sameach' (happy festival of lights). Any of them works with a warm face.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Classic", text: "Happy Hanukkah! Wishing you eight nights of light and joy 🕎(◕‿◕✿)" },
+              { label: "Short", text: "Chag Sameach! ✨ヽ(・∀・)ﾉ" },
+              { label: "Warm", text: "Wishing you and your family a bright and happy Hanukkah (◍•ᴗ•◍)❤" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "candles",
+        heading: "Candle-lighting texts",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Tonight", text: "Lighting the candles tonight. Wish you were here (っ´▽`)っ🕎" },
+              { label: "Night count", text: "Night three! Three candles, one very happy me ✧(◕ᴗ◕✿)" },
+              { label: "Video call", text: "Join us on video for the candle lighting at sundown! 🕎(๑•̀ㅂ•́)و✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "distance",
+        heading: "For family who are far away",
+        blocks: [
+          {
+            type: "p",
+            text: "Many families light the menorah together on a video call when they cannot be in the same room. Send the time and the link a day ahead, and remember that candles are lit after nightfall (earlier on Friday, before Shabbat begins).",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Schedule", text: "Candle lighting on video at 5 p.m. your time? I'll send the link (◕‿◕✿)🕎" },
+              { label: "Missing you", text: "Wish I could smell the latkes from here. Missing you all this week (っ´▽`)っ" },
+              { label: "Grandparents", text: "Happy Hanukkah, Bubbe and Zayde! Thank you for all the stories m(_ _)m🕎" },
+              { label: "Kids' call", text: "The kids want to show you their menorah. Call tonight? ✧(◍•ᴗ•◍)✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "gifts",
+        heading: "Gifts and thank-yous",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Thank you", text: "Thank you for the gift, I love it! Happy Hanukkah m(_ _)m" },
+              { label: "Gelt", text: "Chocolate gelt is the real treasure (☆▽☆)🪙" },
+              { label: "Eight nights", text: "Eight nights, eight small gifts, one very spoiled me (≧◡≦)🎁" },
+              { label: "Giving", text: "Small gift for night one. There are seven more to come, so no pressure (¬‿¬)✨" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "food",
+        heading: "Latke and dreidel captions",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Latkes", text: "Latkes: crispy, golden, gone in ten minutes (๑´ڡ`๑)" },
+              { label: "Applesauce or sour cream", text: "The great debate: applesauce or sour cream? (｀・ω・´)" },
+              { label: "Dreidel", text: "Spin to win! Still waiting for my gimel 🕎(ﾉ◕ヮ◕)ﾉ" },
+            ],
+          },
+          {
+            type: "p",
+            text: "Browse [sparkle kaomoji](/sparkle-kaomoji/) for candlelight shine and [food kaomoji](/food-kaomoji/) for latke season.",
+          },
+        ],
+      },
+      {
+        id: "work",
+        heading: "For coworkers",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Team", text: "Happy Hanukkah to everyone celebrating! Wishing you a bright week (•‿•)✨" },
+              { label: "To a colleague", text: "Happy Hanukkah, Dana! Hope the week is full of light and good food 🕎(◕‿◕)" },
+              { label: "Time off", text: "I'll be offline this evening for the candle lighting. Back first thing tomorrow (・ω・)ノ" },
+              { label: "Interfaith office", text: "Happy holidays to everyone, whatever you're celebrating this month (◍•ᴗ•◍)✨" },
+            ],
+          },
+          {
+            type: "tip",
+            text: "Greet colleagues who you know celebrate, and use a general 'happy holidays' for mixed groups. A friendly face softens either one.",
+          },
+        ],
+      },
+      {
+        id: "after",
+        heading: "After the eighth night",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Last candle", text: "Eighth candle lit. What a bright week it's been 🕎(◕ᴗ◕✿)" },
+              { label: "Thank the host", text: "Thank you for hosting! Best latkes I've had all year m(_ _)m" },
+              { label: "Looking ahead", text: "Hanukkah's over but the leftovers aren't. Come over for round two? (๑´ڡ`๑)" },
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is Hanukkah in 2026?",
+        answer: "Hanukkah 2026 begins at sundown on December 4 and ends the evening of December 12.",
+      },
+      {
+        question: "What is a good Hanukkah kaomoji?",
+        answer: "🕎(◕ᴗ◕✿)✨ pairs a menorah with a smiling face.",
+      },
+      {
+        question: "How many nights is Hanukkah?",
+        answer:
+          "Eight nights. A candle is added each night, lit with the helper candle (shamash), so the menorah has nine branches in total.",
+      },
+      {
+        question: "Is it Hanukkah or Chanukah?",
+        answer:
+          "Both are correct. The word is transliterated from Hebrew, so spellings vary, and Hanukkah is the most common in English.",
+      },
+    ],
+  },
+  {
     slug: "christmas-messages-with-kaomoji",
     title: "Christmas Messages with Kaomoji for Friends, Family & Coworkers",
     titleSegment: "Christmas Messages with Kaomoji to Copy",
@@ -1304,6 +1624,178 @@ export const posts: BlogPost[] = [
         question: "How are winter messages different from Christmas messages?",
         answer:
           "Christmas messages are for December 25. Winter messages fit the whole cold season, from the first snow in December to the last cold snap in March.",
+      },
+    ],
+  },
+  {
+    slug: "lunar-new-year-messages-with-kaomoji",
+    title: "Lunar New Year Messages with Kaomoji: Greetings for Family, Friends & Coworkers",
+    titleSegment: "Lunar New Year Messages with Kaomoji to Copy",
+    description:
+      "Lunar New Year greetings with kaomoji for family, friends, elders, and coworkers, plus red envelope thank-yous, reunion dinner captions, and group chat wishes.",
+    intro:
+      "Lunar New Year is the biggest family holiday for many people, and in 2027 it falls on February 6. The group chat fills up fast, so these greetings are grouped by who you are sending to, from elders and red envelopes to coworkers and the Lantern Festival, and every one can be copied in a tap.",
+    face: "🧧(◕ᴗ◕✿)🏮",
+    event: "Lunar New Year · Feb 6",
+    published: "2026-11-04",
+    updated: "2026-11-04",
+    related: ["/sparkle-kaomoji", "/happy-kaomoji", "/thank-you-kaomoji", "/bowing-kaomoji"],
+    sections: [
+      {
+        id: "greetings",
+        heading: "Lunar New Year greetings for family and friends",
+        blocks: [
+          {
+            type: "p",
+            text: "Lunar New Year is celebrated across many cultures, each with its own phrases. Common ones are Xin nian kuai le (Mandarin), Gong hei fat choy (Cantonese), Chuc mung nam moi (Vietnamese Tet), and Saehae bok mani badeuseyo (Korean Seollal). Use the greeting your family uses and add a face for warmth.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Classic", text: "Happy Lunar New Year! Wishing you health, luck, and happiness all year (◕‿◕✿)🧧" },
+              { label: "Short", text: "Happy New Year! 🏮ヽ(・∀・)ﾉ" },
+              { label: "Prosperity", text: "May the new year bring you prosperity and joy ✧(◍•ᴗ•◍)✧" },
+              { label: "Mandarin", text: "Xin nian kuai le! Wishing you a wonderful new year (◕‿◕✿)🏮" },
+              { label: "Cantonese", text: "Gong hei fat choy! Wishing you good fortune this year ✧(◕ᴗ◕✿)🧧" },
+              { label: "Vietnamese", text: "Chuc mung nam moi! Happy Tet to you and your family (◍•ᴗ•◍)🌸" },
+              { label: "Friends", text: "Happy Lunar New Year! Let's eat way too many dumplings this week (っ˘ڡ˘ς)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "elders",
+        heading: "Respectful messages for elders",
+        blocks: [
+          {
+            type: "p",
+            text: "For grandparents and older relatives, a polite [bowing face](/bowing-kaomoji/) like m(_ _)m keeps the tone respectful.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Grandparents", text: "Wishing you good health and happiness in the new year. Thank you for everything m(_ _)m🧧" },
+              { label: "Parents", text: "Happy Lunar New Year, Mom and Dad! I'll see you at the reunion dinner (◕ᴗ◕✿)🏮" },
+              { label: "Far away", text: "Wish I could be at the table with you. Happy Lunar New Year, miss you all (っ´▽`)っ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "red-envelope",
+        heading: "Red envelope thank-yous",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Thank you", text: "Thank you for the red envelope! Wishing you a wonderful year m(_ _)m🧧" },
+              { label: "Playful", text: "Red envelope received. Best day of the year (☆▽☆)🧧" },
+              { label: "Giving", text: "A little red envelope for good luck this year! (๑•̀ㅂ•́)و✧🧧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "dinner",
+        heading: "Reunion dinner captions",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Table photo", text: "Full table, full hearts 🏮(◕‿◕✿)" },
+              { label: "Food", text: "Too many dishes, no regrets (๑´ڡ`๑)🥟" },
+              { label: "Family", text: "Three generations, one table, zero leftovers 🧧(っ˘ڡ˘ς)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "zodiac",
+        heading: "Year of the Goat messages",
+        blocks: [
+          {
+            type: "p",
+            text: "Each new year belongs to one of twelve zodiac animals, and 2027 is the Goat (also called Sheep or Ram). Goat years are linked with gentleness, creativity, and harmony, which makes for easy, warm greetings. Mentioning the animal is a friendly way to make a generic message feel personal.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Goat year", text: "Welcome, Year of the Goat! May yours be gentle, creative, and lucky (◕ᴗ◕✿)🐐" },
+              { label: "Your sign", text: "Born in a Goat year? This one is yours. Happy Lunar New Year! ✧(☆▽☆)" },
+              { label: "Group chat", text: "Out with the old year, in with the Goat 🐐ヽ(・∀・)ﾉ🏮" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "kids",
+        heading: "For kids and young cousins",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Kids", text: "Happy Lunar New Year! Time to wear red and collect your lucky envelopes (๑•̀ㅂ•́)و✧🧧" },
+              { label: "Cousins", text: "Cousin group photo at 3, everyone in red! No excuses (｀・ω・´)ゞ" },
+              { label: "Fireworks", text: "Fireworks tonight! Bring earmuffs for the little ones (≧◡≦)🎆" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "lantern",
+        heading: "After the holiday: the Lantern Festival",
+        blocks: [
+          {
+            type: "p",
+            text: "The Lantern Festival closes the celebrations on the fifteenth day, which is February 20 in 2027. It is a good excuse for one more message once the reunion dinner leftovers are gone.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Greeting", text: "Happy Lantern Festival! May your year be bright 🏮(◕‿◕✿)" },
+              { label: "Sweet dumplings", text: "Tangyuan tonight! Round and sweet for a reunion year (๑´ڡ`๑)" },
+              { label: "Wrapping up", text: "That's the end of the celebration. Thank you for the best holiday week (っ´▽`)っ🏮" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "work",
+        heading: "For coworkers and clients",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Team", text: "Happy Lunar New Year, team! Wishing everyone a lucky and healthy year (•‿•)🏮" },
+              { label: "Client", text: "Wishing you and your family a prosperous Lunar New Year. Thank you for your support m(_ _)m" },
+              { label: "Out of office", text: "I'm away for Lunar New Year and back soon. Happy holidays! 🧧(・ω・)ノ" },
+            ],
+          },
+          {
+            type: "p",
+            text: "Need more faces? Browse [sparkle kaomoji](/sparkle-kaomoji/) for festive shine and [happy kaomoji](/happy-kaomoji/) for cheerful greetings.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is Lunar New Year in 2027?",
+        answer:
+          "Lunar New Year falls on February 6, 2027, and 2027 is the Year of the Goat. The date follows the lunar calendar, so it falls between late January and mid-February and changes each year.",
+      },
+      {
+        question: "What is a good Lunar New Year kaomoji?",
+        answer: "🧧(◕ᴗ◕✿)🏮 pairs a red envelope and lantern with a smiling face, and m(_ _)m is a respectful bow for elders.",
+      },
+      {
+        question: "Is Lunar New Year the same as Chinese New Year?",
+        answer:
+          "They fall on the same day, but Lunar New Year is the broader name. It is also celebrated as Tet in Vietnam and Seollal in Korea, each with its own customs, so Lunar New Year is the inclusive term for a mixed group.",
+      },
+      {
+        question: "When is the Lantern Festival in 2027?",
+        answer: "The Lantern Festival is on the fifteenth day of the new year, which is February 20, 2027.",
       },
     ],
   },
