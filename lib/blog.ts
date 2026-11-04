@@ -427,9 +427,67 @@ export const posts: BlogPost[] = [
     face: "🪔(◕‿◕)✨",
     event: "Diwali · Nov 8",
     published: "2026-10-22",
-    updated: "2026-10-22",
+    updated: "2026-11-04",
     related: ["/sparkle-kaomoji", "/heart-kaomoji", "/food-kaomoji", "/flower-kaomoji"],
     sections: [
+      {
+        id: "dates",
+        heading: "Diwali 2026 dates: which wish for which day",
+        blocks: [
+          {
+            type: "p",
+            text: "Diwali is a five-day festival, and each day has its own greeting. Most sources place the main day on Sunday, November 8, 2026; a few regional calendars shift individual days by one, so check your local panchang if the exact puja timing matters.",
+          },
+          {
+            type: "table",
+            head: ["Day", "Date (2026)", "What it is"],
+            rows: [
+              ["Dhanteras", "Fri, Nov 6", "Buying something new for the home"],
+              ["Naraka Chaturdashi (Choti Diwali)", "Sat, Nov 7", "First lamps, rangoli, sweets"],
+              ["Diwali / Lakshmi Puja", "Sun, Nov 8", "The main night of lamps and prayers"],
+              ["Govardhan Puja / Gujarati New Year", "Mon, Nov 9", "Annakut feast and New Year greetings"],
+              ["Bhai Dooj", "Tue, Nov 10", "Siblings and tilak"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "choti-diwali",
+        heading: "Choti Diwali and Diwali eve",
+        blocks: [
+          {
+            type: "p",
+            text: "The night before the main day is called Choti (little) Diwali or Naraka Chaturdashi. Homes light their first diyas, families make rangoli, and the sweets start arriving. It is the best time to send a countdown message.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Choti Diwali", text: "Happy Choti Diwali! First diyas are lit, big night tomorrow 🪔(◕‿◕)✨" },
+              { label: "Countdown", text: "One more sleep until Diwali! Is the house clean? The house is not clean (；・∀・)" },
+              { label: "Sweets", text: "Mithai delivery just arrived. I'm 'testing' it for tomorrow (っ˘ڡ˘ς)" },
+              { label: "Rangoli", text: "Rangoli done! Took two hours, will last two minutes before somebody walks through it (๑•̀ㅂ•́)و✧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "new-year",
+        heading: "New Year wishes the day after Diwali",
+        blocks: [
+          {
+            type: "p",
+            text: "In Gujarat and parts of western India, the day after Diwali is the start of the new year (Bestu Varas). The classic greeting is 'Saal Mubarak' or 'Nutan Varshabhinandan'. Businesses open new account books, so it is also a good day to message customers and partners.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Saal Mubarak", text: "Saal Mubarak! Wishing you a year full of health, luck, and good food ✨(◕‿◕✿)" },
+              { label: "Nutan Varshabhinandan", text: "Nutan Varshabhinandan! May the new year bring you joy and success 🪔(◍•ᴗ•◍)" },
+              { label: "Clients", text: "Saal Mubarak from our team! Thank you for your trust this past year m(_ _)m" },
+            ],
+          },
+        ],
+      },
       {
         id: "short-wishes",
         heading: "Short Happy Diwali wishes",
@@ -647,6 +705,58 @@ export const posts: BlogPost[] = [
         ],
       },
       {
+        id: "gifts-sweets",
+        heading: "Gifts, sweets, and thank-yous",
+        blocks: [
+          {
+            type: "p",
+            text: "Swapping boxes of mithai and dry fruits is half of Diwali. A quick thank-you the same evening is polite, and a specific compliment about the sweets is always welcome.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Thank you", text: "Thank you for the beautiful gift box! Happy Diwali to you and the family m(_ _)m🪔" },
+              { label: "Sweets", text: "The kaju katli did not survive an hour. Thank you!! (๑´ڡ`๑)" },
+              { label: "Sending", text: "A little box of sweets is on its way. Happy Diwali, hope it arrives before I eat the rest (¬‿¬)🪔" },
+              { label: "Neighbour", text: "Happy Diwali, neighbours! Hope the fireworks haven't kept you up (⌒‿⌒)✨" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "party",
+        heading: "Diwali party and card-night invites",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Invite", text: "Diwali party at ours on Saturday, 7 p.m.! Come in your best outfit, snacks on us 🪔ヽ(・∀・)ﾉ" },
+              { label: "Card night", text: "Card night is on after dinner. Bring your luck and some change (｀・ω・´)ゞ" },
+              { label: "Potluck", text: "Reply with the sweet or snack you're bringing so we don't get ten boxes of the same thing (｡•̀ᴗ-)✧" },
+              { label: "Dress code", text: "Outfit check: sparkly and festive! Rangoli photo spot at the door ✨(◕ᴗ◕✿)" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "safety",
+        heading: "Safe and thoughtful Diwali messages",
+        blocks: [
+          {
+            type: "p",
+            text: "Fireworks and smoke are part of Diwali for many families, and also a worry for pets, babies, and people with asthma. A short, caring note lands well.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Safe Diwali", text: "Wishing you a safe and happy Diwali. Keep the kids away from the sparklers (・ω・)ノ🪔" },
+              { label: "Pets", text: "Fireworks tonight, so keep your pets calm and indoors. Happy Diwali, everyone (っ´▽`)っ" },
+              { label: "Eco-friendly", text: "Lamps, lights, and lots of love this year. Happy Green Diwali! 🪔(◕‿◕✿)🌿" },
+            ],
+          },
+        ],
+      },
+      {
         id: "tips",
         heading: "A few things to keep in mind",
         blocks: [
@@ -664,6 +774,26 @@ export const posts: BlogPost[] = [
       },
     ],
     faqs: [
+      {
+        question: "What are the five days of Diwali in 2026?",
+        answer:
+          "In 2026 the five days are Dhanteras (Nov 6), Naraka Chaturdashi or Choti Diwali (Nov 7), Diwali with Lakshmi Puja (Nov 8), Govardhan Puja (Nov 9), and Bhai Dooj (Nov 10). Some regional calendars differ by a day.",
+      },
+      {
+        question: "What should I text someone on Diwali?",
+        answer:
+          "Keep it warm and short: \"Happy Diwali! Wishing you light, joy, and sweets\" with a small face like 🪔(◕‿◕)✨. For family, add something personal, such as a memory or a thank-you.",
+      },
+      {
+        question: "How do I wish Happy Diwali to friends who don't celebrate it?",
+        answer:
+          "A simple \"Happy Diwali, hope your week is bright\" is welcome and kind. You don't need to know the rituals, and a friendly face keeps the tone light.",
+      },
+      {
+        question: "What is Saal Mubarak?",
+        answer:
+          "Saal Mubarak means 'happy new year' and is the greeting for the Gujarati New Year, which falls the day after Diwali (November 9 in 2026).",
+      },
       {
         question: "When is Diwali in 2026?",
         answer:
@@ -702,9 +832,50 @@ export const posts: BlogPost[] = [
     face: "🦃(◕ᴗ◕)🥧",
     event: "Thanksgiving · Nov 26",
     published: "2026-10-21",
-    updated: "2026-10-22",
+    updated: "2026-11-04",
     related: ["/thanksgiving-kaomoji", "/thank-you-kaomoji", "/food-kaomoji", "/bowing-kaomoji"],
     sections: [
+      {
+        id: "dates",
+        heading: "Thanksgiving 2026: the week at a glance",
+        blocks: [
+          {
+            type: "p",
+            text: "US Thanksgiving is the fourth Thursday of November, which is November 26 in 2026. The days around it each call for a different kind of message, so here is the week and what to send.",
+          },
+          {
+            type: "table",
+            head: ["Day", "Date (2026)", "Typical message"],
+            rows: [
+              ["Thanksgiving Eve", "Wed, Nov 25", "Travel and cooking-prep texts"],
+              ["Thanksgiving Day", "Thu, Nov 26", "Gratitude, family, host thank-yous"],
+              ["Black Friday", "Fri, Nov 27", "Shopping and leftovers"],
+              ["Small Business Saturday", "Sat, Nov 28", "Support local shops"],
+              ["Giving Tuesday", "Tue, Dec 1", "Charity and thanks"],
+            ],
+          },
+        ],
+      },
+      {
+        id: "travel",
+        heading: "Travel day and Thanksgiving Eve texts",
+        blocks: [
+          {
+            type: "p",
+            text: "The Wednesday before Thanksgiving is one of the busiest travel days of the year, so a lot of messages are about delays, arrivals, and what to bring. Short and practical texts work best.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "On my way", text: "Leaving now! Traffic looks terrible, so save me a seat and some pie ε=ε=┌(;°□°)┘🦃" },
+              { label: "Landed", text: "Landed safely. See you in an hour for hugs and food (っ´▽`)っ" },
+              { label: "Delay", text: "Flight delayed by two hours. Please don't eat all the stuffing before I arrive (´；ω；`)" },
+              { label: "Need anything", text: "Heading to the store, does anyone need anything for tomorrow? (๑•̀ㅂ•́)و✧" },
+              { label: "Prep night", text: "Pie crust done, potatoes peeled, kitchen destroyed. Ready for tomorrow (｀・ω・´)ゞ🥧" },
+            ],
+          },
+        ],
+      },
       {
         id: "grateful",
         heading: "Grateful messages for people you love",
@@ -809,6 +980,74 @@ export const posts: BlogPost[] = [
         ],
       },
       {
+        id: "in-laws",
+        heading: "In-laws, new families, and awkward seats",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "First visit", text: "Excited to meet everyone tomorrow! What can I bring? (◕‿◕✿)🥧" },
+              { label: "Thanks to in-laws", text: "Thank you for welcoming me into your family today. I'm so grateful m(_ _)m🍂" },
+              { label: "Two dinners", text: "Doing two Thanksgiving dinners this year. Wish me luck and stretchy pants (；一_一)🍗" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "cant-attend",
+        heading: "When you can't make it",
+        blocks: [
+          {
+            type: "p",
+            text: "Declining politely and early matters more than the wording. Offer something specific, like a call or a dish, so the host knows you still care.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Decline", text: "I'm so sorry, I can't make it this year. Thank you for inviting me! Let's catch up this weekend (´；ω；`)🍂" },
+              { label: "Working", text: "I'm working Thursday, so I'll miss the feast. Save me a plate? m(_ _)m" },
+              { label: "Call", text: "Missing you all today. Can we do a quick video call during dinner? 🦃(っ´▽`)っ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "international",
+        heading: "For friends new to Thanksgiving",
+        blocks: [
+          {
+            type: "p",
+            text: "If you have international friends or students nearby, an invitation with a short explanation goes a long way. Thanksgiving is a day for a big meal with family and friends and for saying thanks, and no one expects guests to know the traditions.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Invite", text: "Come to Thanksgiving dinner with us! It's a big meal where we say thanks and eat too much 🦃ヽ(・∀・)ﾉ" },
+              { label: "Explaining", text: "Fun fact: tomorrow lots of people in the US eat turkey and watch football. You'll love it (◕‿◕)🍂" },
+              { label: "Welcome", text: "No experience needed. Just bring your appetite! (｡•̀ᴗ-)✧🥧" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "gratitude-list",
+        heading: "A one-line gratitude list to send",
+        blocks: [
+          {
+            type: "p",
+            text: "Instead of a generic wish, send a short gratitude list. Three items is enough, and each one makes the recipient feel seen.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Three things", text: "Three things I'm thankful for this year: good friends, bad jokes, and good pie. You're in the first two (◕‿◕✿)🍂" },
+              { label: "To you", text: "Thank you for the advice, the laughs, and the time you listened. You mean a lot to me ♡" },
+              { label: "Group chat", text: "Everyone reply with one thing you're thankful for! I'll start: this group chat (≧◡≦)🦃" },
+            ],
+          },
+        ],
+      },
+      {
         id: "missing-someone",
         heading: "When someone is missing from the table",
         blocks: [
@@ -860,6 +1099,21 @@ export const posts: BlogPost[] = [
       },
     ],
     faqs: [
+      {
+        question: "What should I text someone on Thanksgiving?",
+        answer:
+          "Keep it short and specific: thank them for something real, such as a favor, a conversation, or their company, and add a small face like (◍•ᴗ•◍). Texts that name one detail feel far warmer than a generic wish.",
+      },
+      {
+        question: "What is Thanksgiving Eve?",
+        answer:
+          "Thanksgiving Eve is the Wednesday before Thanksgiving (November 25 in 2026), one of the busiest travel days of the year and a popular night for cooking prep and casual get-togethers.",
+      },
+      {
+        question: "What should I say if I can't attend Thanksgiving?",
+        answer:
+          "Decline early and kindly, thank the host for inviting you, and suggest something specific, like a video call during dinner or a catch-up later in the week.",
+      },
       {
         question: "When is Thanksgiving in 2026?",
         answer:
