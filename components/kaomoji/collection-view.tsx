@@ -38,7 +38,7 @@ function TableSection({
       <table>
         <thead>
           <tr>
-            <th scope="col">Emoticon</th>
+            <th scope="col">{section.column ?? "Emoticon"}</th>
             <th scope="col">Meaning</th>
             <th scope="col">
               <span className="sr-only">Copy</span>

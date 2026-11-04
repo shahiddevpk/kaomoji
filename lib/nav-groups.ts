@@ -109,6 +109,10 @@ export const TOOLS_GROUP: NavGroup = {
     "/emoticons",
     "/cute-symbols",
     "/emoji-combos",
+    "/emoji-copy-paste",
+    "/heart-emoji",
+    "/crying-emoji",
+    "/star-emoji",
   ],
 };
 

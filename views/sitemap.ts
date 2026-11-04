@@ -69,6 +69,11 @@ function contentModified(page: SitePage): string {
     case "/valentine-kaomoji":
     case "/disclaimer":
       return "2026-10-21";
+    case "/emoji-copy-paste":
+    case "/heart-emoji":
+    case "/crying-emoji":
+    case "/star-emoji":
+      return "2026-11-04";
     case "/border-kaomoji":
     case "/roblox-kaomoji":
     case "/art-kaomoji":

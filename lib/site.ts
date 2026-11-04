@@ -7,6 +7,8 @@ function memo<A, R>(fn: (a: A) => R): (a: A) => R {
 // Lives in its own module so client code (lib/utils) can use it without
 // bundling every page's copy from this file.
 export { siteConfig } from "@/lib/site-config";
+import { gapCopy } from "@/data/gap-copy";
+import { emojiPages } from "@/data/emoji-pages";
 
 export type PageGroup = "hub" | "browse" | "trust";
 
@@ -328,7 +330,7 @@ export const pages: SitePage[] = [
         answer: "Common ones include (╥﹏╥), (；ω；), and (´；ω；`). The downward eyes and soft mouth carry the low-mood signal without tear marks — those belong on the crying page.",
       },
     ],
-    related: ["/crying-kaomoji", "/sick-kaomoji", "/happy-kaomoji", "/cute-kaomoji", "/angry-kaomoji"],
+    related: ["/crying-kaomoji", "/sick-kaomoji", "/happy-kaomoji", "/cute-kaomoji", "/angry-kaomoji", "/crying-emoji"],
   },
   {
     path: "/crying-kaomoji",
@@ -382,7 +384,7 @@ export const pages: SitePage[] = [
         answer: "You can, and many people do. For faces made specifically for laughing so hard you cry, the giggling and laughing kaomoji page has the crying-with-laughter set; this page stays focused on real tears and sobbing.",
       },
     ],
-    related: ["/sad-kaomoji", "/giggling-kaomoji", "/happy-kaomoji", "/cute-kaomoji"],
+    related: ["/sad-kaomoji", "/giggling-kaomoji", "/happy-kaomoji", "/cute-kaomoji", "/crying-emoji"],
   },
   {
     path: "/angry-kaomoji",
@@ -860,7 +862,7 @@ export const pages: SitePage[] = [
           "Something soft that does not shout, like (〃▽〃)♡ or (◍•ᴗ•◍)❤. A blush says \"I like you\" without the full heart-eyes swoon, which is easier to send early on.",
       },
     ],
-    related: ["/shy-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/hug-kaomoji", "/kiss-kaomoji"],
+    related: ["/shy-kaomoji", "/cute-kaomoji", "/happy-kaomoji", "/hug-kaomoji", "/kiss-kaomoji", "/heart-emoji"],
   },
   {
     path: "/shy-kaomoji",
@@ -1945,7 +1947,7 @@ export const pages: SitePage[] = [
         answer: "Usually yes, if the platform allows special characters. Test paste into a profile field once before saving.",
       },
     ],
-    related: ["/sparkle-kaomoji", "/border-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+    related: ["/sparkle-kaomoji", "/border-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji", "/star-emoji"],
   },
   {
     path: "/giggling-kaomoji",
@@ -2048,7 +2050,7 @@ export const pages: SitePage[] = [
         answer: "On most modern apps, yes. If a sparkle face shows a box on an older device, pick a simpler face using more basic glyph sets.",
       },
     ],
-    related: ["/aesthetic-kaomoji", "/star-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji"],
+    related: ["/aesthetic-kaomoji", "/star-kaomoji", "/flower-kaomoji", "/cute-kaomoji", "/heart-kaomoji", "/star-emoji"],
   },
   {
     path: "/love-kaomoji",
@@ -2096,7 +2098,7 @@ export const pages: SitePage[] = [
         answer: "Yes — they are perfect for Valentine's messages, love notes, and any moment when you want to go fully romantic.",
       },
     ],
-    related: ["/heart-kaomoji", "/kiss-kaomoji", "/shy-kaomoji", "/cute-kaomoji", "/hug-kaomoji"],
+    related: ["/heart-kaomoji", "/kiss-kaomoji", "/shy-kaomoji", "/cute-kaomoji", "/hug-kaomoji", "/heart-emoji"],
   },
   {
     path: "/flower-kaomoji",
@@ -2979,7 +2981,7 @@ export const pages: SitePage[] = [
         answer: "Yes. They are Unicode characters that anyone can type or paste anywhere — no license is needed.",
       },
     ],
-    related: ["/emoji-combos", "/border-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji"],
+    related: ["/emoji-combos", "/border-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji", "/emoji-copy-paste"],
   },
   {
     path: "/emoji-combos",
@@ -3024,7 +3026,7 @@ export const pages: SitePage[] = [
         answer: "Two to four per line usually looks clean. Long rows of emoji can be hard to read and are read out one by one by screen readers.",
       },
     ],
-    related: ["/cute-symbols", "/kaomoji-copy-paste", "/cute-kaomoji", "/food-kaomoji", "/halloween-kaomoji", "/christmas-kaomoji"],
+    related: ["/cute-symbols", "/kaomoji-copy-paste", "/cute-kaomoji", "/food-kaomoji", "/halloween-kaomoji", "/christmas-kaomoji", "/emoji-copy-paste"],
   },
   {
     path: "/sorry-kaomoji",
@@ -3563,6 +3565,21 @@ export const pages: SitePage[] = [
     related: ["/terms", "/privacy"],
   },
 ];
+
+// Emoji cluster pages (data/emoji-pages.ts).
+pages.push(...emojiPages);
+
+// Keyword-gap copy: extra FAQs / prose per existing page (see data/gap-copy.ts).
+for (const map of [gapCopy]) {
+  for (const [path, extra] of Object.entries(map)) {
+    const page = pages.find((item) => item.path === path);
+    if (!page) throw new Error(`gapCopy: unknown page ${path}`);
+    if (extra.faqs) page.faqs = [...(page.faqs ?? []), ...extra.faqs];
+    if (extra.learnMore) page.learnMore = page.learnMore ? `${page.learnMore}
+
+${extra.learnMore}` : extra.learnMore;
+  }
+}
 
 export const getPage = memo(function getPage(path: string): SitePage {
   const page = pages.find((item) => item.path === path);

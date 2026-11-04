@@ -3,6 +3,8 @@
  * keyboard emoticons (with meanings), cute text symbols, and emoji combos.
  * Each collection is owned by exactly one URL (see lib/site.ts).
  */
+import { emojiCollections } from "@/data/emoji-collections";
+
 export type CollectionEntry = {
   /** The text that gets copied. */
   v: string;
@@ -16,14 +18,24 @@ export type CollectionSection = {
   intro: string;
   /** "table" shows a meaning column (emoticons); "grid" shows copy cards. */
   layout: "grid" | "table";
+  /** First column header for "table" layout (default "Emoticon"). */
+  column?: string;
   items: CollectionEntry[];
 };
 
-export type CollectionKey = "emoticons" | "cute-symbols" | "emoji-combos";
+export type CollectionKey =
+  | "emoticons"
+  | "cute-symbols"
+  | "emoji-combos"
+  | "emoji-copy-paste"
+  | "heart-emoji"
+  | "crying-emoji"
+  | "star-emoji";
 
 const e = (v: string, m?: string): CollectionEntry => ({ v, m });
 
 export const collections: Record<CollectionKey, CollectionSection[]> = {
+  ...emojiCollections,
   emoticons: [
     {
       id: "smiley",
