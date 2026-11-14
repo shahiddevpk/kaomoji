@@ -1,0 +1,30 @@
+# Rebuilds the site every day so the seasonal banner (picked at build time in
+# components/kaomoji/seasonal-banner.tsx) switches on its start date.
+#
+# Setup (one time):
+#   1. Vercel project > Settings > Git > Deploy Hooks > create a hook for `main`.
+#   2. GitHub repo > Settings > Secrets and variables > Actions > New secret
+#      named VERCEL_DEPLOY_HOOK_URL, value = the hook URL.
+name: season-rebuild
+
+on:
+  schedule:
+    # 00:10 UTC daily. The banner uses the build server's date.
+    - cron: "10 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL secret is not set; see the setup notes at the top of this file."
+            exit 1
+          fi
+          status=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$HOOK_URL")
+          echo "Deploy hook responded with HTTP $status"
+          [ "$status" -ge 200 ] && [ "$status" -lt 300 ]
