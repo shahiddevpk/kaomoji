@@ -4,10 +4,25 @@ import { guidePath, guides, guidesForPage } from "@/lib/guides";
 import { pages, type SitePage } from "@/lib/site";
 import { absoluteUrl } from "@/lib/utils";
 
+/** Existing pages that gained links to the phase 2 emoji pages (2026-11-15). */
+const REFRESHED_2026_11_15 = new Set([
+  "/emoji-copy-paste",
+  "/cat-kaomoji",
+  "/cute-kaomoji",
+  "/smile-kaomoji",
+  "/happy-kaomoji",
+  "/giggling-kaomoji",
+  "/cute-symbols",
+  "/lenny-face",
+  "/animal-kaomoji",
+  "/uwu-kaomoji",
+]);
+
 /** Latest content date: page's own edit date, or a newer guide or post it now features. */
 function lastModified(page: SitePage): string {
   const dates = [
     contentModified(page),
+    ...(REFRESHED_2026_11_15.has(page.path) ? ["2026-11-15"] : []),
     ...guidesForPage(page.path).map((g) => g.updated),
     ...postsForPage(page.path).map((p) => p.updated),
   ];
@@ -158,6 +173,17 @@ function sitemapPriority(page: SitePage): number {
     case "/thumbs-up-kaomoji":
     case "/bowing-kaomoji":
     case "/running-kaomoji":
+      return 0.75;
+    case "/symbols-copy-paste":
+    case "/emoji-copy-paste":
+      return 0.8;
+    case "/heart-emoji":
+    case "/crying-emoji":
+    case "/star-emoji":
+    case "/smiley-face-emoji":
+    case "/cat-emoji":
+    case "/funny-emoji":
+    case "/cute-emoji":
       return 0.75;
     case "/table-flip-kaomoji":
     case "/fight-kaomoji":

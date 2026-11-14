@@ -113,7 +113,7 @@ export const posts3: BlogPost[] = [
     description:
       "Winter solstice and Yule messages with kaomoji to copy: short greetings, candle and sun captions, and cozy texts for the longest night of the year.",
     intro:
-      "The winter solstice is the shortest day and longest night of the year in the Northern Hemisphere. In 2026 it falls on Monday, December 21. Many people mark it with candles, a quiet dinner, or a Yule celebration. These short messages fit that calm, hopeful mood.",
+      "The winter solstice is the shortest day and longest night of the year in the Northern Hemisphere. In 2026 it falls on Monday, December 21 in the Americas and Europe, and on Tuesday, December 22 in parts of Asia and Australia because of time zones. Many people mark it with candles, a quiet dinner, or a Yule celebration. These short messages fit that calm, hopeful mood.",
     face: "☾(˘▾˘)✧",
     event: "Winter Solstice · Dec 21",
     published: "2026-11-15",
@@ -183,7 +183,7 @@ export const posts3: BlogPost[] = [
     faqs: [
       {
         question: "When is the winter solstice in 2026?",
-        answer: "In the Northern Hemisphere the winter solstice is on Monday, December 21, 2026. It is the shortest day of the year.",
+        answer: "In the Northern Hemisphere the winter solstice is on Monday, December 21, 2026 in the Americas and Europe. In parts of Asia and Australia it is already December 22 because of time zones. It is the shortest day of the year.",
       },
       {
         question: "What is the difference between the solstice and Yule?",
@@ -229,7 +229,7 @@ export const posts3: BlogPost[] = [
           },
           {
             type: "tip",
-            text: "The usual greeting is \"Heri za Kwanzaa\", which is a Swahili greeting for the holiday. On each day, people also ask \"Habari gani?\" (\"what is the news?\") and answer with that day's principle.",
+            text: "The usual greeting is \"Heri za Kwanzaa\", which is Swahili for \"best wishes of the season\". On each day, people also ask \"Habari gani?\" (\"what is the news?\") and answer with that day's principle.",
           },
         ],
       },
@@ -276,7 +276,7 @@ export const posts3: BlogPost[] = [
       },
       {
         question: "What does Heri za Kwanzaa mean?",
-        answer: "It is a Swahili greeting and the most common one for the holiday.",
+        answer: "It is Swahili for \"happy Kwanzaa\" and is the most common greeting for the holiday.",
       },
       {
         question: "Who created Kwanzaa?",
