@@ -369,7 +369,7 @@ textarea::placeholder {
   padding: 0.5rem 0.4rem;
   border-radius: 0.75rem;
   background: var(--secondary);
-  font-family: var(--font-geist-mono), ui-monospace, "Segoe UI Symbol", "Segoe UI",
+  font-family: "EmojiColor", var(--font-geist-mono), ui-monospace, "Segoe UI Symbol", "Segoe UI",
     "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS Gothic",
     "Noto Sans Symbols", "Noto Sans Symbols 2", "DejaVu Sans", "Arial Unicode MS",
     "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
@@ -1202,6 +1202,12 @@ button[data-copy-id][data-copied="copied"]:has(.kaomoji-face) .kaomoji-face,
 .related-pill, .mood-chip--idle, .kaomoji-recent-chip, .fav-remove, .nav-scroll-arrow,
 button.border-border, a.border-border { border-color: var(--control-border); }
 .kaomoji-fav { color: #475569; opacity: 0.85; }
+/* Colour emoji for pictograph code points only; text symbols (U+2600 range) stay as text. */
+@font-face {
+  font-family: "EmojiColor";
+  src: local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Noto Color Emoji");
+  unicode-range: U+1F300-1FAFF;
+}
 @media (prefers-color-scheme: dark) { .kaomoji-fav { color: var(--muted); } }
 /* Category tiles: one face color, no bad wrapping */
 .mood-tile .tile-face {

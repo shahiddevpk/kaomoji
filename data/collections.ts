@@ -4,6 +4,7 @@
  * Each collection is owned by exactly one URL (see lib/site.ts).
  */
 import { emojiCollections } from "@/data/emoji-collections";
+import { emojiCollections2, type Emoji2Key } from "@/data/emoji-pages-2";
 
 export type CollectionEntry = {
   /** The text that gets copied. */
@@ -30,12 +31,14 @@ export type CollectionKey =
   | "emoji-copy-paste"
   | "heart-emoji"
   | "crying-emoji"
-  | "star-emoji";
+  | "star-emoji"
+  | Emoji2Key;
 
 const e = (v: string, m?: string): CollectionEntry => ({ v, m });
 
 export const collections: Record<CollectionKey, CollectionSection[]> = {
   ...emojiCollections,
+  ...emojiCollections2,
   emoticons: [
     {
       id: "smiley",

@@ -74,6 +74,12 @@ function contentModified(page: SitePage): string {
     case "/crying-emoji":
     case "/star-emoji":
       return "2026-11-04";
+    case "/smiley-face-emoji":
+    case "/cat-emoji":
+    case "/funny-emoji":
+    case "/cute-emoji":
+    case "/symbols-copy-paste":
+      return "2026-11-15";
     case "/border-kaomoji":
     case "/roblox-kaomoji":
     case "/art-kaomoji":

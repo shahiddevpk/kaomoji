@@ -5,6 +5,8 @@
  * Paragraph text supports [label](/path/) links only.
  */
 
+import { guides2 } from "@/data/guides-2";
+
 export type GuideFace = { face: string; name: string; note: string };
 
 export type GuideBlock =
@@ -1439,6 +1441,8 @@ export const guides: Guide[] = [
     ],
   },
 ];
+
+guides.push(...guides2);
 
 /** Rough reading time at 200 words per minute (guides and blog posts). */
 export function readingMinutes(sections: GuideSection[]): number {

@@ -113,6 +113,11 @@ export const TOOLS_GROUP: NavGroup = {
     "/heart-emoji",
     "/crying-emoji",
     "/star-emoji",
+    "/smiley-face-emoji",
+    "/cat-emoji",
+    "/funny-emoji",
+    "/cute-emoji",
+    "/symbols-copy-paste",
   ],
 };
 

@@ -9,6 +9,7 @@ function memo<A, R>(fn: (a: A) => R): (a: A) => R {
 export { siteConfig } from "@/lib/site-config";
 import { gapCopy } from "@/data/gap-copy";
 import { emojiPages } from "@/data/emoji-pages";
+import { emojiPages2 } from "@/data/emoji-pages-2";
 
 export type PageGroup = "hub" | "browse" | "trust";
 
@@ -178,7 +179,7 @@ export const pages: SitePage[] = [
           "Aesthetic and cutecore kaomoji are the soft, decorated subset of cute faces, like (˶ᵔ ᵕ ᵔ˶) or ꒰ᐢ. .ᐢ꒱ with ribbons, flowers, and sparkles. The aesthetic kaomoji page collects the ribbon, ꒰ ꒱ bracket, fluffy, and dreamy styles on their own.",
       },
     ],
-    related: ["/happy-kaomoji", "/aesthetic-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji"],
+    related: ["/happy-kaomoji", "/aesthetic-kaomoji", "/cat-kaomoji", "/heart-kaomoji", "/shy-kaomoji", "/kaomoji-copy-paste", "/uwu-kaomoji", "/cute-emoji"],
   },
   {
     path: "/happy-kaomoji",
@@ -232,7 +233,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Happy faces use standard Unicode that pastes cleanly on Discord, WhatsApp, Instagram, and most chat apps. Tap Copy and paste — no special settings needed.",
       },
     ],
-    related: ["/cute-kaomoji", "/cat-kaomoji", "/sad-kaomoji", "/angry-kaomoji", "/thumbs-up-kaomoji", "/dance-kaomoji"],
+    related: ["/cute-kaomoji", "/cat-kaomoji", "/sad-kaomoji", "/angry-kaomoji", "/thumbs-up-kaomoji", "/dance-kaomoji", "/smiley-face-emoji"],
   },
   {
     path: "/cat-kaomoji",
@@ -280,7 +281,7 @@ export const pages: SitePage[] = [
         answer: "Yes. Neko and catmoji faces copy here with one tap. The general Kaomoji Copy and Paste page is for mixed popular faces when you do not need whiskers only.",
       },
     ],
-    related: ["/animal-kaomoji", "/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste"],
+    related: ["/animal-kaomoji", "/cute-kaomoji", "/bunny-kaomoji", "/dog-kaomoji", "/bear-kaomoji", "/kaomoji-copy-paste", "/cat-emoji"],
   },
   {
     path: "/sad-kaomoji",
@@ -2006,7 +2007,7 @@ export const pages: SitePage[] = [
           "Funny reactions live on this page, because most people send a funny kaomoji to show they are laughing. For pranks and mischievous grins, the smug and devil pages fit better.",
       },
     ],
-    related: ["/happy-kaomoji", "/crying-kaomoji", "/smile-kaomoji", "/excited-kaomoji", "/sweat-kaomoji", "/cute-kaomoji"],
+    related: ["/happy-kaomoji", "/crying-kaomoji", "/smile-kaomoji", "/excited-kaomoji", "/sweat-kaomoji", "/cute-kaomoji", "/funny-emoji"],
   },
   {
     path: "/sparkle-kaomoji",
@@ -2248,7 +2249,7 @@ export const pages: SitePage[] = [
           "Yes. Smiling kaomoji, smile kaomoji, and kaomoji smiling all point to the same gentle, closed-mouth or soft-grin faces collected here.",
       },
     ],
-    related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji", "/wink-kaomoji"],
+    related: ["/happy-kaomoji", "/giggling-kaomoji", "/cute-kaomoji", "/excited-kaomoji", "/wink-kaomoji", "/smiley-face-emoji"],
   },
   {
     path: "/excited-kaomoji",
@@ -2510,7 +2511,7 @@ export const pages: SitePage[] = [
           "Yes. Most of these faces fit on one short line, so they work well in a pet photo caption, a game username, or a group chat nickname. Preview it once, since a few rare symbols may show as boxes on older phones.",
       },
     ],
-    related: ["/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji", "/fish-kaomoji", "/food-kaomoji"],
+    related: ["/cat-kaomoji", "/dog-kaomoji", "/bunny-kaomoji", "/bear-kaomoji", "/fish-kaomoji", "/food-kaomoji", "/cat-emoji"],
   },
   {
     path: "/wink-kaomoji",
@@ -2757,7 +2758,7 @@ export const pages: SitePage[] = [
         answer: "The eyebrows are combining marks drawn by your font. Different fonts place them differently, so the face can look slightly off on some apps while the characters stay correct.",
       },
     ],
-    related: ["/shrug-kaomoji", "/text-faces", "/smug-kaomoji", "/emoticons"],
+    related: ["/shrug-kaomoji", "/text-faces", "/smug-kaomoji", "/emoticons", "/funny-emoji"],
   },
   {
     path: "/shrug-kaomoji",
@@ -2841,7 +2842,7 @@ export const pages: SitePage[] = [
         answer: "Yes, in the broad sense. Plain UwU is a letter emoticon, while bracketed faces like (˘ω˘) follow the classic kaomoji style with an ω mouth.",
       },
     ],
-    related: ["/cute-kaomoji", "/shy-kaomoji", "/cat-kaomoji", "/lenny-face"],
+    related: ["/cute-kaomoji", "/shy-kaomoji", "/cat-kaomoji", "/lenny-face", "/cute-emoji"],
   },
   {
     path: "/food-kaomoji",
@@ -2981,7 +2982,7 @@ export const pages: SitePage[] = [
         answer: "Yes. They are Unicode characters that anyone can type or paste anywhere — no license is needed.",
       },
     ],
-    related: ["/emoji-combos", "/border-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji", "/emoji-copy-paste"],
+    related: ["/emoji-combos", "/border-kaomoji", "/sparkle-kaomoji", "/star-kaomoji", "/heart-kaomoji", "/emoji-copy-paste", "/symbols-copy-paste"],
   },
   {
     path: "/emoji-combos",
@@ -3568,6 +3569,7 @@ export const pages: SitePage[] = [
 
 // Emoji cluster pages (data/emoji-pages.ts).
 pages.push(...emojiPages);
+pages.push(...emojiPages2);
 
 // Keyword-gap copy: extra FAQs / prose per existing page (see data/gap-copy.ts).
 for (const map of [gapCopy]) {

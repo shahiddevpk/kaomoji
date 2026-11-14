@@ -16,6 +16,11 @@ const COLLECTION_PATHS: Record<string, CollectionKey> = {
   "/heart-emoji": "heart-emoji",
   "/crying-emoji": "crying-emoji",
   "/star-emoji": "star-emoji",
+  "/smiley-face-emoji": "smiley-face-emoji",
+  "/cat-emoji": "cat-emoji",
+  "/funny-emoji": "funny-emoji",
+  "/cute-emoji": "cute-emoji",
+  "/symbols-copy-paste": "symbols-copy-paste",
 };
 
 function normalizePathname(pathname: string): string {
