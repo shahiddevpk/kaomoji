@@ -9,7 +9,7 @@ export const guides2: Guide[] = [
     slug: "emoji-kitchen",
     title: "Emoji Kitchen: How to Mix Two Emoji Into One Sticker",
     shortTitle: "Emoji Kitchen",
-    titleSegment: "Emoji Kitchen: How to Mix Emoji on Android & iPhone",
+    titleSegment: "Emoji Kitchen: How to Mix Emoji on Android",
     description:
       "How to use Emoji Kitchen to mix two emoji into one sticker, where it works, why some pairs fail, and what to do when you want a text version instead.",
     intro:
@@ -111,7 +111,7 @@ export const guides2: Guide[] = [
     slug: "baka-meaning",
     title: "Baka Meaning: What This Japanese Word Really Says",
     shortTitle: "Baka meaning",
-    titleSegment: "Baka Meaning in Japanese + Baka Kaomoji to Copy",
+    titleSegment: "Baka Meaning in Japanese + Kaomoji to Copy",
     description:
       "What baka means in Japanese, how rude it really is, how it is used in anime, and baka kaomoji like (｀Δ´)! that you can copy and paste.",
     intro:
@@ -164,7 +164,7 @@ export const guides2: Guide[] = [
             items: [
               { face: "(｀Δ´)！", name: "Angry shout", note: "A sharp, annoyed shout." },
               { face: "(｡•́︿•̀｡)", name: "Hurt and annoyed", note: "Annoyed but a bit sad." },
-              { face: "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)", name: "Blushing tease", note: "The tsundere face: annoyed and embarrassed." },
+              { face: "(〃>▽<〃)", name: "Blushing tease", note: "The tsundere face: annoyed and embarrassed." },
               { face: "(￣^￣)", name: "Huffy sulk", note: "A small sulk with arms crossed." },
               { face: "(◞‸◟ )", name: "Sorry face", note: "Used after you tease too much." },
             ],
@@ -199,7 +199,7 @@ export const guides2: Guide[] = [
     slug: "emoji-meanings",
     title: "Emoji Meanings: 20 Emoji People Often Misread",
     shortTitle: "Emoji meanings",
-    titleSegment: "Emoji Meanings: 20 Emoji People Often Misread",
+    titleSegment: "Emoji Meanings: 20 Emoji Often Misread",
     description:
       "Plain-English emoji meanings for 20 emoji that people often misread, from 🙂 and 👍 to 😭 and 💀, and why the same emoji can mean different things.",
     intro:

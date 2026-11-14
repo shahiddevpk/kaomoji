@@ -316,7 +316,7 @@ export const emojiPages2: SitePage[] = [
     path: "/smiley-face-emoji",
     label: "Smiley face emoji",
     heading: "Smiley Face Emoji",
-    titleSegment: "Smiley Face Emoji 🙂 Copy and Paste + Meanings",
+    titleSegment: "Smiley Face Emoji 🙂 Copy & Paste + Meanings",
     description:
       "Smiley face emoji copy and paste: 🙂 😀 😊 😁 😉 😎 and more, with what each smile means. Plus text smileys like :) and ^_^ that work anywhere.",
     intro:
@@ -406,7 +406,7 @@ export const emojiPages2: SitePage[] = [
     path: "/funny-emoji",
     label: "Funny emoji",
     heading: "Funny Emoji",
-    titleSegment: "Funny Emoji 😂 Copy and Paste: Meme & Silly Emojis",
+    titleSegment: "Funny Emoji 😂 Copy & Paste: Meme Emojis",
     description:
       "Funny emoji copy and paste: 😂 🤣 💀 🗿 🤡 and weird, meme emoji, with what each means. Pick the reaction that matches how hard you are laughing.",
     intro:
@@ -451,7 +451,7 @@ export const emojiPages2: SitePage[] = [
     path: "/cute-emoji",
     label: "Cute emoji",
     heading: "Cute Emoji",
-    titleSegment: "Cute Emoji 🥺 Copy and Paste: Cute Emojis for Chats",
+    titleSegment: "Cute Emoji 🥺 Copy & Paste for Chats",
     description:
       "Cute emoji copy and paste: 🥺 🥹 🥰 🐰 🎀 🌸 and more cute faces, animals, and pastel emoji. Tap Copy and paste into chats, captions, and bios.",
     intro:
@@ -496,7 +496,7 @@ export const emojiPages2: SitePage[] = [
     path: "/symbols-copy-paste",
     label: "Symbols",
     heading: "Symbols Copy and Paste",
-    titleSegment: "Symbols Copy and Paste: Text Symbols ★ ♡ → © ✓",
+    titleSegment: "Symbols Copy and Paste ★ ♡ → © ✓",
     description:
       "Symbols copy and paste: hearts ♡, stars ★, arrows →, checkmarks ✓, math signs and © ™. Tap Copy and paste them into bios, documents, and usernames.",
     intro:
