@@ -1,7 +1,7 @@
 import Link from "@/components/link";
 
 type Season = {
-  /** 0-based month the banner shows in (picked at build time; see .github/workflows/season-rebuild.yml). */
+  /** 0-based month the banner shows in (picked at build time for crawlers and no-JS visitors; src/client/season.ts corrects it from the visitor's date, so no scheduled rebuild is needed). */
   month: number;
   /** First day of the window (defaults to 1). */
   firstDay?: number;
@@ -12,7 +12,7 @@ type Season = {
   blurb: string;
 };
 
-const SEASONS: Season[] = [
+export const SEASONS: Season[] = [
   {
     month: 9,
     lastDay: 31,
@@ -86,8 +86,17 @@ export function currentSeason(now = new Date()): Season | undefined {
 /** Time-boxed internal link to the in-season page; renders nothing off-season. */
 export function SeasonalBanner({ now = new Date() }: { now?: Date }) {
   const season = currentSeason(now);
-  if (!season) return null;
 
+  // The slot is always rendered so src/client/season.ts can swap the banner
+  // when the visitor's date is in a different season than the build date.
+  return (
+    <div data-season-slot data-seasons={JSON.stringify(SEASONS)} data-current={season?.href ?? ""}>
+      {season ? <SeasonLink season={season} /> : null}
+    </div>
+  );
+}
+
+function SeasonLink({ season }: { season: Season }) {
   return (
     <Link href={season.href} className="seasonal-banner">
       <span className="seasonal-banner-face" aria-hidden="true">

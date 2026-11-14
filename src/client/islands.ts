@@ -1,6 +1,7 @@
 import { h, hydrate, type ComponentType } from "preact";
 import { InIsland } from "@/lib/island";
 import "@/components/kaomoji/copy-provider";
+import "./season";
 
 // Only modules that define islands; each loads as its own chunk.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
