@@ -6,6 +6,8 @@
  * head term ("christmas kaomoji") that a category page owns, and links to it.
  */
 import type { GuideSection } from "@/lib/guides";
+import { posts2 } from "@/data/blog-2";
+import { posts3 } from "@/data/blog-3";
 
 export type BlogPost = {
   slug: string;
@@ -2464,6 +2466,8 @@ export const posts: BlogPost[] = [
     ],
   },
 ];
+
+posts.push(...posts2, ...posts3);
 
 export function getPost(slug: string): BlogPost | undefined {
   return posts.find((post) => post.slug === slug);
