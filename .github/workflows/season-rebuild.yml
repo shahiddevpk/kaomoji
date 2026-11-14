@@ -1,4 +1,4 @@
-# Rebuilds the site every day so the seasonal banner (picked at build time in
+# Rebuilds the site on demand so the seasonal banner (picked at build time in
 # components/kaomoji/seasonal-banner.tsx) switches on its start date.
 #
 # Setup (one time):
@@ -8,9 +8,9 @@
 name: season-rebuild
 
 on:
-  schedule:
-    # 00:10 UTC daily. The banner uses the build server's date.
-    - cron: "10 0 * * *"
+  # Manual only, to avoid unnecessary builds. Run it from the Actions tab on the
+  # days the banner changes (see SEASONS in seasonal-banner.tsx), e.g. Nov 28,
+  # Dec 26, Jan 1, Jan 8. The banner uses the build server's date.
   workflow_dispatch:
 
 jobs:
