@@ -8,6 +8,7 @@ function memo<A, R>(fn: (a: A) => R): (a: A) => R {
 // bundling every page's copy from this file.
 export { siteConfig } from "@/lib/site-config";
 import { gapCopy } from "@/data/gap-copy";
+import { gapCopy2 } from "@/data/gap-copy-2";
 import { emojiPages } from "@/data/emoji-pages";
 import { emojiPages2 } from "@/data/emoji-pages-2";
 
@@ -3572,7 +3573,7 @@ pages.push(...emojiPages);
 pages.push(...emojiPages2);
 
 // Keyword-gap copy: extra FAQs / prose per existing page (see data/gap-copy.ts).
-for (const map of [gapCopy]) {
+for (const map of [gapCopy, gapCopy2]) {
   for (const [path, extra] of Object.entries(map)) {
     const page = pages.find((item) => item.path === path);
     if (!page) throw new Error(`gapCopy: unknown page ${path}`);

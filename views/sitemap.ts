@@ -16,6 +16,8 @@ const REFRESHED_2026_11_15 = new Set([
   "/lenny-face",
   "/animal-kaomoji",
   "/uwu-kaomoji",
+  "/sleepy-kaomoji",
+  "/kaomoji-copy-paste",
 ]);
 
 /** Latest content date: page's own edit date, or a newer guide or post it now features. */

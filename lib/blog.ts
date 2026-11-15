@@ -8,6 +8,7 @@
 import type { GuideSection } from "@/lib/guides";
 import { posts2 } from "@/data/blog-2";
 import { posts3 } from "@/data/blog-3";
+import { posts4 } from "@/data/blog-4";
 
 export type BlogPost = {
   slug: string;
@@ -2467,7 +2468,7 @@ export const posts: BlogPost[] = [
   },
 ];
 
-posts.push(...posts2, ...posts3);
+posts.push(...posts2, ...posts3, ...posts4);
 
 export function getPost(slug: string): BlogPost | undefined {
   return posts.find((post) => post.slug === slug);
