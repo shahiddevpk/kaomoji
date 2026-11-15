@@ -50,7 +50,7 @@ export const posts2: BlogPost[] = [
       },
       {
         id: "pairs",
-        heading: "Thanksgiving emoji plus kaomoji pairs to copy",
+        heading: "Emoji plus kaomoji pairs to copy",
         blocks: [
           {
             type: "p",
@@ -112,8 +112,60 @@ export const posts2: BlogPost[] = [
         ],
       },
       {
+        id: "stories",
+        heading: "Short text for Stories and Reels",
+        blocks: [
+          {
+            type: "p",
+            text: "Text on a Story or Reel is read in a second or two, so it needs to be even shorter than a caption. Two to five words, one emoji, and one face is the right size. Place it away from the edges, where app buttons cover the screen.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Countdown", text: "3 days to pie 🥧 (≧▽≦)" },
+              { label: "Cooking", text: "Turkey is in 🦃 (•̀ᴗ•́)و" },
+              { label: "Arrival", text: "Made it home 🍂 (づ｡◕‿‿◕｡)づ" },
+              { label: "Night", text: "Officially stuffed 😴 (－_－)zzZ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "care",
+        heading: "Emoji to use with care",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "🍗 (poultry leg) reads as fried chicken to many people. Use 🦃 when you mean the roast turkey.",
+              "🏈 (football) is a fun add for the afternoon games, but leave it out of a thank-you message, where it can look like you are not paying attention.",
+              "🍷 (wine) is fine with friends. In posts that family, kids, or coworkers will see, a pie or a leaf is the safer choice.",
+              "🦃 on its own can read as a joke. In a heartfelt note, pair it with 🧡 or 🙏 and a soft face so the tone stays warm.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "apart",
+        heading: "Messages for friends who are far away",
+        blocks: [
+          {
+            type: "p",
+            text: "Not everyone is at a full table. People working the holiday, living abroad, or spending the day alone often notice who checks in. A short line with a gentle face says you thought of them.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "Working", text: "Thank you for working today so the rest of us can relax. Saving you a plate 🥧 (人´∀`)" },
+              { label: "Abroad", text: "Missing you at the table this year. Call us when you wake up 🧡 (っ´▽`)っ" },
+              { label: "Quiet day", text: "No pressure to reply, just wanted to say I am grateful for you 🍂 (˘︶˘)" },
+            ],
+          },
+        ],
+      },
+      {
         id: "tips",
-        heading: "Tips for using Thanksgiving emoji with kaomoji",
+        heading: "Tips for mixing emoji with kaomoji",
         blocks: [
           {
             type: "list",

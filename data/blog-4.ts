@@ -37,12 +37,37 @@ export const posts4: BlogPost[] = [
         ],
       },
       {
+        id: "read",
+        heading: "How to read a face in two seconds",
+        blocks: [
+          {
+            type: "p",
+            text: "Japanese text faces are read straight on, not sideways like :-). That means the eyes carry most of the feeling, and the mouth and extras fine-tune it. Once you know the main parts, you can tell what almost any face means at a glance.",
+          },
+          {
+            type: "table",
+            head: ["Part", "Examples", "What it adds"],
+            rows: [
+              ["Eyes", "^ ^, ◕ ◕, T T, ¬ ¬", "The main mood: happy, sweet, crying, or annoyed"],
+              ["Mouth", "▽, ω, ‿, Д", "Open joy, a cute pout, a calm smile, or a shout"],
+              ["Cheeks", "〃, *, ๑", "Blushing, shyness, or extra softness"],
+              ["Arms", "ノ, ヽ, つ, ╯", "Waving, cheering, hugging, or flipping a table"],
+              ["Extras", "♡, ✿, ;, zzZ", "Love, sweetness, sweat from nerves, or sleep"],
+            ],
+          },
+          {
+            type: "p",
+            text: "For example, (◕‿◕✿) is round eyes, a soft smile, and a flower, so it reads as gentle and sweet. (╬ಠ益ಠ) has narrow eyes, gritted teeth, and an anger mark, so it reads as furious.",
+          },
+        ],
+      },
+      {
         id: "happy",
         heading: "Happy and excited",
         blocks: [
           {
             type: "p",
-            text: "Open eyes and curved mouths mark happy kaomojis. The more symbols around the face, the louder the joy.",
+            text: "Open eyes and curved mouths mark a happy face. The more symbols around it, the louder the joy.",
           },
           {
             type: "messages",
@@ -67,7 +92,7 @@ export const posts4: BlogPost[] = [
         blocks: [
           {
             type: "p",
-            text: "Cute kaomojis use big round eyes, small mouths, and soft extras like flowers, hearts, or animal ears.",
+            text: "Cute faces use big round eyes, small mouths, and soft extras like flowers, hearts, or animal ears.",
           },
           {
             type: "messages",
@@ -113,7 +138,7 @@ export const posts4: BlogPost[] = [
         blocks: [
           {
             type: "p",
-            text: "Sad kaomojis use drooping eyes, tears, and small mouths. Pick the quieter ones for mild disappointment and the teary ones for real sadness.",
+            text: "Sad faces use drooping eyes, tears, and small mouths. Pick the quieter ones for mild disappointment and the teary ones for real sadness.",
           },
           {
             type: "messages",
@@ -170,6 +195,44 @@ export const posts4: BlogPost[] = [
               { label: "Shrug: You do not know", text: "¯\\_(ツ)_/¯" },
               { label: "Cheeky look: Teasing a friend", text: "( ͡° ͜ʖ ͡°)" },
               { label: "Running away: Making a quick exit", text: "ᕕ( ᐛ )ᕗ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "in-messages",
+        heading: "Putting a face in a message",
+        blocks: [
+          {
+            type: "p",
+            text: "Most people put the face at the end of a sentence, where it works like a tone of voice. A face at the start sets the mood before the words, which suits greetings. On its own, a face is a full reply.",
+          },
+          {
+            type: "messages",
+            items: [
+              { label: "At the end: Adds tone to the words", text: "See you at 7, can't wait (≧▽≦)" },
+              { label: "At the start: Sets the mood first", text: "ヽ(•‿•)ノ Good morning, everyone!" },
+              { label: "As the whole reply: When words are not needed", text: "(⊙_⊙)" },
+              { label: "Softening a request: Makes an ask feel friendly", text: "Could you send the file when you get a chance? (◕‿◕✿)" },
+            ],
+          },
+          {
+            type: "tip",
+            text: "One face per message is usually enough. A face after every sentence makes it hard to read and waters down the feeling.",
+          },
+        ],
+      },
+      {
+        id: "choose",
+        heading: "Choosing between similar faces",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Pick by who is reading. Simple faces such as (^_^) suit coworkers; faces with hearts and flowers suit friends and partners.",
+              "Pick by strength. (´・_・`) is mild disappointment, while (ಥ﹏ಥ) is real heartbreak. Using the strong one for a small problem can read as sarcasm.",
+              "Pick by length. Short faces fit names, comments, and narrow phone screens. Long ones with arms and props work better in a full chat message.",
+              "Pick by font. If your friend's phone shows a box, swap to a face made from more common characters, such as (T_T) or (＾▽＾).",
             ],
           },
         ],
@@ -311,6 +374,65 @@ export const posts4: BlogPost[] = [
         ],
       },
       {
+        id: "why",
+        heading: "Why these faces read as jokes",
+        blocks: [
+          {
+            type: "p",
+            text: "Text has no tone of voice, so the face does the job a grin or a raised eyebrow would do in person. A few features almost always signal \"not serious\":",
+          },
+          {
+            type: "table",
+            head: ["Feature", "Example", "What it signals"],
+            rows: [
+              ["Half-closed or sideways eyes", "(≖‿≖), ( ͡° ͜ʖ ͡°)", "A knowing look, a tease, or a hint"],
+              ["A tongue", "(^ڡ^)", "Playful cheek, or that food looks good"],
+              ["Big motion", "(╯°□°）╯︵ ┻━┻", "Over-the-top drama about something small"],
+              ["A sweat drop", "(^_^;)", "Laughing at your own awkward moment"],
+              ["A shrug", "¯\\_(ツ)_/¯", "Mock helplessness, so nobody takes it to heart"],
+            ],
+          },
+          {
+            type: "p",
+            text: "The bigger the reaction, the smaller the real problem should be. A table flip over a missing sock is funny. A table flip over a friend's bad news is not.",
+          },
+        ],
+      },
+      {
+        id: "everyday",
+        heading: "Replies for everyday moments",
+        blocks: [
+          {
+            type: "messages",
+            items: [
+              { label: "Monday morning", text: "Me walking into Monday like (＠_＠;)" },
+              { label: "Friend is late again", text: "Still waiting... I have grown a beard (¬_¬)" },
+              { label: "Group chat goes quiet", text: "Hello? Is this thing on? (・_・ヾ" },
+              { label: "You finally finish a task", text: "Done! Nobody touch anything ever again ᕕ( ᐛ )ᕗ" },
+              { label: "Someone guesses your secret", text: "I have no idea what you are talking about (≖‿≖)" },
+              { label: "Bad cooking", text: "Dinner is served, and by served I mean slightly burnt (^_^;)" },
+              { label: "Low battery", text: "Phone at 2%. If I vanish, avenge me ( ´ ▽ ` )ﾉ" },
+              { label: "Spoiler alert", text: "Don't tell me the ending or I flip the table (ノ°益°)ノ" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "timing",
+        heading: "Where to put the face in a joke",
+        blocks: [
+          {
+            type: "steps",
+            items: [
+              "Write the joke first, with no face. If it does not work as plain text, a face will not save it.",
+              "Add the face after the punchline, not before. A face at the start gives the joke away.",
+              "Match the face to the joke type: tongue-out for teasing, a shrug for mock confusion, a sweat drop for self-mockery.",
+              "Read it once as the other person. If it could sound mean, swap to a softer face such as (^ڡ^).",
+            ],
+          },
+        ],
+      },
+      {
         id: "tips",
         heading: "When the joke works, and when it does not",
         blocks: [
@@ -350,6 +472,11 @@ export const posts4: BlogPost[] = [
         question: "Are funny kaomoji okay at work?",
         answer:
           "Simple ones such as (^_^) are fine in casual team chats. Keep cheeky faces for friends, and skip them with clients and in formal email.",
+      },
+      {
+        question: "What does ¯\\_(ツ)_/¯ mean?",
+        answer:
+          "It is the shrug face. It means \"I don't know\", \"oh well\", or \"what can you do\". It is light and friendly, so it works for small problems and mock confusion, but it can sound dismissive if someone asked you a real question.",
       },
     ],
   },

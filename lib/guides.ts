@@ -1458,7 +1458,7 @@ export function readingMinutes(sections: GuideSection[]): number {
         case "faces":
           return block.items.map((face) => face.note).join(" ");
         case "messages":
-          return block.items.map((item) => item.text).join(" ");
+          return block.items.map((item) => `${item.label ?? ""} ${item.text}`).join(" ");
         default:
           return block.items.join(" ");
       }

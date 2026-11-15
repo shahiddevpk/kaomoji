@@ -9,7 +9,7 @@ Source: Semrush via Rankytools, US database, Keyword Magic Tool.
 
 Every page or post must pass all of these before it ships:
 
-1. 900+ words of visible text for a blog post. FAQs and tables count only if they carry real information.
+1. 900+ words of the post's own text for a blog post: measure the `<article>` up to "More faces for this occasion", so the related-post cards (about 650 words) are never counted. FAQs and tables count only if they carry real information. Measure density against the same text.
 2. Every section answers something a searcher wants, with faces or steps they can use. No filler intros.
 3. Keyword variants ("kaomoji sad" / "sad kaomoji" / "sad kaomojis") are folded into one page or post. Never split them into separate near-duplicates.
 4. Faces and wording are unique across the site. Reuse a face only when it is the best answer.
